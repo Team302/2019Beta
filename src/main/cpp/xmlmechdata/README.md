@@ -1,5 +1,5 @@
 *************************************************************************************************************
- #  Team 302 FIRST robot Template Project
+ #  Team 302 FIRST robot 
 *************************************************************************************************************
 
 These files will parse the mechanism data (xml files using the mechdata.dtd as its definition).  This allows

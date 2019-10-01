@@ -1,0 +1,364 @@
+[
+  {
+    "name": "linuxathena",
+    "architecture": "arm-v7",
+    "operatingSystem": "linux",
+    "flavor": "default",
+    "buildType": "debug",
+    "cppPath": "C:\\Users\\Public\\frc2019\\roborio\\bin\\arm-frc2019-linux-gnueabi-g++.exe",
+    "cPath": "C:\\Users\\Public\\frc2019\\roborio\\bin\\arm-frc2019-linux-gnueabi-gcc.exe",
+    "msvc": false,
+    "systemCppMacros": [],
+    "systemCppArgs": [],
+    "systemCMacros": [],
+    "systemCArgs": [],
+    "allLibFiles": [
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\wpilibc-cpp-2019.4.1-headers.zip_b81507b0c50c581f7502538d67c4b01b",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\hal-cpp-2019.4.1-headers.zip_c188c7b3a999a3880106aec59871f632",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\wpiutil-cpp-2019.4.1-headers.zip_5e342f497d78cde8042c25fea7a66506",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\ntcore-cpp-2019.4.1-headers.zip_9555d7c48fd82baf566f02717a6c3cb0",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\cscore-cpp-2019.4.1-headers.zip_6f6b3f86ef5e8708aac28c5ba02696ca",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\cameraserver-cpp-2019.4.1-headers.zip_992d6c67f4984f018ec363e9353431cb",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\opencv-cpp-3.4.4-4-headers.zip_ed19d56be47d37c8193b8f0377a9cfe6",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\chipobject-2019.12.1-headers.zip_45012665afb78c4c4816a3a35e8fe8aa",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\netcomm-2019.12.1-headers.zip_97d07b8af9f28e0504c6dc239ac1f176",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\wpiapi-cpp-5.12.0-headers.zip_29daa6d91100a3e64a6c5c507f77fd54",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\api-cpp-5.12.0-headers.zip_4c0f1181ce667c2b1da6d536e53054ec",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\cci-5.12.0-headers.zip_dcc0606199f9f03e2afc8c79f610ebba",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\core-5.12.0-headers.zip_318ff6fc4a9e78b523ef7a1e4e5003aa",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\SparkMax-cpp-1.1.8-headers.zip_e16eff92b4f67073aebb3710c8a00645",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\SparkMax-driver-1.1.8-headers.zip_4162696d3ae692e872f37f2c402cbac2",
+      "C:\\GitKrakenRepos\\Summer2019\\src\\main\\include",
+      "C:\\GitKrakenRepos\\Summer2019\\src\\main\\thirdparty",
+      "C:\\GitKrakenRepos\\Summer2019\\src\\main\\cpp",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\wpilibc-cpp-2019.4.1-sources.zip_ac168d8a409781114a55f1146f57f4df",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\hal-cpp-2019.4.1-sources.zip_ddf016209e70f7a00e667b67e599c75f",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\wpiutil-cpp-2019.4.1-sources.zip_b5a778a308d2e9296754a60ed6245c1c",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\ntcore-cpp-2019.4.1-sources.zip_41b6aa9821778d1168e143eeff887531",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\cscore-cpp-2019.4.1-sources.zip_35f77497d636edf40e6457730c589f42",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\cameraserver-cpp-2019.4.1-sources.zip_d02459a18ecb7e92cbe1b7e1def99630",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\opencv-cpp-3.4.4-4-sources.zip_77141d62b3e263395a4b585628a50d3d"
+    ],
+    "binaries": [
+      {
+        "componentName": "frcUserProgram",
+        "sourceSets": [
+          {
+            "source": {
+              "srcDirs": [
+                "C:\\GitKrakenRepos\\Summer2019\\src\\main\\cpp",
+                "C:\\GitKrakenRepos\\Summer2019\\src\\main\\thirdparty"
+              ],
+              "includes": [
+                "**/*.c",
+                "**/*.cc",
+                "**/*.cpp",
+                "**/*.cxx"
+              ],
+              "excludes": []
+            },
+            "exportedHeaders": {
+              "srcDirs": [
+                "C:\\GitKrakenRepos\\Summer2019\\src\\main\\include",
+                "C:\\GitKrakenRepos\\Summer2019\\src\\main\\thirdparty",
+                "C:\\GitKrakenRepos\\Summer2019\\src\\main\\cpp"
+              ],
+              "includes": [
+                "**/*.h",
+                "**/*.hpp",
+                "**/*.hxx"
+              ],
+              "excludes": []
+            },
+            "cpp": true,
+            "args": [
+              "-std\u003dc++14",
+              "-Wformat\u003d2",
+              "-pedantic",
+              "-Wno-psabi",
+              "-g",
+              "-Wno-unused-parameter",
+              "-Wno-error\u003ddeprecated-declarations",
+              "-fPIC",
+              "-rdynamic",
+              "-pthread",
+              "-Og"
+            ],
+            "macros": [
+              "DEBUG\u003dnull"
+            ]
+          }
+        ],
+        "libHeaders": [
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\wpilibc-cpp-2019.4.1-headers.zip_b81507b0c50c581f7502538d67c4b01b",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\hal-cpp-2019.4.1-headers.zip_c188c7b3a999a3880106aec59871f632",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\wpiutil-cpp-2019.4.1-headers.zip_5e342f497d78cde8042c25fea7a66506",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\ntcore-cpp-2019.4.1-headers.zip_9555d7c48fd82baf566f02717a6c3cb0",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\cscore-cpp-2019.4.1-headers.zip_6f6b3f86ef5e8708aac28c5ba02696ca",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\cameraserver-cpp-2019.4.1-headers.zip_992d6c67f4984f018ec363e9353431cb",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\opencv-cpp-3.4.4-4-headers.zip_ed19d56be47d37c8193b8f0377a9cfe6",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\chipobject-2019.12.1-headers.zip_45012665afb78c4c4816a3a35e8fe8aa",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\netcomm-2019.12.1-headers.zip_97d07b8af9f28e0504c6dc239ac1f176",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\wpiapi-cpp-5.12.0-headers.zip_29daa6d91100a3e64a6c5c507f77fd54",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\api-cpp-5.12.0-headers.zip_4c0f1181ce667c2b1da6d536e53054ec",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\cci-5.12.0-headers.zip_dcc0606199f9f03e2afc8c79f610ebba",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\core-5.12.0-headers.zip_318ff6fc4a9e78b523ef7a1e4e5003aa",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\SparkMax-cpp-1.1.8-headers.zip_e16eff92b4f67073aebb3710c8a00645",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\SparkMax-driver-1.1.8-headers.zip_4162696d3ae692e872f37f2c402cbac2",
+          "C:\\GitKrakenRepos\\Summer2019\\src\\main\\include",
+          "C:\\GitKrakenRepos\\Summer2019\\src\\main\\thirdparty",
+          "C:\\GitKrakenRepos\\Summer2019\\src\\main\\cpp"
+        ]
+      }
+    ],
+    "sourceBinaries": [
+      {
+        "source": {
+          "srcDirs": [
+            "C:\\GitKrakenRepos\\Summer2019\\src\\main\\cpp",
+            "C:\\GitKrakenRepos\\Summer2019\\src\\main\\thirdparty"
+          ],
+          "includes": [
+            "**/*.c",
+            "**/*.cc",
+            "**/*.cpp",
+            "**/*.cxx"
+          ],
+          "excludes": []
+        },
+        "componentName": "frcUserProgram",
+        "cpp": true,
+        "args": [
+          "-std\u003dc++14",
+          "-Wformat\u003d2",
+          "-pedantic",
+          "-Wno-psabi",
+          "-g",
+          "-Wno-unused-parameter",
+          "-Wno-error\u003ddeprecated-declarations",
+          "-fPIC",
+          "-rdynamic",
+          "-pthread",
+          "-Og"
+        ],
+        "macros": [
+          "DEBUG\u003dnull"
+        ]
+      },
+      {
+        "source": {
+          "srcDirs": [
+            "C:\\GitKrakenRepos\\Summer2019\\src\\main\\include",
+            "C:\\GitKrakenRepos\\Summer2019\\src\\main\\thirdparty",
+            "C:\\GitKrakenRepos\\Summer2019\\src\\main\\cpp"
+          ],
+          "includes": [
+            "**/*.h",
+            "**/*.hpp",
+            "**/*.hxx"
+          ],
+          "excludes": []
+        },
+        "componentName": "frcUserProgram",
+        "cpp": true,
+        "args": [
+          "-std\u003dc++14",
+          "-Wformat\u003d2",
+          "-pedantic",
+          "-Wno-psabi",
+          "-g",
+          "-Wno-unused-parameter",
+          "-Wno-error\u003ddeprecated-declarations",
+          "-fPIC",
+          "-rdynamic",
+          "-pthread",
+          "-Og"
+        ],
+        "macros": [
+          "DEBUG\u003dnull"
+        ]
+      }
+    ],
+    "nameBinaryMap": {
+      "frcUserProgram": 0
+    }
+  },
+  {
+    "name": "linuxathena",
+    "architecture": "arm-v7",
+    "operatingSystem": "linux",
+    "flavor": "default",
+    "buildType": "release",
+    "cppPath": "C:\\Users\\Public\\frc2019\\roborio\\bin\\arm-frc2019-linux-gnueabi-g++.exe",
+    "cPath": "C:\\Users\\Public\\frc2019\\roborio\\bin\\arm-frc2019-linux-gnueabi-gcc.exe",
+    "msvc": false,
+    "systemCppMacros": [],
+    "systemCppArgs": [],
+    "systemCMacros": [],
+    "systemCArgs": [],
+    "allLibFiles": [
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\wpilibc-cpp-2019.4.1-headers.zip_b81507b0c50c581f7502538d67c4b01b",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\hal-cpp-2019.4.1-headers.zip_c188c7b3a999a3880106aec59871f632",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\wpiutil-cpp-2019.4.1-headers.zip_5e342f497d78cde8042c25fea7a66506",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\ntcore-cpp-2019.4.1-headers.zip_9555d7c48fd82baf566f02717a6c3cb0",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\cscore-cpp-2019.4.1-headers.zip_6f6b3f86ef5e8708aac28c5ba02696ca",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\cameraserver-cpp-2019.4.1-headers.zip_992d6c67f4984f018ec363e9353431cb",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\opencv-cpp-3.4.4-4-headers.zip_ed19d56be47d37c8193b8f0377a9cfe6",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\chipobject-2019.12.1-headers.zip_45012665afb78c4c4816a3a35e8fe8aa",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\netcomm-2019.12.1-headers.zip_97d07b8af9f28e0504c6dc239ac1f176",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\wpiapi-cpp-5.12.0-headers.zip_29daa6d91100a3e64a6c5c507f77fd54",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\api-cpp-5.12.0-headers.zip_4c0f1181ce667c2b1da6d536e53054ec",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\cci-5.12.0-headers.zip_dcc0606199f9f03e2afc8c79f610ebba",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\core-5.12.0-headers.zip_318ff6fc4a9e78b523ef7a1e4e5003aa",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\SparkMax-cpp-1.1.8-headers.zip_e16eff92b4f67073aebb3710c8a00645",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\SparkMax-driver-1.1.8-headers.zip_4162696d3ae692e872f37f2c402cbac2",
+      "C:\\GitKrakenRepos\\Summer2019\\src\\main\\include",
+      "C:\\GitKrakenRepos\\Summer2019\\src\\main\\thirdparty",
+      "C:\\GitKrakenRepos\\Summer2019\\src\\main\\cpp",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\wpilibc-cpp-2019.4.1-sources.zip_ac168d8a409781114a55f1146f57f4df",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\hal-cpp-2019.4.1-sources.zip_ddf016209e70f7a00e667b67e599c75f",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\wpiutil-cpp-2019.4.1-sources.zip_b5a778a308d2e9296754a60ed6245c1c",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\ntcore-cpp-2019.4.1-sources.zip_41b6aa9821778d1168e143eeff887531",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\cscore-cpp-2019.4.1-sources.zip_35f77497d636edf40e6457730c589f42",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\cameraserver-cpp-2019.4.1-sources.zip_d02459a18ecb7e92cbe1b7e1def99630",
+      "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\opencv-cpp-3.4.4-4-sources.zip_77141d62b3e263395a4b585628a50d3d"
+    ],
+    "binaries": [
+      {
+        "componentName": "frcUserProgram",
+        "sourceSets": [
+          {
+            "source": {
+              "srcDirs": [
+                "C:\\GitKrakenRepos\\Summer2019\\src\\main\\cpp",
+                "C:\\GitKrakenRepos\\Summer2019\\src\\main\\thirdparty"
+              ],
+              "includes": [
+                "**/*.c",
+                "**/*.cc",
+                "**/*.cpp",
+                "**/*.cxx"
+              ],
+              "excludes": []
+            },
+            "exportedHeaders": {
+              "srcDirs": [
+                "C:\\GitKrakenRepos\\Summer2019\\src\\main\\include",
+                "C:\\GitKrakenRepos\\Summer2019\\src\\main\\thirdparty",
+                "C:\\GitKrakenRepos\\Summer2019\\src\\main\\cpp"
+              ],
+              "includes": [
+                "**/*.h",
+                "**/*.hpp",
+                "**/*.hxx"
+              ],
+              "excludes": []
+            },
+            "cpp": true,
+            "args": [
+              "-std\u003dc++14",
+              "-Wformat\u003d2",
+              "-pedantic",
+              "-Wno-psabi",
+              "-g",
+              "-Wno-unused-parameter",
+              "-Wno-error\u003ddeprecated-declarations",
+              "-fPIC",
+              "-rdynamic",
+              "-pthread",
+              "-O2"
+            ],
+            "macros": []
+          }
+        ],
+        "libHeaders": [
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\wpilibc-cpp-2019.4.1-headers.zip_b81507b0c50c581f7502538d67c4b01b",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\hal-cpp-2019.4.1-headers.zip_c188c7b3a999a3880106aec59871f632",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\wpiutil-cpp-2019.4.1-headers.zip_5e342f497d78cde8042c25fea7a66506",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\ntcore-cpp-2019.4.1-headers.zip_9555d7c48fd82baf566f02717a6c3cb0",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\cscore-cpp-2019.4.1-headers.zip_6f6b3f86ef5e8708aac28c5ba02696ca",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\cameraserver-cpp-2019.4.1-headers.zip_992d6c67f4984f018ec363e9353431cb",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\opencv-cpp-3.4.4-4-headers.zip_ed19d56be47d37c8193b8f0377a9cfe6",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\chipobject-2019.12.1-headers.zip_45012665afb78c4c4816a3a35e8fe8aa",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\netcomm-2019.12.1-headers.zip_97d07b8af9f28e0504c6dc239ac1f176",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\wpiapi-cpp-5.12.0-headers.zip_29daa6d91100a3e64a6c5c507f77fd54",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\api-cpp-5.12.0-headers.zip_4c0f1181ce667c2b1da6d536e53054ec",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\cci-5.12.0-headers.zip_dcc0606199f9f03e2afc8c79f610ebba",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\core-5.12.0-headers.zip_318ff6fc4a9e78b523ef7a1e4e5003aa",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\SparkMax-cpp-1.1.8-headers.zip_e16eff92b4f67073aebb3710c8a00645",
+          "C:\\GitKrakenRepos\\Summer2019\\build\\tmp\\expandedArchives\\SparkMax-driver-1.1.8-headers.zip_4162696d3ae692e872f37f2c402cbac2",
+          "C:\\GitKrakenRepos\\Summer2019\\src\\main\\include",
+          "C:\\GitKrakenRepos\\Summer2019\\src\\main\\thirdparty",
+          "C:\\GitKrakenRepos\\Summer2019\\src\\main\\cpp"
+        ]
+      }
+    ],
+    "sourceBinaries": [
+      {
+        "source": {
+          "srcDirs": [
+            "C:\\GitKrakenRepos\\Summer2019\\src\\main\\cpp",
+            "C:\\GitKrakenRepos\\Summer2019\\src\\main\\thirdparty"
+          ],
+          "includes": [
+            "**/*.c",
+            "**/*.cc",
+            "**/*.cpp",
+            "**/*.cxx"
+          ],
+          "excludes": []
+        },
+        "componentName": "frcUserProgram",
+        "cpp": true,
+        "args": [
+          "-std\u003dc++14",
+          "-Wformat\u003d2",
+          "-pedantic",
+          "-Wno-psabi",
+          "-g",
+          "-Wno-unused-parameter",
+          "-Wno-error\u003ddeprecated-declarations",
+          "-fPIC",
+          "-rdynamic",
+          "-pthread",
+          "-O2"
+        ],
+        "macros": []
+      },
+      {
+        "source": {
+          "srcDirs": [
+            "C:\\GitKrakenRepos\\Summer2019\\src\\main\\include",
+            "C:\\GitKrakenRepos\\Summer2019\\src\\main\\thirdparty",
+            "C:\\GitKrakenRepos\\Summer2019\\src\\main\\cpp"
+          ],
+          "includes": [
+            "**/*.h",
+            "**/*.hpp",
+            "**/*.hxx"
+          ],
+          "excludes": []
+        },
+        "componentName": "frcUserProgram",
+        "cpp": true,
+        "args": [
+          "-std\u003dc++14",
+          "-Wformat\u003d2",
+          "-pedantic",
+          "-Wno-psabi",
+          "-g",
+          "-Wno-unused-parameter",
+          "-Wno-error\u003ddeprecated-declarations",
+          "-fPIC",
+          "-rdynamic",
+          "-pthread",
+          "-O2"
+        ],
+        "macros": []
+      }
+    ],
+    "nameBinaryMap": {
+      "frcUserProgram": 0
+    }
+  }
+]

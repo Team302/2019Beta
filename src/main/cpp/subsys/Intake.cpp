@@ -24,6 +24,8 @@
 ///========================================================================================================
 
 // C++ Includes
+#include <algorithm>
+#include <cmath>
 #include <iostream>
 
 // FRC includes
@@ -33,7 +35,6 @@
 #include <hw/IDragonMotorController.h>
 #include <subsys/IMechanism.h>
 #include <subsys/Intake.h>
-#include <utils/LimitValue.h>
 
 // Third Party Includes
 
@@ -92,7 +93,7 @@ void Intake::SetPercentOutput
     // on the motor (2 calls)
     if ( m_motor != nullptr )
     {
-        auto pct = LimitValue::ForceInRange( value, -1.0, 1.0 );
+        auto pct = std::min(1.0, std::max(value, -1.0));  // replace std::clamp in c++17
         m_motor->SetControlMode( IDragonMotorController::DRAGON_CONTROL_MODE::PERCENT_OUTPUT );
         m_motor->Set( pct );
     }

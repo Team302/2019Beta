@@ -204,7 +204,7 @@ IDragonMotorController* DragonMotorControllerFactory::GetController
 )
 {
 	IDragonMotorController* controller = nullptr;
-	int slot = usage;
+	unsigned int slot = usage;
 	if ( slot < m_usageControllers.size() )
 	{
 		controller = m_usageControllers[ slot ];

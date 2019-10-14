@@ -174,7 +174,8 @@ void DragonTalon::ConfigMotionAcceleration
 	float maxMotionAcceleration
 )
 {
-	m_talon->ConfigMotionAcceleration((maxMotionAcceleration / 360.0) * (m_countsPerRev / 10.0) / m_gearRatio, 0);
+    int sensorUnitsPer100msPerSec = static_cast<int>( (maxMotionAcceleration / 360.0) * (m_countsPerRev / 10.0) / m_gearRatio );
+	m_talon->ConfigMotionAcceleration( sensorUnitsPer100msPerSec, 0);
 }
 
 //need to change
@@ -183,7 +184,8 @@ void DragonTalon::ConfigMotionCruiseVelocity
 	float maxMotionCruiseVelocity
 )
 {
-	m_talon->ConfigMotionCruiseVelocity((maxMotionCruiseVelocity / 360.0) * (m_countsPerRev / 10.0) / m_gearRatio, 0);
+    int sensorUnitsPer100msPerSec = static_cast<int>( (maxMotionCruiseVelocity / 360.0) * (m_countsPerRev / 10.0) / m_gearRatio );
+	m_talon->ConfigMotionCruiseVelocity( sensorUnitsPer100msPerSec, 0);
 }
 
 void DragonTalon::ConfigPeakOutput

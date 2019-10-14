@@ -24,8 +24,8 @@ class MotorDefn
 {
     public:
 
-        MotorDefn() = delete;
-        virtual ~MotorDefn() = delete;
+        MotorDefn() = default;
+        virtual ~MotorDefn() = default;
 
 
         //-----------------------------------------------------------------------
@@ -35,7 +35,7 @@ class MotorDefn
         // Returns:     DragonTalon*        motor controller (or nullptr if XML
         //                                  is ill-formed
         //-----------------------------------------------------------------------
-        static IDragonMotorController* ParseXML
+        IDragonMotorController* ParseXML
         (
             pugi::xml_node      motorNode
         );

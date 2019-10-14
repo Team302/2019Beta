@@ -55,23 +55,28 @@ LED* LEDFactory::GetLED
 
 LED* LEDFactory::CreateLED
 (
-LEDFactory::LED_USAGE       usage,
-int CANId
+    LEDFactory::LED_USAGE       usage,
+    int CANId
 )
 {
+    LED* output = nullptr;
     switch(usage)
     {
         case LEDFactory::UNDER_FRONT:
             m_ledUnderFront = new LED(CANId);
+            output = m_ledUnderFront;
             break;
         case LEDFactory::UNDER_BACK:
             m_ledUnderBack = new LED(CANId);
+            output = m_ledUnderBack;
             break;
         case LEDFactory::TOP:
             m_ledTop = new LED(CANId);
+            output = m_ledTop;
             break;
         default:
             printf("Unknown LED usage in CreateLED LEDFactory.cpp\n");
             break;
     }
+    return output;
 }

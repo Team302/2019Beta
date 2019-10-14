@@ -74,7 +74,7 @@ void AnalogInputDefn::ParseXML
     pugi::xml_node      motorNode
 )
 {
-	DragonAnalogInput::ANALOG_SENSOR_TYPE type = DragonAnalogInput::UNKNOWN_ANALOG_TYPE;
+	std::string type;
 	int 						analogID = 0;
     float						voltageMin = 0.0;
     float						voltageMax = 5.0;
@@ -87,30 +87,7 @@ void AnalogInputDefn::ParseXML
     {
         if ( strcmp( attr.name(), "type" ) == 0 )
         {
-        	int iVal = attr.as_int();
-        	switch ( iVal )
-        	{
-                /**
-                case DragonAnalogInput::ANALOG_GENERAL:
-                    type = DragonAnalogInput::ANALOG_GENERAL;
-                    break;
-
-                case DragonAnalogInput::ANALOG_GYRO:
-                    type = DragonAnalogInput::ANALOG_GYRO;
-                    break;
-                **/
-                case DragonAnalogInput::EXTENDER_POTENTIOMETER:
-                    type = DragonAnalogInput::EXTENDER_POTENTIOMETER;
-                    break;
-                /**
-                case DragonAnalogInput::PRESSURE_GAUGE:
-                    type = DragonAnalogInput::PRESSURE_GAUGE;
-                    break;
-                **/
-                default:
-                    printf( "==>> AnalogInputDefn::ParseXML: invalid type %d \n", iVal );
-                    break;
-        	}
+            type = attr.as_string();
         }
         else if ( strcmp( attr.name(), "analogId" ) == 0 )
         {

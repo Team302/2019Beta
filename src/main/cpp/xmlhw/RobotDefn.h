@@ -34,13 +34,13 @@
 class RobotDefn
 {
     public:
-        RobotDefn() = delete;
-        virtual ~RobotDefn() = delete;
+        RobotDefn() = default;
+        virtual ~RobotDefn() = default;
 
         ///================================================================================================
         /// Method:      ParseXML
         /// Description: Parse a robot.xml file
         /// Returns:     void
         ///================================================================================================
-        static void ParseXML();
+        void ParseXML();
 };

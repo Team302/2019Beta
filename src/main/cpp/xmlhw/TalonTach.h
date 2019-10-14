@@ -22,15 +22,15 @@ class TalonTachDefn
 {
     public:
 
-        TalonTachDefn() = delete; 
-        virtual ~TalonTachDefn() = delete;
+        TalonTachDefn() = default;
+        virtual ~TalonTachDefn() = default;
 
-                //-----------------------------------------------------------------------
+        //-----------------------------------------------------------------------
         // Method:      ParseXML
         // Description: Parse a TalonTach XML element 
         // Returns:     DragonTalonTach
         //-----------------------------------------------------------------------
-        static DragonTalonTach* ParseXML
+        DragonTalonTach* ParseXML
         (
             pugi::xml_node      talontachNode
         );

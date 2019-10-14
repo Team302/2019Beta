@@ -70,7 +70,7 @@ class DragonGamepad : public IDragonGamePad
     ANALOG_BUTTON_IDENTIFIER button
   );
 
-  float GetAxisValue
+  double GetAxisValue
   (
     AXIS_IDENTIFIER axis
   ) const override;

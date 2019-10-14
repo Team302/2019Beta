@@ -39,8 +39,8 @@
 class MechanismDefn
 {
     public:
-        MechanismDefn() = delete;
-        virtual ~MechanismDefn() = delete;
+        MechanismDefn() = default;
+        virtual ~MechanismDefn() = default;
 
 
     	///================================================================================================
@@ -49,7 +49,7 @@ class MechanismDefn
 		//				 the mechanism exists that can be retrieved from the factory.
     	/// Returns:     void
     	///================================================================================================
-        static void ParseXML
+        void ParseXML
         (
             pugi::xml_node      mechanismNode
         );

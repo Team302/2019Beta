@@ -13,8 +13,8 @@ class LidarLiteDefn
 {
         public:
 
-            LidarLiteDefn() = delete;
-            virtual ~LidarLiteDefn() = delete;
+            LidarLiteDefn() = default;
+            virtual ~LidarLiteDefn() = default;
 
 
             //-----------------------------------------------------------------------
@@ -23,8 +23,8 @@ class LidarLiteDefn
         //              its definition..
         // Returns:     void
         //-----------------------------------------------------------------------
-        //static DragonLidarLite* ParseXML
-        static void ParseXML
+        //DragonLidarLite* ParseXML
+        void ParseXML
         (
             pugi::xml_node  lidarLiteNode
         );

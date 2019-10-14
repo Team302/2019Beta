@@ -19,7 +19,7 @@ class DragonAnalogInput : AnalogInput
 			EXTENDER_POTENTIOMETER,
 //			ANALOG_GENERAL,
 //			ANALOG_GYRO,
-//			PRESSURE_GAUGE,
+			PRESSURE_GAUGE,
 			MAX_ANALOG_TYPES
 		};
 
@@ -34,7 +34,7 @@ class DragonAnalogInput : AnalogInput
 		    float						outputMax
 		);
 		virtual ~DragonAnalogInput();
-		float GetInterpolatedValue() const;
+		double GetInterpolatedValue() const;
 
 	private:
 		ANALOG_SENSOR_TYPE				m_type;

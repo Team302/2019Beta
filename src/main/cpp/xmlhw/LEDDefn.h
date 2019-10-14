@@ -19,6 +19,9 @@
 class LEDDefn
 {
 public:
+    LEDDefn() = default;
+    virtual ~LEDDefn() = default;
+
 /*----------------------------------------------------------------------------------------
 Method:     ParseXML
 Description: Parse a pcm XML element and create a LED* from its definition
@@ -39,7 +42,7 @@ Description: Parse a pcm XML element and create a LED* from its definition
 
 
 
-    static void ParseXML
+    void ParseXML
     (
         pugi::xml_node      LEDNode
     );

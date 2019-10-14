@@ -26,6 +26,7 @@
 
 // C++ Includes
 #include <iostream>
+#include <memory>
 
 // FRC includes
 #include <frc/smartdashboard/SmartDashboard.h>
@@ -44,7 +45,8 @@ void Robot::RobotInit()
     // Read the robot definition from the xml configuration files and
     // create the hardware (chassis + mechanisms along with their talons,
     // solenoids, digital inputs, analog inputs, etc.
-    RobotDefn::ParseXML();
+    std::unique_ptr<RobotDefn>  robotXml = std::make_unique<RobotDefn>();
+    robotXml->ParseXML();
 }
 
 ///-----------------------------------------------------------------------

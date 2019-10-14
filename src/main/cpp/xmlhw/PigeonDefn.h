@@ -25,8 +25,8 @@ class PigeonDefn
 {
     public:
 
-        PigeonDefn() = delete;
-        virtual ~PigeonDefn() = delete;
+        PigeonDefn() = default;
+        virtual ~PigeonDefn() = default;
 
 
         //-----------------------------------------------------------------------
@@ -35,8 +35,8 @@ class PigeonDefn
         //              its definition.
         // Returns:     DragonPigeon*       pigeon IMU (or nullptr if XML is ill-formed)
         //-----------------------------------------------------------------------
-        //static DragonPigeon* ParseXML
-        static void ParseXML
+        //DragonPigeon* ParseXML
+        void ParseXML
         (
             pugi::xml_node      pigeonNode
         );

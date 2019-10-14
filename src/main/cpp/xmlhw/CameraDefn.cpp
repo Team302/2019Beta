@@ -12,6 +12,7 @@
 
 //WPILIB includes
 #include <cameraserver/CameraServer.h>
+#include <cscore_cpp.h>
 
 using namespace frc;
 

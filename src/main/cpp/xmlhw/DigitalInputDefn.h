@@ -24,6 +24,9 @@ class DigitalInputDefn
 {
     public:
 
+        DigitalInputDefn() = default;
+        virtual ~DigitalInputDefn() = default;
+
         //-----------------------------------------------------------------------
         // Method:      ParseXML
         // Description: Parse a motor XML element and create a DragonTalon from
@@ -60,7 +63,7 @@ class DigitalInputDefn
         //
         // Returns:     DragonDigitalInput*
         //-----------------------------------------------------------------------
-        static DragonDigitalInput* ParseXML
+        DragonDigitalInput* ParseXML
         (
             pugi::xml_node      DigitalNode
         );

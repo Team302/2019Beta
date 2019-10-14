@@ -98,14 +98,14 @@ DragonXBox::~DragonXBox()
 ///-------------------------------------------------------------------------------------------------
 /// Method:      GetAxisValue
 /// Description: Return the current value (between -1.0 and 1.0) for the requested axis.
-/// Returns:     float   - current axis value
+/// Returns:     double   - current axis value
 ///-------------------------------------------------------------------------------------------------
-float DragonXBox::GetAxisValue
+double DragonXBox::GetAxisValue
 (
     AXIS_IDENTIFIER    axis// <I> - axis identifier to read
 ) const
 {
-    float value = 0.0;
+    double value = 0.0;
     if ( m_axis[axis] != nullptr )
     {
         value = m_axis[axis]->GetAxisValue();

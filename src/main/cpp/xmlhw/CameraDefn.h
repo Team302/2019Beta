@@ -26,16 +26,14 @@ class CameraDefn
                 KGRAY
         };
 
-        CameraDefn() = delete;
-        virtual ~CameraDefn() = delete;
+        CameraDefn() = default;
+        virtual ~CameraDefn() = default;
     /*Method: ParseXML
      *Description: Parses a Camera XML element
      * Returns: void
      *
      */
-        static void ParseXML(
-        pugi::xml_node	cameraNode
-                );
+        void ParseXML( pugi::xml_node	cameraNode  );
 private:
 
 };

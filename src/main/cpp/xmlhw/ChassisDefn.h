@@ -43,8 +43,8 @@
 class ChassisDefn
 {
 	public:
-		ChassisDefn() = delete;
-		virtual ~ChassisDefn() = delete;
+		ChassisDefn() = default;
+		virtual ~ChassisDefn() = default;
 
     	///================================================================================================
     	/// Method:      ParseXML
@@ -52,7 +52,7 @@ class ChassisDefn
 		//				 a dragon chassis exists that can be retrieved from the factory.
     	/// Returns:     void
     	///================================================================================================
-		static void ParseXML
+		void ParseXML
 		(
 			pugi::xml_node      chassisNode
 		);

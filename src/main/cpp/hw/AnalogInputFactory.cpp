@@ -24,7 +24,10 @@
 ///========================================================================================================
 
 // C++ Includes
+#include <algorithm>
 #include <iostream>
+#include <locale>
+#include <string>
 
 // FRC includes
 
@@ -63,7 +66,7 @@ AnalogInputFactory* AnalogInputFactory::GetFactory()
 ///=====================================================================================
 DragonAnalogInput* AnalogInputFactory::CreateInput
 (
-    DragonAnalogInput::ANALOG_SENSOR_TYPE			type,
+    std::string                         			type,
     int 						                    analogID,
     float						                    voltageMin,
     float						                    voltageMax,
@@ -71,87 +74,33 @@ DragonAnalogInput* AnalogInputFactory::CreateInput
     float						                    outputMax
 )
 {
-    DragonAnalogInput* sensor = nullptr;
-    switch ( type )
-    {
-        /**
-        case DragonAnalogInput::ANALOG_GENERAL:
-            sensor = m_general == nullptr ? new DragonAnalogInput( type, analogID, voltageMin, voltageMax, outputMin, outputMax ) : m_general;
-            break;
+    std::unique_ptr<DragonAnalogInput> sensor;
+    std::string localType = type;
+    std::transform( localType.begin(), localType.end(), localType.begin(), [](unsigned char c){ return std::toupper( c ); } );
 
-        case DragonAnalogInput::ANALOG_GYRO:
-            sensor = m_gyro = nullptr ? new DragonAnalogInput( type, analogID, voltageMin, voltageMax, outputMin, outputMax ) : m_gyro;
-            break;
-        **/
-        case DragonAnalogInput::EXTENDER_POTENTIOMETER:
-            sensor = m_potentiometer == nullptr ? new DragonAnalogInput( type, analogID, voltageMin, voltageMax, outputMin, outputMax ) : m_potentiometer;
-            // TODO: construct an angle sensor
-            break;
-        /**
-        case DragonAnalogInput::PRESSURE_GAUGE:
-            sensor = m_pressureGauge == nullptr ? new DragonAnalogInput( type, analogID, voltageMin, voltageMax, outputMin, outputMax ) : m_pressureGauge;
-            break;
-        **/
-        default:
-            std::cout << "==>>AnalogInputFactory::CreateInput unknown type " << type << std::endl;
-            break;
+    if ( localType.compare( "EXTENDER_POTENTIOMETER" ) == 0  )
+    {
+        sensor = std::make_unique<DragonAnalogInput>( DragonAnalogInput::ANALOG_SENSOR_TYPE::EXTENDER_POTENTIOMETER,
+                                                      analogID,
+                                                      voltageMin,
+                                                      voltageMax,
+                                                      outputMin,
+                                                      outputMax );
+        // TODO: Create an angle sensor + decorate it as a position sensor
     }
-    return sensor;
-}
-
-///=====================================================================================
-/// Method:         GetInput
-/// Description:    Get the requested analog input
-/// Returns:        DragonAnalogInput*     pointer to the analog input or nullptr if it 
-///                                 	   doesn't exist 
-///=====================================================================================
-DragonAnalogInput* AnalogInputFactory::GetInput
-(
-    DragonAnalogInput::ANALOG_SENSOR_TYPE			type
-)
-{
-    DragonAnalogInput* sensor = nullptr;
-    switch ( type )
+    else if ( localType.compare( "PRESSURE_GAUGE" ) == 0 )
     {
-        case DragonAnalogInput::EXTENDER_POTENTIOMETER:
-            sensor = m_potentiometer;
-            // TODO: construct an angle sensor
-            break;
-        default:
-            std::cout << "==>>AnalogInputFactory::GetInput unknown type " << type << std::endl;
-            break;
+        sensor = std::make_unique<DragonAnalogInput> ( DragonAnalogInput::ANALOG_SENSOR_TYPE::PRESSURE_GAUGE,
+                                                       analogID,
+                                                       voltageMin,
+                                                       voltageMax,
+                                                       outputMin,
+                                                       outputMax );
     }
-    return sensor;
-}
-
-AnalogInputFactory::AnalogInputFactory()
-{
-    m_general = nullptr;
-    m_gyro = nullptr;
-    m_potentiometer = nullptr;
-    m_pressureGauge = nullptr;
-}
-
-AnalogInputFactory::~AnalogInputFactory()
-{
-    if ( m_general != nullptr )
+    else
     {
-        delete m_general;
-        m_general = nullptr;
-    }    
-    if ( m_gyro != nullptr )
-    {
-        delete m_gyro;
-        m_gyro = nullptr;
-    }    
-    if ( m_potentiometer != nullptr )
-    {
-        delete m_potentiometer;
-        m_potentiometer = nullptr;
-    }    
-    if ( m_pressureGauge != nullptr )
-    {
-        delete m_pressureGauge;
-        m_pressureGauge = nullptr;
+        std::cout << "==>> AnalogInputFactory::CreateInput: unknown type " << type.c_str() << std::endl;
     }
+    return sensor.release();
 }
+

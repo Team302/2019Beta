@@ -26,6 +26,9 @@ class PDPDefn
 {
 public:
 
+    PDPDefn() = default;
+    virtual ~PDPDefn() = default;
+
     //-----------------------------------------------------------------------
     // Method:      ParseXML
     // Description: Parse a pcm XML element and create a PowerDistributionPanel*
@@ -48,7 +51,7 @@ public:
     // Returns:     PowerDistributionPanel*        PDP object (or nullptr if XML
     //                                             is ill-formed
     //-----------------------------------------------------------------------
-    static PowerDistributionPanel* ParseXML
+    PowerDistributionPanel* ParseXML
     (
         pugi::xml_node      PDPNode
     );

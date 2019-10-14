@@ -21,8 +21,8 @@
 class LidarDefn
 {
     public:
-        LidarDefn() = delete;
-        virtual ~LidarDefn() = delete;
+        LidarDefn() = default;
+        virtual ~LidarDefn() = default;
 
         //-----------------------------------------------------------------------
         // Method:      ParseXML
@@ -48,7 +48,7 @@ class LidarDefn
         //>
         // Returns  void
         //-----------------------------------------------------------------------
-        static void ParseXML
+        void ParseXML
         (
             pugi::xml_node      lidarNode
         );

@@ -32,6 +32,7 @@
 
 // C++ Includes
 #include <iostream>
+#include <memory>
 
 // FRC includes
 
@@ -67,6 +68,15 @@ void RobotDefn::ParseXML()
     // if it is good
     if (result)
     {
+        std::unique_ptr<ChassisDefn> chassisXML;
+        std::unique_ptr<MechanismDefn> mechanismXML;
+     //   std::unique_ptr<PCMDefn> pcmXML;
+        std::unique_ptr<PDPDefn> pdpXML;
+        std::unique_ptr<PigeonDefn> pigeonXML;
+        std::unique_ptr<LidarDefn> lidarXML;
+        std::unique_ptr<LEDDefn> ledXML;
+        std::unique_ptr<CameraDefn> cameraXML;
+
         // get the root node <robot>
         pugi::xml_node parent = doc.root();
         for (pugi::xml_node node = parent.first_child(); node; node = node.next_sibling())
@@ -76,7 +86,11 @@ void RobotDefn::ParseXML()
             {
                 if (strcmp(child.name(), "chassis") == 0)
                 {
-                    ChassisDefn::ParseXML(child);
+                    if ( chassisXML == nullptr )
+                    {
+                        chassisXML = std::make_unique<ChassisDefn>();
+                    }
+                    chassisXML->ParseXML( child );
                 }
                 else if (strcmp(child.name(), "mechanism") == 0)
                 {

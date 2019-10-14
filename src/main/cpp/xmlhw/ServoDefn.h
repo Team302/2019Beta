@@ -18,8 +18,8 @@
 class ServoDefn
 {
     public:
-        ServoDefn() = delete;
-        virtual ~ServoDefn() = delete;
+        ServoDefn() = default;
+        virtual ~ServoDefn() = default;
 
         //-----------------------------------------------------------------------
         // Method:      ParseXML
@@ -27,7 +27,7 @@ class ServoDefn
         //              its definition.
         // Returns:     void
         //-----------------------------------------------------------------------
-        static void ParseXML
+        void ParseXML
         (
             pugi::xml_node      ServoNode
         );

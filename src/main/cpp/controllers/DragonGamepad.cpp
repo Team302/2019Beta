@@ -78,7 +78,7 @@ DragonGamepad::~DragonGamepad()
     m_gamepad = nullptr;
 }
 
-float DragonGamepad::GetAxisValue
+double DragonGamepad::GetAxisValue
 (
     AXIS_IDENTIFIER axis
 ) const
@@ -200,7 +200,7 @@ double DragonGamepad::GetRawAxis
     AXIS_IDENTIFIER axis
 )
 {
-    float value = 0.0;
+    double value = 0.0;
     if ( m_axis[axis] != nullptr )
     {
         value = m_axis[axis]->GetAxisValue();

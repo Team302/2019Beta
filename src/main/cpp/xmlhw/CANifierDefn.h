@@ -18,16 +18,14 @@ class CANifierDefn
 {
     public:
 
-        CANifierDefn() = delete;
-        virtual ~CANifierDefn() = delete;
+        CANifierDefn() = default;
+        virtual ~CANifierDefn() = default;
     /*Method: ParseXML
      *Description: Parses a CANifier XML element
      * Returns: void
      *
      */
-        static ctre::phoenix::CANifier* ParseXML(
-        pugi::xml_node	canifierNode
-                );
+        ctre::phoenix::CANifier* ParseXML( pugi::xml_node	canifierNode  );
 private:
 
 };

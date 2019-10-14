@@ -49,9 +49,9 @@ class DragonXBox : public IDragonGamePad
         ///-------------------------------------------------------------------------------------------------
         /// Method:      GetAxisValue
         /// Description: Return the current value (between -1.0 and 1.0) for the requested axis.
-        /// Returns:     float   - current axis value
+        /// Returns:     double   - current axis value
         ///-------------------------------------------------------------------------------------------------
-        float GetAxisValue
+        double GetAxisValue
         (
             AXIS_IDENTIFIER    axis        // <I> - axis identifier to read
         ) const override;

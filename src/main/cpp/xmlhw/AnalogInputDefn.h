@@ -65,8 +65,8 @@ class AnalogInputDefn
 {
     public:
 
-		AnalogInputDefn() = delete;
-        virtual ~AnalogInputDefn() = delete;
+		AnalogInputDefn() = default;
+        virtual ~AnalogInputDefn() = default;
 
 
         ///-----------------------------------------------------------------------
@@ -75,7 +75,7 @@ class AnalogInputDefn
         ///              its definition.
         /// Returns:     void
         ///-----------------------------------------------------------------------
-        static void ParseXML
+        void ParseXML
         (
             pugi::xml_node      sensorNode
         );

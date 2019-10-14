@@ -52,7 +52,7 @@ class AnalogInputFactory
 		///=====================================================================================
 		DragonAnalogInput* CreateInput
 		(
-			DragonAnalogInput::ANALOG_SENSOR_TYPE			type,
+			std::string  			                        type,
 			int 						                    analogID,
 		    float						                    voltageMin,
 		    float						                    voltageMax,
@@ -60,27 +60,11 @@ class AnalogInputFactory
 		    float						                    outputMax
 		);
 
-		///=====================================================================================
-		/// Method:         GetInput
-		/// Description:    Get the requested analog input
-		/// Returns:        DragonAnalogInput*     pointer to the analog input or nullptr if it 
-		///                                 	   doesn't exist 
-		///=====================================================================================
-		DragonAnalogInput* GetInput
-		(
-			DragonAnalogInput::ANALOG_SENSOR_TYPE			type
-		);
-
 
 	private:
-		AnalogInputFactory();
-		~AnalogInputFactory();
+		AnalogInputFactory() = default;
+		virtual ~AnalogInputFactory() = default;
 
 		static AnalogInputFactory*	m_factory;
 
-		DragonAnalogInput* m_general;
-		DragonAnalogInput* m_gyro;
-		DragonAnalogInput* m_potentiometer;
-		DragonAnalogInput* m_pressureGauge;
-			
 };

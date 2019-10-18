@@ -48,12 +48,16 @@
 
 #include <subsys/IMechanism.h>
 
+#include <utils/Logger.h>
+
 #include <xmlhw/MechanismDefn.h>
 
 // Third Party Includes
 #include <pugixml/pugixml.hpp>
 
 using namespace frc;
+using namespace pugi;
+using namespace std;
 
 
 ///-----------------------------------------------------------------------
@@ -85,7 +89,7 @@ using namespace frc;
 ///-----------------------------------------------------------------------
 void MechanismDefn::ParseXML
 (
-    pugi::xml_node      mechanismNode
+    xml_node      mechanismNode
 )
 {
     // initialize attributes
@@ -93,14 +97,18 @@ void MechanismDefn::ParseXML
 
     bool hasError       = false;
 
+    unique_ptr<MotorDefn> motorXML;
+    unique_ptr<AnalogInputDefn> analogXML;
+    unique_ptr<DigitalInputDefn> digitalXML;
+    unique_ptr<ServoDefn> servoXML;
+
     // Parse/validate xml
-    for (pugi::xml_attribute attr = mechanismNode.first_attribute(); attr; attr = attr.next_attribute())
+    for (xml_attribute attr = mechanismNode.first_attribute(); attr; attr = attr.next_attribute())
     {
         if ( strcmp( attr.name(), "type" ) == 0 )
         {
             
             int iVal = attr.as_int();
-            printf("mech: %d \n", iVal);
             switch ( iVal )
             {
                 case IMechanism::WRIST:
@@ -142,23 +150,71 @@ void MechanismDefn::ParseXML
     }
 
         // Parse/validate subobject xml
-    for (pugi::xml_node child = mechanismNode.first_child(); child; child = child.next_sibling())
+    for (xml_node child = mechanismNode.first_child(); child; child = child.next_sibling())
     {
         if ( strcmp( child.name(), "motor") == 0 )
         {
-            MotorDefn::ParseXML( child );
+            if ( motorXML == nullptr )
+            {
+                motorXML = make_unique<MotorDefn>();
+            }
+
+            if ( motorXML != nullptr )
+            {
+                motorXML->ParseXML(child);
+            }
+            else
+            {
+                Logger::GetLogger()->Log( "MechanismDefn", "unable to create MotorDefn" );
+            }
         }
         else if ( strcmp( child.name(), "analogInput") == 0 )
         {
-            AnalogInputDefn::ParseXML( child );
+            if ( analogXML == nullptr )
+            {
+                analogXML = make_unique<AnalogInputDefn>();
+            }
+
+            if ( analogXML != nullptr )
+            {
+                analogXML->ParseXML(child);
+            }
+            else
+            {
+                Logger::GetLogger()->Log( "MechanismDefn", "unable to create AnalogInputDefn" );
+            }
         }
         else if ( strcmp( child.name(), "digitalInput") == 0 )
         {
-            DigitalInputDefn::ParseXML( child );
+            if ( digitalXML == nullptr )
+            {
+                digitalXML = make_unique<DigitalInputDefn>();
+            }
+
+            if ( digitalXML != nullptr )
+            {
+                digitalXML->ParseXML(child);
+            }
+            else
+            {
+                Logger::GetLogger()->Log( "MechanismDefn", "unable to create DigitalInputDefn" );
+            }
         }
         else if ( strcmp( child.name(), "servo") == 0 )
         {
-            ServoDefn::ParseXML( child );
+            if ( servoXML == nullptr )
+            {
+                servoXML = make_unique<ServoDefn>();
+            }
+
+            if ( servoXML != nullptr )
+            {
+                servoXML->ParseXML(child);
+            }
+            else
+            {
+                Logger::GetLogger()->Log( "MechanismDefn", "unable to create ServoDefn" );
+            }
         }
         else
         {

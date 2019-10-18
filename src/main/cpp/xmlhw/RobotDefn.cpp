@@ -1,18 +1,18 @@
 
-///====================================================================================================================================================
-/// Copyright 2019 Lake Orion Robobitcs FIRST Team 302
-///
-/// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
-/// to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
-/// and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-///
-/// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-///
-/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-/// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-/// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
-/// OR OTHER DEALINGS IN THE SOFTWARE.
-///====================================================================================================================================================
+//====================================================================================================================================================
+// Copyright 2019 Lake Orion Robobitcs FIRST Team 302
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
+// to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+// and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+// OR OTHER DEALINGS IN THE SOFTWARE.
+//====================================================================================================================================================
 
 ///========================================================================================================
 /// RobotDefn.cpp
@@ -46,11 +46,16 @@
 #include <xmlhw/LEDDefn.h>
 #include <xmlhw/PDPDefn.h>
 #include <xmlhw/PigeonDefn.h>
+#include <utils/Logger.h>
 
 // Third Party Includes
 #include <pugixml/pugixml.hpp>
 
 using namespace frc;
+using namespace pugi;
+using namespace std;
+
+
 //-----------------------------------------------------------------------
 // Method:      ParseXML
 // Description: Parse a robot.xml file
@@ -62,39 +67,58 @@ void RobotDefn::ParseXML()
     const char *filename = "/home/lvuser/config/robot.xml";
 
     // load the xml file into memory (parse it)
-    pugi::xml_document doc;
-    pugi::xml_parse_result result = doc.load_file(filename);
+    xml_document doc;
+    xml_parse_result result = doc.load_file(filename);
 
     // if it is good
     if (result)
     {
-        std::unique_ptr<ChassisDefn> chassisXML;
-        std::unique_ptr<MechanismDefn> mechanismXML;
-     //   std::unique_ptr<PCMDefn> pcmXML;
-        std::unique_ptr<PDPDefn> pdpXML;
-        std::unique_ptr<PigeonDefn> pigeonXML;
-        std::unique_ptr<LidarDefn> lidarXML;
-        std::unique_ptr<LEDDefn> ledXML;
-        std::unique_ptr<CameraDefn> cameraXML;
+        unique_ptr<ChassisDefn> chassisXML;
+        unique_ptr<MechanismDefn> mechanismXML;
+     //   unique_ptr<PCMDefn> pcmXML;
+        unique_ptr<PDPDefn> pdpXML;
+        unique_ptr<PigeonDefn> pigeonXML;
+        unique_ptr<LidarDefn> lidarXML;
+        unique_ptr<LEDDefn> ledXML;
+        unique_ptr<CameraDefn> cameraXML;
 
         // get the root node <robot>
-        pugi::xml_node parent = doc.root();
-        for (pugi::xml_node node = parent.first_child(); node; node = node.next_sibling())
+        xml_node parent = doc.root();
+        for (xml_node node = parent.first_child(); node; node = node.next_sibling())
         {
             // loop through the direct children of <robot> and call the appropriate parser
-            for (pugi::xml_node child = node.first_child(); child; child = child.next_sibling())
+            for (xml_node child = node.first_child(); child; child = child.next_sibling())
             {
                 if (strcmp(child.name(), "chassis") == 0)
                 {
                     if ( chassisXML == nullptr )
                     {
-                        chassisXML = std::make_unique<ChassisDefn>();
+                        chassisXML = make_unique<ChassisDefn>();
                     }
-                    chassisXML->ParseXML( child );
+                    if ( chassisXML != nullptr )
+                    {
+                        chassisXML->ParseXML(child);
+                    }
+                    else
+                    {
+                        Logger::GetLogger()->Log( "RobotDefn::ParseXML", "Unable to create ChassisDefn" );
+                    }
+
                 }
                 else if (strcmp(child.name(), "mechanism") == 0)
                 {
-                    MechanismDefn::ParseXML(child);
+                    if ( mechanismXML == nullptr )
+                    {
+                        mechanismXML = make_unique<MechanismDefn>();
+                    }
+                    if ( mechanismXML != nullptr )
+                    {
+                        mechanismXML->ParseXML(child);
+                    }
+                    else
+                    {
+                        Logger::GetLogger()->Log( "RobotDefn::ParseXML", "Unable to create MechanismDefn" );
+                    }
                 }
                 else if ( strcmp( child.name(), "pcm") == 0 )
                 {
@@ -102,35 +126,106 @@ void RobotDefn::ParseXML()
                 }
                 else if (strcmp(child.name(), "pdp") == 0)
                 {
-                    PDPDefn::ParseXML( child );
+                    if ( pdpXML == nullptr )
+                    {
+                        pdpXML = make_unique<PDPDefn>();
+                    }
+                    if ( pdpXML != nullptr )
+                    {
+                        pdpXML->ParseXML(child);
+                    }
+                    else
+                    {
+                        Logger::GetLogger()->Log( "RobotDefn::ParseXML", "Unable to create PDPDefn" );
+                    }
                 }
                 else if (strcmp(child.name(), "pigeon") == 0)
                 {
-                    PigeonDefn::ParseXML(child);
+                    if ( pigeonXML == nullptr )
+                    {
+                        pigeonXML = make_unique<PigeonDefn>();
+                    }
+                    if ( pigeonXML != nullptr )
+                    {
+                        pigeonXML->ParseXML(child);
+                    }
+                    else
+                    {
+                        Logger::GetLogger()->Log( "RobotDefn::ParseXML", "Unable to create PigeonDefn" );
+                    }
                 }
                 else if ( strcmp( child.name(), "lidar") == 0 )
                 {
-                     LidarDefn::ParseXML( child );
+                    if ( lidarXML == nullptr )
+                    {
+                        lidarXML = make_unique<LidarDefn>();
+                    }
+                    if ( lidarXML != nullptr )
+                    {
+                        lidarXML->ParseXML(child);
+                    }
+                    else
+                    {
+                        Logger::GetLogger()->Log( "RobotDefn::ParseXML", "Unable to create LidarDefn" );
+                    }
                 }
                 else if (strcmp(child.name(), "camera") == 0)
                 {
-                    CameraDefn::ParseXML( child );
+                    if ( cameraXML == nullptr )
+                    {
+                        cameraXML = make_unique<CameraDefn>();
+                    }
+                    if ( cameraXML != nullptr )
+                    {
+                        cameraXML->ParseXML(child);
+                    }
+                    else
+                    {
+                        Logger::GetLogger()->Log( "RobotDefn::ParseXML", "Unable to create CameeraDefn" );
+                    }
                 }
                 else if (strcmp(child.name(), "led") == 0)
                 {
-                    LEDDefn::ParseXML(child);
+                    if ( ledXML == nullptr )
+                    {
+                        ledXML = make_unique<LEDDefn>();
+                    }
+                    if ( ledXML != nullptr )
+                    {
+                        ledXML->ParseXML(child);
+                    }
+                    else
+                    {
+                        Logger::GetLogger()->Log( "RobotDefn::ParseXML", "Unable to create LDEDefn" );
+                    }
                 }
                 else
                 {
-                    std::cout << "==>>RobotDefn::ParseXML unknown robot child " << child.name() << std::endl;
+                    string msg = "unknown child ";
+                    msg += child.name();
+                    Logger::GetLogger()->Log( "RobotDefn::ParseXML", msg );
                 }
             }
         }
     }
     else
     {
-        std::cout << "XML [" << filename << "] parsed with errors, attr value: [" << doc.child("prototype").attribute("attr").value() << "]" << std::endl;
-        std::cout << "Error description: " << result.description() << std::endl;
-        std::cout << "Error offset: " << result.offset << " (error at [..." << (filename + result.offset) << "]" << std::endl;
+        string msg = "XML [";
+        msg += filename;
+        msg += "] parsed with errors, attr value: [";
+        msg += doc.child( "prototype" ).attribute( "attr" ).value();
+        msg += "]";
+        Logger::GetLogger()->Log( "RobotDefn::ParseXML (1) ", msg );
+
+        msg = "Error description: ";
+        msg += result.description();
+        Logger::GetLogger()->Log( "RobotDefn::ParseXML (2) ", msg );
+
+        msg = "Error offset: ";
+        msg += result.offset;
+        msg += " error at ...";
+        msg += filename;
+        msg += result.offset;
+        Logger::GetLogger()->Log( "RobotDefn::ParseXML (3) ", msg );
     }
 }

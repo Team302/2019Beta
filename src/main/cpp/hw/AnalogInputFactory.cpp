@@ -1,18 +1,18 @@
 
-///====================================================================================================================================================
-/// Copyright 2019 Lake Orion Robobitcs FIRST Team 302
-///
-/// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
-/// to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
-/// and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-///
-/// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-///
-/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-/// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-/// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
-/// OR OTHER DEALINGS IN THE SOFTWARE.
-///====================================================================================================================================================
+//====================================================================================================================================================
+// Copyright 2019 Lake Orion Robobitcs FIRST Team 302
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
+// to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+// and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+// OR OTHER DEALINGS IN THE SOFTWARE.
+//====================================================================================================================================================
 
 ///========================================================================================================
 /// AnalogInputFactory.cpp
@@ -40,7 +40,7 @@
 // Third Party Includes
 
 
-
+using namespace std;
 
 ///=====================================================================================
 /// Method:         GetFactory
@@ -66,7 +66,7 @@ AnalogInputFactory* AnalogInputFactory::GetFactory()
 ///=====================================================================================
 DragonAnalogInput* AnalogInputFactory::CreateInput
 (
-    std::string                         			type,
+    string                         			        type,
     int 						                    analogID,
     float						                    voltageMin,
     float						                    voltageMax,
@@ -74,13 +74,12 @@ DragonAnalogInput* AnalogInputFactory::CreateInput
     float						                    outputMax
 )
 {
-    std::unique_ptr<DragonAnalogInput> sensor;
-    std::string localType = type;
-    std::transform( localType.begin(), localType.end(), localType.begin(), [](unsigned char c){ return std::toupper( c ); } );
-
+    unique_ptr<DragonAnalogInput> sensor;
+    string localType = type;
+    transform( localType.begin(), localType.end(), localType.begin(), toupper );
     if ( localType.compare( "EXTENDER_POTENTIOMETER" ) == 0  )
     {
-        sensor = std::make_unique<DragonAnalogInput>( DragonAnalogInput::ANALOG_SENSOR_TYPE::EXTENDER_POTENTIOMETER,
+        sensor = make_unique<DragonAnalogInput>( DragonAnalogInput::ANALOG_SENSOR_TYPE::EXTENDER_POTENTIOMETER,
                                                       analogID,
                                                       voltageMin,
                                                       voltageMax,
@@ -90,7 +89,7 @@ DragonAnalogInput* AnalogInputFactory::CreateInput
     }
     else if ( localType.compare( "PRESSURE_GAUGE" ) == 0 )
     {
-        sensor = std::make_unique<DragonAnalogInput> ( DragonAnalogInput::ANALOG_SENSOR_TYPE::PRESSURE_GAUGE,
+        sensor = make_unique<DragonAnalogInput> ( DragonAnalogInput::ANALOG_SENSOR_TYPE::PRESSURE_GAUGE,
                                                        analogID,
                                                        voltageMin,
                                                        voltageMax,
@@ -99,7 +98,7 @@ DragonAnalogInput* AnalogInputFactory::CreateInput
     }
     else
     {
-        std::cout << "==>> AnalogInputFactory::CreateInput: unknown type " << type.c_str() << std::endl;
+        cout << "==>> AnalogInputFactory::CreateInput: unknown type " << type.c_str() << endl;
     }
     return sensor.release();
 }

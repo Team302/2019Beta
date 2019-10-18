@@ -47,12 +47,15 @@
 #include <xmlhw/ChassisDefn.h>
 #include <xmlhw/MotorDefn.h>
 #include <xmlhw/PIDDefn.h>
+#include <utils/Logger.h>
 
 // Third Party includes
 #include <pugixml/pugixml.hpp>
 
 
 using namespace frc;
+using namespace pugi;
+using namespace std;
 
 
 
@@ -64,7 +67,7 @@ using namespace frc;
 ///================================================================================================
 void ChassisDefn::ParseXML
 (
-	pugi::xml_node      chassisNode
+	xml_node      chassisNode
 )
 {
     float wheelDiameter	= 0.0;
@@ -75,7 +78,7 @@ void ChassisDefn::ParseXML
     //--------------------------------------------------------------------------------------------
     // process attributes
     //--------------------------------------------------------------------------------------------
-    for (pugi::xml_attribute attr = chassisNode.first_attribute(); attr; attr = attr.next_attribute())
+    for (xml_attribute attr = chassisNode.first_attribute(); attr; attr = attr.next_attribute())
     {
         if ( strcmp( attr.name(), "wheelDiameter" ) == 0 )
         {
@@ -91,28 +94,49 @@ void ChassisDefn::ParseXML
         }
         else
         {
-            std::cout << "==>> ChassisDefn:  Invalid attribute "  << attr.name() << "\n";
+            string msg = "Invalid attribute ";
+            msg += attr.name();
+            Logger::GetLogger()->Log( "ChassisDefn", msg );
             hasError = true;
         }
     }
 
+
     //--------------------------------------------------------------------------------------------
     // Process child element nodes
     //--------------------------------------------------------------------------------------------
+    std::unique_ptr<MotorDefn> motorXML;
+
     std::vector<PIDData*> pidControlVector;
-    for (pugi::xml_node child = chassisNode.first_child(); child; child = child.next_sibling())
+    for (xml_node child = chassisNode.first_child(); child; child = child.next_sibling())
     {
     	if ( strcmp( child.name(), "motor") == 0 )
     	{
-    		MotorDefn::ParseXML( child );
+    	    if ( motorXML == nullptr )
+            {
+    	        motorXML = make_unique<MotorDefn>();
+            }
+
+    	    if ( motorXML != nullptr )
+    	    {
+                motorXML->ParseXML(child);
+            }
+    	    else
+            {
+                Logger::GetLogger()->Log( "ChassisDefn", "unable to create MotorDefn" );
+    	    }
     	}
+    	/**
         else if ( strcmp( child.name(), "PID") == 0 )
         {
             pidControlVector.emplace_back( PIDDefn::ParseXML( child ) );
         }
+        **/
     	else
     	{
-            std::cout << "==>> ChassisDefn:  unknown child "  << child.name() << "\n";
+            string msg = "unknown child ";
+            msg += child.name();
+            Logger::GetLogger()->Log( "ChassisDefn", msg );
     	}
     }
 

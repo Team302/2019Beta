@@ -1,22 +1,50 @@
+
+//====================================================================================================================================================
+// Copyright 2019 Lake Orion Robotics FIRST Team 302
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
+// to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+// and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+// OR OTHER DEALINGS IN THE SOFTWARE.
+//====================================================================================================================================================
+
+///========================================================================================================
+/// MotorDefn.cpp
+///========================================================================================================
+///
+/// File Description:
+///     XML parsing for motor definitions.  This definition will construct the motor controllers.
+///     This parsing leverages the 3rd party Open Source Pugixml library (https://pugixml.org/).
+///
+///========================================================================================================
+
 // C++ Includes
 #include <iostream>
+#include <memory>
+#include <string>
 
 // FRC includes
-#include <frc/SmartDashboard/SmartDashboard.h>
 
 // Team 302 includes
-#include <xmlhw/MotorDefn.h>
 #include <hw/DragonTalon.h>
 #include <hw/DragonSparkMax.h>
 #include <hw/DragonMotorControllerFactory.h>
+#include <utils/HardwareIDValidation.h>
+#include <utils/Logger.h>
+
 
 // Third Party Includes
 #include <pugixml/pugixml.hpp>
 
-#include <ctre/phoenix/MotorControl/CAN/TalonSRX.h>
-#include <ctre/phoenix/MotorControl/FeedbackDevice.h>
-#include <rev/CANSparkMax.h>
-
+using namespace frc;
+using namespace pugi;
+using namespace std;
 
 //-----------------------------------------------------------------------
 // Method:      ParseXML
@@ -68,8 +96,7 @@
 //    ==================================================== -->
 //<!ELEMENT motor EMPTY>
 //<!ATTLIST motor
-//          usage             (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 |
-//                              10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 ) "0"
+//          usage             CDATA #REQUIRED
 //          canId             (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 |
 //                              10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 |
 //                              20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 |
@@ -77,7 +104,8 @@
 //                              40 | 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49 |
 //                              50 | 51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59 |
 //                              60 | 61 | 62 ) "0"
-//          type              CDATA #FIXED "cantalon"
+//          pdpID			  CDATA #IMPLIED
+//          type              CDATA #REQUIRED
 //          inverted          ( true | false ) "false"
 //          sensorInverted    ( true | false ) "false"
 //          feedbackDevice    ( -1 | 0  |  2 |  3 |  4 |  5 |  6 |  7 |  8 ) "-1"
@@ -93,7 +121,7 @@
 //-----------------------------------------------------------------------
 IDragonMotorController* MotorDefn::ParseXML
 (
-    pugi::xml_node      motorNode
+    xml_node      motorNode
 )
 {
     // initialize the output
@@ -102,7 +130,7 @@ IDragonMotorController* MotorDefn::ParseXML
     // initialize attributes to default values
     int canID = 0;
 	int pdpID = -1;
-    IDragonMotorController::MOTOR_CONTROLLER_TYPE     usage = IDragonMotorController::MOTOR_CONTROLLER_TYPE::UNKNOWN_MOTOR_CONTROLLER_TYPE;
+	string usage;
     bool inverted = false;
     bool sensorInverted = false;
     ctre::phoenix::motorcontrol::FeedbackDevice  feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::QuadEncoder;
@@ -122,117 +150,25 @@ IDragonMotorController* MotorDefn::ParseXML
     bool hasError = false;
     IMechanism::MECHANISM_TYPE mechType = IMechanism::MECHANISM_TYPE::UNKNOWN_MECHANISM;
 
-    for (pugi::xml_attribute attr = motorNode.first_attribute(); attr; attr = attr.next_attribute())
+    for (xml_attribute attr = motorNode.first_attribute(); attr && !hasError; attr = attr.next_attribute())
     {
-		
-		//		enum MOTOR_CONTROLLER_TYPE
-		//		{
-		//			UNKNOWN_MOTOR_CONTROLLER_TYPE = -1,
-		//			FRONT_LEFT_DRIVE,
-		//			MIDDLE_LEFT_DRIVE,
-		//			BACK_LEFT_DRIVE,
-		//			FRONT_RIGHT_DRIVE,
-		//			MIDDLE_RIGHT_DRIVE,
-		//			BACK_RIGHT_DRIVE,
-		//			ARM_MASTER,
-		//			ARM_SLAVE,
-		//			ARM_EXTENSION,
-		//			WRIST,
-		//			INTAKE,
-		//			ELEVATOR_WINCH,
-		//			ELEVATOR_DRIVE,
-		//			MAX_MOTOR_CONTROLLER_TYPES
-		//		};		
         if ( strcmp( attr.name(), "usage" ) == 0 )
         {
-            auto usageStr = attr.value();
-            if ( strcmp( usageStr, "FRONT_LEFT_DRIVE") == 0 )
-            {
-                usage = IDragonMotorController::MOTOR_CONTROLLER_TYPE::FRONT_LEFT_DRIVE;
-            }
-            else if ( strcmp( usageStr, "MIDDLE_LEFT_DRIVE") == 0 )
-            {
-                usage = IDragonMotorController::MOTOR_CONTROLLER_TYPE::MIDDLE_LEFT_DRIVE;
-            }
-            else if ( strcmp( usageStr, "BACK_LEFT_DRIVE") == 0 )
-            {
-                usage = IDragonMotorController::MOTOR_CONTROLLER_TYPE::BACK_LEFT_DRIVE;
-            }            
-            else if ( strcmp( usageStr, "FRONT_RIGHT_DRIVE") == 0 )
-            {
-                usage = IDragonMotorController::MOTOR_CONTROLLER_TYPE::FRONT_RIGHT_DRIVE;
-            }
-            else if ( strcmp( usageStr, "MIDDLE_RIGHT_DRIVE") == 0 )
-            {
-                usage = IDragonMotorController::MOTOR_CONTROLLER_TYPE::MIDDLE_RIGHT_DRIVE;
-            }
-            else if ( strcmp( usageStr, "BACK_RIGHT_DRIVE") == 0 )
-            {
-                usage = IDragonMotorController::MOTOR_CONTROLLER_TYPE::BACK_RIGHT_DRIVE;
-            }
-            else if ( strcmp( usageStr, "ARM_MASTER") == 0 )
-            {
-                usage = IDragonMotorController::MOTOR_CONTROLLER_TYPE::ARM_MASTER;
-            }            
-            else if ( strcmp( usageStr, "ARM_SLAVE") == 0 )
-            {
-                usage = IDragonMotorController::MOTOR_CONTROLLER_TYPE::ARM_SLAVE;
-            }
-            else if ( strcmp( usageStr, "ARM_EXTENSION") == 0 )
-            {
-                usage = IDragonMotorController::MOTOR_CONTROLLER_TYPE::ARM_EXTENSION;
-            }
-            else if ( strcmp( usageStr, "WRIST") == 0 )
-            {
-                usage = IDragonMotorController::MOTOR_CONTROLLER_TYPE::WRIST;
-            }            
-			else if ( strcmp( usageStr, "INTAKE") == 0 )
-            {
-                usage = IDragonMotorController::MOTOR_CONTROLLER_TYPE::INTAKE;
-            }
-            else if ( strcmp( usageStr, "ELEVATOR_WINCH") == 0 )
-            {
-                usage = IDragonMotorController::MOTOR_CONTROLLER_TYPE::ELEVATOR_WINCH;
-            }
-            else if ( strcmp( usageStr, "ELEVATOR_DRIVE") == 0 )
-            {
-                usage = IDragonMotorController::MOTOR_CONTROLLER_TYPE::ELEVATOR_DRIVE;
-            }
-            else if ( strcmp( usageStr, "HATCH_MECH_MOTOR" ) == 0 ) 
-            {
-                usage = IDragonMotorController::MOTOR_CONTROLLER_TYPE::HATCH_MECH_MOTOR;
-            }
-            else
-            {
-                printf( "==>>MotorDefn::ParseXML Invalid Motor Type %s \n", usageStr );
-                hasError = true;
-            }
+             usage = attr.value();
         }
 		// CAN ID 0 thru 62 are valid
         else if ( strcmp( attr.name(), "canId" ) == 0 )
         {
-            int iVal = attr.as_int();
-            if ( iVal > -1 && iVal < 63 )
-            {
-                canID = attr.as_int();
-            }
-            else
-            {
-                printf( "==>> MotorDefn::ParseXML invalid CAN ID %d \n", iVal );
-                hasError = true;
-            }
+            canID = attr.as_int();
+            hasError = HardwareIDValidation::ValidateCANID( canID, string( "MotorDefn::ParseXML" ) );
         }
 		// PDP ID 0 thru 15 are valid
         else if ( strcmp( attr.name(), "pdpID" ) == 0 )
         {
-            int iVal = attr.as_int();
-            if ( iVal > -1 && iVal < 16 )
+            pdpID = attr.as_int();
+            if ( pdpID < 0 || pdpID > 15 )
             {
-                pdpID = attr.as_int();
-            }
-            else
-            {
-                printf( "==>> MotorDefn::ParseXML invalid PDP ID %d \n", iVal );
+                printf( "==>> MotorDefn::ParseXML invalid PDP ID %d \n", pdpID );
                 hasError = true;
             }
         }
@@ -284,10 +220,10 @@ IDragonMotorController* MotorDefn::ParseXML
 		//        };        
 		else if ( strcmp( attr.name(), "feedbackDevice" ) == 0 )
         {
-            int iVal = attr.as_int();
+            int intVal = attr.as_int();
             // Some options are duplicated enum values in the WPILib base, so
             // comment out one so that there isn't more than one case with the same value
-            switch ( iVal )
+            switch ( intVal )
             {
                  //commented out in ctre code with note to add back in
                 //case None:
@@ -339,7 +275,7 @@ IDragonMotorController* MotorDefn::ParseXML
 //                    break;
 
                 default:
-                    printf( "==>>MotorDefn::ParseXML invalid feedback devide %d \n", iVal );
+                    printf( "==>>MotorDefn::ParseXML invalid feedback devide %d \n", intVal );
                     hasError = true;
                     break;
             }
@@ -414,3 +350,5 @@ IDragonMotorController* MotorDefn::ParseXML
     }
     return controller;
 }
+
+

@@ -40,8 +40,8 @@
 // FRC includes
 
 // Team 302 includes
-#include <xmlhw/MechDataDefn.h>
-#include <xmlhw/MechanismDataDefn.h>
+#include <xmlmechdata/MechDataDefn.h>
+#include <xmlmechdata/MechanismDataDefn.h>
 #include <subsys/MechParamData.h>
 
 // Third Party Includes

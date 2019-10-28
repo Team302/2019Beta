@@ -40,8 +40,8 @@
 
 // Team 302 includes
 #include <xmlhw/ControlDefn.h>
-#include <xmlhw/PIDData.h>
-#include <xmlhw/PIDDefn.h>
+#include <xmlcontrol/PIDData.h>
+#include <xmlcontrol/PIDDefn.h>
 
 // Third Party Includes
 #include <pugixml/pugixml.hpp>

@@ -46,7 +46,7 @@
 //#include <hw/DragonTalon.h>
 #include <xmlhw/ChassisDefn.h>
 #include <xmlhw/MotorDefn.h>
-#include <xmlhw/PIDDefn.h>
+#include <xmlcontrol/PIDDefn.h>
 #include <utils/Logger.h>
 
 // Third Party includes

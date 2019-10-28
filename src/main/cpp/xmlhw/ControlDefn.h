@@ -26,7 +26,7 @@
 // FRC includes
 
 // Team 302 includes
-#include <xmlhw/PIDData.h>
+#include <xmlcontrol/PIDData.h>
 
 // Third Party Includes
 

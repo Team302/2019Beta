@@ -1,0 +1,99 @@
+\hypertarget{class_i_dragon_angle_sensor}{}\doxysection{I\+Dragon\+Angle\+Sensor Class Reference}
+\label{class_i_dragon_angle_sensor}\index{IDragonAngleSensor@{IDragonAngleSensor}}
+
+
+{\ttfamily \#include $<$I\+Dragon\+Angle\+Sensor.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_dragon_angle_sensor_aca3a7625915d4fc93323f3413351f51d}{I\+Dragon\+Angle\+Sensor}} ()=default
+\item 
+\mbox{\hyperlink{class_i_dragon_angle_sensor_a98d0915292bbcd8e6931c7bd66be84c2}{$\sim$\+I\+Dragon\+Angle\+Sensor}} ()=default
+\item 
+virtual double \mbox{\hyperlink{class_i_dragon_angle_sensor_afede0265bf08af816cb1ec925e1aee41}{Get\+Raw\+Angle}} ()=0
+\item 
+virtual double \mbox{\hyperlink{class_i_dragon_angle_sensor_aad9399248f8db0dde172087c82e56f8d}{Get\+Normalized\+Angle}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_dragon_angle_sensor_a00b289e47018128480e28fc8be003612}{Reset\+Angle}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_dragon_angle_sensor_a2495fe19f1fb9d4e9679bbfe33af31ff}{Reset\+Angle}} (double angle)=0
+\item 
+virtual double \mbox{\hyperlink{class_i_dragon_angle_sensor_a2239172f08aec03f8bcfee9ce14b626b}{Get\+Angle\+Confidence}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+==================================================================================================================================================== Inteface\+: \mbox{\hyperlink{class_i_dragon_angle_sensor}{I\+Dragon\+Angle\+Sensor}} \hypertarget{class_i_dragon_angle_sensor_autotoc_md55}{}\doxysubsection{Description\+:     This inteface provides a common set of methods for all sensors that measure angles}\label{class_i_dragon_angle_sensor_autotoc_md55}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_dragon_angle_sensor_aca3a7625915d4fc93323f3413351f51d}\label{class_i_dragon_angle_sensor_aca3a7625915d4fc93323f3413351f51d}} 
+\index{IDragonAngleSensor@{IDragonAngleSensor}!IDragonAngleSensor@{IDragonAngleSensor}}
+\index{IDragonAngleSensor@{IDragonAngleSensor}!IDragonAngleSensor@{IDragonAngleSensor}}
+\doxysubsubsection{\texorpdfstring{IDragonAngleSensor()}{IDragonAngleSensor()}}
+{\footnotesize\ttfamily I\+Dragon\+Angle\+Sensor\+::\+I\+Dragon\+Angle\+Sensor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\DoxyHorRuler
+ Method\+: \mbox{\hyperlink{class_i_dragon_angle_sensor}{I\+Dragon\+Angle\+Sensor}} \hypertarget{class_i_dragon_angle_sensor_autotoc_md56}{}\doxysubsubsection{Description\+: Constructor for the interface}\label{class_i_dragon_angle_sensor_autotoc_md56}
+\mbox{\Hypertarget{class_i_dragon_angle_sensor_a98d0915292bbcd8e6931c7bd66be84c2}\label{class_i_dragon_angle_sensor_a98d0915292bbcd8e6931c7bd66be84c2}} 
+\index{IDragonAngleSensor@{IDragonAngleSensor}!````~IDragonAngleSensor@{$\sim$IDragonAngleSensor}}
+\index{````~IDragonAngleSensor@{$\sim$IDragonAngleSensor}!IDragonAngleSensor@{IDragonAngleSensor}}
+\doxysubsubsection{\texorpdfstring{$\sim$IDragonAngleSensor()}{~IDragonAngleSensor()}}
+{\footnotesize\ttfamily I\+Dragon\+Angle\+Sensor\+::$\sim$\+I\+Dragon\+Angle\+Sensor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\DoxyHorRuler
+ Method\+: $\sim$\+I\+Dragon\+Angle\+Sensor \hypertarget{class_i_dragon_angle_sensor_autotoc_md57}{}\doxysubsubsection{Description\+: Destructor for the interface}\label{class_i_dragon_angle_sensor_autotoc_md57}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_dragon_angle_sensor_a2239172f08aec03f8bcfee9ce14b626b}\label{class_i_dragon_angle_sensor_a2239172f08aec03f8bcfee9ce14b626b}} 
+\index{IDragonAngleSensor@{IDragonAngleSensor}!GetAngleConfidence@{GetAngleConfidence}}
+\index{GetAngleConfidence@{GetAngleConfidence}!IDragonAngleSensor@{IDragonAngleSensor}}
+\doxysubsubsection{\texorpdfstring{GetAngleConfidence()}{GetAngleConfidence()}}
+{\footnotesize\ttfamily virtual double I\+Dragon\+Angle\+Sensor\+::\+Get\+Angle\+Confidence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\DoxyHorRuler
+ Method\+: Get\+Angle\+Confidence Description\+: Indicates how accurate the returned angle is Returns\+: double 0.\+0 == ignore (sensor has an error) \hypertarget{class_i_dragon_angle_sensor_autotoc_md62}{}\doxysubsubsection{1.\+0 == very confident}\label{class_i_dragon_angle_sensor_autotoc_md62}
+\mbox{\Hypertarget{class_i_dragon_angle_sensor_aad9399248f8db0dde172087c82e56f8d}\label{class_i_dragon_angle_sensor_aad9399248f8db0dde172087c82e56f8d}} 
+\index{IDragonAngleSensor@{IDragonAngleSensor}!GetNormalizedAngle@{GetNormalizedAngle}}
+\index{GetNormalizedAngle@{GetNormalizedAngle}!IDragonAngleSensor@{IDragonAngleSensor}}
+\doxysubsubsection{\texorpdfstring{GetNormalizedAngle()}{GetNormalizedAngle()}}
+{\footnotesize\ttfamily virtual double I\+Dragon\+Angle\+Sensor\+::\+Get\+Normalized\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\DoxyHorRuler
+ Method\+: Get\+Normalized\+Angle Description\+: Return the measured angle and adjust the value to be between 0 and 360 degrees \hypertarget{class_i_dragon_angle_sensor_autotoc_md59}{}\doxysubsubsection{Returns\+:     double     Measured Angle}\label{class_i_dragon_angle_sensor_autotoc_md59}
+\mbox{\Hypertarget{class_i_dragon_angle_sensor_afede0265bf08af816cb1ec925e1aee41}\label{class_i_dragon_angle_sensor_afede0265bf08af816cb1ec925e1aee41}} 
+\index{IDragonAngleSensor@{IDragonAngleSensor}!GetRawAngle@{GetRawAngle}}
+\index{GetRawAngle@{GetRawAngle}!IDragonAngleSensor@{IDragonAngleSensor}}
+\doxysubsubsection{\texorpdfstring{GetRawAngle()}{GetRawAngle()}}
+{\footnotesize\ttfamily virtual double I\+Dragon\+Angle\+Sensor\+::\+Get\+Raw\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\DoxyHorRuler
+ Method\+: Get\+Raw\+Angle Description\+: Return the measured angle in degrees \hypertarget{class_i_dragon_angle_sensor_autotoc_md58}{}\doxysubsubsection{Returns\+:     double     Measured Angle}\label{class_i_dragon_angle_sensor_autotoc_md58}
+\mbox{\Hypertarget{class_i_dragon_angle_sensor_a00b289e47018128480e28fc8be003612}\label{class_i_dragon_angle_sensor_a00b289e47018128480e28fc8be003612}} 
+\index{IDragonAngleSensor@{IDragonAngleSensor}!ResetAngle@{ResetAngle}}
+\index{ResetAngle@{ResetAngle}!IDragonAngleSensor@{IDragonAngleSensor}}
+\doxysubsubsection{\texorpdfstring{ResetAngle()}{ResetAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void I\+Dragon\+Angle\+Sensor\+::\+Reset\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\DoxyHorRuler
+ Method\+: Reset\+Angle Description\+: Reset the current angle to 0 degrees \hypertarget{class_i_dragon_angle_sensor_autotoc_md60}{}\doxysubsubsection{Returns\+:     void}\label{class_i_dragon_angle_sensor_autotoc_md60}
+\mbox{\Hypertarget{class_i_dragon_angle_sensor_a2495fe19f1fb9d4e9679bbfe33af31ff}\label{class_i_dragon_angle_sensor_a2495fe19f1fb9d4e9679bbfe33af31ff}} 
+\index{IDragonAngleSensor@{IDragonAngleSensor}!ResetAngle@{ResetAngle}}
+\index{ResetAngle@{ResetAngle}!IDragonAngleSensor@{IDragonAngleSensor}}
+\doxysubsubsection{\texorpdfstring{ResetAngle()}{ResetAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void I\+Dragon\+Angle\+Sensor\+::\+Reset\+Angle (\begin{DoxyParamCaption}\item[{double}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\DoxyHorRuler
+ Method\+: Reset\+Angle Description\+: Reset the current angle to a known angle \hypertarget{class_i_dragon_angle_sensor_autotoc_md61}{}\doxysubsubsection{Returns\+:     void}\label{class_i_dragon_angle_sensor_autotoc_md61}
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & {\itshape  -\/ set the current angle to measure this value (degrees) }\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Git\+Kraken\+Repos/\+Template\+Repository/src/main/cpp/hw/\mbox{\hyperlink{_i_dragon_angle_sensor_8h}{I\+Dragon\+Angle\+Sensor.\+h}}\end{DoxyCompactItemize}

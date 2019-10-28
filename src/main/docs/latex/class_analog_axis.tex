@@ -1,0 +1,105 @@
+\hypertarget{class_analog_axis}{}\doxysection{Analog\+Axis Class Reference}
+\label{class_analog_axis}\index{AnalogAxis@{AnalogAxis}}
+
+
+Class\+: \mbox{\hyperlink{class_analog_axis}{Analog\+Axis}} Description\+: This class handles the analog inputs on a gamepad  
+
+
+
+
+{\ttfamily \#include $<$Analog\+Axis.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_analog_axis_a4ae0bfa8f8c22746f32a1899f745661e}{Analog\+Axis}} (frc\+::\+Generic\+H\+ID $\ast$gamepad, int axis\+ID, bool flipped)
+\item 
+double \mbox{\hyperlink{class_analog_axis_a4e01b8b9de9b8af178c2bdbd63359ea2}{Get\+Axis\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Method\+: Get\+Axis\+Value Description\+: Read the analog (axis) value and return it. If the gamepad has an issue, return 0.\+0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_analog_axis_affc8b08e1a2bb32adcb971f644d2458d}{Set\+Dead\+Band}} (\mbox{\hyperlink{class_i_dragon_game_pad_afde07811ccdd7565bc40c381adecee4d}{I\+Dragon\+Game\+Pad\+::\+A\+X\+I\+S\+\_\+\+D\+E\+A\+D\+B\+A\+ND}} type)
+\item 
+void \mbox{\hyperlink{class_analog_axis_ad3a96408976c543981e74f241ed34b93}{Set\+Axis\+Profile}} (\mbox{\hyperlink{class_i_dragon_game_pad_a3b3c3165d9fc69500bd69ba575216676}{I\+Dragon\+Game\+Pad\+::\+A\+X\+I\+S\+\_\+\+P\+R\+O\+F\+I\+LE}} profile)
+\item 
+void \mbox{\hyperlink{class_analog_axis_ab4f474d286f5f650c617264616154cf9}{Set\+Axis\+Scale\+Factor}} (double scale)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual double \mbox{\hyperlink{class_analog_axis_a16dc4ab6eb26221fc1f43c4f9cb67fa2}{Get\+Raw\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Method\+: Get\+Raw\+Value Description\+: Returns the analog input\textquotesingle{}s raw value. If there is a connection problem, 0.\+0 will be returned and a debug message will be written. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class\+: \mbox{\hyperlink{class_analog_axis}{Analog\+Axis}} Description\+: This class handles the analog inputs on a gamepad 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_analog_axis_a4ae0bfa8f8c22746f32a1899f745661e}\label{class_analog_axis_a4ae0bfa8f8c22746f32a1899f745661e}} 
+\index{AnalogAxis@{AnalogAxis}!AnalogAxis@{AnalogAxis}}
+\index{AnalogAxis@{AnalogAxis}!AnalogAxis@{AnalogAxis}}
+\doxysubsubsection{\texorpdfstring{AnalogAxis()}{AnalogAxis()}}
+{\footnotesize\ttfamily Analog\+Axis\+::\+Analog\+Axis (\begin{DoxyParamCaption}\item[{frc\+::\+Generic\+H\+ID $\ast$}]{gamepad,  }\item[{int}]{axis\+ID,  }\item[{bool}]{flipped }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_analog_axis_a4e01b8b9de9b8af178c2bdbd63359ea2}\label{class_analog_axis_a4e01b8b9de9b8af178c2bdbd63359ea2}} 
+\index{AnalogAxis@{AnalogAxis}!GetAxisValue@{GetAxisValue}}
+\index{GetAxisValue@{GetAxisValue}!AnalogAxis@{AnalogAxis}}
+\doxysubsubsection{\texorpdfstring{GetAxisValue()}{GetAxisValue()}}
+{\footnotesize\ttfamily double Analog\+Axis\+::\+Get\+Axis\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method\+: Get\+Axis\+Value Description\+: Read the analog (axis) value and return it. If the gamepad has an issue, return 0.\+0. 
+
+\mbox{\Hypertarget{class_analog_axis_a16dc4ab6eb26221fc1f43c4f9cb67fa2}\label{class_analog_axis_a16dc4ab6eb26221fc1f43c4f9cb67fa2}} 
+\index{AnalogAxis@{AnalogAxis}!GetRawValue@{GetRawValue}}
+\index{GetRawValue@{GetRawValue}!AnalogAxis@{AnalogAxis}}
+\doxysubsubsection{\texorpdfstring{GetRawValue()}{GetRawValue()}}
+{\footnotesize\ttfamily double Analog\+Axis\+::\+Get\+Raw\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Method\+: Get\+Raw\+Value Description\+: Returns the analog input\textquotesingle{}s raw value. If there is a connection problem, 0.\+0 will be returned and a debug message will be written. 
+
+\mbox{\Hypertarget{class_analog_axis_ad3a96408976c543981e74f241ed34b93}\label{class_analog_axis_ad3a96408976c543981e74f241ed34b93}} 
+\index{AnalogAxis@{AnalogAxis}!SetAxisProfile@{SetAxisProfile}}
+\index{SetAxisProfile@{SetAxisProfile}!AnalogAxis@{AnalogAxis}}
+\doxysubsubsection{\texorpdfstring{SetAxisProfile()}{SetAxisProfile()}}
+{\footnotesize\ttfamily void Analog\+Axis\+::\+Set\+Axis\+Profile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_dragon_game_pad_a3b3c3165d9fc69500bd69ba575216676}{I\+Dragon\+Game\+Pad\+::\+A\+X\+I\+S\+\_\+\+P\+R\+O\+F\+I\+LE}}}]{profile }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em profile} & {\itshape  -\/ axis profile }\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_analog_axis_ab4f474d286f5f650c617264616154cf9}\label{class_analog_axis_ab4f474d286f5f650c617264616154cf9}} 
+\index{AnalogAxis@{AnalogAxis}!SetAxisScaleFactor@{SetAxisScaleFactor}}
+\index{SetAxisScaleFactor@{SetAxisScaleFactor}!AnalogAxis@{AnalogAxis}}
+\doxysubsubsection{\texorpdfstring{SetAxisScaleFactor()}{SetAxisScaleFactor()}}
+{\footnotesize\ttfamily void Analog\+Axis\+::\+Set\+Axis\+Scale\+Factor (\begin{DoxyParamCaption}\item[{double}]{scale }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & {\itshape  -\/ sacle factor }\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_analog_axis_affc8b08e1a2bb32adcb971f644d2458d}\label{class_analog_axis_affc8b08e1a2bb32adcb971f644d2458d}} 
+\index{AnalogAxis@{AnalogAxis}!SetDeadBand@{SetDeadBand}}
+\index{SetDeadBand@{SetDeadBand}!AnalogAxis@{AnalogAxis}}
+\doxysubsubsection{\texorpdfstring{SetDeadBand()}{SetDeadBand()}}
+{\footnotesize\ttfamily void Analog\+Axis\+::\+Set\+Dead\+Band (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_dragon_game_pad_afde07811ccdd7565bc40c381adecee4d}{I\+Dragon\+Game\+Pad\+::\+A\+X\+I\+S\+\_\+\+D\+E\+A\+D\+B\+A\+ND}}}]{type }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & {\itshape  -\/ deadband option }\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Git\+Kraken\+Repos/\+Template\+Repository/src/main/cpp/controllers/axis/\mbox{\hyperlink{_analog_axis_8h}{Analog\+Axis.\+h}}\item 
+C\+:/\+Git\+Kraken\+Repos/\+Template\+Repository/src/main/cpp/controllers/axis/\mbox{\hyperlink{_analog_axis_8cpp}{Analog\+Axis.\+cpp}}\end{DoxyCompactItemize}

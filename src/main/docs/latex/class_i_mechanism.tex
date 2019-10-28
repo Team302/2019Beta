@@ -1,0 +1,493 @@
+\hypertarget{class_i_mechanism}{}\doxysection{I\+Mechanism Class Reference}
+\label{class_i_mechanism}\index{IMechanism@{IMechanism}}
+
+
+{\ttfamily \#include $<$I\+Mechanism.\+h$>$}
+
+Inheritance diagram for I\+Mechanism\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_mechanism}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_i_mechanism_a5b60af468978515764f4d2dedd80638d}{M\+E\+C\+H\+A\+N\+I\+S\+M\+\_\+\+T\+Y\+PE}} \{ \newline
+\mbox{\hyperlink{class_i_mechanism_a5b60af468978515764f4d2dedd80638da8f01ca36f34ccd6c521674d92b4987c4}{U\+N\+K\+N\+O\+W\+N\+\_\+\+M\+E\+C\+H\+A\+N\+I\+SM}} = -\/1, 
+\mbox{\hyperlink{class_i_mechanism_a5b60af468978515764f4d2dedd80638daafec998383badf56a22a672a9c12574e}{C\+H\+A\+S\+S\+IS}}, 
+\mbox{\hyperlink{class_i_mechanism_a5b60af468978515764f4d2dedd80638dac47a3561d1d0531543dd7815ede25576}{W\+R\+I\+ST}}, 
+\mbox{\hyperlink{class_i_mechanism_a5b60af468978515764f4d2dedd80638dad0f2ff3b7e952a5534ab7c0188ea85b0}{I\+N\+T\+A\+KE}}, 
+\newline
+\mbox{\hyperlink{class_i_mechanism_a5b60af468978515764f4d2dedd80638da1fc70e5cb1088a67fae210d0aeee42a1}{A\+RM}}, 
+\mbox{\hyperlink{class_i_mechanism_a5b60af468978515764f4d2dedd80638da0ea223965f69353f67767e202a1a6dfa}{E\+X\+T\+E\+N\+D\+ER}}, 
+\mbox{\hyperlink{class_i_mechanism_a5b60af468978515764f4d2dedd80638dac0e716b6a6ade31caed1a8cd8fce8a99}{C\+L\+I\+M\+B\+ER}}, 
+\mbox{\hyperlink{class_i_mechanism_a5b60af468978515764f4d2dedd80638da1e21ac8d2bb7f99eb4119bdeac97c906}{B\+E\+AK}}, 
+\newline
+\mbox{\hyperlink{class_i_mechanism_a5b60af468978515764f4d2dedd80638da4dff5ff48ec69d4c73668e57108228a0}{T\+A\+IL}}, 
+\mbox{\hyperlink{class_i_mechanism_a5b60af468978515764f4d2dedd80638daa75f99e1ac29792b15739c1020a5e73e}{M\+A\+X\+\_\+\+M\+E\+C\+H\+A\+N\+I\+S\+M\+\_\+\+T\+Y\+P\+ES}}
+ \}
+\item 
+enum \mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266}{M\+E\+C\+H\+A\+N\+I\+S\+M\+\_\+\+P\+A\+R\+A\+M\+\_\+\+T\+Y\+PE}} \{ \newline
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a7d5d5e8a9f7c18dfde410edd9502b97a}{M\+E\+C\+H\+A\+N\+I\+S\+M\+\_\+\+P\+A\+R\+A\+M\+\_\+\+U\+N\+K\+N\+O\+WN}} = -\/1, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a0a2852ab58291f52496ec6c32212b1ea}{L\+E\+G\+A\+L\+\_\+\+S\+T\+A\+R\+T\+I\+N\+G\+\_\+\+A\+N\+G\+LE}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a5f13d49f61d97e9ea8bcd8e18ac3afe7}{T\+E\+S\+T\+\_\+\+S\+T\+A\+R\+T\+I\+N\+G\+\_\+\+A\+N\+G\+LE}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a97d7a4860a22b9e4b97884f2e809efe2}{E\+X\+T\+E\+N\+D\+E\+R\+\_\+\+L\+E\+G\+A\+L\+\_\+\+S\+T\+A\+R\+T\+I\+N\+G\+\_\+\+I\+N\+C\+H\+ES}}, 
+\newline
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a5246abc0294a210840ab82fb9c0f78c7}{E\+X\+T\+E\+N\+D\+E\+R\+\_\+\+T\+E\+S\+T\+\_\+\+S\+T\+A\+R\+T\+I\+N\+G\+\_\+\+I\+N\+C\+H\+ES}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266aa8d2e8eccac57f2bb3d705a1c3c60cc1}{H\+A\+T\+C\+H\+\_\+\+F\+L\+O\+O\+R\+\_\+\+A\+N\+G\+LE}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266af0b54953e7f3763bdccac8bb889b1ce9}{H\+A\+T\+C\+H\+\_\+\+H\+P\+\_\+\+S\+E\+C\+O\+N\+D\+\_\+\+A\+N\+G\+LE}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a57cfad0491be9c1b039e0d3ff38bd1fc}{H\+A\+T\+C\+H\+\_\+\+L\+O\+W\+\_\+\+A\+N\+G\+LE}}, 
+\newline
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a88082e1ed772f4bc55e9be9b71317a9f}{H\+A\+T\+C\+H\+\_\+\+M\+I\+D\+\_\+\+A\+N\+G\+LE}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266adcfb33a3e08fe72676f91bc0693ecc22}{H\+A\+T\+C\+H\+\_\+\+H\+I\+G\+H\+\_\+\+A\+N\+G\+LE}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a06109c8a14fcc9465949979ef611f68b}{H\+A\+T\+C\+H\+\_\+\+L\+O\+W\+\_\+\+S\+E\+C\+O\+N\+D\+\_\+\+A\+N\+G\+LE}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266ab6fee65350208ed1f3442f7e708b5e73}{H\+A\+T\+C\+H\+\_\+\+M\+I\+D\+\_\+\+S\+E\+C\+O\+N\+D\+\_\+\+A\+N\+G\+LE}}, 
+\newline
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a1e94f07628b96fba21f6305e522a5ec6}{H\+A\+T\+C\+H\+\_\+\+H\+I\+G\+H\+\_\+\+S\+E\+C\+O\+N\+D\+\_\+\+A\+N\+G\+LE}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a73ca73a9d3548298ca2296f781077b65}{C\+A\+R\+G\+O\+\_\+\+F\+L\+O\+O\+R\+\_\+\+A\+N\+G\+LE}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a5fcffa4bdfad86c5321d90204fa1ea2e}{C\+A\+R\+G\+O\+\_\+\+H\+P\+\_\+\+A\+N\+G\+LE}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a5875d19787cfbc56ecd042b857c9e192}{C\+A\+R\+G\+O\+\_\+\+S\+H\+I\+P\+\_\+\+A\+N\+G\+LE}}, 
+\newline
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a2acda6da8d6eb59dbc8930a31ef8972a}{C\+A\+R\+G\+O\+\_\+\+L\+O\+W\+\_\+\+A\+N\+G\+LE}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a71ff530dda76a3f1b22089ed06219f4e}{C\+A\+R\+G\+O\+\_\+\+M\+I\+D\+\_\+\+A\+N\+G\+LE}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a474243f3dfc7ac1daa7b16dfbe0dafd1}{C\+A\+R\+G\+O\+\_\+\+H\+I\+G\+H\+\_\+\+A\+N\+G\+LE}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266ad5d782ac4db8d4b7643429dd3a88251a}{H\+A\+T\+C\+H\+\_\+\+F\+L\+O\+O\+R\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}}, 
+\newline
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266aedfbdb138856e1a30c9d05f80d3d0286}{H\+A\+T\+C\+H\+\_\+\+H\+P\+\_\+\+S\+E\+C\+O\+N\+D\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266ad6815f022bd4e0a81dcdb68298694fc4}{H\+A\+T\+C\+H\+\_\+\+L\+O\+W\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266afc843a4b7aac1eab314275b8e508c171}{H\+A\+T\+C\+H\+\_\+\+M\+I\+D\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a7a6c5b8de2b990bbacc79a88ad16c8f4}{H\+A\+T\+C\+H\+\_\+\+H\+I\+G\+H\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}}, 
+\newline
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a5ac0a1cd58f40d15c8960129e4875171}{H\+A\+T\+C\+H\+\_\+\+L\+O\+W\+\_\+\+S\+E\+C\+O\+N\+D\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a80a9e5f602b0e65db4184477f7f4a767}{H\+A\+T\+C\+H\+\_\+\+M\+I\+D\+\_\+\+S\+E\+C\+O\+N\+D\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a3345d764cf684b289b63cb7a72ca4cba}{H\+A\+T\+C\+H\+\_\+\+H\+I\+G\+H\+\_\+\+S\+E\+C\+O\+N\+D\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a14f5d4f7d597f51881fc9e232f3ba023}{C\+A\+R\+G\+O\+\_\+\+F\+L\+O\+O\+R\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}}, 
+\newline
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a4455b592f7d8fca4c2c9864af8d64e01}{C\+A\+R\+G\+O\+\_\+\+H\+P\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a4c8c4a2a8dedb0bf55576235e9846f32}{C\+A\+R\+G\+O\+\_\+\+H\+P\+\_\+\+H\+O\+L\+E\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266ad2333c004741d253bd2b35f867a8934e}{C\+A\+R\+G\+O\+\_\+\+S\+H\+I\+P\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266ae8e68fe8b6492c24d526f1bde03817e6}{C\+A\+R\+G\+O\+\_\+\+L\+O\+W\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}}, 
+\newline
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266ab4eee97f335588c9f49696441d529684}{C\+A\+R\+G\+O\+\_\+\+M\+I\+D\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266abca8175a21194accda3dda8f493f47de}{C\+A\+R\+G\+O\+\_\+\+H\+I\+G\+H\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a8ffa3407a6e6e441e13fa2f960f777a2}{C\+A\+R\+G\+O\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+S\+P\+E\+E\+D\+\_\+\+P\+A\+R\+AM}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a251a0d7bb069b4924525cd4eec95338d}{C\+A\+R\+G\+O\+\_\+\+O\+U\+T\+T\+A\+K\+E\+\_\+\+S\+P\+E\+E\+D\+\_\+\+P\+A\+R\+AM}}, 
+\newline
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266ab6801c1d4f5a5d42504c42ad5547e213}{H\+A\+T\+C\+H\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+S\+P\+E\+E\+D\+\_\+\+P\+A\+R\+AM}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a4768fb4f73860f4d0f4c8e094d10b872}{H\+A\+T\+C\+H\+\_\+\+O\+U\+T\+T\+A\+K\+E\+\_\+\+S\+P\+E\+E\+D\+\_\+\+P\+A\+R\+AM}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a5f3bcefb9301bc8c083c7361285a41c8}{S\+E\+R\+V\+O\+\_\+\+L\+O\+C\+K\+E\+D\+\_\+\+P\+O\+S\+I\+T\+I\+O\+N\+\_\+\+P\+A\+R\+AM}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a5a76a4ec336d9257bdc9bae54a6dd564}{S\+E\+R\+V\+O\+\_\+\+D\+R\+O\+P\+P\+E\+D\+\_\+\+P\+O\+S\+I\+T\+I\+O\+N\+\_\+\+P\+A\+R\+AM}}, 
+\newline
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a7d0d144dfb8bafc1da4e49e7ab84930a}{H\+A\+T\+C\+H\+\_\+\+M\+E\+C\+H\+\_\+\+O\+P\+E\+N\+\_\+\+R\+O\+T\+A\+T\+I\+O\+NS}}, 
+\mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a34cf76361cf1cb98087db97fee235165}{M\+A\+X\+\_\+\+M\+E\+C\+H\+A\+N\+I\+S\+M\+\_\+\+P\+A\+R\+A\+M\+\_\+\+T\+Y\+P\+ES}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_mechanism_a5b60af468978515764f4d2dedd80638d}{M\+E\+C\+H\+A\+N\+I\+S\+M\+\_\+\+T\+Y\+PE}} \mbox{\hyperlink{class_i_mechanism_a053f8835d2a677c31803457fddb4975d}{Get\+Type}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_i_mechanism_a2ccb32e2b6e075dca1a554510d1ec7d5}{Set\+Percent\+Output}} (double value)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_mechanism_ac59d63363a5502555cd03564cc4704cf}{Set\+Position}} (double pos)=0
+\item 
+virtual double \mbox{\hyperlink{class_i_mechanism_aa15197ff101d65447516a8f10bb6867d}{Get\+Current\+Position}} () const =0
+\begin{DoxyCompactList}\small\item\em ================================================================================== \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_i_mechanism_afd97d8b3f072b45a88c83490dd18e8d2}{Get\+Target\+Position}} () const =0
+\begin{DoxyCompactList}\small\item\em ================================================================================== \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_mechanism_a676ec72e486c0baf1fb981fdaf6f8f52}{Set\+Speed}} (double speed)=0
+\item 
+virtual double \mbox{\hyperlink{class_i_mechanism_a9a63d6905de4454d78d7e0d1d1e28437}{Get\+Current\+Speed}} () const =0
+\begin{DoxyCompactList}\small\item\em ================================================================================== \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_i_mechanism_a06bbdacb531f60301062930ffebc85c2}{Get\+Target\+Speed}} () const =0
+\begin{DoxyCompactList}\small\item\em ================================================================================== \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i_mechanism_a22f98b8310ad97e65dd710f3ae4ebcbf}{I\+Mechanism}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_i_mechanism_a1c70ef3fdee0c9fa33b70c60b91ca9c0}{$\sim$\+I\+Mechanism}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+==================================================================================================================================================== Copyright 2019 Lake Orion Robotics F\+I\+R\+ST Team 302
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\+Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+T\+HE S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED \char`\"{}\+A\+S I\+S\char`\"{}, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+TY OF A\+NY K\+I\+ND, E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED, I\+N\+C\+L\+U\+D\+I\+NG B\+UT N\+OT L\+I\+M\+I\+T\+ED TO T\+HE W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY, F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+ND N\+O\+N\+I\+N\+F\+R\+I\+N\+G\+E\+M\+E\+NT. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE A\+U\+T\+H\+O\+RS OR C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+E\+RS BE L\+I\+A\+B\+LE F\+OR A\+NY C\+L\+A\+IM, D\+A\+M\+A\+G\+ES OR O\+T\+H\+ER L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN AN A\+C\+T\+I\+ON OF C\+O\+N\+T\+R\+A\+CT, T\+O\+RT OR O\+T\+H\+E\+R\+W\+I\+SE, A\+R\+I\+S\+I\+NG F\+R\+OM, O\+UT OF OR IN C\+O\+N\+N\+E\+C\+T\+I\+ON W\+I\+TH T\+HE S\+O\+F\+T\+W\+A\+RE OR T\+HE U\+SE \hypertarget{class_i_mechanism_autotoc_md77}{}\doxysubsection{O\+R O\+T\+H\+E\+R D\+E\+A\+L\+I\+N\+G\+S I\+N T\+H\+E S\+O\+F\+T\+W\+A\+R\+E.}\label{class_i_mechanism_autotoc_md77}
+======================================================================================================== \hypertarget{class_i_mechanism_autotoc_md78}{}\doxysubsection{I\+Mechanism.\+h}\label{class_i_mechanism_autotoc_md78}
+File Description\+: This is the interface for all subsystems
+
+\DoxyHorRuler
+ ======================================================================================================== Class\+: \mbox{\hyperlink{class_i_mechanism}{I\+Mechanism}} \hypertarget{class_i_mechanism_autotoc_md80}{}\doxysubsection{Description\+:  Interface for subsystems}\label{class_i_mechanism_autotoc_md80}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266}} 
+\index{IMechanism@{IMechanism}!MECHANISM\_PARAM\_TYPE@{MECHANISM\_PARAM\_TYPE}}
+\index{MECHANISM\_PARAM\_TYPE@{MECHANISM\_PARAM\_TYPE}!IMechanism@{IMechanism}}
+\doxysubsubsection{\texorpdfstring{MECHANISM\_PARAM\_TYPE}{MECHANISM\_PARAM\_TYPE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266}{I\+Mechanism\+::\+M\+E\+C\+H\+A\+N\+I\+S\+M\+\_\+\+P\+A\+R\+A\+M\+\_\+\+T\+Y\+PE}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MECHANISM\_PARAM\_UNKNOWN@{MECHANISM\_PARAM\_UNKNOWN}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!MECHANISM\_PARAM\_UNKNOWN@{MECHANISM\_PARAM\_UNKNOWN}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a7d5d5e8a9f7c18dfde410edd9502b97a}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a7d5d5e8a9f7c18dfde410edd9502b97a}} 
+M\+E\+C\+H\+A\+N\+I\+S\+M\+\_\+\+P\+A\+R\+A\+M\+\_\+\+U\+N\+K\+N\+O\+WN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEGAL\_STARTING\_ANGLE@{LEGAL\_STARTING\_ANGLE}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!LEGAL\_STARTING\_ANGLE@{LEGAL\_STARTING\_ANGLE}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a0a2852ab58291f52496ec6c32212b1ea}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a0a2852ab58291f52496ec6c32212b1ea}} 
+L\+E\+G\+A\+L\+\_\+\+S\+T\+A\+R\+T\+I\+N\+G\+\_\+\+A\+N\+G\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEST\_STARTING\_ANGLE@{TEST\_STARTING\_ANGLE}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!TEST\_STARTING\_ANGLE@{TEST\_STARTING\_ANGLE}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a5f13d49f61d97e9ea8bcd8e18ac3afe7}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a5f13d49f61d97e9ea8bcd8e18ac3afe7}} 
+T\+E\+S\+T\+\_\+\+S\+T\+A\+R\+T\+I\+N\+G\+\_\+\+A\+N\+G\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EXTENDER\_LEGAL\_STARTING\_INCHES@{EXTENDER\_LEGAL\_STARTING\_INCHES}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!EXTENDER\_LEGAL\_STARTING\_INCHES@{EXTENDER\_LEGAL\_STARTING\_INCHES}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a97d7a4860a22b9e4b97884f2e809efe2}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a97d7a4860a22b9e4b97884f2e809efe2}} 
+E\+X\+T\+E\+N\+D\+E\+R\+\_\+\+L\+E\+G\+A\+L\+\_\+\+S\+T\+A\+R\+T\+I\+N\+G\+\_\+\+I\+N\+C\+H\+ES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EXTENDER\_TEST\_STARTING\_INCHES@{EXTENDER\_TEST\_STARTING\_INCHES}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!EXTENDER\_TEST\_STARTING\_INCHES@{EXTENDER\_TEST\_STARTING\_INCHES}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a5246abc0294a210840ab82fb9c0f78c7}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a5246abc0294a210840ab82fb9c0f78c7}} 
+E\+X\+T\+E\+N\+D\+E\+R\+\_\+\+T\+E\+S\+T\+\_\+\+S\+T\+A\+R\+T\+I\+N\+G\+\_\+\+I\+N\+C\+H\+ES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HATCH\_FLOOR\_ANGLE@{HATCH\_FLOOR\_ANGLE}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!HATCH\_FLOOR\_ANGLE@{HATCH\_FLOOR\_ANGLE}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266aa8d2e8eccac57f2bb3d705a1c3c60cc1}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266aa8d2e8eccac57f2bb3d705a1c3c60cc1}} 
+H\+A\+T\+C\+H\+\_\+\+F\+L\+O\+O\+R\+\_\+\+A\+N\+G\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HATCH\_HP\_SECOND\_ANGLE@{HATCH\_HP\_SECOND\_ANGLE}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!HATCH\_HP\_SECOND\_ANGLE@{HATCH\_HP\_SECOND\_ANGLE}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266af0b54953e7f3763bdccac8bb889b1ce9}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266af0b54953e7f3763bdccac8bb889b1ce9}} 
+H\+A\+T\+C\+H\+\_\+\+H\+P\+\_\+\+S\+E\+C\+O\+N\+D\+\_\+\+A\+N\+G\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HATCH\_LOW\_ANGLE@{HATCH\_LOW\_ANGLE}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!HATCH\_LOW\_ANGLE@{HATCH\_LOW\_ANGLE}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a57cfad0491be9c1b039e0d3ff38bd1fc}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a57cfad0491be9c1b039e0d3ff38bd1fc}} 
+H\+A\+T\+C\+H\+\_\+\+L\+O\+W\+\_\+\+A\+N\+G\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HATCH\_MID\_ANGLE@{HATCH\_MID\_ANGLE}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!HATCH\_MID\_ANGLE@{HATCH\_MID\_ANGLE}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a88082e1ed772f4bc55e9be9b71317a9f}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a88082e1ed772f4bc55e9be9b71317a9f}} 
+H\+A\+T\+C\+H\+\_\+\+M\+I\+D\+\_\+\+A\+N\+G\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HATCH\_HIGH\_ANGLE@{HATCH\_HIGH\_ANGLE}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!HATCH\_HIGH\_ANGLE@{HATCH\_HIGH\_ANGLE}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266adcfb33a3e08fe72676f91bc0693ecc22}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266adcfb33a3e08fe72676f91bc0693ecc22}} 
+H\+A\+T\+C\+H\+\_\+\+H\+I\+G\+H\+\_\+\+A\+N\+G\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HATCH\_LOW\_SECOND\_ANGLE@{HATCH\_LOW\_SECOND\_ANGLE}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!HATCH\_LOW\_SECOND\_ANGLE@{HATCH\_LOW\_SECOND\_ANGLE}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a06109c8a14fcc9465949979ef611f68b}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a06109c8a14fcc9465949979ef611f68b}} 
+H\+A\+T\+C\+H\+\_\+\+L\+O\+W\+\_\+\+S\+E\+C\+O\+N\+D\+\_\+\+A\+N\+G\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HATCH\_MID\_SECOND\_ANGLE@{HATCH\_MID\_SECOND\_ANGLE}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!HATCH\_MID\_SECOND\_ANGLE@{HATCH\_MID\_SECOND\_ANGLE}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266ab6fee65350208ed1f3442f7e708b5e73}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266ab6fee65350208ed1f3442f7e708b5e73}} 
+H\+A\+T\+C\+H\+\_\+\+M\+I\+D\+\_\+\+S\+E\+C\+O\+N\+D\+\_\+\+A\+N\+G\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HATCH\_HIGH\_SECOND\_ANGLE@{HATCH\_HIGH\_SECOND\_ANGLE}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!HATCH\_HIGH\_SECOND\_ANGLE@{HATCH\_HIGH\_SECOND\_ANGLE}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a1e94f07628b96fba21f6305e522a5ec6}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a1e94f07628b96fba21f6305e522a5ec6}} 
+H\+A\+T\+C\+H\+\_\+\+H\+I\+G\+H\+\_\+\+S\+E\+C\+O\+N\+D\+\_\+\+A\+N\+G\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CARGO\_FLOOR\_ANGLE@{CARGO\_FLOOR\_ANGLE}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!CARGO\_FLOOR\_ANGLE@{CARGO\_FLOOR\_ANGLE}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a73ca73a9d3548298ca2296f781077b65}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a73ca73a9d3548298ca2296f781077b65}} 
+C\+A\+R\+G\+O\+\_\+\+F\+L\+O\+O\+R\+\_\+\+A\+N\+G\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CARGO\_HP\_ANGLE@{CARGO\_HP\_ANGLE}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!CARGO\_HP\_ANGLE@{CARGO\_HP\_ANGLE}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a5fcffa4bdfad86c5321d90204fa1ea2e}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a5fcffa4bdfad86c5321d90204fa1ea2e}} 
+C\+A\+R\+G\+O\+\_\+\+H\+P\+\_\+\+A\+N\+G\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CARGO\_SHIP\_ANGLE@{CARGO\_SHIP\_ANGLE}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!CARGO\_SHIP\_ANGLE@{CARGO\_SHIP\_ANGLE}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a5875d19787cfbc56ecd042b857c9e192}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a5875d19787cfbc56ecd042b857c9e192}} 
+C\+A\+R\+G\+O\+\_\+\+S\+H\+I\+P\+\_\+\+A\+N\+G\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CARGO\_LOW\_ANGLE@{CARGO\_LOW\_ANGLE}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!CARGO\_LOW\_ANGLE@{CARGO\_LOW\_ANGLE}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a2acda6da8d6eb59dbc8930a31ef8972a}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a2acda6da8d6eb59dbc8930a31ef8972a}} 
+C\+A\+R\+G\+O\+\_\+\+L\+O\+W\+\_\+\+A\+N\+G\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CARGO\_MID\_ANGLE@{CARGO\_MID\_ANGLE}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!CARGO\_MID\_ANGLE@{CARGO\_MID\_ANGLE}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a71ff530dda76a3f1b22089ed06219f4e}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a71ff530dda76a3f1b22089ed06219f4e}} 
+C\+A\+R\+G\+O\+\_\+\+M\+I\+D\+\_\+\+A\+N\+G\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CARGO\_HIGH\_ANGLE@{CARGO\_HIGH\_ANGLE}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!CARGO\_HIGH\_ANGLE@{CARGO\_HIGH\_ANGLE}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a474243f3dfc7ac1daa7b16dfbe0dafd1}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a474243f3dfc7ac1daa7b16dfbe0dafd1}} 
+C\+A\+R\+G\+O\+\_\+\+H\+I\+G\+H\+\_\+\+A\+N\+G\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HATCH\_FLOOR\_EXTENSION@{HATCH\_FLOOR\_EXTENSION}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!HATCH\_FLOOR\_EXTENSION@{HATCH\_FLOOR\_EXTENSION}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266ad5d782ac4db8d4b7643429dd3a88251a}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266ad5d782ac4db8d4b7643429dd3a88251a}} 
+H\+A\+T\+C\+H\+\_\+\+F\+L\+O\+O\+R\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HATCH\_HP\_SECOND\_EXTENSION@{HATCH\_HP\_SECOND\_EXTENSION}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!HATCH\_HP\_SECOND\_EXTENSION@{HATCH\_HP\_SECOND\_EXTENSION}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266aedfbdb138856e1a30c9d05f80d3d0286}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266aedfbdb138856e1a30c9d05f80d3d0286}} 
+H\+A\+T\+C\+H\+\_\+\+H\+P\+\_\+\+S\+E\+C\+O\+N\+D\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HATCH\_LOW\_EXTENSION@{HATCH\_LOW\_EXTENSION}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!HATCH\_LOW\_EXTENSION@{HATCH\_LOW\_EXTENSION}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266ad6815f022bd4e0a81dcdb68298694fc4}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266ad6815f022bd4e0a81dcdb68298694fc4}} 
+H\+A\+T\+C\+H\+\_\+\+L\+O\+W\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HATCH\_MID\_EXTENSION@{HATCH\_MID\_EXTENSION}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!HATCH\_MID\_EXTENSION@{HATCH\_MID\_EXTENSION}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266afc843a4b7aac1eab314275b8e508c171}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266afc843a4b7aac1eab314275b8e508c171}} 
+H\+A\+T\+C\+H\+\_\+\+M\+I\+D\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HATCH\_HIGH\_EXTENSION@{HATCH\_HIGH\_EXTENSION}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!HATCH\_HIGH\_EXTENSION@{HATCH\_HIGH\_EXTENSION}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a7a6c5b8de2b990bbacc79a88ad16c8f4}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a7a6c5b8de2b990bbacc79a88ad16c8f4}} 
+H\+A\+T\+C\+H\+\_\+\+H\+I\+G\+H\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HATCH\_LOW\_SECOND\_EXTENSION@{HATCH\_LOW\_SECOND\_EXTENSION}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!HATCH\_LOW\_SECOND\_EXTENSION@{HATCH\_LOW\_SECOND\_EXTENSION}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a5ac0a1cd58f40d15c8960129e4875171}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a5ac0a1cd58f40d15c8960129e4875171}} 
+H\+A\+T\+C\+H\+\_\+\+L\+O\+W\+\_\+\+S\+E\+C\+O\+N\+D\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HATCH\_MID\_SECOND\_EXTENSION@{HATCH\_MID\_SECOND\_EXTENSION}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!HATCH\_MID\_SECOND\_EXTENSION@{HATCH\_MID\_SECOND\_EXTENSION}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a80a9e5f602b0e65db4184477f7f4a767}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a80a9e5f602b0e65db4184477f7f4a767}} 
+H\+A\+T\+C\+H\+\_\+\+M\+I\+D\+\_\+\+S\+E\+C\+O\+N\+D\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HATCH\_HIGH\_SECOND\_EXTENSION@{HATCH\_HIGH\_SECOND\_EXTENSION}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!HATCH\_HIGH\_SECOND\_EXTENSION@{HATCH\_HIGH\_SECOND\_EXTENSION}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a3345d764cf684b289b63cb7a72ca4cba}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a3345d764cf684b289b63cb7a72ca4cba}} 
+H\+A\+T\+C\+H\+\_\+\+H\+I\+G\+H\+\_\+\+S\+E\+C\+O\+N\+D\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CARGO\_FLOOR\_EXTENSION@{CARGO\_FLOOR\_EXTENSION}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!CARGO\_FLOOR\_EXTENSION@{CARGO\_FLOOR\_EXTENSION}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a14f5d4f7d597f51881fc9e232f3ba023}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a14f5d4f7d597f51881fc9e232f3ba023}} 
+C\+A\+R\+G\+O\+\_\+\+F\+L\+O\+O\+R\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CARGO\_HP\_EXTENSION@{CARGO\_HP\_EXTENSION}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!CARGO\_HP\_EXTENSION@{CARGO\_HP\_EXTENSION}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a4455b592f7d8fca4c2c9864af8d64e01}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a4455b592f7d8fca4c2c9864af8d64e01}} 
+C\+A\+R\+G\+O\+\_\+\+H\+P\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CARGO\_HP\_HOLE\_EXTENSION@{CARGO\_HP\_HOLE\_EXTENSION}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!CARGO\_HP\_HOLE\_EXTENSION@{CARGO\_HP\_HOLE\_EXTENSION}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a4c8c4a2a8dedb0bf55576235e9846f32}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a4c8c4a2a8dedb0bf55576235e9846f32}} 
+C\+A\+R\+G\+O\+\_\+\+H\+P\+\_\+\+H\+O\+L\+E\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CARGO\_SHIP\_EXTENSION@{CARGO\_SHIP\_EXTENSION}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!CARGO\_SHIP\_EXTENSION@{CARGO\_SHIP\_EXTENSION}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266ad2333c004741d253bd2b35f867a8934e}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266ad2333c004741d253bd2b35f867a8934e}} 
+C\+A\+R\+G\+O\+\_\+\+S\+H\+I\+P\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CARGO\_LOW\_EXTENSION@{CARGO\_LOW\_EXTENSION}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!CARGO\_LOW\_EXTENSION@{CARGO\_LOW\_EXTENSION}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266ae8e68fe8b6492c24d526f1bde03817e6}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266ae8e68fe8b6492c24d526f1bde03817e6}} 
+C\+A\+R\+G\+O\+\_\+\+L\+O\+W\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CARGO\_MID\_EXTENSION@{CARGO\_MID\_EXTENSION}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!CARGO\_MID\_EXTENSION@{CARGO\_MID\_EXTENSION}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266ab4eee97f335588c9f49696441d529684}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266ab4eee97f335588c9f49696441d529684}} 
+C\+A\+R\+G\+O\+\_\+\+M\+I\+D\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CARGO\_HIGH\_EXTENSION@{CARGO\_HIGH\_EXTENSION}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!CARGO\_HIGH\_EXTENSION@{CARGO\_HIGH\_EXTENSION}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266abca8175a21194accda3dda8f493f47de}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266abca8175a21194accda3dda8f493f47de}} 
+C\+A\+R\+G\+O\+\_\+\+H\+I\+G\+H\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CARGO\_INTAKE\_SPEED\_PARAM@{CARGO\_INTAKE\_SPEED\_PARAM}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!CARGO\_INTAKE\_SPEED\_PARAM@{CARGO\_INTAKE\_SPEED\_PARAM}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a8ffa3407a6e6e441e13fa2f960f777a2}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a8ffa3407a6e6e441e13fa2f960f777a2}} 
+C\+A\+R\+G\+O\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+S\+P\+E\+E\+D\+\_\+\+P\+A\+R\+AM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CARGO\_OUTTAKE\_SPEED\_PARAM@{CARGO\_OUTTAKE\_SPEED\_PARAM}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!CARGO\_OUTTAKE\_SPEED\_PARAM@{CARGO\_OUTTAKE\_SPEED\_PARAM}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a251a0d7bb069b4924525cd4eec95338d}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a251a0d7bb069b4924525cd4eec95338d}} 
+C\+A\+R\+G\+O\+\_\+\+O\+U\+T\+T\+A\+K\+E\+\_\+\+S\+P\+E\+E\+D\+\_\+\+P\+A\+R\+AM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HATCH\_INTAKE\_SPEED\_PARAM@{HATCH\_INTAKE\_SPEED\_PARAM}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!HATCH\_INTAKE\_SPEED\_PARAM@{HATCH\_INTAKE\_SPEED\_PARAM}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266ab6801c1d4f5a5d42504c42ad5547e213}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266ab6801c1d4f5a5d42504c42ad5547e213}} 
+H\+A\+T\+C\+H\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+S\+P\+E\+E\+D\+\_\+\+P\+A\+R\+AM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HATCH\_OUTTAKE\_SPEED\_PARAM@{HATCH\_OUTTAKE\_SPEED\_PARAM}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!HATCH\_OUTTAKE\_SPEED\_PARAM@{HATCH\_OUTTAKE\_SPEED\_PARAM}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a4768fb4f73860f4d0f4c8e094d10b872}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a4768fb4f73860f4d0f4c8e094d10b872}} 
+H\+A\+T\+C\+H\+\_\+\+O\+U\+T\+T\+A\+K\+E\+\_\+\+S\+P\+E\+E\+D\+\_\+\+P\+A\+R\+AM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SERVO\_LOCKED\_POSITION\_PARAM@{SERVO\_LOCKED\_POSITION\_PARAM}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!SERVO\_LOCKED\_POSITION\_PARAM@{SERVO\_LOCKED\_POSITION\_PARAM}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a5f3bcefb9301bc8c083c7361285a41c8}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a5f3bcefb9301bc8c083c7361285a41c8}} 
+S\+E\+R\+V\+O\+\_\+\+L\+O\+C\+K\+E\+D\+\_\+\+P\+O\+S\+I\+T\+I\+O\+N\+\_\+\+P\+A\+R\+AM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SERVO\_DROPPED\_POSITION\_PARAM@{SERVO\_DROPPED\_POSITION\_PARAM}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!SERVO\_DROPPED\_POSITION\_PARAM@{SERVO\_DROPPED\_POSITION\_PARAM}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a5a76a4ec336d9257bdc9bae54a6dd564}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a5a76a4ec336d9257bdc9bae54a6dd564}} 
+S\+E\+R\+V\+O\+\_\+\+D\+R\+O\+P\+P\+E\+D\+\_\+\+P\+O\+S\+I\+T\+I\+O\+N\+\_\+\+P\+A\+R\+AM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HATCH\_MECH\_OPEN\_ROTATIONS@{HATCH\_MECH\_OPEN\_ROTATIONS}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!HATCH\_MECH\_OPEN\_ROTATIONS@{HATCH\_MECH\_OPEN\_ROTATIONS}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a7d0d144dfb8bafc1da4e49e7ab84930a}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a7d0d144dfb8bafc1da4e49e7ab84930a}} 
+H\+A\+T\+C\+H\+\_\+\+M\+E\+C\+H\+\_\+\+O\+P\+E\+N\+\_\+\+R\+O\+T\+A\+T\+I\+O\+NS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAX\_MECHANISM\_PARAM\_TYPES@{MAX\_MECHANISM\_PARAM\_TYPES}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!MAX\_MECHANISM\_PARAM\_TYPES@{MAX\_MECHANISM\_PARAM\_TYPES}}}\mbox{\Hypertarget{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a34cf76361cf1cb98087db97fee235165}\label{class_i_mechanism_a2dd0e46ba901484676df6a7ef7496266a34cf76361cf1cb98087db97fee235165}} 
+M\+A\+X\+\_\+\+M\+E\+C\+H\+A\+N\+I\+S\+M\+\_\+\+P\+A\+R\+A\+M\+\_\+\+T\+Y\+P\+ES&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_i_mechanism_a5b60af468978515764f4d2dedd80638d}\label{class_i_mechanism_a5b60af468978515764f4d2dedd80638d}} 
+\index{IMechanism@{IMechanism}!MECHANISM\_TYPE@{MECHANISM\_TYPE}}
+\index{MECHANISM\_TYPE@{MECHANISM\_TYPE}!IMechanism@{IMechanism}}
+\doxysubsubsection{\texorpdfstring{MECHANISM\_TYPE}{MECHANISM\_TYPE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_i_mechanism_a5b60af468978515764f4d2dedd80638d}{I\+Mechanism\+::\+M\+E\+C\+H\+A\+N\+I\+S\+M\+\_\+\+T\+Y\+PE}}}
+
+================================================================================== enum\+: M\+E\+C\+H\+A\+N\+I\+S\+M\+\_\+\+T\+Y\+PE \hypertarget{class_i_mechanism_autotoc_md81}{}\doxysubsection{description\+:    Indicates the type of mechanism}\label{class_i_mechanism_autotoc_md81}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNKNOWN\_MECHANISM@{UNKNOWN\_MECHANISM}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!UNKNOWN\_MECHANISM@{UNKNOWN\_MECHANISM}}}\mbox{\Hypertarget{class_i_mechanism_a5b60af468978515764f4d2dedd80638da8f01ca36f34ccd6c521674d92b4987c4}\label{class_i_mechanism_a5b60af468978515764f4d2dedd80638da8f01ca36f34ccd6c521674d92b4987c4}} 
+U\+N\+K\+N\+O\+W\+N\+\_\+\+M\+E\+C\+H\+A\+N\+I\+SM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHASSIS@{CHASSIS}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!CHASSIS@{CHASSIS}}}\mbox{\Hypertarget{class_i_mechanism_a5b60af468978515764f4d2dedd80638daafec998383badf56a22a672a9c12574e}\label{class_i_mechanism_a5b60af468978515764f4d2dedd80638daafec998383badf56a22a672a9c12574e}} 
+C\+H\+A\+S\+S\+IS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WRIST@{WRIST}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!WRIST@{WRIST}}}\mbox{\Hypertarget{class_i_mechanism_a5b60af468978515764f4d2dedd80638dac47a3561d1d0531543dd7815ede25576}\label{class_i_mechanism_a5b60af468978515764f4d2dedd80638dac47a3561d1d0531543dd7815ede25576}} 
+W\+R\+I\+ST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INTAKE@{INTAKE}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!INTAKE@{INTAKE}}}\mbox{\Hypertarget{class_i_mechanism_a5b60af468978515764f4d2dedd80638dad0f2ff3b7e952a5534ab7c0188ea85b0}\label{class_i_mechanism_a5b60af468978515764f4d2dedd80638dad0f2ff3b7e952a5534ab7c0188ea85b0}} 
+I\+N\+T\+A\+KE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ARM@{ARM}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!ARM@{ARM}}}\mbox{\Hypertarget{class_i_mechanism_a5b60af468978515764f4d2dedd80638da1fc70e5cb1088a67fae210d0aeee42a1}\label{class_i_mechanism_a5b60af468978515764f4d2dedd80638da1fc70e5cb1088a67fae210d0aeee42a1}} 
+A\+RM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EXTENDER@{EXTENDER}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!EXTENDER@{EXTENDER}}}\mbox{\Hypertarget{class_i_mechanism_a5b60af468978515764f4d2dedd80638da0ea223965f69353f67767e202a1a6dfa}\label{class_i_mechanism_a5b60af468978515764f4d2dedd80638da0ea223965f69353f67767e202a1a6dfa}} 
+E\+X\+T\+E\+N\+D\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLIMBER@{CLIMBER}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!CLIMBER@{CLIMBER}}}\mbox{\Hypertarget{class_i_mechanism_a5b60af468978515764f4d2dedd80638dac0e716b6a6ade31caed1a8cd8fce8a99}\label{class_i_mechanism_a5b60af468978515764f4d2dedd80638dac0e716b6a6ade31caed1a8cd8fce8a99}} 
+C\+L\+I\+M\+B\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BEAK@{BEAK}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!BEAK@{BEAK}}}\mbox{\Hypertarget{class_i_mechanism_a5b60af468978515764f4d2dedd80638da1e21ac8d2bb7f99eb4119bdeac97c906}\label{class_i_mechanism_a5b60af468978515764f4d2dedd80638da1e21ac8d2bb7f99eb4119bdeac97c906}} 
+B\+E\+AK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TAIL@{TAIL}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!TAIL@{TAIL}}}\mbox{\Hypertarget{class_i_mechanism_a5b60af468978515764f4d2dedd80638da4dff5ff48ec69d4c73668e57108228a0}\label{class_i_mechanism_a5b60af468978515764f4d2dedd80638da4dff5ff48ec69d4c73668e57108228a0}} 
+T\+A\+IL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAX\_MECHANISM\_TYPES@{MAX\_MECHANISM\_TYPES}!IMechanism@{IMechanism}}\index{IMechanism@{IMechanism}!MAX\_MECHANISM\_TYPES@{MAX\_MECHANISM\_TYPES}}}\mbox{\Hypertarget{class_i_mechanism_a5b60af468978515764f4d2dedd80638daa75f99e1ac29792b15739c1020a5e73e}\label{class_i_mechanism_a5b60af468978515764f4d2dedd80638daa75f99e1ac29792b15739c1020a5e73e}} 
+M\+A\+X\+\_\+\+M\+E\+C\+H\+A\+N\+I\+S\+M\+\_\+\+T\+Y\+P\+ES&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_mechanism_a22f98b8310ad97e65dd710f3ae4ebcbf}\label{class_i_mechanism_a22f98b8310ad97e65dd710f3ae4ebcbf}} 
+\index{IMechanism@{IMechanism}!IMechanism@{IMechanism}}
+\index{IMechanism@{IMechanism}!IMechanism@{IMechanism}}
+\doxysubsubsection{\texorpdfstring{IMechanism()}{IMechanism()}}
+{\footnotesize\ttfamily I\+Mechanism\+::\+I\+Mechanism (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_i_mechanism_a1c70ef3fdee0c9fa33b70c60b91ca9c0}\label{class_i_mechanism_a1c70ef3fdee0c9fa33b70c60b91ca9c0}} 
+\index{IMechanism@{IMechanism}!````~IMechanism@{$\sim$IMechanism}}
+\index{````~IMechanism@{$\sim$IMechanism}!IMechanism@{IMechanism}}
+\doxysubsubsection{\texorpdfstring{$\sim$IMechanism()}{~IMechanism()}}
+{\footnotesize\ttfamily virtual I\+Mechanism\+::$\sim$\+I\+Mechanism (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_mechanism_aa15197ff101d65447516a8f10bb6867d}\label{class_i_mechanism_aa15197ff101d65447516a8f10bb6867d}} 
+\index{IMechanism@{IMechanism}!GetCurrentPosition@{GetCurrentPosition}}
+\index{GetCurrentPosition@{GetCurrentPosition}!IMechanism@{IMechanism}}
+\doxysubsubsection{\texorpdfstring{GetCurrentPosition()}{GetCurrentPosition()}}
+{\footnotesize\ttfamily virtual double I\+Mechanism\+::\+Get\+Current\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+================================================================================== 
+
+================================================================================== method\+: Get\+Current\+Postion description\+: Return the current position of the mechanism. The value is in inches or degrees. returns\+: double position in inches (translating mechanisms) or degrees ~\newline
+ (rotating mechanisms) 
+
+Implemented in \mbox{\hyperlink{class_intake_a6abaaaed9c70dcefdcdb68097a5f69d6}{Intake}}.
+
+\mbox{\Hypertarget{class_i_mechanism_a9a63d6905de4454d78d7e0d1d1e28437}\label{class_i_mechanism_a9a63d6905de4454d78d7e0d1d1e28437}} 
+\index{IMechanism@{IMechanism}!GetCurrentSpeed@{GetCurrentSpeed}}
+\index{GetCurrentSpeed@{GetCurrentSpeed}!IMechanism@{IMechanism}}
+\doxysubsubsection{\texorpdfstring{GetCurrentSpeed()}{GetCurrentSpeed()}}
+{\footnotesize\ttfamily virtual double I\+Mechanism\+::\+Get\+Current\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+================================================================================== 
+
+================================================================================== method\+: Get\+Cuyrrent\+Speed description\+: Get the current speed of the mechanism. The value is in inches per second or degrees per second. returns\+: double speed in inches/second (translating mechanisms) or ~\newline
+ degrees/second (rotating mechanisms) 
+
+Implemented in \mbox{\hyperlink{class_intake_a7e3783508ddf079750a1430d6fb2e6cf}{Intake}}.
+
+\mbox{\Hypertarget{class_i_mechanism_afd97d8b3f072b45a88c83490dd18e8d2}\label{class_i_mechanism_afd97d8b3f072b45a88c83490dd18e8d2}} 
+\index{IMechanism@{IMechanism}!GetTargetPosition@{GetTargetPosition}}
+\index{GetTargetPosition@{GetTargetPosition}!IMechanism@{IMechanism}}
+\doxysubsubsection{\texorpdfstring{GetTargetPosition()}{GetTargetPosition()}}
+{\footnotesize\ttfamily virtual double I\+Mechanism\+::\+Get\+Target\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+================================================================================== 
+
+================================================================================== method\+: Get\+Target\+Postion description\+: Return the targget position of the mechanism. The value is in inches or degrees. returns\+: double position in inches (translating mechanisms) or degrees (rotating mechanisms) 
+
+Implemented in \mbox{\hyperlink{class_intake_a09dd45bfc0e12d514bb1e1efa675ef06}{Intake}}.
+
+\mbox{\Hypertarget{class_i_mechanism_a06bbdacb531f60301062930ffebc85c2}\label{class_i_mechanism_a06bbdacb531f60301062930ffebc85c2}} 
+\index{IMechanism@{IMechanism}!GetTargetSpeed@{GetTargetSpeed}}
+\index{GetTargetSpeed@{GetTargetSpeed}!IMechanism@{IMechanism}}
+\doxysubsubsection{\texorpdfstring{GetTargetSpeed()}{GetTargetSpeed()}}
+{\footnotesize\ttfamily virtual double I\+Mechanism\+::\+Get\+Target\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+================================================================================== 
+
+================================================================================== method\+: Get\+Target\+Speecd description\+: Get the target speed of the mechanism. The value is in inches per second or degrees per second. returns\+: double speed in inches/second (translating mechanisms) or ~\newline
+ degrees/second (rotating mechanisms) 
+
+Implemented in \mbox{\hyperlink{class_intake_a7d733c16727ac5509d2c42c5b3165103}{Intake}}.
+
+\mbox{\Hypertarget{class_i_mechanism_a053f8835d2a677c31803457fddb4975d}\label{class_i_mechanism_a053f8835d2a677c31803457fddb4975d}} 
+\index{IMechanism@{IMechanism}!GetType@{GetType}}
+\index{GetType@{GetType}!IMechanism@{IMechanism}}
+\doxysubsubsection{\texorpdfstring{GetType()}{GetType()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_i_mechanism_a5b60af468978515764f4d2dedd80638d}{M\+E\+C\+H\+A\+N\+I\+S\+M\+\_\+\+T\+Y\+PE}} I\+Mechanism\+::\+Get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+================================================================================== method\+: Get\+Type description\+: Indicates the type of mechanism this is \hypertarget{class_i_mechanism_autotoc_md82}{}\doxysubsection{returns\+:        M\+E\+C\+H\+A\+N\+I\+S\+M\+\_\+\+T\+Y\+PE}\label{class_i_mechanism_autotoc_md82}
+
+
+Implemented in \mbox{\hyperlink{class_intake_af46e690dbd48e61706c036163165a022}{Intake}}.
+
+\mbox{\Hypertarget{class_i_mechanism_a2ccb32e2b6e075dca1a554510d1ec7d5}\label{class_i_mechanism_a2ccb32e2b6e075dca1a554510d1ec7d5}} 
+\index{IMechanism@{IMechanism}!SetPercentOutput@{SetPercentOutput}}
+\index{SetPercentOutput@{SetPercentOutput}!IMechanism@{IMechanism}}
+\doxysubsubsection{\texorpdfstring{SetPercentOutput()}{SetPercentOutput()}}
+{\footnotesize\ttfamily virtual void I\+Mechanism\+::\+Set\+Percent\+Output (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+================================================================================== method\+: Set\+Percent\+Output description\+: Run mechanism in open loop (percent output) \hypertarget{class_i_mechanism_autotoc_md83}{}\doxysubsection{returns\+:        void}\label{class_i_mechanism_autotoc_md83}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & {\itshape  -\/ percent output for the motor(s) }\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_intake_ad3a0fdd5ac39f07e43a472274131ef0f}{Intake}}.
+
+\mbox{\Hypertarget{class_i_mechanism_ac59d63363a5502555cd03564cc4704cf}\label{class_i_mechanism_ac59d63363a5502555cd03564cc4704cf}} 
+\index{IMechanism@{IMechanism}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!IMechanism@{IMechanism}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily virtual void I\+Mechanism\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{double}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+================================================================================== method\+: Set\+Position description\+: Run mechanism in closed loop position mode. The value is in inches or degrees. \hypertarget{class_i_mechanism_autotoc_md84}{}\doxysubsection{returns\+:        void}\label{class_i_mechanism_autotoc_md84}
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & {\itshape  -\/ target position in inches (translating mechanisms) or degrees (rotating mechanisms) }\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_intake_afe368f5b06a8dd64aedde0020d75e235}{Intake}}.
+
+\mbox{\Hypertarget{class_i_mechanism_a676ec72e486c0baf1fb981fdaf6f8f52}\label{class_i_mechanism_a676ec72e486c0baf1fb981fdaf6f8f52}} 
+\index{IMechanism@{IMechanism}!SetSpeed@{SetSpeed}}
+\index{SetSpeed@{SetSpeed}!IMechanism@{IMechanism}}
+\doxysubsubsection{\texorpdfstring{SetSpeed()}{SetSpeed()}}
+{\footnotesize\ttfamily virtual void I\+Mechanism\+::\+Set\+Speed (\begin{DoxyParamCaption}\item[{double}]{speed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+================================================================================== method\+: Set\+Speed description\+: Run mechanism in closed loop velocity mode. The value is in inches/second (translating mechanisms) or degrees/second (rotating ~\newline
+ mechanisms) \hypertarget{class_i_mechanism_autotoc_md85}{}\doxysubsection{returns\+:        void}\label{class_i_mechanism_autotoc_md85}
+
+\begin{DoxyParams}{Parameters}
+{\em speed} & {\itshape  -\/ target speed inches/second (translating mechanisms) or degrees/second (rotating mechanisms) }\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_intake_ac522ef3bbc8e44820cb4a9400622b16a}{Intake}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Git\+Kraken\+Repos/\+Template\+Repository/src/main/cpp/subsys/\mbox{\hyperlink{_i_mechanism_8h}{I\+Mechanism.\+h}}\end{DoxyCompactItemize}

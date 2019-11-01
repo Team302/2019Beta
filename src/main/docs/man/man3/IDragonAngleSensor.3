@@ -1,0 +1,100 @@
+.TH "IDragonAngleSensor" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+IDragonAngleSensor
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IDragonAngleSensor\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIDragonAngleSensor\fP ()=default"
+.br
+.ti -1c
+.RI "\fB~IDragonAngleSensor\fP ()=default"
+.br
+.ti -1c
+.RI "virtual double \fBGetRawAngle\fP ()=0"
+.br
+.ti -1c
+.RI "virtual double \fBGetNormalizedAngle\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBResetAngle\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBResetAngle\fP (double angle)=0"
+.br
+.ti -1c
+.RI "virtual double \fBGetAngleConfidence\fP ()=0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+==================================================================================================================================================== Inteface: \fBIDragonAngleSensor\fP 
+.SH "Description:     This inteface provides a common set of methods for all sensors that measure angles"
+.PP
+
+.PP
+Definition at line 32 of file IDragonAngleSensor\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "IDragonAngleSensor::IDragonAngleSensor ()\fC [default]\fP"
+
+.PP
+ Method: \fBIDragonAngleSensor\fP 
+.SS "Description: Constructor for the interface"
+
+.SS "IDragonAngleSensor::~IDragonAngleSensor ()\fC [default]\fP"
+
+.PP
+ Method: ~IDragonAngleSensor 
+.SS "Description: Destructor for the interface"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual double IDragonAngleSensor::GetAngleConfidence ()\fC [pure virtual]\fP"
+
+.PP
+ Method: GetAngleConfidence Description: Indicates how accurate the returned angle is Returns: double 0\&.0 == ignore (sensor has an error) 
+.SS "1\&.0 == very confident"
+
+.SS "virtual double IDragonAngleSensor::GetNormalizedAngle ()\fC [pure virtual]\fP"
+
+.PP
+ Method: GetNormalizedAngle Description: Return the measured angle and adjust the value to be between 0 and 360 degrees 
+.SS "Returns:     double     Measured Angle"
+
+.SS "virtual double IDragonAngleSensor::GetRawAngle ()\fC [pure virtual]\fP"
+
+.PP
+ Method: GetRawAngle Description: Return the measured angle in degrees 
+.SS "Returns:     double     Measured Angle"
+
+.SS "virtual void IDragonAngleSensor::ResetAngle ()\fC [pure virtual]\fP"
+
+.PP
+ Method: ResetAngle Description: Reset the current angle to 0 degrees 
+.SS "Returns:     void"
+
+.SS "virtual void IDragonAngleSensor::ResetAngle (double angle)\fC [pure virtual]\fP"
+
+.PP
+ Method: ResetAngle Description: Reset the current angle to a known angle 
+.SS "Returns:     void"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIangle\fP \fI - set the current angle to measure this value (degrees) \fP
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

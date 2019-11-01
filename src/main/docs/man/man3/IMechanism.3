@@ -1,0 +1,299 @@
+.TH "IMechanism" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+IMechanism
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IMechanism\&.h>\fP
+.PP
+Inherited by \fBIntake\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBMECHANISM_TYPE\fP { \fBUNKNOWN_MECHANISM\fP = -1, \fBCHASSIS\fP, \fBWRIST\fP, \fBINTAKE\fP, \fBARM\fP, \fBEXTENDER\fP, \fBCLIMBER\fP, \fBBEAK\fP, \fBTAIL\fP, \fBMAX_MECHANISM_TYPES\fP }"
+.br
+.ti -1c
+.RI "enum \fBMECHANISM_PARAM_TYPE\fP { \fBMECHANISM_PARAM_UNKNOWN\fP = -1, \fBLEGAL_STARTING_ANGLE\fP, \fBTEST_STARTING_ANGLE\fP, \fBEXTENDER_LEGAL_STARTING_INCHES\fP, \fBEXTENDER_TEST_STARTING_INCHES\fP, \fBHATCH_FLOOR_ANGLE\fP, \fBHATCH_HP_SECOND_ANGLE\fP, \fBHATCH_LOW_ANGLE\fP, \fBHATCH_MID_ANGLE\fP, \fBHATCH_HIGH_ANGLE\fP, \fBHATCH_LOW_SECOND_ANGLE\fP, \fBHATCH_MID_SECOND_ANGLE\fP, \fBHATCH_HIGH_SECOND_ANGLE\fP, \fBCARGO_FLOOR_ANGLE\fP, \fBCARGO_HP_ANGLE\fP, \fBCARGO_SHIP_ANGLE\fP, \fBCARGO_LOW_ANGLE\fP, \fBCARGO_MID_ANGLE\fP, \fBCARGO_HIGH_ANGLE\fP, \fBHATCH_FLOOR_EXTENSION\fP, \fBHATCH_HP_SECOND_EXTENSION\fP, \fBHATCH_LOW_EXTENSION\fP, \fBHATCH_MID_EXTENSION\fP, \fBHATCH_HIGH_EXTENSION\fP, \fBHATCH_LOW_SECOND_EXTENSION\fP, \fBHATCH_MID_SECOND_EXTENSION\fP, \fBHATCH_HIGH_SECOND_EXTENSION\fP, \fBCARGO_FLOOR_EXTENSION\fP, \fBCARGO_HP_EXTENSION\fP, \fBCARGO_HP_HOLE_EXTENSION\fP, \fBCARGO_SHIP_EXTENSION\fP, \fBCARGO_LOW_EXTENSION\fP, \fBCARGO_MID_EXTENSION\fP, \fBCARGO_HIGH_EXTENSION\fP, \fBCARGO_INTAKE_SPEED_PARAM\fP, \fBCARGO_OUTTAKE_SPEED_PARAM\fP, \fBHATCH_INTAKE_SPEED_PARAM\fP, \fBHATCH_OUTTAKE_SPEED_PARAM\fP, \fBSERVO_LOCKED_POSITION_PARAM\fP, \fBSERVO_DROPPED_POSITION_PARAM\fP, \fBHATCH_MECH_OPEN_ROTATIONS\fP, \fBMAX_MECHANISM_PARAM_TYPES\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBMECHANISM_TYPE\fP \fBGetType\fP () const =0"
+.br
+.ti -1c
+.RI "virtual void \fBSetPercentOutput\fP (double value)=0"
+.br
+.ti -1c
+.RI "virtual void \fBSetPosition\fP (double pos)=0"
+.br
+.ti -1c
+.RI "virtual double \fBGetCurrentPosition\fP () const =0"
+.br
+.RI "================================================================================== "
+.ti -1c
+.RI "virtual double \fBGetTargetPosition\fP () const =0"
+.br
+.RI "================================================================================== "
+.ti -1c
+.RI "virtual void \fBSetSpeed\fP (double speed)=0"
+.br
+.ti -1c
+.RI "virtual double \fBGetCurrentSpeed\fP () const =0"
+.br
+.RI "================================================================================== "
+.ti -1c
+.RI "virtual double \fBGetTargetSpeed\fP () const =0"
+.br
+.RI "================================================================================== "
+.ti -1c
+.RI "\fBIMechanism\fP ()=default"
+.br
+.ti -1c
+.RI "virtual \fB~IMechanism\fP ()=default"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+==================================================================================================================================================== Copyright 2019 Lake Orion Robotics FIRST Team 302
+.PP
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+.PP
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software\&.
+.PP
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT\&. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE 
+.SH "OR OTHER DEALINGS IN THE SOFTWARE\&."
+.PP
+======================================================================================================== 
+.SH "IMechanism\&.h"
+.PP
+File Description: This is the interface for all subsystems
+.PP
+.PP
+ ======================================================================================================== Class: \fBIMechanism\fP 
+.SH "Description:  Interface for subsystems"
+.PP
+
+.PP
+Definition at line 42 of file IMechanism\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBIMechanism::MECHANISM_PARAM_TYPE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMECHANISM_PARAM_UNKNOWN \fP\fP
+.TP
+\fB\fILEGAL_STARTING_ANGLE \fP\fP
+.TP
+\fB\fITEST_STARTING_ANGLE \fP\fP
+.TP
+\fB\fIEXTENDER_LEGAL_STARTING_INCHES \fP\fP
+.TP
+\fB\fIEXTENDER_TEST_STARTING_INCHES \fP\fP
+.TP
+\fB\fIHATCH_FLOOR_ANGLE \fP\fP
+.TP
+\fB\fIHATCH_HP_SECOND_ANGLE \fP\fP
+.TP
+\fB\fIHATCH_LOW_ANGLE \fP\fP
+.TP
+\fB\fIHATCH_MID_ANGLE \fP\fP
+.TP
+\fB\fIHATCH_HIGH_ANGLE \fP\fP
+.TP
+\fB\fIHATCH_LOW_SECOND_ANGLE \fP\fP
+.TP
+\fB\fIHATCH_MID_SECOND_ANGLE \fP\fP
+.TP
+\fB\fIHATCH_HIGH_SECOND_ANGLE \fP\fP
+.TP
+\fB\fICARGO_FLOOR_ANGLE \fP\fP
+.TP
+\fB\fICARGO_HP_ANGLE \fP\fP
+.TP
+\fB\fICARGO_SHIP_ANGLE \fP\fP
+.TP
+\fB\fICARGO_LOW_ANGLE \fP\fP
+.TP
+\fB\fICARGO_MID_ANGLE \fP\fP
+.TP
+\fB\fICARGO_HIGH_ANGLE \fP\fP
+.TP
+\fB\fIHATCH_FLOOR_EXTENSION \fP\fP
+.TP
+\fB\fIHATCH_HP_SECOND_EXTENSION \fP\fP
+.TP
+\fB\fIHATCH_LOW_EXTENSION \fP\fP
+.TP
+\fB\fIHATCH_MID_EXTENSION \fP\fP
+.TP
+\fB\fIHATCH_HIGH_EXTENSION \fP\fP
+.TP
+\fB\fIHATCH_LOW_SECOND_EXTENSION \fP\fP
+.TP
+\fB\fIHATCH_MID_SECOND_EXTENSION \fP\fP
+.TP
+\fB\fIHATCH_HIGH_SECOND_EXTENSION \fP\fP
+.TP
+\fB\fICARGO_FLOOR_EXTENSION \fP\fP
+.TP
+\fB\fICARGO_HP_EXTENSION \fP\fP
+.TP
+\fB\fICARGO_HP_HOLE_EXTENSION \fP\fP
+.TP
+\fB\fICARGO_SHIP_EXTENSION \fP\fP
+.TP
+\fB\fICARGO_LOW_EXTENSION \fP\fP
+.TP
+\fB\fICARGO_MID_EXTENSION \fP\fP
+.TP
+\fB\fICARGO_HIGH_EXTENSION \fP\fP
+.TP
+\fB\fICARGO_INTAKE_SPEED_PARAM \fP\fP
+.TP
+\fB\fICARGO_OUTTAKE_SPEED_PARAM \fP\fP
+.TP
+\fB\fIHATCH_INTAKE_SPEED_PARAM \fP\fP
+.TP
+\fB\fIHATCH_OUTTAKE_SPEED_PARAM \fP\fP
+.TP
+\fB\fISERVO_LOCKED_POSITION_PARAM \fP\fP
+.TP
+\fB\fISERVO_DROPPED_POSITION_PARAM \fP\fP
+.TP
+\fB\fIHATCH_MECH_OPEN_ROTATIONS \fP\fP
+.TP
+\fB\fIMAX_MECHANISM_PARAM_TYPES \fP\fP
+.PP
+Definition at line 65 of file IMechanism\&.h\&.
+.SS "enum \fBIMechanism::MECHANISM_TYPE\fP"
+================================================================================== enum: MECHANISM_TYPE 
+.SH "description:    Indicates the type of mechanism"
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUNKNOWN_MECHANISM \fP\fP
+.TP
+\fB\fICHASSIS \fP\fP
+.TP
+\fB\fIWRIST \fP\fP
+.TP
+\fB\fIINTAKE \fP\fP
+.TP
+\fB\fIARM \fP\fP
+.TP
+\fB\fIEXTENDER \fP\fP
+.TP
+\fB\fICLIMBER \fP\fP
+.TP
+\fB\fIBEAK \fP\fP
+.TP
+\fB\fITAIL \fP\fP
+.TP
+\fB\fIMAX_MECHANISM_TYPES \fP\fP
+.PP
+Definition at line 50 of file IMechanism\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "IMechanism::IMechanism ()\fC [default]\fP"
+
+.SS "virtual IMechanism::~IMechanism ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual double IMechanism::GetCurrentPosition () const\fC [pure virtual]\fP"
+
+.PP
+================================================================================== ================================================================================== method: GetCurrentPostion description: Return the current position of the mechanism\&. The value is in inches or degrees\&. returns: double position in inches (translating mechanisms) or degrees 
+.br
+ (rotating mechanisms) 
+.PP
+Implemented in \fBIntake\fP\&.
+.SS "virtual double IMechanism::GetCurrentSpeed () const\fC [pure virtual]\fP"
+
+.PP
+================================================================================== ================================================================================== method: GetCuyrrentSpeed description: Get the current speed of the mechanism\&. The value is in inches per second or degrees per second\&. returns: double speed in inches/second (translating mechanisms) or 
+.br
+ degrees/second (rotating mechanisms) 
+.PP
+Implemented in \fBIntake\fP\&.
+.SS "virtual double IMechanism::GetTargetPosition () const\fC [pure virtual]\fP"
+
+.PP
+================================================================================== ================================================================================== method: GetTargetPostion description: Return the targget position of the mechanism\&. The value is in inches or degrees\&. returns: double position in inches (translating mechanisms) or degrees (rotating mechanisms) 
+.PP
+Implemented in \fBIntake\fP\&.
+.SS "virtual double IMechanism::GetTargetSpeed () const\fC [pure virtual]\fP"
+
+.PP
+================================================================================== ================================================================================== method: GetTargetSpeecd description: Get the target speed of the mechanism\&. The value is in inches per second or degrees per second\&. returns: double speed in inches/second (translating mechanisms) or 
+.br
+ degrees/second (rotating mechanisms) 
+.PP
+Implemented in \fBIntake\fP\&.
+.SS "virtual \fBMECHANISM_TYPE\fP IMechanism::GetType () const\fC [pure virtual]\fP"
+================================================================================== method: GetType description: Indicates the type of mechanism this is 
+.SH "returns:        MECHANISM_TYPE"
+.PP
+
+.PP
+Implemented in \fBIntake\fP\&.
+.SS "virtual void IMechanism::SetPercentOutput (double value)\fC [pure virtual]\fP"
+================================================================================== method: SetPercentOutput description: Run mechanism in open loop (percent output) 
+.SH "returns:        void"
+.PP
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP \fI - percent output for the motor(s) \fP
+.RE
+.PP
+
+.PP
+Implemented in \fBIntake\fP\&.
+.SS "virtual void IMechanism::SetPosition (double pos)\fC [pure virtual]\fP"
+================================================================================== method: SetPosition description: Run mechanism in closed loop position mode\&. The value is in inches or degrees\&. 
+.SH "returns:        void"
+.PP
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIpos\fP \fI - target position in inches (translating mechanisms) or degrees (rotating mechanisms) \fP
+.RE
+.PP
+
+.PP
+Implemented in \fBIntake\fP\&.
+.SS "virtual void IMechanism::SetSpeed (double speed)\fC [pure virtual]\fP"
+================================================================================== method: SetSpeed description: Run mechanism in closed loop velocity mode\&. The value is in inches/second (translating mechanisms) or degrees/second (rotating 
+.br
+ mechanisms) 
+.SH "returns:        void"
+.PP
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIspeed\fP \fI - target speed inches/second (translating mechanisms) or degrees/second (rotating mechanisms) \fP
+.RE
+.PP
+
+.PP
+Implemented in \fBIntake\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

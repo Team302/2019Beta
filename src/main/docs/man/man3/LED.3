@@ -1,0 +1,93 @@
+.TH "LED" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+LED
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <LED\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBColors\fP { \fBRED\fP, \fBPURPLE\fP, \fBYELLOW\fP, \fBGREEN\fP, \fBBLUE\fP, \fBMAGENTA\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLED\fP (int CANId)"
+.br
+.ti -1c
+.RI "\fBLED\fP ()=delete"
+.br
+.ti -1c
+.RI "void \fBSetColor\fP (\fBColors\fP color)"
+.br
+.ti -1c
+.RI "void \fBSetRGB\fP (double r, double g, double b)"
+.br
+.ti -1c
+.RI "void \fBEnableLED\fP ()"
+.br
+.ti -1c
+.RI "void \fBDisableLED\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 6 of file LED\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBLED::Colors\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIRED \fP\fP
+.TP
+\fB\fIPURPLE \fP\fP
+.TP
+\fB\fIYELLOW \fP\fP
+.TP
+\fB\fIGREEN \fP\fP
+.TP
+\fB\fIBLUE \fP\fP
+.TP
+\fB\fIMAGENTA \fP\fP
+.PP
+Definition at line 10 of file LED\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "LED::LED (int CANId)"
+
+.PP
+Definition at line 9 of file LED\&.cpp\&.
+.SS "LED::LED ()\fC [delete]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void LED::DisableLED ()"
+
+.PP
+Definition at line 86 of file LED\&.cpp\&.
+.SS "void LED::EnableLED ()"
+
+.PP
+Definition at line 81 of file LED\&.cpp\&.
+.SS "void LED::SetColor (\fBColors\fP color)"
+
+.PP
+Definition at line 15 of file LED\&.cpp\&.
+.SS "void LED::SetRGB (double r, double g, double b)"
+
+.PP
+Definition at line 71 of file LED\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

@@ -1,0 +1,136 @@
+.TH "DragonPositionSensor" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DragonPositionSensor
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DragonPositionSensor\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDragonPositionSensor\fP ()=delete"
+.br
+.ti -1c
+.RI "\fBDragonPositionSensor\fP (\fBIDragonAngleSensor\fP *angleSensor, double diameter)"
+.br
+.ti -1c
+.RI "\fB~DragonPositionSensor\fP ()"
+.br
+.ti -1c
+.RI "double \fBGetDistance\fP ()"
+.br
+.ti -1c
+.RI "void \fBResetDistance\fP ()"
+.br
+.ti -1c
+.RI "void \fBResetDistance\fP (double distance)"
+.br
+.ti -1c
+.RI "double \fBGetDistanceConfidence\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+==================================================================================================================================================== Class: IDragonPositionSensor Description: This provides a common set of methods for all sensors that measure the 
+.SH "distance/position a mechanism has moved\&."
+.PP
+
+.PP
+Definition at line 34 of file DragonPositionSensor\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DragonPositionSensor::DragonPositionSensor ()\fC [delete]\fP"
+
+.PP
+ Method: \fBDragonPositionSensor\fP 
+.SS "Description: Constructor"
+
+.SS "DragonPositionSensor::DragonPositionSensor (\fBIDragonAngleSensor\fP * angleSensor, double diameter)"
+==================================================================================================================================================== Class: IDragonPositionSensor Description: This provides a common set of methods for all sensors that measure the 
+.SH "distance/position a mechanism has moved\&."
+.PP
+.PP
+ Method: \fBDragonPositionSensor\fP 
+.SS "Description: Constructor"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIdiameter\fP \fI - angle sensor \fI - diameter of the rotating item \fP\fP
+.RE
+.PP
+
+.PP
+Definition at line 42 of file DragonPositionSensor\&.cpp\&.
+.SS "DragonPositionSensor::~DragonPositionSensor ()"
+
+.PP
+ Method: ~IDragonPositionSensor 
+.SS "Description: Destructor"
+.PP
+ Method: ~IDragonPositionSensor 
+.SS "Description: Destructor"
+
+.PP
+Definition at line 60 of file DragonPositionSensor\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "double DragonPositionSensor::GetDistance ()"
+
+.PP
+ Method: GetDistance Description: Return the measured distance in inches 
+.SS "Returns:     double     Measured distance"
+.PP
+ Method: GetDistance Description: Return the measured distance in inches 
+.SS "Returns:     double     Measured distance"
+
+.PP
+Definition at line 75 of file DragonPositionSensor\&.cpp\&.
+.SS "double DragonPositionSensor::GetDistanceConfidence ()"
+
+.PP
+ Method: GetDistanceConfidence Description: Indicates how accurate the returned distance is Returns: double 0\&.0 == ignore (sensor has an error) 
+.SS "1\&.0 == very confident"
+.PP
+ Method: GetDistanceConfidence Description: Indicates how accurate the returned distance is Returns: double 0\&.0 == ignore (sensor has an error) 
+.SS "1\&.0 == very confident"
+
+.PP
+Definition at line 122 of file DragonPositionSensor\&.cpp\&.
+.SS "void DragonPositionSensor::ResetDistance ()"
+
+.PP
+ Method: ResetDistance Description: Reset the current distance to 0 inches 
+.SS "Returns:     void"
+.PP
+ Method: ResetDistance Description: Reset the current distance to 0 inches 
+.SS "Returns:     void"
+
+.PP
+Definition at line 93 of file DragonPositionSensor\&.cpp\&.
+.SS "void DragonPositionSensor::ResetDistance (double distance)"
+
+.PP
+ Method: ResetDistance Description: Reset the current distance to a known distance 
+.SS "Returns:     void"
+.PP
+ Method: ResetDistance Description: Reset the current distance to a known distance 
+.SS "Returns:     void"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIdistance\fP \fI - value for the current distance in inches \fP
+.RE
+.PP
+
+.PP
+Definition at line 104 of file DragonPositionSensor\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

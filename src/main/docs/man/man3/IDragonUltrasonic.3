@@ -1,0 +1,71 @@
+.TH "IDragonUltrasonic" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+IDragonUltrasonic
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IDragonUltrasonic\&.h>\fP
+.PP
+Inherited by \fBDragonUltrasonic\fP, and \fBDragonUltrasonicPWM\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBULTRASONIC_USAGE\fP { \fBLEFT_SIDE_DISTANCE\fP, \fBRIGHT_SIDE_DISTANCE\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIDragonUltrasonic\fP ()=default"
+.br
+.ti -1c
+.RI "virtual \fB~IDragonUltrasonic\fP ()=default"
+.br
+.ti -1c
+.RI "virtual double \fBGetDistance\fP () const =0"
+.br
+.ti -1c
+.RI "virtual \fBULTRASONIC_USAGE\fP \fBGetUsage\fP () const =0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 11 of file IDragonUltrasonic\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBIDragonUltrasonic::ULTRASONIC_USAGE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fILEFT_SIDE_DISTANCE \fP\fP
+.TP
+\fB\fIRIGHT_SIDE_DISTANCE \fP\fP
+.PP
+Definition at line 13 of file IDragonUltrasonic\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "IDragonUltrasonic::IDragonUltrasonic ()\fC [default]\fP"
+
+.SS "virtual IDragonUltrasonic::~IDragonUltrasonic ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual double IDragonUltrasonic::GetDistance () const\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBDragonUltrasonic\fP, and \fBDragonUltrasonicPWM\fP\&.
+.SS "virtual \fBULTRASONIC_USAGE\fP IDragonUltrasonic::GetUsage () const\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBDragonUltrasonic\fP, and \fBDragonUltrasonicPWM\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

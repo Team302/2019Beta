@@ -1,0 +1,64 @@
+.TH "ScaledAxis" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ScaledAxis \- Class: \fBScaledAxis\fP Description: This provides scaling for an axis\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ScaledAxis\&.h>\fP
+.PP
+Inherited by \fBFlippedAxis\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBScaledAxis\fP ()"
+.br
+.ti -1c
+.RI "\fB~ScaledAxis\fP ()=default"
+.br
+.ti -1c
+.RI "virtual void \fBSetScaleFactor\fP (double scaleFactor)"
+.br
+.RI "Method: SetScaleFactor Description: Set a scalefactor "
+.ti -1c
+.RI "double \fBScale\fP (double inputVal) const"
+.br
+.RI "Method: Scale Description: Multiply the output by the scale factor "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class: \fBScaledAxis\fP Description: This provides scaling for an axis\&. 
+
+
+.PP
+Definition at line 36 of file ScaledAxis\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ScaledAxis::ScaledAxis ()"
+
+.PP
+Definition at line 30 of file ScaledAxis\&.cpp\&.
+.SS "ScaledAxis::~ScaledAxis ()\fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "double ScaledAxis::Scale (double inputVal) const"
+
+.PP
+Method: Scale Description: Multiply the output by the scale factor 
+.PP
+Definition at line 64 of file ScaledAxis\&.cpp\&.
+.SS "void ScaledAxis::SetScaleFactor (double scaleFactor)\fC [virtual]\fP"
+
+.PP
+Method: SetScaleFactor Description: Set a scalefactor 
+.PP
+Definition at line 42 of file ScaledAxis\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

@@ -1,0 +1,77 @@
+.TH "DigitalInputFactory" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DigitalInputFactory
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DigitalInputFactory\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDragonDigitalInput\fP * \fBCreateInput\fP (\fBDragonDigitalInput::DIGITAL_INPUT_TYPE\fP type, int digitalID, bool reversed)"
+.br
+.ti -1c
+.RI "\fBDragonDigitalInput\fP * \fBGetInput\fP (\fBDragonDigitalInput::DIGITAL_INPUT_TYPE\fP type)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBDigitalInputFactory\fP * \fBGetFactory\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+==================================================================================================================================================== Copyright 2019 Lake Orion Robotics FIRST Team 302
+.PP
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+.PP
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software\&.
+.PP
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT\&. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE 
+.SH "OR OTHER DEALINGS IN THE SOFTWARE\&."
+.PP
+======================================================================================================== 
+.SH "DigitalInputFactory\&.h"
+.PP
+File Description: This controls the creation of Digital inputs
+.PP
+.PP
+ 
+.PP
+Definition at line 40 of file DigitalInputFactory\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBDragonDigitalInput\fP * DigitalInputFactory::CreateInput (\fBDragonDigitalInput::DIGITAL_INPUT_TYPE\fP type, int digitalID, bool reversed)"
+===================================================================================== Method: CreateInput Description: Create the requested Digital input Returns: IMechanism* pointer to the mechanism or nullptr if mechanism 
+.SH "doesn't exist and cannot be created\&."
+.PP
+===================================================================================== Method: CreateInput Description: Create the requested Digital input Returns: IMechanism* pointer to the mechanism or nullptr if mechanism 
+.SH "doesn't exist and cannot be created\&."
+.PP
+
+.PP
+Definition at line 64 of file DigitalInputFactory\&.cpp\&.
+.SS "\fBDigitalInputFactory\fP * DigitalInputFactory::GetFactory ()\fC [static]\fP"
+
+.PP
+Definition at line 47 of file DigitalInputFactory\&.cpp\&.
+.SS "\fBDragonDigitalInput\fP * DigitalInputFactory::GetInput (\fBDragonDigitalInput::DIGITAL_INPUT_TYPE\fP type)"
+===================================================================================== Method: GetInput Description: Get the requested Digital input Returns: IMechanism* pointer to the mechanism or nullptr if mechanism 
+.SH "doesn't exist\&."
+.PP
+===================================================================================== Method: GetInput Description: Get the requested Digital input Returns: IMechanism* pointer to the mechanism or nullptr if mechanism 
+.SH "doesn't exist\&."
+.PP
+
+.PP
+Definition at line 92 of file DigitalInputFactory\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

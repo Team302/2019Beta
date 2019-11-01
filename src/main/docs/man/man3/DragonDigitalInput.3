@@ -1,0 +1,87 @@
+.TH "DragonDigitalInput" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DragonDigitalInput
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DragonDigitalInput\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBDIGITAL_INPUT_TYPE\fP { \fBUNKNOWN_DIGITAL_INPUT_TYPE\fP = -1, \fBARM_MIN_POSITION\fP, \fBMAX_DIGITAL_INPPUT_TYPES\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDragonDigitalInput\fP (\fBDIGITAL_INPUT_TYPE\fP usage, int deviceID, bool reversed)"
+.br
+.ti -1c
+.RI "\fBDragonDigitalInput\fP ()=delete"
+.br
+.ti -1c
+.RI "virtual \fB~DragonDigitalInput\fP ()"
+.br
+.ti -1c
+.RI "bool \fBGet\fP () const"
+.br
+.ti -1c
+.RI "int \fBGetChannel\fP () const"
+.br
+.ti -1c
+.RI "\fBDIGITAL_INPUT_TYPE\fP \fBGetType\fP () const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 14 of file DragonDigitalInput\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBDragonDigitalInput::DIGITAL_INPUT_TYPE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUNKNOWN_DIGITAL_INPUT_TYPE \fP\fP
+.TP
+\fB\fIARM_MIN_POSITION \fP\fP
+.TP
+\fB\fIMAX_DIGITAL_INPPUT_TYPES \fP\fP
+.PP
+Definition at line 18 of file DragonDigitalInput\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DragonDigitalInput::DragonDigitalInput (\fBDIGITAL_INPUT_TYPE\fP usage, int deviceID, bool reversed)"
+
+.PP
+Definition at line 13 of file DragonDigitalInput\&.cpp\&.
+.SS "DragonDigitalInput::DragonDigitalInput ()\fC [delete]\fP"
+
+.SS "DragonDigitalInput::~DragonDigitalInput ()\fC [virtual]\fP"
+
+.PP
+Definition at line 23 of file DragonDigitalInput\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool DragonDigitalInput::Get () const"
+
+.PP
+Definition at line 33 of file DragonDigitalInput\&.cpp\&.
+.SS "int DragonDigitalInput::GetChannel () const"
+
+.PP
+Definition at line 46 of file DragonDigitalInput\&.cpp\&.
+.SS "\fBDragonDigitalInput::DIGITAL_INPUT_TYPE\fP DragonDigitalInput::GetType () const"
+
+.PP
+Definition at line 28 of file DragonDigitalInput\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

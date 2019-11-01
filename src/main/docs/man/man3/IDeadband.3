@@ -1,0 +1,53 @@
+.TH "IDeadband" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+IDeadband \- Class: \fBIDeadband\fP Description: This provides deadband to be applied to input values\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IDeadband\&.h>\fP
+.PP
+Inherited by \fBDeadbandValue\fP, \fBNoDeadbandValue\fP, and \fBScaledDeadbandValue\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual double \fBApplyDeadband\fP (double inputVal) const =0"
+.br
+.RI "Method: ApplyDeadband Description: Apply the standard deadband "
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "const double \fBM_DEADBAND_VALUE\fP = 0\&.1"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class: \fBIDeadband\fP Description: This provides deadband to be applied to input values\&. 
+
+
+.PP
+Definition at line 27 of file IDeadband\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual double IDeadband::ApplyDeadband (double inputVal) const\fC [pure virtual]\fP"
+
+.PP
+Method: ApplyDeadband Description: Apply the standard deadband 
+.PP
+Implemented in \fBDeadbandValue\fP, \fBScaledDeadbandValue\fP, and \fBNoDeadbandValue\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const double IDeadband::M_DEADBAND_VALUE = 0\&.1\fC [protected]\fP"
+
+.PP
+Definition at line 44 of file IDeadband\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

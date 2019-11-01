@@ -1,0 +1,368 @@
+.TH "IDragonGamePad" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+IDragonGamePad
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IDragonGamePad\&.h>\fP
+.PP
+Inherited by \fBDragonGamepad\fP, and \fBDragonXBox\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBBUTTON_IDENTIFIER\fP { \fBA_BUTTON\fP, \fBB_BUTTON\fP, \fBX_BUTTON\fP, \fBY_BUTTON\fP, \fBLEFT_BUMPER\fP, \fBRIGHT_BUMPER\fP, \fBBACK_BUTTON\fP, \fBSELECT_BUTTON\fP, \fBSTART_BUTTON\fP, \fBLEFT_STICK_PRESSED\fP, \fBRIGHT_STICK_PRESSED\fP, \fBLEFT_TRIGGER_PRESSED\fP, \fBRIGHT_TRIGGER_PRESSED\fP, \fBPOV_0\fP, \fBPOV_45\fP, \fBPOV_90\fP, \fBPOV_135\fP, \fBPOV_180\fP, \fBPOV_225\fP, \fBPOV_270\fP, \fBPOV_315\fP, \fBMAX_BUTTONS\fP, \fBGAMEPAD_SWITCH_18\fP, \fBGAMEPAD_SWITCH_19\fP, \fBGAMEPAD_SWITCH_20\fP, \fBGAMEPAD_SWITCH_21\fP, \fBGAMEPAD_BUTTON_14_UP\fP, \fBGAMEPAD_BUTTON_14_DOWN\fP, \fBGAMEPAD_BUTTON_15_UP\fP, \fBGAMEPAD_BUTTON_15_DOWN\fP, \fBMAX_GAMEPAD_BUTTONS\fP, \fBUNDEFINED_BUTTON\fP }"
+.br
+.ti -1c
+.RI "enum \fBBUTTON_MODE\fP { \fBSTANDARD\fP, \fBTOGGLE\fP, \fBMAX_BUTTON_MODES\fP }"
+.br
+.ti -1c
+.RI "enum \fBAXIS_IDENTIFIER\fP { \fBLEFT_JOYSTICK_X\fP, \fBLEFT_JOYSTICK_Y\fP, \fBRIGHT_JOYSTICK_X\fP, \fBRIGHT_JOYSTICK_Y\fP, \fBLEFT_TRIGGER\fP, \fBRIGHT_TRIGGER\fP, \fBMAX_AXIS\fP, \fBGAMEPAD_AXIS_16\fP, \fBGAMEPAD_AXIS_17\fP, \fBGAMEPAD_DIAL_22\fP, \fBGAMEPAD_DIAL_23\fP, \fBGAMEPAD_DIAL_24\fP, \fBGAMEPAD_DIAL_25\fP, \fBGAMEPAD_DIAL_26\fP, \fBGAMEPAD_DIAL_27\fP, \fBLEFT_ANALOG_BUTTON_AXIS\fP, \fBRIGHT_ANALOG_BUTTON_AXIS\fP, \fBMAX_GAMEPAD_AXIS\fP, \fBUNDEFINED_AXIS\fP }"
+.br
+.ti -1c
+.RI "enum \fBANALOG_BUTTON_IDENTIFIER\fP { \fBGAMEPAD_BUTTON_1\fP, \fBGAMEPAD_BUTTON_2\fP, \fBGAMEPAD_BUTTON_3\fP, \fBGAMEPAD_BUTTON_4\fP, \fBGAMEPAD_BUTTON_5\fP, \fBGAMEPAD_BUTTON_6\fP, \fBGAMEPAD_BUTTON_7\fP, \fBGAMEPAD_BUTTON_8\fP, \fBGAMEPAD_BUTTON_9\fP, \fBGAMEPAD_BUTTON_10\fP, \fBGAMEPAD_BUTTON_11\fP, \fBGAMEPAD_BUTTON_12\fP, \fBGAMEPAD_BUTTON_13\fP, \fBGAMEPAD_BIG_RED_BUTTON\fP, \fBMAX_ANALOG_BUTTONS\fP }"
+.br
+.ti -1c
+.RI "enum \fBAXIS_DEADBAND\fP { \fBNONE\fP, \fBAPPLY_STANDARD_DEADBAND\fP, \fBAPPLY_SCALED_DEADBAND\fP, \fBMAX_DEADBANDS\fP }"
+.br
+.ti -1c
+.RI "enum \fBAXIS_PROFILE\fP { \fBLINEAR\fP, \fBSQUARED\fP, \fBCUBED\fP, \fBMAX_PROFILES\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIDragonGamePad\fP ()=default"
+.br
+.ti -1c
+.RI "\fB~IDragonGamePad\fP ()=default"
+.br
+.ti -1c
+.RI "virtual double \fBGetAxisValue\fP (\fBAXIS_IDENTIFIER\fP axis) const =0"
+.br
+.ti -1c
+.RI "virtual bool \fBIsButtonPressed\fP (\fBBUTTON_IDENTIFIER\fP button) const =0"
+.br
+.ti -1c
+.RI "virtual bool \fBWasButtonReleased\fP (\fBBUTTON_IDENTIFIER\fP button) const =0"
+.br
+.RI "Method: WasButtonReleased Description: Read whether the button was released since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. "
+.ti -1c
+.RI "virtual bool \fBWasButtonPressed\fP (\fBBUTTON_IDENTIFIER\fP button) const =0"
+.br
+.RI "Method: WasButtonPressed Description: Read whether the button was pressed since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. "
+.ti -1c
+.RI "virtual void \fBSetAxisDeadband\fP (\fBAXIS_IDENTIFIER\fP axis, \fBAXIS_DEADBAND\fP type)=0"
+.br
+.RI "Method: SetAxisDeadband Description: Specify what deadband behavior is desired such as none, standard, standard with scaling\&. Returns: void "
+.ti -1c
+.RI "virtual void \fBSetAxisProfile\fP (\fBAXIS_IDENTIFIER\fP axis, \fBAXIS_PROFILE\fP curve)=0"
+.br
+.ti -1c
+.RI "virtual void \fBSetAxisScale\fP (\fBAXIS_IDENTIFIER\fP axis, float scaleFactor)=0"
+.br
+.ti -1c
+.RI "virtual void \fBSetButtonMode\fP (\fBBUTTON_IDENTIFIER\fP button, \fBBUTTON_MODE\fP mode)=0"
+.br
+.RI "Method: SetButtonMode Description: Specify how the button should behave\&. Examples include (but not limited to): "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 29 of file IDragonGamePad\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBIDragonGamePad::ANALOG_BUTTON_IDENTIFIER\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIGAMEPAD_BUTTON_1 \fP\fP
+.TP
+\fB\fIGAMEPAD_BUTTON_2 \fP\fP
+.TP
+\fB\fIGAMEPAD_BUTTON_3 \fP\fP
+.TP
+\fB\fIGAMEPAD_BUTTON_4 \fP\fP
+.TP
+\fB\fIGAMEPAD_BUTTON_5 \fP\fP
+.TP
+\fB\fIGAMEPAD_BUTTON_6 \fP\fP
+.TP
+\fB\fIGAMEPAD_BUTTON_7 \fP\fP
+.TP
+\fB\fIGAMEPAD_BUTTON_8 \fP\fP
+.TP
+\fB\fIGAMEPAD_BUTTON_9 \fP\fP
+.TP
+\fB\fIGAMEPAD_BUTTON_10 \fP\fP
+.TP
+\fB\fIGAMEPAD_BUTTON_11 \fP\fP
+.TP
+\fB\fIGAMEPAD_BUTTON_12 \fP\fP
+.TP
+\fB\fIGAMEPAD_BUTTON_13 \fP\fP
+.TP
+\fB\fIGAMEPAD_BIG_RED_BUTTON \fP\fP
+.TP
+\fB\fIMAX_ANALOG_BUTTONS \fP\fP
+.PP
+Definition at line 103 of file IDragonGamePad\&.h\&.
+.SS "enum \fBIDragonGamePad::AXIS_DEADBAND\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINONE \fP\fP
+.TP
+\fB\fIAPPLY_STANDARD_DEADBAND \fP\fP
+.TP
+\fB\fIAPPLY_SCALED_DEADBAND \fP\fP
+.TP
+\fB\fIMAX_DEADBANDS \fP\fP
+.PP
+Definition at line 124 of file IDragonGamePad\&.h\&.
+.SS "enum \fBIDragonGamePad::AXIS_IDENTIFIER\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fILEFT_JOYSTICK_X \fP\fP
+.TP
+\fB\fILEFT_JOYSTICK_Y \fP\fP
+.TP
+\fB\fIRIGHT_JOYSTICK_X \fP\fP
+.TP
+\fB\fIRIGHT_JOYSTICK_Y \fP\fP
+.TP
+\fB\fILEFT_TRIGGER \fP\fP
+.TP
+\fB\fIRIGHT_TRIGGER \fP\fP
+.TP
+\fB\fIMAX_AXIS \fP\fP
+.TP
+\fB\fIGAMEPAD_AXIS_16 \fP\fP
+.TP
+\fB\fIGAMEPAD_AXIS_17 \fP\fP
+.TP
+\fB\fIGAMEPAD_DIAL_22 \fP\fP
+.TP
+\fB\fIGAMEPAD_DIAL_23 \fP\fP
+.TP
+\fB\fIGAMEPAD_DIAL_24 \fP\fP
+.TP
+\fB\fIGAMEPAD_DIAL_25 \fP\fP
+.TP
+\fB\fIGAMEPAD_DIAL_26 \fP\fP
+.TP
+\fB\fIGAMEPAD_DIAL_27 \fP\fP
+.TP
+\fB\fILEFT_ANALOG_BUTTON_AXIS \fP\fP
+.TP
+\fB\fIRIGHT_ANALOG_BUTTON_AXIS \fP\fP
+.TP
+\fB\fIMAX_GAMEPAD_AXIS \fP\fP
+.TP
+\fB\fIUNDEFINED_AXIS \fP\fP
+.PP
+Definition at line 77 of file IDragonGamePad\&.h\&.
+.SS "enum \fBIDragonGamePad::AXIS_PROFILE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fILINEAR \fP\fP
+.TP
+\fB\fISQUARED \fP\fP
+.TP
+\fB\fICUBED \fP\fP
+.TP
+\fB\fIMAX_PROFILES \fP\fP
+.PP
+Definition at line 132 of file IDragonGamePad\&.h\&.
+.SS "enum \fBIDragonGamePad::BUTTON_IDENTIFIER\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIA_BUTTON \fP\fP
+.TP
+\fB\fIB_BUTTON \fP\fP
+.TP
+\fB\fIX_BUTTON \fP\fP
+.TP
+\fB\fIY_BUTTON \fP\fP
+.TP
+\fB\fILEFT_BUMPER \fP\fP
+.TP
+\fB\fIRIGHT_BUMPER \fP\fP
+.TP
+\fB\fIBACK_BUTTON \fP\fP
+.TP
+\fB\fISELECT_BUTTON \fP\fP
+.TP
+\fB\fISTART_BUTTON \fP\fP
+.TP
+\fB\fILEFT_STICK_PRESSED \fP\fP
+.TP
+\fB\fIRIGHT_STICK_PRESSED \fP\fP
+.TP
+\fB\fILEFT_TRIGGER_PRESSED \fP\fP
+.TP
+\fB\fIRIGHT_TRIGGER_PRESSED \fP\fP
+.TP
+\fB\fIPOV_0 \fP\fP
+.TP
+\fB\fIPOV_45 \fP\fP
+.TP
+\fB\fIPOV_90 \fP\fP
+.TP
+\fB\fIPOV_135 \fP\fP
+.TP
+\fB\fIPOV_180 \fP\fP
+.TP
+\fB\fIPOV_225 \fP\fP
+.TP
+\fB\fIPOV_270 \fP\fP
+.TP
+\fB\fIPOV_315 \fP\fP
+.TP
+\fB\fIMAX_BUTTONS \fP\fP
+.TP
+\fB\fIGAMEPAD_SWITCH_18 \fP\fP
+.TP
+\fB\fIGAMEPAD_SWITCH_19 \fP\fP
+.TP
+\fB\fIGAMEPAD_SWITCH_20 \fP\fP
+.TP
+\fB\fIGAMEPAD_SWITCH_21 \fP\fP
+.TP
+\fB\fIGAMEPAD_BUTTON_14_UP \fP\fP
+.TP
+\fB\fIGAMEPAD_BUTTON_14_DOWN \fP\fP
+.TP
+\fB\fIGAMEPAD_BUTTON_15_UP \fP\fP
+.TP
+\fB\fIGAMEPAD_BUTTON_15_DOWN \fP\fP
+.TP
+\fB\fIMAX_GAMEPAD_BUTTONS \fP\fP
+.TP
+\fB\fIUNDEFINED_BUTTON \fP\fP
+.PP
+Definition at line 32 of file IDragonGamePad\&.h\&.
+.SS "enum \fBIDragonGamePad::BUTTON_MODE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISTANDARD \fP\fP
+.TP
+\fB\fITOGGLE \fP\fP
+.TP
+\fB\fIMAX_BUTTON_MODES \fP\fP
+.PP
+Definition at line 70 of file IDragonGamePad\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "IDragonGamePad::IDragonGamePad ()\fC [default]\fP"
+
+.SS "IDragonGamePad::~IDragonGamePad ()\fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual double IDragonGamePad::GetAxisValue (\fBAXIS_IDENTIFIER\fP axis) const\fC [pure virtual]\fP"
+
+.PP
+ Method: GetAxisValue Description: Return the current value (between -1\&.0 and 1\&.0) for the requested axis\&. 
+.SS "Returns:     double   - current axis value"
+
+.PP
+Implemented in \fBDragonGamepad\fP, and \fBDragonXBox\fP\&.
+.SS "virtual bool IDragonGamePad::IsButtonPressed (\fBBUTTON_IDENTIFIER\fP button) const\fC [pure virtual]\fP"
+
+.PP
+ Method: IsButtonPressed Description: Return whether the requested button is selected (true) or not (false) Returns: bool true - button is pressed 
+.SS "false - button is not pressed"
+
+.PP
+Implemented in \fBDragonXBox\fP, and \fBDragonGamepad\fP\&.
+.SS "virtual void IDragonGamePad::SetAxisDeadband (\fBAXIS_IDENTIFIER\fP axis, \fBAXIS_DEADBAND\fP type)\fC [pure virtual]\fP"
+
+.PP
+Method: SetAxisDeadband Description: Specify what deadband behavior is desired such as none, standard, standard with scaling\&. Returns: void ================================================================================== 
+.SH "</summary>"
+.PP
+
+.PP
+\fBParameters\fP
+.RS 4
+\fItype\fP \fI - axis to modify \fI - deadband option \fP\fP
+.RE
+.PP
+
+.PP
+Implemented in \fBDragonXBox\fP, and \fBDragonGamepad\fP\&.
+.SS "virtual void IDragonGamePad::SetAxisProfile (\fBAXIS_IDENTIFIER\fP axis, \fBAXIS_PROFILE\fP curve)\fC [pure virtual]\fP"
+
+.PP
+ Method: SetProfile Description: Specify the profile curve used for setting the sensitivity of the axis\&. By default, this is linear, but a cubic curve would give more control when the axis is barely pressed (e\&.g\&. if it were moved 50% forward, instead of returning 0\&.5, it would return 0\&.5 * 0\&.5 * 0\&.5 or \&.125, but when the axis was moved all the way forward, it would return the same value -- 1\&.0\&. Since it is cubed, it retains the sign\&.
+.PP
+This affects values returned from GetAxis calls\&. 
+.SS "Returns:     void"
+
+.PP
+Implemented in \fBDragonXBox\fP, and \fBDragonGamepad\fP\&.
+.SS "virtual void IDragonGamePad::SetAxisScale (\fBAXIS_IDENTIFIER\fP axis, float scaleFactor)\fC [pure virtual]\fP"
+
+.PP
+ Method: SetScale Description: Scale the returned value to a range between the specified negative scale factor and the scale factor\&. This is used to reduce the maximum value returned\&.
+.PP
+This affects values returned from GetAxis calls\&. 
+.SS "Returns:     void"
+
+.PP
+Implemented in \fBDragonXBox\fP, and \fBDragonGamepad\fP\&.
+.SS "virtual void IDragonGamePad::SetButtonMode (\fBBUTTON_IDENTIFIER\fP button, \fBBUTTON_MODE\fP mode)\fC [pure virtual]\fP"
+
+.PP
+Method: SetButtonMode Description: Specify how the button should behave\&. Examples include (but not limited to): 
+.IP "\(bu" 2
+pressed / not pressed
+.IP "\(bu" 2
+toggle Returns: void
+.PP
+
+.PP
+\fBParameters\fP
+.RS 4
+\fImode\fP \fI - button to check \fI - button behavior \fP\fP
+.RE
+.PP
+
+.PP
+Implemented in \fBDragonXBox\fP, and \fBDragonGamepad\fP\&.
+.SS "virtual bool IDragonGamePad::WasButtonPressed (\fBBUTTON_IDENTIFIER\fP button) const\fC [pure virtual]\fP"
+
+.PP
+Method: WasButtonPressed Description: Read whether the button was pressed since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. 
+.PP
+Implemented in \fBDragonXBox\fP, and \fBDragonGamepad\fP\&.
+.SS "virtual bool IDragonGamePad::WasButtonReleased (\fBBUTTON_IDENTIFIER\fP button) const\fC [pure virtual]\fP"
+
+.PP
+Method: WasButtonReleased Description: Read whether the button was released since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. 
+.PP
+Implemented in \fBDragonGamepad\fP, and \fBDragonXBox\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

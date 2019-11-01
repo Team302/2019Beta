@@ -1,0 +1,81 @@
+.TH "Logger" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Logger
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Logger\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBLOGGER_OPTION\fP { \fBCONSOLE\fP, \fBDASHBOARD\fP, \fBEAT_IT\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBSetLoggingOption\fP (\fBLOGGER_OPTION\fP option)"
+.br
+.ti -1c
+.RI "void \fBLog\fP (const std::string &locationIdentifier, const std::string &message)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBLogger\fP * \fBGetLogger\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+======================================================================================================== 
+.SH "Logger\&.h"
+.PP
+File Description: This logs error messages
+.PP
+.PP
+ 
+.PP
+Definition at line 40 of file Logger\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBLogger::LOGGER_OPTION\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fICONSOLE \fP\fP
+.TP
+\fB\fIDASHBOARD \fP\fP
+.TP
+\fB\fIEAT_IT \fP\fP
+.PP
+Definition at line 44 of file Logger\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBLogger\fP * Logger::GetLogger ()\fC [static]\fP"
+===================================================================================== Method: GetLogger Description: Find or create the singleton logger 
+.SH "Returns:        Logger* pointer to the logger"
+.PP
+
+.PP
+Definition at line 52 of file Logger\&.cpp\&.
+.SS "void Logger::Log (const std::string & locationIdentifier, const std::string & message)"
+
+.PP
+Definition at line 71 of file Logger\&.cpp\&.
+.SS "void Logger::SetLoggingOption (\fBLOGGER_OPTION\fP option)"
+
+.PP
+Definition at line 62 of file Logger\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

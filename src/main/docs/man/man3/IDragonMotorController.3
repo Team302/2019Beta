@@ -1,0 +1,196 @@
+.TH "IDragonMotorController" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+IDragonMotorController
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IDragonMotorController\&.h>\fP
+.PP
+Inherited by \fBDragonSparkMax\fP, and \fBDragonTalon\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBDRAGON_CONTROL_MODE\fP { \fBPERCENT_OUTPUT\fP, \fBROTATIONS\fP, \fBRPS\fP }"
+.br
+.ti -1c
+.RI "enum \fBMOTOR_CONTROLLER_TYPE\fP { \fBUNKNOWN_MOTOR_CONTROLLER_TYPE\fP = -1, \fBFRONT_LEFT_DRIVE\fP, \fBMIDDLE_LEFT_DRIVE\fP, \fBBACK_LEFT_DRIVE\fP, \fBFRONT_RIGHT_DRIVE\fP, \fBMIDDLE_RIGHT_DRIVE\fP, \fBBACK_RIGHT_DRIVE\fP, \fBARM_MASTER\fP, \fBARM_SLAVE\fP, \fBARM_EXTENSION\fP, \fBWRIST\fP, \fBINTAKE\fP, \fBELEVATOR_WINCH\fP, \fBELEVATOR_DRIVE\fP, \fBHATCH_MECH_MOTOR\fP, \fBMAX_MOTOR_CONTROLLER_TYPES\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual double \fBGetRotations\fP () const =0"
+.br
+.ti -1c
+.RI "virtual double \fBGetRPS\fP () const =0"
+.br
+.ti -1c
+.RI "virtual \fBMOTOR_CONTROLLER_TYPE\fP \fBGetType\fP () const =0"
+.br
+.ti -1c
+.RI "double \fBGetCurrent\fP ()"
+.br
+.ti -1c
+.RI "virtual int \fBGetID\fP () const =0"
+.br
+.ti -1c
+.RI "virtual void \fBSetControlMode\fP (\fBDRAGON_CONTROL_MODE\fP mode)=0"
+.br
+.ti -1c
+.RI "virtual void \fBSet\fP (double value)=0"
+.br
+.ti -1c
+.RI "virtual void \fBSetRotationOffset\fP (double rotations)=0"
+.br
+.ti -1c
+.RI "virtual void \fBSetVoltageRamping\fP (double ramping, double closedLoopRamping=\-1)=0"
+.br
+.ti -1c
+.RI "virtual void \fBEnableCurrentLimiting\fP (bool enabled)=0"
+.br
+.ti -1c
+.RI "virtual void \fBEnableBrakeMode\fP (bool enabled)=0"
+.br
+.ti -1c
+.RI "virtual void \fBSetPIDF\fP (double p, double i, double d, double f, int slot=0)=0"
+.br
+.ti -1c
+.RI "virtual void \fBInvert\fP (bool inverted)=0"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIDragonMotorController\fP ()=default"
+.br
+.ti -1c
+.RI "virtual \fB~IDragonMotorController\fP ()=default"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 12 of file IDragonMotorController\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBIDragonMotorController::DRAGON_CONTROL_MODE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIPERCENT_OUTPUT \fP\fP
+.TP
+\fB\fIROTATIONS \fP\fP
+.TP
+\fB\fIRPS \fP\fP
+.PP
+Definition at line 15 of file IDragonMotorController\&.h\&.
+.SS "enum \fBIDragonMotorController::MOTOR_CONTROLLER_TYPE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUNKNOWN_MOTOR_CONTROLLER_TYPE \fP\fP
+.TP
+\fB\fIFRONT_LEFT_DRIVE \fP\fP
+.TP
+\fB\fIMIDDLE_LEFT_DRIVE \fP\fP
+.TP
+\fB\fIBACK_LEFT_DRIVE \fP\fP
+.TP
+\fB\fIFRONT_RIGHT_DRIVE \fP\fP
+.TP
+\fB\fIMIDDLE_RIGHT_DRIVE \fP\fP
+.TP
+\fB\fIBACK_RIGHT_DRIVE \fP\fP
+.TP
+\fB\fIARM_MASTER \fP\fP
+.TP
+\fB\fIARM_SLAVE \fP\fP
+.TP
+\fB\fIARM_EXTENSION \fP\fP
+.TP
+\fB\fIWRIST \fP\fP
+.TP
+\fB\fIINTAKE \fP\fP
+.TP
+\fB\fIELEVATOR_WINCH \fP\fP
+.TP
+\fB\fIELEVATOR_DRIVE \fP\fP
+.TP
+\fB\fIHATCH_MECH_MOTOR \fP\fP
+.TP
+\fB\fIMAX_MOTOR_CONTROLLER_TYPES \fP\fP
+.PP
+Definition at line 21 of file IDragonMotorController\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "IDragonMotorController::IDragonMotorController ()\fC [protected]\fP, \fC [default]\fP"
+
+.SS "virtual IDragonMotorController::~IDragonMotorController ()\fC [protected]\fP, \fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void IDragonMotorController::EnableBrakeMode (bool enabled)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBDragonTalon\fP, and \fBDragonSparkMax\fP\&.
+.SS "virtual void IDragonMotorController::EnableCurrentLimiting (bool enabled)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBDragonTalon\fP, and \fBDragonSparkMax\fP\&.
+.SS "double IDragonMotorController::GetCurrent ()"
+
+.PP
+Definition at line 3 of file IDragonMotorController\&.cpp\&.
+.SS "virtual int IDragonMotorController::GetID () const\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBDragonTalon\fP, and \fBDragonSparkMax\fP\&.
+.SS "virtual double IDragonMotorController::GetRotations () const\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBDragonTalon\fP, and \fBDragonSparkMax\fP\&.
+.SS "virtual double IDragonMotorController::GetRPS () const\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBDragonTalon\fP, and \fBDragonSparkMax\fP\&.
+.SS "virtual \fBMOTOR_CONTROLLER_TYPE\fP IDragonMotorController::GetType () const\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBDragonTalon\fP, and \fBDragonSparkMax\fP\&.
+.SS "virtual void IDragonMotorController::Invert (bool inverted)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBDragonTalon\fP, and \fBDragonSparkMax\fP\&.
+.SS "virtual void IDragonMotorController::Set (double value)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBDragonTalon\fP, and \fBDragonSparkMax\fP\&.
+.SS "virtual void IDragonMotorController::SetControlMode (\fBDRAGON_CONTROL_MODE\fP mode)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBDragonTalon\fP, and \fBDragonSparkMax\fP\&.
+.SS "virtual void IDragonMotorController::SetPIDF (double p, double i, double d, double f, int slot = \fC0\fP)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBDragonTalon\fP, and \fBDragonSparkMax\fP\&.
+.SS "virtual void IDragonMotorController::SetRotationOffset (double rotations)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBDragonTalon\fP, and \fBDragonSparkMax\fP\&.
+.SS "virtual void IDragonMotorController::SetVoltageRamping (double ramping, double closedLoopRamping = \fC\-1\fP)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBDragonTalon\fP, and \fBDragonSparkMax\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

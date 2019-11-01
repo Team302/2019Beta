@@ -1,0 +1,122 @@
+.TH "DragonServo" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DragonServo
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DragonServo\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSERVO_USAGE\fP { \fBUNKNOWN_SERVO_USAGE\fP = -1, \fBROTATE_LIMELIGHT\fP, \fBTAIL_CONTROL\fP, \fBMAX_SERVO_USAGES\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDragonServo\fP ()=delete"
+.br
+.ti -1c
+.RI "\fBDragonServo\fP (\fBDragonServo::SERVO_USAGE\fP deviceUsage, int deviceID, double minAngle, double maxAngle)"
+.br
+.ti -1c
+.RI "virtual \fB~DragonServo\fP ()=default"
+.br
+.ti -1c
+.RI "void \fBSet\fP (double value)"
+.br
+.ti -1c
+.RI "void \fBSetOffline\fP ()"
+.br
+.ti -1c
+.RI "double \fBGet\fP () const"
+.br
+.ti -1c
+.RI "void \fBSetAngle\fP (double angle)"
+.br
+.ti -1c
+.RI "double \fBGetAngle\fP () const"
+.br
+.ti -1c
+.RI "\fBDragonServo::SERVO_USAGE\fP \fBGetUsage\fP () const"
+.br
+.ti -1c
+.RI "void \fBMoveToMaxAngle\fP ()"
+.br
+.ti -1c
+.RI "void \fBMoveToMinAngle\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 15 of file DragonServo\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBDragonServo::SERVO_USAGE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUNKNOWN_SERVO_USAGE \fP\fP
+.TP
+\fB\fIROTATE_LIMELIGHT \fP\fP
+.TP
+\fB\fITAIL_CONTROL \fP\fP
+.TP
+\fB\fIMAX_SERVO_USAGES \fP\fP
+.PP
+Definition at line 19 of file DragonServo\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DragonServo::DragonServo ()\fC [delete]\fP"
+
+.SS "DragonServo::DragonServo (\fBDragonServo::SERVO_USAGE\fP deviceUsage, int deviceID, double minAngle, double maxAngle)"
+
+.PP
+Definition at line 12 of file DragonServo\&.cpp\&.
+.SS "virtual DragonServo::~DragonServo ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "double DragonServo::Get () const"
+
+.PP
+Definition at line 64 of file DragonServo\&.cpp\&.
+.SS "double DragonServo::GetAngle () const"
+
+.PP
+Definition at line 89 of file DragonServo\&.cpp\&.
+.SS "\fBDragonServo::SERVO_USAGE\fP DragonServo::GetUsage () const"
+
+.PP
+Definition at line 113 of file DragonServo\&.cpp\&.
+.SS "void DragonServo::MoveToMaxAngle ()"
+
+.PP
+Definition at line 103 of file DragonServo\&.cpp\&.
+.SS "void DragonServo::MoveToMinAngle ()"
+
+.PP
+Definition at line 108 of file DragonServo\&.cpp\&.
+.SS "void DragonServo::Set (double value)"
+
+.PP
+Definition at line 40 of file DragonServo\&.cpp\&.
+.SS "void DragonServo::SetAngle (double angle)"
+
+.PP
+Definition at line 77 of file DragonServo\&.cpp\&.
+.SS "void DragonServo::SetOffline ()"
+
+.PP
+Definition at line 52 of file DragonServo\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

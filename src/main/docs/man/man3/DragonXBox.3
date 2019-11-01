@@ -1,0 +1,188 @@
+.TH "DragonXBox" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DragonXBox
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DragonXBox\&.h>\fP
+.PP
+Inherits \fBIDragonGamePad\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDragonXBox\fP (int port)"
+.br
+.ti -1c
+.RI "\fB~DragonXBox\fP ()"
+.br
+.ti -1c
+.RI "double \fBGetAxisValue\fP (\fBAXIS_IDENTIFIER\fP axis) const override"
+.br
+.ti -1c
+.RI "bool \fBIsButtonPressed\fP (\fBBUTTON_IDENTIFIER\fP button) const override"
+.br
+.ti -1c
+.RI "bool \fBWasButtonReleased\fP (\fBBUTTON_IDENTIFIER\fP button) const override"
+.br
+.RI "Method: WasButtonReleased Description: Read whether the button was released since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. "
+.ti -1c
+.RI "bool \fBWasButtonPressed\fP (\fBBUTTON_IDENTIFIER\fP button) const override"
+.br
+.RI "Method: WasButtonPressed Description: Read whether the button was pressed since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. "
+.ti -1c
+.RI "void \fBSetAxisDeadband\fP (\fBAXIS_IDENTIFIER\fP axis, \fBAXIS_DEADBAND\fP type) override"
+.br
+.RI "Method: SetAxisDeadband Description: Specify what deadband behavior is desired such as none, standard, standard with scaling\&. Returns: void "
+.ti -1c
+.RI "void \fBSetAxisProfile\fP (\fBAXIS_IDENTIFIER\fP axis, \fBAXIS_PROFILE\fP curve) override"
+.br
+.ti -1c
+.RI "void \fBSetAxisScale\fP (\fBAXIS_IDENTIFIER\fP axis, float scaleFactor) override"
+.br
+.ti -1c
+.RI "void \fBSetButtonMode\fP (\fBBUTTON_IDENTIFIER\fP button, \fBBUTTON_MODE\fP mode) override"
+.br
+.RI "Method: SetButtonMode Description: Specify how the button should behave\&. Examples include (but not limited to): "
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 37 of file DragonXBox\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DragonXBox::DragonXBox (int port)"
+
+.PP
+Definition at line 42 of file DragonXBox\&.cpp\&.
+.SS "DragonXBox::~DragonXBox ()"
+
+.PP
+Definition at line 90 of file DragonXBox\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "double DragonXBox::GetAxisValue (\fBAXIS_IDENTIFIER\fP axis) const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+ Method: GetAxisValue Description: Return the current value (between -1\&.0 and 1\&.0) for the requested axis\&. 
+.SS "Returns:     double   - current axis value"
+.PP
+ Method: GetAxisValue Description: Return the current value (between -1\&.0 and 1\&.0) for the requested axis\&. 
+.SS "Returns:     double   - current axis value"
+
+.PP
+Implements \fBIDragonGamePad\fP\&.
+.PP
+Definition at line 104 of file DragonXBox\&.cpp\&.
+.SS "bool DragonXBox::IsButtonPressed (\fBBUTTON_IDENTIFIER\fP button) const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+ Method: IsButtonPressed Description: Return whether the requested button is selected (true) or not (false) Returns: bool true - button is pressed 
+.SS "false - button is not pressed"
+.PP
+ Method: IsButtonPressed Description: Return whether the requested button is selected (true) or not (false) Returns: bool true - button is pressed 
+.SS "false - button is not pressed"
+
+.PP
+Implements \fBIDragonGamePad\fP\&.
+.PP
+Definition at line 129 of file DragonXBox\&.cpp\&.
+.SS "void DragonXBox::SetAxisDeadband (\fBAXIS_IDENTIFIER\fP axis, \fBAXIS_DEADBAND\fP type)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Method: SetAxisDeadband Description: Specify what deadband behavior is desired such as none, standard, standard with scaling\&. Returns: void ================================================================================== 
+.SH "</summary>"
+.PP
+================================================================================== 
+.SH "</summary>"
+.PP
+
+.PP
+\fBParameters\fP
+.RS 4
+\fItype\fP \fI - axis to modify \fI - deadband option \fP\fP
+.RE
+.PP
+
+.PP
+Implements \fBIDragonGamePad\fP\&.
+.PP
+Definition at line 238 of file DragonXBox\&.cpp\&.
+.SS "void DragonXBox::SetAxisProfile (\fBAXIS_IDENTIFIER\fP axis, \fBAXIS_PROFILE\fP curve)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+ Method: SetProfile Description: Specify the profile curve used for setting the sensitivity of the axis\&. By default, this is linear, but a cubic curve would give more control when the axis is barely pressed (e\&.g\&. if it were moved 50% forward, instead of returning 0\&.5, it would return 0\&.5 * 0\&.5 * 0\&.5 or \&.125, but when the axis was moved all the way forward, it would return the same value -- 1\&.0\&. Since it is cubed, it retains the sign\&.
+.PP
+This affects values returned from GetAxis calls\&. 
+.SS "Returns:     void"
+.PP
+ Method: SetProfile Description: Specify the profile curve used for setting the sensitivity of the axis\&. By default, this is linear, but a cubic curve would give more control when the axis is barely pressed (e\&.g\&. if it were moved 50% forward, instead of returning 0\&.5, it would return 0\&.5 * 0\&.5 * 0\&.5 or \&.125, but when the axis was moved all the way forward, it would return the same value -- 1\&.0\&. Since it is cubed, it retains the sign\&.
+.PP
+This affects values returned from GetAxis calls\&. 
+.SS "Returns:     void"
+
+.PP
+Implements \fBIDragonGamePad\fP\&.
+.PP
+Definition at line 197 of file DragonXBox\&.cpp\&.
+.SS "void DragonXBox::SetAxisScale (\fBAXIS_IDENTIFIER\fP axis, float scaleFactor)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+ Method: SetScale Description: Scale the returned value to a range between the specified negative scale factor and the scale factor\&. This is used to reduce the maximum value returned\&.
+.PP
+This affects values returned from GetAxis calls\&. 
+.SS "Returns:     void"
+.PP
+ Method: SetScale Description: Scale the returned value to a range between the specified negative scale factor and the scale factor\&. This is used to reduce the maximum value returned\&.
+.PP
+This affects values returned from GetAxis calls\&. 
+.SS "Returns:     void"
+
+.PP
+Implements \fBIDragonGamePad\fP\&.
+.PP
+Definition at line 218 of file DragonXBox\&.cpp\&.
+.SS "void DragonXBox::SetButtonMode (\fBBUTTON_IDENTIFIER\fP button, \fBBUTTON_MODE\fP mode)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Method: SetButtonMode Description: Specify how the button should behave\&. Examples include (but not limited to): 
+.IP "\(bu" 2
+pressed / not pressed
+.IP "\(bu" 2
+toggle Returns: void
+.PP
+
+.PP
+\fBParameters\fP
+.RS 4
+\fImode\fP \fI - button to check \fI - button behavior \fP\fP
+.RE
+.PP
+
+.PP
+Implements \fBIDragonGamePad\fP\&.
+.PP
+Definition at line 262 of file DragonXBox\&.cpp\&.
+.SS "bool DragonXBox::WasButtonPressed (\fBBUTTON_IDENTIFIER\fP button) const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Method: WasButtonPressed Description: Read whether the button was pressed since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. 
+.PP
+Implements \fBIDragonGamePad\fP\&.
+.PP
+Definition at line 171 of file DragonXBox\&.cpp\&.
+.SS "bool DragonXBox::WasButtonReleased (\fBBUTTON_IDENTIFIER\fP button) const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Method: WasButtonReleased Description: Read whether the button was released since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. 
+.PP
+Implements \fBIDragonGamePad\fP\&.
+.PP
+Definition at line 150 of file DragonXBox\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

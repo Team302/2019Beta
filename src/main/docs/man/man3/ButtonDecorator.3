@@ -1,0 +1,104 @@
+.TH "ButtonDecorator" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ButtonDecorator \- Class: \fBButtonDecorator\fP Description: This is a decorator for modifying button behavior\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ButtonDecorator\&.h>\fP
+.PP
+Inherits \fBIButton\fP\&.
+.PP
+Inherited by \fBToggleButton\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBIsButtonPressed\fP () const override"
+.br
+.RI "Method: IsButtonPressed Description: Read the button and return true if it is pressed and false if it isn't\&. "
+.ti -1c
+.RI "bool \fBWasButtonReleased\fP () const override"
+.br
+.RI "Method: WasButtonReleased Description: Read whether the button was released since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. "
+.ti -1c
+.RI "bool \fBWasButtonPressed\fP () const override"
+.br
+.RI "Method: WasButtonPressed Description: Read whether the button was pressed since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. "
+.ti -1c
+.RI "\fBButtonDecorator\fP (\fBIButton\fP *button)"
+.br
+.ti -1c
+.RI "\fBButtonDecorator\fP ()=delete"
+.br
+.ti -1c
+.RI "\fB~ButtonDecorator\fP ()=default"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIButton\fP * \fBGetButton\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class: \fBButtonDecorator\fP Description: This is a decorator for modifying button behavior\&. 
+
+
+.PP
+Definition at line 28 of file ButtonDecorator\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ButtonDecorator::ButtonDecorator (\fBIButton\fP * button)"
+
+.PP
+Definition at line 29 of file ButtonDecorator\&.cpp\&.
+.SS "ButtonDecorator::ButtonDecorator ()\fC [delete]\fP"
+
+.SS "ButtonDecorator::~ButtonDecorator ()\fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBIButton\fP* ButtonDecorator::GetButton ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 63 of file ButtonDecorator\&.h\&.
+.SS "bool ButtonDecorator::IsButtonPressed () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Method: IsButtonPressed Description: Read the button and return true if it is pressed and false if it isn't\&. 
+.PP
+Implements \fBIButton\fP\&.
+.PP
+Reimplemented in \fBToggleButton\fP\&.
+.PP
+Definition at line 36 of file ButtonDecorator\&.cpp\&.
+.SS "bool ButtonDecorator::WasButtonPressed () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Method: WasButtonPressed Description: Read whether the button was pressed since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. 
+.PP
+Implements \fBIButton\fP\&.
+.PP
+Reimplemented in \fBToggleButton\fP\&.
+.PP
+Definition at line 56 of file ButtonDecorator\&.cpp\&.
+.SS "bool ButtonDecorator::WasButtonReleased () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Method: WasButtonReleased Description: Read whether the button was released since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. 
+.PP
+Implements \fBIButton\fP\&.
+.PP
+Reimplemented in \fBToggleButton\fP\&.
+.PP
+Definition at line 46 of file ButtonDecorator\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

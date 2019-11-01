@@ -1,0 +1,145 @@
+.TH "Robot" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Robot
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Robot\&.h>\fP
+.PP
+Inherits TimedRobot\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBRobotInit\fP () override"
+.br
+.ti -1c
+.RI "void \fBRobotPeriodic\fP () override"
+.br
+.ti -1c
+.RI "void \fBAutonomousInit\fP () override"
+.br
+.ti -1c
+.RI "void \fBAutonomousPeriodic\fP () override"
+.br
+.ti -1c
+.RI "void \fBTeleopInit\fP () override"
+.br
+.ti -1c
+.RI "void \fBTeleopPeriodic\fP () override"
+.br
+.ti -1c
+.RI "void \fBTestInit\fP () override"
+.br
+.ti -1c
+.RI "void \fBTestPeriodic\fP () override"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+==================================================================================================================================================== Copyright 2019 Lake Orion Robotics FIRST Team 302
+.PP
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+.PP
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software\&.
+.PP
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT\&. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE 
+.SH "OR OTHER DEALINGS IN THE SOFTWARE\&."
+.PP
+======================================================================================================== 
+.SH "Robot\&.h"
+.PP
+File Description: Top-level robot code that controls the various states of the robot\&. It is our specific implementation of the frc::TimedRobot\&.
+.PP
+.PP
+ 
+.PP
+Definition at line 34 of file Robot\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Robot::AutonomousInit ()\fC [override]\fP"
+
+.PP
+ Method: AutonomousInit 
+.SS "Description: This initializes the autonomous state"
+
+.PP
+Definition at line 70 of file Robot\&.cpp\&.
+.SS "void Robot::AutonomousPeriodic ()\fC [override]\fP"
+
+.PP
+ Method: AutonomousPeriodic Description: Runs every 20 milliseconds when the autonomous state is 
+.SS "active\&."
+
+.PP
+Definition at line 81 of file Robot\&.cpp\&.
+.SS "void Robot::RobotInit ()\fC [override]\fP"
+==================================================================================================================================================== Copyright 2019 Lake Orion Robotics FIRST Team 302
+.PP
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+.PP
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software\&.
+.PP
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT\&. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE 
+.SH "OR OTHER DEALINGS IN THE SOFTWARE\&."
+.PP
+======================================================================================================== 
+.SH "Robot\&.cpp"
+.PP
+File Description: The main robot code\&. The Init methods get called when that state gets entered and then the Periodic methods get called every 20 milliseconds\&.
+.PP
+.PP
+ 
+.PP
+ Method: RobotInit Description: When the robot gets created this gets called\&. It initializes 
+.SS "the robot subsystems (hardware)\&."
+
+.PP
+Definition at line 43 of file Robot\&.cpp\&.
+.SS "void Robot::RobotPeriodic ()\fC [override]\fP"
+
+.PP
+ Method: RobotPeriodic Description: This function is called every robot packet, no matter the mode\&. This is used for items like diagnostics that run during disabled, autonomous, teleoperated and test modes (states)\&. THis runs after the specific state periodic 
+.SS "methods and before the LiveWindow and SmartDashboard updating\&."
+
+.PP
+Definition at line 60 of file Robot\&.cpp\&.
+.SS "void Robot::TeleopInit ()\fC [override]\fP"
+
+.PP
+ Method: TeleopInit 
+.SS "Description: This initializes the teleoperated state"
+
+.PP
+Definition at line 91 of file Robot\&.cpp\&.
+.SS "void Robot::TeleopPeriodic ()\fC [override]\fP"
+
+.PP
+ Method: TeleopPeriodic Description: Runs every 20 milliseconds when the teleoperated state is 
+.SS "active\&."
+
+.PP
+Definition at line 102 of file Robot\&.cpp\&.
+.SS "void Robot::TestInit ()\fC [override]\fP"
+
+.PP
+ Method: TestInit 
+.SS "Description: This initializes the test state"
+
+.PP
+Definition at line 112 of file Robot\&.cpp\&.
+.SS "void Robot::TestPeriodic ()\fC [override]\fP"
+
+.PP
+ Method: TestPeriodic Description: Runs every 20 milliseconds when the test state is 
+.SS "active\&."
+
+.PP
+Definition at line 123 of file Robot\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

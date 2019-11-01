@@ -1,0 +1,70 @@
+.TH "LEDFactory" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+LEDFactory
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <LEDFactory\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBLED_USAGE\fP { \fBUNDER_FRONT\fP, \fBUNDER_BACK\fP, \fBTOP\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLED\fP * \fBGetLED\fP (\fBLEDFactory::LED_USAGE\fP usage)"
+.br
+.ti -1c
+.RI "\fBLED\fP * \fBCreateLED\fP (\fBLEDFactory::LED_USAGE\fP usage, int CANId)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBLEDFactory\fP * \fBGetInstance\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 10 of file LEDFactory\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBLEDFactory::LED_USAGE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUNDER_FRONT \fP\fP
+.TP
+\fB\fIUNDER_BACK \fP\fP
+.TP
+\fB\fITOP \fP\fP
+.PP
+Definition at line 16 of file LEDFactory\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBLED\fP * LEDFactory::CreateLED (\fBLEDFactory::LED_USAGE\fP usage, int CANId)"
+
+.PP
+Definition at line 57 of file LEDFactory\&.cpp\&.
+.SS "\fBLEDFactory\fP * LEDFactory::GetInstance ()\fC [static]\fP"
+
+.PP
+Definition at line 20 of file LEDFactory\&.cpp\&.
+.SS "\fBLED\fP * LEDFactory::GetLED (\fBLEDFactory::LED_USAGE\fP usage)"
+
+.PP
+Definition at line 32 of file LEDFactory\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

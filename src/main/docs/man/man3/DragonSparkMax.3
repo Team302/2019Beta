@@ -1,0 +1,174 @@
+.TH "DragonSparkMax" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DragonSparkMax
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DragonSparkMax\&.h>\fP
+.PP
+Inherits \fBIDragonMotorController\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDragonSparkMax\fP ()=delete"
+.br
+.ti -1c
+.RI "\fBDragonSparkMax\fP (int id, \fBIDragonMotorController::MOTOR_CONTROLLER_TYPE\fP deviceType, CANSparkMax::MotorType motorType, double gearRatio)"
+.br
+.ti -1c
+.RI "virtual \fB~DragonSparkMax\fP ()=default"
+.br
+.ti -1c
+.RI "double \fBGetRotations\fP () const override"
+.br
+.ti -1c
+.RI "double \fBGetRPS\fP () const override"
+.br
+.ti -1c
+.RI "\fBIDragonMotorController::MOTOR_CONTROLLER_TYPE\fP \fBGetType\fP () const override"
+.br
+.ti -1c
+.RI "int \fBGetID\fP () const override"
+.br
+.ti -1c
+.RI "void \fBSetControlMode\fP (\fBIDragonMotorController::DRAGON_CONTROL_MODE\fP mode) override"
+.br
+.ti -1c
+.RI "void \fBSet\fP (double value) override"
+.br
+.ti -1c
+.RI "void \fBSetRotationOffset\fP (double rotations) override"
+.br
+.ti -1c
+.RI "void \fBSetVoltageRamping\fP (double ramping, double rampingClosedLoop=\-1) override"
+.br
+.ti -1c
+.RI "void \fBEnableCurrentLimiting\fP (bool enabled) override"
+.br
+.ti -1c
+.RI "void \fBEnableBrakeMode\fP (bool enabled) override"
+.br
+.ti -1c
+.RI "void \fBSetPIDF\fP (double p, double i, double d, double f, int slot=0) override"
+.br
+.ti -1c
+.RI "void \fBInvert\fP (bool inverted) override"
+.br
+.ti -1c
+.RI "void \fBInvertEncoder\fP (bool inverted)"
+.br
+.ti -1c
+.RI "void \fBSetSmartCurrentLimiting\fP (int limit)"
+.br
+.ti -1c
+.RI "CANError \fBFollow\fP (\fBDragonSparkMax\fP *leader, bool invert=false)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 17 of file DragonSparkMax\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DragonSparkMax::DragonSparkMax ()\fC [delete]\fP"
+
+.SS "DragonSparkMax::DragonSparkMax (int id, \fBIDragonMotorController::MOTOR_CONTROLLER_TYPE\fP deviceType, CANSparkMax::MotorType motorType, double gearRatio)"
+
+.PP
+Definition at line 5 of file DragonSparkMax\&.cpp\&.
+.SS "virtual DragonSparkMax::~DragonSparkMax ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void DragonSparkMax::EnableBrakeMode (bool enabled)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBIDragonMotorController\fP\&.
+.PP
+Definition at line 122 of file DragonSparkMax\&.cpp\&.
+.SS "void DragonSparkMax::EnableCurrentLimiting (bool enabled)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBIDragonMotorController\fP\&.
+.PP
+Definition at line 116 of file DragonSparkMax\&.cpp\&.
+.SS "CANError DragonSparkMax::Follow (\fBDragonSparkMax\fP * leader, bool invert = \fCfalse\fP)"
+
+.PP
+Definition at line 141 of file DragonSparkMax\&.cpp\&.
+.SS "int DragonSparkMax::GetID () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBIDragonMotorController\fP\&.
+.PP
+Definition at line 42 of file DragonSparkMax\&.cpp\&.
+.SS "double DragonSparkMax::GetRotations () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBIDragonMotorController\fP\&.
+.PP
+Definition at line 27 of file DragonSparkMax\&.cpp\&.
+.SS "double DragonSparkMax::GetRPS () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBIDragonMotorController\fP\&.
+.PP
+Definition at line 32 of file DragonSparkMax\&.cpp\&.
+.SS "\fBIDragonMotorController::MOTOR_CONTROLLER_TYPE\fP DragonSparkMax::GetType () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBIDragonMotorController\fP\&.
+.PP
+Definition at line 37 of file DragonSparkMax\&.cpp\&.
+.SS "void DragonSparkMax::Invert (bool inverted)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBIDragonMotorController\fP\&.
+.PP
+Definition at line 135 of file DragonSparkMax\&.cpp\&.
+.SS "void DragonSparkMax::InvertEncoder (bool inverted)"
+
+.PP
+Definition at line 151 of file DragonSparkMax\&.cpp\&.
+.SS "void DragonSparkMax::Set (double value)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBIDragonMotorController\fP\&.
+.PP
+Definition at line 75 of file DragonSparkMax\&.cpp\&.
+.SS "void DragonSparkMax::SetControlMode (\fBIDragonMotorController::DRAGON_CONTROL_MODE\fP mode)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBIDragonMotorController\fP\&.
+.PP
+Definition at line 47 of file DragonSparkMax\&.cpp\&.
+.SS "void DragonSparkMax::SetPIDF (double p, double i, double d, double f, int slot = \fC0\fP)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBIDragonMotorController\fP\&.
+.PP
+Definition at line 127 of file DragonSparkMax\&.cpp\&.
+.SS "void DragonSparkMax::SetRotationOffset (double rotations)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBIDragonMotorController\fP\&.
+.PP
+Definition at line 99 of file DragonSparkMax\&.cpp\&.
+.SS "void DragonSparkMax::SetSmartCurrentLimiting (int limit)"
+
+.PP
+Definition at line 162 of file DragonSparkMax\&.cpp\&.
+.SS "void DragonSparkMax::SetVoltageRamping (double ramping, double rampingClosedLoop = \fC\-1\fP)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBIDragonMotorController\fP\&.
+.PP
+Definition at line 104 of file DragonSparkMax\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

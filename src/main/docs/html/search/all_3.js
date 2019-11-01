@@ -51,7 +51,7 @@ var searchData=
   ['createinput_97',['CreateInput',['../class_analog_input_factory.html#aba65f3c9b6cecd27b3c0b3b0e3a977fc',1,'AnalogInputFactory::CreateInput()'],['../class_digital_input_factory.html#a45276776f42806c14ea412818ef446f0',1,'DigitalInputFactory::CreateInput()']]],
   ['createled_98',['CreateLED',['../class_l_e_d_factory.html#ae9fd9d6b916ed570427fbd96a8bf89a9',1,'LEDFactory']]],
   ['createlidar_99',['CreateLidar',['../class_lidar_factory.html#a034b0eaacc5b8a31ad433f2a5df633b7',1,'LidarFactory']]],
-  ['createmotorcontroller_100',['CreateMotorController',['../class_dragon_motor_controller_factory.html#a585f0079eec3a5df395ce728972b403c',1,'DragonMotorControllerFactory']]],
+  ['createmotorcontroller_100',['CreateMotorController',['../class_dragon_motor_controller_factory.html#a81d291d64c27cfd376bceada8f2d5b6f',1,'DragonMotorControllerFactory']]],
   ['createpdp_101',['CreatePDP',['../class_dragon_p_d_p.html#a7c0757251596c532923dc26d1d829830',1,'DragonPDP']]],
   ['createpigeon_102',['CreatePigeon',['../class_dragon_pigeon.html#a4f102e483d45bcdd4b90019d6d11c46b',1,'DragonPigeon']]],
   ['createultrasonic_103',['CreateUltrasonic',['../class_ultrasonic_factory.html#af0d28f7d4f8913b291b70c1993896897',1,'UltrasonicFactory']]],

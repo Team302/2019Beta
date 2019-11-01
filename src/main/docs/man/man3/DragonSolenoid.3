@@ -1,0 +1,112 @@
+.TH "DragonSolenoid" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DragonSolenoid
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DragonSolenoid\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBDRAGON_SOLENOID_USAGE\fP { \fBCONTROL_4BAR\fP, \fBGRABBER_CLUTCH\fP, \fBGRABBER_POSITION\fP, \fBSIDEHANGER_LATCH\fP, \fBSIDEHANGER_LATCH2\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDragonSolenoid\fP ()=delete"
+.br
+.ti -1c
+.RI "\fBDragonSolenoid\fP (\fBDRAGON_SOLENOID_USAGE\fP usage, int pcmID, int channel, bool reversed)"
+.br
+.ti -1c
+.RI "virtual \fB~DragonSolenoid\fP ()"
+.br
+.ti -1c
+.RI "void \fBSet\fP (bool on)"
+.br
+.ti -1c
+.RI "bool \fBGet\fP () const"
+.br
+.ti -1c
+.RI "bool \fBIsBlackListed\fP () const"
+.br
+.ti -1c
+.RI "void \fBSetPulseDuration\fP (double durationSeconds)"
+.br
+.ti -1c
+.RI "void \fBStartPulse\fP ()"
+.br
+.ti -1c
+.RI "\fBDRAGON_SOLENOID_USAGE\fP \fBGetType\fP () const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 13 of file DragonSolenoid\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBDragonSolenoid::DRAGON_SOLENOID_USAGE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fICONTROL_4BAR \fP\fP
+.TP
+\fB\fIGRABBER_CLUTCH \fP\fP
+.TP
+\fB\fIGRABBER_POSITION \fP\fP
+.TP
+\fB\fISIDEHANGER_LATCH \fP\fP
+.TP
+\fB\fISIDEHANGER_LATCH2 \fP\fP
+.PP
+Definition at line 16 of file DragonSolenoid\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DragonSolenoid::DragonSolenoid ()\fC [delete]\fP"
+
+.SS "DragonSolenoid::DragonSolenoid (\fBDragonSolenoid::DRAGON_SOLENOID_USAGE\fP usage, int pcmID, int channel, bool reversed)"
+
+.PP
+Definition at line 12 of file DragonSolenoid\&.cpp\&.
+.SS "DragonSolenoid::~DragonSolenoid ()\fC [virtual]\fP"
+
+.PP
+Definition at line 24 of file DragonSolenoid\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool DragonSolenoid::Get () const"
+
+.PP
+Definition at line 45 of file DragonSolenoid\&.cpp\&.
+.SS "\fBDragonSolenoid::DRAGON_SOLENOID_USAGE\fP DragonSolenoid::GetType () const"
+
+.PP
+Definition at line 97 of file DragonSolenoid\&.cpp\&.
+.SS "bool DragonSolenoid::IsBlackListed () const"
+
+.PP
+Definition at line 58 of file DragonSolenoid\&.cpp\&.
+.SS "void DragonSolenoid::Set (bool on)"
+
+.PP
+Definition at line 31 of file DragonSolenoid\&.cpp\&.
+.SS "void DragonSolenoid::SetPulseDuration (double durationSeconds)"
+
+.PP
+Definition at line 72 of file DragonSolenoid\&.cpp\&.
+.SS "void DragonSolenoid::StartPulse ()"
+
+.PP
+Definition at line 85 of file DragonSolenoid\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

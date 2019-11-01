@@ -1,0 +1,230 @@
+.TH "Intake" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Intake
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Intake\&.h>\fP
+.PP
+Inherits \fBIMechanism\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIntake\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Intake\fP ()"
+.br
+.ti -1c
+.RI "\fBIMechanism::MECHANISM_TYPE\fP \fBGetType\fP () const override"
+.br
+.ti -1c
+.RI "void \fBSetPercentOutput\fP (double value) override"
+.br
+.ti -1c
+.RI "void \fBSetPosition\fP (double pos) override"
+.br
+.ti -1c
+.RI "double \fBGetCurrentPosition\fP () const override"
+.br
+.ti -1c
+.RI "double \fBGetTargetPosition\fP () const override"
+.br
+.ti -1c
+.RI "void \fBSetSpeed\fP (double speed) override"
+.br
+.ti -1c
+.RI "double \fBGetCurrentSpeed\fP () const override"
+.br
+.ti -1c
+.RI "double \fBGetTargetSpeed\fP () const override"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+==================================================================================================================================================== Copyright 2019 Lake Orion Robotics FIRST Team 302
+.PP
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+.PP
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software\&.
+.PP
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT\&. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE 
+.SH "OR OTHER DEALINGS IN THE SOFTWARE\&."
+.PP
+======================================================================================================== 
+.SH "Intake\&.h"
+.PP
+File Description: This is the \fBIntake\fP Subsystem
+.PP
+.PP
+ ======================================================================================================== Class: \fBIMechanism\fP 
+.SH "Description:   Interface for subsystems"
+.PP
+
+.PP
+Definition at line 43 of file Intake\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Intake::Intake ()"
+================================================================================== method: \fBIntake\fP <<constructor>> 
+.SH "description:    Create the subobjects and initialize the Intake subsystem"
+.PP
+==================================================================================================================================================== Copyright 2019 Lake Orion Robotics FIRST Team 302
+.PP
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+.PP
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software\&.
+.PP
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT\&. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE 
+.SH "OR OTHER DEALINGS IN THE SOFTWARE\&."
+.PP
+======================================================================================================== 
+.SH "Intake\&.cpp"
+.PP
+File Description: This is the \fBIntake\fP Subsystem
+.PP
+.PP
+ ================================================================================== method: \fBIntake\fP <<constructor>> 
+.SH "description:    Create the subobjects and initialize the Intake subsystem"
+.PP
+
+.PP
+Definition at line 47 of file Intake\&.cpp\&.
+.SS "Intake::~Intake ()\fC [virtual]\fP"
+================================================================================== method: ~Intake <<destructor>> 
+.SH "description:    clean up memory when this object gets deleted"
+.PP
+================================================================================== method: ~Intake <<destructor>> 
+.SH "description:    clean up memory when this object gets deleted"
+.PP
+
+.PP
+Definition at line 66 of file Intake\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "double Intake::GetCurrentPosition () const\fC [override]\fP, \fC [virtual]\fP"
+================================================================================== method: GetCurrentPostion description: Return the current position of the intake in degrees\&. Since we don't have a sensor this will return -90 for clockwise rotations and 90 for counter-clockwise rotations\&. 
+.SH "returns:        double  position in degrees (rotating mechansim)"
+.PP
+================================================================================== method: GetCurrentPostion description: Return the current position of the intake in degrees\&. Since we don't have a sensor this will return -90 for clockwise rotations and 90 for counter-clockwise rotations\&. 
+.SH "returns:        double  position in degrees (rotating mechansim)"
+.PP
+
+.PP
+Implements \fBIMechanism\fP\&.
+.PP
+Definition at line 139 of file Intake\&.cpp\&.
+.SS "double Intake::GetCurrentSpeed () const\fC [override]\fP, \fC [virtual]\fP"
+================================================================================== method: GetCurrentSpeed description: Get the current speed of the intake\&. The value is in degrees per second\&. Since we don't have a sensor for this mechanism, it will return -360 for clockwise rotations and 360 for counter clockwise rotations\&. 
+.SH "returns:        double  speed in degrees/second (rotating mechansim)"
+.PP
+================================================================================== method: GetCurrentSpeed description: Get the current speed of the intake\&. The value is in degrees per second\&. Since we don't have a sensor for this mechanism, it will return -360 for clockwise rotations and 360 for counter clockwise rotations\&. 
+.SH "returns:        double  speed in degrees/second (rotating mechansim)"
+.PP
+
+.PP
+Implements \fBIMechanism\fP\&.
+.PP
+Definition at line 199 of file Intake\&.cpp\&.
+.SS "double Intake::GetTargetPosition () const\fC [override]\fP, \fC [virtual]\fP"
+================================================================================== method: GetTargetPostion description: Return the target position of the intake\&. Since we don't have a sensor this will return -90 for clockwise rotations and 90 for counter-clockwise rotations\&. 
+.SH "returns:        double  position in degrees (rotating mechansim)"
+.PP
+================================================================================== method: GetTargetPostion description: Return the target position of the intake\&. Since we don't have a sensor this will return -90 for clockwise rotations and 90 for counter-clockwise rotations\&. 
+.SH "returns:        double  position in degrees (rotating mechansim)"
+.PP
+
+.PP
+Implements \fBIMechanism\fP\&.
+.PP
+Definition at line 155 of file Intake\&.cpp\&.
+.SS "double Intake::GetTargetSpeed () const\fC [override]\fP, \fC [virtual]\fP"
+================================================================================== method: GetTargetSpeecd description: Get the target speed of the intake\&. The value is in degrees per second\&. Since we don't have a sensor for this mechanism, it will return -360 for clockwise rotations and 360 for counter clockwise rotations\&. 
+.SH "returns:        double  speed in degrees/second (rotating mechansim)"
+.PP
+================================================================================== method: GetTargetSpeecd description: Get the target speed of the intake\&. The value is in degrees per second\&. Since we don't have a sensor for this mechanism, it will return -360 for clockwise rotations and 360 for counter clockwise rotations\&. 
+.SH "returns:        double  speed in degrees/second (rotating mechansim)"
+.PP
+
+.PP
+Implements \fBIMechanism\fP\&.
+.PP
+Definition at line 216 of file Intake\&.cpp\&.
+.SS "\fBIMechanism::MECHANISM_TYPE\fP Intake::GetType () const\fC [override]\fP, \fC [virtual]\fP"
+================================================================================== method: GetType description: Indicates this is the intake 
+.SH "returns:        IMechanism::MECHANISM_TYPE::INTAKE"
+.PP
+================================================================================== method: GetType description: Indicates this is the intake 
+.SH "returns:        IMechanism::MECHANISM_TYPE::INTAKE"
+.PP
+
+.PP
+Implements \fBIMechanism\fP\&.
+.PP
+Definition at line 76 of file Intake\&.cpp\&.
+.SS "void Intake::SetPercentOutput (double value)\fC [override]\fP, \fC [virtual]\fP"
+================================================================================== method: SetPercentOutput description: Run intake in open loop (percent output) 
+.SH "returns:        void"
+.PP
+================================================================================== method: SetPercentOutput description: Run intake in open loop (percent output) 
+.SH "returns:        void"
+.PP
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP \fI - percent output for the motor(s) \fP
+.RE
+.PP
+
+.PP
+Implements \fBIMechanism\fP\&.
+.PP
+Definition at line 88 of file Intake\&.cpp\&.
+.SS "void Intake::SetPosition (double pos)\fC [override]\fP, \fC [virtual]\fP"
+================================================================================== method: SetPosition description: Run intake in closed loop position mode\&. The value is in degrees\&. Since we don't have a sensor, this will run percent output in the direction specified\&. We will use the standard unit circle for direction with negative being clockwise and positive being counter-clockwise\&. 
+.SH "returns:        void"
+.PP
+================================================================================== method: SetPosition description: Run intake in closed loop position mode\&. The value is in degrees\&. Since we don't have a sensor, this will run percent output in the direction specified\&. We will use the standard unit circle for direction with negative being clockwise and positive being counter-clockwise\&. 
+.SH "returns:        void"
+.PP
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIpos\fP \fI - target position in degrees (rotating mechansim) \fP
+.RE
+.PP
+
+.PP
+Implements \fBIMechanism\fP\&.
+.PP
+Definition at line 113 of file Intake\&.cpp\&.
+.SS "void Intake::SetSpeed (double speed)\fC [override]\fP, \fC [virtual]\fP"
+================================================================================== method: SetSpeed description: Run intake in closed loop velocity mode\&. The value is in degrees/second (rotating mechansim)\&. Since we don't have a sensor for this mechanism, it will return -360 for clockwise rotations and 360 for counter clockwise rotations\&. 
+.SH "returns:        void"
+.PP
+================================================================================== method: SetSpeed description: Run intake in closed loop velocity mode\&. The value is in degrees/second (rotating mechansim)\&. Since we don't have a sensor for this mechanism, it will return -360 for clockwise rotations and 360 for counter clockwise rotations\&. 
+.SH "returns:        void"
+.PP
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIspeed\fP \fI - target speed degrees/second (rotating mechansim) \fP
+.RE
+.PP
+
+.PP
+Implements \fBIMechanism\fP\&.
+.PP
+Definition at line 171 of file Intake\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

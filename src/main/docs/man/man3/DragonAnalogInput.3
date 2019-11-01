@@ -1,0 +1,72 @@
+.TH "DragonAnalogInput" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DragonAnalogInput
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DragonAnalogInput\&.h>\fP
+.PP
+Inherits AnalogInput\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBANALOG_SENSOR_TYPE\fP { \fBUNKNOWN_ANALOG_TYPE\fP = -1, \fBEXTENDER_POTENTIOMETER\fP, \fBPRESSURE_GAUGE\fP, \fBMAX_ANALOG_TYPES\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDragonAnalogInput\fP (\fBANALOG_SENSOR_TYPE\fP type, int analogID, float voltageMin, float voltageMax, float outputMin, float outputMax)"
+.br
+.ti -1c
+.RI "virtual \fB~DragonAnalogInput\fP ()"
+.br
+.ti -1c
+.RI "double \fBGetInterpolatedValue\fP () const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 13 of file DragonAnalogInput\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBDragonAnalogInput::ANALOG_SENSOR_TYPE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUNKNOWN_ANALOG_TYPE \fP\fP
+.TP
+\fB\fIEXTENDER_POTENTIOMETER \fP\fP
+.TP
+\fB\fIPRESSURE_GAUGE \fP\fP
+.TP
+\fB\fIMAX_ANALOG_TYPES \fP\fP
+.PP
+Definition at line 16 of file DragonAnalogInput\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DragonAnalogInput::DragonAnalogInput (\fBANALOG_SENSOR_TYPE\fP type, int analogID, float voltageMin, float voltageMax, float outputMin, float outputMax)"
+
+.PP
+Definition at line 8 of file DragonAnalogInput\&.cpp\&.
+.SS "DragonAnalogInput::~DragonAnalogInput ()\fC [virtual]\fP"
+
+.PP
+Definition at line 24 of file DragonAnalogInput\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "double DragonAnalogInput::GetInterpolatedValue () const"
+
+.PP
+Definition at line 28 of file DragonAnalogInput\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

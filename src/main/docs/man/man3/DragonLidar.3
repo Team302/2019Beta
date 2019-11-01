@@ -1,0 +1,75 @@
+.TH "DragonLidar" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DragonLidar
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DragonLidar\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBLIDAR_USAGE\fP { \fBFORWARD\fP, \fBBACKWARD\fP, \fBMAX_LIDAR_USAGES\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDragonLidar\fP (\fBLIDAR_USAGE\fP usage, int inputPin, int triggerPin)"
+.br
+.ti -1c
+.RI "virtual \fB~DragonLidar\fP ()"
+.br
+.ti -1c
+.RI "double \fBGetDistance\fP ()"
+.br
+.ti -1c
+.RI "\fBLIDAR_USAGE\fP \fBGetUsage\fP () const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 22 of file DragonLidar\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBDragonLidar::LIDAR_USAGE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIFORWARD \fP\fP
+.TP
+\fB\fIBACKWARD \fP\fP
+.TP
+\fB\fIMAX_LIDAR_USAGES \fP\fP
+.PP
+Definition at line 25 of file DragonLidar\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DragonLidar::DragonLidar (\fBLIDAR_USAGE\fP usage, int inputPin, int triggerPin)"
+
+.PP
+Definition at line 17 of file DragonLidar\&.cpp\&.
+.SS "DragonLidar::~DragonLidar ()\fC [virtual]\fP"
+
+.PP
+Definition at line 29 of file DragonLidar\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "double DragonLidar::GetDistance ()"
+
+.PP
+Definition at line 34 of file DragonLidar\&.cpp\&.
+.SS "\fBDragonLidar::LIDAR_USAGE\fP DragonLidar::GetUsage () const"
+
+.PP
+Definition at line 40 of file DragonLidar\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

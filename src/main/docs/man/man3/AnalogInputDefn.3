@@ -1,0 +1,49 @@
+.TH "AnalogInputDefn" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AnalogInputDefn
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <AnalogInputDefn\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAnalogInputDefn\fP ()=default"
+.br
+.ti -1c
+.RI "virtual \fB~AnalogInputDefn\fP ()=default"
+.br
+.ti -1c
+.RI "void \fBParseXML\fP (pugi::xml_node sensorNode)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 64 of file AnalogInputDefn\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AnalogInputDefn::AnalogInputDefn ()\fC [default]\fP"
+
+.SS "virtual AnalogInputDefn::~AnalogInputDefn ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void AnalogInputDefn::ParseXML (pugi::xml_node motorNode)"
+
+.PP
+ Method: ParseXML Description: Parse a analogSensor XML element and create a \fBDragonAnalogInput\fP from its definition\&. 
+.SS "Returns:     void"
+.PP
+ Method: ParseXML Description: Parse a analogSensor XML element and create a \fBDragonAnalogInput\fP from its definition\&. Returns: DragonAnalogInput* AnalogInput (or nullptr if XML 
+.SS "is ill-formed"
+
+.PP
+Definition at line 73 of file AnalogInputDefn\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

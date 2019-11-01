@@ -1,0 +1,103 @@
+.TH "AnalogAxis" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AnalogAxis \- Class: \fBAnalogAxis\fP Description: This class handles the analog inputs on a gamepad  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <AnalogAxis\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAnalogAxis\fP (frc::GenericHID *gamepad, int axisID, bool flipped)"
+.br
+.ti -1c
+.RI "double \fBGetAxisValue\fP ()"
+.br
+.RI "Method: GetAxisValue Description: Read the analog (axis) value and return it\&. If the gamepad has an issue, return 0\&.0\&. "
+.ti -1c
+.RI "void \fBSetDeadBand\fP (\fBIDragonGamePad::AXIS_DEADBAND\fP type)"
+.br
+.ti -1c
+.RI "void \fBSetAxisProfile\fP (\fBIDragonGamePad::AXIS_PROFILE\fP profile)"
+.br
+.ti -1c
+.RI "void \fBSetAxisScaleFactor\fP (double scale)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual double \fBGetRawValue\fP ()"
+.br
+.RI "Method: GetRawValue Description: Returns the analog input's raw value\&. If there is a connection problem, 0\&.0 will be returned and a debug message will be written\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class: \fBAnalogAxis\fP Description: This class handles the analog inputs on a gamepad 
+
+
+.PP
+Definition at line 43 of file AnalogAxis\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AnalogAxis::AnalogAxis (frc::GenericHID * gamepad, int axisID, bool flipped)"
+
+.PP
+Definition at line 34 of file AnalogAxis\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "double AnalogAxis::GetAxisValue ()"
+
+.PP
+Method: GetAxisValue Description: Read the analog (axis) value and return it\&. If the gamepad has an issue, return 0\&.0\&. 
+.PP
+Definition at line 57 of file AnalogAxis\&.cpp\&.
+.SS "double AnalogAxis::GetRawValue ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Method: GetRawValue Description: Returns the analog input's raw value\&. If there is a connection problem, 0\&.0 will be returned and a debug message will be written\&. 
+.PP
+Definition at line 144 of file AnalogAxis\&.cpp\&.
+.SS "void AnalogAxis::SetAxisProfile (\fBIDragonGamePad::AXIS_PROFILE\fP profile)"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIprofile\fP \fI - axis profile \fP
+.RE
+.PP
+
+.PP
+Definition at line 103 of file AnalogAxis\&.cpp\&.
+.SS "void AnalogAxis::SetAxisScaleFactor (double scale)"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIscale\fP \fI - sacle factor \fP
+.RE
+.PP
+
+.PP
+Definition at line 129 of file AnalogAxis\&.cpp\&.
+.SS "void AnalogAxis::SetDeadBand (\fBIDragonGamePad::AXIS_DEADBAND\fP type)"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fItype\fP \fI - deadband option \fP
+.RE
+.PP
+
+.PP
+Definition at line 76 of file AnalogAxis\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

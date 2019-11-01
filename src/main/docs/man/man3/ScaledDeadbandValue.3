@@ -1,0 +1,57 @@
+.TH "ScaledDeadbandValue" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ScaledDeadbandValue \- Class: \fBDeadbandValue\fP Description: This class applies a deadband to a value removing values whose  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ScaledDeadbandValue\&.h>\fP
+.PP
+Inherits \fBIDeadband\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBApplyDeadband\fP (double inputVal) const override"
+.br
+.RI "Method: ApplyDeadband Description: Apply the standard deadband "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBScaledDeadbandValue\fP * \fBGetInstance\fP ()"
+.br
+.RI "Method: GetInstance Description: Static singleton method to create the object Returns: DeadbandValue* Singleton deadband object "
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Class: \fBDeadbandValue\fP Description: This class applies a deadband to a value removing values whose 
+
+
+.PP
+Definition at line 39 of file ScaledDeadbandValue\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "double ScaledDeadbandValue::ApplyDeadband (double inputVal) const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Method: ApplyDeadband Description: Apply the standard deadband 
+.PP
+Implements \fBIDeadband\fP\&.
+.PP
+Definition at line 47 of file ScaledDeadbandValue\&.cpp\&.
+.SS "\fBScaledDeadbandValue\fP * ScaledDeadbandValue::GetInstance ()\fC [static]\fP"
+
+.PP
+Method: GetInstance Description: Static singleton method to create the object Returns: DeadbandValue* Singleton deadband object 
+.PP
+Definition at line 31 of file ScaledDeadbandValue\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

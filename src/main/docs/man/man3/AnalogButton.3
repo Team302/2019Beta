@@ -1,0 +1,86 @@
+.TH "AnalogButton" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AnalogButton \- Class: \fBAnalogButton\fP Description: This is treats an analog axis as a button\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <AnalogButton\&.h>\fP
+.PP
+Inherits \fBIButton\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAnalogButton\fP (\fBAnalogAxis\fP *axis)"
+.br
+.ti -1c
+.RI "\fBAnalogButton\fP (\fBAnalogAxis\fP *axis, double minValue, double maxValue)"
+.br
+.RI "Class: \fBAnalogButton\fP Description: This treats a analog input as a button on a gamepad\&. "
+.ti -1c
+.RI "bool \fBIsButtonPressed\fP () const override"
+.br
+.RI "Method: IsButtonPressed Description: Read the button and return true if it is pressed and false if it isn't\&. "
+.ti -1c
+.RI "bool \fBWasButtonReleased\fP () const override"
+.br
+.RI "Method: WasButtonReleased Description: Read whether the button was released since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. "
+.ti -1c
+.RI "bool \fBWasButtonPressed\fP () const override"
+.br
+.RI "Method: WasButtonPressed Description: Read whether the button was pressed since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. "
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Class: \fBAnalogButton\fP Description: This is treats an analog axis as a button\&. 
+
+
+.PP
+Definition at line 29 of file AnalogButton\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AnalogButton::AnalogButton (\fBAnalogAxis\fP * axis)"
+
+.PP
+Definition at line 37 of file AnalogButton\&.cpp\&.
+.SS "AnalogButton::AnalogButton (\fBAnalogAxis\fP * axis, double minValue, double maxValue)"
+
+.PP
+Class: \fBAnalogButton\fP Description: This treats a analog input as a button on a gamepad\&. 
+.PP
+Definition at line 28 of file AnalogButton\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool AnalogButton::IsButtonPressed () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Method: IsButtonPressed Description: Read the button and return true if it is pressed and false if it isn't\&. 
+.PP
+Implements \fBIButton\fP\&.
+.PP
+Definition at line 52 of file AnalogButton\&.cpp\&.
+.SS "bool AnalogButton::WasButtonPressed () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Method: WasButtonPressed Description: Read whether the button was pressed since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. 
+.PP
+Implements \fBIButton\fP\&.
+.PP
+Definition at line 68 of file AnalogButton\&.cpp\&.
+.SS "bool AnalogButton::WasButtonReleased () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Method: WasButtonReleased Description: Read whether the button was released since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. 
+.PP
+Implements \fBIButton\fP\&.
+.PP
+Definition at line 63 of file AnalogButton\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

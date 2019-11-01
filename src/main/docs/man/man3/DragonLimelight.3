@@ -1,0 +1,193 @@
+.TH "DragonLimelight" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DragonLimelight
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DragonLimelight\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBLED_MODE\fP { \fBLED_DEFUALT\fP, \fBLED_OFF\fP, \fBLED_BLINK\fP, \fBLED_ON\fP }"
+.br
+.ti -1c
+.RI "enum \fBCAM_MODE\fP { \fBCAM_VISION\fP, \fBCAM_DRIVER\fP }"
+.br
+.ti -1c
+.RI "enum \fBSTREAM_MODE\fP { \fBSTREAM_DEFAULT\fP, \fBSTREAM_MAIN_AND_SECOND\fP, \fBSTREAM_SECOND_AND_MAIN\fP }"
+.br
+.ti -1c
+.RI "enum \fBSNAPSHOT_MODE\fP { \fBSNAP_OFF\fP, \fBSNAP_ON\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBHasTarget\fP ()"
+.br
+.ti -1c
+.RI "double \fBGetTargetHorizontalOffset\fP ()"
+.br
+.ti -1c
+.RI "double \fBGetTargetVerticalOffset\fP ()"
+.br
+.ti -1c
+.RI "double \fBGetTargetArea\fP ()"
+.br
+.ti -1c
+.RI "double \fBGetTargetSkew\fP ()"
+.br
+.ti -1c
+.RI "double \fBGetPipelineLatency\fP ()"
+.br
+.ti -1c
+.RI "std::vector< double > \fBGet3DSolve\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetLEDMode\fP (\fBDragonLimelight::LED_MODE\fP mode)"
+.br
+.ti -1c
+.RI "void \fBSetCamMode\fP (\fBDragonLimelight::CAM_MODE\fP mode)"
+.br
+.ti -1c
+.RI "void \fBSetPipeline\fP (int pipeline)"
+.br
+.ti -1c
+.RI "void \fBSetStreamMode\fP (\fBDragonLimelight::STREAM_MODE\fP mode)"
+.br
+.ti -1c
+.RI "void \fBToggleSnapshot\fP (\fBDragonLimelight::SNAPSHOT_MODE\fP toggle)"
+.br
+.ti -1c
+.RI "void \fBPrintValues\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBDragonLimelight\fP * \fBGetInstance\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 28 of file DragonLimelight\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBDragonLimelight::CAM_MODE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fICAM_VISION \fP\fP
+.TP
+\fB\fICAM_DRIVER \fP\fP
+.PP
+Definition at line 39 of file DragonLimelight\&.h\&.
+.SS "enum \fBDragonLimelight::LED_MODE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fILED_DEFUALT \fP\fP
+.TP
+\fB\fILED_OFF \fP\fP
+.TP
+\fB\fILED_BLINK \fP\fP
+.TP
+\fB\fILED_ON \fP\fP
+.PP
+Definition at line 31 of file DragonLimelight\&.h\&.
+.SS "enum \fBDragonLimelight::SNAPSHOT_MODE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISNAP_OFF \fP\fP
+.TP
+\fB\fISNAP_ON \fP\fP
+.PP
+Definition at line 52 of file DragonLimelight\&.h\&.
+.SS "enum \fBDragonLimelight::STREAM_MODE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISTREAM_DEFAULT \fP\fP
+.TP
+\fB\fISTREAM_MAIN_AND_SECOND \fP\fP
+.TP
+\fB\fISTREAM_SECOND_AND_MAIN \fP\fP
+.PP
+Definition at line 45 of file DragonLimelight\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector< double > DragonLimelight::Get3DSolve ()"
+
+.PP
+Definition at line 30 of file DragonLimelight\&.cpp\&.
+.SS "\fBDragonLimelight\fP * DragonLimelight::GetInstance ()\fC [static]\fP"
+
+.PP
+Definition at line 107 of file DragonLimelight\&.cpp\&.
+.SS "double DragonLimelight::GetPipelineLatency ()"
+
+.PP
+Definition at line 65 of file DragonLimelight\&.cpp\&.
+.SS "double DragonLimelight::GetTargetArea ()"
+
+.PP
+Definition at line 53 of file DragonLimelight\&.cpp\&.
+.SS "double DragonLimelight::GetTargetHorizontalOffset ()"
+
+.PP
+Definition at line 41 of file DragonLimelight\&.cpp\&.
+.SS "double DragonLimelight::GetTargetSkew ()"
+
+.PP
+Definition at line 59 of file DragonLimelight\&.cpp\&.
+.SS "double DragonLimelight::GetTargetVerticalOffset ()"
+
+.PP
+Definition at line 47 of file DragonLimelight\&.cpp\&.
+.SS "double DragonLimelight::HasTarget ()"
+
+.PP
+Definition at line 35 of file DragonLimelight\&.cpp\&.
+.SS "void DragonLimelight::PrintValues ()"
+
+.PP
+Definition at line 97 of file DragonLimelight\&.cpp\&.
+.SS "void DragonLimelight::SetCamMode (\fBDragonLimelight::CAM_MODE\fP mode)"
+
+.PP
+Definition at line 76 of file DragonLimelight\&.cpp\&.
+.SS "void DragonLimelight::SetLEDMode (\fBDragonLimelight::LED_MODE\fP mode)"
+
+.PP
+Definition at line 71 of file DragonLimelight\&.cpp\&.
+.SS "void DragonLimelight::SetPipeline (int pipeline)"
+
+.PP
+Definition at line 81 of file DragonLimelight\&.cpp\&.
+.SS "void DragonLimelight::SetStreamMode (\fBDragonLimelight::STREAM_MODE\fP mode)"
+
+.PP
+Definition at line 86 of file DragonLimelight\&.cpp\&.
+.SS "void DragonLimelight::ToggleSnapshot (\fBDragonLimelight::SNAPSHOT_MODE\fP toggle)"
+
+.PP
+Definition at line 92 of file DragonLimelight\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

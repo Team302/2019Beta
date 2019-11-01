@@ -1,0 +1,83 @@
+.TH "DragonTalonTach" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DragonTalonTach
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DragonTalonTach\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBTALON_TACH_USAGE\fP { \fBUNKNOWN_TALON_TACH_USAGE\fP = -1, \fBMIN_WRIST_ANGLE\fP, \fBMAX_WRIST_ANGLE\fP, \fBTOP_HATCH_PRESENT\fP, \fBBOTTOM_HATCH_PRESENT\fP, \fBARM_BOTTOM\fP, \fBARM_TOP\fP, \fBMAX_TALON_TACH_USAGE\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDragonTalonTach\fP (\fBTALON_TACH_USAGE\fP usage, int canID, ctre::phoenix::CANifier::GeneralPin generalpin, bool reversed)"
+.br
+.ti -1c
+.RI "\fBDragonTalonTach\fP ()=delete"
+.br
+.ti -1c
+.RI "virtual \fB~DragonTalonTach\fP ()"
+.br
+.ti -1c
+.RI "bool \fBGet\fP () const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 16 of file DragonTalonTach\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBDragonTalonTach::TALON_TACH_USAGE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUNKNOWN_TALON_TACH_USAGE \fP\fP
+.TP
+\fB\fIMIN_WRIST_ANGLE \fP\fP
+.TP
+\fB\fIMAX_WRIST_ANGLE \fP\fP
+.TP
+\fB\fITOP_HATCH_PRESENT \fP\fP
+.TP
+\fB\fIBOTTOM_HATCH_PRESENT \fP\fP
+.TP
+\fB\fIARM_BOTTOM \fP\fP
+.TP
+\fB\fIARM_TOP \fP\fP
+.TP
+\fB\fIMAX_TALON_TACH_USAGE \fP\fP
+.PP
+Definition at line 19 of file DragonTalonTach\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DragonTalonTach::DragonTalonTach (\fBTALON_TACH_USAGE\fP usage, int canID, ctre::phoenix::CANifier::GeneralPin generalpin, bool reversed)"
+
+.PP
+Definition at line 13 of file DragonTalonTach\&.cpp\&.
+.SS "DragonTalonTach::DragonTalonTach ()\fC [delete]\fP"
+
+.SS "DragonTalonTach::~DragonTalonTach ()\fC [virtual]\fP"
+
+.PP
+Definition at line 25 of file DragonTalonTach\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool DragonTalonTach::Get () const"
+
+.PP
+Definition at line 30 of file DragonTalonTach\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

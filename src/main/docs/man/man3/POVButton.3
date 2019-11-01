@@ -1,0 +1,84 @@
+.TH "POVButton" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+POVButton \- Class: \fBPOVButton\fP Description: This is the POV/DPAD button on a gamepad\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <POVButton\&.h>\fP
+.PP
+Inherits \fBIButton\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPOVButton\fP (frc::GenericHID *gamepad, int buttonID)"
+.br
+.RI "Class: \fBPOVButton\fP Description: This is the POV/DPAD button on a gamepad\&. "
+.ti -1c
+.RI "\fB~POVButton\fP ()=default"
+.br
+.ti -1c
+.RI "bool \fBIsButtonPressed\fP () const override"
+.br
+.RI "Method: IsButtonPressed Description: Read the button and return true if it is pressed and false if it isn't\&. "
+.ti -1c
+.RI "bool \fBWasButtonReleased\fP () const override"
+.br
+.RI "Method: WasButtonReleased Description: Read whether the button was released since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. "
+.ti -1c
+.RI "bool \fBWasButtonPressed\fP () const override"
+.br
+.RI "Method: WasButtonPressed Description: Read whether the button was pressed since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. "
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Class: \fBPOVButton\fP Description: This is the POV/DPAD button on a gamepad\&. 
+
+
+.PP
+Definition at line 30 of file POVButton\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "POVButton::POVButton (frc::GenericHID * gamepad, int buttonID)"
+
+.PP
+Class: \fBPOVButton\fP Description: This is the POV/DPAD button on a gamepad\&. 
+.PP
+Definition at line 29 of file POVButton\&.cpp\&.
+.SS "POVButton::~POVButton ()\fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool POVButton::IsButtonPressed () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Method: IsButtonPressed Description: Read the button and return true if it is pressed and false if it isn't\&. 
+.PP
+Implements \fBIButton\fP\&.
+.PP
+Definition at line 44 of file POVButton\&.cpp\&.
+.SS "bool POVButton::WasButtonPressed () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Method: WasButtonPressed Description: Read whether the button was pressed since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. 
+.PP
+Implements \fBIButton\fP\&.
+.PP
+Definition at line 59 of file POVButton\&.cpp\&.
+.SS "bool POVButton::WasButtonReleased () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Method: WasButtonReleased Description: Read whether the button was released since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. 
+.PP
+Implements \fBIButton\fP\&.
+.PP
+Definition at line 54 of file POVButton\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

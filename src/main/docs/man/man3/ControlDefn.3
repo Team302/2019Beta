@@ -1,0 +1,98 @@
+.TH "ControlDefn" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ControlDefn
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ControlDefn\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBControlDefn\fP ()=delete"
+.br
+.ti -1c
+.RI "virtual \fB~ControlDefn\fP ()=delete"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBParseXML\fP (std::string &filename, std::vector< \fBPIDData\fP * > &pidControlVector)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+==================================================================================================================================================== Copyright 2019 Lake Orion Robotics FIRST Team 302
+.PP
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+.PP
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software\&.
+.PP
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT\&. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE 
+.SH "OR OTHER DEALINGS IN THE SOFTWARE\&."
+.PP
+======================================================================================================== 
+.SH "ControlDefn\&.h"
+.PP
+File Description: Top-level XML parsing file for defining the control parameters for mechanisms\&. 
+.br
+ This parsing leverages the 3rd party Open Source Pugixml library (https://pugixml.org/)\&.
+.PP
+This parsing code will call the classes/methods to parse the lower-level objects\&. When the parsing has been completed, the control parameters will be defined\&.
+.PP
+The robot definition XML file is: /home/lvuser/config/control/xxx\&.xml where xxx is the class name that will be reading the file\&.
+.PP
+.PP
+ 
+.PP
+Definition at line 48 of file ControlDefn\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ControlDefn::ControlDefn ()\fC [delete]\fP"
+
+.SS "virtual ControlDefn::~ControlDefn ()\fC [virtual]\fP, \fC [delete]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void ControlDefn::ParseXML (std::string & leaf, std::vector< \fBPIDData\fP * > & pids)\fC [static]\fP"
+================================================================================================ Method: ParseXML Description: Parse a robot\&.xml file 
+.SH "Returns:     void"
+.PP
+==================================================================================================================================================== Copyright 2019 Lake Orion Robotics FIRST Team 302
+.PP
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+.PP
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software\&.
+.PP
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT\&. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE 
+.SH "OR OTHER DEALINGS IN THE SOFTWARE\&."
+.PP
+======================================================================================================== 
+.SH "ControlDefn\&.cpp"
+.PP
+File Description: Top-level XML parsing file for the control parameters\&. This parsing leverages the 3rd party Open Source Pugixml library (https://pugixml.org/)\&.
+.PP
+This parsing code will call the classes/methods to parse the lower-level objects\&. When the parsing has been completed, the robot hardware will be defined\&.
+.PP
+The robot definition XML file is: /home/lvuser/config/robot\&.xml
+.PP
+.PP
+ 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpids\fP \fI - the file name (without the path) to parse <O> - the control data \fP
+.RE
+.PP
+
+.PP
+Definition at line 55 of file ControlDefn\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

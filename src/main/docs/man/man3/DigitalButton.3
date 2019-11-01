@@ -1,0 +1,79 @@
+.TH "DigitalButton" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DigitalButton \- Class: \fBDigitalButton\fP Description: This is the standard button on a gamepad\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DigitalButton\&.h>\fP
+.PP
+Inherits \fBIButton\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDigitalButton\fP (frc::GenericHID *gamepad, int buttonID)"
+.br
+.RI "Class: \fBDigitalButton\fP Description: This is the standard button on a gamepad\&. "
+.ti -1c
+.RI "bool \fBIsButtonPressed\fP () const override"
+.br
+.RI "Method: IsButtonPressed Description: Read the button and return true if it is pressed and false if it isn't\&. "
+.ti -1c
+.RI "bool \fBWasButtonReleased\fP () const override"
+.br
+.RI "Method: WasButtonReleased Description: Read whether the button was released since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. "
+.ti -1c
+.RI "bool \fBWasButtonPressed\fP () const override"
+.br
+.RI "Method: WasButtonPressed Description: Read whether the button was pressed since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. "
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Class: \fBDigitalButton\fP Description: This is the standard button on a gamepad\&. 
+
+
+.PP
+Definition at line 30 of file DigitalButton\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DigitalButton::DigitalButton (frc::GenericHID * gamepad, int buttonID)"
+
+.PP
+Class: \fBDigitalButton\fP Description: This is the standard button on a gamepad\&. 
+.PP
+Definition at line 38 of file DigitalButton\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool DigitalButton::IsButtonPressed () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Method: IsButtonPressed Description: Read the button and return true if it is pressed and false if it isn't\&. 
+.PP
+Implements \fBIButton\fP\&.
+.PP
+Definition at line 53 of file DigitalButton\&.cpp\&.
+.SS "bool DigitalButton::WasButtonPressed () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Method: WasButtonPressed Description: Read whether the button was pressed since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. 
+.PP
+Implements \fBIButton\fP\&.
+.PP
+Definition at line 73 of file DigitalButton\&.cpp\&.
+.SS "bool DigitalButton::WasButtonReleased () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Method: WasButtonReleased Description: Read whether the button was released since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. 
+.PP
+Implements \fBIButton\fP\&.
+.PP
+Definition at line 63 of file DigitalButton\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

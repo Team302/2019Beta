@@ -1,0 +1,161 @@
+.TH "IMechanismState" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+IMechanismState
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IMechanismState\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBMECHANISM_STATE\fP { \fBPERCENT_OUTPUT\fP, \fBPOSITION_CONTROL\fP, \fBVELOCITY_CONTROL\fP, \fBMAX_MECHANISM_STATES\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBMECHANISM_STATE\fP \fBGetCurrentSate\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBSetTarget\fP (double value)=0"
+.br
+.ti -1c
+.RI "virtual double \fBGetCurrentValue\fP () const =0"
+.br
+.ti -1c
+.RI "virtual double \fBGetTargetValue\fP () const =0"
+.br
+.ti -1c
+.RI "\fBIMechanismState\fP ()=default"
+.br
+.ti -1c
+.RI "virtual \fB~IMechanismState\fP ()=default"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+==================================================================================================================================================== Copyright 2019 Lake Orion Robotics FIRST Team 302
+.PP
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+.PP
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software\&.
+.PP
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT\&. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE 
+.SH "OR OTHER DEALINGS IN THE SOFTWARE\&."
+.PP
+======================================================================================================== 
+.SH "IMechanismState\&.h"
+.PP
+File Description: This is the interface for all subsystem states
+.IP "\(bu" 2
+Percent Output
+.IP "\(bu" 2
+Position Control
+.IP "\(bu" 2
+Velocity Control
+.PP
+.PP
+.PP
+ ======================================================================================================== Class: \fBIMechanismState\fP 
+.SH "Description:  Interface for subsystem states"
+.PP
+
+.PP
+Definition at line 44 of file IMechanismState\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBIMechanismState::MECHANISM_STATE\fP"
+================================================================================== enum: MECHANISM_TYPE 
+.SH "description:    Indicates the type of mechanism"
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIPERCENT_OUTPUT \fP\fP
+.TP
+\fB\fIPOSITION_CONTROL \fP\fP
+.TP
+\fB\fIVELOCITY_CONTROL \fP\fP
+.TP
+\fB\fIMAX_MECHANISM_STATES \fP\fP
+.PP
+Definition at line 52 of file IMechanismState\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "IMechanismState::IMechanismState ()\fC [default]\fP"
+
+.SS "virtual IMechanismState::~IMechanismState ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual \fBMECHANISM_STATE\fP IMechanismState::GetCurrentSate ()\fC [pure virtual]\fP"
+================================================================================== method: GetCurrentSate description: Return the current state 
+.SH "returns:        MECHANISM_STATE state"
+.PP
+
+.SS "virtual double IMechanismState::GetCurrentValue () const\fC [pure virtual]\fP"
+================================================================================== method: GetCurrentValue description: Return the current value for the mechanism\&. 
+.br
+ returns: double current value
+.IP "\(bu" 2
+a unitless value between -1\&.0 and 1\&.0 for for Percent Output States
+.IP "\(bu" 2
+a value in inches for translating mechanisms in Position Control
+.IP "\(bu" 2
+a value in degrees for rotating mechanisms in Position Control
+.IP "\(bu" 2
+a value in inches per second for translating mechanisms in Velocity Control 
+.PP
+.SH "- a value in degrees per second for rotating mechanisms in Velocity Control"
+.PP
+
+.SS "virtual double IMechanismState::GetTargetValue () const\fC [pure virtual]\fP"
+================================================================================== method: GetTargetValue description: Return the target value for the mechanism\&. 
+.br
+ returns: double target value
+.IP "\(bu" 2
+a unitless value between -1\&.0 and 1\&.0 for for Percent Output States
+.IP "\(bu" 2
+a value in inches for translating mechanisms in Position Control
+.IP "\(bu" 2
+a value in degrees for rotating mechanisms in Position Control
+.IP "\(bu" 2
+a value in inches per second for translating mechanisms in Velocity Control 
+.PP
+.SH "- a value in degrees per second for rotating mechanisms in Velocity Control"
+.PP
+
+.SS "virtual void IMechanismState::SetTarget (double value)\fC [pure virtual]\fP"
+================================================================================== method: SetTarget description: Set the target value is
+.IP "\(bu" 2
+a unitless value between -1\&.0 and 1\&.0 for for Percent Output States
+.IP "\(bu" 2
+a value in inches for translating mechanisms in Position Control
+.IP "\(bu" 2
+a value in degrees for rotating mechanisms in Position Control
+.IP "\(bu" 2
+a value in inches per second for translating mechanisms in Velocity Control
+.IP "\(bu" 2
+a value in degrees per second for rotating mechanisms in Velocity Control 
+.PP
+.SH "returns:        void"
+.PP
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP \fI - target value for the mechanism \fP
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

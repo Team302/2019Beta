@@ -1,0 +1,304 @@
+.TH "DragonTalon" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DragonTalon
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DragonTalon\&.h>\fP
+.PP
+Inherits \fBIDragonMotorController\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBTALON_SENSOR_TYPE\fP { \fBNO_SENSOR\fP = -1, \fBQUAD_ENCODER\fP, \fBUNKNOWN_SENSOR\fP, \fBANALOG_POT\fP, \fBANALOG_ENCODER\fP, \fBENCODER_RISING\fP, \fBENCODER_FALLING\fP, \fBCTRE_MAG_ENCODER_RELATIVE\fP, \fBCTRE_MAG_ENCODER_ABSOLUTE\fP, \fBPULSE_WIDTH\fP, \fBMAX_SENSOR_TYPES\fP }"
+.br
+.ti -1c
+.RI "enum \fBTALON_CONTROL_MODE\fP { \fBPERCENT\fP, \fBPOSITION\fP, \fBVELOCITY\fP, \fBFOLLOWER\fP, \fBMOTION_MAGIC\fP, \fBMAX_TALON_MODES\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDragonTalon\fP ()=delete"
+.br
+.ti -1c
+.RI "\fBDragonTalon\fP (\fBIDragonMotorController::MOTOR_CONTROLLER_TYPE\fP deviceType, int deviceID, int countsPerRev, double gearRatio)"
+.br
+.ti -1c
+.RI "virtual \fB~DragonTalon\fP ()=default"
+.br
+.ti -1c
+.RI "double \fBGetRotations\fP () const override"
+.br
+.ti -1c
+.RI "double \fBGetRPS\fP () const override"
+.br
+.ti -1c
+.RI "\fBIDragonMotorController::MOTOR_CONTROLLER_TYPE\fP \fBGetType\fP () const override"
+.br
+.ti -1c
+.RI "int \fBGetID\fP () const override"
+.br
+.ti -1c
+.RI "void \fBSetControlMode\fP (\fBIDragonMotorController::DRAGON_CONTROL_MODE\fP mode) override"
+.br
+.ti -1c
+.RI "void \fBSet\fP (double value) override"
+.br
+.ti -1c
+.RI "void \fBSetRotationOffset\fP (double rotations) override"
+.br
+.ti -1c
+.RI "void \fBSetVoltageRamping\fP (double ramping, double rampingClosedLoop=\-1) override"
+.br
+.ti -1c
+.RI "void \fBEnableCurrentLimiting\fP (bool enabled) override"
+.br
+.ti -1c
+.RI "void \fBEnableBrakeMode\fP (bool enabled) override"
+.br
+.ti -1c
+.RI "void \fBSetPIDF\fP (double p, double i, double d, double f, int slot=0) override"
+.br
+.ti -1c
+.RI "void \fBInvert\fP (bool inverted) override"
+.br
+.ti -1c
+.RI "void \fBSetControlMode\fP (\fBTALON_CONTROL_MODE\fP mode)"
+.br
+.ti -1c
+.RI "void \fBSetSensorInverted\fP (bool inverted)"
+.br
+.ti -1c
+.RI "void \fBSelectClosedLoopProfile\fP (int slot, int pidIndex)"
+.br
+.ti -1c
+.RI "int \fBConfigSelectedFeedbackSensor\fP (FeedbackDevice feedbackDevice, int pidIdx, int timeoutMs)"
+.br
+.ti -1c
+.RI "int \fBConfigSelectedFeedbackSensor\fP (RemoteFeedbackDevice feedbackDevice, int pidIdx, int timeoutMs)"
+.br
+.ti -1c
+.RI "int \fBConfigPeakCurrentLimit\fP (int amps, int timeoutMs)"
+.br
+.ti -1c
+.RI "int \fBConfigPeakCurrentDuration\fP (int milliseconds, int timeoutMs)"
+.br
+.ti -1c
+.RI "int \fBConfigContinuousCurrentLimit\fP (int amps, int timeoutMs)"
+.br
+.ti -1c
+.RI "void \fBSetAsSlave\fP (int masterCANID)"
+.br
+.ti -1c
+.RI "void \fBConfigMotionAcceleration\fP (float maxMotionAcceleration)"
+.br
+.ti -1c
+.RI "void \fBConfigMotionCruiseVelocity\fP (float maxMotionCruiseVelocity)"
+.br
+.ti -1c
+.RI "void \fBConfigPeakOutput\fP (double percentOutput)"
+.br
+.ti -1c
+.RI "void \fBConfigNominalOutput\fP (double nominalOutput)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 22 of file DragonTalon\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBDragonTalon::TALON_CONTROL_MODE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIPERCENT \fP\fP
+.TP
+\fB\fIPOSITION \fP\fP
+.TP
+\fB\fIVELOCITY \fP\fP
+.TP
+\fB\fIFOLLOWER \fP\fP
+.TP
+\fB\fIMOTION_MAGIC \fP\fP
+.TP
+\fB\fIMAX_TALON_MODES \fP\fP
+.PP
+Definition at line 41 of file DragonTalon\&.h\&.
+.SS "enum \fBDragonTalon::TALON_SENSOR_TYPE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINO_SENSOR \fP\fP
+.TP
+\fB\fIQUAD_ENCODER \fP\fP
+.TP
+\fB\fIUNKNOWN_SENSOR \fP\fP
+.TP
+\fB\fIANALOG_POT \fP\fP
+.TP
+\fB\fIANALOG_ENCODER \fP\fP
+.TP
+\fB\fIENCODER_RISING \fP\fP
+.TP
+\fB\fIENCODER_FALLING \fP\fP
+.TP
+\fB\fICTRE_MAG_ENCODER_RELATIVE \fP\fP
+.TP
+\fB\fICTRE_MAG_ENCODER_ABSOLUTE \fP\fP
+.TP
+\fB\fIPULSE_WIDTH \fP\fP
+.TP
+\fB\fIMAX_SENSOR_TYPES \fP\fP
+.PP
+Definition at line 26 of file DragonTalon\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DragonTalon::DragonTalon ()\fC [delete]\fP"
+
+.SS "DragonTalon::DragonTalon (\fBIDragonMotorController::MOTOR_CONTROLLER_TYPE\fP deviceType, int deviceID, int countsPerRev, double gearRatio)"
+
+.PP
+Definition at line 3 of file DragonTalon\&.cpp\&.
+.SS "virtual DragonTalon::~DragonTalon ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "int DragonTalon::ConfigContinuousCurrentLimit (int amps, int timeoutMs)"
+
+.PP
+Definition at line 284 of file DragonTalon\&.cpp\&.
+.SS "void DragonTalon::ConfigMotionAcceleration (float maxMotionAcceleration)"
+
+.PP
+Definition at line 173 of file DragonTalon\&.cpp\&.
+.SS "void DragonTalon::ConfigMotionCruiseVelocity (float maxMotionCruiseVelocity)"
+
+.PP
+Definition at line 183 of file DragonTalon\&.cpp\&.
+.SS "void DragonTalon::ConfigNominalOutput (double nominalOutput)"
+
+.PP
+Definition at line 201 of file DragonTalon\&.cpp\&.
+.SS "int DragonTalon::ConfigPeakCurrentDuration (int milliseconds, int timeoutMs)"
+
+.PP
+Definition at line 266 of file DragonTalon\&.cpp\&.
+.SS "int DragonTalon::ConfigPeakCurrentLimit (int amps, int timeoutMs)"
+
+.PP
+Definition at line 248 of file DragonTalon\&.cpp\&.
+.SS "void DragonTalon::ConfigPeakOutput (double percentOutput)"
+
+.PP
+Definition at line 192 of file DragonTalon\&.cpp\&.
+.SS "int DragonTalon::ConfigSelectedFeedbackSensor (FeedbackDevice feedbackDevice, int pidIdx, int timeoutMs)"
+
+.PP
+Definition at line 210 of file DragonTalon\&.cpp\&.
+.SS "int DragonTalon::ConfigSelectedFeedbackSensor (RemoteFeedbackDevice feedbackDevice, int pidIdx, int timeoutMs)"
+
+.PP
+Definition at line 229 of file DragonTalon\&.cpp\&.
+.SS "void DragonTalon::EnableBrakeMode (bool enabled)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBIDragonMotorController\fP\&.
+.PP
+Definition at line 124 of file DragonTalon\&.cpp\&.
+.SS "void DragonTalon::EnableCurrentLimiting (bool enabled)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBIDragonMotorController\fP\&.
+.PP
+Definition at line 119 of file DragonTalon\&.cpp\&.
+.SS "int DragonTalon::GetID () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBIDragonMotorController\fP\&.
+.PP
+Definition at line 152 of file DragonTalon\&.cpp\&.
+.SS "double DragonTalon::GetRotations () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBIDragonMotorController\fP\&.
+.PP
+Definition at line 19 of file DragonTalon\&.cpp\&.
+.SS "double DragonTalon::GetRPS () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBIDragonMotorController\fP\&.
+.PP
+Definition at line 24 of file DragonTalon\&.cpp\&.
+.SS "\fBIDragonMotorController::MOTOR_CONTROLLER_TYPE\fP DragonTalon::GetType () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBIDragonMotorController\fP\&.
+.PP
+Definition at line 147 of file DragonTalon\&.cpp\&.
+.SS "void DragonTalon::Invert (bool inverted)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBIDragonMotorController\fP\&.
+.PP
+Definition at line 137 of file DragonTalon\&.cpp\&.
+.SS "void DragonTalon::SelectClosedLoopProfile (int slot, int pidIndex)"
+
+.PP
+Definition at line 163 of file DragonTalon\&.cpp\&.
+.SS "void DragonTalon::Set (double value)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBIDragonMotorController\fP\&.
+.PP
+Definition at line 64 of file DragonTalon\&.cpp\&.
+.SS "void DragonTalon::SetAsSlave (int masterCANID)"
+
+.PP
+Definition at line 302 of file DragonTalon\&.cpp\&.
+.SS "void DragonTalon::SetControlMode (\fBIDragonMotorController::DRAGON_CONTROL_MODE\fP mode)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBIDragonMotorController\fP\&.
+.PP
+Definition at line 29 of file DragonTalon\&.cpp\&.
+.SS "void DragonTalon::SetControlMode (\fBDragonTalon::TALON_CONTROL_MODE\fP mode)"
+
+.PP
+Definition at line 53 of file DragonTalon\&.cpp\&.
+.SS "void DragonTalon::SetPIDF (double p, double i, double d, double f, int slot = \fC0\fP)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBIDragonMotorController\fP\&.
+.PP
+Definition at line 129 of file DragonTalon\&.cpp\&.
+.SS "void DragonTalon::SetRotationOffset (double rotations)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBIDragonMotorController\fP\&.
+.PP
+Definition at line 101 of file DragonTalon\&.cpp\&.
+.SS "void DragonTalon::SetSensorInverted (bool inverted)"
+
+.PP
+Definition at line 142 of file DragonTalon\&.cpp\&.
+.SS "void DragonTalon::SetVoltageRamping (double ramping, double rampingClosedLoop = \fC\-1\fP)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBIDragonMotorController\fP\&.
+.PP
+Definition at line 108 of file DragonTalon\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

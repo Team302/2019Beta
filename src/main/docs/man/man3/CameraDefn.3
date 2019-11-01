@@ -1,0 +1,70 @@
+.TH "CameraDefn" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CameraDefn
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CameraDefn\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBPIXEL_FORMAT\fP { \fBUNKNOWN_PIXEL_FORMAT\fP = -1, \fBKMJPEG\fP, \fBKYUYV\fP, \fBKRGB565\fP, \fBKBGR\fP, \fBKGRAY\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCameraDefn\fP ()=default"
+.br
+.ti -1c
+.RI "virtual \fB~CameraDefn\fP ()=default"
+.br
+.ti -1c
+.RI "void \fBParseXML\fP (pugi::xml_node cameraNode)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 15 of file CameraDefn\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBCameraDefn::PIXEL_FORMAT\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUNKNOWN_PIXEL_FORMAT \fP\fP
+.TP
+\fB\fIKMJPEG \fP\fP
+.TP
+\fB\fIKYUYV \fP\fP
+.TP
+\fB\fIKRGB565 \fP\fP
+.TP
+\fB\fIKBGR \fP\fP
+.TP
+\fB\fIKGRAY \fP\fP
+.PP
+Definition at line 19 of file CameraDefn\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CameraDefn::CameraDefn ()\fC [default]\fP"
+
+.SS "virtual CameraDefn::~CameraDefn ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void CameraDefn::ParseXML (pugi::xml_node cameraNode)"
+
+.PP
+Definition at line 49 of file CameraDefn\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

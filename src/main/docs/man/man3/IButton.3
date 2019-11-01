@@ -1,0 +1,86 @@
+.TH "IButton" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+IButton \- Class: \fBIButton\fP Description: This interface is for treating gamepad inputs as digital inputs\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IButton\&.h>\fP
+.PP
+Inherited by \fBAnalogButton\fP, \fBButtonDecorator\fP, \fBDigitalButton\fP, and \fBPOVButton\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual bool \fBIsButtonPressed\fP () const =0"
+.br
+.RI "Method: IsButtonPressed Description: Read the button and return true if it is pressed and false if it isn't\&. "
+.ti -1c
+.RI "virtual bool \fBWasButtonReleased\fP () const =0"
+.br
+.RI "Method: WasButtonReleased Description: Read whether the button was released since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. "
+.ti -1c
+.RI "virtual bool \fBWasButtonPressed\fP () const =0"
+.br
+.RI "Method: WasButtonPressed Description: Read whether the button was pressed since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIButton\fP ()=default"
+.br
+.ti -1c
+.RI "\fBIButton\fP (const \fBIButton\fP &that)"
+.br
+.ti -1c
+.RI "\fBIButton\fP & \fBoperator=\fP (const \fBIButton\fP &that)"
+.br
+.ti -1c
+.RI "virtual \fB~IButton\fP ()=default"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class: \fBIButton\fP Description: This interface is for treating gamepad inputs as digital inputs\&. 
+
+
+.PP
+Definition at line 26 of file IButton\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "IButton::IButton ()\fC [protected]\fP, \fC [default]\fP"
+
+.SS "IButton::IButton (const \fBIButton\fP & that)\fC [protected]\fP"
+
+.SS "virtual IButton::~IButton ()\fC [protected]\fP, \fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual bool IButton::IsButtonPressed () const\fC [pure virtual]\fP"
+
+.PP
+Method: IsButtonPressed Description: Read the button and return true if it is pressed and false if it isn't\&. 
+.PP
+Implemented in \fBAnalogButton\fP, \fBPOVButton\fP, \fBDigitalButton\fP, \fBToggleButton\fP, and \fBButtonDecorator\fP\&.
+.SS "\fBIButton\fP& IButton::operator= (const \fBIButton\fP & that)\fC [protected]\fP"
+
+.SS "virtual bool IButton::WasButtonPressed () const\fC [pure virtual]\fP"
+
+.PP
+Method: WasButtonPressed Description: Read whether the button was pressed since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. 
+.PP
+Implemented in \fBAnalogButton\fP, \fBPOVButton\fP, \fBDigitalButton\fP, \fBToggleButton\fP, and \fBButtonDecorator\fP\&.
+.SS "virtual bool IButton::WasButtonReleased () const\fC [pure virtual]\fP"
+
+.PP
+Method: WasButtonReleased Description: Read whether the button was released since the last query\&. This is only valid for digital buttons (normal buttons and bumpers)\&. 
+.PP
+Implemented in \fBAnalogButton\fP, \fBPOVButton\fP, \fBDigitalButton\fP, \fBToggleButton\fP, and \fBButtonDecorator\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

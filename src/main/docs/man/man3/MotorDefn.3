@@ -1,0 +1,61 @@
+.TH "MotorDefn" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MotorDefn
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MotorDefn\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMotorDefn\fP ()=default"
+.br
+.ti -1c
+.RI "virtual \fB~MotorDefn\fP ()=default"
+.br
+.ti -1c
+.RI "\fBIDragonMotorController\fP * \fBParseXML\fP (pugi::xml_node motorNode)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+======================================================================================================== 
+.SH "MotorDefn\&.h"
+.PP
+File Description: 
+.SH "This will parse the motor (controller) definition XML and create a motor controller object\&."
+.PP
+
+.PP
+Definition at line 42 of file MotorDefn\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MotorDefn::MotorDefn ()\fC [default]\fP"
+
+.SS "virtual MotorDefn::~MotorDefn ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBIDragonMotorController\fP * MotorDefn::ParseXML (pugi::xml_node motorNode)"
+
+.PP
+ Method: ParseXML Description: Parse a motor XML element and create a \fBDragonTalon\fP from its definition\&. Returns: DragonTalon* motor controller (or nullptr if XML 
+.SS "is ill-formed)"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fImotorNode\fP \fI - xml motor node \fP
+.RE
+.PP
+
+.PP
+Definition at line 123 of file MotorDefn\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

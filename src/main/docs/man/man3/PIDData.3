@@ -1,0 +1,131 @@
+.TH "PIDData" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PIDData
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PIDData\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBPID_TARGET\fP { \fBARM\fP, \fBEXTENDER\fP, \fBGENERAL\fP }"
+.br
+.ti -1c
+.RI "enum \fBCONTROL_MODE\fP { \fBVELOCITY\fP, \fBPOSITION\fP, \fBMOTION_MAGIC\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPIDData\fP (\fBCONTROL_MODE\fP mode, \fBPID_TARGET\fP pidTarget, double proportional, double integral, double derivative, double feedforward, double maxAcceleration, double cruiseVelocity)"
+.br
+.ti -1c
+.RI "virtual \fB~PIDData\fP ()=default"
+.br
+.ti -1c
+.RI "\fBCONTROL_MODE\fP \fBGetMode\fP ()"
+.br
+.ti -1c
+.RI "\fBPID_TARGET\fP \fBGetPidTarget\fP ()"
+.br
+.ti -1c
+.RI "double \fBGetP\fP ()"
+.br
+.ti -1c
+.RI "double \fBGetI\fP ()"
+.br
+.ti -1c
+.RI "double \fBGetD\fP ()"
+.br
+.ti -1c
+.RI "double \fBGetF\fP ()"
+.br
+.ti -1c
+.RI "double \fBGetMaxAcceleration\fP ()"
+.br
+.ti -1c
+.RI "double \fBGetCruiseVelocity\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 18 of file PIDData\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBPIDData::CONTROL_MODE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIVELOCITY \fP\fP
+.TP
+\fB\fIPOSITION \fP\fP
+.TP
+\fB\fIMOTION_MAGIC \fP\fP
+.PP
+Definition at line 28 of file PIDData\&.h\&.
+.SS "enum \fBPIDData::PID_TARGET\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIARM \fP\fP
+.TP
+\fB\fIEXTENDER \fP\fP
+.TP
+\fB\fIGENERAL \fP\fP
+.PP
+Definition at line 21 of file PIDData\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PIDData::PIDData (\fBCONTROL_MODE\fP mode, \fBPID_TARGET\fP pidTarget, double proportional, double integral, double derivative, double feedforward, double maxAcceleration, double cruiseVelocity)"
+
+.PP
+Definition at line 18 of file PIDData\&.cpp\&.
+.SS "virtual PIDData::~PIDData ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "double PIDData::GetCruiseVelocity ()\fC [inline]\fP"
+
+.PP
+Definition at line 57 of file PIDData\&.h\&.
+.SS "double PIDData::GetD ()\fC [inline]\fP"
+
+.PP
+Definition at line 54 of file PIDData\&.h\&.
+.SS "double PIDData::GetF ()\fC [inline]\fP"
+
+.PP
+Definition at line 55 of file PIDData\&.h\&.
+.SS "double PIDData::GetI ()\fC [inline]\fP"
+
+.PP
+Definition at line 53 of file PIDData\&.h\&.
+.SS "double PIDData::GetMaxAcceleration ()\fC [inline]\fP"
+
+.PP
+Definition at line 56 of file PIDData\&.h\&.
+.SS "\fBCONTROL_MODE\fP PIDData::GetMode ()\fC [inline]\fP"
+
+.PP
+Definition at line 50 of file PIDData\&.h\&.
+.SS "double PIDData::GetP ()\fC [inline]\fP"
+
+.PP
+Definition at line 52 of file PIDData\&.h\&.
+.SS "\fBPID_TARGET\fP PIDData::GetPidTarget ()\fC [inline]\fP"
+
+.PP
+Definition at line 51 of file PIDData\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 2020 Template Project from the source code\&.

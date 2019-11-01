@@ -5,10 +5,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TemplateProject: DragonMotorControllerFactory Class Reference</title>
+<title>2020 Template Project: DragonMotorControllerFactory Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -21,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">TemplateProject
+   <div id="projectname">2020 Template Project
    </div>
   </td>
  </tr>
@@ -45,6 +53,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_dragon_motor_controller_factory.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,7 +84,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
@@ -83,12 +107,8 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a585f0079eec3a5df395ce728972b403c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_motor_controller_factory.html#a585f0079eec3a5df395ce728972b403c">CreateMotorController</a> (<a class="el" href="class_i_mechanism.html#a5b60af468978515764f4d2dedd80638d">IMechanism::MECHANISM_TYPE</a> mechtype, <a class="el" href="class_dragon_motor_controller_factory.html#ab2cbc7da55b546e4da9e5d16a9965195">DragonMotorControllerFactory::MOTOR_TYPE</a> mtype, int canID, int pdpID, <a class="el" href="class_i_dragon_motor_controller.html#a45745c883c9d5e9576a87a419584f6da">IDragonMotorController::MOTOR_CONTROLLER_TYPE</a> usage, bool inverted, bool sensorInverted, ctre::phoenix::motorcontrol::FeedbackDevice feedbackDevice, int countsPerRev, float gearRatio, bool brakeMode, int slaveTo, int peakCurrentDuration, int continuousCurrentLimit, int peakCurrentLimit, bool enableCurrentLimit)</td></tr>
-<tr class="separator:a585f0079eec3a5df395ce728972b403c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0af64ade4fc5609f342255cdaa4dbc54"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_motor_controller_factory.html#a0af64ade4fc5609f342255cdaa4dbc54">GetController</a> (int canID)</td></tr>
-<tr class="separator:a0af64ade4fc5609f342255cdaa4dbc54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab387949297e2238ac953dbe47cd6d5ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_motor_controller_factory.html#ab387949297e2238ac953dbe47cd6d5ae">GetController</a> (<a class="el" href="class_i_mechanism.html#a5b60af468978515764f4d2dedd80638d">IMechanism::MECHANISM_TYPE</a> subsys, <a class="el" href="class_i_dragon_motor_controller.html#a45745c883c9d5e9576a87a419584f6da">IDragonMotorController::MOTOR_CONTROLLER_TYPE</a> usage)</td></tr>
-<tr class="separator:ab387949297e2238ac953dbe47cd6d5ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81d291d64c27cfd376bceada8f2d5b6f"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_motor_controller_factory.html#a81d291d64c27cfd376bceada8f2d5b6f">CreateMotorController</a> (std::string mtype, int canID, int pdpID, std::string usage, bool inverted, bool sensorInverted, ctre::phoenix::motorcontrol::FeedbackDevice feedbackDevice, int countsPerRev, float gearRatio, bool brakeMode, int slaveTo, int peakCurrentDuration, int continuousCurrentLimit, int peakCurrentLimit, bool enableCurrentLimit)</td></tr>
+<tr class="separator:a81d291d64c27cfd376bceada8f2d5b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -110,6 +130,8 @@ DragonMotorControllerFactory.h</h1>
 <p> ======================================================================================================== Class: <a class="el" href="class_dragon_motor_controller_factory.html">DragonMotorControllerFactory</a> Description: This is a singleton that creates motor controllers (<a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a>). This allows us to interact with motor controllers such as TalonSRX, Rev Spark Max without </p>
 <h1><a class="anchor" id="autotoc_md39"></a>
 actually knowing what type is actually being used.</h1>
+
+<p class="definition">Definition at line <a class="el" href="_dragon_motor_controller_factory_8h_source.html#l00054">54</a> of file <a class="el" href="_dragon_motor_controller_factory_8h_source.html">DragonMotorControllerFactory.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="ab2cbc7da55b546e4da9e5d16a9965195"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab2cbc7da55b546e4da9e5d16a9965195">&#9670;&nbsp;</a></span>MOTOR_TYPE</h2>
@@ -135,25 +157,21 @@ factory, it is needed when constructing the object.</h2>
 </td></tr>
 </table>
 
+<p class="definition">Definition at line <a class="el" href="_dragon_motor_controller_factory_8h_source.html#l00063">63</a> of file <a class="el" href="_dragon_motor_controller_factory_8h_source.html">DragonMotorControllerFactory.h</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a585f0079eec3a5df395ce728972b403c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a585f0079eec3a5df395ce728972b403c">&#9670;&nbsp;</a></span>CreateMotorController()</h2>
+<a id="a81d291d64c27cfd376bceada8f2d5b6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81d291d64c27cfd376bceada8f2d5b6f">&#9670;&nbsp;</a></span>CreateMotorController()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> * DragonMotorControllerFactory::CreateMotorController </td>
+          <td class="memname">shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt; DragonMotorControllerFactory::CreateMotorController </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_i_mechanism.html#a5b60af468978515764f4d2dedd80638d">IMechanism::MECHANISM_TYPE</a>&#160;</td>
-          <td class="paramname"><em>mechtype</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_dragon_motor_controller_factory.html#ab2cbc7da55b546e4da9e5d16a9965195">DragonMotorControllerFactory::MOTOR_TYPE</a>&#160;</td>
+          <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>mtype</em>, </td>
         </tr>
         <tr>
@@ -171,7 +189,7 @@ factory, it is needed when constructing the object.</h2>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_i_dragon_motor_controller.html#a45745c883c9d5e9576a87a419584f6da">IDragonMotorController::MOTOR_CONTROLLER_TYPE</a>&#160;</td>
+          <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>usage</em>, </td>
         </tr>
         <tr>
@@ -250,7 +268,6 @@ factory, it is needed when constructing the object.</h2>
 <p>======================================================================================= Method: CreateMotorController Description: Create a motor controller from the inputs Returns: Void </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mtype</td><td>Mechanism using controller </td></tr>
     <tr><td class="paramname">canID</td><td>Controller Type </td></tr>
     <tr><td class="paramname">pdpID</td><td>CAN ID for the controller </td></tr>
     <tr><td class="paramname">usage</td><td>PDP slot the motor is on </td></tr>
@@ -269,65 +286,7 @@ factory, it is needed when constructing the object.</h2>
   </dd>
 </dl>
 
-</div>
-</div>
-<a id="ab387949297e2238ac953dbe47cd6d5ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab387949297e2238ac953dbe47cd6d5ae">&#9670;&nbsp;</a></span>GetController() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> * DragonMotorControllerFactory::GetController </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_i_mechanism.html#a5b60af468978515764f4d2dedd80638d">IMechanism::MECHANISM_TYPE</a>&#160;</td>
-          <td class="paramname"><em>subsys</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_i_dragon_motor_controller.html#a45745c883c9d5e9576a87a419584f6da">IDragonMotorController::MOTOR_CONTROLLER_TYPE</a>&#160;</td>
-          <td class="paramname"><em>usage</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>======================================================================================= Method: GetController Description: return motor controller Returns: IDragonMotorController* may be nullptr if there isn't a controller with this usage. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">usage</td><td>system using the motor Motor usage (e.g. Front Left Drive Motor) </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a0af64ade4fc5609f342255cdaa4dbc54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0af64ade4fc5609f342255cdaa4dbc54">&#9670;&nbsp;</a></span>GetController() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> * DragonMotorControllerFactory::GetController </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>canID</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>======================================================================================= Method: GetController Description: return motor controller Returns: IDragonMotorController* may be nullptr if there isn't a controller with this usage. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">canID</td><td>Motor Controller CAN ID </td></tr>
-  </table>
-  </dd>
-</dl>
+<p class="definition">Definition at line <a class="el" href="_dragon_motor_controller_factory_8cpp_source.html#l00075">75</a> of file <a class="el" href="_dragon_motor_controller_factory_8cpp_source.html">DragonMotorControllerFactory.cpp</a>.</p>
 
 </div>
 </div>
@@ -354,18 +313,24 @@ factory, it is needed when constructing the object.</h2>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_dragon_motor_controller_factory_8cpp_source.html#l00025">25</a> of file <a class="el" href="_dragon_motor_controller_factory_8cpp_source.html">DragonMotorControllerFactory.cpp</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/GitKrakenRepos/TemplateRepository/src/main/cpp/hw/<a class="el" href="_dragon_motor_controller_factory_8h_source.html">DragonMotorControllerFactory.h</a></li>
-<li>C:/GitKrakenRepos/TemplateRepository/src/main/cpp/hw/<a class="el" href="_dragon_motor_controller_factory_8cpp.html">DragonMotorControllerFactory.cpp</a></li>
+<li>C:/GitKrakenRepos/TemplateRepository/src/main/cpp/hw/<a class="el" href="_dragon_motor_controller_factory_8cpp_source.html">DragonMotorControllerFactory.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.16
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_dragon_motor_controller_factory.html">DragonMotorControllerFactory</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
 </body>
 </html>

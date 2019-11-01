@@ -3,17 +3,21 @@
  *
  */
 #include <iostream>
+#include <map>
+#include <string>
 
 #include <subsys/IMechanism.h>
 #include <hw/DragonMotorControllerFactory.h>        
 #include <xmlhw/MotorDefn.h>
 #include <hw/DragonTalon.h>
 #include <hw/DragonSparkMax.h>
+#include <utils/Logger.h>
 
 #include <ctre/phoenix/MotorControl/CAN/TalonSRX.h>
 #include <ctre/phoenix/MotorControl/FeedbackDevice.h>
 #include <rev/CANSparkMax.h>
 
+using namespace std;
 
 DragonMotorControllerFactory* DragonMotorControllerFactory::m_instance = nullptr;
 
@@ -30,17 +34,36 @@ DragonMotorControllerFactory* DragonMotorControllerFactory::GetInstance()
 DragonMotorControllerFactory::DragonMotorControllerFactory() 
 {
 	int size = IDragonMotorController::MOTOR_CONTROLLER_TYPE::MAX_MOTOR_CONTROLLER_TYPES;
-	m_usageControllers.resize( size );
-	m_mechanism.resize( size );
-	for ( auto inx=0; inx<size; ++inx )
-	{
-		m_usageControllers[inx] = nullptr;
-		m_mechanism[inx] = IMechanism::MECHANISM_TYPE::UNKNOWN_MECHANISM;
-	}
 	for ( auto inx=0; inx<63; ++inx )
 	{
 		m_canControllers[inx] = nullptr;
 	}
+
+    m_usageMap["FRONT_LEFT_DRIVE"]  = IDragonMotorController::MOTOR_CONTROLLER_TYPE::FRONT_LEFT_DRIVE;
+    m_usageMap["MIDDLE_LEFT_DRIVE"] = IDragonMotorController::MOTOR_CONTROLLER_TYPE::MIDDLE_LEFT_DRIVE;
+    m_usageMap["BACK_LEFT_DRIVE"]   = IDragonMotorController::MOTOR_CONTROLLER_TYPE::BACK_LEFT_DRIVE;
+
+    m_usageMap[ "FRONT_RIGHT_DRIVE"] = IDragonMotorController::MOTOR_CONTROLLER_TYPE::FRONT_RIGHT_DRIVE;
+    m_usageMap["MIDDLE_RIGHT_DRIVE"] = IDragonMotorController::MOTOR_CONTROLLER_TYPE::MIDDLE_RIGHT_DRIVE;
+    m_usageMap["BACK_RIGHT_DRIVE"]   = IDragonMotorController::MOTOR_CONTROLLER_TYPE::BACK_RIGHT_DRIVE;
+
+    m_usageMap["ARM_MASTER"]    = IDragonMotorController::MOTOR_CONTROLLER_TYPE::ARM_MASTER;
+    m_usageMap["ARM_SLAVE"]     = IDragonMotorController::MOTOR_CONTROLLER_TYPE::ARM_SLAVE;
+    m_usageMap["ARM_EXTENSION"] = IDragonMotorController::MOTOR_CONTROLLER_TYPE::ARM_EXTENSION;
+
+    m_usageMap["WRIST"] = IDragonMotorController::MOTOR_CONTROLLER_TYPE::WRIST;
+
+    m_usageMap["INTAKE"] = IDragonMotorController::MOTOR_CONTROLLER_TYPE::INTAKE;
+
+    m_usageMap["ELEVAtOR_WINCH"]  = IDragonMotorController::MOTOR_CONTROLLER_TYPE::ELEVATOR_WINCH;
+    m_usageMap["ELEVATOR_DrIVE"]  = IDragonMotorController::MOTOR_CONTROLLER_TYPE::ELEVATOR_DRIVE;
+
+    m_usageMap["HATCH_MECH_MOTOR"] = IDragonMotorController::MOTOR_CONTROLLER_TYPE::HATCH_MECH_MOTOR;
+
+	m_typeMap["TALONSRX"] = DragonMotorControllerFactory::MOTOR_TYPE::TALONSRX;
+	m_typeMap["BRUSHLESS_SPARK_MAX"] = DragonMotorControllerFactory::MOTOR_TYPE::BRUSHLESS_SPARK_MAX;
+	m_typeMap["BRUSHED_SPARK_MAX"] = DragonMotorControllerFactory::MOTOR_TYPE::BRUSHED_SPARK_MAX;
+
 }
 
 //=======================================================================================
@@ -48,13 +71,12 @@ DragonMotorControllerFactory::DragonMotorControllerFactory()
 // Description:     Create a motor controller from the inputs
 // Returns:         Void
 //=======================================================================================
-IDragonMotorController* DragonMotorControllerFactory::CreateMotorController
+shared_ptr<IDragonMotorController> DragonMotorControllerFactory::CreateMotorController
 (
-	IMechanism::MECHANISM_TYPE						mechtype, 
-	DragonMotorControllerFactory::MOTOR_TYPE		mtype,
+	string		                                    mtype,
     int 											canID,
 	int 											pdpID,
-    IDragonMotorController::MOTOR_CONTROLLER_TYPE   usage,
+    string                                          usage,
     bool 											inverted, 
     bool 											sensorInverted,
     ctre::phoenix::motorcontrol::FeedbackDevice  	feedbackDevice,
@@ -68,101 +90,70 @@ IDragonMotorController* DragonMotorControllerFactory::CreateMotorController
     bool 											enableCurrentLimit
 )
 {
-	printf("In DragonMotorControllerFactory beginning of constructor\n");
-    IDragonMotorController* controller = nullptr;
-	
-	switch ( mtype )
-	{
-		case MOTOR_TYPE::TALONSRX:
-		{
-			// TODO:: set PDP ID
-			auto talon = new DragonTalon( usage, canID, countsPerRev, gearRatio );
-			talon->EnableBrakeMode( brakeMode );
-			talon->Invert( inverted );
-			talon->SetSensorInverted( sensorInverted );
-			talon->ConfigSelectedFeedbackSensor( feedbackDevice, 0, 50 );
-			talon->ConfigSelectedFeedbackSensor( feedbackDevice, 1, 50 );
+    shared_ptr<IDragonMotorController> controller;
 
-			talon->ConfigPeakCurrentLimit( peakCurrentLimit, 50 );
-			talon->ConfigPeakCurrentDuration( peakCurrentDuration, 50 );
-			talon->ConfigContinuousCurrentLimit( continuousCurrentLimit, 50 );
-			talon->EnableCurrentLimiting( enableCurrentLimit );
+    auto hasError = false;
 
-			if ( slaveTo > -1 )
-			{
-				talon->SetAsSlave( slaveTo );
-			}       
-			controller = talon;         
-		}
-		break;
+    auto type = m_typeMap.find(mtype)->second;
+    if ( type == MOTOR_TYPE::TALONSRX )
+    {
+        // TODO:: set PDP ID
+        auto talon = new DragonTalon(m_usageMap.find(usage)->second, canID, countsPerRev, gearRatio );
+        talon->EnableBrakeMode( brakeMode );
+        talon->Invert( inverted );
+        talon->SetSensorInverted( sensorInverted );
+        talon->ConfigSelectedFeedbackSensor( feedbackDevice, 0, 50 );
+        talon->ConfigSelectedFeedbackSensor( feedbackDevice, 1, 50 );
 
-		case MOTOR_TYPE::BRUSHLESS_SPARK_MAX:
-		{
-			// TODO:: set PDP ID
-			auto smax = new DragonSparkMax( canID, usage, CANSparkMax::MotorType::kBrushless, gearRatio );
-			smax->Invert( inverted );
-			smax->EnableBrakeMode( brakeMode );
-			smax->InvertEncoder( sensorInverted );
-			smax->EnableCurrentLimiting( enableCurrentLimit );
-			smax->SetSmartCurrentLimiting( continuousCurrentLimit );
-			printf("Setting SparkMax current limit to %d\n", continuousCurrentLimit);
+        talon->ConfigPeakCurrentLimit( peakCurrentLimit, 50 );
+        talon->ConfigPeakCurrentDuration( peakCurrentDuration, 50 );
+        talon->ConfigContinuousCurrentLimit( continuousCurrentLimit, 50 );
+        talon->EnableCurrentLimiting( enableCurrentLimit );
 
-			if ( slaveTo > -1 )
-			{
-				DragonSparkMax* master = nullptr;
-				if ( GetController( slaveTo ) != nullptr )
-				{
-					master = dynamic_cast<DragonSparkMax*>( GetController( slaveTo ) );
-				}
-				if ( master != nullptr )
-				{
-					smax->Follow( master );
-				}
-				else 
-				{
-					printf( "Invalid SlaveTo id %d \n", slaveTo );
-				}
-			}    
-			controller = smax;           
-		} 
-		break;
+        if ( slaveTo > -1 )
+        {
+            talon->SetAsSlave( slaveTo );
+        }
+        controller.reset( talon );
+    }
+    else if ( type == MOTOR_TYPE::BRUSHED_SPARK_MAX || type == MOTOR_TYPE::BRUSHLESS_SPARK_MAX )
+    {
+        auto brushedBrushless = (type == MOTOR_TYPE::BRUSHED_SPARK_MAX) ? CANSparkMax::MotorType::kBrushed : CANSparkMax::MotorType::kBrushless;
+        auto smax = new DragonSparkMax( canID, m_usageMap.find(usage)->second, brushedBrushless, gearRatio );
+        smax->Invert( inverted );
+        smax->EnableBrakeMode( brakeMode );
+        smax->InvertEncoder( sensorInverted );
+        smax->EnableCurrentLimiting( enableCurrentLimit );
+        smax->SetSmartCurrentLimiting( continuousCurrentLimit );
+        if ( slaveTo > -1 )
+        {
+            DragonSparkMax* master = nullptr;
+            if ( GetController( slaveTo ) != nullptr )
+            {
+                master = dynamic_cast<DragonSparkMax*>( GetController( slaveTo ).get() );
+            }
+            if ( master != nullptr )
+            {
+                smax->Follow( master );
+            }
+            else
+            {
+                string msg = "invalid Slave to ID ";
+                msg += to_string( slaveTo );
+                Logger::GetLogger()->Log( "DragonMotorControllerFactory::CreateMotorController", msg );
+            }
+        }
+        controller.reset( smax );
+    }
+    else
+    {
+        hasError = true;
+    }
 
-		case MOTOR_TYPE::BRUSHED_SPARK_MAX:
-		{
-			// TODO:: set PDP ID
-			auto smax = new DragonSparkMax( canID, usage, CANSparkMax::MotorType::kBrushed , gearRatio );
-			smax->Invert( inverted );
-			smax->EnableBrakeMode( brakeMode );
-			smax->InvertEncoder( sensorInverted );
-			smax->EnableCurrentLimiting( enableCurrentLimit );
-
-			if ( slaveTo > -1 )
-			{
-				DragonSparkMax* master = nullptr;
-				if ( GetController( slaveTo ) != nullptr )
-				{
-					master = dynamic_cast<DragonSparkMax*>( GetController( slaveTo ) );
-				}
-				if ( master != nullptr )
-				{
-					smax->Follow( master );
-				}
-				else 
-				{
-					printf( "Invalid SlaveTo id %d \n", slaveTo );
-				}
-			}
-			controller = smax;
-		}            
-		break;
-
-		default:
-			break;
-	}
-	m_canControllers[ canID ] = controller;
-	m_usageControllers[ usage ] = controller;
-	m_mechanism[ usage ] = mechtype;
-	printf("In DragonMotorControllerFactory end of constructor\n");
+    if ( !hasError )
+    {
+        m_canControllers[ canID ] = controller;
+    }
 	return controller;
 }
 
@@ -174,49 +165,21 @@ IDragonMotorController* DragonMotorControllerFactory::CreateMotorController
 // Returns:         IDragonMotorController* 	may be nullptr if there isn't a controller
 //												with this CAN ID.
 //=======================================================================================
-IDragonMotorController* DragonMotorControllerFactory::GetController
+shared_ptr<IDragonMotorController> DragonMotorControllerFactory::GetController
 (
 	int							canID		/// Motor controller CAN ID
 )
 {
-	IDragonMotorController* controller = nullptr;
+	shared_ptr<IDragonMotorController> controller;
 	if ( canID > -1 && canID < 63 )
 	{
 		controller = m_canControllers[ canID ];
 	}
 	else
 	{
-		std::cout << "==>> DragonMotorControllerFactory::GetController invalid CAN ID " << canID << "\n";
+	    string msg = "invalid CAN ID ";
+	    msg += to_string( canID );
+        Logger::GetLogger()->Log( "DragonMotorControllerFactory::GetController", msg );
 	}
-	return controller;
-}
-
-//=======================================================================================
-// Method:          GetController
-// Description:     return motor controller
-// Returns:         IDragonMotorController* 	may be nullptr if there isn't a controller
-//												with this CAN ID.
-//=======================================================================================
-IDragonMotorController* DragonMotorControllerFactory::GetController
-(
-	IMechanism::MECHANISM_TYPE							subsys,		/// system using the motor
-	IDragonMotorController::MOTOR_CONTROLLER_TYPE     	usage		/// Motor usage (e.g. Front Left Drive Motor)
-)
-{
-	IDragonMotorController* controller = nullptr;
-	unsigned int slot = usage;
-	if ( slot < m_usageControllers.size() )
-	{
-		controller = m_usageControllers[ slot ];
-		if ( subsys != m_mechanism[ slot ] )
-		{
-			std::cout << "==>>DragonMotorControllerFactory::GetController mismatched mechanism " << subsys << "\n";
-		}
-	}
-	else
-	{
-		std::cout << "==>>DragonMotorControllerFactory::GetController invalid usage requested " << usage << "\n";
-	}
-
 	return controller;
 }

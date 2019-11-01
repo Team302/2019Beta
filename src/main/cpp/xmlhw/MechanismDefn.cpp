@@ -136,7 +136,9 @@ void MechanismDefn::ParseXML
                     break;
 
                 default:
-                    std::cout << "==>>MechanismDefn::ParseXML unknown Mechanism type " << attr.value() << std::endl;
+                    string msg = "unknown Mechanism type ";
+                    msg += attr.value();
+                    Logger::GetLogger()->Log( "MechanismDefn::ParseXML", msg );
                     hasError = true;
                     break;
                 
@@ -144,7 +146,9 @@ void MechanismDefn::ParseXML
         }
         else
         {
-            std::cout << "==>>MechanismDefn::ParseXML invalid attribute " << attr.name() << std::endl;
+            string msg = "invalid attribute ";
+            msg += attr.name();
+            Logger::GetLogger()->Log( "MechanismDefn::ParseXML", msg );
             hasError = true;
         }
     }

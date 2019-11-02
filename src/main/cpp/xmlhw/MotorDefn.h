@@ -26,6 +26,7 @@
 
 
 // C++ Includes
+#include <memory>
 #include <vector>
 
 // FRC includes
@@ -54,7 +55,7 @@ class MotorDefn
         /// Returns:     DragonTalon*        motor controller (or nullptr if XML
         ///                                  is ill-formed)
         ///-----------------------------------------------------------------------
-        IDragonMotorController* ParseXML
+        std::shared_ptr<IDragonMotorController> ParseXML
         (
             pugi::xml_node      motorNode   /// <I> - xml motor node
         );

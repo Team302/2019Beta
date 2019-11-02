@@ -47,6 +47,7 @@
 Intake::Intake()
 {
     // Get the motor controller and set its mode to percent output and stop it
+    /**
     m_motor = DragonMotorControllerFactory::GetInstance()->GetController( IMechanism::MECHANISM_TYPE::INTAKE, IDragonMotorController::MOTOR_CONTROLLER_TYPE::INTAKE );
     if ( m_motor != nullptr )
     {
@@ -57,6 +58,7 @@ Intake::Intake()
     {
         std::cout << "==>>Intake::Intake motor not found " << std::endl;
     }
+    **/
 }
 
 ///==================================================================================

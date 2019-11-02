@@ -75,9 +75,7 @@ DragonAnalogInput* AnalogInputFactory::CreateInput
 )
 {
     unique_ptr<DragonAnalogInput> sensor;
-    string localType = type;
-    transform( localType.begin(), localType.end(), localType.begin(), toupper );
-    if ( localType.compare( "EXTENDER_POTENTIOMETER" ) == 0  )
+    if ( type.compare( "EXTENDER_POTENTIOMETER" ) == 0  )
     {
         sensor = make_unique<DragonAnalogInput>( DragonAnalogInput::ANALOG_SENSOR_TYPE::EXTENDER_POTENTIOMETER,
                                                       analogID,
@@ -87,7 +85,7 @@ DragonAnalogInput* AnalogInputFactory::CreateInput
                                                       outputMax );
         // TODO: Create an angle sensor + decorate it as a position sensor
     }
-    else if ( localType.compare( "PRESSURE_GAUGE" ) == 0 )
+    else if ( type.compare( "PRESSURE_GAUGE" ) == 0 )
     {
         sensor = make_unique<DragonAnalogInput> ( DragonAnalogInput::ANALOG_SENSOR_TYPE::PRESSURE_GAUGE,
                                                        analogID,

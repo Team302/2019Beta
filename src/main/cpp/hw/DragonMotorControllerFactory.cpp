@@ -38,32 +38,8 @@ DragonMotorControllerFactory::DragonMotorControllerFactory()
 	{
 		m_canControllers[inx] = nullptr;
 	}
-
-    m_usageMap["FRONT_LEFT_DRIVE"]  = IDragonMotorController::MOTOR_CONTROLLER_TYPE::FRONT_LEFT_DRIVE;
-    m_usageMap["MIDDLE_LEFT_DRIVE"] = IDragonMotorController::MOTOR_CONTROLLER_TYPE::MIDDLE_LEFT_DRIVE;
-    m_usageMap["BACK_LEFT_DRIVE"]   = IDragonMotorController::MOTOR_CONTROLLER_TYPE::BACK_LEFT_DRIVE;
-
-    m_usageMap[ "FRONT_RIGHT_DRIVE"] = IDragonMotorController::MOTOR_CONTROLLER_TYPE::FRONT_RIGHT_DRIVE;
-    m_usageMap["MIDDLE_RIGHT_DRIVE"] = IDragonMotorController::MOTOR_CONTROLLER_TYPE::MIDDLE_RIGHT_DRIVE;
-    m_usageMap["BACK_RIGHT_DRIVE"]   = IDragonMotorController::MOTOR_CONTROLLER_TYPE::BACK_RIGHT_DRIVE;
-
-    m_usageMap["ARM_MASTER"]    = IDragonMotorController::MOTOR_CONTROLLER_TYPE::ARM_MASTER;
-    m_usageMap["ARM_SLAVE"]     = IDragonMotorController::MOTOR_CONTROLLER_TYPE::ARM_SLAVE;
-    m_usageMap["ARM_EXTENSION"] = IDragonMotorController::MOTOR_CONTROLLER_TYPE::ARM_EXTENSION;
-
-    m_usageMap["WRIST"] = IDragonMotorController::MOTOR_CONTROLLER_TYPE::WRIST;
-
-    m_usageMap["INTAKE"] = IDragonMotorController::MOTOR_CONTROLLER_TYPE::INTAKE;
-
-    m_usageMap["ELEVAtOR_WINCH"]  = IDragonMotorController::MOTOR_CONTROLLER_TYPE::ELEVATOR_WINCH;
-    m_usageMap["ELEVATOR_DrIVE"]  = IDragonMotorController::MOTOR_CONTROLLER_TYPE::ELEVATOR_DRIVE;
-
-    m_usageMap["HATCH_MECH_MOTOR"] = IDragonMotorController::MOTOR_CONTROLLER_TYPE::HATCH_MECH_MOTOR;
-
-	m_typeMap["TALONSRX"] = DragonMotorControllerFactory::MOTOR_TYPE::TALONSRX;
-	m_typeMap["BRUSHLESS_SPARK_MAX"] = DragonMotorControllerFactory::MOTOR_TYPE::BRUSHLESS_SPARK_MAX;
-	m_typeMap["BRUSHED_SPARK_MAX"] = DragonMotorControllerFactory::MOTOR_TYPE::BRUSHED_SPARK_MAX;
-
+    CreateUsageMap();
+    CreateTypeMap();
 }
 
 //=======================================================================================
@@ -168,7 +144,7 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::CreateMotorCont
 shared_ptr<IDragonMotorController> DragonMotorControllerFactory::GetController
 (
 	int							canID		/// Motor controller CAN ID
-)
+) const
 {
 	shared_ptr<IDragonMotorController> controller;
 	if ( canID > -1 && canID < 63 )
@@ -182,4 +158,36 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::GetController
         Logger::GetLogger()->Log( "DragonMotorControllerFactory::GetController", msg );
 	}
 	return controller;
+}
+
+void DragonMotorControllerFactory::CreateUsageMap()
+{
+    m_usageMap["FRONT_LEFT_DRIVE"]  = IDragonMotorController::MOTOR_CONTROLLER_TYPE::FRONT_LEFT_DRIVE;
+    m_usageMap["MIDDLE_LEFT_DRIVE"] = IDragonMotorController::MOTOR_CONTROLLER_TYPE::MIDDLE_LEFT_DRIVE;
+    m_usageMap["BACK_LEFT_DRIVE"]   = IDragonMotorController::MOTOR_CONTROLLER_TYPE::BACK_LEFT_DRIVE;
+
+    m_usageMap[ "FRONT_RIGHT_DRIVE"] = IDragonMotorController::MOTOR_CONTROLLER_TYPE::FRONT_RIGHT_DRIVE;
+    m_usageMap["MIDDLE_RIGHT_DRIVE"] = IDragonMotorController::MOTOR_CONTROLLER_TYPE::MIDDLE_RIGHT_DRIVE;
+    m_usageMap["BACK_RIGHT_DRIVE"]   = IDragonMotorController::MOTOR_CONTROLLER_TYPE::BACK_RIGHT_DRIVE;
+
+    m_usageMap["ARM_MASTER"]    = IDragonMotorController::MOTOR_CONTROLLER_TYPE::ARM_MASTER;
+    m_usageMap["ARM_SLAVE"]     = IDragonMotorController::MOTOR_CONTROLLER_TYPE::ARM_SLAVE;
+    m_usageMap["ARM_EXTENSION"] = IDragonMotorController::MOTOR_CONTROLLER_TYPE::ARM_EXTENSION;
+
+    m_usageMap["WRIST"] = IDragonMotorController::MOTOR_CONTROLLER_TYPE::WRIST;
+
+    m_usageMap["INTAKE"] = IDragonMotorController::MOTOR_CONTROLLER_TYPE::INTAKE;
+
+    m_usageMap["ELEVAtOR_WINCH"]  = IDragonMotorController::MOTOR_CONTROLLER_TYPE::ELEVATOR_WINCH;
+    m_usageMap["ELEVATOR_DrIVE"]  = IDragonMotorController::MOTOR_CONTROLLER_TYPE::ELEVATOR_DRIVE;
+
+    m_usageMap["HATCH_MECH_MOTOR"] = IDragonMotorController::MOTOR_CONTROLLER_TYPE::HATCH_MECH_MOTOR;
+}
+
+
+void DragonMotorControllerFactory::CreateTypeMap()
+{
+    m_typeMap["TALONSRX"] = DragonMotorControllerFactory::MOTOR_TYPE::TALONSRX;
+    m_typeMap["BRUSHLESS_SPARK_MAX"] = DragonMotorControllerFactory::MOTOR_TYPE::BRUSHLESS_SPARK_MAX;
+    m_typeMap["BRUSHED_SPARK_MAX"] = DragonMotorControllerFactory::MOTOR_TYPE::BRUSHED_SPARK_MAX;
 }

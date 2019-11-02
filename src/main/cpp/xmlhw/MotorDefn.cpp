@@ -119,13 +119,13 @@ using namespace std;
 // Returns:     DragonTalon*        motor controller (or nullptr if XML
 //                                  is ill-formed
 //-----------------------------------------------------------------------
-IDragonMotorController* MotorDefn::ParseXML
+shared_ptr<IDragonMotorController> MotorDefn::ParseXML
 (
     xml_node      motorNode
 )
 {
     // initialize the output
-    IDragonMotorController* controller = nullptr;
+    shared_ptr<IDragonMotorController> controller;
 
     // initialize attributes to default values
     int canID = 0;
@@ -144,7 +144,7 @@ IDragonMotorController* MotorDefn::ParseXML
     int peakCurrentLimit = 0;
     bool enableCurrentLimit = false;
 
-    DragonMotorControllerFactory::MOTOR_TYPE mtype = DragonMotorControllerFactory::MOTOR_TYPE::TALONSRX; 
+    string mtype;
 
 
     bool hasError = false;
@@ -155,6 +155,7 @@ IDragonMotorController* MotorDefn::ParseXML
         if ( strcmp( attr.name(), "usage" ) == 0 )
         {
              usage = attr.value();
+             transform(usage.begin(), usage.end(), usage.begin(), ::toupper);
         }
 		// CAN ID 0 thru 62 are valid
         else if ( strcmp( attr.name(), "canId" ) == 0 )
@@ -175,23 +176,8 @@ IDragonMotorController* MotorDefn::ParseXML
 		// type:  cantalon, sparkmax_brushless and sparkmax_brushed are valid
         else if ( strcmp( attr.name(), "type" ) == 0 )
         {
-            if ( strcmp( attr.value(), "cantalon") == 0 )
-            {
-                mtype = DragonMotorControllerFactory::MOTOR_TYPE::TALONSRX;
-            }
-            else if ( strcmp( attr.value(), "sparkmax_brushless") == 0 )
-            {
-                mtype = DragonMotorControllerFactory::MOTOR_TYPE::BRUSHLESS_SPARK_MAX;
-            }
-            else if ( strcmp( attr.value(), "sparkmax_brushed") == 0 )
-            {
-                mtype = DragonMotorControllerFactory::MOTOR_TYPE::BRUSHED_SPARK_MAX;
-            }
-            else
-            {
-                printf( "Invalid motor type %s \n", attr.value() );
-                hasError = true;
-            }
+            mtype = attr.value();
+            transform(mtype.begin(), mtype.end(), mtype.begin(), ::toupper);
         }
 		// inverted
         else if ( strcmp( attr.name(), "inverted" ) == 0 )
@@ -331,8 +317,7 @@ IDragonMotorController* MotorDefn::ParseXML
     if ( !hasError )
     {
 		pdpID = ( pdpID < 0 ) ? pdpID = canID : pdpID;
-        controller = DragonMotorControllerFactory::GetInstance()->CreateMotorController( mechType,
-                                                                                         mtype,
+        controller = DragonMotorControllerFactory::GetInstance()->CreateMotorController( mtype,
                                                                                          canID,
                                                                                          pdpID,
                                                                                          usage,

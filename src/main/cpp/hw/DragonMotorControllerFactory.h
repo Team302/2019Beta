@@ -105,8 +105,10 @@ private:
 		std::shared_ptr<IDragonMotorController> GetController
 		(
 			int													canID		/// Motor Controller CAN ID
-		);
-		
+		) const;
+
+    void CreateUsageMap();
+    void CreateTypeMap();
 
         DragonMotorControllerFactory();
         ~DragonMotorControllerFactory() = default;

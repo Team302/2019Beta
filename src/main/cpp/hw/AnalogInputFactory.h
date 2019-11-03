@@ -26,6 +26,8 @@
 #pragma once
 
 // C++ Includes
+#include <map>
+#include <string>
 
 
 // FRC includes
@@ -52,19 +54,21 @@ class AnalogInputFactory
 		///=====================================================================================
 		DragonAnalogInput* CreateInput
 		(
-			std::string  			                        type,
-			int 						                    analogID,
-		    float						                    voltageMin,
-		    float						                    voltageMax,
-		    float 						                    outputMin,
-		    float						                    outputMax
+			std::string     usage,
+			int 	        analogID,
+		    float	        voltageMin,
+		    float	        voltageMax,
+		    float 	        outputMin,
+		    float	        outputMax
 		);
 
 
 	private:
-		AnalogInputFactory() = default;
+		AnalogInputFactory();
 		virtual ~AnalogInputFactory() = default;
+		void CreateUsageMap();
 
 		static AnalogInputFactory*	m_factory;
+		std::map <std::string, DragonAnalogInput::ANALOG_SENSOR_TYPE> m_usageMap;
 
 };

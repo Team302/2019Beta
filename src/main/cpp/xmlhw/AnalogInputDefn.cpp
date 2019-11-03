@@ -35,25 +35,28 @@
 ///	 	==================================================== -->
 ///	<!ELEMENT analogInput EMPTY>
 ///	<!ATTLIST analogInput
+///           usage             CDATA #REQUIRED
 ///  	      type              (  0 |  1 |  2 ) "0"
 ///      	  analogId          (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 ) "0"
-///            voltageMin        CDATA "0.0"
-///            voltageMax        CDATA "5.0"
-///            outputMin         CDATA #REQUIRED
-///            outputMax         CDATA #REQUIRED
+///           voltageMin        CDATA "0.0"
+///           voltageMax        CDATA "5.0"
+///           outputMin         CDATA #REQUIRED
+///           outputMax         CDATA #REQUIRED
 ///	>
 ///
 /// --------------------------------------------------------------------------------------------
 
 // C++ includes
+#include <memory>
+#include <string>
 
 // FRC includes
 #include <frc/AnalogInput.h>
-#include <frc/SmartDashboard/SmartDashboard.h>
 
 // Team302 includes
 #include <hw/AnalogInputFactory.h>
 #include <hw/DragonAnalogInput.h>
+#include <utils/Logger.h>
 #include <xmlhw/AnalogInputDefn.h>
 
 // Third Party includes
@@ -61,6 +64,8 @@
 
 
 using namespace frc;
+using namespace std;
+using namespace pugi;
 
 ///-----------------------------------------------------------------------
 /// Method:      ParseXML
@@ -69,23 +74,28 @@ using namespace frc;
 /// Returns:     DragonAnalogInput*      AnalogInput (or nullptr if XML
 ///                                  	is ill-formed
 ///-----------------------------------------------------------------------
-void AnalogInputDefn::ParseXML
+shared_ptr<DragonAnalogInput> AnalogInputDefn::ParseXML
 (
-    pugi::xml_node      motorNode
+    xml_node      analogInputNode
 )
 {
-	std::string type;
-	int 						analogID = 0;
-    float						voltageMin = 0.0;
-    float						voltageMax = 5.0;
-    float 						outputMin  = 0.0;
-    float						outputMax  = 1.0;
+    string  usage;
+	string  type;
+	int 	analogID = 0;
+    float	voltageMin = 0.0;
+    float	voltageMax = 5.0;
+    float 	outputMin  = 0.0;
+    float	outputMax  = 1.0;
 
     bool hasError = false;
 
-    for (pugi::xml_attribute attr = motorNode.first_attribute(); attr; attr = attr.next_attribute())
+    for (xml_attribute attr = analogInputNode.first_attribute(); attr; attr = attr.next_attribute())
     {
-        if ( strcmp( attr.name(), "type" ) == 0 )
+        if ( strcmp( attr.name(), "usage" ) == 0 )
+        {
+            usage = attr.as_string();
+        }
+        else if ( strcmp( attr.name(), "type" ) == 0 )
         {
             type = attr.as_string();
         }
@@ -111,7 +121,8 @@ void AnalogInputDefn::ParseXML
         }
         else
         {
-            printf( "AnalogInputDefn::ParseXML: invalid attribute %s \n", attr.name() );
+            string msg = "invalid attribute" + attr.name();
+            Logger::GetLogger()->Log( "AnalogInputDefn::ParseXML", msg );
             hasError = true;
         }
     }

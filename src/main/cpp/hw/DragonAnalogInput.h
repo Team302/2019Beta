@@ -17,8 +17,6 @@ class DragonAnalogInput : AnalogInput
 		{
 			UNKNOWN_ANALOG_TYPE = -1,
 			EXTENDER_POTENTIOMETER,
-//			ANALOG_GENERAL,
-//			ANALOG_GYRO,
 			PRESSURE_GAUGE,
 			MAX_ANALOG_TYPES
 		};

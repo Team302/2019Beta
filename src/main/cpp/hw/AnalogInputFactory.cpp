@@ -25,8 +25,8 @@
 
 // C++ Includes
 #include <algorithm>
-#include <iostream>
 #include <locale>
+#include <map>
 #include <string>
 
 // FRC includes
@@ -35,6 +35,7 @@
 #include <hw/AnalogInputFactory.h>
 #include <hw/DragonAnalogInput.h>
 //#include <hw/DragonAngleSensorFactory.h>
+#include <utils/Logger.h>
 
 
 // Third Party Includes
@@ -57,47 +58,66 @@ AnalogInputFactory* AnalogInputFactory::GetFactory()
 	return AnalogInputFactory::m_factory;
 }
 
+AnalogInputFactory::AnalogInputFactory( )
+{
+    CreateUsageMap();
+}
 
+
+void AnalogInputFactory::CreateUsageMap()
+{
+    m_usageMap["EXTENDER_POTENTIOMETER"]  = DragonAnalogInput::ANALOG_SENSOR_TYPE::EXTENDER_POTENTIOMETER;
+    m_usageMap["PRESSURE_GAUGE"] = DragonAnalogInput::ANALOG_SENSOR_TYPE::PRESSURE_GAUGE;
+}
 ///=====================================================================================
 /// Method:         CreateInput
 /// Description:    Create the requested analog input
 /// Returns:        IMechanism*     pointer to the mechanism or nullptr if mechanism 
 ///                                 doesn't exist and cannot be created.
 ///=====================================================================================
-DragonAnalogInput* AnalogInputFactory::CreateInput
+shared_ptr<DragonAnalogInput> AnalogInputFactory::CreateInput
 (
-    string                         			        type,
-    int 						                    analogID,
-    float						                    voltageMin,
-    float						                    voltageMax,
-    float 						                    outputMin,
-    float						                    outputMax
+    string  usage,
+    int 	analogID,
+    float	voltageMin,
+    float	voltageMax,
+    float 	outputMin,
+    float	outputMax
 )
 {
-    unique_ptr<DragonAnalogInput> sensor;
-    if ( type.compare( "EXTENDER_POTENTIOMETER" ) == 0  )
+    shared_ptr<DragonAnalogInput> sensor;
+
+    auto hasError = false;
+
+    auto type = m_usageMap.find(usage)->second;
+    switch ( type )
     {
-        sensor = make_unique<DragonAnalogInput>( DragonAnalogInput::ANALOG_SENSOR_TYPE::EXTENDER_POTENTIOMETER,
+        case DragonAnalogInput::ANALOG_SENSOR_TYPE::EXTENDER_POTENTIOMETER:
+            sensor = make_shared<DragonAnalogInput>( type,
+                                                     analogID,
+                                                     voltageMin,
+                                                     voltageMax,
+                                                     outputMin,
+                                                     outputMax );
+            // TODO: Create an angle sensor + decorate it as a position sensor
+            break;
+
+        case DragonAnalogInput::ANALOG_SENSOR_TYPE::PRESSURE_GAUGE:
+            sensor = make_shared<DragonAnalogInput> ( type,
+                                                      usage,
                                                       analogID,
                                                       voltageMin,
                                                       voltageMax,
                                                       outputMin,
                                                       outputMax );
-        // TODO: Create an angle sensor + decorate it as a position sensor
+            break;
+
+        default:
+            hasError = true;
+            string msg = "unknown type " + type;
+            Logger::GetLogger()->Log( "AnalogInputFactory::CreateInput", msg );
+
     }
-    else if ( type.compare( "PRESSURE_GAUGE" ) == 0 )
-    {
-        sensor = make_unique<DragonAnalogInput> ( DragonAnalogInput::ANALOG_SENSOR_TYPE::PRESSURE_GAUGE,
-                                                       analogID,
-                                                       voltageMin,
-                                                       voltageMax,
-                                                       outputMin,
-                                                       outputMax );
-    }
-    else
-    {
-        cout << "==>> AnalogInputFactory::CreateInput: unknown type " << type.c_str() << endl;
-    }
-    return sensor.release();
+    return sensor;
 }
 

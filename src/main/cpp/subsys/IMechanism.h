@@ -145,7 +145,7 @@ class IMechanism
         /// description:    Return the current position of the mechanism.  The value is in 
         ///                 inches or degrees.
         /// returns:        double	position in inches (translating mechanisms) or degrees 
-	///				(rotating mechanisms)
+	    ///				(rotating mechanisms)
         ///==================================================================================
         virtual double GetCurrentPosition() const = 0;
 
@@ -154,7 +154,7 @@ class IMechanism
         /// description:    Return the targget position of the mechanism.  The value is in 
         ///                 inches or degrees.
         /// returns:        double	position in inches (translating mechanisms) or degrees
-	///				(rotating mechanisms)
+	    ///				(rotating mechanisms)
         ///==================================================================================
         virtual double GetTargetPosition() const = 0;
 
@@ -162,7 +162,7 @@ class IMechanism
         /// method:         SetSpeed
         /// description:    Run mechanism in closed loop velocity mode.  The value is in 
         ///                 inches/second (translating mechanisms) or degrees/second (rotating 
-	///		    mechanisms)
+	    ///		    mechanisms)
         /// returns:        void
         ///==================================================================================
         virtual void SetSpeed 
@@ -176,7 +176,7 @@ class IMechanism
         /// description:    Get the current speed of the mechanism.  The value is in 
         ///                 inches per second or degrees per second.
         /// returns:        double	speed in inches/second (translating mechanisms) or 
-	///				degrees/second (rotating mechanisms)
+	    ///				degrees/second (rotating mechanisms)
         ///==================================================================================
         virtual double GetCurrentSpeed() const = 0;
 
@@ -185,7 +185,7 @@ class IMechanism
         /// description:    Get the target speed of the mechanism.  The value is in 
         ///                 inches per second or degrees per second.
         /// returns:        double	speed in inches/second (translating mechanisms) or 
-	///				degrees/second (rotating mechanisms)
+	    ///				degrees/second (rotating mechanisms)
         ///==================================================================================
         virtual double GetTargetSpeed() const = 0; 
         

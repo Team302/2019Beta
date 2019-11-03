@@ -27,6 +27,7 @@
 
 // C++ Includes
 #include <map>
+#include <memory>
 #include <string>
 
 
@@ -52,7 +53,7 @@ class AnalogInputFactory
 		/// Returns:        IMechanism*     pointer to the mechanism or nullptr if mechanism 
 		///                                 doesn't exist and cannot be created.
 		///=====================================================================================
-		DragonAnalogInput* CreateInput
+		std::shared_ptr<DragonAnalogInput> CreateInput
 		(
 			std::string     usage,
 			int 	        analogID,

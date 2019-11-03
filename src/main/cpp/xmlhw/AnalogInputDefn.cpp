@@ -79,6 +79,7 @@ shared_ptr<DragonAnalogInput> AnalogInputDefn::ParseXML
     xml_node      analogInputNode
 )
 {
+    shared_ptr<DragonAnalogInput> sensor;
     string  usage;
 	string  type;
 	int 	analogID = 0;
@@ -121,7 +122,8 @@ shared_ptr<DragonAnalogInput> AnalogInputDefn::ParseXML
         }
         else
         {
-            string msg = "invalid attribute" + attr.name();
+            string msg = "invalid attribute";
+            msg += attr.name();
             Logger::GetLogger()->Log( "AnalogInputDefn::ParseXML", msg );
             hasError = true;
         }
@@ -130,6 +132,8 @@ shared_ptr<DragonAnalogInput> AnalogInputDefn::ParseXML
     if ( !hasError )
     {
         auto factory  = AnalogInputFactory::GetFactory();
-        factory->CreateInput( type, analogID, voltageMin, voltageMax, outputMin, outputMax );
+        sensor = factory->CreateInput( type, analogID, voltageMin, voltageMax, outputMin, outputMax );
     }
+
+    return sensor;
 }

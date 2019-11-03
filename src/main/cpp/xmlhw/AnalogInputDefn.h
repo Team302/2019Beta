@@ -49,6 +49,7 @@
 
 
 // C++ includes
+#include <memory>
 
 // FRC includes
 #include <frc/AnalogInput.h>
@@ -75,7 +76,7 @@ class AnalogInputDefn
         ///              its definition.
         /// Returns:     void
         ///-----------------------------------------------------------------------
-        void ParseXML
+        std::shared_ptr<DragonAnalogInput> ParseXML
         (
             pugi::xml_node      sensorNode
         );

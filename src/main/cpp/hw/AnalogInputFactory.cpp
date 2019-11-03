@@ -27,6 +27,7 @@
 #include <algorithm>
 #include <locale>
 #include <map>
+#include <memory>
 #include <string>
 
 // FRC includes
@@ -104,7 +105,6 @@ shared_ptr<DragonAnalogInput> AnalogInputFactory::CreateInput
 
         case DragonAnalogInput::ANALOG_SENSOR_TYPE::PRESSURE_GAUGE:
             sensor = make_shared<DragonAnalogInput> ( type,
-                                                      usage,
                                                       analogID,
                                                       voltageMin,
                                                       voltageMax,

@@ -4,7 +4,7 @@
 
 #pragma once
 
-
+#include <memory>
 #include <frc/PowerDistributionPanel.h>
 
 using namespace frc;
@@ -17,21 +17,21 @@ class DragonPDP
 		//=======================================================================================
 		// Method:  		CreatePDP
 		// Description:		Create a PDP from inputs
-		// Returns:         Void
+		// Returns:         std::shared_ptr<PowerDistributionPanel>
 		//=======================================================================================
-		PowerDistributionPanel* CreatePDP
+		std::shared_ptr<PowerDistributionPanel> CreatePDP
 		(
 			int			canID				// <I> - PDP CAN ID
 		);
 
-		inline frc::PowerDistributionPanel* GetPDP() { return m_pdp;}
+		inline std::shared_ptr<frc::PowerDistributionPanel> GetPDP() { return m_pdp;}
 
 	private:
 		DragonPDP() = default;
 		virtual ~DragonPDP() = default;
 
-		static DragonPDP*      				m_instance;
-		frc::PowerDistributionPanel*      	m_pdp;
+		static DragonPDP*      				            m_instance;
+		std::shared_ptr<frc::PowerDistributionPanel>    m_pdp;
 
 };
 

@@ -7,18 +7,21 @@
 
 
 // C++ Includes
-#include <iostream>
+#include <memory>
 
 // FRC includes
-#include <frc/SmartDashboard/SmartDashboard.h>
 
 // Team 302 includes
 #include <xmlhw/PigeonDefn.h>
 #include <hw/DragonPigeon.h>
+#include <utils/HardwareIDValidation.h>
+#include <utils/Logger.h>
 
 // Third Party Includes
 #include <pugixml/pugixml.hpp>
 
+using namespace std;
+using namespace pugi;
 
 //-----------------------------------------------------------------------
 // Method:      ParseXML
@@ -41,14 +44,13 @@
 //
 // Returns:     DragonPigeon*       pigeon IMU (or nullptr if XML is ill-formed)
 //-----------------------------------------------------------------------
-//DragonPigeon* PigeonDefn::ParseXML
-void PigeonDefn::ParseXML
+shared_ptr<DragonPigeon> PigeonDefn::ParseXML
 (
-    pugi::xml_node      pigeonNode
+    xml_node      pigeonNode
 )
 {
     // initialize output
-    //DragonPigeon* pigeon = nullptr;
+    shared_ptr<DragonPigeon> pigeon;
 
     // initialize attributes to default values
     int canID = 0;
@@ -56,18 +58,15 @@ void PigeonDefn::ParseXML
     bool hasError = false;
 
     // parse/validate xml
-    for (pugi::xml_attribute attr = pigeonNode.first_attribute(); attr; attr = attr.next_attribute())
+    for (xml_attribute attr = pigeonNode.first_attribute(); attr; attr = attr.next_attribute())
     {
-        int iVal = attr.as_int();
-        if ( iVal > -1 && iVal < 63 )
-        {
-            canID = iVal;
-        }
-        else
-        {
-            printf( "==>> PigeonDefn::ParseXML invalid canId %d \n", iVal );
-            hasError = true;
-        }
+        canID = attr.as_int();
+        hasError = HardwareIDValidation::ValidateCANID( canID, string( "Pigeon::ParseXML" ) );
     }
-    DragonPigeon::CreatePigeon(canID);
+
+    if ( !hasError )
+    {
+        pigeon.reset( DragonPigeon::CreatePigeon( canID ) );
+    }
+    return pigeon;
 }

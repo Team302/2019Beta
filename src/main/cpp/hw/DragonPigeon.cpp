@@ -10,7 +10,9 @@
 #include <iostream>
 #include <frc/SmartDashboard/SmartDashboard.h>
 #include <cmath>
+#include <memory>
 
+using namespace std;
 using namespace frc;
 
 using namespace ctre;
@@ -21,23 +23,32 @@ using namespace can;
 DragonPigeon* DragonPigeon::m_instance = nullptr;
 DragonPigeon* DragonPigeon::GetPigeon()
 {
+    if ( DragonPigeon::m_instance == nullptr )
+    {
+        // todo log error
+    }
     return DragonPigeon::m_instance;
 }
 
 DragonPigeon::DragonPigeon
 (
     int  canID
-) : PigeonIMU( canID ),
-    m_pigeon(new ctre::phoenix::sensors::PigeonIMU(canID))
+)
 {
-    m_initialRoll = GetRawRoll();
-    m_initialPitch = GetRawPitch();
-    m_initialYaw = GetRawYaw();
+    m_pigeon = make_unique<ctre::phoenix::sensors::PigeonIMU>( canID );
+    m_initialRoll  = GetRawRoll( );
+    m_initialPitch = GetRawPitch( );
+    m_initialYaw   = GetRawYaw( );
 }
 
-void DragonPigeon::CreatePigeon(int id)
+DragonPigeon* DragonPigeon::CreatePigeon(int id)
 {
-    DragonPigeon::m_instance = new DragonPigeon(id);
+    if( DragonPigeon::m_instance != nullptr )
+    {
+        //todo log error
+    }
+    DragonPigeon::m_instance = new DragonPigeon( id );
+    return DragonPigeon::m_instance;
 }
 
 double DragonPigeon::GetPitch()

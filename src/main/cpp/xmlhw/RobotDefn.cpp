@@ -91,10 +91,7 @@ void RobotDefn::ParseXML()
             {
                 if (strcmp(child.name(), "chassis") == 0)
                 {
-                    if ( chassisXML == nullptr )
-                    {
-                        chassisXML = make_unique<ChassisDefn>();
-                    }
+                    chassisXML = chassisXML == nullptr ? make_unique<ChassisDefn>() : chassisXML;
                     if ( chassisXML != nullptr )
                     {
                         chassisXML->ParseXML(child);
@@ -107,10 +104,7 @@ void RobotDefn::ParseXML()
                 }
                 else if (strcmp(child.name(), "mechanism") == 0)
                 {
-                    if ( mechanismXML == nullptr )
-                    {
-                        mechanismXML = make_unique<MechanismDefn>();
-                    }
+                    mechanismXML = ( mechanismXML == nullptr ) ? make_unique<MechanismDefn>() : mechanismXML;
                     if ( mechanismXML != nullptr )
                     {
                         mechanismXML->ParseXML(child);
@@ -126,10 +120,7 @@ void RobotDefn::ParseXML()
                 }
                 else if (strcmp(child.name(), "pdp") == 0)
                 {
-                    if ( pdpXML == nullptr )
-                    {
-                        pdpXML = make_unique<PDPDefn>();
-                    }
+                    pdpXML = ( pdpXML == nullptr ) ? make_unique<PDPDefn>() : pdpXML;
                     if ( pdpXML != nullptr )
                     {
                         pdpXML->ParseXML(child);
@@ -141,10 +132,7 @@ void RobotDefn::ParseXML()
                 }
                 else if (strcmp(child.name(), "pigeon") == 0)
                 {
-                    if ( pigeonXML == nullptr )
-                    {
-                        pigeonXML = make_unique<PigeonDefn>();
-                    }
+                    pigeonXML = ( pigeonXML == nullptr ) ? make_unique<PigeonDefn>() : pigeonXML;
                     if ( pigeonXML != nullptr )
                     {
                         pigeonXML->ParseXML(child);
@@ -156,10 +144,7 @@ void RobotDefn::ParseXML()
                 }
                 else if ( strcmp( child.name(), "lidar") == 0 )
                 {
-                    if ( lidarXML == nullptr )
-                    {
-                        lidarXML = make_unique<LidarDefn>();
-                    }
+                    lidarXML = ( lidarXML == nullptr ) ? make_unique<LidarDefn>() : lidarXML;
                     if ( lidarXML != nullptr )
                     {
                         lidarXML->ParseXML(child);
@@ -171,10 +156,7 @@ void RobotDefn::ParseXML()
                 }
                 else if (strcmp(child.name(), "camera") == 0)
                 {
-                    if ( cameraXML == nullptr )
-                    {
-                        cameraXML = make_unique<CameraDefn>();
-                    }
+                    cameraXML = ( cameraXML == nullptr ) ? make_unique<CameraDefn>() : cameraXML;
                     if ( cameraXML != nullptr )
                     {
                         cameraXML->ParseXML(child);
@@ -186,10 +168,7 @@ void RobotDefn::ParseXML()
                 }
                 else if (strcmp(child.name(), "led") == 0)
                 {
-                    if ( ledXML == nullptr )
-                    {
-                        ledXML = make_unique<LEDDefn>();
-                    }
+                    ledXML = ( ledXML == nullptr ) ? make_unique<LEDDefn>() : ledXML;
                     if ( ledXML != nullptr )
                     {
                         ledXML->ParseXML(child);

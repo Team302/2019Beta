@@ -9,13 +9,13 @@
 #define SRC_SUBSYS_XMLPARSING_PIGEONDEFN_H_
 
 // C++ Includes
-#include <iostream>
+#include <memory>
 
 // FRC includes
 #include <frc/SmartDashboard/SmartDashboard.h>
 
 // Team 302 includes
-//#include <hw/DragonPigeon.h>
+#include <hw/DragonPigeon.h>
 
 // Third Party Includes
 #include <pugixml/pugixml.hpp>
@@ -35,8 +35,7 @@ class PigeonDefn
         //              its definition.
         // Returns:     DragonPigeon*       pigeon IMU (or nullptr if XML is ill-formed)
         //-----------------------------------------------------------------------
-        //DragonPigeon* ParseXML
-        void ParseXML
+        std::shared_ptr<DragonPigeon> ParseXML
         (
             pugi::xml_node      pigeonNode
         );

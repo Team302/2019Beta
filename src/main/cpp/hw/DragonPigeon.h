@@ -5,23 +5,22 @@
  *      Author: team302
  */
 
-#ifndef SRC_SUBSYS_COMPONENTS_DRAGONPIGEON_H_
-#define SRC_SUBSYS_COMPONENTS_DRAGONPIGEON_H_
+#pragma once
 
+#include <memory>
 #include <string>
 #include <vector>
 
 #include <ctre/phoenix/Sensors/PigeonIMU.h>
 
-using namespace ctre::phoenix::sensors;
 
-class DragonPigeon : public PigeonIMU
+class DragonPigeon
 {
     public:
 
 
         static DragonPigeon* GetPigeon();
-        static void CreatePigeon(int id);
+        static DragonPigeon* CreatePigeon(int id);
         double GetPitch();
         double GetRoll();
         double GetYaw();
@@ -35,7 +34,7 @@ class DragonPigeon : public PigeonIMU
         virtual ~DragonPigeon() = default;
 
         static DragonPigeon*        m_instance;
-        PigeonIMU* m_pigeon;
+        std::unique_ptr<ctre::phoenix::sensors::PigeonIMU> m_pigeon;
 
         double m_initialRoll;
         double m_initialPitch;
@@ -47,6 +46,5 @@ class DragonPigeon : public PigeonIMU
         double GetRawYaw();
 };
 
-#endif /* SRC_SUBSYS_COMPONENTS_DRAGONPIGEON_H_ */
 
 

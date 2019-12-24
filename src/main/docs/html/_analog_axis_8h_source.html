@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team302Robot: C:/GitKrakenRepos/TemplateRepository/src/main/cpp/controllers/axis/AnalogAxis.h Source File</title>
+<title>Team 302 Robot: C:/GitKrakenRepos/TemplateRepository/src/main/cpp/controllers/axis/AnalogAxis.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Team302Robot
+   <div id="projectname">Team 302 Robot
    </div>
   </td>
  </tr>
@@ -89,109 +89,119 @@ $(document).ready(function(){initNavTree('_analog_axis_8h_source.html','');});
 <div class="title">AnalogAxis.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*========================================================================================================</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * DeadbandValue.h</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *========================================================================================================</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * File Description:  Removes deadband from a input value, so small values are treated as 0.0.  This can</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *                    be useful to eliminate hardware noise as well as inadvertent movement of the analog</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *                    input.</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *========================================================================================================*/</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// Copyright 2018 Lake Orion Robotics FIRST Team 302</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), </span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, </span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF </span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, </span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE </span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// OR OTHER DEALINGS IN THE SOFTWARE.</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#ifndef SRC_MAIN_INCLUDE_CONTROLLER_AXIS_ANALOGAXIS_H_</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define SRC_MAIN_INCLUDE_CONTROLLER_AXIS_ANALOGAXIS_H_</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;frc/GenericHID.h&gt;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;controllers/IDragonGamePad.h&gt;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;controllers/axis/IProfile.h&gt;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;controllers/axis/IDeadband.h&gt;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;controllers/axis/ScaledAxis.h&gt;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//==================================================================================</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"></span><span class="comment">//==================================================================================</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_analog_axis.html">   43</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_analog_axis.html">AnalogAxis</a></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="class_analog_axis.html">AnalogAxis</a></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        (</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            frc::GenericHID*                    gamepad,        <span class="comment">// &lt;I&gt; - gamepad to query</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordtype">int</span>                                 axisID,         <span class="comment">// &lt;I&gt; - axis ID this maps to</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordtype">bool</span>                                flipped         <span class="comment">// &lt;I&gt; - true axis is reversed from what is expected, </span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        );                                                      <span class="comment">//       false axis has the expected direction</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">//==================================================================================</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"></span>        <span class="comment">//==================================================================================</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_analog_axis.html#a4e01b8b9de9b8af178c2bdbd63359ea2">GetAxisValue</a>();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_analog_axis.html#affc8b08e1a2bb32adcb971f644d2458d">SetDeadBand</a></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        (</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            IDragonGamePad::AXIS_DEADBAND   type            </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        );</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_analog_axis.html#ad3a96408976c543981e74f241ed34b93">SetAxisProfile</a></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        (</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            IDragonGamePad::AXIS_PROFILE    profile         </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        );</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_analog_axis.html#ab4f474d286f5f650c617264616154cf9">SetAxisScaleFactor</a></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        (</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;           <span class="keywordtype">double</span> scale                     </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        );</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;       </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="comment">//==================================================================================</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment"></span>        <span class="comment">//==================================================================================</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_analog_axis.html#a16dc4ab6eb26221fc1f43c4f9cb67fa2">GetRawValue</a>();</div>
+<a href="_analog_axis_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Copyright 2018 Lake Orion Robotics FIRST Team 302</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), </span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, </span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF </span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, </span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE </span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// OR OTHER DEALINGS IN THE SOFTWARE.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// C++ Includes</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// FRC includes</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;frc/GenericHID.h&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// Team 302 includes</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_dragon_game_pad_8h.html">controllers/IDragonGamePad.h</a>&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_profile_8h.html">controllers/axis/IProfile.h</a>&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_deadband_8h.html">controllers/axis/IDeadband.h</a>&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_scaled_axis_8h.html">controllers/axis/ScaledAxis.h</a>&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// Third Party Includes</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//==================================================================================</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"></span><span class="comment">//==================================================================================</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_analog_axis.html">   39</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_analog_axis.html">AnalogAxis</a></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="comment">//=========================================================================================</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"></span>        <span class="comment">//=========================================================================================</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="class_analog_axis.html#a4ae0bfa8f8c22746f32a1899f745661e">AnalogAxis</a></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        (</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            frc::GenericHID*                    gamepad,        </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordtype">int</span>                                 axisID,         </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordtype">bool</span>                                flipped          </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        );                                                      </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="comment">//================================================================================================</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"></span>        <span class="comment">//================================================================================================</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_analog_axis.html#a4e01b8b9de9b8af178c2bdbd63359ea2">GetAxisValue</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="comment">//================================================================================================</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"></span>        <span class="comment">//================================================================================================</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_analog_axis.html#affc8b08e1a2bb32adcb971f644d2458d">SetDeadBand</a></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        (</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <a class="code" href="class_i_dragon_game_pad.html#afde07811ccdd7565bc40c381adecee4d">IDragonGamePad::AXIS_DEADBAND</a>   type            </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        );</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="comment">//================================================================================================</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment"></span>        <span class="comment">//================================================================================================</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_analog_axis.html#ad3a96408976c543981e74f241ed34b93">SetAxisProfile</a></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        (</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <a class="code" href="class_i_dragon_game_pad.html#a3b3c3165d9fc69500bd69ba575216676">IDragonGamePad::AXIS_PROFILE</a>    profile         </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        );</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="comment">//================================================================================================</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"></span>        <span class="comment">//================================================================================================        </span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_analog_axis.html#ab4f474d286f5f650c617264616154cf9">SetAxisScaleFactor</a></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        (</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;           <span class="keywordtype">double</span> scale                     </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        );</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        frc::GenericHID*                    m_gamepad;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">int</span>                                 m_axis;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="class_i_profile.html">IProfile</a>*                           m_profile;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="class_i_deadband.html">IDeadband</a>*                          m_deadband;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="class_scaled_axis.html">ScaledAxis</a>*                         m_scale;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;};</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;       </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="comment">//==================================================================================</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment"></span>        <span class="comment">//==================================================================================</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_analog_axis.html#a16dc4ab6eb26221fc1f43c4f9cb67fa2">GetRawValue</a>();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        frc::GenericHID*                    m_gamepad;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordtype">int</span>                                 m_axis;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <a class="code" href="class_i_profile.html">IProfile</a>*                           m_profile;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="class_i_deadband.html">IDeadband</a>*                          m_deadband;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <a class="code" href="class_scaled_axis.html">ScaledAxis</a>*                         m_scale;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="a_scaled_axis_8h_html"><div class="ttname"><a href="_scaled_axis_8h.html">ScaledAxis.h</a></div></div>
 <div class="ttc" id="aclass_scaled_axis_html"><div class="ttname"><a href="class_scaled_axis.html">ScaledAxis</a></div><div class="ttdoc">Class: ScaledAxis Description: This provides scaling for an axis.</div><div class="ttdef"><b>Definition:</b> <a href="_scaled_axis_8h_source.html#l00036">ScaledAxis.h:36</a></div></div>
-<div class="ttc" id="aclass_analog_axis_html_a4e01b8b9de9b8af178c2bdbd63359ea2"><div class="ttname"><a href="class_analog_axis.html#a4e01b8b9de9b8af178c2bdbd63359ea2">AnalogAxis::GetAxisValue</a></div><div class="ttdeci">double GetAxisValue()</div><div class="ttdoc">Method: GetAxisValue Description: Read the analog (axis) value and return it. If the gamepad has an i...</div><div class="ttdef"><b>Definition:</b> <a href="_analog_axis_8cpp_source.html#l00057">AnalogAxis.cpp:57</a></div></div>
+<div class="ttc" id="aclass_i_dragon_game_pad_html_a3b3c3165d9fc69500bd69ba575216676"><div class="ttname"><a href="class_i_dragon_game_pad.html#a3b3c3165d9fc69500bd69ba575216676">IDragonGamePad::AXIS_PROFILE</a></div><div class="ttdeci">AXIS_PROFILE</div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_game_pad_8h_source.html#l00130">IDragonGamePad.h:130</a></div></div>
+<div class="ttc" id="a_i_deadband_8h_html"><div class="ttname"><a href="_i_deadband_8h.html">IDeadband.h</a></div></div>
+<div class="ttc" id="a_i_profile_8h_html"><div class="ttname"><a href="_i_profile_8h.html">IProfile.h</a></div></div>
+<div class="ttc" id="aclass_analog_axis_html_a4e01b8b9de9b8af178c2bdbd63359ea2"><div class="ttname"><a href="class_analog_axis.html#a4e01b8b9de9b8af178c2bdbd63359ea2">AnalogAxis::GetAxisValue</a></div><div class="ttdeci">double GetAxisValue()</div><div class="ttdoc">Read the analog (axis) value and return it. If the gamepad has an issue, return 0....</div><div class="ttdef"><b>Definition:</b> <a href="_analog_axis_8cpp_source.html#l00077">AnalogAxis.cpp:77</a></div></div>
 <div class="ttc" id="aclass_i_profile_html"><div class="ttname"><a href="class_i_profile.html">IProfile</a></div><div class="ttdoc">Class: IProfile Description: This provides profile to be applied to input values.</div><div class="ttdef"><b>Definition:</b> <a href="_i_profile_8h_source.html#l00036">IProfile.h:36</a></div></div>
 <div class="ttc" id="aclass_i_deadband_html"><div class="ttname"><a href="class_i_deadband.html">IDeadband</a></div><div class="ttdoc">Class: IDeadband Description: This provides deadband to be applied to input values.</div><div class="ttdef"><b>Definition:</b> <a href="_i_deadband_8h_source.html#l00027">IDeadband.h:27</a></div></div>
-<div class="ttc" id="aclass_analog_axis_html"><div class="ttname"><a href="class_analog_axis.html">AnalogAxis</a></div><div class="ttdoc">Class: AnalogAxis Description: This class handles the analog inputs on a gamepad</div><div class="ttdef"><b>Definition:</b> <a href="_analog_axis_8h_source.html#l00043">AnalogAxis.h:43</a></div></div>
-<div class="ttc" id="aclass_analog_axis_html_ad3a96408976c543981e74f241ed34b93"><div class="ttname"><a href="class_analog_axis.html#ad3a96408976c543981e74f241ed34b93">AnalogAxis::SetAxisProfile</a></div><div class="ttdeci">void SetAxisProfile(IDragonGamePad::AXIS_PROFILE profile)</div><div class="ttdef"><b>Definition:</b> <a href="_analog_axis_8cpp_source.html#l00103">AnalogAxis.cpp:103</a></div></div>
-<div class="ttc" id="aclass_analog_axis_html_a16dc4ab6eb26221fc1f43c4f9cb67fa2"><div class="ttname"><a href="class_analog_axis.html#a16dc4ab6eb26221fc1f43c4f9cb67fa2">AnalogAxis::GetRawValue</a></div><div class="ttdeci">virtual double GetRawValue()</div><div class="ttdoc">Method: GetRawValue Description: Returns the analog input's raw value. If there is a connection probl...</div><div class="ttdef"><b>Definition:</b> <a href="_analog_axis_8cpp_source.html#l00144">AnalogAxis.cpp:144</a></div></div>
-<div class="ttc" id="aclass_analog_axis_html_ab4f474d286f5f650c617264616154cf9"><div class="ttname"><a href="class_analog_axis.html#ab4f474d286f5f650c617264616154cf9">AnalogAxis::SetAxisScaleFactor</a></div><div class="ttdeci">void SetAxisScaleFactor(double scale)</div><div class="ttdef"><b>Definition:</b> <a href="_analog_axis_8cpp_source.html#l00129">AnalogAxis.cpp:129</a></div></div>
-<div class="ttc" id="aclass_analog_axis_html_affc8b08e1a2bb32adcb971f644d2458d"><div class="ttname"><a href="class_analog_axis.html#affc8b08e1a2bb32adcb971f644d2458d">AnalogAxis::SetDeadBand</a></div><div class="ttdeci">void SetDeadBand(IDragonGamePad::AXIS_DEADBAND type)</div><div class="ttdef"><b>Definition:</b> <a href="_analog_axis_8cpp_source.html#l00076">AnalogAxis.cpp:76</a></div></div>
+<div class="ttc" id="aclass_analog_axis_html"><div class="ttname"><a href="class_analog_axis.html">AnalogAxis</a></div><div class="ttdoc">This class handles the analog inputs on a gamepad.</div><div class="ttdef"><b>Definition:</b> <a href="_analog_axis_8h_source.html#l00039">AnalogAxis.h:39</a></div></div>
+<div class="ttc" id="a_i_dragon_game_pad_8h_html"><div class="ttname"><a href="_i_dragon_game_pad_8h.html">IDragonGamePad.h</a></div></div>
+<div class="ttc" id="aclass_analog_axis_html_ad3a96408976c543981e74f241ed34b93"><div class="ttname"><a href="class_analog_axis.html#ad3a96408976c543981e74f241ed34b93">AnalogAxis::SetAxisProfile</a></div><div class="ttdeci">void SetAxisProfile(IDragonGamePad::AXIS_PROFILE profile)</div><div class="ttdoc">Set the axis profile (cubed, linear, etc.)</div><div class="ttdef"><b>Definition:</b> <a href="_analog_axis_8cpp_source.html#l00135">AnalogAxis.cpp:135</a></div></div>
+<div class="ttc" id="aclass_analog_axis_html_a4ae0bfa8f8c22746f32a1899f745661e"><div class="ttname"><a href="class_analog_axis.html#a4ae0bfa8f8c22746f32a1899f745661e">AnalogAxis::AnalogAxis</a></div><div class="ttdeci">AnalogAxis(frc::GenericHID *gamepad, int axisID, bool flipped)</div><div class="ttdoc">construct the AnalogAxis object</div><div class="ttdef"><b>Definition:</b> <a href="_analog_axis_8cpp_source.html#l00057">AnalogAxis.cpp:57</a></div></div>
+<div class="ttc" id="aclass_i_dragon_game_pad_html_afde07811ccdd7565bc40c381adecee4d"><div class="ttname"><a href="class_i_dragon_game_pad.html#afde07811ccdd7565bc40c381adecee4d">IDragonGamePad::AXIS_DEADBAND</a></div><div class="ttdeci">AXIS_DEADBAND</div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_game_pad_8h_source.html#l00122">IDragonGamePad.h:122</a></div></div>
+<div class="ttc" id="aclass_analog_axis_html_a16dc4ab6eb26221fc1f43c4f9cb67fa2"><div class="ttname"><a href="class_analog_axis.html#a16dc4ab6eb26221fc1f43c4f9cb67fa2">AnalogAxis::GetRawValue</a></div><div class="ttdeci">virtual double GetRawValue()</div><div class="ttdoc">Returns the analog input's raw value. If there is a connection problem, 0.0 will be returned and a de...</div><div class="ttdef"><b>Definition:</b> <a href="_analog_axis_8cpp_source.html#l00178">AnalogAxis.cpp:178</a></div></div>
+<div class="ttc" id="aclass_analog_axis_html_ab4f474d286f5f650c617264616154cf9"><div class="ttname"><a href="class_analog_axis.html#ab4f474d286f5f650c617264616154cf9">AnalogAxis::SetAxisScaleFactor</a></div><div class="ttdeci">void SetAxisScaleFactor(double scale)</div><div class="ttdoc">Set the axis scale factor (default is 1.0)</div><div class="ttdef"><b>Definition:</b> <a href="_analog_axis_8cpp_source.html#l00166">AnalogAxis.cpp:166</a></div></div>
+<div class="ttc" id="aclass_analog_axis_html_affc8b08e1a2bb32adcb971f644d2458d"><div class="ttname"><a href="class_analog_axis.html#affc8b08e1a2bb32adcb971f644d2458d">AnalogAxis::SetDeadBand</a></div><div class="ttdeci">void SetDeadBand(IDragonGamePad::AXIS_DEADBAND type)</div><div class="ttdoc">Set the deadband type.</div><div class="ttdef"><b>Definition:</b> <a href="_analog_axis_8cpp_source.html#l00102">AnalogAxis.cpp:102</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_7b2bcb36d453a1aa0a98981e9af51ae3.html">GitKrakenRepos</a></li><li class="navelem"><a class="el" href="dir_547abfd4c40dc92b54a6aa2a5efd07b2.html">TemplateRepository</a></li><li class="navelem"><a class="el" href="dir_2670559ca5a15a913822c358bf1bb356.html">src</a></li><li class="navelem"><a class="el" href="dir_4943459957647c46b1139863d8116988.html">main</a></li><li class="navelem"><a class="el" href="dir_bd4255150574be663a1c932dfa9033b1.html">cpp</a></li><li class="navelem"><a class="el" href="dir_d0ad9221f7efcd0a53c7ebcd61fc4948.html">controllers</a></li><li class="navelem"><a class="el" href="dir_5a3b74c39b780a69eb9e42c9e07834df.html">axis</a></li><li class="navelem"><b>AnalogAxis.h</b></li>
+    <li class="navelem"><a class="el" href="dir_7b2bcb36d453a1aa0a98981e9af51ae3.html">GitKrakenRepos</a></li><li class="navelem"><a class="el" href="dir_547abfd4c40dc92b54a6aa2a5efd07b2.html">TemplateRepository</a></li><li class="navelem"><a class="el" href="dir_2670559ca5a15a913822c358bf1bb356.html">src</a></li><li class="navelem"><a class="el" href="dir_4943459957647c46b1139863d8116988.html">main</a></li><li class="navelem"><a class="el" href="dir_bd4255150574be663a1c932dfa9033b1.html">cpp</a></li><li class="navelem"><a class="el" href="dir_d0ad9221f7efcd0a53c7ebcd61fc4948.html">controllers</a></li><li class="navelem"><a class="el" href="dir_5a3b74c39b780a69eb9e42c9e07834df.html">axis</a></li><li class="navelem"><a class="el" href="_analog_axis_8h.html">AnalogAxis.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

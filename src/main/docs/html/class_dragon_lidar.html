@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team302Robot: DragonLidar Class Reference</title>
+<title>Team 302 Robot: DragonLidar Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Team302Robot
+   <div id="projectname">Team 302 Robot
    </div>
   </td>
  </tr>
@@ -92,6 +92,11 @@ $(document).ready(function(){initNavTree('class_dragon_lidar.html','');});
 <div class="title">DragonLidar Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class takes a LIDAR that is connected to a digital input on the roborio using PWM. The high pulse length is measured and converted to distance in <a class="el" href="class_dragon_lidar.html#a0b7ff9670fdb521c38f85216c30a98b6" title="Return the measured distance in inches.">GetDistance()</a>. The trigger pin is just used to initialize the lidar. It shouldn't have to be called periodically.  
+ <a href="class_dragon_lidar.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_dragon_lidar_8h_source.html">DragonLidar.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for DragonLidar:</div>
 <div class="dyncontent">
@@ -106,16 +111,21 @@ Inheritance diagram for DragonLidar:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad0df0f24479f9007ff34b7e3618ae57d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_lidar.html#ad0df0f24479f9007ff34b7e3618ae57d">DragonLidar</a> ()=delete</td></tr>
+<tr class="memdesc:ad0df0f24479f9007ff34b7e3618ae57d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the object.  <a href="class_dragon_lidar.html#ad0df0f24479f9007ff34b7e3618ae57d">More...</a><br /></td></tr>
 <tr class="separator:ad0df0f24479f9007ff34b7e3618ae57d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2497dd997ef7375c8926dec617275cc4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_lidar.html#a2497dd997ef7375c8926dec617275cc4">DragonLidar</a> (IDragonSensor::SENSOR_USAGE usage, int inputPin, int triggerPin)</td></tr>
+<tr class="memitem:a2497dd997ef7375c8926dec617275cc4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_lidar.html#a2497dd997ef7375c8926dec617275cc4">DragonLidar</a> (<a class="el" href="class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9">IDragonSensor::SENSOR_USAGE</a> usage, int inputPin, int triggerPin)</td></tr>
 <tr class="separator:a2497dd997ef7375c8926dec617275cc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d6aef6caadfe14e24cb17d355c4503d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_lidar.html#a2d6aef6caadfe14e24cb17d355c4503d">~DragonLidar</a> ()=default</td></tr>
+<tr class="memdesc:a2d6aef6caadfe14e24cb17d355c4503d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the object.  <a href="class_dragon_lidar.html#a2d6aef6caadfe14e24cb17d355c4503d">More...</a><br /></td></tr>
 <tr class="separator:a2d6aef6caadfe14e24cb17d355c4503d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b7ff9670fdb521c38f85216c30a98b6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_lidar.html#a0b7ff9670fdb521c38f85216c30a98b6">GetDistance</a> () const override</td></tr>
+<tr class="memdesc:a0b7ff9670fdb521c38f85216c30a98b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the measured distance in inches.  <a href="class_dragon_lidar.html#a0b7ff9670fdb521c38f85216c30a98b6">More...</a><br /></td></tr>
 <tr class="separator:a0b7ff9670fdb521c38f85216c30a98b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af61a05912f5a6ef2b05a6aed0b5db02e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_lidar.html#af61a05912f5a6ef2b05a6aed0b5db02e">GetConfidence</a> () const override</td></tr>
+<tr class="memdesc:af61a05912f5a6ef2b05a6aed0b5db02e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates how accurate the returned value is.  <a href="class_dragon_lidar.html#af61a05912f5a6ef2b05a6aed0b5db02e">More...</a><br /></td></tr>
 <tr class="separator:af61a05912f5a6ef2b05a6aed0b5db02e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6cc307d3dbce27c07ffd779543101d6"><td class="memItemLeft" align="right" valign="top">IDragonSensor::SENSOR_USAGE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_lidar.html#ac6cc307d3dbce27c07ffd779543101d6">GetUsage</a> () const override</td></tr>
+<tr class="memitem:ac6cc307d3dbce27c07ffd779543101d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9">IDragonSensor::SENSOR_USAGE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_lidar.html#ac6cc307d3dbce27c07ffd779543101d6">GetUsage</a> () const override</td></tr>
+<tr class="memdesc:ac6cc307d3dbce27c07ffd779543101d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate what the sensor is used for.  <a href="class_dragon_lidar.html#ac6cc307d3dbce27c07ffd779543101d6">More...</a><br /></td></tr>
 <tr class="separator:ac6cc307d3dbce27c07ffd779543101d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_i_dragon_sensor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_i_dragon_sensor')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_i_dragon_sensor.html">IDragonSensor</a></td></tr>
 <tr class="memitem:ad5b217a4a40900db84330324383d89c7 inherit pub_methods_class_i_dragon_sensor"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_dragon_sensor.html#ad5b217a4a40900db84330324383d89c7">IDragonSensor</a> ()=default</td></tr>
@@ -126,14 +136,15 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_class_i_dragon_sensor"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_i_dragon_sensor')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="class_i_dragon_sensor.html">IDragonSensor</a></td></tr>
-<tr class="memitem:a48f04b4f71b0f27f8330fd82a26b5fe9 inherit pub_types_class_i_dragon_sensor"><td class="memItemLeft" align="right" valign="top"><a id="a48f04b4f71b0f27f8330fd82a26b5fe9"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>SENSOR_USAGE</b> { <b>UNKNOWN_SENSOR</b> = -1, 
-<b>MAX_SENSORS</b>
+<tr class="memitem:a48f04b4f71b0f27f8330fd82a26b5fe9 inherit pub_types_class_i_dragon_sensor"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9">SENSOR_USAGE</a> { <a class="el" href="class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9aa96ab0d2414159647879dfb522c7415d">UNKNOWN_SENSOR</a> = -1, 
+<a class="el" href="class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9a32fc08369675005db967d48ee0fcca4b">MAX_SENSORS</a>
  }</td></tr>
 <tr class="separator:a48f04b4f71b0f27f8330fd82a26b5fe9 inherit pub_types_class_i_dragon_sensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_dragon_lidar_8h_source.html#l00048">48</a> of file <a class="el" href="_dragon_lidar_8h_source.html">DragonLidar.h</a>.</p>
+<div class="textblock"><p>This class takes a LIDAR that is connected to a digital input on the roborio using PWM. The high pulse length is measured and converted to distance in <a class="el" href="class_dragon_lidar.html#a0b7ff9670fdb521c38f85216c30a98b6" title="Return the measured distance in inches.">GetDistance()</a>. The trigger pin is just used to initialize the lidar. It shouldn't have to be called periodically. </p>
+
+<p class="definition">Definition at line <a class="el" href="_dragon_lidar_8h_source.html#l00043">43</a> of file <a class="el" href="_dragon_lidar_8h_source.html">DragonLidar.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad0df0f24479f9007ff34b7e3618ae57d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad0df0f24479f9007ff34b7e3618ae57d">&#9670;&nbsp;</a></span>DragonLidar() <span class="overload">[1/2]</span></h2>
@@ -157,10 +168,16 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<hr  />
-<p> Method: <a class="el" href="class_dragon_lidar.html">DragonLidar</a> (constructor) </p>
-<h2><a class="anchor" id="autotoc_md16"></a>
-Description:    Create the object</h2>
+
+<p>Create the object. </p>
+<p>Method: <a class="el" href="class_dragon_lidar.html" title="This class takes a LIDAR that is connected to a digital input on the roborio using PWM....">DragonLidar</a> (constructor) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9">IDragonSensor::SENSOR_USAGE</a></td><td>usage - what is the lidar being used for </td></tr>
+    <tr><td class="paramname">int</td><td>inputPin - PWM ID for the reading the distance </td></tr>
+    <tr><td class="paramname">int</td><td>triggerPin - PWM ID used to initialize the lidar </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -173,7 +190,7 @@ Description:    Create the object</h2>
         <tr>
           <td class="memname">DragonLidar::DragonLidar </td>
           <td>(</td>
-          <td class="paramtype">IDragonSensor::SENSOR_USAGE&#160;</td>
+          <td class="paramtype"><a class="el" href="class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9">IDragonSensor::SENSOR_USAGE</a>&#160;</td>
           <td class="paramname"><em>usage</em>, </td>
         </tr>
         <tr>
@@ -196,7 +213,7 @@ Description:    Create the object</h2>
       </table>
 </div><div class="memdoc">
 <hr  />
-<p> Method: <a class="el" href="class_dragon_lidar.html">DragonLidar</a> (constructor) </p>
+<p> Method: <a class="el" href="class_dragon_lidar.html" title="This class takes a LIDAR that is connected to a digital input on the roborio using PWM....">DragonLidar</a> (constructor) </p>
 <h2><a class="anchor" id="autotoc_md12"></a>
 Description:    Create the object</h2>
 
@@ -226,10 +243,9 @@ Description:    Create the object</h2>
   </tr>
 </table>
 </div><div class="memdoc">
-<hr  />
-<p> Method: ~DragonLidar (destructor) </p>
-<h2><a class="anchor" id="autotoc_md17"></a>
-Description:    Delete the object</h2>
+
+<p>Delete the object. </p>
+<p>Method: ~DragonLidar (destructor) </p>
 
 </div>
 </div>
@@ -256,10 +272,10 @@ Description:    Delete the object</h2>
   </tr>
 </table>
 </div><div class="memdoc">
-<hr  />
-<p> Method: GetConfidence Description: Indicates how accurate the returned value is Returns: double 0.0 == ignore (sensor has an error) </p>
-<h2><a class="anchor" id="autotoc_md19"></a>
-1.0 == very confident</h2>
+
+<p>Indicates how accurate the returned value is. </p>
+<p>Method: GetConfidence </p><dl class="section return"><dt>Returns</dt><dd>double 0.0 == ignore (sensor has an error), 1.0 == very confident <br  />
+</dd></dl>
 <hr  />
 <p> Method: GetConfidence Description: Indicates how accurate the returned value is Returns: double 0.0 == ignore (sensor has an error) </p>
 <h2><a class="anchor" id="autotoc_md14"></a>
@@ -293,10 +309,9 @@ Description:    Delete the object</h2>
   </tr>
 </table>
 </div><div class="memdoc">
-<hr  />
-<p> Method: GetDistance Description: Return the measured distance in inches </p>
-<h2><a class="anchor" id="autotoc_md18"></a>
-Returns:     double     Measured Distance</h2>
+
+<p>Return the measured distance in inches. </p>
+<p>Method: GetDistance </p><dl class="section return"><dt>Returns</dt><dd>double Measured Distance in inches</dd></dl>
 <hr  />
 <p> Method: GetDistance Description: Return the measured distance in inches </p>
 <h2><a class="anchor" id="autotoc_md13"></a>
@@ -318,7 +333,7 @@ Returns:     double     Measured Distance</h2>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">IDragonSensor::SENSOR_USAGE DragonLidar::GetUsage </td>
+          <td class="memname"><a class="el" href="class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9">IDragonSensor::SENSOR_USAGE</a> DragonLidar::GetUsage </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -330,10 +345,10 @@ Returns:     double     Measured Distance</h2>
   </tr>
 </table>
 </div><div class="memdoc">
-<hr  />
-<p> Method: GetUsage Description: Indicate what the sensor is used for </p>
-<h2><a class="anchor" id="autotoc_md20"></a>
-Returns:     SENSOR_USAGE    sensor usage</h2>
+
+<p>Indicate what the sensor is used for. </p>
+<p>Method: GetUsage </p><dl class="section return"><dt>Returns</dt><dd>SENSOR_USAGE sensor usage <br  />
+</dd></dl>
 <hr  />
 <p> Method: GetUsage Description: Indicate what the sensor is used for </p>
 <h2><a class="anchor" id="autotoc_md15"></a>

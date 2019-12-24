@@ -8,7 +8,7 @@
  *========================================================================================================*/
 
 //====================================================================================================================================================
-// Copyright 2018 Lake Orion Robotics FIRST Team 302
+// Copyright 2019 Lake Orion Robotics FIRST Team 302
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
 // to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -22,11 +22,19 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
+#pragma once
 
-#ifndef SRC_MAIN_INCLUDE_COMMON_CONTROLLERS_AXIS_LINEARPROFILE_H_
-#define SRC_MAIN_INCLUDE_COMMON_CONTROLLERS_AXIS_LINEARPROFILE_H_
+// C++ Includes
 
+// FRC includes
+
+// Team 302 includes
 #include <controllers/axis/IProfile.h>
+
+
+// Third Party Includes
+
+
 
 //==================================================================================
 /// <summary>
@@ -68,4 +76,3 @@ class LinearProfile : public IProfile
 
 };
 
-#endif

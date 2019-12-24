@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['validatecanid_297',['ValidateCANID',['../class_hardware_i_d_validation.html#ab6c13f88201571587dc8de99b4937e65',1,'HardwareIDValidation']]],
-  ['validatedioid_298',['ValidateDIOID',['../class_hardware_i_d_validation.html#a703f456923391db2a37e0c1160acc209',1,'HardwareIDValidation']]],
-  ['validateid_299',['ValidateID',['../class_hardware_i_d_validation.html#a404d9c89d42c4a474ce9b7919456ea7d',1,'HardwareIDValidation']]],
-  ['validatepdpid_300',['ValidatePDPID',['../class_hardware_i_d_validation.html#a0aadb44d067609e1df994e06145f5f9f',1,'HardwareIDValidation']]],
-  ['validatesensorusage_301',['ValidateSensorUsage',['../class_usage_validation.html#ac0a093370f028832fc8cef5b253c8857',1,'UsageValidation']]]
+  ['led_1051',['LED',['../class_l_e_d.html#a304f5aebf2fc71c5856cf7f1438b0815',1,'LED::LED(int CANId)'],['../class_l_e_d.html#a779d4c7e6310bb26918747d7ae361f7f',1,'LED::LED()=delete']]],
+  ['leddefn_1052',['LEDDefn',['../class_l_e_d_defn.html#a60c1846e6b4693b740367ebcd734a29b',1,'LEDDefn']]],
+  ['lidardefn_1053',['LidarDefn',['../class_lidar_defn.html#a0c0e3b15e39cd1cfa640666db77f893c',1,'LidarDefn']]],
+  ['logerror_1054',['LogError',['../class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883',1,'Logger']]]
 ];

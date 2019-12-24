@@ -9,7 +9,7 @@
 
 
 //====================================================================================================================================================
-// Copyright 2018 Lake Orion Robotics FIRST Team 302
+// Copyright 2019 Lake Orion Robotics FIRST Team 302
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
 // to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -38,6 +38,12 @@ using namespace std;
 DragonServoFactory* DragonServoFactory::m_instance = nullptr;
 
 
+
+//=======================================================================================
+/// Method: GetInstance
+/// @brief  Get the factory singleton
+/// @return DragonServoFactory*    pointer to the factory
+//=======================================================================================
 DragonServoFactory* DragonServoFactory::GetInstance()
 {
     if ( DragonServoFactory::m_instance == nullptr )

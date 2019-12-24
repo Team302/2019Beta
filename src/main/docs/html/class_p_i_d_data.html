@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team302Robot: PIDData Class Reference</title>
+<title>Team 302 Robot: PIDData Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Team302Robot
+   <div id="projectname">Team 302 Robot
    </div>
   </td>
  </tr>
@@ -93,54 +93,401 @@ $(document).ready(function(){initNavTree('class_p_i_d_data.html','');});
 <div class="title">PIDData Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a29db1db15f557354dde70030054babae"><td class="memItemLeft" align="right" valign="top"><a id="a29db1db15f557354dde70030054babae"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>PID_TARGET</b> { <b>ARM</b>, 
-<b>EXTENDER</b>, 
-<b>GENERAL</b>
+<tr class="memitem:a29db1db15f557354dde70030054babae"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_data.html#a29db1db15f557354dde70030054babae">PID_TARGET</a> { <a class="el" href="class_p_i_d_data.html#a29db1db15f557354dde70030054babaea4b53866602fefbf971f07db4d3ac8d50">ARM</a>, 
+<a class="el" href="class_p_i_d_data.html#a29db1db15f557354dde70030054babaea2d255701fbacb1537999483110fe0465">EXTENDER</a>, 
+<a class="el" href="class_p_i_d_data.html#a29db1db15f557354dde70030054babaea469eef6b072de5ff6b9fcbe600669b93">GENERAL</a>
  }</td></tr>
 <tr class="separator:a29db1db15f557354dde70030054babae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae35bdd9425718baa0d5410ce3ccf9fb4"><td class="memItemLeft" align="right" valign="top"><a id="ae35bdd9425718baa0d5410ce3ccf9fb4"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>CONTROL_MODE</b> { <b>VELOCITY</b>, 
-<b>POSITION</b>, 
-<b>MOTION_MAGIC</b>
+<tr class="memitem:ae35bdd9425718baa0d5410ce3ccf9fb4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_data.html#ae35bdd9425718baa0d5410ce3ccf9fb4">CONTROL_MODE</a> { <a class="el" href="class_p_i_d_data.html#ae35bdd9425718baa0d5410ce3ccf9fb4abfd3f1e9b5123c63e431673366597f54">VELOCITY</a>, 
+<a class="el" href="class_p_i_d_data.html#ae35bdd9425718baa0d5410ce3ccf9fb4a889e6413f7498e5ba4206808b48a13ae">POSITION</a>, 
+<a class="el" href="class_p_i_d_data.html#ae35bdd9425718baa0d5410ce3ccf9fb4af39a2976a5c6d0673a39616edef14435">MOTION_MAGIC</a>
  }</td></tr>
 <tr class="separator:ae35bdd9425718baa0d5410ce3ccf9fb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aeec2338e55a4cfe3783ece754514dc0b"><td class="memItemLeft" align="right" valign="top"><a id="aeec2338e55a4cfe3783ece754514dc0b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>PIDData</b> (CONTROL_MODE mode, PID_TARGET pidTarget, double proportional, double integral, double derivative, double feedforward, double maxAcceleration, double cruiseVelocity)</td></tr>
+<tr class="memitem:aeec2338e55a4cfe3783ece754514dc0b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_data.html#aeec2338e55a4cfe3783ece754514dc0b">PIDData</a> (<a class="el" href="class_p_i_d_data.html#ae35bdd9425718baa0d5410ce3ccf9fb4">CONTROL_MODE</a> mode, <a class="el" href="class_p_i_d_data.html#a29db1db15f557354dde70030054babae">PID_TARGET</a> pidTarget, double proportional, double integral, double derivative, double feedforward, double maxAcceleration, double cruiseVelocity)</td></tr>
 <tr class="separator:aeec2338e55a4cfe3783ece754514dc0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef93da8d36d222686935695be69e26be"><td class="memItemLeft" align="right" valign="top"><a id="aef93da8d36d222686935695be69e26be"></a>
-CONTROL_MODE&#160;</td><td class="memItemRight" valign="bottom"><b>GetMode</b> ()</td></tr>
+<tr class="memitem:a771bfea16806a1f019983ce6c83dbcb4"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_data.html#a771bfea16806a1f019983ce6c83dbcb4">~PIDData</a> ()=default</td></tr>
+<tr class="separator:a771bfea16806a1f019983ce6c83dbcb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef93da8d36d222686935695be69e26be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_p_i_d_data.html#ae35bdd9425718baa0d5410ce3ccf9fb4">CONTROL_MODE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_data.html#aef93da8d36d222686935695be69e26be">GetMode</a> ()</td></tr>
 <tr class="separator:aef93da8d36d222686935695be69e26be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5f8582286800f41886a2178dea270fe"><td class="memItemLeft" align="right" valign="top"><a id="aa5f8582286800f41886a2178dea270fe"></a>
-PID_TARGET&#160;</td><td class="memItemRight" valign="bottom"><b>GetPidTarget</b> ()</td></tr>
+<tr class="memitem:aa5f8582286800f41886a2178dea270fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_p_i_d_data.html#a29db1db15f557354dde70030054babae">PID_TARGET</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_data.html#aa5f8582286800f41886a2178dea270fe">GetPidTarget</a> ()</td></tr>
 <tr class="separator:aa5f8582286800f41886a2178dea270fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50fdf309fdaf35fbb046ae49c232311c"><td class="memItemLeft" align="right" valign="top"><a id="a50fdf309fdaf35fbb046ae49c232311c"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>GetP</b> ()</td></tr>
+<tr class="memitem:a50fdf309fdaf35fbb046ae49c232311c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_data.html#a50fdf309fdaf35fbb046ae49c232311c">GetP</a> ()</td></tr>
 <tr class="separator:a50fdf309fdaf35fbb046ae49c232311c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a477d3fb4ffd9ef6e73867398a627338f"><td class="memItemLeft" align="right" valign="top"><a id="a477d3fb4ffd9ef6e73867398a627338f"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>GetI</b> ()</td></tr>
+<tr class="memitem:a477d3fb4ffd9ef6e73867398a627338f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_data.html#a477d3fb4ffd9ef6e73867398a627338f">GetI</a> ()</td></tr>
 <tr class="separator:a477d3fb4ffd9ef6e73867398a627338f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32fbc7acad89ab1066a275e273b04548"><td class="memItemLeft" align="right" valign="top"><a id="a32fbc7acad89ab1066a275e273b04548"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>GetD</b> ()</td></tr>
+<tr class="memitem:a32fbc7acad89ab1066a275e273b04548"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_data.html#a32fbc7acad89ab1066a275e273b04548">GetD</a> ()</td></tr>
 <tr class="separator:a32fbc7acad89ab1066a275e273b04548"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41021f9ceea36896e12186e0b78a1d93"><td class="memItemLeft" align="right" valign="top"><a id="a41021f9ceea36896e12186e0b78a1d93"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>GetF</b> ()</td></tr>
+<tr class="memitem:a41021f9ceea36896e12186e0b78a1d93"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_data.html#a41021f9ceea36896e12186e0b78a1d93">GetF</a> ()</td></tr>
 <tr class="separator:a41021f9ceea36896e12186e0b78a1d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad15d0ec592ebb30d5f9e98b576dd0f93"><td class="memItemLeft" align="right" valign="top"><a id="ad15d0ec592ebb30d5f9e98b576dd0f93"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>GetMaxAcceleration</b> ()</td></tr>
+<tr class="memitem:ad15d0ec592ebb30d5f9e98b576dd0f93"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_data.html#ad15d0ec592ebb30d5f9e98b576dd0f93">GetMaxAcceleration</a> ()</td></tr>
 <tr class="separator:ad15d0ec592ebb30d5f9e98b576dd0f93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a543b16fd966779bd06e65ad58741b2e0"><td class="memItemLeft" align="right" valign="top"><a id="a543b16fd966779bd06e65ad58741b2e0"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>GetCruiseVelocity</b> ()</td></tr>
+<tr class="memitem:a543b16fd966779bd06e65ad58741b2e0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_data.html#a543b16fd966779bd06e65ad58741b2e0">GetCruiseVelocity</a> ()</td></tr>
 <tr class="separator:a543b16fd966779bd06e65ad58741b2e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00018">18</a> of file <a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="ae35bdd9425718baa0d5410ce3ccf9fb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae35bdd9425718baa0d5410ce3ccf9fb4">&#9670;&nbsp;</a></span>CONTROL_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_p_i_d_data.html#ae35bdd9425718baa0d5410ce3ccf9fb4">PIDData::CONTROL_MODE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ae35bdd9425718baa0d5410ce3ccf9fb4abfd3f1e9b5123c63e431673366597f54"></a>VELOCITY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae35bdd9425718baa0d5410ce3ccf9fb4a889e6413f7498e5ba4206808b48a13ae"></a>POSITION&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae35bdd9425718baa0d5410ce3ccf9fb4af39a2976a5c6d0673a39616edef14435"></a>MOTION_MAGIC&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00028">28</a> of file <a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a>.</p>
+
+</div>
+</div>
+<a id="a29db1db15f557354dde70030054babae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29db1db15f557354dde70030054babae">&#9670;&nbsp;</a></span>PID_TARGET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_p_i_d_data.html#a29db1db15f557354dde70030054babae">PIDData::PID_TARGET</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a29db1db15f557354dde70030054babaea4b53866602fefbf971f07db4d3ac8d50"></a>ARM&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a29db1db15f557354dde70030054babaea2d255701fbacb1537999483110fe0465"></a>EXTENDER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a29db1db15f557354dde70030054babaea469eef6b072de5ff6b9fcbe600669b93"></a>GENERAL&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00021">21</a> of file <a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aeec2338e55a4cfe3783ece754514dc0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeec2338e55a4cfe3783ece754514dc0b">&#9670;&nbsp;</a></span>PIDData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PIDData::PIDData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_p_i_d_data.html#ae35bdd9425718baa0d5410ce3ccf9fb4">CONTROL_MODE</a>&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_p_i_d_data.html#a29db1db15f557354dde70030054babae">PID_TARGET</a>&#160;</td>
+          <td class="paramname"><em>pidTarget</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>proportional</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>integral</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>derivative</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>feedforward</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>maxAcceleration</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>cruiseVelocity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8cpp_source.html#l00018">18</a> of file <a class="el" href="_p_i_d_data_8cpp_source.html">PIDData.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a771bfea16806a1f019983ce6c83dbcb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a771bfea16806a1f019983ce6c83dbcb4">&#9670;&nbsp;</a></span>~PIDData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual PIDData::~PIDData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a543b16fd966779bd06e65ad58741b2e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a543b16fd966779bd06e65ad58741b2e0">&#9670;&nbsp;</a></span>GetCruiseVelocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PIDData::GetCruiseVelocity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00057">57</a> of file <a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a>.</p>
+
+</div>
+</div>
+<a id="a32fbc7acad89ab1066a275e273b04548"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32fbc7acad89ab1066a275e273b04548">&#9670;&nbsp;</a></span>GetD()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PIDData::GetD </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00054">54</a> of file <a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a>.</p>
+
+</div>
+</div>
+<a id="a41021f9ceea36896e12186e0b78a1d93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41021f9ceea36896e12186e0b78a1d93">&#9670;&nbsp;</a></span>GetF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PIDData::GetF </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00055">55</a> of file <a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a>.</p>
+
+</div>
+</div>
+<a id="a477d3fb4ffd9ef6e73867398a627338f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a477d3fb4ffd9ef6e73867398a627338f">&#9670;&nbsp;</a></span>GetI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PIDData::GetI </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00053">53</a> of file <a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a>.</p>
+
+</div>
+</div>
+<a id="ad15d0ec592ebb30d5f9e98b576dd0f93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad15d0ec592ebb30d5f9e98b576dd0f93">&#9670;&nbsp;</a></span>GetMaxAcceleration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PIDData::GetMaxAcceleration </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00056">56</a> of file <a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a>.</p>
+
+</div>
+</div>
+<a id="aef93da8d36d222686935695be69e26be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef93da8d36d222686935695be69e26be">&#9670;&nbsp;</a></span>GetMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_p_i_d_data.html#ae35bdd9425718baa0d5410ce3ccf9fb4">CONTROL_MODE</a> PIDData::GetMode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00050">50</a> of file <a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a>.</p>
+
+</div>
+</div>
+<a id="a50fdf309fdaf35fbb046ae49c232311c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50fdf309fdaf35fbb046ae49c232311c">&#9670;&nbsp;</a></span>GetP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PIDData::GetP </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00052">52</a> of file <a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a>.</p>
+
+</div>
+</div>
+<a id="aa5f8582286800f41886a2178dea270fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5f8582286800f41886a2178dea270fe">&#9670;&nbsp;</a></span>GetPidTarget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_p_i_d_data.html#a29db1db15f557354dde70030054babae">PID_TARGET</a> PIDData::GetPidTarget </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00051">51</a> of file <a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/GitKrakenRepos/TemplateRepository/src/main/cpp/xmlcontrol/<a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a></li>
 <li>C:/GitKrakenRepos/TemplateRepository/src/main/cpp/xmlcontrol/<a class="el" href="_p_i_d_data_8cpp_source.html">PIDData.cpp</a></li>
 </ul>

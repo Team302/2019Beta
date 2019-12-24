@@ -22,30 +22,38 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "Team302Robot", "index.html", [
+  [ "Team 302 Robot", "index.html", [
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ],
+        [ "All", "functions.html", "functions_dup" ],
+        [ "Functions", "functions_func.html", "functions_func" ],
+        [ "Variables", "functions_vars.html", null ],
         [ "Enumerations", "functions_enum.html", null ],
-        [ "Enumerator", "functions_eval.html", null ]
+        [ "Enumerator", "functions_eval.html", "functions_eval" ]
       ] ]
     ] ],
     [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ]
+      [ "File List", "files.html", "files_dup" ],
+      [ "File Members", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
+        [ "Macros", "globals_defs.html", null ]
+      ] ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"_analog_axis_8cpp_source.html",
-"class_dragon_lidar.html#a0b7ff9670fdb521c38f85216c30a98b6",
-"class_i_dragon_game_pad.html#a0397960782662f2d55df39297128a33ca44cf8456f7b9ba857469e7b8ea80a7de",
-"class_mechanism_parameters.html#a33645fbdee2537b07f48e371662ab14ea4befafb9074da3a1c699914b590ba66a"
+"_analog_axis_8cpp.html",
+"_p_i_d_defn_8cpp.html",
+"class_dragon_solenoid.html#acfbd54215804e0243bd41112e3abbb4a",
+"class_i_dragon_motor_controller.html#a415dd62a73858b39684ae727260fa4b5",
+"class_robot_defn.html#a012b3ca323baaf3090066173d7f91ae5"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

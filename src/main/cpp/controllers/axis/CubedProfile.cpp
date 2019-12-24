@@ -1,14 +1,7 @@
 
-/*========================================================================================================
- * CubedProfile.cpp
- *========================================================================================================
- *
- * File Description:  This applies a cubic profile to the input values.
- *
- *========================================================================================================*/
 
 //====================================================================================================================================================
-// Copyright 2018 Lake Orion Robotics FIRST Team 302
+// Copyright 2019 Lake Orion Robotics FIRST Team 302
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
 // to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -22,15 +15,27 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
+//========================================================================================================
+/// @class CubedProfile
+/// @brief This applies a cubic profile to the input values.
+//========================================================================================================
+
+// C++ Includes
+#include <cmath>
+
+// FRC includes
+
+// Team 302 includes
 #include <controllers/axis/CubedProfile.h>
 
+// Third Party Includes
+
+
+using namespace std;
     
 //==================================================================================
-/// <summary>
-/// Method:         GetInstance
-/// Description:    Static singleton method to create the object
-/// Returns:        CubedProfile*  Singleton cubed profile object
-/// </summary>
+/// @brief    Static singleton method to create the object
+/// @return   CubedProfile*  Singleton cubed profile object
 //==================================================================================
 CubedProfile* CubedProfile::m_instance = nullptr;
 CubedProfile* CubedProfile::GetInstance()
@@ -44,15 +49,14 @@ CubedProfile* CubedProfile::GetInstance()
 
 
 //==================================================================================
-/// <summary>
-/// Method:         ApplyProfile
-/// Description:    Apply the profile
-/// </summary>
+/// @brief    Apply the profile
+/// @param [in] value that needs the profile (scaling) applied
+/// @return double profiled (scaled) value
 //==================================================================================
 double CubedProfile::ApplyProfile
 (
     double      inputVal            // <I> - value to apply profile to
 ) const 
 {
-    return ( inputVal * inputVal * inputVal );  // chose to be explicit instead of using the general pow function as this should be faster
+    return pow( inputVal, 3.0 );
 }

@@ -1,13 +1,4 @@
 
-/*========================================================================================================
- * DragonServoFactory.h
- *========================================================================================================
- *
- * File Description:  Create DragonServos and allow external clients to retrieve created DragonServos
- *
- *========================================================================================================*/
-
-
 //====================================================================================================================================================
 // Copyright 2010 Lake Orion Robotics FIRST Team 302
 //
@@ -26,14 +17,33 @@
 
 #pragma once
 
+// C++ Includes
 #include <map>
 #include <memory>
 
+// FRC includes
+
+// Team 302 includes
 #include <hw/DragonServo.h>
 
+// Third Party Includes
+
+
+
+
+//========================================================================================================
+/// @class DragonServoFactory
+/// @brief Create DragonServos and allow external clients to retrieve created DragonServos
+//========================================================================================================
 class DragonServoFactory
 {
     public:
+
+        //=======================================================================================
+        /// Method: GetInstance
+        /// @brief  Get the factory singleton
+        /// @return DragonServoFactory*    pointer to the factory
+        //=======================================================================================
         static DragonServoFactory* GetInstance();
 
         //=======================================================================================
@@ -69,7 +79,6 @@ class DragonServoFactory
     private:
         DragonServoFactory() = default;
         ~DragonServoFactory() = default;
-
 
         static DragonServoFactory*        m_instance;
 

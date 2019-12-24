@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team302Robot: DragonServoFactory Class Reference</title>
+<title>Team 302 Robot: DragonServoFactory Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Team302Robot
+   <div id="projectname">Team 302 Robot
    </div>
   </td>
  </tr>
@@ -93,25 +93,31 @@ $(document).ready(function(){initNavTree('class_dragon_servo_factory.html','');}
 <div class="title">DragonServoFactory Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Create DragonServos and allow external clients to retrieve created DragonServos.  
+ <a href="class_dragon_servo_factory.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_dragon_servo_factory_8h_source.html">DragonServoFactory.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8f7c0fa98b6862288c6074f428e3aa30"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_dragon_servo.html">DragonServo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_servo_factory.html#a8f7c0fa98b6862288c6074f428e3aa30">CreateDragonServo</a> (DragonServo::SERVO_USAGE deviceUsage, int deviceID, double minAngle, double maxAngle)</td></tr>
+<tr class="memitem:a8f7c0fa98b6862288c6074f428e3aa30"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_dragon_servo.html">DragonServo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_servo_factory.html#a8f7c0fa98b6862288c6074f428e3aa30">CreateDragonServo</a> (<a class="el" href="class_dragon_servo.html#acde1c9ebb88a9989bbd7412bd66d7fec">DragonServo::SERVO_USAGE</a> deviceUsage, int deviceID, double minAngle, double maxAngle)</td></tr>
 <tr class="memdesc:a8f7c0fa98b6862288c6074f428e3aa30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="class_dragon_servo.html">DragonServo</a> from the inputs.  <a href="class_dragon_servo_factory.html#a8f7c0fa98b6862288c6074f428e3aa30">More...</a><br /></td></tr>
 <tr class="separator:a8f7c0fa98b6862288c6074f428e3aa30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c23088e5f17bf7d2985b9a5dd4582d2"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_dragon_servo.html">DragonServo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_servo_factory.html#a1c23088e5f17bf7d2985b9a5dd4582d2">CreateDragonServo</a> (DragonServo::SERVO_USAGE deviceUsage)</td></tr>
+<tr class="memitem:a1c23088e5f17bf7d2985b9a5dd4582d2"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_dragon_servo.html">DragonServo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_servo_factory.html#a1c23088e5f17bf7d2985b9a5dd4582d2">CreateDragonServo</a> (<a class="el" href="class_dragon_servo.html#acde1c9ebb88a9989bbd7412bd66d7fec">DragonServo::SERVO_USAGE</a> deviceUsage)</td></tr>
 <tr class="memdesc:a1c23088e5f17bf7d2985b9a5dd4582d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a <a class="el" href="class_dragon_servo.html">DragonServo</a> from its usage.  <a href="class_dragon_servo_factory.html#a1c23088e5f17bf7d2985b9a5dd4582d2">More...</a><br /></td></tr>
 <tr class="separator:a1c23088e5f17bf7d2985b9a5dd4582d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:afd98776232036353a6604f147fbd4f89"><td class="memItemLeft" align="right" valign="top"><a id="afd98776232036353a6604f147fbd4f89"></a>
-static <a class="el" href="class_dragon_servo_factory.html">DragonServoFactory</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetInstance</b> ()</td></tr>
+<tr class="memitem:afd98776232036353a6604f147fbd4f89"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_dragon_servo_factory.html">DragonServoFactory</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_servo_factory.html#afd98776232036353a6604f147fbd4f89">GetInstance</a> ()</td></tr>
+<tr class="memdesc:afd98776232036353a6604f147fbd4f89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the factory singleton.  <a href="class_dragon_servo_factory.html#afd98776232036353a6604f147fbd4f89">More...</a><br /></td></tr>
 <tr class="separator:afd98776232036353a6604f147fbd4f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_dragon_servo_factory_8h_source.html#l00034">34</a> of file <a class="el" href="_dragon_servo_factory_8h_source.html">DragonServoFactory.h</a>.</p>
+<div class="textblock"><p>Create DragonServos and allow external clients to retrieve created DragonServos. </p>
+
+<p class="definition">Definition at line <a class="el" href="_dragon_servo_factory_8h_source.html#l00038">38</a> of file <a class="el" href="_dragon_servo_factory_8h_source.html">DragonServoFactory.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a1c23088e5f17bf7d2985b9a5dd4582d2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1c23088e5f17bf7d2985b9a5dd4582d2">&#9670;&nbsp;</a></span>CreateDragonServo() <span class="overload">[1/2]</span></h2>
@@ -122,7 +128,7 @@ static <a class="el" href="class_dragon_servo_factory.html">DragonServoFactory</
         <tr>
           <td class="memname">shared_ptr&lt; <a class="el" href="class_dragon_servo.html">DragonServo</a> &gt; DragonServoFactory::CreateDragonServo </td>
           <td>(</td>
-          <td class="paramtype">DragonServo::SERVO_USAGE&#160;</td>
+          <td class="paramtype"><a class="el" href="class_dragon_servo.html#acde1c9ebb88a9989bbd7412bd66d7fec">DragonServo::SERVO_USAGE</a>&#160;</td>
           <td class="paramname"><em>deviceUsage</em></td><td>)</td>
           <td></td>
         </tr>
@@ -132,13 +138,13 @@ static <a class="el" href="class_dragon_servo_factory.html">DragonServoFactory</
 <p>Get a <a class="el" href="class_dragon_servo.html">DragonServo</a> from its usage. </p>
 <p>Method: GetDragonServo </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">DragonServo::SERVO_USAGE</td><td>deviceUsage Usage of the servo </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="class_dragon_servo.html#acde1c9ebb88a9989bbd7412bd66d7fec">DragonServo::SERVO_USAGE</a></td><td>deviceUsage Usage of the servo </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::shared_ptr&lt;DragonServo&gt; - could be nullptr if invalid inputs are supplied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_dragon_servo_factory_8cpp_source.html#l00111">111</a> of file <a class="el" href="_dragon_servo_factory_8cpp_source.html">DragonServoFactory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_servo_factory_8cpp_source.html#l00117">117</a> of file <a class="el" href="_dragon_servo_factory_8cpp_source.html">DragonServoFactory.cpp</a>.</p>
 
 </div>
 </div>
@@ -151,7 +157,7 @@ static <a class="el" href="class_dragon_servo_factory.html">DragonServoFactory</
         <tr>
           <td class="memname">shared_ptr&lt; <a class="el" href="class_dragon_servo.html">DragonServo</a> &gt; DragonServoFactory::CreateDragonServo </td>
           <td>(</td>
-          <td class="paramtype">DragonServo::SERVO_USAGE&#160;</td>
+          <td class="paramtype"><a class="el" href="class_dragon_servo.html#acde1c9ebb88a9989bbd7412bd66d7fec">DragonServo::SERVO_USAGE</a>&#160;</td>
           <td class="paramname"><em>deviceUsage</em>, </td>
         </tr>
         <tr>
@@ -183,7 +189,7 @@ static <a class="el" href="class_dragon_servo_factory.html">DragonServoFactory</
 <p>Create a <a class="el" href="class_dragon_servo.html">DragonServo</a> from the inputs. </p>
 <p>Method: CreateDragonServo </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">DragonServo::SERVO_USAGE</td><td>deviceUsage Usage of the servo </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="class_dragon_servo.html#acde1c9ebb88a9989bbd7412bd66d7fec">DragonServo::SERVO_USAGE</a></td><td>deviceUsage Usage of the servo </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">int</td><td>deviceID PWM ID of the servo </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">double</td><td>minAngle Minimum Angle for the servo </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">double</td><td>maxAngle Maximum Angle for the servo </td></tr>
@@ -192,7 +198,37 @@ static <a class="el" href="class_dragon_servo_factory.html">DragonServoFactory</
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::shared_ptr&lt;DragonServo&gt; - could be nullptr if invalid inputs are supplied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_dragon_servo_factory_8cpp_source.html#l00062">62</a> of file <a class="el" href="_dragon_servo_factory_8cpp_source.html">DragonServoFactory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_servo_factory_8cpp_source.html#l00068">68</a> of file <a class="el" href="_dragon_servo_factory_8cpp_source.html">DragonServoFactory.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afd98776232036353a6604f147fbd4f89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd98776232036353a6604f147fbd4f89">&#9670;&nbsp;</a></span>GetInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_dragon_servo_factory.html">DragonServoFactory</a> * DragonServoFactory::GetInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the factory singleton. </p>
+<p>Method: GetInstance </p><dl class="section return"><dt>Returns</dt><dd>DragonServoFactory* pointer to the factory </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_dragon_servo_factory_8cpp_source.html#l00047">47</a> of file <a class="el" href="_dragon_servo_factory_8cpp_source.html">DragonServoFactory.cpp</a>.</p>
 
 </div>
 </div>

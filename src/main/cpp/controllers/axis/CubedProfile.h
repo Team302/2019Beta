@@ -1,14 +1,7 @@
 
-/*========================================================================================================
- * CubedProfile.h
- *========================================================================================================
- *
- * File Description:  This applies a cubic profile to the input values.
- *
- *========================================================================================================*/
 
 //====================================================================================================================================================
-// Copyright 2018 Lake Orion Robotics FIRST Team 302
+// Copyright 2019 Lake Orion Robotics FIRST Team 302
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
 // to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -22,41 +15,42 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
+#pragma once
 
-#ifndef SRC_MAIN_INCLUDE_COMMON_CONTROLLERS_AXIS_CUBEDPROFILE_H_
-#define SRC_MAIN_INCLUDE_COMMON_CONTROLLERS_AXIS_CUBEDPROFILE_H_
+// C++ Includes
 
+// FRC includes
+
+// Team 302 includes
 #include <controllers/axis/IProfile.h>
 
-//==================================================================================
-/// <summary>
-/// Class:          CubedProfile
-/// Description:    This provides profile to be applied to input values.
-/// </summary>
-//==================================================================================
+
+// Third Party Includes
+
+
+//========================================================================================================
+/// @class CubedProfile
+/// @brief This applies a cubic profile to the input values.
+//========================================================================================================
 class CubedProfile : public IProfile
 {
     public:
 
         //==================================================================================
-        /// <summary>
-        /// Method:         GetInstance
-        /// Description:    Static singleton method to create the object
-        /// Returns:        CubedProfile*  Singleton cubed profile object
-        /// </summary>
+        /// @brief  Static singleton method to create the object
+        /// @return CubedProfile*  Singleton cubed profile object
         //==================================================================================
         static CubedProfile* GetInstance();
 
 
         //==================================================================================
-        /// <summary>
-        /// Method:         ApplyProfile
-        /// Description:    Apply the profile
-        /// </summary>
+        /// @brief:    Apply the profile
+        /// @param  double inputVal - value to be scaled (have profile applied to)
+        /// @return double - scaled value
         //==================================================================================
         double ApplyProfile
         (
-            double      inputVal            // <I> - value to apply profile to
+            double      inputVal            
         ) const override;
 
     private:
@@ -67,4 +61,3 @@ class CubedProfile : public IProfile
 
 };
 
-#endif

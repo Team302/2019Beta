@@ -1,16 +1,6 @@
 
-/*========================================================================================================
- * DeadbandValue.h
- *========================================================================================================
- *
- * File Description:  Removes deadband from a input value, so small values are treated as 0.0.  This can
- *                    be useful to eliminate hardware noise as well as inadvertent movement of the analog
- *                    input.
- *
- *========================================================================================================*/
-
 //====================================================================================================================================================
-// Copyright 2018 Lake Orion Robotics FIRST Team 302
+// Copyright 2019 Lake Orion Robotics FIRST Team 302
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), 
 // to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
@@ -24,55 +14,78 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-#ifndef SRC_MAIN_INCLUDE_CONTROLLER_AXIS_ANALOGAXIS_H_
-#define SRC_MAIN_INCLUDE_CONTROLLER_AXIS_ANALOGAXIS_H_
+#pragma once
 
+// C++ Includes
+
+
+// FRC includes
 #include <frc/GenericHID.h>
 
+// Team 302 includes
 #include <controllers/IDragonGamePad.h>
 #include <controllers/axis/IProfile.h>
 #include <controllers/axis/IDeadband.h>
 #include <controllers/axis/ScaledAxis.h>
 
+// Third Party Includes
+
+
+
 //==================================================================================
-/// <summary>
-/// Class:          AnalogAxis
-/// Description:    This class handles the analog inputs on a gamepad
-/// </summary>
+/// @class  AnalogAxis
+/// @brief  This class handles the analog inputs on a gamepad
 //==================================================================================
 class AnalogAxis
 {
     public:
+        //=========================================================================================
+        /// @brief  construct the AnalogAxis object
+        /// @param [in] frc::GenericHID* gamepad - gamepad to query
+        /// @param [in] int axisID - id this axis maps to
+        /// @param [in] bool flipped - true the axis is reversed from what is expected, false the axis 
+        ///         has the expected direction.
+        //=========================================================================================
         AnalogAxis
         (
-            frc::GenericHID*                    gamepad,        // <I> - gamepad to query
-            int                                 axisID,         // <I> - axis ID this maps to
-            bool                                flipped         // <I> - true axis is reversed from what is expected, 
-        );                                                      //       false axis has the expected direction
+            frc::GenericHID*                    gamepad,        
+            int                                 axisID,         
+            bool                                flipped          
+        );                                                      
 
 
 
-        //==================================================================================
-        /// <summary>
-        /// Method:         GetAxisValue
-        /// Description:    Read the analog (axis) value and return it.  If the gamepad
-        ///                 has an issue, return 0.0.
-        /// </summary>
-        //==================================================================================
+        //================================================================================================
+        /// @brief  Read the analog (axis) value and return it.  If the gamepad has an issue, return 0.0.
+        //================================================================================================
         double GetAxisValue();
 
+        //================================================================================================
+        /// @brief  Set the deadband type
+        /// @param  IDragonGamePad::AXIS_DEADBAND type - deadband option
+        /// @return void
+        //================================================================================================
         void SetDeadBand
         (
-            IDragonGamePad::AXIS_DEADBAND   type            /// <I> - deadband option
+            IDragonGamePad::AXIS_DEADBAND   type            
         );
 
-
+        //================================================================================================
+        /// @brief  Set the axis profile (cubed, linear, etc.)
+        /// @param  IDragonGamePad::AXIS_PROFILE profile - profile option
+        /// @return void
+        //================================================================================================
         void SetAxisProfile
         (
-            IDragonGamePad::AXIS_PROFILE    profile         /// <I> - axis profile
+            IDragonGamePad::AXIS_PROFILE    profile         
         );
 
 
+        //================================================================================================
+        /// @brief  Set the axis scale factor (default is 1.0) 
+        /// @param  double scale - value greater than 0.0
+        /// @return void
+        //================================================================================================        
         void SetAxisScaleFactor
         (
            double scale                     /// <I> - sacle factor
@@ -82,12 +95,9 @@ class AnalogAxis
     protected:
        
         //==================================================================================
-        /// <summary>
-        /// Method:         GetRawValue
-        /// Description:    Returns the analog input's raw value.
-        ///                 If there is a connection problem, 0.0 will be returned and 
-        ///                 a debug message will be written.
-        /// </summary>
+        /// @brief  Returns the analog input's raw value. If there is a connection problem, 
+        ///         0.0 will be returned and a debug message will be written.
+        /// @return double - raw axis value 
         //==================================================================================
         virtual double GetRawValue();
  
@@ -99,5 +109,3 @@ class AnalogAxis
         IDeadband*                          m_deadband;
         ScaledAxis*                         m_scale;
 };
-
-#endif

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team302Robot: C:/GitKrakenRepos/TemplateRepository/src/main/cpp/xmlhw/MechanismDefn.cpp Source File</title>
+<title>Team 302 Robot: C:/GitKrakenRepos/TemplateRepository/src/main/cpp/xmlhw/MechanismDefn.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Team302Robot
+   <div id="projectname">Team 302 Robot
    </div>
   </td>
  </tr>
@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('_mechanism_defn_8cpp_source.html','');
 <div class="title">MechanismDefn.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<a href="_mechanism_defn_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"></span><span class="comment">//====================================================================================================================================================</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
@@ -107,20 +107,20 @@ $(document).ready(function(){initNavTree('_mechanism_defn_8cpp_source.html','');
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;frc/SmartDashboard/SmartDashboard.h&gt;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// Team 302 includes</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;subsys/MechanismFactory.h&gt;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;subsys/IMechanism.h&gt;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mechanism_factory_8h.html">subsys/MechanismFactory.h</a>&gt;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_mechanism_8h.html">subsys/IMechanism.h</a>&gt;</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;xmlhw/AnalogInputDefn.h&gt;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;xmlhw/DigitalInputDefn.h&gt;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;xmlhw/MotorDefn.h&gt;</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &lt;xmlhw/ServoDefn.h&gt;</span> </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_analog_input_defn_8h.html">xmlhw/AnalogInputDefn.h</a>&gt;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_digital_input_defn_8h.html">xmlhw/DigitalInputDefn.h</a>&gt;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_motor_defn_8h.html">xmlhw/MotorDefn.h</a>&gt;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_servo_defn_8h.html">xmlhw/ServoDefn.h</a>&gt;</span> </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &lt;subsys/IMechanism.h&gt;</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &lt;subsys/MechanismTypes.h&gt;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_mechanism_8h.html">subsys/IMechanism.h</a>&gt;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mechanism_types_8h.html">subsys/MechanismTypes.h</a>&gt;</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &lt;utils/Logger.h&gt;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_logger_8h.html">utils/Logger.h</a>&gt;</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#include &lt;xmlhw/MechanismDefn.h&gt;</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mechanism_defn_8h.html">xmlhw/MechanismDefn.h</a>&gt;</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">// Third Party Includes</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#include &lt;pugixml/pugixml.hpp&gt;</span></div>
@@ -139,7 +139,7 @@ $(document).ready(function(){initNavTree('_mechanism_defn_8cpp_source.html','');
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    shared_ptr&lt;IMechanism&gt; mech = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// initialize attributes</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284b">MechanismTypes::MECHANISM_TYPE</a> type = MechanismTypes::UNKNOWN_MECHANISM;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284b">MechanismTypes::MECHANISM_TYPE</a> type = <a class="code" href="class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284baf47163443d641a45c8ec02e3af24e0de">MechanismTypes::UNKNOWN_MECHANISM</a>;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">bool</span> hasError       = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
@@ -196,7 +196,7 @@ $(document).ready(function(){initNavTree('_mechanism_defn_8cpp_source.html','');
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            {</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                    <span class="keywordtype">string</span> msg = <span class="stringliteral">&quot;unknown Mechanism type &quot;</span>;</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                    msg += attr.value();</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                    <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;LogError( <span class="stringliteral">&quot;MechanismDefn::ParseXML&quot;</span>, msg );</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                    <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="stringliteral">&quot;MechanismDefn::ParseXML&quot;</span>, msg );</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                    hasError = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            }</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        }</div>
@@ -204,7 +204,7 @@ $(document).ready(function(){initNavTree('_mechanism_defn_8cpp_source.html','');
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        {</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="keywordtype">string</span> msg = <span class="stringliteral">&quot;invalid attribute &quot;</span>;</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            msg += attr.name();</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;LogError( <span class="stringliteral">&quot;MechanismDefn::ParseXML&quot;</span>, msg );</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="stringliteral">&quot;MechanismDefn::ParseXML&quot;</span>, msg );</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            hasError = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        }</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    }</div>
@@ -225,7 +225,7 @@ $(document).ready(function(){initNavTree('_mechanism_defn_8cpp_source.html','');
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            }</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;LogError( <span class="stringliteral">&quot;MechanismDefn&quot;</span>, <span class="stringliteral">&quot;unable to create MotorDefn&quot;</span> );</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="stringliteral">&quot;MechanismDefn&quot;</span>, <span class="stringliteral">&quot;unable to create MotorDefn&quot;</span> );</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            }</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        }</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( child.name(), <span class="stringliteral">&quot;analogInput&quot;</span>) == 0 )</div>
@@ -241,7 +241,7 @@ $(document).ready(function(){initNavTree('_mechanism_defn_8cpp_source.html','');
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            }</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            {</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;LogError( <span class="stringliteral">&quot;MechanismDefn&quot;</span>, <span class="stringliteral">&quot;unable to create AnalogInputDefn&quot;</span> );</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="stringliteral">&quot;MechanismDefn&quot;</span>, <span class="stringliteral">&quot;unable to create AnalogInputDefn&quot;</span> );</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            }</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        }</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( child.name(), <span class="stringliteral">&quot;digitalInput&quot;</span>) == 0 )</div>
@@ -257,7 +257,7 @@ $(document).ready(function(){initNavTree('_mechanism_defn_8cpp_source.html','');
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            }</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;LogError( <span class="stringliteral">&quot;MechanismDefn&quot;</span>, <span class="stringliteral">&quot;unable to create DigitalInputDefn&quot;</span> );</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="stringliteral">&quot;MechanismDefn&quot;</span>, <span class="stringliteral">&quot;unable to create DigitalInputDefn&quot;</span> );</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            }</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        }</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( child.name(), <span class="stringliteral">&quot;servo&quot;</span>) == 0 )</div>
@@ -273,7 +273,7 @@ $(document).ready(function(){initNavTree('_mechanism_defn_8cpp_source.html','');
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            }</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            {</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;LogError( <span class="stringliteral">&quot;MechanismDefn&quot;</span>, <span class="stringliteral">&quot;unable to create ServoDefn&quot;</span> );</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="stringliteral">&quot;MechanismDefn&quot;</span>, <span class="stringliteral">&quot;unable to create ServoDefn&quot;</span> );</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            }</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        }</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <span class="keywordflow">else</span></div>
@@ -286,7 +286,7 @@ $(document).ready(function(){initNavTree('_mechanism_defn_8cpp_source.html','');
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="comment">// create instance</span></div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordflow">if</span> ( !hasError )</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    {</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <a class="code" href="class_mechanism_factory.html">MechanismFactory</a>* factory =  MechanismFactory::GetMechanismFactory();</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <a class="code" href="class_mechanism_factory.html">MechanismFactory</a>* factory =  <a class="code" href="class_mechanism_factory.html#a11b20a573ca93c56cb5da66ac5cbd2c0">MechanismFactory::GetMechanismFactory</a>();</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        mech = factory-&gt;<a class="code" href="class_mechanism_factory.html#a6c925dfe643be04b59162230aefce079">GetIMechanism</a>( type );</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    }</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
@@ -294,15 +294,27 @@ $(document).ready(function(){initNavTree('_mechanism_defn_8cpp_source.html','');
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclass_mechanism_types_html_adad17689ea795c3d65e2062bdc09284baf47163443d641a45c8ec02e3af24e0de"><div class="ttname"><a href="class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284baf47163443d641a45c8ec02e3af24e0de">MechanismTypes::UNKNOWN_MECHANISM</a></div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_types_8h_source.html#l00033">MechanismTypes.h:33</a></div></div>
+<div class="ttc" id="a_mechanism_defn_8h_html"><div class="ttname"><a href="_mechanism_defn_8h.html">MechanismDefn.h</a></div></div>
+<div class="ttc" id="a_i_mechanism_8h_html"><div class="ttname"><a href="_i_mechanism_8h.html">IMechanism.h</a></div></div>
+<div class="ttc" id="a_mechanism_factory_8h_html"><div class="ttname"><a href="_mechanism_factory_8h.html">MechanismFactory.h</a></div></div>
 <div class="ttc" id="aclass_mechanism_defn_html_a8703161fed5750425d55391d5e4b1e78"><div class="ttname"><a href="class_mechanism_defn.html#a8703161fed5750425d55391d5e4b1e78">MechanismDefn::ParseXML</a></div><div class="ttdeci">std::shared_ptr&lt; IMechanism &gt; ParseXML(pugi::xml_node mechanismNode)</div><div class="ttdoc">Parse the mechanism element (and it children). When this is done the mechanism exists that can be ret...</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_defn_8cpp_source.html#l00072">MechanismDefn.cpp:72</a></div></div>
+<div class="ttc" id="a_logger_8h_html"><div class="ttname"><a href="_logger_8h.html">Logger.h</a></div></div>
 <div class="ttc" id="aclass_mechanism_factory_html"><div class="ttname"><a href="class_mechanism_factory.html">MechanismFactory</a></div><div class="ttdoc">MechanismFactory.h.</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_factory_8h_source.html#l00041">MechanismFactory.h:41</a></div></div>
 <div class="ttc" id="aclass_mechanism_types_html_adad17689ea795c3d65e2062bdc09284b"><div class="ttname"><a href="class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284b">MechanismTypes::MECHANISM_TYPE</a></div><div class="ttdeci">MECHANISM_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_types_8h_source.html#l00031">MechanismTypes.h:31</a></div></div>
+<div class="ttc" id="a_analog_input_defn_8h_html"><div class="ttname"><a href="_analog_input_defn_8h.html">AnalogInputDefn.h</a></div></div>
 <div class="ttc" id="aclass_mechanism_factory_html_a6c925dfe643be04b59162230aefce079"><div class="ttname"><a href="class_mechanism_factory.html#a6c925dfe643be04b59162230aefce079">MechanismFactory::GetIMechanism</a></div><div class="ttdeci">std::shared_ptr&lt; IMechanism &gt; GetIMechanism(MechanismTypes::MECHANISM_TYPE type)</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_factory_8cpp_source.html#l00065">MechanismFactory.cpp:65</a></div></div>
+<div class="ttc" id="aclass_logger_html_a98d7aec19dcdfb9d8faa46d83d927883"><div class="ttname"><a href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">Logger::LogError</a></div><div class="ttdeci">void LogError(const std::string &amp;locationIdentifier, const std::string &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00071">Logger.cpp:71</a></div></div>
 <div class="ttc" id="aclass_logger_html_ae85cfbef8b7e6940475a5012fa1935c6"><div class="ttname"><a href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a></div><div class="ttdeci">static Logger * GetLogger()</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00052">Logger.cpp:52</a></div></div>
+<div class="ttc" id="a_servo_defn_8h_html"><div class="ttname"><a href="_servo_defn_8h.html">ServoDefn.h</a></div></div>
+<div class="ttc" id="aclass_mechanism_factory_html_a11b20a573ca93c56cb5da66ac5cbd2c0"><div class="ttname"><a href="class_mechanism_factory.html#a11b20a573ca93c56cb5da66ac5cbd2c0">MechanismFactory::GetMechanismFactory</a></div><div class="ttdeci">static MechanismFactory * GetMechanismFactory()</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_factory_8cpp_source.html#l00049">MechanismFactory.cpp:49</a></div></div>
+<div class="ttc" id="a_digital_input_defn_8h_html"><div class="ttname"><a href="_digital_input_defn_8h.html">DigitalInputDefn.h</a></div></div>
+<div class="ttc" id="a_motor_defn_8h_html"><div class="ttname"><a href="_motor_defn_8h.html">MotorDefn.h</a></div></div>
+<div class="ttc" id="a_mechanism_types_8h_html"><div class="ttname"><a href="_mechanism_types_8h.html">MechanismTypes.h</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_7b2bcb36d453a1aa0a98981e9af51ae3.html">GitKrakenRepos</a></li><li class="navelem"><a class="el" href="dir_547abfd4c40dc92b54a6aa2a5efd07b2.html">TemplateRepository</a></li><li class="navelem"><a class="el" href="dir_2670559ca5a15a913822c358bf1bb356.html">src</a></li><li class="navelem"><a class="el" href="dir_4943459957647c46b1139863d8116988.html">main</a></li><li class="navelem"><a class="el" href="dir_bd4255150574be663a1c932dfa9033b1.html">cpp</a></li><li class="navelem"><a class="el" href="dir_3a569481b944d13fa799c1a7d3ec1325.html">xmlhw</a></li><li class="navelem"><b>MechanismDefn.cpp</b></li>
+    <li class="navelem"><a class="el" href="dir_7b2bcb36d453a1aa0a98981e9af51ae3.html">GitKrakenRepos</a></li><li class="navelem"><a class="el" href="dir_547abfd4c40dc92b54a6aa2a5efd07b2.html">TemplateRepository</a></li><li class="navelem"><a class="el" href="dir_2670559ca5a15a913822c358bf1bb356.html">src</a></li><li class="navelem"><a class="el" href="dir_4943459957647c46b1139863d8116988.html">main</a></li><li class="navelem"><a class="el" href="dir_bd4255150574be663a1c932dfa9033b1.html">cpp</a></li><li class="navelem"><a class="el" href="dir_3a569481b944d13fa799c1a7d3ec1325.html">xmlhw</a></li><li class="navelem"><a class="el" href="_mechanism_defn_8cpp.html">MechanismDefn.cpp</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

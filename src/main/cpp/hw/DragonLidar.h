@@ -14,8 +14,6 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-
-
 #pragma once
 
 // C++ Includes
@@ -27,6 +25,8 @@
 #include <networktables/NetworkTableInstance.h>
 #include <networktables/NetworkTable.h>
 #include <networktables/NetworkTableEntry.h>
+#include <frc/Counter.h>
+#include <frc/DigitalOutput.h>
 
 // Team 302 includes
 #include <hw/IDragonSensor.h>
@@ -34,24 +34,22 @@
 
 // Third Party Includes
 
-//Includes
-#include <frc/Counter.h>
-#include <frc/DigitalOutput.h>
-
-/*
- * This class takes a LIDAR that is connected to a digital input on the roborio using PWM.
- * We measure the high pulse length and convert it to a distance in GetDistance()
- *
- * the trigger pin is just used to initialize the lidar. It shouldn't have to be called periodically.
- */
-
+//========================================================================================================
+/// @class DragonLidar
+/// @brief This class takes a LIDAR that is connected to a digital input on the roborio using PWM.  The
+///        high pulse length is measured and converted to distance in GetDistance().  The trigger pin is
+///        just used to initialize the lidar. It shouldn't have to be called periodically.
+//========================================================================================================
 class DragonLidar : public IDragonSensor, IDragonDistanceSensor
 {
     public:
-        ///-----------------------------------------------------------------------------------
-        /// Method:         DragonLidar (constructor)
-        /// Description:    Create the object
-        ///-----------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------
+        /// Method: DragonLidar (constructor)
+        /// @param  IDragonSensor::SENSOR_USAGE usage - what is the lidar being used for
+        /// @param  int inputPin - PWM ID for the reading the distance
+        /// @param  int triggerPin - PWM ID used to initialize the lidar
+        /// @brief  Create the object
+        //-----------------------------------------------------------------------------------
         DragonLidar() = delete;
         DragonLidar
         (
@@ -60,33 +58,32 @@ class DragonLidar : public IDragonSensor, IDragonDistanceSensor
             int                         triggerPin
         );
 
-        ///-----------------------------------------------------------------------------------
-        /// Method:         ~DragonLidar (destructor)
-        /// Description:    Delete the object
-        ///-----------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------
+        /// Method:  ~DragonLidar (destructor)
+        /// @brief   Delete the object
+        //-----------------------------------------------------------------------------------
         virtual ~DragonLidar() = default;
 
-        ///-----------------------------------------------------------------------
-        /// Method:      GetDistance
-        /// Description: Return the measured distance in inches
-        /// Returns:     double     Measured Distance
-        ///-----------------------------------------------------------------------
+        //-----------------------------------------------------------------------
+        /// Method: GetDistance
+        /// @brief  Return the measured distance in inches
+        /// @return double     Measured Distance in inches
+        //-----------------------------------------------------------------------
         double GetDistance() const override;   // IDragonDistanceSensor
 
 
-        ///-----------------------------------------------------------------------
-        /// Method:      GetConfidence
-        /// Description: Indicates how accurate the returned value is
-        /// Returns:     double    0.0 == ignore (sensor has an error)
-        ///                        1.0 == very confident 
-        ///-----------------------------------------------------------------------
+        //-----------------------------------------------------------------------
+        /// Method: GetConfidence
+        /// @brief  Indicates how accurate the returned value is
+        /// @return double    0.0 == ignore (sensor has an error), 1.0 == very confident 
+        //-----------------------------------------------------------------------
         double GetConfidence() const override; // IDragonSensor
 
-        ///-----------------------------------------------------------------------
-        /// Method:      GetUsage
-        /// Description: Indicate what the sensor is used for
-        /// Returns:     SENSOR_USAGE    sensor usage 
-        ///-----------------------------------------------------------------------
+        //-----------------------------------------------------------------------
+        /// Method: GetUsage
+        /// @brief  Indicate what the sensor is used for
+        /// @return SENSOR_USAGE    sensor usage 
+        //-----------------------------------------------------------------------
         IDragonSensor::SENSOR_USAGE GetUsage() const override;
 
     private:

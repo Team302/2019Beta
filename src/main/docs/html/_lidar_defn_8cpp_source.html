@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team302Robot: C:/GitKrakenRepos/TemplateRepository/src/main/cpp/xmlhw/LidarDefn.cpp Source File</title>
+<title>Team 302 Robot: C:/GitKrakenRepos/TemplateRepository/src/main/cpp/xmlhw/LidarDefn.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Team302Robot
+   <div id="projectname">Team 302 Robot
    </div>
   </td>
  </tr>
@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('_lidar_defn_8cpp_source.html','');});
 <div class="title">LidarDefn.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<a href="_lidar_defn_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Copyright 2019 Lake Orion Robotics FIRST Team 302</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
@@ -115,11 +115,11 @@ $(document).ready(function(){initNavTree('_lidar_defn_8cpp_source.html','');});
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;frc/SmartDashboard/SmartDashboard.h&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Team 302 includes</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;hw/LidarFactory.h&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;hw/DragonLidar.h&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;xmlhw/LidarDefn.h&gt;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;utils/HardwareIDValidation.h&gt;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;utils/UsageValidation.h&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_lidar_factory_8h.html">hw/LidarFactory.h</a>&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_dragon_lidar_8h.html">hw/DragonLidar.h</a>&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_lidar_defn_8h.html">xmlhw/LidarDefn.h</a>&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_hardware_i_d_validation_8h.html">utils/HardwareIDValidation.h</a>&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_usage_validation_8h.html">utils/UsageValidation.h</a>&gt;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// Third Party Includes</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;pugixml/pugixml.hpp&gt;</span></div>
@@ -138,7 +138,7 @@ $(document).ready(function(){initNavTree('_lidar_defn_8cpp_source.html','');});
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// initialize attributes to default values</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    IDragonSensor::SENSOR_USAGE usage   = IDragonSensor::SENSOR_USAGE::UNKNOWN_SENSOR;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9">IDragonSensor::SENSOR_USAGE</a> usage   = IDragonSensor::SENSOR_USAGE::UNKNOWN_SENSOR;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">int</span>                      inputPin   = 0;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">int</span>                      triggerPin = 0;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
@@ -175,7 +175,7 @@ $(document).ready(function(){initNavTree('_lidar_defn_8cpp_source.html','');});
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        {</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordtype">string</span> msg = <span class="stringliteral">&quot;unknown attribute &quot;</span>;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            msg += attr.name();</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;LogError( <span class="stringliteral">&quot;LidarDefn::ParseXML&quot;</span>, msg );</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="stringliteral">&quot;LidarDefn::ParseXML&quot;</span>, msg );</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            hasError = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
@@ -183,7 +183,7 @@ $(document).ready(function(){initNavTree('_lidar_defn_8cpp_source.html','');});
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// if there aren&#39;t any errors create the lidar</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span> ( !hasError )</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        lidar = LidarFactory::GetLidarFactory()-&gt;CreateLidar( usage, inputPin, triggerPin );</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        lidar = <a class="code" href="class_lidar_factory.html#a14e25d1b8a7271a179c38d157d6c8da4">LidarFactory::GetLidarFactory</a>()-&gt;<a class="code" href="class_lidar_factory.html#abe9c601111912c276ec58bfb37d95021">CreateLidar</a>( usage, inputPin, triggerPin );</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">return</span> lidar;</div>
@@ -191,13 +191,22 @@ $(document).ready(function(){initNavTree('_lidar_defn_8cpp_source.html','');});
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_usage_validation_html_ac0a093370f028832fc8cef5b253c8857"><div class="ttname"><a href="class_usage_validation.html#ac0a093370f028832fc8cef5b253c8857">UsageValidation::ValidateSensorUsage</a></div><div class="ttdeci">static IDragonSensor::SENSOR_USAGE ValidateSensorUsage(std::string usageString, std::string methodID)</div><div class="ttdef"><b>Definition:</b> <a href="_usage_validation_8cpp_source.html#l00048">UsageValidation.cpp:48</a></div></div>
+<div class="ttc" id="aclass_i_dragon_sensor_html_a48f04b4f71b0f27f8330fd82a26b5fe9"><div class="ttname"><a href="class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9">IDragonSensor::SENSOR_USAGE</a></div><div class="ttdeci">SENSOR_USAGE</div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_sensor_8h_source.html#l00036">IDragonSensor.h:36</a></div></div>
+<div class="ttc" id="a_lidar_factory_8h_html"><div class="ttname"><a href="_lidar_factory_8h.html">LidarFactory.h</a></div></div>
+<div class="ttc" id="a_hardware_i_d_validation_8h_html"><div class="ttname"><a href="_hardware_i_d_validation_8h.html">HardwareIDValidation.h</a></div></div>
+<div class="ttc" id="a_dragon_lidar_8h_html"><div class="ttname"><a href="_dragon_lidar_8h.html">DragonLidar.h</a></div></div>
 <div class="ttc" id="aclass_lidar_defn_html_a689df8b79f2d6c757bf40cea421f8992"><div class="ttname"><a href="class_lidar_defn.html#a689df8b79f2d6c757bf40cea421f8992">LidarDefn::ParseXML</a></div><div class="ttdeci">std::shared_ptr&lt; DragonLidar &gt; ParseXML(pugi::xml_node lidarNode)</div><div class="ttdoc">Parse a lidar XML element and create a DragonLidar object from its definition.</div><div class="ttdef"><b>Definition:</b> <a href="_lidar_defn_8cpp_source.html#l00047">LidarDefn.cpp:47</a></div></div>
+<div class="ttc" id="a_usage_validation_8h_html"><div class="ttname"><a href="_usage_validation_8h.html">UsageValidation.h</a></div></div>
+<div class="ttc" id="aclass_logger_html_a98d7aec19dcdfb9d8faa46d83d927883"><div class="ttname"><a href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">Logger::LogError</a></div><div class="ttdeci">void LogError(const std::string &amp;locationIdentifier, const std::string &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00071">Logger.cpp:71</a></div></div>
+<div class="ttc" id="aclass_lidar_factory_html_a14e25d1b8a7271a179c38d157d6c8da4"><div class="ttname"><a href="class_lidar_factory.html#a14e25d1b8a7271a179c38d157d6c8da4">LidarFactory::GetLidarFactory</a></div><div class="ttdeci">static LidarFactory * GetLidarFactory()</div><div class="ttdef"><b>Definition:</b> <a href="_lidar_factory_8cpp_source.html#l00018">LidarFactory.cpp:18</a></div></div>
 <div class="ttc" id="aclass_hardware_i_d_validation_html_a703f456923391db2a37e0c1160acc209"><div class="ttname"><a href="class_hardware_i_d_validation.html#a703f456923391db2a37e0c1160acc209">HardwareIDValidation::ValidateDIOID</a></div><div class="ttdeci">static bool ValidateDIOID(int dioID, std::string methodID)</div><div class="ttdef"><b>Definition:</b> <a href="_hardware_i_d_validation_8cpp_source.html#l00084">HardwareIDValidation.cpp:84</a></div></div>
 <div class="ttc" id="aclass_logger_html_ae85cfbef8b7e6940475a5012fa1935c6"><div class="ttname"><a href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a></div><div class="ttdeci">static Logger * GetLogger()</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00052">Logger.cpp:52</a></div></div>
+<div class="ttc" id="a_lidar_defn_8h_html"><div class="ttname"><a href="_lidar_defn_8h.html">LidarDefn.h</a></div></div>
+<div class="ttc" id="aclass_lidar_factory_html_abe9c601111912c276ec58bfb37d95021"><div class="ttname"><a href="class_lidar_factory.html#abe9c601111912c276ec58bfb37d95021">LidarFactory::CreateLidar</a></div><div class="ttdeci">std::shared_ptr&lt; DragonLidar &gt; CreateLidar(IDragonSensor::SENSOR_USAGE usage, int inputPin, int triggerPin)</div><div class="ttdef"><b>Definition:</b> <a href="_lidar_factory_8cpp_source.html#l00042">LidarFactory.cpp:42</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_7b2bcb36d453a1aa0a98981e9af51ae3.html">GitKrakenRepos</a></li><li class="navelem"><a class="el" href="dir_547abfd4c40dc92b54a6aa2a5efd07b2.html">TemplateRepository</a></li><li class="navelem"><a class="el" href="dir_2670559ca5a15a913822c358bf1bb356.html">src</a></li><li class="navelem"><a class="el" href="dir_4943459957647c46b1139863d8116988.html">main</a></li><li class="navelem"><a class="el" href="dir_bd4255150574be663a1c932dfa9033b1.html">cpp</a></li><li class="navelem"><a class="el" href="dir_3a569481b944d13fa799c1a7d3ec1325.html">xmlhw</a></li><li class="navelem"><b>LidarDefn.cpp</b></li>
+    <li class="navelem"><a class="el" href="dir_7b2bcb36d453a1aa0a98981e9af51ae3.html">GitKrakenRepos</a></li><li class="navelem"><a class="el" href="dir_547abfd4c40dc92b54a6aa2a5efd07b2.html">TemplateRepository</a></li><li class="navelem"><a class="el" href="dir_2670559ca5a15a913822c358bf1bb356.html">src</a></li><li class="navelem"><a class="el" href="dir_4943459957647c46b1139863d8116988.html">main</a></li><li class="navelem"><a class="el" href="dir_bd4255150574be663a1c932dfa9033b1.html">cpp</a></li><li class="navelem"><a class="el" href="dir_3a569481b944d13fa799c1a7d3ec1325.html">xmlhw</a></li><li class="navelem"><a class="el" href="_lidar_defn_8cpp.html">LidarDefn.cpp</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

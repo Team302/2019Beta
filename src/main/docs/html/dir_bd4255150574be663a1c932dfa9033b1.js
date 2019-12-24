@@ -7,6 +7,8 @@ var dir_bd4255150574be663a1c932dfa9033b1 =
     [ "xmlcontrol", "dir_918ee3147ca1948cf0568e4f734e79c1.html", "dir_918ee3147ca1948cf0568e4f734e79c1" ],
     [ "xmlhw", "dir_3a569481b944d13fa799c1a7d3ec1325.html", "dir_3a569481b944d13fa799c1a7d3ec1325" ],
     [ "xmlmechdata", "dir_34683b14b398ce2e7ad77d5aa113a7d0.html", "dir_34683b14b398ce2e7ad77d5aa113a7d0" ],
-    [ "Robot.cpp", "_robot_8cpp_source.html", null ],
-    [ "Robot.h", "_robot_8h_source.html", null ]
+    [ "Robot.cpp", "_robot_8cpp.html", "_robot_8cpp" ],
+    [ "Robot.h", "_robot_8h.html", [
+      [ "Robot", "class_robot.html", "class_robot" ]
+    ] ]
 ];

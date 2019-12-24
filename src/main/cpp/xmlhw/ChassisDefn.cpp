@@ -1,39 +1,25 @@
 
-///====================================================================================================================================================
-/// Copyright 2019 Lake Orion Robotics FIRST Team 302
-///
-/// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
-/// to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
-/// and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-///
-/// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-///
-/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-/// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-/// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
-/// OR OTHER DEALINGS IN THE SOFTWARE.
-///====================================================================================================================================================
+//====================================================================================================================================================
+// Copyright 2019 Lake Orion Robotics FIRST Team 302
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
+// to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+// and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+// OR OTHER DEALINGS IN THE SOFTWARE.
+//====================================================================================================================================================
 
-///========================================================================================================
-// ChassisDefn. 
-///========================================================================================================
-//
-// Description: Create a chassis from an XML definition
-//
-// <!ELEMENT chassis (motor*) >
-// <!ATTLIST chassis
-//           wheelDiameter     CDATA #REQUIRED
-//           wheelBase         CDATA #REQUIRED
-//           track             CDATA #REQUIRED
-// >
-//
-// type matches CHASSIS_TYPE enum found in ChassisFactory.h
-//
-// Wheel Base is front-back distance between wheel centers
-//
-// Track is the distance between wheels on an "axle"
-//
-///========================================================================================================
+//========================================================================================================
+/// @class ChassisDefn. 
+/// @brief Create a chassis from an XML definition.   CHASSIS_TYPE (ChassisFactory.h) determines the type of 
+///        chassis to create.   WheelBase is the front to back distance between the wheel centers.   Track 
+///        is the left to right distance between the wheels.
+//========================================================================================================
 
 // C++ includes
 #include <iostream>
@@ -59,12 +45,12 @@ using namespace std;
 
 
 
-///================================================================================================
+//================================================================================================
 /// Method:      ParseXML
 /// Description: Parse the chassie element (and it children) from the chassis.  When this is done
 //				 a dragon chassis exists that can be retrieved from the factory.
 /// Returns:     void
-///================================================================================================
+//================================================================================================
 void ChassisDefn::ParseXML
 (
 	xml_node      chassisNode
@@ -78,7 +64,7 @@ void ChassisDefn::ParseXML
     //--------------------------------------------------------------------------------------------
     // process attributes
     //--------------------------------------------------------------------------------------------
-    for (xml_attribute attr = chassisNode.first_attribute(); attr; attr = attr.next_attribute())
+    for (xml_attribute attr = chassisNode.first_attribute(); attr && !hasError; attr = attr.next_attribute())
     {
         if ( strcmp( attr.name(), "wheelDiameter" ) == 0 )
         {
@@ -94,9 +80,9 @@ void ChassisDefn::ParseXML
         }
         else
         {
-            string msg = "Invalid attribute ";
+            string msg = "unknown attribute ";
             msg += attr.name();
-            Logger::GetLogger()->Log( "ChassisDefn", msg );
+            Logger::GetLogger()->LogError( "ChassisDefn::ParseXML", msg );
             hasError = true;
         }
     }
@@ -123,20 +109,14 @@ void ChassisDefn::ParseXML
             }
     	    else
             {
-                Logger::GetLogger()->Log( "ChassisDefn", "unable to create MotorDefn" );
+                Logger::GetLogger()->LogError( "ChassisDefn", "unable to create MotorDefn" );
     	    }
     	}
-    	/**
-        else if ( strcmp( child.name(), "PID") == 0 )
-        {
-            pidControlVector.emplace_back( PIDDefn::ParseXML( child ) );
-        }
-        **/
     	else
     	{
             string msg = "unknown child ";
             msg += child.name();
-            Logger::GetLogger()->Log( "ChassisDefn", msg );
+            Logger::GetLogger()->LogError( "ChassisDefn", msg );
     	}
     }
 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>2020 Template Project: C:/GitKrakenRepos/TemplateRepository/src/main/cpp/hw/DragonPositionSensor.cpp Source File</title>
+<title>Team302Robot: C:/GitKrakenRepos/TemplateRepository/src/main/cpp/hw/DragonPositionSensor.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">2020 Template Project
+   <div id="projectname">Team302Robot
    </div>
   </td>
  </tr>
@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('_dragon_position_sensor_8cpp_source.ht
 <div class="title">DragonPositionSensor.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_dragon_position_sensor_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// DragonPositionSensor.h</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Copyright 2018 Lake Orion Robotics FIRST Team 302</span></div>
@@ -106,7 +106,7 @@ $(document).ready(function(){initNavTree('_dragon_position_sensor_8cpp_source.ht
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// OR OTHER DEALINGS IN THE SOFTWARE.</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="_dragon_position_sensor_8cpp.html#a525335710b53cb064ca56b936120431e">   18</a></span>&#160;<span class="preprocessor">#define _USE_MATH_DEFINES</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define _USE_MATH_DEFINES</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// C++ Includes</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
@@ -114,15 +114,17 @@ $(document).ready(function(){initNavTree('_dragon_position_sensor_8cpp_source.ht
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// FRC includes</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// Team 302 includes</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_dragon_position_sensor_8h.html">hw/DragonPositionSensor.h</a>&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_dragon_angle_sensor_8h.html">hw/IDragonAngleSensor.h</a>&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;hw/DragonPositionSensor.h&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;hw/IDragonAnglePositionSensor.h&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// Third Party Includes</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span><span class="comment">//====================================================================================================================================================</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<a class="code" href="class_dragon_position_sensor.html#a694730082633395de2547287caba096a">DragonPositionSensor::DragonPositionSensor</a></div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_dragon_position_sensor.html#a9aa12c27e98a16b7c17df386ffed24ca">   42</a></span>&#160;(</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="class_i_dragon_angle_sensor.html">IDragonAngleSensor</a>*     angleSensor,        </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_dragon_position_sensor.html#a7864bd2a8a989c83f72aa33e4cd475a0">   42</a></span>&#160;(</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="class_i_dragon_angle_position_sensor.html">IDragonAnglePositionSensor</a>*     angleSensor,        </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">double</span>                  diameter            </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;) : m_angleSensor( angleSensor ),</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    m_diameter( diameter ),</div>
@@ -137,70 +139,63 @@ $(document).ready(function(){initNavTree('_dragon_position_sensor_8cpp_source.ht
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
 <div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_dragon_position_sensor.html#ab90f47ec4db5fc9f56c8dade9fbe00c4">   60</a></span>&#160;<a class="code" href="class_dragon_position_sensor.html#ab90f47ec4db5fc9f56c8dade9fbe00c4">DragonPositionSensor::~DragonPositionSensor</a>() </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span> ( m_angleSensor != <span class="keyword">nullptr</span> )</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">delete</span> m_angleSensor;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        m_angleSensor = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="class_dragon_position_sensor.html#ac82a2e2f509ecf7bb48fe8e93d2c17cc">   75</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_position_sensor.html#ac82a2e2f509ecf7bb48fe8e93d2c17cc">DragonPositionSensor::GetDistance</a>()</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">double</span> dist = 0.0;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> ( m_angleSensor != <span class="keyword">nullptr</span> )</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keyword">auto</span> currAngle = m_angleSensor-&gt;<a class="code" href="class_i_dragon_angle_sensor.html#afede0265bf08af816cb1ec925e1aee41">GetRawAngle</a>();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">auto</span> deltaAngle = currAngle - m_startAngle;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keyword">auto</span> deltaDist = deltaAngle * M_PI * m_diameter;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        dist = m_startDist + deltaDist;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> dist;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="class_dragon_position_sensor.html#a38786cee2ac71769efb4f9bd17f6d97a">   93</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_position_sensor.html#a38786cee2ac71769efb4f9bd17f6d97a">DragonPositionSensor::ResetDistance</a>()</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="class_dragon_position_sensor.html#a38786cee2ac71769efb4f9bd17f6d97a">ResetDistance</a>( 0.0 );</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_position_sensor.html#a38786cee2ac71769efb4f9bd17f6d97a">DragonPositionSensor::ResetDistance</a></div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="class_dragon_position_sensor.html#a1b360342e5c0569f7695220629da0732">  104</a></span>&#160;( </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">double</span> distance        </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;)</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;{</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">if</span> ( m_angleSensor != <span class="keyword">nullptr</span> )</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        m_startAngle = m_angleSensor-&gt;GetRawAngle();</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        m_startDist  = distance;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="class_dragon_position_sensor.html#ad1942979749d8236e3748a514f3e365a">  122</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_position_sensor.html#ad1942979749d8236e3748a514f3e365a">DragonPositionSensor::GetDistanceConfidence</a>()</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">double</span> confidence = 0.0;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">if</span> ( m_angleSensor != <span class="keyword">nullptr</span> )</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        confidence = m_angleSensor-&gt;<a class="code" href="class_i_dragon_angle_sensor.html#a2239172f08aec03f8bcfee9ce14b626b">GetAngleConfidence</a>();</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> confidence;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="class_dragon_position_sensor.html#ac82a2e2f509ecf7bb48fe8e93d2c17cc">   77</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_position_sensor.html#ac82a2e2f509ecf7bb48fe8e93d2c17cc">DragonPositionSensor::GetDistance</a>()</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">double</span> dist = 0.0;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span> ( m_angleSensor != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keyword">auto</span> currAngle = m_angleSensor-&gt;<a class="code" href="class_i_dragon_angle_position_sensor.html#ad0b97eee81cc306285cc9ca23be57768">GetRawAngle</a>();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keyword">auto</span> deltaAngle = currAngle - m_startAngle;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keyword">auto</span> deltaDist = deltaAngle * M_PI * m_diameter;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        dist = m_startDist + deltaDist;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">return</span> dist;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="class_dragon_position_sensor.html#a38786cee2ac71769efb4f9bd17f6d97a">   95</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_position_sensor.html#a38786cee2ac71769efb4f9bd17f6d97a">DragonPositionSensor::ResetDistance</a>()</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="class_dragon_position_sensor.html#a38786cee2ac71769efb4f9bd17f6d97a">ResetDistance</a>( 0.0 );</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_position_sensor.html#a38786cee2ac71769efb4f9bd17f6d97a">DragonPositionSensor::ResetDistance</a></div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="class_dragon_position_sensor.html#a1b360342e5c0569f7695220629da0732">  106</a></span>&#160;( </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">double</span> distance        </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">if</span> ( m_angleSensor != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        m_startAngle = m_angleSensor-&gt;GetRawAngle();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        m_startDist  = distance;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="class_dragon_position_sensor.html#ad1942979749d8236e3748a514f3e365a">  124</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_position_sensor.html#ad1942979749d8236e3748a514f3e365a">DragonPositionSensor::GetDistanceConfidence</a>()</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;{</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">double</span> confidence = 0.0;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">if</span> ( m_angleSensor != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        confidence = m_angleSensor-&gt;<a class="code" href="class_i_dragon_angle_position_sensor.html#a857d33a9cfed5766e6c165ea22243ec4">GetAngleConfidence</a>();</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">return</span> confidence;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_dragon_position_sensor_html_a694730082633395de2547287caba096a"><div class="ttname"><a href="class_dragon_position_sensor.html#a694730082633395de2547287caba096a">DragonPositionSensor::DragonPositionSensor</a></div><div class="ttdeci">DragonPositionSensor()=delete</div></div>
-<div class="ttc" id="aclass_i_dragon_angle_sensor_html"><div class="ttname"><a href="class_i_dragon_angle_sensor.html">IDragonAngleSensor</a></div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_angle_sensor_8h_source.html#l00032">IDragonAngleSensor.h:32</a></div></div>
-<div class="ttc" id="aclass_i_dragon_angle_sensor_html_a2239172f08aec03f8bcfee9ce14b626b"><div class="ttname"><a href="class_i_dragon_angle_sensor.html#a2239172f08aec03f8bcfee9ce14b626b">IDragonAngleSensor::GetAngleConfidence</a></div><div class="ttdeci">virtual double GetAngleConfidence()=0</div></div>
-<div class="ttc" id="aclass_dragon_position_sensor_html_ac82a2e2f509ecf7bb48fe8e93d2c17cc"><div class="ttname"><a href="class_dragon_position_sensor.html#ac82a2e2f509ecf7bb48fe8e93d2c17cc">DragonPositionSensor::GetDistance</a></div><div class="ttdeci">double GetDistance()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_position_sensor_8cpp_source.html#l00075">DragonPositionSensor.cpp:75</a></div></div>
-<div class="ttc" id="a_i_dragon_angle_sensor_8h_html"><div class="ttname"><a href="_i_dragon_angle_sensor_8h.html">IDragonAngleSensor.h</a></div></div>
-<div class="ttc" id="aclass_dragon_position_sensor_html_a38786cee2ac71769efb4f9bd17f6d97a"><div class="ttname"><a href="class_dragon_position_sensor.html#a38786cee2ac71769efb4f9bd17f6d97a">DragonPositionSensor::ResetDistance</a></div><div class="ttdeci">void ResetDistance()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_position_sensor_8cpp_source.html#l00093">DragonPositionSensor.cpp:93</a></div></div>
-<div class="ttc" id="aclass_dragon_position_sensor_html_ad1942979749d8236e3748a514f3e365a"><div class="ttname"><a href="class_dragon_position_sensor.html#ad1942979749d8236e3748a514f3e365a">DragonPositionSensor::GetDistanceConfidence</a></div><div class="ttdeci">double GetDistanceConfidence()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_position_sensor_8cpp_source.html#l00122">DragonPositionSensor.cpp:122</a></div></div>
+<div class="ttc" id="aclass_i_dragon_angle_position_sensor_html_a857d33a9cfed5766e6c165ea22243ec4"><div class="ttname"><a href="class_i_dragon_angle_position_sensor.html#a857d33a9cfed5766e6c165ea22243ec4">IDragonAnglePositionSensor::GetAngleConfidence</a></div><div class="ttdeci">virtual double GetAngleConfidence()=0</div></div>
+<div class="ttc" id="aclass_i_dragon_angle_position_sensor_html_ad0b97eee81cc306285cc9ca23be57768"><div class="ttname"><a href="class_i_dragon_angle_position_sensor.html#ad0b97eee81cc306285cc9ca23be57768">IDragonAnglePositionSensor::GetRawAngle</a></div><div class="ttdeci">virtual double GetRawAngle()=0</div></div>
+<div class="ttc" id="aclass_dragon_position_sensor_html_ac82a2e2f509ecf7bb48fe8e93d2c17cc"><div class="ttname"><a href="class_dragon_position_sensor.html#ac82a2e2f509ecf7bb48fe8e93d2c17cc">DragonPositionSensor::GetDistance</a></div><div class="ttdeci">double GetDistance()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_position_sensor_8cpp_source.html#l00077">DragonPositionSensor.cpp:77</a></div></div>
+<div class="ttc" id="aclass_i_dragon_angle_position_sensor_html"><div class="ttname"><a href="class_i_dragon_angle_position_sensor.html">IDragonAnglePositionSensor</a></div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_angle_position_sensor_8h_source.html#l00032">IDragonAnglePositionSensor.h:32</a></div></div>
+<div class="ttc" id="aclass_dragon_position_sensor_html_a38786cee2ac71769efb4f9bd17f6d97a"><div class="ttname"><a href="class_dragon_position_sensor.html#a38786cee2ac71769efb4f9bd17f6d97a">DragonPositionSensor::ResetDistance</a></div><div class="ttdeci">void ResetDistance()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_position_sensor_8cpp_source.html#l00095">DragonPositionSensor.cpp:95</a></div></div>
+<div class="ttc" id="aclass_dragon_position_sensor_html_ad1942979749d8236e3748a514f3e365a"><div class="ttname"><a href="class_dragon_position_sensor.html#ad1942979749d8236e3748a514f3e365a">DragonPositionSensor::GetDistanceConfidence</a></div><div class="ttdeci">double GetDistanceConfidence()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_position_sensor_8cpp_source.html#l00124">DragonPositionSensor.cpp:124</a></div></div>
 <div class="ttc" id="aclass_dragon_position_sensor_html_ab90f47ec4db5fc9f56c8dade9fbe00c4"><div class="ttname"><a href="class_dragon_position_sensor.html#ab90f47ec4db5fc9f56c8dade9fbe00c4">DragonPositionSensor::~DragonPositionSensor</a></div><div class="ttdeci">~DragonPositionSensor()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_position_sensor_8cpp_source.html#l00060">DragonPositionSensor.cpp:60</a></div></div>
-<div class="ttc" id="a_dragon_position_sensor_8h_html"><div class="ttname"><a href="_dragon_position_sensor_8h.html">DragonPositionSensor.h</a></div></div>
-<div class="ttc" id="aclass_i_dragon_angle_sensor_html_afede0265bf08af816cb1ec925e1aee41"><div class="ttname"><a href="class_i_dragon_angle_sensor.html#afede0265bf08af816cb1ec925e1aee41">IDragonAngleSensor::GetRawAngle</a></div><div class="ttdeci">virtual double GetRawAngle()=0</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_7b2bcb36d453a1aa0a98981e9af51ae3.html">GitKrakenRepos</a></li><li class="navelem"><a class="el" href="dir_547abfd4c40dc92b54a6aa2a5efd07b2.html">TemplateRepository</a></li><li class="navelem"><a class="el" href="dir_2670559ca5a15a913822c358bf1bb356.html">src</a></li><li class="navelem"><a class="el" href="dir_4943459957647c46b1139863d8116988.html">main</a></li><li class="navelem"><a class="el" href="dir_bd4255150574be663a1c932dfa9033b1.html">cpp</a></li><li class="navelem"><a class="el" href="dir_17eedda4b8f946e657ec063ebd132b53.html">hw</a></li><li class="navelem"><a class="el" href="_dragon_position_sensor_8cpp.html">DragonPositionSensor.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_7b2bcb36d453a1aa0a98981e9af51ae3.html">GitKrakenRepos</a></li><li class="navelem"><a class="el" href="dir_547abfd4c40dc92b54a6aa2a5efd07b2.html">TemplateRepository</a></li><li class="navelem"><a class="el" href="dir_2670559ca5a15a913822c358bf1bb356.html">src</a></li><li class="navelem"><a class="el" href="dir_4943459957647c46b1139863d8116988.html">main</a></li><li class="navelem"><a class="el" href="dir_bd4255150574be663a1c932dfa9033b1.html">cpp</a></li><li class="navelem"><a class="el" href="dir_17eedda4b8f946e657ec063ebd132b53.html">hw</a></li><li class="navelem"><b>DragonPositionSensor.cpp</b></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

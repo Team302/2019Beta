@@ -26,6 +26,9 @@
 
 #pragma once
 
+#include <map>
+#include <memory>
+
 #include <hw/DragonServo.h>
 
 class DragonServoFactory
@@ -34,37 +37,42 @@ class DragonServoFactory
         static DragonServoFactory* GetInstance();
 
         //=======================================================================================
-        // Method:          CreateDragonServo
-        // Description:     Create a DragonServo from the inputs
-        // Returns:         DragonServo*    - could be nullptr if invalid inputs are supplied
+        /// Method: CreateDragonServo
+        /// @brief  Create a DragonServo from the inputs
+        /// @param [in] DragonServo::SERVO_USAGE   deviceUsage  Usage of the servo
+        /// @param [in] int                        deviceID     PWM ID of the  servo
+        /// @param [in] double                     minAngle     Minimum Angle for the servo
+        /// @param [in] double                     maxAngle     Maximum Angle for the servo
+        /// @return std::shared_ptr<DragonServo>    - could be nullptr if invalid inputs are supplied
         //=======================================================================================
-        DragonServo* CreateDragonServo
+        std::shared_ptr<DragonServo> CreateDragonServo
         (
-            DragonServo::SERVO_USAGE    deviceUsage,        // <I> - Usage of the servo
-            int                         deviceID,           // <I> - PWM ID
-            double                      minAngle,           // <I> - Minimun desired angle
-            double                      maxAngle            // <I> - Maximum desired angle
+            DragonServo::SERVO_USAGE    deviceUsage,        
+            int                         deviceID,           
+            double                      minAngle,           
+            double                      maxAngle            
         );
 
         //=======================================================================================
-        // Method:          GetDragonServo
-        // Description:     return DragonServo for a particular usage
-        // Returns:         DragonServo*                may be nullptr if there isn't a servo with
-        //                                              with this usage.
+        /// Method: GetDragonServo
+        /// @brief  Get a DragonServo from its usage
+        /// @param [in] DragonServo::SERVO_USAGE   deviceUsage  Usage of the servo
+        /// @return std::shared_ptr<DragonServo>    - could be nullptr if invalid inputs are supplied
         //=======================================================================================
-        DragonServo* GetDragonServo
+        std::shared_ptr<DragonServo> CreateDragonServo
         (
-            DragonServo::SERVO_USAGE    deviceUsage         // <I> - Usage of the servo
+            DragonServo::SERVO_USAGE    deviceUsage        
         );
+
+
 
     private:
-        DragonServoFactory();
-        ~DragonServoFactory();
+        DragonServoFactory() = default;
+        ~DragonServoFactory() = default;
 
 
         static DragonServoFactory*        m_instance;
-        DragonServo*                      m_limelight;
-        DragonServo*                      m_tail;
 
+        std::map <DragonServo::SERVO_USAGE, std::shared_ptr<DragonServo>> m_servos;
 
 };

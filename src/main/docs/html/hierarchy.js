@@ -14,10 +14,9 @@ var hierarchy =
     [ "DigitalInputDefn", "class_digital_input_defn.html", null ],
     [ "DigitalInputFactory", "class_digital_input_factory.html", null ],
     [ "DragonDigitalInput", "class_dragon_digital_input.html", null ],
-    [ "DragonLidar", "class_dragon_lidar.html", null ],
-    [ "DragonLimelight", "class_dragon_limelight.html", null ],
     [ "DragonMotorControllerFactory", "class_dragon_motor_controller_factory.html", null ],
     [ "DragonPDP", "class_dragon_p_d_p.html", null ],
+    [ "DragonPigeon", "class_dragon_pigeon.html", null ],
     [ "DragonPositionSensor", "class_dragon_position_sensor.html", null ],
     [ "DragonServo", "class_dragon_servo.html", null ],
     [ "DragonServoFactory", "class_dragon_servo_factory.html", null ],
@@ -38,7 +37,13 @@ var hierarchy =
       [ "NoDeadbandValue", "class_no_deadband_value.html", null ],
       [ "ScaledDeadbandValue", "class_scaled_deadband_value.html", null ]
     ] ],
-    [ "IDragonAngleSensor", "class_i_dragon_angle_sensor.html", null ],
+    [ "IDragonAnglePositionSensor", "class_i_dragon_angle_position_sensor.html", null ],
+    [ "IDragonDistanceSensor", "class_i_dragon_distance_sensor.html", [
+      [ "DragonLidar", "class_dragon_lidar.html", null ],
+      [ "DragonLimelight", "class_dragon_limelight.html", null ],
+      [ "DragonUltrasonic", "class_dragon_ultrasonic.html", null ],
+      [ "DragonUltrasonicPWM", "class_dragon_ultrasonic_p_w_m.html", null ]
+    ] ],
     [ "IDragonGamePad", "class_i_dragon_game_pad.html", [
       [ "DragonGamepad", "class_dragon_gamepad.html", null ],
       [ "DragonXBox", "class_dragon_x_box.html", null ]
@@ -47,7 +52,9 @@ var hierarchy =
       [ "DragonSparkMax", "class_dragon_spark_max.html", null ],
       [ "DragonTalon", "class_dragon_talon.html", null ]
     ] ],
-    [ "IDragonUltrasonic", "class_i_dragon_ultrasonic.html", [
+    [ "IDragonSensor", "class_i_dragon_sensor.html", [
+      [ "DragonLidar", "class_dragon_lidar.html", null ],
+      [ "DragonLimelight", "class_dragon_limelight.html", null ],
       [ "DragonUltrasonic", "class_dragon_ultrasonic.html", null ],
       [ "DragonUltrasonicPWM", "class_dragon_ultrasonic_p_w_m.html", null ]
     ] ],
@@ -65,20 +72,20 @@ var hierarchy =
     [ "LEDFactory", "class_l_e_d_factory.html", null ],
     [ "LidarDefn", "class_lidar_defn.html", null ],
     [ "LidarFactory", "class_lidar_factory.html", null ],
-    [ "LidarLiteDefn", "class_lidar_lite_defn.html", null ],
     [ "Logger", "class_logger.html", null ],
+    [ "MechanismControl", "class_mechanism_control.html", null ],
     [ "MechanismDataDefn", "class_mechanism_data_defn.html", null ],
     [ "MechanismDefn", "class_mechanism_defn.html", null ],
     [ "MechanismFactory", "class_mechanism_factory.html", null ],
+    [ "MechanismParameters", "class_mechanism_parameters.html", null ],
+    [ "MechanismTypes", "class_mechanism_types.html", null ],
+    [ "MechansimDefn", "class_mechansim_defn.html", null ],
     [ "MechDataDefn", "class_mech_data_defn.html", null ],
     [ "MotorDefn", "class_motor_defn.html", null ],
     [ "PDPDefn", "class_p_d_p_defn.html", null ],
     [ "PIDData", "class_p_i_d_data.html", null ],
     [ "PIDDefn", "class_p_i_d_defn.html", null ],
     [ "PigeonDefn", "class_pigeon_defn.html", null ],
-    [ "PigeonIMU", null, [
-      [ "DragonPigeon", "class_dragon_pigeon.html", null ]
-    ] ],
     [ "RobotDefn", "class_robot_defn.html", null ],
     [ "ScaledAxis", "class_scaled_axis.html", [
       [ "FlippedAxis", "class_flipped_axis.html", null ]
@@ -88,5 +95,6 @@ var hierarchy =
     [ "TimedRobot", null, [
       [ "Robot", "class_robot.html", null ]
     ] ],
-    [ "UltrasonicFactory", "class_ultrasonic_factory.html", null ]
+    [ "UltrasonicFactory", "class_ultrasonic_factory.html", null ],
+    [ "UsageValidation", "class_usage_validation.html", null ]
 ];

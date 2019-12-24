@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>2020 Template Project: HardwareIDValidation Class Reference</title>
+<title>Team302Robot: HardwareIDValidation Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">2020 Template Project
+   <div id="projectname">Team302Robot
    </div>
   </td>
  </tr>
@@ -93,20 +93,25 @@ $(document).ready(function(){initNavTree('class_hardware_i_d_validation.html',''
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="_hardware_i_d_validation_8h_source.html">HardwareIDValidation.h</a>.  
+ <a href="class_hardware_i_d_validation.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_hardware_i_d_validation_8h_source.html">HardwareIDValidation.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ab6c13f88201571587dc8de99b4937e65"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hardware_i_d_validation.html#ab6c13f88201571587dc8de99b4937e65">ValidateCANID</a> (int canID, std::string methodID)</td></tr>
 <tr class="separator:ab6c13f88201571587dc8de99b4937e65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aadb44d067609e1df994e06145f5f9f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hardware_i_d_validation.html#a0aadb44d067609e1df994e06145f5f9f">ValidatePDPID</a> (int pdpID, std::string methodID)</td></tr>
+<tr class="separator:a0aadb44d067609e1df994e06145f5f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a703f456923391db2a37e0c1160acc209"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hardware_i_d_validation.html#a703f456923391db2a37e0c1160acc209">ValidateDIOID</a> (int dioID, std::string methodID)</td></tr>
+<tr class="separator:a703f456923391db2a37e0c1160acc209"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a404d9c89d42c4a474ce9b7919456ea7d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hardware_i_d_validation.html#a404d9c89d42c4a474ce9b7919456ea7d">ValidateID</a> (int id, int minID, int maxID, std::string methodID, std::string errorMsg)</td></tr>
+<tr class="separator:a404d9c89d42c4a474ce9b7919456ea7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>======================================================================================================== </p>
-<h1><a class="anchor" id="autotoc_md136"></a>
-HardwareIDValidation.h</h1>
-<p>File Description: </p>
-<h1><a class="anchor" id="autotoc_md137"></a>
-This will validate the various hardware IDs against the valid values.</h1>
+<div class="textblock"><p><a class="el" href="_hardware_i_d_validation_8h_source.html">HardwareIDValidation.h</a>. </p>
+<p>File Description: This will validate the various hardware IDs against the valid values. </p>
 
 <p class="definition">Definition at line <a class="el" href="_hardware_i_d_validation_8h_source.html#l00038">38</a> of file <a class="el" href="_hardware_i_d_validation_8h_source.html">HardwareIDValidation.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
@@ -143,14 +148,145 @@ This will validate the various hardware IDs against the valid values.</h1>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>====================================================================================== Method: ValidateCANID Description: Check the CAN ID against the valid range. If it is invalid the logger utility will be called. Returns: bool true - valid </p>
-<h1><a class="anchor" id="autotoc_md138"></a>
-false - invalid</h1>
-<p>====================================================================================== Method: ValidateCANID Description: Check the CAN ID against the valid range. If it is invalid the logger utility will be called. Returns: bool true - valid </p>
-<h1><a class="anchor" id="autotoc_md135"></a>
-false - invalid</h1>
+<p>Method: ValidateCANID Description: Check the CAN ID against the valid range. If it is invalid the logger utility will be called. Returns: bool true - valid false - invalid </p>
 
 <p class="definition">Definition at line <a class="el" href="_hardware_i_d_validation_8cpp_source.html#l00047">47</a> of file <a class="el" href="_hardware_i_d_validation_8cpp_source.html">HardwareIDValidation.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a703f456923391db2a37e0c1160acc209"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a703f456923391db2a37e0c1160acc209">&#9670;&nbsp;</a></span>ValidateDIOID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool HardwareIDValidation::ValidateDIOID </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dioID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>methodID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Method: ValidateDIOID Description: Check the Digitial IO ID against the valid range. If it is invalid the logger utility will be called. Returns: bool true - valid false - invalid</p>
+<p>Method: ValidateDIOID Description: Check the DIO ID against the valid range. If it is invalid the logger utility will be called. Returns: bool true - valid false - invalid </p>
+
+<p class="definition">Definition at line <a class="el" href="_hardware_i_d_validation_8cpp_source.html#l00084">84</a> of file <a class="el" href="_hardware_i_d_validation_8cpp_source.html">HardwareIDValidation.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a404d9c89d42c4a474ce9b7919456ea7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a404d9c89d42c4a474ce9b7919456ea7d">&#9670;&nbsp;</a></span>ValidateID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool HardwareIDValidation::ValidateID </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>minID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>maxID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>methodID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>errorMsg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Method: ValidateID Description: Check the ID against the valid range. If it is invalid the logger utility will be called. Returns: bool true - valid false - invalid </p>
+
+<p class="definition">Definition at line <a class="el" href="_hardware_i_d_validation_8cpp_source.html#l00100">100</a> of file <a class="el" href="_hardware_i_d_validation_8cpp_source.html">HardwareIDValidation.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a0aadb44d067609e1df994e06145f5f9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0aadb44d067609e1df994e06145f5f9f">&#9670;&nbsp;</a></span>ValidatePDPID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool HardwareIDValidation::ValidatePDPID </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pdpID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>methodID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Method: ValidatePDPID Description: Check the PDP ID against the valid range. If it is invalid the logger utility will be called. Returns: bool true - valid false - invalid </p>
+
+<p class="definition">Definition at line <a class="el" href="_hardware_i_d_validation_8cpp_source.html#l00065">65</a> of file <a class="el" href="_hardware_i_d_validation_8cpp_source.html">HardwareIDValidation.cpp</a>.</p>
 
 </div>
 </div>

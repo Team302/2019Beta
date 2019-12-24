@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>2020 Template Project: C:/GitKrakenRepos/TemplateRepository/src/main/cpp/xmlhw/MotorDefn.cpp Source File</title>
+<title>Team302Robot: C:/GitKrakenRepos/TemplateRepository/src/main/cpp/xmlhw/MotorDefn.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">2020 Template Project
+   <div id="projectname">Team302Robot
    </div>
   </td>
  </tr>
@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('_motor_defn_8cpp_source.html','');});
 <div class="title">MotorDefn.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_motor_defn_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Copyright 2019 Lake Orion Robotics FIRST Team 302</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
@@ -105,6 +105,9 @@ $(document).ready(function(){initNavTree('_motor_defn_8cpp_source.html','');});
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// OR OTHER DEALINGS IN THE SOFTWARE.</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//========================================================================================================</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"></span><span class="comment">//========================================================================================================</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"></span><span class="comment">//========================================================================================================</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// C++ Includes</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
@@ -114,11 +117,11 @@ $(document).ready(function(){initNavTree('_motor_defn_8cpp_source.html','');});
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// FRC includes</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// Team 302 includes</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_dragon_talon_8h.html">hw/DragonTalon.h</a>&gt;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_dragon_spark_max_8h.html">hw/DragonSparkMax.h</a>&gt;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_dragon_motor_controller_factory_8h.html">hw/DragonMotorControllerFactory.h</a>&gt;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_hardware_i_d_validation_8h.html">utils/HardwareIDValidation.h</a>&gt;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_logger_8h.html">utils/Logger.h</a>&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;hw/DragonTalon.h&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;hw/DragonSparkMax.h&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;hw/DragonMotorControllerFactory.h&gt;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;utils/HardwareIDValidation.h&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;utils/Logger.h&gt;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// Third Party Includes</span></div>
@@ -201,13 +204,13 @@ $(document).ready(function(){initNavTree('_motor_defn_8cpp_source.html','');});
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">// Returns:     DragonTalon*        motor controller (or nullptr if XML</span></div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment">//                                  is ill-formed</span></div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">//-----------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<a class="code" href="class_i_dragon_motor_controller.html">IDragonMotorController</a>* <a class="code" href="class_motor_defn.html#a74ac80e1c2ce57348b962bed5c7bad59">MotorDefn::ParseXML</a></div>
-<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="class_motor_defn.html#a74ac80e1c2ce57348b962bed5c7bad59">  123</a></span>&#160;(</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;shared_ptr&lt;IDragonMotorController&gt; <a class="code" href="class_motor_defn.html#a41d1bdea7f06ba470b4330278b1ad1ce">MotorDefn::ParseXML</a></div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="class_motor_defn.html#a41d1bdea7f06ba470b4330278b1ad1ce">  123</a></span>&#160;(</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    xml_node      motorNode</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;)</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;{</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="comment">// initialize the output</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="class_i_dragon_motor_controller.html">IDragonMotorController</a>* controller = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    shared_ptr&lt;IDragonMotorController&gt; controller;</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="comment">// initialize attributes to default values</span></div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">int</span> canID = 0;</div>
@@ -226,17 +229,17 @@ $(document).ready(function(){initNavTree('_motor_defn_8cpp_source.html','');});
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">int</span> peakCurrentLimit = 0;</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">bool</span> enableCurrentLimit = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <a class="code" href="class_dragon_motor_controller_factory.html#ab2cbc7da55b546e4da9e5d16a9965195">DragonMotorControllerFactory::MOTOR_TYPE</a> mtype = DragonMotorControllerFactory::MOTOR_TYPE::TALONSRX; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">string</span> mtype;</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">bool</span> hasError = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <a class="code" href="class_i_mechanism.html#a5b60af468978515764f4d2dedd80638d">IMechanism::MECHANISM_TYPE</a> mechType = IMechanism::MECHANISM_TYPE::UNKNOWN_MECHANISM;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordflow">for</span> (xml_attribute attr = motorNode.first_attribute(); attr &amp;&amp; !hasError; attr = attr.next_attribute())</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    {</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;usage&quot;</span> ) == 0 )</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        {</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;             usage = attr.value();</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">for</span> (xml_attribute attr = motorNode.first_attribute(); attr &amp;&amp; !hasError; attr = attr.next_attribute())</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;usage&quot;</span> ) == 0 )</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;             usage = attr.value();</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;             transform(usage.begin(), usage.end(), usage.begin(), ::toupper);</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        }</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="comment">// CAN ID 0 thru 62 are valid</span></div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;canId&quot;</span> ) == 0 )</div>
@@ -248,210 +251,182 @@ $(document).ready(function(){initNavTree('_motor_defn_8cpp_source.html','');});
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;pdpID&quot;</span> ) == 0 )</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        {</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            pdpID = attr.as_int();</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <span class="keywordflow">if</span> ( pdpID &lt; 0 || pdpID &gt; 15 )</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            {</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                printf( <span class="stringliteral">&quot;==&gt;&gt; MotorDefn::ParseXML invalid PDP ID %d \n&quot;</span>, pdpID );</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                hasError = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            }</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        }</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="comment">// type:  cantalon, sparkmax_brushless and sparkmax_brushed are valid</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;type&quot;</span> ) == 0 )</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        {</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            <span class="keywordflow">if</span> ( strcmp( attr.value(), <span class="stringliteral">&quot;cantalon&quot;</span>) == 0 )</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            {</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                mtype = DragonMotorControllerFactory::MOTOR_TYPE::TALONSRX;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            }</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.value(), <span class="stringliteral">&quot;sparkmax_brushless&quot;</span>) == 0 )</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            {</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                mtype = DragonMotorControllerFactory::MOTOR_TYPE::BRUSHLESS_SPARK_MAX;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            }</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.value(), <span class="stringliteral">&quot;sparkmax_brushed&quot;</span>) == 0 )</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            {</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                mtype = DragonMotorControllerFactory::MOTOR_TYPE::BRUSHED_SPARK_MAX;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            }</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            {</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                printf( <span class="stringliteral">&quot;Invalid motor type %s \n&quot;</span>, attr.value() );</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                hasError = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            }</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        }</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="comment">// inverted</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;inverted&quot;</span> ) == 0 )</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        {</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            inverted = attr.as_bool();</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        }</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="comment">// sensor inverted</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;sensorInverted&quot;</span> ) == 0 )</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            hasError = <a class="code" href="class_hardware_i_d_validation.html#a0aadb44d067609e1df994e06145f5f9f">HardwareIDValidation::ValidatePDPID</a>( pdpID, <span class="keywordtype">string</span>( <span class="stringliteral">&quot;MotorDefn::ParseXML&quot;</span> ) );</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        }</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="comment">// type:  cantalon, sparkmax_brushless and sparkmax_brushed are valid</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;type&quot;</span> ) == 0 )</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            mtype = attr.value();</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            transform(mtype.begin(), mtype.end(), mtype.begin(), ::toupper);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        }</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="comment">// inverted</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;inverted&quot;</span> ) == 0 )</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        {</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            inverted = attr.as_bool();</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="comment">// sensor inverted</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;sensorInverted&quot;</span> ) == 0 )</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            sensorInverted = attr.as_bool();</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="comment">// feedback device (only used by cantalon)</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="comment">//        enum TALON_SENSOR_TYPE</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="comment">//        {</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="comment">//            NO_SENSOR = -1,</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="comment">//            QUAD_ENCODER,</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="comment">//            UNKNOWN_SENSOR,</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="comment">//            ANALOG_POT,</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="comment">//            ANALOG_ENCODER,</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="comment">//            ENCODER_RISING,</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="comment">//            ENCODER_FALLING,</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="comment">//            CTRE_MAG_ENCODER_RELATIVE,</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="comment">//            CTRE_MAG_ENCODER_ABSOLUTE,</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="comment">//            PULSE_WIDTH,</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="comment">//            MAX_SENSOR_TYPES</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="comment">//        };        </span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;feedbackDevice&quot;</span> ) == 0 )</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        {</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            sensorInverted = attr.as_bool();</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        }</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="comment">// feedback device (only used by cantalon)</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="comment">//        enum TALON_SENSOR_TYPE</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="comment">//        {</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="comment">//            NO_SENSOR = -1,</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="comment">//            QUAD_ENCODER,</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="comment">//            UNKNOWN_SENSOR,</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="comment">//            ANALOG_POT,</span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="comment">//            ANALOG_ENCODER,</span></div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="comment">//            ENCODER_RISING,</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="comment">//            ENCODER_FALLING,</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="comment">//            CTRE_MAG_ENCODER_RELATIVE,</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <span class="comment">//            CTRE_MAG_ENCODER_ABSOLUTE,</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="comment">//            PULSE_WIDTH,</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="comment">//            MAX_SENSOR_TYPES</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="comment">//        };        </span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;feedbackDevice&quot;</span> ) == 0 )</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        {</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            <span class="keywordtype">int</span> intVal = attr.as_int();</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <span class="comment">// Some options are duplicated enum values in the WPILib base, so</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <span class="comment">// comment out one so that there isn&#39;t more than one case with the same value</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            <span class="keywordflow">switch</span> ( intVal )</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            {</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                 <span class="comment">//commented out in ctre code with note to add back in</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                <span class="comment">//case None:</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                    <span class="comment">//feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::None;</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                    <span class="comment">//break;</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                </div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;              <span class="keywordflow">case</span> QuadEncoder:</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::QuadEncoder;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                <span class="keywordflow">case</span> Analog:</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::Analog;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                <span class="keywordflow">case</span> Tachometer:</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::Tachometer;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;              <span class="keywordflow">case</span> PulseWidthEncodedPosition:</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::PulseWidthEncodedPosition;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                <span class="keywordflow">case</span> SensorSum:</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::SensorSum;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                <span class="keywordflow">case</span> SensorDifference:</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::SensorDifference;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                <span class="keywordflow">case</span> RemoteSensor0:</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::RemoteSensor0;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                <span class="keywordflow">case</span> RemoteSensor1:</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::RemoteSensor1;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                <span class="keywordflow">case</span> SoftwareEmulatedSensor:</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::SoftwareEmulatedSensor;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="comment">//                case CTRE_MagEncoder_Absolute:</span></div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="comment">//                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::CTRE_MagEncoder_Absolute;</span></div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="comment">//                    break;</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="comment">//                case CTRE_MagEncoder_Relative:</span></div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="comment">//                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::CTRE_MagEncoder_Relative;</span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="comment">//                    break;</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                    printf( <span class="stringliteral">&quot;==&gt;&gt;MotorDefn::ParseXML invalid feedback devide %d \n&quot;</span>, intVal );</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                    hasError = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            }</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        }</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="comment">// counts per revolution</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;countsPerRev&quot;</span> ) == 0 )</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        {</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            countsPerRev = attr.as_int();</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        }</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="comment">// gear ratio</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;gearRatio&quot;</span> ) == 0 )</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        {</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            gearRatio = attr.as_float();</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        }</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="comment">// brake mode (or coast)</span></div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;brakeMode&quot;</span> ) == 0 )</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        {</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            brakeMode = attr.as_bool();</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        }</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="comment">// slaveto (existing CAN id of the master motor)</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;slaveTo&quot;</span>) == 0 )</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        {</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            slaveTo = attr.as_int();</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        }</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <span class="comment">// peak current duration (cantalon)</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;peakCurrentDuration&quot;</span>) == 0 )</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="keywordtype">int</span> intVal = attr.as_int();</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <span class="comment">// Some options are duplicated enum values in the WPILib base, so</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <span class="comment">// comment out one so that there isn&#39;t more than one case with the same value</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="keywordflow">switch</span> ( intVal )</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            {</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                 <span class="comment">//commented out in ctre code with note to add back in</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                <span class="comment">//case None:</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                    <span class="comment">//feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::None;</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                    <span class="comment">//break;</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                </div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;              <span class="keywordflow">case</span> QuadEncoder:</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::QuadEncoder;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                <span class="keywordflow">case</span> Analog:</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::Analog;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                <span class="keywordflow">case</span> Tachometer:</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::Tachometer;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;              <span class="keywordflow">case</span> PulseWidthEncodedPosition:</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::PulseWidthEncodedPosition;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                <span class="keywordflow">case</span> SensorSum:</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::SensorSum;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                <span class="keywordflow">case</span> SensorDifference:</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::SensorDifference;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                <span class="keywordflow">case</span> RemoteSensor0:</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::RemoteSensor0;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                <span class="keywordflow">case</span> RemoteSensor1:</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::RemoteSensor1;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                <span class="keywordflow">case</span> SoftwareEmulatedSensor:</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::SoftwareEmulatedSensor;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="comment">//                case CTRE_MagEncoder_Absolute:</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="comment">//                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::CTRE_MagEncoder_Absolute;</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="comment">//                    break;</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="comment">//                case CTRE_MagEncoder_Relative:</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="comment">//                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::CTRE_MagEncoder_Relative;</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="comment">//                    break;</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                    printf( <span class="stringliteral">&quot;==&gt;&gt;MotorDefn::ParseXML invalid feedback devide %d \n&quot;</span>, intVal );</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                    hasError = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            }</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        }</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <span class="comment">// counts per revolution</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;countsPerRev&quot;</span> ) == 0 )</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        {</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            countsPerRev = attr.as_int();</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        }</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="comment">// gear ratio</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;gearRatio&quot;</span> ) == 0 )</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        {</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            gearRatio = attr.as_float();</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        }</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="comment">// brake mode (or coast)</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;brakeMode&quot;</span> ) == 0 )</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        {</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            brakeMode = attr.as_bool();</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        }</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="comment">// slaveto (existing CAN id of the master motor)</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;slaveTo&quot;</span>) == 0 )</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        {</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            slaveTo = attr.as_int();</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        }</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="comment">// peak current duration (cantalon)</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;peakCurrentDuration&quot;</span>) == 0 )</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        {</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            peakCurrentDuration = attr.as_int();</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        }</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="comment">// continuous current duration (cantalon)</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;continuousCurrentLimit&quot;</span>) == 0 )</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        {</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            continuousCurrentLimit = attr.as_int();</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        }</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="comment">// peak current limit (cantalon)</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;peakCurrentLimit&quot;</span>) == 0 )</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        {</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            peakCurrentLimit = attr.as_int();</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        }</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <span class="comment">// enable current limiting</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;currentLimiting&quot;</span>) == 0 )</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        {</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            enableCurrentLimit = attr.as_bool();</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        }</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        {</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            peakCurrentDuration = attr.as_int();</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        }</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="comment">// continuous current duration (cantalon)</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;continuousCurrentLimit&quot;</span>) == 0 )</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        {</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            continuousCurrentLimit = attr.as_int();</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        }</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="comment">// peak current limit (cantalon)</span></div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;peakCurrentLimit&quot;</span>) == 0 )</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        {</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            peakCurrentLimit = attr.as_int();</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        }</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="comment">// enable current limiting</span></div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;currentLimiting&quot;</span>) == 0 )</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        {</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            enableCurrentLimit = attr.as_bool();</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        }</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        {</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            printf( <span class="stringliteral">&quot;==&gt;&gt;MotorDefn::ParseXML invalid attribute %s \n&quot;</span>, attr.name() );</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            hasError = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        }</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    }</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordflow">if</span> ( !hasError )</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    {</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        pdpID = ( pdpID &lt; 0 ) ? pdpID = canID : pdpID;</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        controller = <a class="code" href="class_dragon_motor_controller_factory.html#a97f61b0d11774471af02aff3ef5ccbc7">DragonMotorControllerFactory::GetInstance</a>()-&gt;<a class="code" href="class_dragon_motor_controller_factory.html#a81d291d64c27cfd376bceada8f2d5b6f">CreateMotorController</a>( mechType,</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                                                                                         mtype,</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                                                                                         canID,</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                                                                                         pdpID,</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                                                                                         usage,</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                                                                                         inverted,</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                                                                                         sensorInverted,</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                                                                                         feedbackDevice,</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                                                                                         countsPerRev,</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                                                                                         gearRatio,</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                                                                                         brakeMode,</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                                                                                         slaveTo,</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                                                                                         peakCurrentLimit,</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                                                                                         peakCurrentDuration,</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                                                                                         peakCurrentLimit,</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                                                                                         enableCurrentLimit );</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    }</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordflow">return</span> controller;</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;}</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            printf( <span class="stringliteral">&quot;==&gt;&gt;MotorDefn::ParseXML invalid attribute %s \n&quot;</span>, attr.name() );</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            hasError = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        }</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    }</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordflow">if</span> ( !hasError )</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    {</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        pdpID = ( pdpID &lt; 0 ) ? canID : pdpID;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        controller = DragonMotorControllerFactory::GetInstance()-&gt;<a class="code" href="class_dragon_motor_controller_factory.html#a81d291d64c27cfd376bceada8f2d5b6f">CreateMotorController</a>( mtype,</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                                                                                         canID,</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                                                                                         pdpID,</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                                                                                         usage,</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                                                                                         inverted,</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                                                                                         sensorInverted,</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                                                                                         feedbackDevice,</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                                                                                         countsPerRev,</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                                                                                         gearRatio,</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                                                                                         brakeMode,</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                                                                                         slaveTo,</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                                                                                         peakCurrentLimit,</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                                                                                         peakCurrentDuration,</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                                                                                         peakCurrentLimit,</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                                                                                         enableCurrentLimit );</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    }</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordflow">return</span> controller;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;}</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_i_mechanism_html_a5b60af468978515764f4d2dedd80638d"><div class="ttname"><a href="class_i_mechanism.html#a5b60af468978515764f4d2dedd80638d">IMechanism::MECHANISM_TYPE</a></div><div class="ttdeci">MECHANISM_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="_i_mechanism_8h_source.html#l00050">IMechanism.h:50</a></div></div>
-<div class="ttc" id="a_dragon_motor_controller_factory_8h_html"><div class="ttname"><a href="_dragon_motor_controller_factory_8h.html">DragonMotorControllerFactory.h</a></div></div>
-<div class="ttc" id="aclass_dragon_motor_controller_factory_html_a97f61b0d11774471af02aff3ef5ccbc7"><div class="ttname"><a href="class_dragon_motor_controller_factory.html#a97f61b0d11774471af02aff3ef5ccbc7">DragonMotorControllerFactory::GetInstance</a></div><div class="ttdeci">static DragonMotorControllerFactory * GetInstance()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_motor_controller_factory_8cpp_source.html#l00025">DragonMotorControllerFactory.cpp:25</a></div></div>
 <div class="ttc" id="aclass_hardware_i_d_validation_html_ab6c13f88201571587dc8de99b4937e65"><div class="ttname"><a href="class_hardware_i_d_validation.html#ab6c13f88201571587dc8de99b4937e65">HardwareIDValidation::ValidateCANID</a></div><div class="ttdeci">static bool ValidateCANID(int canID, std::string methodID)</div><div class="ttdef"><b>Definition:</b> <a href="_hardware_i_d_validation_8cpp_source.html#l00047">HardwareIDValidation.cpp:47</a></div></div>
-<div class="ttc" id="a_hardware_i_d_validation_8h_html"><div class="ttname"><a href="_hardware_i_d_validation_8h.html">HardwareIDValidation.h</a></div></div>
-<div class="ttc" id="a_logger_8h_html"><div class="ttname"><a href="_logger_8h.html">Logger.h</a></div></div>
-<div class="ttc" id="aclass_motor_defn_html_a74ac80e1c2ce57348b962bed5c7bad59"><div class="ttname"><a href="class_motor_defn.html#a74ac80e1c2ce57348b962bed5c7bad59">MotorDefn::ParseXML</a></div><div class="ttdeci">IDragonMotorController * ParseXML(pugi::xml_node motorNode)</div><div class="ttdef"><b>Definition:</b> <a href="_motor_defn_8cpp_source.html#l00123">MotorDefn.cpp:123</a></div></div>
-<div class="ttc" id="aclass_i_dragon_motor_controller_html"><div class="ttname"><a href="class_i_dragon_motor_controller.html">IDragonMotorController</a></div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_motor_controller_8h_source.html#l00012">IDragonMotorController.h:12</a></div></div>
-<div class="ttc" id="aclass_dragon_motor_controller_factory_html_ab2cbc7da55b546e4da9e5d16a9965195"><div class="ttname"><a href="class_dragon_motor_controller_factory.html#ab2cbc7da55b546e4da9e5d16a9965195">DragonMotorControllerFactory::MOTOR_TYPE</a></div><div class="ttdeci">MOTOR_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_motor_controller_factory_8h_source.html#l00063">DragonMotorControllerFactory.h:63</a></div></div>
-<div class="ttc" id="aclass_dragon_motor_controller_factory_html_a81d291d64c27cfd376bceada8f2d5b6f"><div class="ttname"><a href="class_dragon_motor_controller_factory.html#a81d291d64c27cfd376bceada8f2d5b6f">DragonMotorControllerFactory::CreateMotorController</a></div><div class="ttdeci">std::shared_ptr&lt; IDragonMotorController &gt; CreateMotorController(std::string mtype, int canID, int pdpID, std::string usage, bool inverted, bool sensorInverted, ctre::phoenix::motorcontrol::FeedbackDevice feedbackDevice, int countsPerRev, float gearRatio, bool brakeMode, int slaveTo, int peakCurrentDuration, int continuousCurrentLimit, int peakCurrentLimit, bool enableCurrentLimit)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_motor_controller_factory_8cpp_source.html#l00075">DragonMotorControllerFactory.cpp:75</a></div></div>
-<div class="ttc" id="a_dragon_spark_max_8h_html"><div class="ttname"><a href="_dragon_spark_max_8h.html">DragonSparkMax.h</a></div></div>
-<div class="ttc" id="a_dragon_talon_8h_html"><div class="ttname"><a href="_dragon_talon_8h.html">DragonTalon.h</a></div></div>
+<div class="ttc" id="aclass_motor_defn_html_a41d1bdea7f06ba470b4330278b1ad1ce"><div class="ttname"><a href="class_motor_defn.html#a41d1bdea7f06ba470b4330278b1ad1ce">MotorDefn::ParseXML</a></div><div class="ttdeci">std::shared_ptr&lt; IDragonMotorController &gt; ParseXML(pugi::xml_node motorNode)</div><div class="ttdef"><b>Definition:</b> <a href="_motor_defn_8cpp_source.html#l00123">MotorDefn.cpp:123</a></div></div>
+<div class="ttc" id="aclass_dragon_motor_controller_factory_html_a81d291d64c27cfd376bceada8f2d5b6f"><div class="ttname"><a href="class_dragon_motor_controller_factory.html#a81d291d64c27cfd376bceada8f2d5b6f">DragonMotorControllerFactory::CreateMotorController</a></div><div class="ttdeci">std::shared_ptr&lt; IDragonMotorController &gt; CreateMotorController(std::string mtype, int canID, int pdpID, std::string usage, bool inverted, bool sensorInverted, ctre::phoenix::motorcontrol::FeedbackDevice feedbackDevice, int countsPerRev, float gearRatio, bool brakeMode, int slaveTo, int peakCurrentDuration, int continuousCurrentLimit, int peakCurrentLimit, bool enableCurrentLimit)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_motor_controller_factory_8cpp_source.html#l00050">DragonMotorControllerFactory.cpp:50</a></div></div>
+<div class="ttc" id="aclass_hardware_i_d_validation_html_a0aadb44d067609e1df994e06145f5f9f"><div class="ttname"><a href="class_hardware_i_d_validation.html#a0aadb44d067609e1df994e06145f5f9f">HardwareIDValidation::ValidatePDPID</a></div><div class="ttdeci">static bool ValidatePDPID(int pdpID, std::string methodID)</div><div class="ttdef"><b>Definition:</b> <a href="_hardware_i_d_validation_8cpp_source.html#l00065">HardwareIDValidation.cpp:65</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_7b2bcb36d453a1aa0a98981e9af51ae3.html">GitKrakenRepos</a></li><li class="navelem"><a class="el" href="dir_547abfd4c40dc92b54a6aa2a5efd07b2.html">TemplateRepository</a></li><li class="navelem"><a class="el" href="dir_2670559ca5a15a913822c358bf1bb356.html">src</a></li><li class="navelem"><a class="el" href="dir_4943459957647c46b1139863d8116988.html">main</a></li><li class="navelem"><a class="el" href="dir_bd4255150574be663a1c932dfa9033b1.html">cpp</a></li><li class="navelem"><a class="el" href="dir_3a569481b944d13fa799c1a7d3ec1325.html">xmlhw</a></li><li class="navelem"><a class="el" href="_motor_defn_8cpp.html">MotorDefn.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_7b2bcb36d453a1aa0a98981e9af51ae3.html">GitKrakenRepos</a></li><li class="navelem"><a class="el" href="dir_547abfd4c40dc92b54a6aa2a5efd07b2.html">TemplateRepository</a></li><li class="navelem"><a class="el" href="dir_2670559ca5a15a913822c358bf1bb356.html">src</a></li><li class="navelem"><a class="el" href="dir_4943459957647c46b1139863d8116988.html">main</a></li><li class="navelem"><a class="el" href="dir_bd4255150574be663a1c932dfa9033b1.html">cpp</a></li><li class="navelem"><a class="el" href="dir_3a569481b944d13fa799c1a7d3ec1325.html">xmlhw</a></li><li class="navelem"><b>MotorDefn.cpp</b></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

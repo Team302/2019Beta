@@ -1,5 +1,5 @@
 
-///====================================================================================================================================================
+//====================================================================================================================================================
 /// Copyright 2019 Lake Orion Robotics FIRST Team 302
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
@@ -12,13 +12,13 @@
 /// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
 /// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 /// OR OTHER DEALINGS IN THE SOFTWARE.
-///====================================================================================================================================================
+//====================================================================================================================================================
 
 #pragma once
 
-///========================================================================================================
+//========================================================================================================
 /// ChassisDefn.h
-///========================================================================================================
+//========================================================================================================
 ///
 /// Description: Create a chassis from an XML definition
 ///
@@ -35,7 +35,7 @@
 ///
 /// Track is the distance between wheels on an "axle"
 ///
-///========================================================================================================
+//========================================================================================================
 
 // Third Party includes
 #include <pugixml/pugixml.hpp>
@@ -46,12 +46,12 @@ class ChassisDefn
 		ChassisDefn() = default;
 		virtual ~ChassisDefn() = default;
 
-    	///================================================================================================
+    	//================================================================================================
     	/// Method:      ParseXML
     	/// Description: Parse the chassie element (and it children).  When this is done
 		//				 a dragon chassis exists that can be retrieved from the factory.
     	/// Returns:     void
-    	///================================================================================================
+    	//================================================================================================
 		void ParseXML
 		(
 			pugi::xml_node      chassisNode

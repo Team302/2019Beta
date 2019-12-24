@@ -5,8 +5,8 @@
  *      Author: team302
  */
 
-#ifndef SRC_SUBSYS_XMLPARSING_PIGEONDEFN_H_
-#define SRC_SUBSYS_XMLPARSING_PIGEONDEFN_H_
+#pragma once
+
 
 // C++ Includes
 #include <memory>
@@ -41,5 +41,3 @@ class PigeonDefn
         );
 };
 
-
-#endif /* SRC_SUBSYS_XMLPARSING_PIGEONDEFN_H_ */

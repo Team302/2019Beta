@@ -1,11 +1,24 @@
-/*
- * LidarDefn.cpp
- *
- */
+
+//====================================================================================================================================================
+// Copyright 2019 Lake Orion Robotics FIRST Team 302
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
+// to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+// and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+// OR OTHER DEALINGS IN THE SOFTWARE.
+//====================================================================================================================================================
+
+
 
 
 // C++ Includes
-#include <iostream>
+#include <string>
 
 // FRC includes
 #include <frc/SmartDashboard/SmartDashboard.h>
@@ -14,105 +27,81 @@
 #include <hw/LidarFactory.h>
 #include <hw/DragonLidar.h>
 #include <xmlhw/LidarDefn.h>
+#include <utils/HardwareIDValidation.h>
+#include <utils/UsageValidation.h>
 
 // Third Party Includes
 #include <pugixml/pugixml.hpp>
 
+using namespace std;
 
-//-----------------------------------------------------------------------
-// Method:      ParseXML
-// Description: Parse a lidar XML element and create a DragonLidar object
-//              from its definition.
-//
-//
-//<!-- ====================================================
-//     lidar
-//     ==================================================== -->
-//        enum LIDAR_USAGE
-//         {
-//             FORWARD_GRABBER,
-//             DOWNWARD_GRABBER,
-//             MAX_LIDAR_USAGES
-//         };
-//
-//<!ELEMENT lidar EMPTY>
-//<!ATTLIST lidar
-//          usage             (  0 |  1  ) "0"
-//          inputpin          CDATA #REQUIRED
-//          triggerpin        CDATA #REQUIRED
-//>
-// Returns  void
-//-----------------------------------------------------------------------
-void LidarDefn::ParseXML
+///----------------------------------------------------------------------------------------------------
+/// Method:      ParseXML
+/// @brief       Parse a lidar XML element and create a DragonLidar object from its definition.
+///
+/// @param [in]  pugi::xml_node                input lidar node in the xml file
+/// @return      
+///              std::shared_ptr<DragonLidar>  pointer to the DragonLidar or nullptr if invalid inputs
+///----------------------------------------------------------------------------------------------------
+std::shared_ptr<DragonLidar> LidarDefn::ParseXML
 (
-    pugi::xml_node      lidarNode
+    pugi::xml_node      lidarNode       
 )
 {
     // initialize the output
-
-    // initialize attributes to default values
-    DragonLidar::LIDAR_USAGE usage      = DragonLidar::FORWARD;
-    int                      inputPin   = 0;
-    int                      triggerPin = 0;
+    shared_ptr<DragonLidar> lidar = nullptr;
 
     bool hasError = false;
 
-    for (pugi::xml_attribute attr = lidarNode.first_attribute(); attr; attr = attr.next_attribute())
+
+    // initialize attributes to default values
+    IDragonSensor::SENSOR_USAGE usage   = IDragonSensor::SENSOR_USAGE::UNKNOWN_SENSOR;
+    int                      inputPin   = 0;
+    int                      triggerPin = 0;
+
+    // loop through the attributes, validating their values and updating the local variables,  if there
+    // is an invalid attribute value, stop processing the attributes (set that there is an error)
+    for (pugi::xml_attribute attr = lidarNode.first_attribute(); attr && !hasError; attr = attr.next_attribute())
     {
+        // validate/set the usage
         if ( strcmp( attr.name(), "usage" ) == 0 )
         {
-            int iVal = attr.as_int();
-            switch ( iVal )
+            usage = UsageValidation::ValidateSensorUsage( attr.value(), "LidarDefn::ParseXML");
+            if ( usage == IDragonSensor::SENSOR_USAGE::UNKNOWN_SENSOR)
             {
-                case DragonLidar::FORWARD:
-                    usage = DragonLidar::FORWARD;
-                    break;
-
-                case DragonLidar::BACKWARD:
-                    usage = DragonLidar::BACKWARD;
-                    break;
-
-                default:
-                    printf( "==>>LidarDefn::ParseXML Invalid Lidar Usage %d \n", iVal );
-                    hasError = true;
-                    break;
+                hasError = true;
             }
         }
+
+        // validate/set the input pin
         else if ( strcmp( attr.name(), "inputpin" ) == 0 )
         {
             int iVal = attr.as_int();
-            if ( iVal > -1 && iVal < 10 )
-            {
-                inputPin = attr.as_int();
-            }
-            else
-            {
-                printf( "==>> LidarDefn::ParseXML invalid input pin %d \n", iVal );
-                hasError = true;
-            }
+            hasError = HardwareIDValidation::ValidateDIOID( iVal, string( "LidarDefn::ParseXML(input pin)" ) );
         }
+
+        // validate/set the trigger pin
         else if ( strcmp( attr.name(), "triggerpin" ) == 0 )
         {
             int iVal = attr.as_int();
-            if ( iVal > -1 && iVal < 10 )
-            {
-                triggerPin = attr.as_int();
-            }
-            else
-            {
-                printf( "==>> LidarDefn::ParseXML invalid trigger pin %d \n", iVal );
-                hasError = true;
-            }
+            hasError = HardwareIDValidation::ValidateDIOID( iVal, string( "LidarDefn::ParseXML(trigger pin)" ) );
         }
+
+        // everything else is an unknown attribute; write an error
         else
         {
-            printf( "==>>LidarDefn::ParseXML invalid attribute %s \n", attr.name() );
+            string msg = "unknown attribute ";
+            msg += attr.name();
+            Logger::GetLogger()->LogError( "LidarDefn::ParseXML", msg );
             hasError = true;
         }
     }
 
+    // if there aren't any errors create the lidar
     if ( !hasError )
     {
-        LidarFactory::GetLidarFactory()->CreateLidar( usage, inputPin, triggerPin );
+        lidar = LidarFactory::GetLidarFactory()->CreateLidar( usage, inputPin, triggerPin );
     }
+
+    return lidar;
 }

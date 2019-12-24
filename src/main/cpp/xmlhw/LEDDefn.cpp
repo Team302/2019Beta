@@ -30,7 +30,7 @@ Description: Parse a pcm XML element and create a LED* from its definition
 >
 
 */
-void LEDDefn::ParseXML(
+LED* LEDDefn::ParseXML(
     pugi::xml_node LEDNode)
 {
     //initialize output
@@ -71,6 +71,7 @@ void LEDDefn::ParseXML(
     if (!hasError)
     {
         // led = new LED(canID);
-        LEDFactory::GetInstance()->CreateLED((LEDFactory::LED_USAGE) usage, canID);
+        led = LEDFactory::GetInstance()->CreateLED((LEDFactory::LED_USAGE) usage, canID);
     }
+    return led;
 }

@@ -11,6 +11,7 @@
 #include <iostream>
 
 // Team Includes
+#include <hw/LED.h>
 
 // Third Party Includes
 #include <pugixml/pugixml.hpp>
@@ -42,7 +43,7 @@ Description: Parse a pcm XML element and create a LED* from its definition
 
 
 
-    void ParseXML
+    LED* ParseXML
     (
         pugi::xml_node      LEDNode
     );

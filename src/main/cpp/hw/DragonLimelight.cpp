@@ -1,115 +1,165 @@
 
-///====================================================================================================================================================
-/// Copyright 2019 Lake Orion Robotics FIRST Team 302
-///
-/// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
-/// to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
-/// and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-///
-/// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-///
-/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-/// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-/// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
-/// OR OTHER DEALINGS IN THE SOFTWARE.
-///====================================================================================================================================================
-/*
-/*   Created by Austin Szczesniak
-/*   Date: 1-19-2019
-*/
+//====================================================================================================================================================
+// Copyright 2019 Lake Orion Robotics FIRST Team 302
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
+// to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+// and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+// OR OTHER DEALINGS IN THE SOFTWARE.
+//====================================================================================================================================================
 
-#include <hw/DragonLimelight.h>
+// C++ Includes
+#include <string>
 #include <vector>
 
-DragonLimelight* DragonLimelight::m_instance = nullptr;
+// FRC includes
+#include <networktables/NetworkTableInstance.h>
+#include <networktables/NetworkTable.h>
+#include <networktables/NetworkTableEntry.h>
+#include <frc/smartdashboard/SmartDashboard.h>
 
-DragonLimelight::DragonLimelight() :
-    table(NetworkTableInstance::GetDefault().GetTable("limelight"))
+// Team 302 includes
+#include <hw/DragonLimelight.h>
+#include <utils/Logger.h>
+
+// Third Party Includes
+
+using namespace nt;
+using namespace std;
+
+///-----------------------------------------------------------------------------------
+/// Method:         DragonLimelight (constructor)
+/// Description:    Create the object
+///-----------------------------------------------------------------------------------
+DragonLimelight::DragonLimelight
+(
+    string          tableName,                  /// <I> - network table name
+    double          mountingHeight,             /// <I> - mounting height of the limelight
+    double          mountingHorizontalOffset,   /// <I> - mounting horizontal offset from the middle of the robot 
+    double          mountingAngle,              /// <I> - mounting angle of the camera
+    double          targetHeight                /// <I> - height the target
+) : IDragonSensor(),
+    IDragonDistanceSensor(),
+    m_networktable( NetworkTableInstance::GetDefault().GetTable( tableName.c_str() ) ),
+    m_mountHeight( mountingHeight ),
+    m_mountingHorizontalOffset( mountingHorizontalOffset ),
+    m_mountingAngle( mountingAngle ),
+    m_targetHeight( targetHeight )
 {}
 
-std::vector<double> DragonLimelight::Get3DSolve()
+///-----------------------------------------------------------------------
+/// Method:      GetDistance
+/// Description: Return the measured distance in inches
+/// Returns:     double     Measured Distance
+///-----------------------------------------------------------------------
+double DragonLimelight::GetDistance() const
 {
-    return table->GetNumberArray("camtran", 0);
+    double distance = -1.0;
+    if ( HasTarget() )
+    {
+        distance = (m_targetHeight - m_mountHeight) / tan( m_mountingAngle + GetTargetVerticalOffset() );
+    }
+    return distance;
 }
 
-double DragonLimelight::HasTarget()
+///-----------------------------------------------------------------------
+/// Method:      GetConfidence
+/// Description: Indicates how accurate the returned value is
+/// Returns:     double    0.0 == ignore (sensor has an error)
+///                        1.0 == very confident 
+///-----------------------------------------------------------------------
+double DragonLimelight::GetConfidence() const
 {
-    double v = table->GetNumber("tv", 0.0);
-    return v;
+    double confidence = 0.0;
+    if ( HasTarget() )
+    {
+        confidence = 1.0;
+    }
+    return confidence;
 }
 
-double DragonLimelight::GetTargetHorizontalOffset()
+std::vector<double> DragonLimelight::Get3DSolve() const
 {
-    double x = table->GetNumber("tx", 0.0);
-    return x - 1.25;
+    return m_networktable->GetNumberArray("camtran", 0);
 }
 
-double DragonLimelight::GetTargetVerticalOffset()
+bool DragonLimelight::HasTarget() const
 {
-    double y = table->GetNumber("ty", 0.0);
-    return y;
+    return ( m_networktable->GetNumber("tv", 0.0) > 0.1 );
 }
 
-double DragonLimelight::GetTargetArea()
+double DragonLimelight::GetTargetHorizontalOffset() const
 {
-    double a = table->GetNumber("ta", 0.0);
-    return a;
+    return ( m_networktable->GetNumber("tx", 0.0) - m_mountingHorizontalOffset);
 }
 
-double DragonLimelight::GetTargetSkew()
+double DragonLimelight::GetTargetVerticalOffset() const
 {
-    double s = table->GetNumber("ts", 0.0);
-    return s;
+    return m_networktable->GetNumber("ty", 0.0);
 }
 
-double DragonLimelight::GetPipelineLatency()
+double DragonLimelight::GetTargetArea() const
 {
-    double l = table->GetNumber("tl", 0.0);
-    return l;
+    return m_networktable->GetNumber("ta", 0.0);
+}
+
+double DragonLimelight::GetTargetSkew() const
+{
+    return m_networktable->GetNumber("ts", 0.0);
+}
+
+double DragonLimelight::GetPipelineLatency() const
+{
+    return m_networktable->GetNumber("tl", 0.0);
+}
+
+void DragonLimelight::SetTargetHeight
+(
+    double targetHeight
+)
+{
+    m_targetHeight = targetHeight;
 }
 
 void DragonLimelight::SetLEDMode(DragonLimelight::LED_MODE mode)
 {
-    table->PutNumber("ledMode", mode);
+    m_networktable->PutNumber("ledMode", mode);
 }
 
 void DragonLimelight::SetCamMode(DragonLimelight::CAM_MODE mode)
 {
-    table->PutNumber("camMode", mode);
+    m_networktable->PutNumber("camMode", mode);
 }
 
 void DragonLimelight::SetPipeline(int pipeline)
 {
-    table->PutNumber("pipeline", pipeline);
+    m_networktable->PutNumber("pipeline", pipeline);
 }
 
 void DragonLimelight::SetStreamMode(DragonLimelight::STREAM_MODE mode)
 {
-    table->PutNumber("stream", mode);
+    m_networktable->PutNumber("stream", mode);
 }
 
 // MAX of 32 snapshots can be saved
 void DragonLimelight::ToggleSnapshot(DragonLimelight::SNAPSHOT_MODE toggle)
 {
-    table->PutNumber("snapshot", toggle);
+    m_networktable->PutNumber("snapshot", toggle);
 }
 
 void DragonLimelight::PrintValues()
 {
-    printf("Has Target: %f \n", HasTarget());
-    printf("X Offset: %f \n", GetTargetHorizontalOffset());
-    printf("Y Offset: %f \n", GetTargetVerticalOffset());
-    printf("Area: %f \n", GetTargetArea());
-    printf("Skew: %f \n", GetTargetSkew());
-    printf("Latency: %f \n", GetPipelineLatency());
+    Logger::GetLogger()->LogError( "DragonLimelight::PrintValues HasTarget", to_string( HasTarget() ) );    
+    Logger::GetLogger()->LogError( "DragonLimelight::PrintValues XOffset", to_string( GetTargetHorizontalOffset() ) ); 
+    Logger::GetLogger()->LogError( "DragonLimelight::PrintValues YOffset", to_string( GetTargetVerticalOffset() ) ); 
+    Logger::GetLogger()->LogError( "DragonLimelight::PrintValues Area", to_string( GetTargetArea() ) ); 
+    Logger::GetLogger()->LogError( "DragonLimelight::PrintValues Skew", to_string( GetTargetSkew() ) ); 
+    Logger::GetLogger()->LogError( "DragonLimelight::PrintValues Latency", to_string( GetPipelineLatency() ) ); 
 }
 
-DragonLimelight* DragonLimelight::GetInstance()
-{
-    if(m_instance == nullptr)
-    {
-        m_instance = new DragonLimelight();
-    }
-
-    return m_instance;
-}

@@ -12,6 +12,6 @@ var class_dragon_talon_tach =
     ] ],
     [ "DragonTalonTach", "class_dragon_talon_tach.html#a0ac6260de2acf6b6f340d7bb75b42cbc", null ],
     [ "DragonTalonTach", "class_dragon_talon_tach.html#a0378510f35e3b76abdd26c77f2885e03", null ],
-    [ "~DragonTalonTach", "class_dragon_talon_tach.html#a81c998c86b6660f08ad0414564a39761", null ],
+    [ "~DragonTalonTach", "class_dragon_talon_tach.html#a409ea09ac183fc2fd722d7aac2448b87", null ],
     [ "Get", "class_dragon_talon_tach.html#aa29027571fd02858fd41a7057510fdec", null ]
 ];

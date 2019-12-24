@@ -14,9 +14,9 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-///========================================================================================================
+//========================================================================================================
 /// RobotDefn.cpp
-///========================================================================================================
+//========================================================================================================
 ///
 /// File Description:
 ///     Top-level XML parsing file for the robot.  This definition will construct the motor controllers,
@@ -28,7 +28,7 @@
 ///
 ///     The robot definition XML file is:  /home/lvuser/config/robot.xml
 ///
-///========================================================================================================
+//========================================================================================================
 
 // C++ Includes
 #include <iostream>
@@ -73,14 +73,14 @@ void RobotDefn::ParseXML()
     // if it is good
     if (result)
     {
-        unique_ptr<ChassisDefn> chassisXML;
-        unique_ptr<MechanismDefn> mechanismXML;
+        unique_ptr<ChassisDefn> chassisXML = make_unique<ChassisDefn>();
+        unique_ptr<MechanismDefn> mechanismXML = make_unique<MechanismDefn>();
      //   unique_ptr<PCMDefn> pcmXML;
-        unique_ptr<PDPDefn> pdpXML;
-        unique_ptr<PigeonDefn> pigeonXML;
-        unique_ptr<LidarDefn> lidarXML;
-        unique_ptr<LEDDefn> ledXML;
-        unique_ptr<CameraDefn> cameraXML;
+        unique_ptr<PDPDefn> pdpXML = make_unique<PDPDefn>();
+        unique_ptr<PigeonDefn> pigeonXML = make_unique<PigeonDefn>();
+        unique_ptr<LidarDefn> lidarXML = make_unique<LidarDefn>();
+        unique_ptr<LEDDefn> ledXML = make_unique<LEDDefn>();
+        unique_ptr<CameraDefn> cameraXML = make_unique<CameraDefn>();
 
         // get the root node <robot>
         xml_node parent = doc.root();
@@ -91,27 +91,25 @@ void RobotDefn::ParseXML()
             {
                 if (strcmp(child.name(), "chassis") == 0)
                 {
-                    chassisXML = chassisXML == nullptr ? make_unique<ChassisDefn>() : chassisXML;
                     if ( chassisXML != nullptr )
                     {
                         chassisXML->ParseXML(child);
                     }
                     else
                     {
-                        Logger::GetLogger()->Log( "RobotDefn::ParseXML", "Unable to create ChassisDefn" );
+                        Logger::GetLogger()->LogError( "RobotDefn::ParseXML", "Unable to create ChassisDefn" );
                     }
 
                 }
                 else if (strcmp(child.name(), "mechanism") == 0)
                 {
-                    mechanismXML = ( mechanismXML == nullptr ) ? make_unique<MechanismDefn>() : mechanismXML;
                     if ( mechanismXML != nullptr )
                     {
                         mechanismXML->ParseXML(child);
                     }
                     else
                     {
-                        Logger::GetLogger()->Log( "RobotDefn::ParseXML", "Unable to create MechanismDefn" );
+                        Logger::GetLogger()->LogError( "RobotDefn::ParseXML", "Unable to create MechanismDefn" );
                     }
                 }
                 else if ( strcmp( child.name(), "pcm") == 0 )
@@ -120,69 +118,64 @@ void RobotDefn::ParseXML()
                 }
                 else if (strcmp(child.name(), "pdp") == 0)
                 {
-                    pdpXML = ( pdpXML == nullptr ) ? make_unique<PDPDefn>() : pdpXML;
                     if ( pdpXML != nullptr )
                     {
                         pdpXML->ParseXML(child);
                     }
                     else
                     {
-                        Logger::GetLogger()->Log( "RobotDefn::ParseXML", "Unable to create PDPDefn" );
+                        Logger::GetLogger()->LogError( "RobotDefn::ParseXML", "Unable to create PDPDefn" );
                     }
                 }
                 else if (strcmp(child.name(), "pigeon") == 0)
                 {
-                    pigeonXML = ( pigeonXML == nullptr ) ? make_unique<PigeonDefn>() : pigeonXML;
                     if ( pigeonXML != nullptr )
                     {
                         pigeonXML->ParseXML(child);
                     }
                     else
                     {
-                        Logger::GetLogger()->Log( "RobotDefn::ParseXML", "Unable to create PigeonDefn" );
+                        Logger::GetLogger()->LogError( "RobotDefn::ParseXML", "Unable to create PigeonDefn" );
                     }
                 }
                 else if ( strcmp( child.name(), "lidar") == 0 )
                 {
-                    lidarXML = ( lidarXML == nullptr ) ? make_unique<LidarDefn>() : lidarXML;
                     if ( lidarXML != nullptr )
                     {
                         lidarXML->ParseXML(child);
                     }
                     else
                     {
-                        Logger::GetLogger()->Log( "RobotDefn::ParseXML", "Unable to create LidarDefn" );
+                        Logger::GetLogger()->LogError( "RobotDefn::ParseXML", "Unable to create LidarDefn" );
                     }
                 }
                 else if (strcmp(child.name(), "camera") == 0)
                 {
-                    cameraXML = ( cameraXML == nullptr ) ? make_unique<CameraDefn>() : cameraXML;
                     if ( cameraXML != nullptr )
                     {
                         cameraXML->ParseXML(child);
                     }
                     else
                     {
-                        Logger::GetLogger()->Log( "RobotDefn::ParseXML", "Unable to create CameeraDefn" );
+                        Logger::GetLogger()->LogError( "RobotDefn::ParseXML", "Unable to create CameeraDefn" );
                     }
                 }
                 else if (strcmp(child.name(), "led") == 0)
                 {
-                    ledXML = ( ledXML == nullptr ) ? make_unique<LEDDefn>() : ledXML;
                     if ( ledXML != nullptr )
                     {
                         ledXML->ParseXML(child);
                     }
                     else
                     {
-                        Logger::GetLogger()->Log( "RobotDefn::ParseXML", "Unable to create LDEDefn" );
+                        Logger::GetLogger()->LogError( "RobotDefn::ParseXML", "Unable to create LDEDefn" );
                     }
                 }
                 else
                 {
                     string msg = "unknown child ";
                     msg += child.name();
-                    Logger::GetLogger()->Log( "RobotDefn::ParseXML", msg );
+                    Logger::GetLogger()->LogError( "RobotDefn::ParseXML", msg );
                 }
             }
         }
@@ -194,17 +187,17 @@ void RobotDefn::ParseXML()
         msg += "] parsed with errors, attr value: [";
         msg += doc.child( "prototype" ).attribute( "attr" ).value();
         msg += "]";
-        Logger::GetLogger()->Log( "RobotDefn::ParseXML (1) ", msg );
+        Logger::GetLogger()->LogError( "RobotDefn::ParseXML (1) ", msg );
 
         msg = "Error description: ";
         msg += result.description();
-        Logger::GetLogger()->Log( "RobotDefn::ParseXML (2) ", msg );
+        Logger::GetLogger()->LogError( "RobotDefn::ParseXML (2) ", msg );
 
         msg = "Error offset: ";
         msg += result.offset;
         msg += " error at ...";
         msg += filename;
         msg += result.offset;
-        Logger::GetLogger()->Log( "RobotDefn::ParseXML (3) ", msg );
+        Logger::GetLogger()->LogError( "RobotDefn::ParseXML (3) ", msg );
     }
 }

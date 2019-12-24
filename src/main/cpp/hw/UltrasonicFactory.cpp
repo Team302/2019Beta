@@ -7,6 +7,8 @@
 
 #include <hw/UltrasonicFactory.h>
 #include <hw/DragonUltrasonic.h>
+#include <hw/IDragonSensor.h>
+#include <hw/IDragonDistanceSensor.h>
 
 UltrasonicFactory* UltrasonicFactory::m_ultrasonicFactory = nullptr;
 DragonUltrasonic* UltrasonicFactory::m_ultrasonic = nullptr;
@@ -22,10 +24,11 @@ UltrasonicFactory* UltrasonicFactory::GetUltrasonicFactory()
 
 DragonUltrasonic* UltrasonicFactory::GetDragonUltrasonic
 (
-     DragonUltrasonic::ULTRASONIC_USAGE  usage
+     IDragonSensor::SENSOR_USAGE  usage
 )
 {
     DragonUltrasonic* ultra = nullptr;
+    /**
     if ( usage == DragonUltrasonic::LEFT_SIDE_DISTANCE )
     {
         ultra = m_left;
@@ -36,8 +39,9 @@ DragonUltrasonic* UltrasonicFactory::GetDragonUltrasonic
     }
     else
     {
+        **/
         printf( "UltrasonicFactory::GetDragonUltrasonic invalid usage %d \n", usage );
-    }
+   // }
 
     return ultra;
 }
@@ -50,11 +54,12 @@ DragonUltrasonic* UltrasonicFactory::GetDragonUltrasonic
 //=======================================================================================
 DragonUltrasonic* UltrasonicFactory::CreateUltrasonic
 (
-	DragonUltrasonic::ULTRASONIC_USAGE		usage,
+	IDragonSensor::SENSOR_USAGE		usage,
 	int								        analogInChannel
 )
 {
     DragonUltrasonic* ultra = nullptr;
+    /**
     if ( usage == DragonUltrasonic::LEFT_SIDE_DISTANCE )
     {
         ultra = new DragonUltrasonic( usage, analogInChannel );;
@@ -65,8 +70,9 @@ DragonUltrasonic* UltrasonicFactory::CreateUltrasonic
     }
     else
     {
+        **/
         printf( "UltrasonicFactory::GetDragonUltrasonic invalid usage %d \n", usage );
-    }
+   // }
     return ultra;
 }
 

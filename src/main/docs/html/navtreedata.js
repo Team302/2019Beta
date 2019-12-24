@@ -22,43 +22,30 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "2020 Template Project", "index.html", [
-    [ "README", "md__c_1__git_kraken_repos__template_repository_src_main_cpp_xmlhw__r_e_a_d_m_e.html", [
-      [ "Team 302 FIRST robot", "md__c_1__git_kraken_repos__template_repository_src_main_cpp_xmlhw__r_e_a_d_m_e.html#autotoc_md179", [
-        [ "Robot Definition", "md__c_1__git_kraken_repos__template_repository_src_main_cpp_xmlhw__r_e_a_d_m_e.html#autotoc_md180", null ]
-      ] ]
-    ] ],
+  [ "Team302Robot", "index.html", [
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", null ],
+        [ "All", "functions.html", null ],
+        [ "Functions", "functions_func.html", null ],
         [ "Enumerations", "functions_enum.html", null ],
-        [ "Enumerator", "functions_eval.html", "functions_eval" ]
+        [ "Enumerator", "functions_eval.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ],
-      [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ],
-        [ "Typedefs", "globals_type.html", null ],
-        [ "Macros", "globals_defs.html", null ]
-      ] ]
+      [ "File List", "files.html", "files_dup" ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"_analog_axis_8cpp.html",
-"_p_i_d_defn_8h.html",
-"class_dragon_spark_max.html#a30be4189ed4796945e3de09a5e9131e8",
-"class_i_dragon_motor_controller.html#a93f40b43658f5744e50292dbf6fc470b",
-"dir_7b2bcb36d453a1aa0a98981e9af51ae3.html"
+"_analog_axis_8cpp_source.html",
+"class_dragon_lidar.html#a0b7ff9670fdb521c38f85216c30a98b6",
+"class_i_dragon_game_pad.html#a0397960782662f2d55df39297128a33ca44cf8456f7b9ba857469e7b8ea80a7de",
+"class_mechanism_parameters.html#a33645fbdee2537b07f48e371662ab14ea4befafb9074da3a1c699914b590ba66a"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

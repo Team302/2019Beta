@@ -1,38 +1,81 @@
-/*
- * DragonUltrasonic.h
- *
- *  Created on: Feb 6, 2018
- *      Author: jonah
- */
 
-#ifndef SRC_SUBSYS_COMPONENTS_DRAGONULTRASONIC_H_
-#define SRC_SUBSYS_COMPONENTS_DRAGONULTRASONIC_H_
+//====================================================================================================================================================
+// Copyright 2019 Lake Orion Robotics FIRST Team 302
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
+// to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+// and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+// OR OTHER DEALINGS IN THE SOFTWARE.
+//====================================================================================================================================================
 
+
+
+#pragma once
+
+// C++ Includes
+#include <memory>
+#include <string>
+#include <vector>
+
+// FRC includes
 #include <frc/AnalogInput.h>
-#include <hw/IDragonUltrasonic.h>
 
-using namespace frc;
+// Team 302 includes
+#include <hw/IDragonSensor.h>
+#include <hw/IDragonDistanceSensor.h>
+
+// Third Party Includes
+
+
 
 /*
  * This class takes an analog input signal on the roborio from an ultrasonic distance sensor and converts it to inches.
  * https://www.maxbotix.com/documents/HRLV-MaxSonar-EZ_Datasheet.pdf
  */
 
-class DragonUltrasonic : public IDragonUltrasonic
+class DragonUltrasonic : public IDragonSensor, IDragonDistanceSensor
 {
-public:
-	DragonUltrasonic
-	(
-	    IDragonUltrasonic::ULTRASONIC_USAGE     usage,
-	    int                                     analogInChannel
-	);
-	virtual ~DragonUltrasonic();
-	double GetDistance() const override; // In inches
-	IDragonUltrasonic::ULTRASONIC_USAGE GetUsage() const override;
+	public:
+		DragonUltrasonic
+		(
+			IDragonSensor::SENSOR_USAGE usage,
+			int                         analogInChannel
+		);
+        DragonUltrasonic() = delete;
+		virtual ~DragonUltrasonic() = default;
 
-private:
-	AnalogInput*                                m_input;
-	IDragonUltrasonic::ULTRASONIC_USAGE         m_usage;
+        ///-----------------------------------------------------------------------
+        /// Method:      GetDistance
+        /// Description: Return the measured distance in inches
+        /// Returns:     double     Measured Distance
+        ///-----------------------------------------------------------------------
+        double GetDistance() const override;   // IDragonDistanceSensor
+
+
+        ///-----------------------------------------------------------------------
+        /// Method:      GetConfidence
+        /// Description: Indicates how accurate the returned value is
+        /// Returns:     double    0.0 == ignore (sensor has an error)
+        ///                        1.0 == very confident 
+        ///-----------------------------------------------------------------------
+        double GetConfidence() const override; // IDragonSensor
+
+		
+        ///-----------------------------------------------------------------------
+        /// Method:      GetUsage
+        /// Description: Indicate what the sensor is used for
+        /// Returns:     SENSOR_USAGE    sensor usage 
+        ///-----------------------------------------------------------------------
+		IDragonSensor::SENSOR_USAGE GetUsage() const override;
+
+	private:
+		std::unique_ptr<frc::AnalogInput>       m_input;
+		IDragonSensor::SENSOR_USAGE             m_usage;
 };
 
-#endif /* SRC_SUBSYS_COMPONENTS_DRAGONULTRASONIC_H_ */

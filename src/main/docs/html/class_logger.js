@@ -5,6 +5,6 @@ var class_logger =
       [ "DASHBOARD", "class_logger.html#a4edb2ae414fe730aa45c9279c07f013aa30505ac45161ab12db3907e4236a7417", null ],
       [ "EAT_IT", "class_logger.html#a4edb2ae414fe730aa45c9279c07f013aa79d5b0f7ae29658e8a44668f40fb59be", null ]
     ] ],
-    [ "Log", "class_logger.html#a212c1cb5a51e8d0c9e19a8f466f0fc25", null ],
+    [ "LogError", "class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883", null ],
     [ "SetLoggingOption", "class_logger.html#a81e0fa4eef4a980adb91577eac4bdebd", null ]
 ];

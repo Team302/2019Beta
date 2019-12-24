@@ -1,5 +1,6 @@
 #pragma once
 
+#include <memory>
 #include <ctre/phoenix/CANifier.h>
 
 
@@ -27,6 +28,6 @@ class LED
    void DisableLED();
 
    private:
-    ctre::phoenix::CANifier* m_CAN;
+    std::shared_ptr<ctre::phoenix::CANifier> m_CAN;
     bool m_ledEnabled;
 };

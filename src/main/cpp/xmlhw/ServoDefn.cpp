@@ -3,6 +3,7 @@
  */
 
 // C++ Includes
+#include <memory>
 #include <iostream>
 
 // FRC includes
@@ -15,6 +16,8 @@
 
 // Third Party Includes
 #include <pugixml/pugixml.hpp>
+
+using namespace std;
 
     //-----------------------------------------------------------------------
     // Method:      ParseXML
@@ -45,11 +48,13 @@
     //>
     // Returns:     void        
     //-----------------------------------------------------------------------
-    void ServoDefn::ParseXML
+    shared_ptr<DragonServo> ServoDefn::ParseXML
     (
         pugi::xml_node      ServoNode
     )
     {
+        shared_ptr<DragonServo> servo = nullptr; 
+
         // initialize attributes to default values
         int pwmID = 0;
         DragonServo::SERVO_USAGE usage = DragonServo::UNKNOWN_SERVO_USAGE;
@@ -59,7 +64,7 @@
         bool hasError = false;
 
         // parse/validate the xml
-        for (pugi::xml_attribute attr = ServoNode.first_attribute(); attr; attr = attr.next_attribute())
+        for (pugi::xml_attribute attr = ServoNode.first_attribute(); attr && !hasError; attr = attr.next_attribute())
         {
             if ( strcmp( attr.name(), "usage" ) == 0 )
             {
@@ -102,6 +107,7 @@
         // create the object
         if ( !hasError )
         {
-            DragonServoFactory::GetInstance()->CreateDragonServo( usage, pwmID, minAngle, maxAngle );
+            servo = DragonServoFactory::GetInstance()->CreateDragonServo( usage, pwmID, minAngle, maxAngle );
         }
+        return servo;
     }

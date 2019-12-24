@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>2020 Template Project: DragonLimelight Class Reference</title>
+<title>Team302Robot: DragonLimelight Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">2020 Template Project
+   <div id="projectname">Team302Robot
    </div>
   </td>
  </tr>
@@ -88,180 +88,122 @@ $(document).ready(function(){initNavTree('class_dragon_limelight.html','');});
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="class_dragon_limelight-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">DragonLimelight Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="_dragon_limelight_8h_source.html">DragonLimelight.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for DragonLimelight:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_dragon_limelight.png" usemap="#DragonLimelight_map" alt=""/>
+  <map id="DragonLimelight_map" name="DragonLimelight_map">
+<area href="class_i_dragon_sensor.html" alt="IDragonSensor" shape="rect" coords="0,0,146,24"/>
+<area href="class_i_dragon_distance_sensor.html" alt="IDragonDistanceSensor" shape="rect" coords="156,0,302,24"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a4968de97dbb55b78eb63a6e3ab398f40"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#a4968de97dbb55b78eb63a6e3ab398f40">LED_MODE</a> { <a class="el" href="class_dragon_limelight.html#a4968de97dbb55b78eb63a6e3ab398f40ab7dd6a5238dad33d9e9c5b91040536a0">LED_DEFUALT</a>, 
-<a class="el" href="class_dragon_limelight.html#a4968de97dbb55b78eb63a6e3ab398f40ae81aad277be42064a5119ae40c133e02">LED_OFF</a>, 
-<a class="el" href="class_dragon_limelight.html#a4968de97dbb55b78eb63a6e3ab398f40a269dc53e2b1a2fd2690580c13abb8deb">LED_BLINK</a>, 
-<a class="el" href="class_dragon_limelight.html#a4968de97dbb55b78eb63a6e3ab398f40adbb464c1dcf76bc2aaa7164dfb5ff917">LED_ON</a>
+<tr class="memitem:a4968de97dbb55b78eb63a6e3ab398f40"><td class="memItemLeft" align="right" valign="top"><a id="a4968de97dbb55b78eb63a6e3ab398f40"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>LED_MODE</b> { <b>LED_DEFUALT</b>, 
+<b>LED_OFF</b>, 
+<b>LED_BLINK</b>, 
+<b>LED_ON</b>
  }</td></tr>
 <tr class="separator:a4968de97dbb55b78eb63a6e3ab398f40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafb5de7911fc118585b3cb32e0c87f13"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#aafb5de7911fc118585b3cb32e0c87f13">CAM_MODE</a> { <a class="el" href="class_dragon_limelight.html#aafb5de7911fc118585b3cb32e0c87f13a472774a380ad7a07891cf9aaa450663d">CAM_VISION</a>, 
-<a class="el" href="class_dragon_limelight.html#aafb5de7911fc118585b3cb32e0c87f13a12f2fed7bd60b413c0cb428219f74ae7">CAM_DRIVER</a>
+<tr class="memitem:aafb5de7911fc118585b3cb32e0c87f13"><td class="memItemLeft" align="right" valign="top"><a id="aafb5de7911fc118585b3cb32e0c87f13"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>CAM_MODE</b> { <b>CAM_VISION</b>, 
+<b>CAM_DRIVER</b>
  }</td></tr>
 <tr class="separator:aafb5de7911fc118585b3cb32e0c87f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e61244761896139b6cd1c72c5363f91"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#a7e61244761896139b6cd1c72c5363f91">STREAM_MODE</a> { <a class="el" href="class_dragon_limelight.html#a7e61244761896139b6cd1c72c5363f91ac2171c51a110c25a7ccdd8ee94131409">STREAM_DEFAULT</a>, 
-<a class="el" href="class_dragon_limelight.html#a7e61244761896139b6cd1c72c5363f91aa3927f577d6892bbb53b884731b994fe">STREAM_MAIN_AND_SECOND</a>, 
-<a class="el" href="class_dragon_limelight.html#a7e61244761896139b6cd1c72c5363f91adb9229484e3c6f059ab6eed5fcc7e184">STREAM_SECOND_AND_MAIN</a>
+<tr class="memitem:a7e61244761896139b6cd1c72c5363f91"><td class="memItemLeft" align="right" valign="top"><a id="a7e61244761896139b6cd1c72c5363f91"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>STREAM_MODE</b> { <b>STREAM_DEFAULT</b>, 
+<b>STREAM_MAIN_AND_SECOND</b>, 
+<b>STREAM_SECOND_AND_MAIN</b>
  }</td></tr>
 <tr class="separator:a7e61244761896139b6cd1c72c5363f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad153a8681f6b1f71906fba0a6c4863ed"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#ad153a8681f6b1f71906fba0a6c4863ed">SNAPSHOT_MODE</a> { <a class="el" href="class_dragon_limelight.html#ad153a8681f6b1f71906fba0a6c4863eda3ca0d71b2c71150a290493d7db061037">SNAP_OFF</a>, 
-<a class="el" href="class_dragon_limelight.html#ad153a8681f6b1f71906fba0a6c4863eda3d2a70af357f8d44d7e42fea7e935d42">SNAP_ON</a>
+<tr class="memitem:ad153a8681f6b1f71906fba0a6c4863ed"><td class="memItemLeft" align="right" valign="top"><a id="ad153a8681f6b1f71906fba0a6c4863ed"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>SNAPSHOT_MODE</b> { <b>SNAP_OFF</b>, 
+<b>SNAP_ON</b>
  }</td></tr>
 <tr class="separator:ad153a8681f6b1f71906fba0a6c4863ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_class_i_dragon_sensor"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_i_dragon_sensor')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="class_i_dragon_sensor.html">IDragonSensor</a></td></tr>
+<tr class="memitem:a48f04b4f71b0f27f8330fd82a26b5fe9 inherit pub_types_class_i_dragon_sensor"><td class="memItemLeft" align="right" valign="top"><a id="a48f04b4f71b0f27f8330fd82a26b5fe9"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>SENSOR_USAGE</b> { <b>UNKNOWN_SENSOR</b> = -1, 
+<b>MAX_SENSORS</b>
+ }</td></tr>
+<tr class="separator:a48f04b4f71b0f27f8330fd82a26b5fe9 inherit pub_types_class_i_dragon_sensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a546283a856de9d1bf52bdf6b1baf4fc6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#a546283a856de9d1bf52bdf6b1baf4fc6">HasTarget</a> ()</td></tr>
-<tr class="separator:a546283a856de9d1bf52bdf6b1baf4fc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfd43760a2ea877e7e411ec503cdf2b4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#acfd43760a2ea877e7e411ec503cdf2b4">GetTargetHorizontalOffset</a> ()</td></tr>
-<tr class="separator:acfd43760a2ea877e7e411ec503cdf2b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af148a6528fde2ba62b63bdc149ae806d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#af148a6528fde2ba62b63bdc149ae806d">GetTargetVerticalOffset</a> ()</td></tr>
-<tr class="separator:af148a6528fde2ba62b63bdc149ae806d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05d3812ffd88dcc31ec19e6c0c7c947d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#a05d3812ffd88dcc31ec19e6c0c7c947d">GetTargetArea</a> ()</td></tr>
-<tr class="separator:a05d3812ffd88dcc31ec19e6c0c7c947d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfd35521178530f9d106ac1169d339cc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#abfd35521178530f9d106ac1169d339cc">GetTargetSkew</a> ()</td></tr>
-<tr class="separator:abfd35521178530f9d106ac1169d339cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a97f29ae9c244fc34bf0a1eee0d73ac"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#a9a97f29ae9c244fc34bf0a1eee0d73ac">GetPipelineLatency</a> ()</td></tr>
-<tr class="separator:a9a97f29ae9c244fc34bf0a1eee0d73ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf993eb8613503ae4a9a5345b797e450"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#adf993eb8613503ae4a9a5345b797e450">Get3DSolve</a> ()</td></tr>
-<tr class="separator:adf993eb8613503ae4a9a5345b797e450"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f80d91a71106af3592ec0975f474aaf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#a8f80d91a71106af3592ec0975f474aaf">SetLEDMode</a> (<a class="el" href="class_dragon_limelight.html#a4968de97dbb55b78eb63a6e3ab398f40">DragonLimelight::LED_MODE</a> mode)</td></tr>
+<tr class="memitem:a003d6b9c140e33c5d4291075b16c868a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#a003d6b9c140e33c5d4291075b16c868a">DragonLimelight</a> ()=delete</td></tr>
+<tr class="separator:a003d6b9c140e33c5d4291075b16c868a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66837a629d679ab1c6de8f80e22abdcb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#a66837a629d679ab1c6de8f80e22abdcb">DragonLimelight</a> (std::string tableName, double mountingHeight, double mountingHorizontalOffset, double mountingAngle, double targetHeight)</td></tr>
+<tr class="separator:a66837a629d679ab1c6de8f80e22abdcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad524ba4ce87697fa883882f5c41e9b60"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#ad524ba4ce87697fa883882f5c41e9b60">~DragonLimelight</a> ()=default</td></tr>
+<tr class="separator:ad524ba4ce87697fa883882f5c41e9b60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0db4976887ba1e7dda441b7053ca0f67"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#a0db4976887ba1e7dda441b7053ca0f67">GetDistance</a> () const override</td></tr>
+<tr class="separator:a0db4976887ba1e7dda441b7053ca0f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac8b4e5ba88a7e0539c5b6cbc6974471"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#aac8b4e5ba88a7e0539c5b6cbc6974471">GetConfidence</a> () const override</td></tr>
+<tr class="separator:aac8b4e5ba88a7e0539c5b6cbc6974471"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61df6005aac9e2f90bfe5a8ed40f3456"><td class="memItemLeft" align="right" valign="top"><a id="a61df6005aac9e2f90bfe5a8ed40f3456"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>HasTarget</b> () const</td></tr>
+<tr class="separator:a61df6005aac9e2f90bfe5a8ed40f3456"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47d04ae8a2230a52887d696109f37eed"><td class="memItemLeft" align="right" valign="top"><a id="a47d04ae8a2230a52887d696109f37eed"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>GetTargetHorizontalOffset</b> () const</td></tr>
+<tr class="separator:a47d04ae8a2230a52887d696109f37eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8f2120ffbf5207fd7053860c6a591b0"><td class="memItemLeft" align="right" valign="top"><a id="ae8f2120ffbf5207fd7053860c6a591b0"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>GetTargetVerticalOffset</b> () const</td></tr>
+<tr class="separator:ae8f2120ffbf5207fd7053860c6a591b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a5145044d385e7fac479065a54f6e57"><td class="memItemLeft" align="right" valign="top"><a id="a9a5145044d385e7fac479065a54f6e57"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>GetTargetArea</b> () const</td></tr>
+<tr class="separator:a9a5145044d385e7fac479065a54f6e57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c2b9b606d2643467df517a786545e49"><td class="memItemLeft" align="right" valign="top"><a id="a9c2b9b606d2643467df517a786545e49"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>GetTargetSkew</b> () const</td></tr>
+<tr class="separator:a9c2b9b606d2643467df517a786545e49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a597d5a2a3eed41cdfb400bdb8cc91405"><td class="memItemLeft" align="right" valign="top"><a id="a597d5a2a3eed41cdfb400bdb8cc91405"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>GetPipelineLatency</b> () const</td></tr>
+<tr class="separator:a597d5a2a3eed41cdfb400bdb8cc91405"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a381f0a9dc0d7318e84f29942513845cb"><td class="memItemLeft" align="right" valign="top"><a id="a381f0a9dc0d7318e84f29942513845cb"></a>
+std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Get3DSolve</b> () const</td></tr>
+<tr class="separator:a381f0a9dc0d7318e84f29942513845cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd7c06707d40db5e4ce34142339ed484"><td class="memItemLeft" align="right" valign="top"><a id="abd7c06707d40db5e4ce34142339ed484"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetTargetHeight</b> (double targetHeight)</td></tr>
+<tr class="separator:abd7c06707d40db5e4ce34142339ed484"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f80d91a71106af3592ec0975f474aaf"><td class="memItemLeft" align="right" valign="top"><a id="a8f80d91a71106af3592ec0975f474aaf"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetLEDMode</b> (DragonLimelight::LED_MODE mode)</td></tr>
 <tr class="separator:a8f80d91a71106af3592ec0975f474aaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6e89317d90de2e9c7c90eaa9293cab4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#ac6e89317d90de2e9c7c90eaa9293cab4">SetCamMode</a> (<a class="el" href="class_dragon_limelight.html#aafb5de7911fc118585b3cb32e0c87f13">DragonLimelight::CAM_MODE</a> mode)</td></tr>
+<tr class="memitem:ac6e89317d90de2e9c7c90eaa9293cab4"><td class="memItemLeft" align="right" valign="top"><a id="ac6e89317d90de2e9c7c90eaa9293cab4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetCamMode</b> (DragonLimelight::CAM_MODE mode)</td></tr>
 <tr class="separator:ac6e89317d90de2e9c7c90eaa9293cab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9008ec8358c4f2836b8aa4829e731104"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#a9008ec8358c4f2836b8aa4829e731104">SetPipeline</a> (int pipeline)</td></tr>
+<tr class="memitem:a9008ec8358c4f2836b8aa4829e731104"><td class="memItemLeft" align="right" valign="top"><a id="a9008ec8358c4f2836b8aa4829e731104"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetPipeline</b> (int pipeline)</td></tr>
 <tr class="separator:a9008ec8358c4f2836b8aa4829e731104"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa90d53fedc3b0568a434c57b987b6d79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#aa90d53fedc3b0568a434c57b987b6d79">SetStreamMode</a> (<a class="el" href="class_dragon_limelight.html#a7e61244761896139b6cd1c72c5363f91">DragonLimelight::STREAM_MODE</a> mode)</td></tr>
+<tr class="memitem:aa90d53fedc3b0568a434c57b987b6d79"><td class="memItemLeft" align="right" valign="top"><a id="aa90d53fedc3b0568a434c57b987b6d79"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetStreamMode</b> (DragonLimelight::STREAM_MODE mode)</td></tr>
 <tr class="separator:aa90d53fedc3b0568a434c57b987b6d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9854cde1425bf1d0d25ed15b586e599d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#a9854cde1425bf1d0d25ed15b586e599d">ToggleSnapshot</a> (<a class="el" href="class_dragon_limelight.html#ad153a8681f6b1f71906fba0a6c4863ed">DragonLimelight::SNAPSHOT_MODE</a> toggle)</td></tr>
+<tr class="memitem:a9854cde1425bf1d0d25ed15b586e599d"><td class="memItemLeft" align="right" valign="top"><a id="a9854cde1425bf1d0d25ed15b586e599d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ToggleSnapshot</b> (DragonLimelight::SNAPSHOT_MODE toggle)</td></tr>
 <tr class="separator:a9854cde1425bf1d0d25ed15b586e599d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a223f0bdf47eb46ba0085cdbc17a2fbed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#a223f0bdf47eb46ba0085cdbc17a2fbed">PrintValues</a> ()</td></tr>
+<tr class="memitem:a223f0bdf47eb46ba0085cdbc17a2fbed"><td class="memItemLeft" align="right" valign="top"><a id="a223f0bdf47eb46ba0085cdbc17a2fbed"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>PrintValues</b> ()</td></tr>
 <tr class="separator:a223f0bdf47eb46ba0085cdbc17a2fbed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ae8a55699d66ded94c5d2d5852958431f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_dragon_limelight.html">DragonLimelight</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#ae8a55699d66ded94c5d2d5852958431f">GetInstance</a> ()</td></tr>
-<tr class="separator:ae8a55699d66ded94c5d2d5852958431f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_i_dragon_sensor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_i_dragon_sensor')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_i_dragon_sensor.html">IDragonSensor</a></td></tr>
+<tr class="memitem:ad5b217a4a40900db84330324383d89c7 inherit pub_methods_class_i_dragon_sensor"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_dragon_sensor.html#ad5b217a4a40900db84330324383d89c7">IDragonSensor</a> ()=default</td></tr>
+<tr class="separator:ad5b217a4a40900db84330324383d89c7 inherit pub_methods_class_i_dragon_sensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bdc48d7becd14702bef6447e9110954 inherit pub_methods_class_i_dragon_sensor"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_dragon_sensor.html#a2bdc48d7becd14702bef6447e9110954">~IDragonSensor</a> ()=default</td></tr>
+<tr class="separator:a2bdc48d7becd14702bef6447e9110954 inherit pub_methods_class_i_dragon_sensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3040df89bae5da661a21d71c1df4ccb4 inherit pub_methods_class_i_dragon_sensor"><td class="memItemLeft" align="right" valign="top">virtual SENSOR_USAGE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_dragon_sensor.html#a3040df89bae5da661a21d71c1df4ccb4">GetUsage</a> () const =0</td></tr>
+<tr class="separator:a3040df89bae5da661a21d71c1df4ccb4 inherit pub_methods_class_i_dragon_sensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_i_dragon_distance_sensor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_i_dragon_distance_sensor')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_i_dragon_distance_sensor.html">IDragonDistanceSensor</a></td></tr>
+<tr class="memitem:ab192c7707e597027b8ddef0183d0e0e2 inherit pub_methods_class_i_dragon_distance_sensor"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_dragon_distance_sensor.html#ab192c7707e597027b8ddef0183d0e0e2">IDragonDistanceSensor</a> ()=default</td></tr>
+<tr class="separator:ab192c7707e597027b8ddef0183d0e0e2 inherit pub_methods_class_i_dragon_distance_sensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5f6bfec69e7bbd9542a6249701ffdaf inherit pub_methods_class_i_dragon_distance_sensor"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_dragon_distance_sensor.html#ac5f6bfec69e7bbd9542a6249701ffdaf">~IDragonDistanceSensor</a> ()=default</td></tr>
+<tr class="separator:ac5f6bfec69e7bbd9542a6249701ffdaf inherit pub_methods_class_i_dragon_distance_sensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8h_source.html#l00028">28</a> of file <a class="el" href="_dragon_limelight_8h_source.html">DragonLimelight.h</a>.</p>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
-<a id="aafb5de7911fc118585b3cb32e0c87f13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aafb5de7911fc118585b3cb32e0c87f13">&#9670;&nbsp;</a></span>CAM_MODE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_dragon_limelight.html#aafb5de7911fc118585b3cb32e0c87f13">DragonLimelight::CAM_MODE</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aafb5de7911fc118585b3cb32e0c87f13a472774a380ad7a07891cf9aaa450663d"></a>CAM_VISION&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aafb5de7911fc118585b3cb32e0c87f13a12f2fed7bd60b413c0cb428219f74ae7"></a>CAM_DRIVER&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8h_source.html#l00039">39</a> of file <a class="el" href="_dragon_limelight_8h_source.html">DragonLimelight.h</a>.</p>
-
-</div>
-</div>
-<a id="a4968de97dbb55b78eb63a6e3ab398f40"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4968de97dbb55b78eb63a6e3ab398f40">&#9670;&nbsp;</a></span>LED_MODE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_dragon_limelight.html#a4968de97dbb55b78eb63a6e3ab398f40">DragonLimelight::LED_MODE</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4968de97dbb55b78eb63a6e3ab398f40ab7dd6a5238dad33d9e9c5b91040536a0"></a>LED_DEFUALT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a4968de97dbb55b78eb63a6e3ab398f40ae81aad277be42064a5119ae40c133e02"></a>LED_OFF&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a4968de97dbb55b78eb63a6e3ab398f40a269dc53e2b1a2fd2690580c13abb8deb"></a>LED_BLINK&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a4968de97dbb55b78eb63a6e3ab398f40adbb464c1dcf76bc2aaa7164dfb5ff917"></a>LED_ON&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8h_source.html#l00031">31</a> of file <a class="el" href="_dragon_limelight_8h_source.html">DragonLimelight.h</a>.</p>
-
-</div>
-</div>
-<a id="ad153a8681f6b1f71906fba0a6c4863ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad153a8681f6b1f71906fba0a6c4863ed">&#9670;&nbsp;</a></span>SNAPSHOT_MODE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_dragon_limelight.html#ad153a8681f6b1f71906fba0a6c4863ed">DragonLimelight::SNAPSHOT_MODE</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad153a8681f6b1f71906fba0a6c4863eda3ca0d71b2c71150a290493d7db061037"></a>SNAP_OFF&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ad153a8681f6b1f71906fba0a6c4863eda3d2a70af357f8d44d7e42fea7e935d42"></a>SNAP_ON&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8h_source.html#l00052">52</a> of file <a class="el" href="_dragon_limelight_8h_source.html">DragonLimelight.h</a>.</p>
-
-</div>
-</div>
-<a id="a7e61244761896139b6cd1c72c5363f91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e61244761896139b6cd1c72c5363f91">&#9670;&nbsp;</a></span>STREAM_MODE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_dragon_limelight.html#a7e61244761896139b6cd1c72c5363f91">DragonLimelight::STREAM_MODE</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7e61244761896139b6cd1c72c5363f91ac2171c51a110c25a7ccdd8ee94131409"></a>STREAM_DEFAULT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7e61244761896139b6cd1c72c5363f91aa3927f577d6892bbb53b884731b994fe"></a>STREAM_MAIN_AND_SECOND&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7e61244761896139b6cd1c72c5363f91adb9229484e3c6f059ab6eed5fcc7e184"></a>STREAM_SECOND_AND_MAIN&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8h_source.html#l00045">45</a> of file <a class="el" href="_dragon_limelight_8h_source.html">DragonLimelight.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="adf993eb8613503ae4a9a5345b797e450"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf993eb8613503ae4a9a5345b797e450">&#9670;&nbsp;</a></span>Get3DSolve()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; double &gt; DragonLimelight::Get3DSolve </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00030">30</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ae8a55699d66ded94c5d2d5852958431f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8a55699d66ded94c5d2d5852958431f">&#9670;&nbsp;</a></span>GetInstance()</h2>
+<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8h_source.html#l00035">35</a> of file <a class="el" href="_dragon_limelight_8h_source.html">DragonLimelight.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a003d6b9c140e33c5d4291075b16c868a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a003d6b9c140e33c5d4291075b16c868a">&#9670;&nbsp;</a></span>DragonLimelight() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -270,7 +212,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_dragon_limelight.html">DragonLimelight</a> * DragonLimelight::GetInstance </td>
+          <td class="memname">DragonLimelight::DragonLimelight </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -278,245 +220,173 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00107">107</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
+<hr  />
+<p> Method: <a class="el" href="class_dragon_limelight.html">DragonLimelight</a> (constructor) </p>
+<h2><a class="anchor" id="autotoc_md24"></a>
+Description:    Create the object</h2>
 
 </div>
 </div>
-<a id="a9a97f29ae9c244fc34bf0a1eee0d73ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a97f29ae9c244fc34bf0a1eee0d73ac">&#9670;&nbsp;</a></span>GetPipelineLatency()</h2>
+<a id="a66837a629d679ab1c6de8f80e22abdcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66837a629d679ab1c6de8f80e22abdcb">&#9670;&nbsp;</a></span>DragonLimelight() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double DragonLimelight::GetPipelineLatency </td>
+          <td class="memname">DragonLimelight::DragonLimelight </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>tableName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>mountingHeight</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>mountingHorizontalOffset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>mountingAngle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>targetHeight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mountingHeight</td><td><em> - network table name </em></td></tr>
+    <tr><td class="paramname">mountingHorizontalOffset</td><td><em><em> - mounting height of the limelight </em></em></td></tr>
+    <tr><td class="paramname">mountingAngle</td><td><em><em><em> - mounting horizontal offset from the middle of the robot </em></em></em></td></tr>
+    <tr><td class="paramname">targetHeight</td><td><em><em><em><em> - mounting angle of the camera <em> - height the target </em></em></em></em></em></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad524ba4ce87697fa883882f5c41e9b60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad524ba4ce87697fa883882f5c41e9b60">&#9670;&nbsp;</a></span>~DragonLimelight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DragonLimelight::~DragonLimelight </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00065">65</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
+<hr  />
+<p> Method: ~DragonLimelight (destructor) </p>
+<h2><a class="anchor" id="autotoc_md25"></a>
+Description:    Delete the object</h2>
 
 </div>
 </div>
-<a id="a05d3812ffd88dcc31ec19e6c0c7c947d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05d3812ffd88dcc31ec19e6c0c7c947d">&#9670;&nbsp;</a></span>GetTargetArea()</h2>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aac8b4e5ba88a7e0539c5b6cbc6974471"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac8b4e5ba88a7e0539c5b6cbc6974471">&#9670;&nbsp;</a></span>GetConfidence()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double DragonLimelight::GetTargetArea </td>
+          <td class="memname">double DragonLimelight::GetConfidence </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+<hr  />
+<p> Method: GetConfidence Description: Indicates how accurate the returned value is Returns: double 0.0 == ignore (sensor has an error) </p>
+<h2><a class="anchor" id="autotoc_md27"></a>
+1.0 == very confident</h2>
+<hr  />
+<p> Method: GetConfidence Description: Indicates how accurate the returned value is Returns: double 0.0 == ignore (sensor has an error) </p>
+<h2><a class="anchor" id="autotoc_md23"></a>
+1.0 == very confident</h2>
 
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00053">53</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
+<p>Implements <a class="el" href="class_i_dragon_sensor.html#a26335856e226fcaca3ce3954ba846cb7">IDragonSensor</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00077">77</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
 
 </div>
 </div>
-<a id="acfd43760a2ea877e7e411ec503cdf2b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfd43760a2ea877e7e411ec503cdf2b4">&#9670;&nbsp;</a></span>GetTargetHorizontalOffset()</h2>
+<a id="a0db4976887ba1e7dda441b7053ca0f67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0db4976887ba1e7dda441b7053ca0f67">&#9670;&nbsp;</a></span>GetDistance()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double DragonLimelight::GetTargetHorizontalOffset </td>
+          <td class="memname">double DragonLimelight::GetDistance </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+<hr  />
+<p> Method: GetDistance Description: Return the measured distance in inches </p>
+<h2><a class="anchor" id="autotoc_md26"></a>
+Returns:     double     Measured Distance</h2>
+<hr  />
+<p> Method: GetDistance Description: Return the measured distance in inches </p>
+<h2><a class="anchor" id="autotoc_md22"></a>
+Returns:     double     Measured Distance</h2>
 
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00041">41</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
+<p>Implements <a class="el" href="class_i_dragon_distance_sensor.html#a6bd5ec99c747c52a25aaddc874232703">IDragonDistanceSensor</a>.</p>
 
-</div>
-</div>
-<a id="abfd35521178530f9d106ac1169d339cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfd35521178530f9d106ac1169d339cc">&#9670;&nbsp;</a></span>GetTargetSkew()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double DragonLimelight::GetTargetSkew </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00059">59</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
-
-</div>
-</div>
-<a id="af148a6528fde2ba62b63bdc149ae806d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af148a6528fde2ba62b63bdc149ae806d">&#9670;&nbsp;</a></span>GetTargetVerticalOffset()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double DragonLimelight::GetTargetVerticalOffset </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00047">47</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a546283a856de9d1bf52bdf6b1baf4fc6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a546283a856de9d1bf52bdf6b1baf4fc6">&#9670;&nbsp;</a></span>HasTarget()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double DragonLimelight::HasTarget </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00035">35</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a223f0bdf47eb46ba0085cdbc17a2fbed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a223f0bdf47eb46ba0085cdbc17a2fbed">&#9670;&nbsp;</a></span>PrintValues()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DragonLimelight::PrintValues </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00097">97</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ac6e89317d90de2e9c7c90eaa9293cab4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6e89317d90de2e9c7c90eaa9293cab4">&#9670;&nbsp;</a></span>SetCamMode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DragonLimelight::SetCamMode </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_dragon_limelight.html#aafb5de7911fc118585b3cb32e0c87f13">DragonLimelight::CAM_MODE</a>&#160;</td>
-          <td class="paramname"><em>mode</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00076">76</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a8f80d91a71106af3592ec0975f474aaf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f80d91a71106af3592ec0975f474aaf">&#9670;&nbsp;</a></span>SetLEDMode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DragonLimelight::SetLEDMode </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_dragon_limelight.html#a4968de97dbb55b78eb63a6e3ab398f40">DragonLimelight::LED_MODE</a>&#160;</td>
-          <td class="paramname"><em>mode</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00071">71</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a9008ec8358c4f2836b8aa4829e731104"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9008ec8358c4f2836b8aa4829e731104">&#9670;&nbsp;</a></span>SetPipeline()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DragonLimelight::SetPipeline </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>pipeline</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00081">81</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
-
-</div>
-</div>
-<a id="aa90d53fedc3b0568a434c57b987b6d79"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa90d53fedc3b0568a434c57b987b6d79">&#9670;&nbsp;</a></span>SetStreamMode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DragonLimelight::SetStreamMode </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_dragon_limelight.html#a7e61244761896139b6cd1c72c5363f91">DragonLimelight::STREAM_MODE</a>&#160;</td>
-          <td class="paramname"><em>mode</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00086">86</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a9854cde1425bf1d0d25ed15b586e599d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9854cde1425bf1d0d25ed15b586e599d">&#9670;&nbsp;</a></span>ToggleSnapshot()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DragonLimelight::ToggleSnapshot </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_dragon_limelight.html#ad153a8681f6b1f71906fba0a6c4863ed">DragonLimelight::SNAPSHOT_MODE</a>&#160;</td>
-          <td class="paramname"><em>toggle</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00092">92</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00061">61</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
 
 </div>
 </div>

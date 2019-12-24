@@ -1,5 +1,5 @@
 
-///====================================================================================================================================================
+//====================================================================================================================================================
 /// Copyright 2019 Lake Orion Robotics FIRST Team 302
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
@@ -12,16 +12,16 @@
 /// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
 /// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 /// OR OTHER DEALINGS IN THE SOFTWARE.
-///====================================================================================================================================================
+//====================================================================================================================================================
 
-///========================================================================================================
+//========================================================================================================
 /// DigitalInputFactory.h
-///========================================================================================================
+//========================================================================================================
 ///
 /// File Description:
 ///     This controls the creation of Digital inputs
 ///
-///========================================================================================================
+//========================================================================================================
 
 #pragma once
 
@@ -44,12 +44,12 @@ class DigitalInputFactory
 		static DigitalInputFactory* GetFactory();
 
 
-		///=====================================================================================
+		//=====================================================================================
 		/// Method:         CreateInput
 		/// Description:    Create the requested Digital input
 		/// Returns:        IMechanism*     pointer to the mechanism or nullptr if mechanism 
 		///                                 doesn't exist and cannot be created.
-		///=====================================================================================
+		//=====================================================================================
         DragonDigitalInput* CreateInput
         (
             DragonDigitalInput::DIGITAL_INPUT_TYPE			type,
@@ -57,12 +57,12 @@ class DigitalInputFactory
             bool						                    reversed
         );
 
-		///=====================================================================================
+		//=====================================================================================
 		/// Method:         GetInput
 		/// Description:    Get the requested Digital input
 		/// Returns:        IMechanism*     pointer to the mechanism or nullptr if mechanism 
 		///                                 doesn't exist.
-		///=====================================================================================
+		//=====================================================================================
         DragonDigitalInput* GetInput
         (
             DragonDigitalInput::DIGITAL_INPUT_TYPE			type

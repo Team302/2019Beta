@@ -1,28 +1,5 @@
 var searchData=
 [
-  ['readme_502',['README',['../md__c_1__git_kraken_repos__template_repository_src_main_cpp_xmlhw__r_e_a_d_m_e.html',1,'']]],
-  ['readme_2emd_503',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['red_504',['RED',['../class_l_e_d.html#ae47fb1c1cbe847bee7fb8b6c19486f70a155e3f4fbd5b884497e79d471ace77a1',1,'LED']]],
-  ['resetangle_505',['ResetAngle',['../class_i_dragon_angle_sensor.html#a00b289e47018128480e28fc8be003612',1,'IDragonAngleSensor::ResetAngle()=0'],['../class_i_dragon_angle_sensor.html#a2495fe19f1fb9d4e9679bbfe33af31ff',1,'IDragonAngleSensor::ResetAngle(double angle)=0']]],
-  ['resetdistance_506',['ResetDistance',['../class_dragon_position_sensor.html#a38786cee2ac71769efb4f9bd17f6d97a',1,'DragonPositionSensor::ResetDistance()'],['../class_dragon_position_sensor.html#a1b360342e5c0569f7695220629da0732',1,'DragonPositionSensor::ResetDistance(double distance)']]],
-  ['right_5fanalog_5fbutton_5faxis_507',['RIGHT_ANALOG_BUTTON_AXIS',['../class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972ba8d89ea1ffb066d737dad9ebfcad6a335',1,'IDragonGamePad']]],
-  ['right_5fbumper_508',['RIGHT_BUMPER',['../class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29acfd29830cf152743137623f3f5defe84',1,'IDragonGamePad']]],
-  ['right_5fjoystick_5fx_509',['RIGHT_JOYSTICK_X',['../class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972ba64230e31a56a01d54faac319d737e8b8',1,'IDragonGamePad']]],
-  ['right_5fjoystick_5fy_510',['RIGHT_JOYSTICK_Y',['../class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972ba5289d0253bb61fbc856b06a7a9d31b8b',1,'IDragonGamePad']]],
-  ['right_5fside_5fdistance_511',['RIGHT_SIDE_DISTANCE',['../class_i_dragon_ultrasonic.html#aeac65ca88f9388c6b2a7f3528a94c413ae6b0288a54c2b21e0758286144e20b83',1,'IDragonUltrasonic']]],
-  ['right_5fstick_5fpressed_512',['RIGHT_STICK_PRESSED',['../class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29ae78e3918d5595c4b75852c1678ff1cf9',1,'IDragonGamePad']]],
-  ['right_5ftrigger_513',['RIGHT_TRIGGER',['../class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972ba26713a41f0806636f52dd86aa53d13ee',1,'IDragonGamePad']]],
-  ['right_5ftrigger_5fpressed_514',['RIGHT_TRIGGER_PRESSED',['../class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29a01a23344318d7619d324f2b97b026028',1,'IDragonGamePad']]],
-  ['robot_515',['Robot',['../class_robot.html',1,'']]],
-  ['robot_2ecpp_516',['Robot.cpp',['../_robot_8cpp.html',1,'']]],
-  ['robot_2eh_517',['Robot.h',['../_robot_8h.html',1,'']]],
-  ['robotdefn_518',['RobotDefn',['../class_robot_defn.html',1,'RobotDefn'],['../class_robot_defn.html#ae91a711c6513a98cfa186e154568534e',1,'RobotDefn::RobotDefn()']]],
-  ['robotdefn_2ecpp_519',['RobotDefn.cpp',['../_robot_defn_8cpp.html',1,'']]],
-  ['robotdefn_2eh_520',['RobotDefn.h',['../_robot_defn_8h.html',1,'']]],
-  ['robotinit_521',['RobotInit',['../class_robot.html#a66f23dae271748d525cf3ab046375f79',1,'Robot']]],
-  ['robotperiodic_522',['RobotPeriodic',['../class_robot.html#a8fad82c2250bcfb83b743b5c0dd6ed27',1,'Robot']]],
-  ['rotate_5flimelight_523',['ROTATE_LIMELIGHT',['../class_dragon_servo.html#acde1c9ebb88a9989bbd7412bd66d7fecae11e09800f4494ee3e2e58d7ce3fac45',1,'DragonServo']]],
-  ['rotatevertically_524',['RotateVertically',['../class_dragon_vision.html#aff4a80b87c1dc322f0caa1ec828d6b0f',1,'DragonVision']]],
-  ['rotations_525',['ROTATIONS',['../class_i_dragon_motor_controller.html#a3157a029941ef48728e7fef3de46b6eeaf683193803d8bbf1f637ec9aeb22ffc5',1,'IDragonMotorController']]],
-  ['rps_526',['RPS',['../class_i_dragon_motor_controller.html#a3157a029941ef48728e7fef3de46b6eea23bab924616c10f5eea1b36562513bcf',1,'IDragonMotorController']]]
+  ['wasbuttonpressed_148',['WasButtonPressed',['../class_analog_button.html#a13e844532f6cd9216d8f9b275d66c897',1,'AnalogButton::WasButtonPressed()'],['../class_button_decorator.html#a5c0a9115aff442b38166000d86d98ad5',1,'ButtonDecorator::WasButtonPressed()'],['../class_digital_button.html#a5ed1ab58178e4244dffe551df62afa32',1,'DigitalButton::WasButtonPressed()'],['../class_i_button.html#a4bafcd42d1f576f892d22a110e801018',1,'IButton::WasButtonPressed()'],['../class_p_o_v_button.html#a339f7d441c6ba892c9e6087f56e9174f',1,'POVButton::WasButtonPressed()'],['../class_toggle_button.html#a2c2fce329db846a93bf9038059fe3723',1,'ToggleButton::WasButtonPressed()'],['../class_dragon_gamepad.html#a954798e159dab694fbd6c48a96c36657',1,'DragonGamepad::WasButtonPressed()'],['../class_dragon_x_box.html#ae9bf51169ee1993f0dc6d10540b72bda',1,'DragonXBox::WasButtonPressed()'],['../class_i_dragon_game_pad.html#aff0121c0eee282fa27d0849795fcce91',1,'IDragonGamePad::WasButtonPressed()']]],
+  ['wasbuttonreleased_149',['WasButtonReleased',['../class_analog_button.html#a7ceceff63efb81b6f1444c8bb5084b70',1,'AnalogButton::WasButtonReleased()'],['../class_button_decorator.html#a8da383207ae4e4288f412685eeac4047',1,'ButtonDecorator::WasButtonReleased()'],['../class_digital_button.html#ac831a002ec5f8e79cb3303bcb8e2c999',1,'DigitalButton::WasButtonReleased()'],['../class_i_button.html#a393bd71900c7cb4df69e371bcc7ca123',1,'IButton::WasButtonReleased()'],['../class_p_o_v_button.html#a3bdbdb773897cf56ff2990dbba580650',1,'POVButton::WasButtonReleased()'],['../class_toggle_button.html#aa14f837826248eb45f9b1b5efe3bb81c',1,'ToggleButton::WasButtonReleased()'],['../class_dragon_gamepad.html#afb3895ef1ce1f46c7fd9b1070ca30e64',1,'DragonGamepad::WasButtonReleased()'],['../class_dragon_x_box.html#aac33e2bcc8b07104f7e0a0a178d47070',1,'DragonXBox::WasButtonReleased()'],['../class_i_dragon_game_pad.html#a8b62f3bcf3a8fbfcdbd18cac65519720',1,'IDragonGamePad::WasButtonReleased()']]]
 ];

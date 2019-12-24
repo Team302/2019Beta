@@ -14,15 +14,15 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-///========================================================================================================
+//========================================================================================================
 /// MotorDefn.cpp
-///========================================================================================================
+//========================================================================================================
 ///
 /// File Description:
 ///     XML parsing for motor definitions.  This definition will construct the motor controllers.
 ///     This parsing leverages the 3rd party Open Source Pugixml library (https://pugixml.org/).
 ///
-///========================================================================================================
+//========================================================================================================
 
 // C++ Includes
 #include <iostream>
@@ -148,7 +148,6 @@ shared_ptr<IDragonMotorController> MotorDefn::ParseXML
 
 
     bool hasError = false;
-    IMechanism::MECHANISM_TYPE mechType = IMechanism::MECHANISM_TYPE::UNKNOWN_MECHANISM;
 
     for (xml_attribute attr = motorNode.first_attribute(); attr && !hasError; attr = attr.next_attribute())
     {
@@ -167,11 +166,7 @@ shared_ptr<IDragonMotorController> MotorDefn::ParseXML
         else if ( strcmp( attr.name(), "pdpID" ) == 0 )
         {
             pdpID = attr.as_int();
-            if ( pdpID < 0 || pdpID > 15 )
-            {
-                printf( "==>> MotorDefn::ParseXML invalid PDP ID %d \n", pdpID );
-                hasError = true;
-            }
+            hasError = HardwareIDValidation::ValidatePDPID( pdpID, string( "MotorDefn::ParseXML" ) );
         }
 		// type:  cantalon, sparkmax_brushless and sparkmax_brushed are valid
         else if ( strcmp( attr.name(), "type" ) == 0 )
@@ -316,7 +311,7 @@ shared_ptr<IDragonMotorController> MotorDefn::ParseXML
 
     if ( !hasError )
     {
-		pdpID = ( pdpID < 0 ) ? pdpID = canID : pdpID;
+		pdpID = ( pdpID < 0 ) ? canID : pdpID;
         controller = DragonMotorControllerFactory::GetInstance()->CreateMotorController( mtype,
                                                                                          canID,
                                                                                          pdpID,

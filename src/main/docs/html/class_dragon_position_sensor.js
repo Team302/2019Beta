@@ -1,7 +1,7 @@
 var class_dragon_position_sensor =
 [
     [ "DragonPositionSensor", "class_dragon_position_sensor.html#a694730082633395de2547287caba096a", null ],
-    [ "DragonPositionSensor", "class_dragon_position_sensor.html#a9aa12c27e98a16b7c17df386ffed24ca", null ],
+    [ "DragonPositionSensor", "class_dragon_position_sensor.html#a7864bd2a8a989c83f72aa33e4cd475a0", null ],
     [ "~DragonPositionSensor", "class_dragon_position_sensor.html#ab90f47ec4db5fc9f56c8dade9fbe00c4", null ],
     [ "GetDistance", "class_dragon_position_sensor.html#ac82a2e2f509ecf7bb48fe8e93d2c17cc", null ],
     [ "GetDistanceConfidence", "class_dragon_position_sensor.html#ad1942979749d8236e3748a514f3e365a", null ],

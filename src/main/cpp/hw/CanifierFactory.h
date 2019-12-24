@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include <memory>
+
 
 #include <ctre/phoenix/CANifier.h>
 
@@ -17,7 +19,7 @@ class CanifierFactory
 		// Description:		Find or create a Canifier with a the particular CAN ID
 		// Returns:         CANifier*  
 		//=======================================================================================
-		ctre::phoenix::CANifier* GetCanifier
+		std::shared_ptr<ctre::phoenix::CANifier> GetCanifier
 		(
 			int			canID				// <I> - CAN ID
 		);
@@ -27,7 +29,7 @@ class CanifierFactory
 		virtual ~CanifierFactory() = default;
 
 		static CanifierFactory*      				m_instance;
-        ctre::phoenix::CANifier* m_canifiers[63];
+        std::shared_ptr<ctre::phoenix::CANifier>    m_canifiers[63];
 
 };
 

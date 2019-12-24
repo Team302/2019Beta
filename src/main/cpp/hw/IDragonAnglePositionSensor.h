@@ -1,5 +1,5 @@
 //====================================================================================================================================================
-// IDragonAngleSensor.h
+// IDragonAnglePositionSensor.h
 //====================================================================================================================================================
 // Copyright 2018 Lake Orion Robotics FIRST Team 302
 //
@@ -25,25 +25,25 @@
 
 // Third Party Includes
 
-///====================================================================================================================================================
-/// Inteface:        IDragonAngleSensor
+//====================================================================================================================================================
+/// Inteface:        IDragonAnglePositionSensor
 /// Description:     This inteface provides a common set of methods for all sensors that measure angles
-///====================================================================================================================================================
-class IDragonAngleSensor
+//====================================================================================================================================================
+class IDragonAnglePositionSensor
 {
     public:
 
         ///-----------------------------------------------------------------------
-        /// Method:      IDragonAngleSensor
+        /// Method:      IDragonAnglePositionSensor
         /// Description: Constructor for the interface 
         ///-----------------------------------------------------------------------
-        IDragonAngleSensor() = default;
+        IDragonAnglePositionSensor() = default;
     
         ///-----------------------------------------------------------------------
-        /// Method:      ~IDragonAngleSensor
+        /// Method:      ~IDragonAnglePositionSensor
         /// Description: Destructor for the interface 
         ///-----------------------------------------------------------------------
-        ~IDragonAngleSensor() = default;
+        ~IDragonAnglePositionSensor() = default;
 
     
         ///-----------------------------------------------------------------------

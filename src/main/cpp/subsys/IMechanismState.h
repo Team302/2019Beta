@@ -1,5 +1,5 @@
 
-///====================================================================================================================================================
+//====================================================================================================================================================
 /// Copyright 2019 Lake Orion Robotics FIRST Team 302
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
@@ -12,13 +12,13 @@
 /// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
 /// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 /// OR OTHER DEALINGS IN THE SOFTWARE.
-///====================================================================================================================================================
+//====================================================================================================================================================
 
 #pragma once
 
-///========================================================================================================
+//========================================================================================================
 /// IMechanismState.h
-///========================================================================================================
+//========================================================================================================
 ///
 /// File Description:
 ///     This is the interface for all subsystem states
@@ -26,7 +26,7 @@
 ///     - Position Control
 ///     - Velocity Control
 ///
-///========================================================================================================
+//========================================================================================================
 
 // C++ Includes
 
@@ -37,18 +37,18 @@
 // Third Party Includes
 
 
-///========================================================================================================
+//========================================================================================================
 ///	 Class:			IMechanismState
 ///  Description:	Interface for subsystem states
-///========================================================================================================
+//========================================================================================================
 class IMechanismState
 {
 	public:
 
-        ///==================================================================================
+        //==================================================================================
         /// enum:           MECHANISM_TYPE
         /// description:    Indicates the type of mechanism
-        ///==================================================================================
+        //==================================================================================
         enum MECHANISM_STATE
         {
             PERCENT_OUTPUT,
@@ -59,15 +59,15 @@ class IMechanismState
 
 
 
-        ///==================================================================================
+        //==================================================================================
         /// method:         GetCurrentSate
         /// description:    Return the current state
         /// returns:        MECHANISM_STATE state
-        ///==================================================================================
+        //==================================================================================
         virtual MECHANISM_STATE GetCurrentSate() = 0;
 
 
-        ///==================================================================================
+        //==================================================================================
         /// method:         SetTarget
         /// description:    Set the target value is
         ///                  - a unitless value between -1.0 and 1.0 for for Percent Output States
@@ -76,14 +76,14 @@ class IMechanismState
         ///                  - a value in inches per second for translating mechanisms in Velocity Control
         ///                  - a value in degrees per second for rotating mechanisms in Velocity Control
         /// returns:        void
-        ///==================================================================================
+        //==================================================================================
         virtual void SetTarget
         (
             double      value       /// <I> - target value for the mechanism
         ) = 0;
 
 
-        ///==================================================================================
+        //==================================================================================
         /// method:         GetCurrentValue
         /// description:    Return the current value for the mechanism.  
         /// returns:        double	current value
@@ -92,11 +92,11 @@ class IMechanismState
         ///                  - a value in degrees for rotating mechanisms in Position Control
         ///                  - a value in inches per second for translating mechanisms in Velocity Control
         ///                  - a value in degrees per second for rotating mechanisms in Velocity Control
-        ///==================================================================================
+        //==================================================================================
         virtual double GetCurrentValue() const = 0;
 
 
-        ///==================================================================================
+        //==================================================================================
         /// method:         GetTargetValue
         /// description:    Return the target value for the mechanism.  
         /// returns:        double	target value
@@ -105,7 +105,7 @@ class IMechanismState
         ///                  - a value in degrees for rotating mechanisms in Position Control
         ///                  - a value in inches per second for translating mechanisms in Velocity Control
         ///                  - a value in degrees per second for rotating mechanisms in Velocity Control
-        ///==================================================================================
+        //==================================================================================
         virtual double GetTargetValue() const = 0;
 
 

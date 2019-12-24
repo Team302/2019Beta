@@ -66,7 +66,7 @@ shared_ptr<DragonPigeon> PigeonDefn::ParseXML
 
     if ( !hasError )
     {
-        pigeon.reset( DragonPigeon::CreatePigeon( canID ) );
+        pigeon = make_shared<DragonPigeon>( canID );
     }
     return pigeon;
 }

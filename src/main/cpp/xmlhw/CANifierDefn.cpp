@@ -4,6 +4,8 @@
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
+#include <memory>
+
 #include <xmlhw/CANifierDefn.h>
 #include <hw/CanifierFactory.h>
 
@@ -14,16 +16,17 @@
 #include <ctre/Phoenix.h>
 
 using namespace frc;
+using namespace std;
 
 
-ctre::phoenix::CANifier* CANifierDefn::ParseXML
+std::shared_ptr<ctre::phoenix::CANifier> CANifierDefn::ParseXML
 (
     pugi::xml_node      canifierNode
 )
 {
-//initialize output
-ctre::phoenix::CANifier* canifier = nullptr;
-// initialize attributes to default values
+	//initialize output
+	shared_ptr<ctre::phoenix::CANifier> canifier = nullptr;
+	// initialize attributes to default values
 	int canID = 0;
 	bool hasError = false;
 

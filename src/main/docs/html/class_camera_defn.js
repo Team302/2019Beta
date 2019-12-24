@@ -10,5 +10,5 @@ var class_camera_defn =
     ] ],
     [ "CameraDefn", "class_camera_defn.html#aacd73655612b6174cd0560f05b117a4a", null ],
     [ "~CameraDefn", "class_camera_defn.html#a9a3f9d7828ed9434865786ac2b3d8be1", null ],
-    [ "ParseXML", "class_camera_defn.html#a96e68ec8175e38f297d69d0f6609ef54", null ]
+    [ "ParseXML", "class_camera_defn.html#ae6f1d09bfca714a4e1a2c61683605ca9", null ]
 ];

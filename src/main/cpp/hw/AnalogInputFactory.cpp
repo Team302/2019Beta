@@ -14,14 +14,14 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-///========================================================================================================
+//========================================================================================================
 /// AnalogInputFactory.cpp
-///========================================================================================================
+//========================================================================================================
 ///
 /// File Description:
 ///     This controls the creation of analog inputs
 ///
-///========================================================================================================
+//========================================================================================================
 
 // C++ Includes
 #include <algorithm>
@@ -44,11 +44,11 @@
 
 using namespace std;
 
-///=====================================================================================
+//=====================================================================================
 /// Method:         GetFactory
 /// Description:    Find or create the analog input factory
 /// Returns:        AnalogInputFactory* pointer to the factory
-///=====================================================================================
+//=====================================================================================
 AnalogInputFactory* AnalogInputFactory::m_factory = nullptr;
 AnalogInputFactory* AnalogInputFactory::GetFactory()
 {
@@ -70,12 +70,12 @@ void AnalogInputFactory::CreateUsageMap()
     m_usageMap["EXTENDER_POTENTIOMETER"]  = DragonAnalogInput::ANALOG_SENSOR_TYPE::EXTENDER_POTENTIOMETER;
     m_usageMap["PRESSURE_GAUGE"] = DragonAnalogInput::ANALOG_SENSOR_TYPE::PRESSURE_GAUGE;
 }
-///=====================================================================================
+//=====================================================================================
 /// Method:         CreateInput
 /// Description:    Create the requested analog input
 /// Returns:        IMechanism*     pointer to the mechanism or nullptr if mechanism 
 ///                                 doesn't exist and cannot be created.
-///=====================================================================================
+//=====================================================================================
 shared_ptr<DragonAnalogInput> AnalogInputFactory::CreateInput
 (
     string  usage,
@@ -87,8 +87,6 @@ shared_ptr<DragonAnalogInput> AnalogInputFactory::CreateInput
 )
 {
     shared_ptr<DragonAnalogInput> sensor;
-
-    auto hasError = false;
 
     auto type = m_usageMap.find(usage)->second;
     switch ( type )
@@ -113,9 +111,8 @@ shared_ptr<DragonAnalogInput> AnalogInputFactory::CreateInput
             break;
 
         default:
-            hasError = true;
             string msg = "unknown type " + type;
-            Logger::GetLogger()->Log( "AnalogInputFactory::CreateInput", msg );
+            Logger::GetLogger()->LogError( "AnalogInputFactory::CreateInput", msg );
 
     }
     return sensor;

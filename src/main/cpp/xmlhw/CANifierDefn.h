@@ -4,8 +4,9 @@
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
-#ifndef SRC_SUBSYS_XMLPARSING_CANIFIERDEFN_H_
-#define SRC_SUBSYS_XMLPARSING_CANIFIERDEFN_H_
+#pragma once
+
+#include <memory>
 
 // Third Party Includes
 #include <pugixml/pugixml.hpp>
@@ -25,9 +26,8 @@ class CANifierDefn
      * Returns: void
      *
      */
-        ctre::phoenix::CANifier* ParseXML( pugi::xml_node	canifierNode  );
+        std::shared_ptr<ctre::phoenix::CANifier> ParseXML( pugi::xml_node	canifierNode  );
 private:
 
 };
 
-#endif /* SRC_SUBSYS_XMLPARSING_CANIFIERDEFN_H_ */

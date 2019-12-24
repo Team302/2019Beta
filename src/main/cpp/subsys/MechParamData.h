@@ -3,5 +3,7 @@
 #include <vector>
 #include <utility>
 
-typedef std::pair <IMechanism::MECHANISM_PARAM_TYPE, double> mechParamData;
+#include <subsys/MechanismParameters.h>
+
+typedef std::pair <MechanismParameters::MECHANISM_PARAM_TYPE, double> mechParamData;
 typedef std::vector<mechParamData> mechParameters;

@@ -16,15 +16,11 @@ DragonTalonTach::DragonTalonTach
     ctre::phoenix::CANifier::GeneralPin     generalpin,
     bool                                    reversed
 ) : m_usage ( usage ),
-    m_reversed (reversed),
     m_CAN (CanifierFactory::GetInstance()-> GetCanifier(0)),
-    m_generalpin (generalpin)
+    m_generalpin (generalpin),
+    m_reversed (reversed)
 
 {
-}
-DragonTalonTach::~DragonTalonTach()
-{
-	delete m_CAN;
 }
 
 bool DragonTalonTach::Get() const

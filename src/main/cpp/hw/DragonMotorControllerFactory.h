@@ -1,5 +1,5 @@
 
-///====================================================================================================================================================
+//====================================================================================================================================================
 /// Copyright 2019 Lake Orion Robotics FIRST Team 302
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
@@ -12,18 +12,18 @@
 /// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
 /// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 /// OR OTHER DEALINGS IN THE SOFTWARE.
-///====================================================================================================================================================
+//====================================================================================================================================================
 
 #pragma once
 
-///========================================================================================================
+//========================================================================================================
 /// DragonMotorControllerFactory.h
-///========================================================================================================
+//========================================================================================================
 ///
 /// File Description:
 ///     This is the factory for creating Motor Controllers
 ///
-///========================================================================================================
+//========================================================================================================
 
 // C++ Includes
 
@@ -45,12 +45,12 @@
 #include <rev/CANSparkMax.h>
 
 
-///========================================================================================================
+//========================================================================================================
 ///	 Class:			DragonMotorControllerFactory
 ///  Description:	This is a singleton that creates motor controllers (IDragonMotorController).  This 
 ///				 	allows us to interact with motor controllers such as TalonSRX, Rev Spark Max without
 ///					actually knowing what type is actually being used.
-///========================================================================================================
+//========================================================================================================
 class DragonMotorControllerFactory
 {
     public:
@@ -70,7 +70,7 @@ class DragonMotorControllerFactory
 
         static DragonMotorControllerFactory* GetInstance();
 
-		///=======================================================================================
+		//=======================================================================================
 		/// Method:          CreateMotorController
 		/// Description:     Create a motor controller from the inputs
 		/// Returns:         Void
@@ -96,7 +96,7 @@ class DragonMotorControllerFactory
 
 private:
 
-		///=======================================================================================
+		//=======================================================================================
 		/// Method:          GetController
 		/// Description:     return motor controller
 		/// Returns:         IDragonMotorController* 	may be nullptr if there isn't a controller

@@ -6,8 +6,7 @@ var class_intake =
     [ "GetCurrentSpeed", "class_intake.html#a7e3783508ddf079750a1430d6fb2e6cf", null ],
     [ "GetTargetPosition", "class_intake.html#a09dd45bfc0e12d514bb1e1efa675ef06", null ],
     [ "GetTargetSpeed", "class_intake.html#a7d733c16727ac5509d2c42c5b3165103", null ],
-    [ "GetType", "class_intake.html#af46e690dbd48e61706c036163165a022", null ],
-    [ "SetPercentOutput", "class_intake.html#ad3a0fdd5ac39f07e43a472274131ef0f", null ],
-    [ "SetPosition", "class_intake.html#afe368f5b06a8dd64aedde0020d75e235", null ],
-    [ "SetSpeed", "class_intake.html#ac522ef3bbc8e44820cb4a9400622b16a", null ]
+    [ "GetType", "class_intake.html#a0b68bd630c53d7db98e220b94d76020a", null ],
+    [ "SetControlConstants", "class_intake.html#a108d549f63c292aa29aaf1801d1ddfa8", null ],
+    [ "SetOutput", "class_intake.html#a4ace31932217b1c1d1e73106d0d5d0cf", null ]
 ];

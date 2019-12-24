@@ -31,6 +31,7 @@ class IDragonGamePad
     public:
         enum BUTTON_IDENTIFIER
         {
+            UNDEFINED_BUTTON = -1,
             A_BUTTON,
             B_BUTTON,
             X_BUTTON,
@@ -52,7 +53,6 @@ class IDragonGamePad
             POV_225,
             POV_270,
             POV_315,
-            MAX_BUTTONS,
             GAMEPAD_SWITCH_18,
             GAMEPAD_SWITCH_19,
             GAMEPAD_SWITCH_20,
@@ -61,8 +61,7 @@ class IDragonGamePad
             GAMEPAD_BUTTON_14_DOWN,
             GAMEPAD_BUTTON_15_UP,
             GAMEPAD_BUTTON_15_DOWN,
-            MAX_GAMEPAD_BUTTONS,
-            UNDEFINED_BUTTON
+            MAX_BUTTONS
         };
 
 
@@ -76,6 +75,7 @@ class IDragonGamePad
 
         enum AXIS_IDENTIFIER
         {
+            UNDEFINED_AXIS = -1,
             LEFT_JOYSTICK_X,
             LEFT_JOYSTICK_Y,
             RIGHT_JOYSTICK_X,
@@ -93,9 +93,7 @@ class IDragonGamePad
             GAMEPAD_DIAL_27,
             LEFT_ANALOG_BUTTON_AXIS,
             RIGHT_ANALOG_BUTTON_AXIS,
-            MAX_GAMEPAD_AXIS,
-
-            UNDEFINED_AXIS
+            MAX_GAMEPAD_AXIS
         };
 
         
@@ -190,14 +188,14 @@ class IDragonGamePad
         ) const = 0; 
         //setters
 
-        ///==================================================================================
+        //==================================================================================
         /// <summary>
         /// Method:         SetAxisDeadband
         /// Description:    Specify what deadband behavior is desired such as none, standard,
         ///                 standard with scaling.
         /// Returns:        void
         /// </summary>
-        ///==================================================================================
+        //==================================================================================
         virtual void SetAxisDeadband
         (
             AXIS_IDENTIFIER axis, /// <I> - axis to modify

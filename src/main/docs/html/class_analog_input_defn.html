@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>2020 Template Project: AnalogInputDefn Class Reference</title>
+<title>Team302Robot: AnalogInputDefn Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">2020 Template Project
+   <div id="projectname">Team302Robot
    </div>
   </td>
  </tr>
@@ -97,93 +97,49 @@ $(document).ready(function(){initNavTree('class_analog_input_defn.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9d6f4b85dd390192f22c4213bdcc8c74"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_analog_input_defn.html#a9d6f4b85dd390192f22c4213bdcc8c74">AnalogInputDefn</a> ()=default</td></tr>
-<tr class="separator:a9d6f4b85dd390192f22c4213bdcc8c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf087d61fae77a0124940ea32fcb9bcc"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_analog_input_defn.html#acf087d61fae77a0124940ea32fcb9bcc">~AnalogInputDefn</a> ()=default</td></tr>
-<tr class="separator:acf087d61fae77a0124940ea32fcb9bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8b7d9ea41db5693e93831b8e7f16282"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_analog_input_defn.html#ad8b7d9ea41db5693e93831b8e7f16282">ParseXML</a> (pugi::xml_node sensorNode)</td></tr>
-<tr class="separator:ad8b7d9ea41db5693e93831b8e7f16282"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbd8983296e6ddec165377df03f139b2"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_dragon_analog_input.html">DragonAnalogInput</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_analog_input_defn.html#afbd8983296e6ddec165377df03f139b2">ParseXML</a> (pugi::xml_node sensorNode)</td></tr>
+<tr class="memdesc:afbd8983296e6ddec165377df03f139b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a analogSensor XML element and create a <a class="el" href="class_dragon_analog_input.html">DragonAnalogInput</a> from its definition.  <a href="class_analog_input_defn.html#afbd8983296e6ddec165377df03f139b2">More...</a><br /></td></tr>
+<tr class="separator:afbd8983296e6ddec165377df03f139b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_analog_input_defn_8h_source.html#l00064">64</a> of file <a class="el" href="_analog_input_defn_8h_source.html">AnalogInputDefn.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a9d6f4b85dd390192f22c4213bdcc8c74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d6f4b85dd390192f22c4213bdcc8c74">&#9670;&nbsp;</a></span>AnalogInputDefn()</h2>
+<div class="textblock"><hr  />
+<h2><a class="anchor" id="autotoc_md75"></a>
+Create an AnalogInput from an XML definition</h2>
+<hr  />
+<h2><a class="anchor" id="autotoc_md77"></a>
+Create an AnalogInput from an XML definition</h2>
 
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">AnalogInputDefn::AnalogInputDefn </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="acf087d61fae77a0124940ea32fcb9bcc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf087d61fae77a0124940ea32fcb9bcc">&#9670;&nbsp;</a></span>~AnalogInputDefn()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual AnalogInputDefn::~AnalogInputDefn </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad8b7d9ea41db5693e93831b8e7f16282"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8b7d9ea41db5693e93831b8e7f16282">&#9670;&nbsp;</a></span>ParseXML()</h2>
+<p class="definition">Definition at line <a class="el" href="_analog_input_defn_8h_source.html#l00038">38</a> of file <a class="el" href="_analog_input_defn_8h_source.html">AnalogInputDefn.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="afbd8983296e6ddec165377df03f139b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbd8983296e6ddec165377df03f139b2">&#9670;&nbsp;</a></span>ParseXML()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void AnalogInputDefn::ParseXML </td>
+          <td class="memname">shared_ptr&lt; <a class="el" href="class_dragon_analog_input.html">DragonAnalogInput</a> &gt; AnalogInputDefn::ParseXML </td>
           <td>(</td>
           <td class="paramtype">pugi::xml_node&#160;</td>
-          <td class="paramname"><em>motorNode</em></td><td>)</td>
+          <td class="paramname"><em>sensorNode</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<hr  />
-<p> Method: ParseXML Description: Parse a analogSensor XML element and create a <a class="el" href="class_dragon_analog_input.html">DragonAnalogInput</a> from its definition. </p>
-<h2><a class="anchor" id="autotoc_md152"></a>
-Returns:     void</h2>
-<hr  />
-<p> Method: ParseXML Description: Parse a analogSensor XML element and create a <a class="el" href="class_dragon_analog_input.html">DragonAnalogInput</a> from its definition. Returns: DragonAnalogInput* AnalogInput (or nullptr if XML </p>
-<h2><a class="anchor" id="autotoc_md148"></a>
-is ill-formed</h2>
 
-<p class="definition">Definition at line <a class="el" href="_analog_input_defn_8cpp_source.html#l00073">73</a> of file <a class="el" href="_analog_input_defn_8cpp_source.html">AnalogInputDefn.cpp</a>.</p>
+<p>Parse a analogSensor XML element and create a <a class="el" href="class_dragon_analog_input.html">DragonAnalogInput</a> from its definition. </p>
+<hr  />
+<p> Method: ParseXML </p><dl class="section return"><dt>Returns</dt><dd><br  />
+ </dd></dl>
+<h2><a class="anchor" id="autotoc_md78"></a>
+shared_ptr&lt;DragonAnalogInput&gt;  pointer to the Analog Input or nullptr if ill formed</h2>
+<hr  />
+<p> Method: ParseXML </p><dl class="section return"><dt>Returns</dt><dd><br  />
+ </dd></dl>
+<h2><a class="anchor" id="autotoc_md76"></a>
+shared_ptr&lt;DragonAnalogInput&gt; AnalogInput (or nullptr if XML is ill-formed)</h2>
+
+<p class="definition">Definition at line <a class="el" href="_analog_input_defn_8cpp_source.html#l00051">51</a> of file <a class="el" href="_analog_input_defn_8cpp_source.html">AnalogInputDefn.cpp</a>.</p>
 
 </div>
 </div>

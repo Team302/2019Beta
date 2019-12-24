@@ -1,5 +1,5 @@
 
-///====================================================================================================================================================
+//====================================================================================================================================================
 /// Copyright 2019 Lake Orion Robotics FIRST Team 302
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
@@ -12,7 +12,7 @@
 /// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
 /// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 /// OR OTHER DEALINGS IN THE SOFTWARE.
-///====================================================================================================================================================
+//====================================================================================================================================================
 
 #pragma once
 
@@ -31,9 +31,9 @@
 // Third Party Includes
 
 
-///========================================================================================================
+//========================================================================================================
 /// MechDataDefn.h
-///========================================================================================================
+//========================================================================================================
 ///
 /// File Description:
 ///     Top-level XML parsing file for defining the key mechanism parameter values.  Examples include 
@@ -46,18 +46,18 @@
 ///     The robot definition XML file is:  /home/lvuser/config/mechdata/xxx.xml where xxx is the class name 
 ///     that will be reading the file.
 ///
-///========================================================================================================
+//========================================================================================================
 class MechDataDefn
 {
     public:
         MechDataDefn() = delete;
         virtual ~MechDataDefn() = delete;
 
-        ///================================================================================================
+        //================================================================================================
         /// Method:      ParseXML
         /// Description: Parse a robot.xml file
         /// Returns:     void
-        ///================================================================================================
+        //================================================================================================
         static void ParseXML
         (
             std::string&            leaf,               /// <I> - the file name (without the path) to parse

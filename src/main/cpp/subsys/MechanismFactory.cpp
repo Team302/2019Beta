@@ -1,5 +1,5 @@
 
-///====================================================================================================================================================
+//====================================================================================================================================================
 /// Copyright 2019 Lake Orion Robotics FIRST Team 302
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
@@ -12,36 +12,39 @@
 /// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
 /// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 /// OR OTHER DEALINGS IN THE SOFTWARE.
-///====================================================================================================================================================
+//====================================================================================================================================================
 
-///========================================================================================================
+//========================================================================================================
 /// MechanismFactory.cpp
-///========================================================================================================
+//========================================================================================================
 ///
 /// File Description:
 ///     This controls the creation of mechanisms/subsystems
 ///
-///========================================================================================================
+//========================================================================================================
 
 // C++ Includes
-
+#include <memory>
 
 // FRC includes
 
 // Team 302 includes
 #include <subsys/MechanismFactory.h>
 #include <subsys/IMechanism.h>
+#include <subsys/MechanismTypes.h>
 
 
 // Third Party Includes
 
 
+using namespace std;
 
-///=====================================================================================
+
+//=====================================================================================
 /// Method:         GetMechanismFactory
 /// Description:    Find or create the mechanism factory
 /// Returns:        MechanismFactory* pointer to the mechanism factory
-///=====================================================================================
+//=====================================================================================
 MechanismFactory* MechanismFactory::m_mechanismFactory = nullptr;
 MechanismFactory* MechanismFactory::GetMechanismFactory()
 {
@@ -52,40 +55,40 @@ MechanismFactory* MechanismFactory::GetMechanismFactory()
 	return MechanismFactory::m_mechanismFactory;
 }
 
-///=====================================================================================
+//=====================================================================================
 /// Method:         GetIMechanism
 /// Description:    Find or create the requested mechanism
 /// Returns:        IMechanism*     pointer to the mechanism or nullptr if mechanism 
 ///                                 doesn't exist and cannot be created.
-///=====================================================================================
-IMechanism* MechanismFactory::GetIMechanism
+//=====================================================================================
+shared_ptr<IMechanism>  MechanismFactory::GetIMechanism
 (
-	IMechanism::MECHANISM_TYPE			type		// <I> - manipulator type
+	MechanismTypes::MECHANISM_TYPE			type		// <I> - manipulator type
 )
 {
-	IMechanism* subsys = nullptr;
+	shared_ptr<IMechanism> subsys = nullptr;
 
     switch ( type )
     {
-        case IMechanism::WRIST:
+        case MechanismTypes::WRIST:
         break;
 
-        case IMechanism::INTAKE:
+        case MechanismTypes::INTAKE:
         break;
 
-        case IMechanism::ARM:
+        case MechanismTypes::ARM:
         break;
 
-        case IMechanism::EXTENDER:
+        case MechanismTypes::EXTENDER:
         break;
 
-        case IMechanism::CLIMBER:
+        case MechanismTypes::CLIMBER:
         break;
 
-        case IMechanism::BEAK:
+        case MechanismTypes::BEAK:
         break;
 
-        case IMechanism::TAIL:
+        case MechanismTypes::TAIL:
         break;
 
         default:
@@ -97,10 +100,10 @@ IMechanism* MechanismFactory::GetIMechanism
 
 
 
-///=====================================================================================
+//=====================================================================================
 /// Method:         MechanismFactory
 /// Description:    Constructor for this singleton factory that initialized memory usage
-///=====================================================================================
+//=====================================================================================
 MechanismFactory::MechanismFactory() 
 {
     m_wrist    = nullptr;
@@ -112,10 +115,10 @@ MechanismFactory::MechanismFactory()
 }
 
 
-///=====================================================================================
+//=====================================================================================
 /// Method:         ~MechanismFactory
 /// Description:    Destructor for this singleton factory that cleans up memory usage
-///=====================================================================================
+//=====================================================================================
 MechanismFactory::~MechanismFactory()
 {
     if ( m_wrist != nullptr )

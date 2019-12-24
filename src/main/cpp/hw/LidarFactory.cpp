@@ -5,6 +5,10 @@
 
 #include <hw/LidarFactory.h>
 #include <hw/DragonLidar.h>
+#include <hw/IDragonSensor.h>
+#include <hw/IDragonDistanceSensor.h>
+
+using namespace std;
 
 LidarFactory* LidarFactory::m_lidarFactory = nullptr;
 DragonLidar*  LidarFactory::m_backwardLidar = nullptr;
@@ -20,25 +24,12 @@ LidarFactory* LidarFactory::GetLidarFactory()
     return LidarFactory::m_lidarFactory;
 }
 
-DragonLidar* LidarFactory::GetLidar
+shared_ptr<DragonLidar> LidarFactory::GetLidar
 (
-    DragonLidar::LIDAR_USAGE    usage
+    IDragonSensor::SENSOR_USAGE    usage
 )
 {
-    DragonLidar* lidar = nullptr;
-    switch ( usage )
-    {
-        case DragonLidar::BACKWARD:
-            lidar = LidarFactory::m_backwardLidar;
-            break;
-
-        case DragonLidar::FORWARD:
-            lidar = LidarFactory::m_forwardLidar;
-            break;
-
-        default:
-            break;
-    }
+    shared_ptr<DragonLidar> lidar = nullptr;
     return lidar;
 }
 
@@ -47,28 +38,20 @@ DragonLidar* LidarFactory::GetLidar
 // Description:     Create a lidar from the inputs
 // Returns:         Void
 //=======================================================================================
-DragonLidar* LidarFactory::CreateLidar
+shared_ptr<DragonLidar> LidarFactory::CreateLidar
 (
-    DragonLidar::LIDAR_USAGE    usage,
-    int                         inputPin,
-    int                         triggerPin
+    IDragonSensor::SENSOR_USAGE     usage,
+    int                             inputPin,
+    int                             triggerPin
 )
 {
-    DragonLidar* lidar = nullptr;
-    switch ( usage )
+    shared_ptr<DragonLidar> lidar = nullptr;
+    auto isValid = false;
+    // todo: plug in validation
+
+    if ( isValid )
     {
-        case DragonLidar::BACKWARD:
-            lidar = new DragonLidar( usage, inputPin, triggerPin );
-            LidarFactory::m_backwardLidar = lidar;
-            break;
-
-        case DragonLidar::FORWARD:
-            lidar = new DragonLidar( usage, inputPin, triggerPin );
-            LidarFactory::m_forwardLidar = lidar;
-            break;
-
-        default:
-            break;
+        lidar = make_shared<DragonLidar>( usage, inputPin, triggerPin );
     }
 
     return lidar;

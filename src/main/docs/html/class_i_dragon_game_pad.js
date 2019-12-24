@@ -24,6 +24,7 @@ var class_i_dragon_game_pad =
       [ "MAX_DEADBANDS", "class_i_dragon_game_pad.html#afde07811ccdd7565bc40c381adecee4da3e9cb3dad8d2ac03edb396a797968c01", null ]
     ] ],
     [ "AXIS_IDENTIFIER", "class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972b", [
+      [ "UNDEFINED_AXIS", "class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972bac4b73cf2814ada0f668d675161b714c9", null ],
       [ "LEFT_JOYSTICK_X", "class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972ba649aed3456717ea172697c04fe515c24", null ],
       [ "LEFT_JOYSTICK_Y", "class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972bae6595eebe0d1467763413301be6b7857", null ],
       [ "RIGHT_JOYSTICK_X", "class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972ba64230e31a56a01d54faac319d737e8b8", null ],
@@ -41,8 +42,7 @@ var class_i_dragon_game_pad =
       [ "GAMEPAD_DIAL_27", "class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972ba4cb565fec44dca432d70b12b366e616c", null ],
       [ "LEFT_ANALOG_BUTTON_AXIS", "class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972ba239d67826c1cb9ad49920f81f2a9cc93", null ],
       [ "RIGHT_ANALOG_BUTTON_AXIS", "class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972ba8d89ea1ffb066d737dad9ebfcad6a335", null ],
-      [ "MAX_GAMEPAD_AXIS", "class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972ba5bef3de2d4315d7d4080c6029ea88613", null ],
-      [ "UNDEFINED_AXIS", "class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972bac4b73cf2814ada0f668d675161b714c9", null ]
+      [ "MAX_GAMEPAD_AXIS", "class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972ba5bef3de2d4315d7d4080c6029ea88613", null ]
     ] ],
     [ "AXIS_PROFILE", "class_i_dragon_game_pad.html#a3b3c3165d9fc69500bd69ba575216676", [
       [ "LINEAR", "class_i_dragon_game_pad.html#a3b3c3165d9fc69500bd69ba575216676abdde71687676a038262ff33d2492bcbf", null ],
@@ -51,6 +51,7 @@ var class_i_dragon_game_pad =
       [ "MAX_PROFILES", "class_i_dragon_game_pad.html#a3b3c3165d9fc69500bd69ba575216676a7fc93528fdb8c6e235b2c5879c2597bf", null ]
     ] ],
     [ "BUTTON_IDENTIFIER", "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29", [
+      [ "UNDEFINED_BUTTON", "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29a686bc2a101683a20a3596914ac8ae4f4", null ],
       [ "A_BUTTON", "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29a7f91fc6ad8dc59022aa9f5140d3814d9", null ],
       [ "B_BUTTON", "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29a275b3e03f06e457d4b8da624ac83318e", null ],
       [ "X_BUTTON", "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29af58d60f9898f740cad672ce5eb91a12c", null ],
@@ -72,7 +73,6 @@ var class_i_dragon_game_pad =
       [ "POV_225", "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29a52d0a8fb968499f4c0b5d83e3eb3dc7d", null ],
       [ "POV_270", "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29a6e50edf982f4f01ce242849fd1a63bb6", null ],
       [ "POV_315", "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29acf1136017414251bc229ca2c2a747792", null ],
-      [ "MAX_BUTTONS", "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29a5d9a7d02c0a8246a6ac9742803d81b32", null ],
       [ "GAMEPAD_SWITCH_18", "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29a01fe08124414e826ebd4787c372d07db", null ],
       [ "GAMEPAD_SWITCH_19", "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29a17ae1e0e7692ef9d89d33921e99a59a8", null ],
       [ "GAMEPAD_SWITCH_20", "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29ae4f26dd3f6ef04fb1de86244f3f7bd1d", null ],
@@ -81,8 +81,7 @@ var class_i_dragon_game_pad =
       [ "GAMEPAD_BUTTON_14_DOWN", "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29a62eac2dcb5b8b13a0ef056b72fecc4ca", null ],
       [ "GAMEPAD_BUTTON_15_UP", "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29a234d076a548cd69e2824a6b981e32d62", null ],
       [ "GAMEPAD_BUTTON_15_DOWN", "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29a78922084764f528e11a2732d18ee1f97", null ],
-      [ "MAX_GAMEPAD_BUTTONS", "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29a6aa6b40f5e60245947377b2b79f415f4", null ],
-      [ "UNDEFINED_BUTTON", "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29a686bc2a101683a20a3596914ac8ae4f4", null ]
+      [ "MAX_BUTTONS", "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29a5d9a7d02c0a8246a6ac9742803d81b32", null ]
     ] ],
     [ "BUTTON_MODE", "class_i_dragon_game_pad.html#af3915fb49841ce1fc53b35c9e24d3417", [
       [ "STANDARD", "class_i_dragon_game_pad.html#af3915fb49841ce1fc53b35c9e24d3417a5876a014da9715eaecbed186b59a99e9", null ],

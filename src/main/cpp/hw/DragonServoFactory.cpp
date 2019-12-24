@@ -23,10 +23,16 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
+#include <map>
+#include <memory>
 
 
 #include <hw/DragonServoFactory.h>
 #include <hw/DragonServo.h>
+
+#include <utils/Logger.h>
+
+using namespace std;
 
 
 DragonServoFactory* DragonServoFactory::m_instance = nullptr;
@@ -41,89 +47,72 @@ DragonServoFactory* DragonServoFactory::GetInstance()
     return DragonServoFactory::m_instance;
 }
 
-DragonServoFactory::DragonServoFactory()
-{
-    m_limelight = nullptr;
-    m_tail = nullptr;
-}
 
-DragonServoFactory::~DragonServoFactory()
-{
-    if ( m_limelight != nullptr )
-    {
-        delete m_limelight;
-        m_limelight = nullptr;
-    }
-    if ( m_tail != nullptr )
-    {
-        delete m_tail;
-        m_tail = nullptr;
-    }
-}
 
 //=======================================================================================
-// Method:          CreateDragonServo
-// Description:     Create a DragonServo from the inputs
-// Returns:         DragonServo*    - could be nullptr if invalid inputs are supplied
+/// Method: CreateDragonServo
+/// @brief  Create a DragonServo from the inputs
+/// @param [in] DragonServo::SERVO_USAGE   deviceUsage  Usage of the servo
+/// @param [in] int                        deviceID     PWM ID of the  servo
+/// @param [in] double                     minAngle     Minimum Angle for the servo
+/// @param [in] double                     maxAngle     Maximum Angle for the servo
+/// @return std::shared_ptr<DragonServo>    - could be nullptr if invalid inputs are supplied
 //=======================================================================================
-DragonServo* DragonServoFactory::CreateDragonServo
+shared_ptr<DragonServo> DragonServoFactory::CreateDragonServo
 (
-    DragonServo::SERVO_USAGE    deviceUsage,        // <I> - Usage of the servo
-    int                         deviceID,           // <I> - PWM ID
-    double                      minAngle,           // <I> - Minimun desired angle
-    double                      maxAngle            // <I> - Maximum desired angle
+    DragonServo::SERVO_USAGE    deviceUsage,        
+    int                         deviceID,           
+    double                      minAngle,           
+    double                      maxAngle            
 )
 {
-    DragonServo* servo = nullptr;
+    shared_ptr<DragonServo> servo = nullptr;
     if ( deviceUsage > DragonServo::SERVO_USAGE::UNKNOWN_SERVO_USAGE && deviceUsage < DragonServo::SERVO_USAGE::MAX_SERVO_USAGES )
     {
-        switch ( deviceUsage )
+        servo = m_servos.find(deviceUsage)->second;
+        if ( servo != nullptr )
         {
-            case DragonServo::SERVO_USAGE::ROTATE_LIMELIGHT:
-                servo = new DragonServo( deviceUsage, deviceID, minAngle, maxAngle );
-                m_limelight = servo;
-                break;
+            string msg = "servo with usage already exists " + to_string( deviceUsage );
+            Logger::GetLogger()->LogError( "DragonServoFactory::CreateDragonServo", msg );
+        }
+        else
+        {       
+            switch ( deviceUsage )
+            {
+                case DragonServo::SERVO_USAGE::ROTATE_LIMELIGHT:
+                    servo = make_shared<DragonServo>( deviceUsage, deviceID, minAngle, maxAngle );
+                    m_servos[deviceUsage] = servo;
+                    break;
 
-            case DragonServo::SERVO_USAGE::TAIL_CONTROL:
-                servo = new DragonServo( deviceUsage, deviceID, minAngle, maxAngle );
-                m_tail = servo;
-                break;
+                case DragonServo::SERVO_USAGE::TAIL_CONTROL:
+                    servo = make_shared<DragonServo>( deviceUsage, deviceID, minAngle, maxAngle );
+                    m_servos[deviceUsage] = servo;
+                    break;
 
-            default:
-                break;
+                default:
+                    string msg = "Unknown Servo Usage " + to_string( deviceUsage );
+                    Logger::GetLogger()->LogError( "DragonServoFactory::CreateDragonServo", msg );
+                    break;
+            }
         }
     }
     return servo;
 }
 
 
+
 //=======================================================================================
-// Method:          GetDragonServo
-// Description:     return DragonServo for a particular usage
-// Returns:         DragonServo*                may be nullptr if there isn't a servo with
-//                                              with this usage.
+/// Method: GetDragonServo
+/// @brief  Get a DragonServo from its usage
+/// @param [in] DragonServo::SERVO_USAGE   deviceUsage  Usage of the servo
+/// @return std::shared_ptr<DragonServo>    - could be nullptr if invalid inputs are supplied
 //=======================================================================================
-DragonServo* DragonServoFactory::GetDragonServo
+shared_ptr<DragonServo> DragonServoFactory::CreateDragonServo
 (
-    DragonServo::SERVO_USAGE    deviceUsage         // <I> - Usage of the servo
+    DragonServo::SERVO_USAGE    deviceUsage        
 )
 {
-    DragonServo* servo = nullptr;
-    if ( deviceUsage > DragonServo::SERVO_USAGE::UNKNOWN_SERVO_USAGE && deviceUsage < DragonServo::SERVO_USAGE::MAX_SERVO_USAGES )
-    {
-        switch ( deviceUsage )
-        {
-            case DragonServo::SERVO_USAGE::ROTATE_LIMELIGHT:
-                servo = m_limelight;
-                break;
-
-            case DragonServo::SERVO_USAGE::TAIL_CONTROL:
-                servo = m_tail;
-                break;
-
-            default:
-                break;
-        }
-    }
-    return servo;
+    return m_servos.find(deviceUsage)->second;
 }
+
+

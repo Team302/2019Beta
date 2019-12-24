@@ -24,15 +24,15 @@
 
 // Team 302 includes
 #include <hw/DragonPositionSensor.h>
-#include <hw/IDragonAngleSensor.h>
+#include <hw/IDragonAnglePositionSensor.h>
 
 // Third Party Includes
 
-///====================================================================================================================================================
+//====================================================================================================================================================
 /// Class:           IDragonPositionSensor
 /// Description:     This provides a common set of methods for all sensors that measure the 
 ///                  distance/position a mechanism has moved.
-///====================================================================================================================================================
+//====================================================================================================================================================
 
 ///-----------------------------------------------------------------------
 /// Method:      DragonPositionSensor
@@ -40,7 +40,7 @@
 ///-----------------------------------------------------------------------
 DragonPositionSensor::DragonPositionSensor
 (
-    IDragonAngleSensor*     angleSensor,        /// <I> - angle sensor
+    IDragonAnglePositionSensor*     angleSensor,        /// <I> - angle sensor
     double                  diameter            /// <I> - diameter of the rotating item
 ) : m_angleSensor( angleSensor ),
     m_diameter( diameter ),
@@ -59,11 +59,13 @@ DragonPositionSensor::DragonPositionSensor
 ///-----------------------------------------------------------------------
 DragonPositionSensor::~DragonPositionSensor() 
 {
+    /**
     if ( m_angleSensor != nullptr )
     {
         delete m_angleSensor;
         m_angleSensor = nullptr;
     }
+    **/
 }
 
 

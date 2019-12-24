@@ -1,5 +1,5 @@
 
-///====================================================================================================================================================
+//====================================================================================================================================================
 /// Copyright 2019 Lake Orion Robotics FIRST Team 302
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
@@ -12,11 +12,11 @@
 /// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
 /// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 /// OR OTHER DEALINGS IN THE SOFTWARE.
-///====================================================================================================================================================
+//====================================================================================================================================================
 
-///========================================================================================================
+//========================================================================================================
 /// MechansimDefn.cpp
-///========================================================================================================
+//========================================================================================================
 ///
 /// Description: Create a mechaism from an XML definition
 ///
@@ -27,10 +27,11 @@
 ///
 /// type is the name of the mechanism that is the string in the enum in MechanismFactory.h
 ///
-///========================================================================================================
+//========================================================================================================
 
 // C++ Includes
 #include <iostream>
+#include <memory>
 #include <utility>
 
 // FRC includes
@@ -47,6 +48,7 @@
 #include <xmlhw/ServoDefn.h> 
 
 #include <subsys/IMechanism.h>
+#include <subsys/MechanismTypes.h>
 
 #include <utils/Logger.h>
 
@@ -61,39 +63,21 @@ using namespace std;
 
 
 ///-----------------------------------------------------------------------
-/// Method:      ParseXML
-/// Description: Parse a Mechanism XML element and create an IMechanism
-///              from its definition.
-///
-///
-///<!-- ====================================================
-///        enum MECHANISM_TYPE
-///        {
-///            UNKNOWN_MECHANISM = -1,
-///            WRIST,
-///            INTAKE,
-///            ARM,
-///            CLIMBER,
-///            MAX_MECHANISM_TYPES
-///        };
-///
-///
-///    ==================================================== -->
-///<!ELEMENT mechanism (motor*, analogInput*, digitalInput*, servo* )>
-///<!ATTLIST mechanism
-///          type              ( 0 | 1 | 2 | 3 ) "0"
-///>
-///
-///
-/// Returns:     void
+/// Method: ParseXML
+/// @brief  Parse a Mechanism XML element and create an IMechanism from its definition.
+/// @return 
+///   std::shared_ptr<IMechanism>   pointer to the mechanism
 ///-----------------------------------------------------------------------
-void MechanismDefn::ParseXML
+shared_ptr<IMechanism> MechanismDefn::ParseXML
 (
     xml_node      mechanismNode
 )
 {
+    // initialize outputs
+    shared_ptr<IMechanism> mech = nullptr;
+
     // initialize attributes
-    IMechanism::MECHANISM_TYPE type = IMechanism::UNKNOWN_MECHANISM;
+    MechanismTypes::MECHANISM_TYPE type = MechanismTypes::UNKNOWN_MECHANISM;
 
     bool hasError       = false;
 
@@ -107,54 +91,64 @@ void MechanismDefn::ParseXML
     {
         if ( strcmp( attr.name(), "type" ) == 0 )
         {
-            
-            int iVal = attr.as_int();
-            switch ( iVal )
+            string typeStr = attr.as_string();
+            for_each( typeStr.begin(), typeStr.end(), [](char & c){c = ::toupper(c);});
+
+            if ( typeStr.compare( "CHASSIS") == 0 )
             {
-                case IMechanism::WRIST:
-                    type = IMechanism::WRIST;
-                    break;
-
-                case IMechanism::INTAKE:
-                    type = IMechanism::INTAKE;
-                    break;
-
-                case IMechanism::ARM:
-                    type = IMechanism::ARM;
-                    break;
-
-                case IMechanism::CLIMBER:
-                    type = IMechanism::CLIMBER;
-                    break;
-
-                case IMechanism::BEAK:
-                    type = IMechanism::BEAK;
-                    break;
-
-                case IMechanism::TAIL:
-                    type = IMechanism::TAIL;
-                    break;
-
-                default:
+                type = MechanismTypes::MECHANISM_TYPE::WRIST;
+            }
+            else if ( typeStr.compare( "SHOOTER") == 0 )
+            {
+                type = MechanismTypes::MECHANISM_TYPE::SHOOTER;
+            }
+            else if ( typeStr.compare( "ELEVATOR") == 0 )
+            {
+                type = MechanismTypes::MECHANISM_TYPE::ELEVATOR;
+            }
+            else if ( typeStr.compare( "WRIST") == 0 )
+            {
+                type = MechanismTypes::MECHANISM_TYPE::WRIST;
+            }
+            else if ( typeStr.compare( "INTAKE") == 0 )
+            {
+                type = MechanismTypes::MECHANISM_TYPE::INTAKE;
+            }
+            else if ( typeStr.compare( "ARM") == 0 )
+            {
+                type = MechanismTypes::MECHANISM_TYPE::ARM;
+            }            
+            else if ( typeStr.compare( "EXTENDER") == 0 )
+            {
+                type = MechanismTypes::MECHANISM_TYPE::EXTENDER;
+            }
+            else if ( typeStr.compare( "CLIMBER") == 0 )
+            {
+                type = MechanismTypes::MECHANISM_TYPE::CLIMBER;
+            }
+            else if ( typeStr.compare( "BEAK") == 0 )
+            {
+                type = MechanismTypes::MECHANISM_TYPE::BEAK;
+            }
+            else
+            {
                     string msg = "unknown Mechanism type ";
                     msg += attr.value();
-                    Logger::GetLogger()->Log( "MechanismDefn::ParseXML", msg );
+                    Logger::GetLogger()->LogError( "MechanismDefn::ParseXML", msg );
                     hasError = true;
-                    break;
-                
             }
         }
         else
         {
             string msg = "invalid attribute ";
             msg += attr.name();
-            Logger::GetLogger()->Log( "MechanismDefn::ParseXML", msg );
+            Logger::GetLogger()->LogError( "MechanismDefn::ParseXML", msg );
             hasError = true;
         }
     }
 
-        // Parse/validate subobject xml
-    for (xml_node child = mechanismNode.first_child(); child; child = child.next_sibling())
+    // Parse/validate subobject xml
+    for (xml_node child = mechanismNode.first_child(); child  && !hasError; child = child.next_sibling())
     {
         if ( strcmp( child.name(), "motor") == 0 )
         {
@@ -165,11 +159,11 @@ void MechanismDefn::ParseXML
 
             if ( motorXML != nullptr )
             {
-                motorXML->ParseXML(child);
+                auto motor = motorXML->ParseXML(child);
             }
             else
             {
-                Logger::GetLogger()->Log( "MechanismDefn", "unable to create MotorDefn" );
+                Logger::GetLogger()->LogError( "MechanismDefn", "unable to create MotorDefn" );
             }
         }
         else if ( strcmp( child.name(), "analogInput") == 0 )
@@ -181,11 +175,11 @@ void MechanismDefn::ParseXML
 
             if ( analogXML != nullptr )
             {
-                analogXML->ParseXML(child);
+                auto analogIn = analogXML->ParseXML(child);
             }
             else
             {
-                Logger::GetLogger()->Log( "MechanismDefn", "unable to create AnalogInputDefn" );
+                Logger::GetLogger()->LogError( "MechanismDefn", "unable to create AnalogInputDefn" );
             }
         }
         else if ( strcmp( child.name(), "digitalInput") == 0 )
@@ -197,11 +191,11 @@ void MechanismDefn::ParseXML
 
             if ( digitalXML != nullptr )
             {
-                digitalXML->ParseXML(child);
+                auto digitalIn = digitalXML->ParseXML(child);
             }
             else
             {
-                Logger::GetLogger()->Log( "MechanismDefn", "unable to create DigitalInputDefn" );
+                Logger::GetLogger()->LogError( "MechanismDefn", "unable to create DigitalInputDefn" );
             }
         }
         else if ( strcmp( child.name(), "servo") == 0 )
@@ -217,7 +211,7 @@ void MechanismDefn::ParseXML
             }
             else
             {
-                Logger::GetLogger()->Log( "MechanismDefn", "unable to create ServoDefn" );
+                Logger::GetLogger()->LogError( "MechanismDefn", "unable to create ServoDefn" );
             }
         }
         else
@@ -231,6 +225,8 @@ void MechanismDefn::ParseXML
     if ( !hasError )
     {
         MechanismFactory* factory =  MechanismFactory::GetMechanismFactory();
-        factory->GetIMechanism( type );
+        mech = factory->GetIMechanism( type );
     }
+
+    return mech;
 }

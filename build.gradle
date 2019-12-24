@@ -1,7 +1,7 @@
 plugins {
     id "cpp"
     id "google-test-test-suite"
-    id "edu.wpi.first.GradleRIO" version "2019.4.1"
+    id "edu.wpi.first.GradleRIO" version "2020.1.1-beta-4"
 }
 
 // Define my targets (RoboRIO) and artifacts (deployable files)
@@ -76,7 +76,7 @@ model {
             }
 
             // Defining my dependencies. In this case, WPILib (+ friends), and vendor libraries.
-            useLibrary(it, "wpilib")
+            wpi.deps.wpilib(it)
             wpi.deps.vendor.cpp(it)
         }
     }
@@ -91,7 +91,8 @@ model {
                 }
             }
 
-            useLibrary(it, "wpilib", "googletest")
+            wpi.deps.wpilib(it)
+            wpi.deps.googleTest(it)
             wpi.deps.vendor.cpp(it)
         }
     }

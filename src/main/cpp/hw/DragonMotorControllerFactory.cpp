@@ -33,7 +33,6 @@ DragonMotorControllerFactory* DragonMotorControllerFactory::GetInstance()
 
 DragonMotorControllerFactory::DragonMotorControllerFactory() 
 {
-	int size = IDragonMotorController::MOTOR_CONTROLLER_TYPE::MAX_MOTOR_CONTROLLER_TYPES;
 	for ( auto inx=0; inx<63; ++inx )
 	{
 		m_canControllers[inx] = nullptr;
@@ -116,7 +115,7 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::CreateMotorCont
             {
                 string msg = "invalid Slave to ID ";
                 msg += to_string( slaveTo );
-                Logger::GetLogger()->Log( "DragonMotorControllerFactory::CreateMotorController", msg );
+                Logger::GetLogger()->LogError( "DragonMotorControllerFactory::CreateMotorController", msg );
             }
         }
         controller.reset( smax );
@@ -155,7 +154,7 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::GetController
 	{
 	    string msg = "invalid CAN ID ";
 	    msg += to_string( canID );
-        Logger::GetLogger()->Log( "DragonMotorControllerFactory::GetController", msg );
+        Logger::GetLogger()->LogError( "DragonMotorControllerFactory::GetController", msg );
 	}
 	return controller;
 }

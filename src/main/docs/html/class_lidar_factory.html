@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>2020 Template Project: LidarFactory Class Reference</title>
+<title>Team302Robot: LidarFactory Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">2020 Template Project
+   <div id="projectname">Team302Robot
    </div>
   </td>
  </tr>
@@ -93,117 +93,26 @@ $(document).ready(function(){initNavTree('class_lidar_factory.html','');});
 <div class="title">LidarFactory Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="_lidar_factory_8h_source.html">LidarFactory.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a034b0eaacc5b8a31ad433f2a5df633b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_dragon_lidar.html">DragonLidar</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lidar_factory.html#a034b0eaacc5b8a31ad433f2a5df633b7">CreateLidar</a> (<a class="el" href="class_dragon_lidar.html#ac254ad87590861943e9e0508f43c9036">DragonLidar::LIDAR_USAGE</a> usage, int inputPin, int triggerPin)</td></tr>
-<tr class="separator:a034b0eaacc5b8a31ad433f2a5df633b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe9c601111912c276ec58bfb37d95021"><td class="memItemLeft" align="right" valign="top"><a id="abe9c601111912c276ec58bfb37d95021"></a>
+std::shared_ptr&lt; <a class="el" href="class_dragon_lidar.html">DragonLidar</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>CreateLidar</b> (IDragonSensor::SENSOR_USAGE usage, int inputPin, int triggerPin)</td></tr>
+<tr class="separator:abe9c601111912c276ec58bfb37d95021"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a14e25d1b8a7271a179c38d157d6c8da4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_lidar_factory.html">LidarFactory</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lidar_factory.html#a14e25d1b8a7271a179c38d157d6c8da4">GetLidarFactory</a> ()</td></tr>
+<tr class="memitem:a14e25d1b8a7271a179c38d157d6c8da4"><td class="memItemLeft" align="right" valign="top"><a id="a14e25d1b8a7271a179c38d157d6c8da4"></a>
+static <a class="el" href="class_lidar_factory.html">LidarFactory</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetLidarFactory</b> ()</td></tr>
 <tr class="separator:a14e25d1b8a7271a179c38d157d6c8da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d816487a91dab1b6dfae9b7df7df687"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_dragon_lidar.html">DragonLidar</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lidar_factory.html#a3d816487a91dab1b6dfae9b7df7df687">GetLidar</a> (<a class="el" href="class_dragon_lidar.html#ac254ad87590861943e9e0508f43c9036">DragonLidar::LIDAR_USAGE</a> usage)</td></tr>
-<tr class="separator:a3d816487a91dab1b6dfae9b7df7df687"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd592ce88bb71d486252642f2afe5b12"><td class="memItemLeft" align="right" valign="top"><a id="afd592ce88bb71d486252642f2afe5b12"></a>
+static std::shared_ptr&lt; <a class="el" href="class_dragon_lidar.html">DragonLidar</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetLidar</b> (IDragonSensor::SENSOR_USAGE usage)</td></tr>
+<tr class="separator:afd592ce88bb71d486252642f2afe5b12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_lidar_factory_8h_source.html#l00011">11</a> of file <a class="el" href="_lidar_factory_8h_source.html">LidarFactory.h</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a034b0eaacc5b8a31ad433f2a5df633b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a034b0eaacc5b8a31ad433f2a5df633b7">&#9670;&nbsp;</a></span>CreateLidar()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_dragon_lidar.html">DragonLidar</a> * LidarFactory::CreateLidar </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_dragon_lidar.html#ac254ad87590861943e9e0508f43c9036">DragonLidar::LIDAR_USAGE</a>&#160;</td>
-          <td class="paramname"><em>usage</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>inputPin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>triggerPin</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_lidar_factory_8cpp_source.html#l00051">51</a> of file <a class="el" href="_lidar_factory_8cpp_source.html">LidarFactory.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a3d816487a91dab1b6dfae9b7df7df687"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d816487a91dab1b6dfae9b7df7df687">&#9670;&nbsp;</a></span>GetLidar()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_dragon_lidar.html">DragonLidar</a> * LidarFactory::GetLidar </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_dragon_lidar.html#ac254ad87590861943e9e0508f43c9036">DragonLidar::LIDAR_USAGE</a>&#160;</td>
-          <td class="paramname"><em>usage</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_lidar_factory_8cpp_source.html#l00024">24</a> of file <a class="el" href="_lidar_factory_8cpp_source.html">LidarFactory.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a14e25d1b8a7271a179c38d157d6c8da4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14e25d1b8a7271a179c38d157d6c8da4">&#9670;&nbsp;</a></span>GetLidarFactory()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_lidar_factory.html">LidarFactory</a> * LidarFactory::GetLidarFactory </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_lidar_factory_8cpp_source.html#l00014">14</a> of file <a class="el" href="_lidar_factory_8cpp_source.html">LidarFactory.cpp</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<p class="definition">Definition at line <a class="el" href="_lidar_factory_8h_source.html#l00013">13</a> of file <a class="el" href="_lidar_factory_8h_source.html">LidarFactory.h</a>.</p>
+</div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/GitKrakenRepos/TemplateRepository/src/main/cpp/hw/<a class="el" href="_lidar_factory_8h_source.html">LidarFactory.h</a></li>
 <li>C:/GitKrakenRepos/TemplateRepository/src/main/cpp/hw/<a class="el" href="_lidar_factory_8cpp_source.html">LidarFactory.cpp</a></li>
 </ul>

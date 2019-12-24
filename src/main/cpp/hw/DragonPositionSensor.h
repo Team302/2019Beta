@@ -22,15 +22,15 @@
 // FRC includes
 
 // Team 302 includes
-#include <hw/IDragonAngleSensor.h>
+#include <hw/IDragonAnglePositionSensor.h>
 
 // Third Party Includes
 
-///====================================================================================================================================================
+//====================================================================================================================================================
 /// Class:           IDragonPositionSensor
 /// Description:     This provides a common set of methods for all sensors that measure the 
 ///                  distance/position a mechanism has moved.
-///====================================================================================================================================================
+//====================================================================================================================================================
 class DragonPositionSensor
 {
     public:
@@ -42,7 +42,7 @@ class DragonPositionSensor
         DragonPositionSensor() = delete;
         DragonPositionSensor
         (
-            IDragonAngleSensor*     angleSensor,        /// <I> - angle sensor
+            IDragonAnglePositionSensor*     angleSensor,        /// <I> - angle sensor
             double                  diameter            /// <I> - diameter of the rotating item
         );
     
@@ -87,7 +87,7 @@ class DragonPositionSensor
         double GetDistanceConfidence();
 
     private:
-        IDragonAngleSensor*     m_angleSensor;      // sensor measuring angles
+        IDragonAnglePositionSensor*     m_angleSensor;      // sensor measuring angles
         double                  m_diameter;         // used to calculate rotational distance
         double                  m_startAngle;       // angle value to measure from
         double                  m_startDist;        // distance the starting angle corresponds to

@@ -2,9 +2,10 @@
  * ServoDefn.h
  */
 
-#ifndef SRC_SUBSYS_XMLPARSING_SERVODEFN_H_
-#define SRC_SUBSYS_XMLPARSING_SERVODEFN_H_
- // C++ Includes
+#pragma once 
+
+// C++ Includes
+#include <memory>
 #include <iostream>
 
 // FRC includes
@@ -27,10 +28,8 @@ class ServoDefn
         //              its definition.
         // Returns:     void
         //-----------------------------------------------------------------------
-        void ParseXML
+        std::shared_ptr<DragonServo> ParseXML
         (
             pugi::xml_node      ServoNode
         );
 };
-
-#endif /* SRC_SUBSYS_XMLPARSING_SERVODEFN_H_ */

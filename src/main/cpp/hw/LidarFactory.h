@@ -3,9 +3,11 @@
  *
  */
 
-#ifndef SRC_FACTORIES_LIDARFACTORY_H_
-#define SRC_FACTORIES_LIDARFACTORY_H_
+#pragma once
 
+#include <memory>
+
+#include <hw/IDragonSensor.h>
 #include <hw/DragonLidar.h>
 
 class LidarFactory
@@ -13,9 +15,9 @@ class LidarFactory
     public:
         static LidarFactory* GetLidarFactory();
 
-        static DragonLidar* GetLidar
+        static std::shared_ptr<DragonLidar> GetLidar
         (
-            DragonLidar::LIDAR_USAGE    usage
+            IDragonSensor::SENSOR_USAGE    usage
         );
 
         //=======================================================================================
@@ -23,11 +25,11 @@ class LidarFactory
         // Description:     Create a lidar from the inputs
         // Returns:         Void
         //=======================================================================================
-        DragonLidar* CreateLidar
+        std::shared_ptr<DragonLidar> CreateLidar
         (
-            DragonLidar::LIDAR_USAGE    usage,
-            int                         inputPin,
-            int                         triggerPin
+            IDragonSensor::SENSOR_USAGE     usage,
+            int                             inputPin,
+            int                             triggerPin
         );
 
     private:
@@ -41,4 +43,3 @@ class LidarFactory
 
 };
 
-#endif /* SRC_FACTORIES_LIDARFACTORY_H_ */

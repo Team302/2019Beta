@@ -14,13 +14,13 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-///========================================================================================================
+//========================================================================================================
 /// HardwareIDValidation.cpp
-///========================================================================================================
+//========================================================================================================
 ///
 /// File Description:
 ///     This will validate the various hardware IDs against the valid values.
-///========================================================================================================
+//========================================================================================================
 
 // C++ Includes
 #include <string>
@@ -36,26 +36,80 @@
 using namespace std;
 
 
-///======================================================================================
+//======================================================================================
 /// Method:       ValidateCANID
 /// Description:  Check the CAN ID against the valid range.  If it is invalid the logger
 ///               utility will be called.
 /// Returns:      bool          true  - valid
 ///                             false - invalid
-///=====================================================================================
+//=====================================================================================
 bool HardwareIDValidation::ValidateCANID
 (
     int     canID,          // <I> - CAN ID to validate
     string  methodID        // <I> - class::method identifier for message
 )
 {
+    string errorMsg = "Invalid CAN ID " + to_string( canID );
+    return HardwareIDValidation::ValidateID( canID, 0, 63, methodID, errorMsg );
+}
+
+
+//======================================================================================
+/// Method:       ValidatePDPID
+/// Description:  Check the PDP ID against the valid range.  If it is invalid the logger
+///               utility will be called.
+/// Returns:      bool          true  - valid
+///                             false - invalid
+//=====================================================================================
+bool HardwareIDValidation::ValidatePDPID
+(
+    int     pdpID,          // <I> - PDP ID to validate
+    string  methodID        // <I> - class::method identifier for message
+)
+{
+    string errorMsg = "Invalid PDP ID " + to_string( pdpID );
+    return HardwareIDValidation::ValidateID( pdpID, 0, 15, methodID, errorMsg );
+}
+
+
+
+//======================================================================================
+/// Method:       ValidateDIOID
+/// Description:  Check the DIO ID against the valid range.  If it is invalid the logger
+///               utility will be called.
+/// Returns:      bool          true  - valid
+///                             false - invalid
+//=====================================================================================
+bool HardwareIDValidation::ValidateDIOID
+(
+    int     dioID,          // <I> - DIO ID to validate
+    string  methodID        // <I> - class::method identifier for message
+)
+{
+    string errorMsg = "Invalid Digital IO ID " + to_string( dioID );
+    return HardwareIDValidation::ValidateID( dioID, 0, 9, methodID, errorMsg );
+}
+//======================================================================================
+/// Method:       ValidateID
+/// Description:  Check the ID against the valid range.  If it is invalid the logger
+///               utility will be called.
+/// Returns:      bool          true  - valid
+///                             false - invalid
+//=====================================================================================
+bool HardwareIDValidation::ValidateID
+(
+    int          id,            // <I> - ID to validate
+    int          minID,         // <I> - minimum ID
+    int          maxID,         // <I> - maximum ID
+    string       methodID,      // <I> - class::method identifier for message
+    string       errorMsg       // <I> - error message
+)
+{
     bool hasError = false;
-    if ( canID < 0 || canID > 63 )
+    if ( id < minID || id > maxID )
     {
         hasError = true;
-        string msg = "Invalid CAN ID";
-        msg += to_string( canID );
-        Logger::GetLogger()->Log( methodID, msg );
+        Logger::GetLogger()->LogError( methodID, errorMsg );
     }
     return hasError;
 }

@@ -23,7 +23,7 @@ var searchData=
   ['_7edragonxbox_656',['~DragonXBox',['../class_dragon_x_box.html#a0fd002e6779e4dcfa801b70f802cba7a',1,'DragonXBox']]],
   ['_7eflippedaxis_657',['~FlippedAxis',['../class_flipped_axis.html#a8bc959d51777fd765187df537b0bb14f',1,'FlippedAxis']]],
   ['_7eibutton_658',['~IButton',['../class_i_button.html#ae08c2464ff8ddcec256b86f64bc49ee1',1,'IButton']]],
-  ['_7eidragonanglesensor_659',['~IDragonAngleSensor',['../class_i_dragon_angle_sensor.html#a98d0915292bbcd8e6931c7bd66be84c2',1,'IDragonAngleSensor']]],
+  ['_7eIDragonAnglePositionSensor_659',['~IDragonAnglePositionSensor',['../class_i_dragon_angle_sensor.html#a98d0915292bbcd8e6931c7bd66be84c2',1,'IDragonAnglePositionSensor']]],
   ['_7eidragongamepad_660',['~IDragonGamePad',['../class_i_dragon_game_pad.html#aa2ff875139b5000058d17f6afd4860cb',1,'IDragonGamePad']]],
   ['_7eidragonmotorcontroller_661',['~IDragonMotorController',['../class_i_dragon_motor_controller.html#a93f40b43658f5744e50292dbf6fc470b',1,'IDragonMotorController']]],
   ['_7eidragonultrasonic_662',['~IDragonUltrasonic',['../class_i_dragon_ultrasonic.html#a94eed9652f572f4997055e50c5e502bd',1,'IDragonUltrasonic']]],

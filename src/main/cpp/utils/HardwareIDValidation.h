@@ -14,13 +14,13 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-///========================================================================================================
+//========================================================================================================
 /// HardwareIDValidation.h
-///========================================================================================================
+//========================================================================================================
 ///
 /// File Description:
 ///     This will validate the various hardware IDs against the valid values.
-///========================================================================================================
+//========================================================================================================
 
 #pragma once
 
@@ -38,17 +38,59 @@
 class HardwareIDValidation
 {
     public:
-        ///======================================================================================
+        //======================================================================================
         /// Method:       ValidateCANID
         /// Description:  Check the CAN ID against the valid range.  If it is invalid the logger
         ///               utility will be called.
         /// Returns:      bool          true  - valid
         ///                             false - invalid
-        ///=====================================================================================
+        //=====================================================================================
         static bool ValidateCANID
         (
             int          canID,         // <I> - CAN ID to validate
             std::string  methodID       // <I> - class::method identifier for message
+        );
+
+        //======================================================================================
+        /// Method:       ValidatePDPID
+        /// Description:  Check the PDP ID against the valid range.  If it is invalid the logger
+        ///               utility will be called.
+        /// Returns:      bool          true  - valid
+        ///                             false - invalid
+        //=====================================================================================
+        static bool ValidatePDPID
+        (
+            int          pdpID,         // <I> - PDP ID to validate
+            std::string  methodID       // <I> - class::method identifier for message
+        );
+        
+        //======================================================================================
+        /// Method:       ValidateDIOID
+        /// Description:  Check the Digitial IO ID against the valid range.  If it is invalid the logger
+        ///               utility will be called.
+        /// Returns:      bool          true  - valid
+        ///                             false - invalid
+        //=====================================================================================
+        static bool ValidateDIOID
+        (
+            int          dioID,         // <I> - DIO ID to validate
+            std::string  methodID       // <I> - class::method identifier for message
+        );
+
+        //======================================================================================
+        /// Method:       ValidateID
+        /// Description:  Check the ID against the valid range.  If it is invalid the logger
+        ///               utility will be called.
+        /// Returns:      bool          true  - valid
+        ///                             false - invalid
+        //=====================================================================================
+        static bool ValidateID
+        (
+            int          id,            // <I> - ID to validate
+            int          minID,         // <I> - minimum ID
+            int          maxID,         // <I> - maximum ID
+            std::string  methodID,      // <I> - class::method identifier for message
+            std::string  errorMsg       // <I> - error message
         );
 
 };

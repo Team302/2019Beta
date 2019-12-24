@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>2020 Template Project: Logger Class Reference</title>
+<title>Team302Robot: Logger Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">2020 Template Project
+   <div id="projectname">Team302Robot
    </div>
   </td>
  </tr>
@@ -95,22 +95,27 @@ $(document).ready(function(){initNavTree('class_logger.html','');});
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="_logger_8h_source.html">Logger.h</a>.  
+ <a href="class_logger.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_logger_8h_source.html">Logger.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a4edb2ae414fe730aa45c9279c07f013a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#a4edb2ae414fe730aa45c9279c07f013a">LOGGER_OPTION</a> { <a class="el" href="class_logger.html#a4edb2ae414fe730aa45c9279c07f013aacbcdf0940aae87a9c60c0c310aaf0836">CONSOLE</a>, 
-<a class="el" href="class_logger.html#a4edb2ae414fe730aa45c9279c07f013aa30505ac45161ab12db3907e4236a7417">DASHBOARD</a>, 
-<a class="el" href="class_logger.html#a4edb2ae414fe730aa45c9279c07f013aa79d5b0f7ae29658e8a44668f40fb59be">EAT_IT</a>
+<tr class="memitem:a4edb2ae414fe730aa45c9279c07f013a"><td class="memItemLeft" align="right" valign="top"><a id="a4edb2ae414fe730aa45c9279c07f013a"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>LOGGER_OPTION</b> { <b>CONSOLE</b>, 
+<b>DASHBOARD</b>, 
+<b>EAT_IT</b>
  }</td></tr>
 <tr class="separator:a4edb2ae414fe730aa45c9279c07f013a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a81e0fa4eef4a980adb91577eac4bdebd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#a81e0fa4eef4a980adb91577eac4bdebd">SetLoggingOption</a> (<a class="el" href="class_logger.html#a4edb2ae414fe730aa45c9279c07f013a">LOGGER_OPTION</a> option)</td></tr>
+<tr class="memitem:a81e0fa4eef4a980adb91577eac4bdebd"><td class="memItemLeft" align="right" valign="top"><a id="a81e0fa4eef4a980adb91577eac4bdebd"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetLoggingOption</b> (LOGGER_OPTION option)</td></tr>
 <tr class="separator:a81e0fa4eef4a980adb91577eac4bdebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a212c1cb5a51e8d0c9e19a8f466f0fc25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#a212c1cb5a51e8d0c9e19a8f466f0fc25">Log</a> (const std::string &amp;locationIdentifier, const std::string &amp;message)</td></tr>
-<tr class="separator:a212c1cb5a51e8d0c9e19a8f466f0fc25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98d7aec19dcdfb9d8faa46d83d927883"><td class="memItemLeft" align="right" valign="top"><a id="a98d7aec19dcdfb9d8faa46d83d927883"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>LogError</b> (const std::string &amp;locationIdentifier, const std::string &amp;message)</td></tr>
+<tr class="separator:a98d7aec19dcdfb9d8faa46d83d927883"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -118,36 +123,11 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ae85cfbef8b7e6940475a5012fa1935c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>======================================================================================================== </p>
-<h1><a class="anchor" id="autotoc_md142"></a>
-Logger.h</h1>
-<p>File Description: This logs error messages</p>
-<hr  />
- 
+<div class="textblock"><p><a class="el" href="_logger_8h_source.html">Logger.h</a>. </p>
+<p>File Description: This logs error messages </p>
+
 <p class="definition">Definition at line <a class="el" href="_logger_8h_source.html#l00040">40</a> of file <a class="el" href="_logger_8h_source.html">Logger.h</a>.</p>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
-<a id="a4edb2ae414fe730aa45c9279c07f013a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4edb2ae414fe730aa45c9279c07f013a">&#9670;&nbsp;</a></span>LOGGER_OPTION</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_logger.html#a4edb2ae414fe730aa45c9279c07f013a">Logger::LOGGER_OPTION</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4edb2ae414fe730aa45c9279c07f013aacbcdf0940aae87a9c60c0c310aaf0836"></a>CONSOLE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a4edb2ae414fe730aa45c9279c07f013aa30505ac45161ab12db3907e4236a7417"></a>DASHBOARD&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a4edb2ae414fe730aa45c9279c07f013aa79d5b0f7ae29658e8a44668f40fb59be"></a>EAT_IT&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="_logger_8h_source.html#l00044">44</a> of file <a class="el" href="_logger_8h_source.html">Logger.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ae85cfbef8b7e6940475a5012fa1935c6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae85cfbef8b7e6940475a5012fa1935c6">&#9670;&nbsp;</a></span>GetLogger()</h2>
 
@@ -170,61 +150,9 @@ Logger.h</h1>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>===================================================================================== Method: GetLogger Description: Find or create the singleton logger </p>
-<h1><a class="anchor" id="autotoc_md144"></a>
-Returns:        Logger* pointer to the logger</h1>
+<p>Method: GetLogger Description: Find or create the singleton logger Returns: Logger* pointer to the logger </p>
 
 <p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00052">52</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a212c1cb5a51e8d0c9e19a8f466f0fc25"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a212c1cb5a51e8d0c9e19a8f466f0fc25">&#9670;&nbsp;</a></span>Log()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Logger::Log </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>locationIdentifier</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>message</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00071">71</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a81e0fa4eef4a980adb91577eac4bdebd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81e0fa4eef4a980adb91577eac4bdebd">&#9670;&nbsp;</a></span>SetLoggingOption()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Logger::SetLoggingOption </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_logger.html#a4edb2ae414fe730aa45c9279c07f013a">LOGGER_OPTION</a>&#160;</td>
-          <td class="paramname"><em>option</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00062">62</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
 
 </div>
 </div>

@@ -22,18 +22,24 @@ DragonGamepad::DragonGamepad
     int port
 )  : m_gamepad( new frc::Joystick(port)),
 m_axis(),
-m_button(),
-m_count(),
 m_axisScale(),
 m_axisInversionFactor(),
-m_axisProfile()
+m_axisProfile(),
+m_button(),
+m_analogButtons()
 {
-    for ( auto inx=0; inx<m_maxAxis; ++inx )
-		{
-			m_axisScale[inx] = 1.0;
-			m_axisInversionFactor[inx] = 1.0;
-			m_axisProfile[inx] = LINEAR;
-		}
+    m_axis.resize( AXIS_IDENTIFIER::MAX_AXIS );
+    m_axisScale.resize( AXIS_IDENTIFIER::MAX_AXIS );
+    m_axisInversionFactor.resize( AXIS_IDENTIFIER::MAX_AXIS );
+    m_axisProfile.resize( AXIS_IDENTIFIER::MAX_AXIS );
+
+    for ( auto inx=0; inx<AXIS_IDENTIFIER::MAX_AXIS; ++inx )
+    {
+        m_axisScale[inx] = 1.0;
+        m_axisInversionFactor[inx] = 1.0;
+        m_axisProfile[inx] = LINEAR;
+        m_axis[inx] = nullptr;
+    }
     //Create Axis objects
     m_axis[GAMEPAD_AXIS_16] = new AnalogAxis(m_gamepad, 0,false);
     m_axis[GAMEPAD_AXIS_17] = new AnalogAxis(m_gamepad, 0,false);
@@ -47,6 +53,11 @@ m_axisProfile()
     m_axis[RIGHT_ANALOG_BUTTON_AXIS] = new AnalogAxis(m_gamepad, RIGHT_BUTTON_AXIS_ID,false);
 
     //Create Button objects
+    m_analogButtons.resize( BUTTON_IDENTIFIER::MAX_BUTTONS );
+    for ( auto inx=0; inx<BUTTON_IDENTIFIER::MAX_BUTTONS; ++inx )
+    {
+        m_analogButtons[inx] = nullptr;
+    }
     m_analogButtons[GAMEPAD_BUTTON_1] = new AnalogButton(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_1_LOWERBAND,BUTTON_1_UPPERBAND);
     m_analogButtons[GAMEPAD_BUTTON_2] = new AnalogButton( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_2_LOWERBAND,BUTTON_2_UPPERBAND);
     m_analogButtons[GAMEPAD_BUTTON_3] = new AnalogButton(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_3_LOWERBAND,BUTTON_3_UPPERBAND);
@@ -62,6 +73,11 @@ m_axisProfile()
     m_analogButtons[GAMEPAD_BUTTON_13] = new AnalogButton( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_13_LOWERBAND,BUTTON_13_UPPERBAND);
     //m_analogButtons[GAMEPAD_BIG_RED_BUTTON] = new AnalogButton(m_gamepad, GAMEPAD_BIG_RED_BUTTON,);
 
+    m_button.resize( BUTTON_IDENTIFIER::MAX_BUTTONS );
+    for ( auto inx=0; inx<BUTTON_IDENTIFIER::MAX_BUTTONS; ++inx )
+    {
+        m_button[inx] = nullptr;
+    }
     m_button[GAMEPAD_SWITCH_18] = new DigitalButton(m_gamepad, 1);
     m_button[GAMEPAD_SWITCH_19] = new DigitalButton(m_gamepad, 2);
     m_button[GAMEPAD_SWITCH_20] = new DigitalButton(m_gamepad, 3);

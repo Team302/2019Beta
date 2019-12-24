@@ -8,24 +8,12 @@
 #pragma once
 
 #include <memory>
-#include <string>
-#include <vector>
-
 #include <ctre/phoenix/Sensors/PigeonIMU.h>
 
 
 class DragonPigeon
 {
     public:
-
-
-        static DragonPigeon* GetPigeon();
-        static DragonPigeon* CreatePigeon(int id);
-        double GetPitch();
-        double GetRoll();
-        double GetYaw();
-
-    private:
         DragonPigeon
         (
             int  canID
@@ -33,7 +21,12 @@ class DragonPigeon
         DragonPigeon() = delete;
         virtual ~DragonPigeon() = default;
 
-        static DragonPigeon*        m_instance;
+        double GetPitch();
+        double GetRoll();
+        double GetYaw();
+
+    private:
+
         std::unique_ptr<ctre::phoenix::sensors::PigeonIMU> m_pigeon;
 
         double m_initialRoll;

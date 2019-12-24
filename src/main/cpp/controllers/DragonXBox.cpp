@@ -226,14 +226,14 @@ void DragonXBox::SetAxisScale
     }        
 } 
  
-///==================================================================================
+//==================================================================================
 /// <summary>
 /// Method:         SetAxisDeadband
 /// Description:    Specify what deadband behavior is desired such as none, standard,
 ///                 standard with scaling.
 /// Returns:        void
 /// </summary>
-///==================================================================================
+//==================================================================================
 void DragonXBox::SetAxisDeadband
 (
     AXIS_IDENTIFIER axis, /// <I> - axis to modify

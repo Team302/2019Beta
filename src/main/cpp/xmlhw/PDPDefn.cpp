@@ -14,16 +14,16 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-///========================================================================================================
+//========================================================================================================
 /// PDPDefn.cpp
-///========================================================================================================
+//========================================================================================================
 ///
 /// File Description:
 ///     XML parsing for the PDP node in the Robot definition xml file.  Upon successful parsing, it will
 ///     create a PDP singleton object.
 ///     The parsing leverages the 3rd party Open Source Pugixml library (https://pugixml.org/).
 ///
-///========================================================================================================
+//========================================================================================================
 
 // C++ Includes
 #include <iostream>
@@ -82,7 +82,7 @@ shared_ptr<PowerDistributionPanel> PDPDefn::ParseXML
     bool hasError = false;
 
     // parse/validate the PDP XML node
-    for (xml_attribute attr = PDPNode.first_attribute(); attr; attr = attr.next_attribute())
+    for (xml_attribute attr = PDPNode.first_attribute(); attr && !hasError; attr = attr.next_attribute())
     {
         if ( strcmp( attr.name(), "canId" ) == 0 )
         {
@@ -93,7 +93,7 @@ shared_ptr<PowerDistributionPanel> PDPDefn::ParseXML
         {
             string msg = "unknown attribute ";
             msg += attr.name();
-            Logger::GetLogger()->Log( "PDPDefn::ParseXML", msg );
+            Logger::GetLogger()->LogError( "PDPDefn::ParseXML", msg );
             hasError = true;
         }
     }

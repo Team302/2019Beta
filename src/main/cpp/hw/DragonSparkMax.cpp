@@ -7,8 +7,8 @@ DragonSparkMax::DragonSparkMax(int id, IDragonMotorController::MOTOR_CONTROLLER_
     m_spark(new CANSparkMax(id, motorType)),
     m_controlMode(DRAGON_CONTROL_MODE::PERCENT_OUTPUT),
     m_outputRotationOffset(0.0),
-    m_deviceType(deviceType),
-    m_gearRatio(gearRatio)
+    m_gearRatio(gearRatio),
+    m_deviceType(deviceType)
 {
     m_spark->GetPIDController().SetOutputRange(-1.0, 1.0, 0);
     m_spark->GetPIDController().SetOutputRange(-1.0, 1.0, 1);

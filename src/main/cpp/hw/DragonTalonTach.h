@@ -2,9 +2,9 @@
  *DragonTalonTach.h
  */
 
-#ifndef SRC_MAIN_INCLUDE_HW_DRAGONTALONTACH_H_
-#define SRC_MAIN_INCLUDE_HW_DRAGONTALONTACH_H_
+#pragma once
 
+#include <memory>
 #include <vector>
 
 #include <iostream>
@@ -41,16 +41,14 @@ class DragonTalonTach
             );
 
         DragonTalonTach() = delete;
-	    virtual ~DragonTalonTach();
+	    virtual ~DragonTalonTach() = default;
 
         bool Get() const;
 
     private:
-	    TALON_TACH_USAGE                        m_usage;
-        ctre::phoenix::CANifier*                m_CAN;
-        ctre::phoenix::CANifier::GeneralPin     m_generalpin;
-        bool                                    m_reversed;
+	    TALON_TACH_USAGE                                    m_usage;
+        std::shared_ptr<ctre::phoenix::CANifier>            m_CAN;
+        ctre::phoenix::CANifier::GeneralPin                 m_generalpin;
+        bool                                                m_reversed;
 };
-typedef std::vector<DragonTalonTach*> DragonTalonTachVector;
 
-#endif /* SRC_MAIN_INCLUDE_HW_DRAGONTALONTACH_H_*/

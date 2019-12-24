@@ -20,16 +20,6 @@ using namespace phoenix;
 using namespace motorcontrol;
 using namespace can;
 
-DragonPigeon* DragonPigeon::m_instance = nullptr;
-DragonPigeon* DragonPigeon::GetPigeon()
-{
-    if ( DragonPigeon::m_instance == nullptr )
-    {
-        // todo log error
-    }
-    return DragonPigeon::m_instance;
-}
-
 DragonPigeon::DragonPigeon
 (
     int  canID
@@ -41,20 +31,10 @@ DragonPigeon::DragonPigeon
     m_initialYaw   = GetRawYaw( );
 }
 
-DragonPigeon* DragonPigeon::CreatePigeon(int id)
-{
-    if( DragonPigeon::m_instance != nullptr )
-    {
-        //todo log error
-    }
-    DragonPigeon::m_instance = new DragonPigeon( id );
-    return DragonPigeon::m_instance;
-}
 
 double DragonPigeon::GetPitch()
 {
     return -(GetRawPitch() - m_initialPitch); //TODO: add inversions into code
-    //return (GetRawPitch() - m_initialPitch); //TODO: add inversions into code practice bot
 }
 
 double DragonPigeon::GetRoll()

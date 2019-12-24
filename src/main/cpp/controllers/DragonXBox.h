@@ -96,14 +96,14 @@ class DragonXBox : public IDragonGamePad
 
         //setters
  
-        ///==================================================================================
+        //==================================================================================
         /// <summary>
         /// Method:         SetAxisDeadband
         /// Description:    Specify what deadband behavior is desired such as none, standard,
         ///                 standard with scaling.
         /// Returns:        void
         /// </summary>
-        ///==================================================================================
+        //==================================================================================
         void SetAxisDeadband
         (
             AXIS_IDENTIFIER axis, /// <I> - axis to modify

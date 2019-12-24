@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team 302 Robot: C:/GitKrakenRepos/TemplateRepository/src/main/cpp/controllers/axis/IDeadband.h Source File</title>
+<title>Team 302 Robot: C:/GitKrakenRepos/TemplateRepository/src/main/cpp/gamepad/axis/IDeadband.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('_i_deadband_8h_source.html','');});
 <div class="contents">
 <a href="_i_deadband_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Copyright 2018 Lake Orion Robotics FIRST Team 302</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Copyright 2019 Lake Orion Robotics FIRST Team 302</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;),</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,</span></div>
@@ -105,38 +105,46 @@ $(document).ready(function(){initNavTree('_i_deadband_8h_source.html','');});
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// OR OTHER DEALINGS IN THE SOFTWARE.</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef SRC_MAIN_INCLUDE_COMMON_CONTROLLERS_AXIS_IDEADBAND_H_</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define SRC_MAIN_INCLUDE_COMMON_CONTROLLERS_AXIS_IDEADBAND_H_</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// C++ Includes</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//==================================================================================</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"></span><span class="comment">//==================================================================================</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_i_deadband.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_i_deadband.html">IDeadband</a></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// FRC includes</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// Team 302 includes</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Third Party Includes</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="comment">//==================================================================================</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"></span>        <span class="comment">//==================================================================================</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_i_deadband.html#a35862406c6b6f467a33a82ce1b87eed3">ApplyDeadband</a></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        (</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordtype">double</span> inputVal            <span class="comment">// &lt;I&gt; - value to apply profile to</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        ) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_i_deadband.html#a45b3ece586ef6217fe85721c3265056a">   44</a></span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="class_i_deadband.html#a45b3ece586ef6217fe85721c3265056a">M_DEADBAND_VALUE</a> = 0.1;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//==================================================================================</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span><span class="comment">//==================================================================================</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_i_deadband.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_i_deadband.html">IDeadband</a></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="comment">//==================================================================================</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"></span>        <span class="comment">//==================================================================================</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_i_deadband.html#a35862406c6b6f467a33a82ce1b87eed3">ApplyDeadband</a></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        (</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordtype">double</span> inputVal            <span class="comment">// &lt;I&gt; - value to apply profile to</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        ) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_i_deadband.html#a45b3ece586ef6217fe85721c3265056a">   53</a></span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="class_i_deadband.html#a45b3ece586ef6217fe85721c3265056a">M_DEADBAND_VALUE</a> = 0.1;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_i_deadband_html"><div class="ttname"><a href="class_i_deadband.html">IDeadband</a></div><div class="ttdoc">Class: IDeadband Description: This provides deadband to be applied to input values.</div><div class="ttdef"><b>Definition:</b> <a href="_i_deadband_8h_source.html#l00027">IDeadband.h:27</a></div></div>
-<div class="ttc" id="aclass_i_deadband_html_a45b3ece586ef6217fe85721c3265056a"><div class="ttname"><a href="class_i_deadband.html#a45b3ece586ef6217fe85721c3265056a">IDeadband::M_DEADBAND_VALUE</a></div><div class="ttdeci">const double M_DEADBAND_VALUE</div><div class="ttdef"><b>Definition:</b> <a href="_i_deadband_8h_source.html#l00044">IDeadband.h:44</a></div></div>
+<div class="ttc" id="aclass_i_deadband_html"><div class="ttname"><a href="class_i_deadband.html">IDeadband</a></div><div class="ttdoc">Class: IDeadband Description: This provides deadband to be applied to input values.</div><div class="ttdef"><b>Definition:</b> <a href="_i_deadband_8h_source.html#l00036">IDeadband.h:36</a></div></div>
+<div class="ttc" id="aclass_i_deadband_html_a45b3ece586ef6217fe85721c3265056a"><div class="ttname"><a href="class_i_deadband.html#a45b3ece586ef6217fe85721c3265056a">IDeadband::M_DEADBAND_VALUE</a></div><div class="ttdeci">const double M_DEADBAND_VALUE</div><div class="ttdef"><b>Definition:</b> <a href="_i_deadband_8h_source.html#l00053">IDeadband.h:53</a></div></div>
 <div class="ttc" id="aclass_i_deadband_html_a35862406c6b6f467a33a82ce1b87eed3"><div class="ttname"><a href="class_i_deadband.html#a35862406c6b6f467a33a82ce1b87eed3">IDeadband::ApplyDeadband</a></div><div class="ttdeci">virtual double ApplyDeadband(double inputVal) const =0</div><div class="ttdoc">Method: ApplyDeadband Description: Apply the standard deadband</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_7b2bcb36d453a1aa0a98981e9af51ae3.html">GitKrakenRepos</a></li><li class="navelem"><a class="el" href="dir_547abfd4c40dc92b54a6aa2a5efd07b2.html">TemplateRepository</a></li><li class="navelem"><a class="el" href="dir_2670559ca5a15a913822c358bf1bb356.html">src</a></li><li class="navelem"><a class="el" href="dir_4943459957647c46b1139863d8116988.html">main</a></li><li class="navelem"><a class="el" href="dir_bd4255150574be663a1c932dfa9033b1.html">cpp</a></li><li class="navelem"><a class="el" href="dir_d0ad9221f7efcd0a53c7ebcd61fc4948.html">controllers</a></li><li class="navelem"><a class="el" href="dir_5a3b74c39b780a69eb9e42c9e07834df.html">axis</a></li><li class="navelem"><a class="el" href="_i_deadband_8h.html">IDeadband.h</a></li>
+    <li class="navelem"><a class="el" href="dir_7b2bcb36d453a1aa0a98981e9af51ae3.html">GitKrakenRepos</a></li><li class="navelem"><a class="el" href="dir_547abfd4c40dc92b54a6aa2a5efd07b2.html">TemplateRepository</a></li><li class="navelem"><a class="el" href="dir_2670559ca5a15a913822c358bf1bb356.html">src</a></li><li class="navelem"><a class="el" href="dir_4943459957647c46b1139863d8116988.html">main</a></li><li class="navelem"><a class="el" href="dir_bd4255150574be663a1c932dfa9033b1.html">cpp</a></li><li class="navelem"><a class="el" href="dir_2f76358675fdf78e0424a44414f97f25.html">gamepad</a></li><li class="navelem"><a class="el" href="dir_8ec25f4026956258e3d0c820fdd5fcf9.html">axis</a></li><li class="navelem"><a class="el" href="_i_deadband_8h.html">IDeadband.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

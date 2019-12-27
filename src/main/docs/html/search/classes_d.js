@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['talontachdefn_774',['TalonTachDefn',['../class_talon_tach_defn.html',1,'']]],
-  ['togglebutton_775',['ToggleButton',['../class_toggle_button.html',1,'']]]
+  ['scaledaxis_990',['ScaledAxis',['../class_scaled_axis.html',1,'']]],
+  ['scaleddeadbandvalue_991',['ScaledDeadbandValue',['../class_scaled_deadband_value.html',1,'']]],
+  ['servodefn_992',['ServoDefn',['../class_servo_defn.html',1,'']]],
+  ['squaredprofile_993',['SquaredProfile',['../class_squared_profile.html',1,'']]],
+  ['superdrive_994',['SuperDrive',['../class_super_drive.html',1,'']]]
 ];

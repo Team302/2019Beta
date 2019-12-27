@@ -91,6 +91,18 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 <li>Scale()
 : <a class="el" href="class_scaled_axis.html#ab14e83592c21e05ab7ecda01a75d5319">ScaledAxis</a>
 </li>
+<li>SCALE_BACKUP_HALFWAY
+: <a class="el" href="class_auton_selector.html#a02a4524799ea71bf859451d5fa93873aa527812f5fee7996548c66f4f042fb534">AutonSelector</a>
+</li>
+<li>SCALE_BACKUP_PLACE_FAR
+: <a class="el" href="class_auton_selector.html#a02a4524799ea71bf859451d5fa93873aa3b67044073039efc6a8d8307c98a0112">AutonSelector</a>
+</li>
+<li>SCALE_HALFWAY
+: <a class="el" href="class_auton_selector.html#a02a4524799ea71bf859451d5fa93873aad59c0a47aeed85440c3e2f3d80da4bef">AutonSelector</a>
+</li>
+<li>SCALE_PLACE_FAR
+: <a class="el" href="class_auton_selector.html#a02a4524799ea71bf859451d5fa93873aa5dc9a3090ab0be9b67f85e0d06123cc3">AutonSelector</a>
+</li>
 <li>ScaledAxis()
 : <a class="el" href="class_scaled_axis.html#a26c7beedaa36283fa1331ca978c71e29">ScaledAxis</a>
 </li>
@@ -159,8 +171,9 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 : <a class="el" href="class_l_e_d.html#a1da88337ece4a68e3e21cf8791c28948">LED</a>
 </li>
 <li>SetControlConstants()
-: <a class="el" href="class_i_mechanism.html#a4f7237a624405a3c68c058e7ebeceecf">IMechanism</a>
-, <a class="el" href="class_intake.html#a108d549f63c292aa29aaf1801d1ddfa8">Intake</a>
+: <a class="el" href="class_grabber.html#a6cbfdf98938e5cec3cc04e6d71e482dc">Grabber</a>
+, <a class="el" href="class_i_mechanism.html#a9a8425d370dc05e5b81d6ec613dff861">IMechanism</a>
+, <a class="el" href="class_intake.html#ae926aad000c1c3ff2b2b6877047e942f">Intake</a>
 </li>
 <li>SetControlMode()
 : <a class="el" href="class_dragon_spark_max.html#aebfb463d6da34671ae1ae4cf413d8676">DragonSparkMax</a>
@@ -170,8 +183,18 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 <li>SetDeadBand()
 : <a class="el" href="class_analog_axis.html#affc8b08e1a2bb32adcb971f644d2458d">AnalogAxis</a>
 </li>
+<li>SetDistance()
+: <a class="el" href="class_drive_distance.html#a8a39fae7fc4f3991163613994447e84e">DriveDistance</a>
+, <a class="el" href="class_primitive_params.html#a9338f36c76fd412ec8d05dcfc300b18d">PrimitiveParams</a>
+</li>
+<li>SetDriveMagnitudes()
+: <a class="el" href="class_i_chassis.html#a6ee9a25d1a1757ab42a2eb005bb6ca32">IChassis</a>
+</li>
 <li>SetLEDMode()
 : <a class="el" href="class_dragon_limelight.html#a8f80d91a71106af3592ec0975f474aaf">DragonLimelight</a>
+</li>
+<li>SetLeftRightMagnitudes()
+: <a class="el" href="class_i_chassis.html#a772457f1800c82584103be36a2b930da">IChassis</a>
 </li>
 <li>SetLoggingOption()
 : <a class="el" href="class_logger.html#a81e0fa4eef4a980adb91577eac4bdebd">Logger</a>
@@ -180,13 +203,17 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 : <a class="el" href="class_dragon_servo.html#acbd6da9b714f3c5696e23822ed7c39c9">DragonServo</a>
 </li>
 <li>SetOutput()
-: <a class="el" href="class_i_mechanism.html#aae7e57036b104056991556556cbfaa60">IMechanism</a>
+: <a class="el" href="class_grabber.html#ac721f69f1a9de5536de0a3af09b4705b">Grabber</a>
+, <a class="el" href="class_i_mechanism.html#aae7e57036b104056991556556cbfaa60">IMechanism</a>
 , <a class="el" href="class_intake.html#a4ace31932217b1c1d1e73106d0d5d0cf">Intake</a>
 </li>
 <li>SetPIDF()
 : <a class="el" href="class_dragon_spark_max.html#a692e9a190ad04d6ec8a5f4e166ecd62f">DragonSparkMax</a>
 , <a class="el" href="class_dragon_talon.html#ac212c4954f881aeda9cb5808b270f8c6">DragonTalon</a>
 , <a class="el" href="class_i_dragon_motor_controller.html#a721912ad4bfbd1141e49de6a4d7dcb4a">IDragonMotorController</a>
+</li>
+<li>SetPIDParams()
+: <a class="el" href="class_i_chassis.html#a9bda05b73e71719485cbfa9d7f710538">IChassis</a>
 </li>
 <li>SetPipeline()
 : <a class="el" href="class_dragon_limelight.html#a9008ec8358c4f2836b8aa4829e731104">DragonLimelight</a>
@@ -214,11 +241,20 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 <li>SetStreamMode()
 : <a class="el" href="class_dragon_limelight.html#aa90d53fedc3b0568a434c57b987b6d79">DragonLimelight</a>
 </li>
+<li>SetTalonMode()
+: <a class="el" href="class_i_chassis.html#a0896fe87e7564ae4546f9b83ae0ef18f">IChassis</a>
+</li>
 <li>SetTarget()
 : <a class="el" href="class_i_mechanism_state.html#a9a16e9322eed0ef13d37e716e6a1c0a5">IMechanismState</a>
 </li>
+<li>SetTargetHeading()
+: <a class="el" href="class_i_chassis.html#a49d69df9b200f465cb0f8423bef32d3c">IChassis</a>
+</li>
 <li>SetTargetHeight()
 : <a class="el" href="class_dragon_limelight.html#abd7c06707d40db5e4ce34142339ed484">DragonLimelight</a>
+</li>
+<li>SetVelocityParams()
+: <a class="el" href="class_i_chassis.html#ae73dca373ab6cd05e4a4bed2166f3a27">IChassis</a>
 </li>
 <li>SetVoltageRamping()
 : <a class="el" href="class_dragon_spark_max.html#a1105074c2d2d7a2f719c8f5e41f02394">DragonSparkMax</a>
@@ -239,6 +275,12 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 </li>
 <li>SIDEHANGER_LATCH2
 : <a class="el" href="class_dragon_solenoid.html#acfbd54215804e0243bd41112e3abbb4aab7fe344d3399615043b22d6884e9ebda">DragonSolenoid</a>
+</li>
+<li>SlowDown()
+: <a class="el" href="class_super_drive.html#aa8baae85dbb3bcfb38f22c25b820562a">SuperDrive</a>
+</li>
+<li>SMART
+: <a class="el" href="class_auton_selector.html#a02a4524799ea71bf859451d5fa93873aa23dd3ab5ef9cc880c789c62d6c19c5e6">AutonSelector</a>
 </li>
 <li>SNAP_OFF
 : <a class="el" href="class_dragon_limelight.html#ad153a8681f6b1f71906fba0a6c4863eda3ca0d71b2c71150a290493d7db061037">DragonLimelight</a>
@@ -272,6 +314,15 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 </li>
 <li>STREAM_SECOND_AND_MAIN
 : <a class="el" href="class_dragon_limelight.html#a7e61244761896139b6cd1c72c5363f91adb9229484e3c6f059ab6eed5fcc7e184">DragonLimelight</a>
+</li>
+<li>SuperDrive()
+: <a class="el" href="class_super_drive.html#ab57095c722e3cd8396c04297b5463900">SuperDrive</a>
+</li>
+<li>SWITCH
+: <a class="el" href="class_auton_selector.html#a02a4524799ea71bf859451d5fa93873aa0e46f0dd53d0a15b52e956ec2f7d03c9">AutonSelector</a>
+</li>
+<li>SWITCH_SCALE
+: <a class="el" href="class_auton_selector.html#a02a4524799ea71bf859451d5fa93873aa910ac842bf02c7377ca2656b42ca3359">AutonSelector</a>
 </li>
 </ul>
 </div><!-- contents -->

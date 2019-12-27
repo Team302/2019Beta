@@ -41,6 +41,8 @@ var NAVTREE =
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
         [ "Typedefs", "globals_type.html", null ],
+        [ "Enumerations", "globals_enum.html", null ],
+        [ "Enumerator", "globals_eval.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -50,10 +52,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_analog_axis_8cpp.html",
-"_p_i_d_defn_8cpp.html",
-"class_dragon_solenoid.html#acfbd54215804e0243bd41112e3abbb4a",
-"class_i_dragon_motor_controller.html#a415dd62a73858b39684ae727260fa4b5",
-"class_robot_defn.html#a012b3ca323baaf3090066173d7f91ae5"
+"_l_e_d_defn_8cpp.html",
+"class_control_defn.html",
+"class_dragon_talon_tach.html#aa29027571fd02858fd41a7057510fdec",
+"class_i_dragon_game_pad.html#afde07811ccdd7565bc40c381adecee4da91e446db67ef7981f8f84bc6d78d51db",
+"class_primitive_params.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

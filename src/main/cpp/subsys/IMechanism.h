@@ -52,9 +52,9 @@ class IMechanism
         //==================================================================================
         /// method:     SetOutput
         /// @brief      Run mechanism as defined 
-        /// @param      MechanismControl::MECHANISM_CONTROL_ID     controlItems: What item(s) are being controlled
-        /// @param      MechanismControl::MECHANISM_CONTROL_TYPE   controlType:  How are the item(s) being controlled
-        /// @param      double                                     value:        Target (units are based on the controlType)
+        /// @param [in] MechanismControl::MECHANISM_CONTROL_ID     controlItems: What item(s) are being controlled
+        /// @param [in] MechanismControl::MECHANISM_CONTROL_TYPE   controlType:  How are the item(s) being controlled
+        /// @param [in] double                                     value:        Target (units are based on the controlType)
         /// @return     void
         //==================================================================================
         virtual void SetOutput
@@ -68,42 +68,60 @@ class IMechanism
         //==================================================================================================
         /// method: GetCurrentPostion
         /// @brief  Return the current position of the mechanism.  The value is in inches or degrees.
+        /// @param [in] MechanismControl::MECHANISM_CONTROL_ID     controlItems: What item(s) are being requested
         /// @return double	position in inches (translating mechanisms) or degrees (rotating mechanisms)
         //==================================================================================================
-        virtual double GetCurrentPosition() const = 0;
+        virtual double GetCurrentPosition
+        (
+            MechanismControl::MECHANISM_CONTROL_ID   controlItems
+        ) const = 0;
 
         //==================================================================================================
         /// method: GetTargetPostion
         /// @brief  Return the targget position of the mechanism.  The value is in inches or degrees.
+        /// @param [in] MechanismControl::MECHANISM_CONTROL_ID     controlItems: What item(s) are being requested
         /// @return double	position in inches (translating mechanisms) or degrees (rotating mechanisms)
         //==================================================================================================
-        virtual double GetTargetPosition() const = 0;
+        virtual double GetTargetPosition
+        (
+            MechanismControl::MECHANISM_CONTROL_ID   controlItems
+        ) const = 0;
 
         //==================================================================================================
         /// method: GetCurrentSpeed
         /// @brief  Get the current speed of the mechanism.  The value is in inches per second or degrees per second.
+        /// @param [in] MechanismControl::MECHANISM_CONTROL_ID     controlItems: What item(s) are being requested
         /// @return double	speed in inches/second (translating mechanisms) or degrees/second (rotating mechanisms)
         //==================================================================================================
-        virtual double GetCurrentSpeed() const = 0;
+        virtual double GetCurrentSpeed
+        (
+            MechanismControl::MECHANISM_CONTROL_ID   controlItems
+        ) const = 0;
 
 
         //==================================================================================================
         /// method: GetTargetSpeed
         /// @brief  Get the target speed of the mechanism.  The value is in inches per second or degrees per second.
+        /// @param [in] MechanismControl::MECHANISM_CONTROL_ID     controlItems: What item(s) are being requested
         /// @return double	speed in inches/second (translating mechanisms) or degrees/second (rotating mechanisms)
         //==================================================================================================
-        virtual double GetTargetSpeed() const = 0; 
+        virtual double GetTargetSpeed
+        (
+            MechanismControl::MECHANISM_CONTROL_ID   controlItems
+        ) const = 0;
 
 
         //==================================================================================================
         /// method: SetControlConstants
         /// @brief  Set the control constants (e.g. PIDF values).
-        /// @param [in] PIDData*   pid - the control constants
+        /// @param [in] MechanismControl::MECHANISM_CONTROL_ID     controlItems: What item(s) are being controlled
+        /// @param [in] PIDData*                                   pid:  the control constants
         /// @return void
         //==================================================================================================
         virtual void SetControlConstants
         (
-            PIDData*        pid                 // <I> - PID control information
+            MechanismControl::MECHANISM_CONTROL_ID  controlItems,
+            PIDData*                                pid                 
         ) = 0;
 
 

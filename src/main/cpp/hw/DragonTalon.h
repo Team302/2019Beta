@@ -7,17 +7,17 @@
 
 #pragma once
 
+#include <memory>
 #include <vector>
 
-#include "hw/IDragonMotorController.h"
+#include <frc/SpeedController.h>
+
+
+#include <hw/interfaces/IDragonMotorController.h>
 
 #include <ctre/phoenix/ErrorCode.h>
-#include <ctre/phoenix/MotorControl/CAN/TalonSRX.h>
+#include <ctre/phoenix/motorcontrol/can/WPI_TalonSRX.h>
 
-// namespaces
-using namespace ctre::phoenix;
-using namespace ctre::phoenix::motorcontrol;
-using namespace ctre::phoenix::motorcontrol::can;
 
 class DragonTalon : public IDragonMotorController
 {
@@ -51,15 +51,22 @@ class DragonTalon : public IDragonMotorController
 
     // Constructors
     DragonTalon() = delete;
-    DragonTalon(IDragonMotorController::MOTOR_CONTROLLER_TYPE deviceType, int deviceID, int countsPerRev, double gearRatio);
+    DragonTalon
+    (
+        MOTOR_CONTROLLER_USAGE deviceType, 
+        int deviceID, 
+        int countsPerRev, 
+        double gearRatio
+    );
     virtual ~DragonTalon() = default;
 
 
     // Getters (override)
     double GetRotations() const override;
     double GetRPS() const override;
-    IDragonMotorController::MOTOR_CONTROLLER_TYPE GetType() const override;
+    MOTOR_CONTROLLER_USAGE GetType() const override;
     int GetID() const override;
+    std::shared_ptr<frc::SpeedController> GetSpeedController() const override;
 
     // Setters (override)
     void SetControlMode(IDragonMotorController::DRAGON_CONTROL_MODE mode) override; //:D
@@ -81,8 +88,18 @@ class DragonTalon : public IDragonMotorController
 	// Returns:		void
 	void SelectClosedLoopProfile(int slot, int pidIndex);// <I> - 0 for primary closed loop, 1 for cascaded closed-loop
 
-    int ConfigSelectedFeedbackSensor(FeedbackDevice feedbackDevice, int pidIdx, int timeoutMs); //:D
-    int ConfigSelectedFeedbackSensor(RemoteFeedbackDevice feedbackDevice, int pidIdx, int timeoutMs); //:D
+    int ConfigSelectedFeedbackSensor
+    (
+        ctre::phoenix::motorcontrol::FeedbackDevice feedbackDevice, 
+        int pidIdx, 
+        int timeoutMs
+    ); 
+    int ConfigSelectedFeedbackSensor
+    (
+        ctre::phoenix::motorcontrol::RemoteFeedbackDevice feedbackDevice, 
+        int pidIdx, 
+        int timeoutMs
+    ); 
 	int ConfigPeakCurrentLimit(int amps, int timeoutMs); 
 	int ConfigPeakCurrentDuration(int milliseconds, int timeoutMs); 
 	int ConfigContinuousCurrentLimit(int amps, int timeoutMs); 
@@ -97,9 +114,9 @@ class DragonTalon : public IDragonMotorController
 
 
   private:
-    TalonSRX *m_talon;
+    std::shared_ptr<ctre::phoenix::motorcontrol::can::WPI_TalonSRX>  m_talon;
     TALON_CONTROL_MODE m_controlMode;
-    IDragonMotorController::MOTOR_CONTROLLER_TYPE m_type;
+    MOTOR_CONTROLLER_USAGE m_type;
 
     int m_id;
     int m_countsPerRev;

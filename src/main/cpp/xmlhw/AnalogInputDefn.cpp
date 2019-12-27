@@ -28,7 +28,7 @@
 #include <frc/AnalogInput.h>
 
 // Team302 includes
-#include <hw/AnalogInputFactory.h>
+#include <hw/factories/AnalogInputFactory.h>
 #include <hw/DragonAnalogInput.h>
 #include <utils/Logger.h>
 #include <xmlhw/AnalogInputDefn.h>

@@ -15,18 +15,8 @@
 //====================================================================================================================================================
 
 //========================================================================================================
-/// MechansimDefn.cpp
-//========================================================================================================
-///
-/// Description: Create a mechaism from an XML definition
-///
-///     <!ELEMENT mechanism (motor*, analogInput*, digitalInput*, servo*, mechanismData*, PID*)>
-///     <!ATTLIST mechanism
-///               type          CDATA #REQUIRED
-///     >
-///
-/// type is the name of the mechanism that is the string in the enum in MechanismFactory.h
-///
+/// @class MechansimDefn
+/// @brief Create a mechaism from an XML definition 
 //========================================================================================================
 
 // C++ Includes
@@ -62,12 +52,11 @@ using namespace pugi;
 using namespace std;
 
 
-///-----------------------------------------------------------------------
+//--------------------------------------------------------------------------
 /// Method: ParseXML
 /// @brief  Parse a Mechanism XML element and create an IMechanism from its definition.
-/// @return 
-///   std::shared_ptr<IMechanism>   pointer to the mechanism
-///-----------------------------------------------------------------------
+/// @return std::shared_ptr<IMechanism>   pointer to the mechanism
+//--------------------------------------------------------------------------
 shared_ptr<IMechanism> MechanismDefn::ParseXML
 (
     xml_node      mechanismNode
@@ -216,7 +205,7 @@ shared_ptr<IMechanism> MechanismDefn::ParseXML
         }
         else
         {
-            printf( "==>> MechanismDefn::ParseXML unknown mechanism child %s \n", child.name() );
+                Logger::GetLogger()->LogError( "MechanismDefn", "unknown child" );
         }
     }
 

@@ -24,7 +24,7 @@
 
 // Team 302 includes
 #include <hw/DragonPositionSensor.h>
-#include <hw/IDragonAnglePositionSensor.h>
+#include <hw/interfaces/IDragonAnglePositionSensor.h>
 
 // Third Party Includes
 

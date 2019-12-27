@@ -6,7 +6,7 @@
 
 DragonAnalogInput::DragonAnalogInput
 (
-	ANALOG_SENSOR_TYPE			type,
+	ANALOG_SENSOR_USAGE			type,
 	int 						analogID,
 	float						voltageMin,
 	float						voltageMax,

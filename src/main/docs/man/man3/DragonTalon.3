@@ -27,7 +27,7 @@ Inherits \fBIDragonMotorController\fP\&.
 .RI "\fBDragonTalon\fP ()=delete"
 .br
 .ti -1c
-.RI "\fBDragonTalon\fP (\fBIDragonMotorController::MOTOR_CONTROLLER_TYPE\fP deviceType, int deviceID, int countsPerRev, double gearRatio)"
+.RI "\fBDragonTalon\fP (\fBMOTOR_CONTROLLER_USAGE\fP deviceType, int deviceID, int countsPerRev, double gearRatio)"
 .br
 .ti -1c
 .RI "virtual \fB~DragonTalon\fP ()=default"
@@ -39,7 +39,7 @@ Inherits \fBIDragonMotorController\fP\&.
 .RI "double \fBGetRPS\fP () const override"
 .br
 .ti -1c
-.RI "\fBIDragonMotorController::MOTOR_CONTROLLER_TYPE\fP \fBGetType\fP () const override"
+.RI "\fBMOTOR_CONTROLLER_USAGE\fP \fBGetType\fP () const override"
 .br
 .ti -1c
 .RI "int \fBGetID\fP () const override"
@@ -166,7 +166,7 @@ Definition at line 26 of file DragonTalon\&.h\&.
 .PP 
 .SS "DragonTalon::DragonTalon ()\fC [delete]\fP"
 
-.SS "DragonTalon::DragonTalon (\fBIDragonMotorController::MOTOR_CONTROLLER_TYPE\fP deviceType, int deviceID, int countsPerRev, double gearRatio)"
+.SS "DragonTalon::DragonTalon (\fBMOTOR_CONTROLLER_USAGE\fP deviceType, int deviceID, int countsPerRev, double gearRatio)"
 
 .PP
 Definition at line 3 of file DragonTalon\&.cpp\&.
@@ -240,7 +240,7 @@ Definition at line 19 of file DragonTalon\&.cpp\&.
 Implements \fBIDragonMotorController\fP\&.
 .PP
 Definition at line 24 of file DragonTalon\&.cpp\&.
-.SS "\fBIDragonMotorController::MOTOR_CONTROLLER_TYPE\fP DragonTalon::GetType () const\fC [override]\fP, \fC [virtual]\fP"
+.SS "\fBMOTOR_CONTROLLER_USAGE\fP DragonTalon::GetType () const\fC [override]\fP, \fC [virtual]\fP"
 
 .PP
 Implements \fBIDragonMotorController\fP\&.

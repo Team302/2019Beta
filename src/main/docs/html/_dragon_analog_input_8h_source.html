@@ -98,50 +98,41 @@ $(document).ready(function(){initNavTree('_dragon_analog_input_8h_source.html','
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;frc/AnalogInput.h&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using namespace </span>frc;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_dragon_analog_input.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_dragon_analog_input.html">DragonAnalogInput</a> : AnalogInput</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_dragon_analog_input.html#af0cf7001e6545d1dfd23742e53808fb4">   16</a></span>&#160;        <span class="keyword">enum</span> <a class="code" href="class_dragon_analog_input.html#af0cf7001e6545d1dfd23742e53808fb4">ANALOG_SENSOR_TYPE</a></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_dragon_analog_input.html#af0cf7001e6545d1dfd23742e53808fb4a3c06462dc2c626fa3ae8e1e095d8ce24">   18</a></span>&#160;            UNKNOWN_ANALOG_TYPE = -1,</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_dragon_analog_input.html#af0cf7001e6545d1dfd23742e53808fb4a884db84ee2091c4bc7ee8f77160c47a1">   19</a></span>&#160;            <a class="code" href="class_dragon_analog_input.html#af0cf7001e6545d1dfd23742e53808fb4a884db84ee2091c4bc7ee8f77160c47a1">EXTENDER_POTENTIOMETER</a>,</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_dragon_analog_input.html#af0cf7001e6545d1dfd23742e53808fb4aa09be3e43134cd3e8622f21b8fbe7afe">   20</a></span>&#160;            <a class="code" href="class_dragon_analog_input.html#af0cf7001e6545d1dfd23742e53808fb4aa09be3e43134cd3e8622f21b8fbe7afe">PRESSURE_GAUGE</a>,</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_dragon_analog_input.html#af0cf7001e6545d1dfd23742e53808fb4a3819bb97150c7c23583cef2c489d2cd3">   21</a></span>&#160;            MAX_ANALOG_TYPES</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        };</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="class_dragon_analog_input.html">DragonAnalogInput</a></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        (</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            ANALOG_SENSOR_TYPE          type,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordtype">int</span>                         analogID,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordtype">float</span>                       voltageMin,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordtype">float</span>                       voltageMax,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordtype">float</span>                       outputMin,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordtype">float</span>                       outputMax</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        );</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="class_dragon_analog_input.html">DragonAnalogInput</a>();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">double</span> GetInterpolatedValue() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        ANALOG_SENSOR_TYPE              m_type;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">float</span>                           m_voltMin;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">float</span>                           m_voltMax;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">float</span>                           m_outMin;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">float</span>                           m_outMax;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="_dragon_analog_input_8h.html#a097b6fe0e97f3aaac1bd0929744e8559">   44</a></span>&#160;<span class="keyword">typedef</span> std::vector&lt;DragonAnalogInput*&gt; <a class="code" href="_dragon_analog_input_8h.html#a097b6fe0e97f3aaac1bd0929744e8559">DragonAnalogInputVector</a>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SRC_SUBSYS_COMPONENTS_DRAGONANALOGINPUT_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_analog_input_usage_8h.html">hw/usages/AnalogInputUsage.h</a>&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using namespace </span>frc;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_dragon_analog_input.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_dragon_analog_input.html">DragonAnalogInput</a> : AnalogInput</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="class_dragon_analog_input.html">DragonAnalogInput</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        (</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <a class="code" href="_analog_input_usage_8h.html#a53ece9479e6c392e1c1d2d9ff5a079d2">ANALOG_SENSOR_USAGE</a>         type,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordtype">int</span>                         analogID,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordtype">float</span>                       voltageMin,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordtype">float</span>                       voltageMax,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordtype">float</span>                       outputMin,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordtype">float</span>                       outputMax</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        );</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="class_dragon_analog_input.html">DragonAnalogInput</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">double</span> GetInterpolatedValue() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="_analog_input_usage_8h.html#a53ece9479e6c392e1c1d2d9ff5a079d2">ANALOG_SENSOR_USAGE</a>             m_type;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">float</span>                           m_voltMin;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">float</span>                           m_voltMax;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">float</span>                           m_outMin;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">float</span>                           m_outMax;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="_dragon_analog_input_8h.html#a097b6fe0e97f3aaac1bd0929744e8559">   36</a></span>&#160;<span class="keyword">typedef</span> std::vector&lt;DragonAnalogInput*&gt; <a class="code" href="_dragon_analog_input_8h.html#a097b6fe0e97f3aaac1bd0929744e8559">DragonAnalogInputVector</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SRC_SUBSYS_COMPONENTS_DRAGONANALOGINPUT_H_ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="a_dragon_analog_input_8h_html_a097b6fe0e97f3aaac1bd0929744e8559"><div class="ttname"><a href="_dragon_analog_input_8h.html#a097b6fe0e97f3aaac1bd0929744e8559">DragonAnalogInputVector</a></div><div class="ttdeci">std::vector&lt; DragonAnalogInput * &gt; DragonAnalogInputVector</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_analog_input_8h_source.html#l00044">DragonAnalogInput.h:44</a></div></div>
-<div class="ttc" id="aclass_dragon_analog_input_html"><div class="ttname"><a href="class_dragon_analog_input.html">DragonAnalogInput</a></div><div class="ttdef"><b>Definition:</b> <a href="_dragon_analog_input_8h_source.html#l00013">DragonAnalogInput.h:13</a></div></div>
-<div class="ttc" id="aclass_dragon_analog_input_html_af0cf7001e6545d1dfd23742e53808fb4"><div class="ttname"><a href="class_dragon_analog_input.html#af0cf7001e6545d1dfd23742e53808fb4">DragonAnalogInput::ANALOG_SENSOR_TYPE</a></div><div class="ttdeci">ANALOG_SENSOR_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_analog_input_8h_source.html#l00016">DragonAnalogInput.h:16</a></div></div>
-<div class="ttc" id="aclass_dragon_analog_input_html_af0cf7001e6545d1dfd23742e53808fb4a884db84ee2091c4bc7ee8f77160c47a1"><div class="ttname"><a href="class_dragon_analog_input.html#af0cf7001e6545d1dfd23742e53808fb4a884db84ee2091c4bc7ee8f77160c47a1">DragonAnalogInput::EXTENDER_POTENTIOMETER</a></div><div class="ttdef"><b>Definition:</b> <a href="_dragon_analog_input_8h_source.html#l00019">DragonAnalogInput.h:19</a></div></div>
-<div class="ttc" id="aclass_dragon_analog_input_html_af0cf7001e6545d1dfd23742e53808fb4aa09be3e43134cd3e8622f21b8fbe7afe"><div class="ttname"><a href="class_dragon_analog_input.html#af0cf7001e6545d1dfd23742e53808fb4aa09be3e43134cd3e8622f21b8fbe7afe">DragonAnalogInput::PRESSURE_GAUGE</a></div><div class="ttdef"><b>Definition:</b> <a href="_dragon_analog_input_8h_source.html#l00020">DragonAnalogInput.h:20</a></div></div>
+<div class="ttc" id="a_dragon_analog_input_8h_html_a097b6fe0e97f3aaac1bd0929744e8559"><div class="ttname"><a href="_dragon_analog_input_8h.html#a097b6fe0e97f3aaac1bd0929744e8559">DragonAnalogInputVector</a></div><div class="ttdeci">std::vector&lt; DragonAnalogInput * &gt; DragonAnalogInputVector</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_analog_input_8h_source.html#l00036">DragonAnalogInput.h:36</a></div></div>
+<div class="ttc" id="a_analog_input_usage_8h_html_a53ece9479e6c392e1c1d2d9ff5a079d2"><div class="ttname"><a href="_analog_input_usage_8h.html#a53ece9479e6c392e1c1d2d9ff5a079d2">ANALOG_SENSOR_USAGE</a></div><div class="ttdeci">ANALOG_SENSOR_USAGE</div><div class="ttdoc">Defines analog input sensor usages. This should be modified for each robot.</div><div class="ttdef"><b>Definition:</b> <a href="_analog_input_usage_8h_source.html#l00030">AnalogInputUsage.h:30</a></div></div>
+<div class="ttc" id="aclass_dragon_analog_input_html"><div class="ttname"><a href="class_dragon_analog_input.html">DragonAnalogInput</a></div><div class="ttdef"><b>Definition:</b> <a href="_dragon_analog_input_8h_source.html#l00014">DragonAnalogInput.h:14</a></div></div>
+<div class="ttc" id="a_analog_input_usage_8h_html"><div class="ttname"><a href="_analog_input_usage_8h.html">AnalogInputUsage.h</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

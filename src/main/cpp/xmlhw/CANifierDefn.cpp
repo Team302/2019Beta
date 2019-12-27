@@ -7,7 +7,7 @@
 #include <memory>
 
 #include <xmlhw/CANifierDefn.h>
-#include <hw/CanifierFactory.h>
+#include <hw/factories/CanifierFactory.h>
 
 //Third Party includes
 #include <pugixml/pugixml.hpp>

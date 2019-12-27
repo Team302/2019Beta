@@ -1,6 +1,6 @@
 #include <hw/LED.h>
 
-#include <hw/CanifierFactory.h>
+#include <hw/factories/CanifierFactory.h>
 
 using namespace ctre::phoenix;
 

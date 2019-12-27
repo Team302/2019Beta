@@ -6,7 +6,7 @@
 
 #include <hw/DragonTalonTach.h>
 #include <ctre/phoenix/CANifier.h>
-#include <hw/CanifierFactory.h>
+#include <hw/factories/CanifierFactory.h>
 
 
 DragonTalonTach::DragonTalonTach

@@ -17,7 +17,7 @@ Inherited by \fBDragonSparkMax\fP, and \fBDragonTalon\fP\&.
 .RI "enum \fBDRAGON_CONTROL_MODE\fP { \fBPERCENT_OUTPUT\fP, \fBROTATIONS\fP, \fBRPS\fP }"
 .br
 .ti -1c
-.RI "enum \fBMOTOR_CONTROLLER_TYPE\fP { \fBUNKNOWN_MOTOR_CONTROLLER_TYPE\fP = -1, \fBFRONT_LEFT_DRIVE\fP, \fBMIDDLE_LEFT_DRIVE\fP, \fBBACK_LEFT_DRIVE\fP, \fBFRONT_RIGHT_DRIVE\fP, \fBMIDDLE_RIGHT_DRIVE\fP, \fBBACK_RIGHT_DRIVE\fP, \fBARM_MASTER\fP, \fBARM_SLAVE\fP, \fBARM_EXTENSION\fP, \fBWRIST\fP, \fBINTAKE\fP, \fBELEVATOR_WINCH\fP, \fBELEVATOR_DRIVE\fP, \fBHATCH_MECH_MOTOR\fP, \fBMAX_MOTOR_CONTROLLER_TYPES\fP }"
+.RI "enum \fBMOTOR_CONTROLLER_USAGE\fP { \fBUNKNOWN_MOTOR_CONTROLLER_USAGE\fP = -1, \fBFRONT_LEFT_DRIVE\fP, \fBMIDDLE_LEFT_DRIVE\fP, \fBBACK_LEFT_DRIVE\fP, \fBFRONT_RIGHT_DRIVE\fP, \fBMIDDLE_RIGHT_DRIVE\fP, \fBBACK_RIGHT_DRIVE\fP, \fBARM_MASTER\fP, \fBARM_SLAVE\fP, \fBARM_EXTENSION\fP, \fBWRIST\fP, \fBINTAKE\fP, \fBELEVATOR_WINCH\fP, \fBELEVATOR_DRIVE\fP, \fBHATCH_MECH_MOTOR\fP, \fBMAX_MOTOR_CONTROLLER_USAGES\fP }"
 .br
 .in -1c
 .SS "Public Member Functions"
@@ -30,7 +30,7 @@ Inherited by \fBDragonSparkMax\fP, and \fBDragonTalon\fP\&.
 .RI "virtual double \fBGetRPS\fP () const =0"
 .br
 .ti -1c
-.RI "virtual \fBMOTOR_CONTROLLER_TYPE\fP \fBGetType\fP () const =0"
+.RI "virtual \fBMOTOR_CONTROLLER_USAGE\fP \fBGetType\fP () const =0"
 .br
 .ti -1c
 .RI "double \fBGetCurrent\fP ()"
@@ -91,13 +91,13 @@ Definition at line 12 of file IDragonMotorController\&.h\&.
 \fB\fIRPS \fP\fP
 .PP
 Definition at line 15 of file IDragonMotorController\&.h\&.
-.SS "enum \fBIDragonMotorController::MOTOR_CONTROLLER_TYPE\fP"
+.SS "enum \fBMOTOR_CONTROLLER_USAGE\fP"
 
 .PP
 \fBEnumerator\fP
 .in +1c
 .TP
-\fB\fIUNKNOWN_MOTOR_CONTROLLER_TYPE \fP\fP
+\fB\fIUNKNOWN_MOTOR_CONTROLLER_USAGE \fP\fP
 .TP
 \fB\fIFRONT_LEFT_DRIVE \fP\fP
 .TP
@@ -127,7 +127,7 @@ Definition at line 15 of file IDragonMotorController\&.h\&.
 .TP
 \fB\fIHATCH_MECH_MOTOR \fP\fP
 .TP
-\fB\fIMAX_MOTOR_CONTROLLER_TYPES \fP\fP
+\fB\fIMAX_MOTOR_CONTROLLER_USAGES \fP\fP
 .PP
 Definition at line 21 of file IDragonMotorController\&.h\&.
 .SH "Constructor & Destructor Documentation"
@@ -162,7 +162,7 @@ Implemented in \fBDragonTalon\fP, and \fBDragonSparkMax\fP\&.
 
 .PP
 Implemented in \fBDragonTalon\fP, and \fBDragonSparkMax\fP\&.
-.SS "virtual \fBMOTOR_CONTROLLER_TYPE\fP IDragonMotorController::GetType () const\fC [pure virtual]\fP"
+.SS "virtual \fBMOTOR_CONTROLLER_USAGE\fP IDragonMotorController::GetType () const\fC [pure virtual]\fP"
 
 .PP
 Implemented in \fBDragonTalon\fP, and \fBDragonSparkMax\fP\&.

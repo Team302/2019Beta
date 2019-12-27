@@ -15,13 +15,9 @@
 //====================================================================================================================================================
 
 //========================================================================================================
-/// MotorDefn.cpp
-//========================================================================================================
-///
-/// File Description:
-///     XML parsing for motor definitions.  This definition will construct the motor controllers.
+/// @class MotorDefn
+/// @brief XML parsing for motor definitions.  This definition will construct the motor controllers.
 ///     This parsing leverages the 3rd party Open Source Pugixml library (https://pugixml.org/).
-///
 //========================================================================================================
 
 // C++ Includes
@@ -55,9 +51,9 @@ using namespace std;
 //             motor usage options
 //             ====================================================
 //
-//		enum MOTOR_CONTROLLER_TYPE
+//		enum MOTOR_CONTROLLER_USAGE
 //		{
-//			UNKNOWN_MOTOR_CONTROLLER_TYPE = -1,
+//			UNKNOWN_MOTOR_CONTROLLER_USAGE = -1,
 //			FRONT_LEFT_DRIVE,
 //			MIDDLE_LEFT_DRIVE,
 //			BACK_LEFT_DRIVE,
@@ -71,7 +67,7 @@ using namespace std;
 //			INTAKE,
 //			ELEVATOR_WINCH,
 //			ELEVATOR_DRIVE,
-//			MAX_MOTOR_CONTROLLER_TYPES
+//			MAX_MOTOR_CONTROLLER_USAGES
 //		};
 //
 //

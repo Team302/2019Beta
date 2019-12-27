@@ -7,12 +7,15 @@
 
 #pragma once
 
+#include <memory>
+
+#include <frc/SpeedController.h>
 #include <hw/IDragonMotorController.h>
 
 #include <rev/CANSparkMax.h>
 
 // namespaces
-using namespace rev;
+//using namespace rev;
 
 class DragonSparkMax : public IDragonMotorController
 {
@@ -20,14 +23,14 @@ public:
     //note: two PIDs: 0 is position, 1 is velocity
     // Constructors
     DragonSparkMax() = delete;
-    DragonSparkMax(int id, IDragonMotorController::MOTOR_CONTROLLER_TYPE deviceType, CANSparkMax::MotorType motorType, double gearRatio);
+    DragonSparkMax(int id, MOTOR_CONTROLLER_USAGE deviceType, rev::CANSparkMax::MotorType motorType, double gearRatio);
 
     virtual ~DragonSparkMax() = default;
 
     // Getters
     double GetRotations() const override;
     double GetRPS() const override;
-    IDragonMotorController::MOTOR_CONTROLLER_TYPE GetType() const override;
+    MOTOR_CONTROLLER_USAGE GetType() const override;
     int GetID() const override;
 
     // Setters
@@ -47,12 +50,12 @@ public:
 private:
     double GetRotationsWithGearNoOffset() const;
     int m_id;
-    CANSparkMax* m_spark;
+    std::shared_ptr<rev::CANSparkMax> m_spark;
     DRAGON_CONTROL_MODE m_controlMode;
     double m_outputRotationOffset;
     double m_gearRatio;
-    IDragonMotorController::MOTOR_CONTROLLER_TYPE m_deviceType;
+    MOTOR_CONTROLLER_USAGE m_deviceType;
 
-    CANSparkMax* GetSparkMax();
+    //rev::CANSparkMax* GetSparkMax();
     
 };

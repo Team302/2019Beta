@@ -29,8 +29,8 @@
 #include <frc/DigitalOutput.h>
 
 // Team 302 includes
-#include <hw/IDragonSensor.h>
-#include <hw/IDragonDistanceSensor.h>
+#include <hw/interfaces/IDragonSensor.h>
+#include <hw/interfaces/IDragonDistanceSensor.h>
 
 // Third Party Includes
 

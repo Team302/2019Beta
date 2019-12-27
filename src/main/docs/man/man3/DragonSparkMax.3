@@ -17,7 +17,7 @@ Inherits \fBIDragonMotorController\fP\&.
 .RI "\fBDragonSparkMax\fP ()=delete"
 .br
 .ti -1c
-.RI "\fBDragonSparkMax\fP (int id, \fBIDragonMotorController::MOTOR_CONTROLLER_TYPE\fP deviceType, CANSparkMax::MotorType motorType, double gearRatio)"
+.RI "\fBDragonSparkMax\fP (int id, \fBMOTOR_CONTROLLER_USAGE\fP deviceType, CANSparkMax::MotorType motorType, double gearRatio)"
 .br
 .ti -1c
 .RI "virtual \fB~DragonSparkMax\fP ()=default"
@@ -29,7 +29,7 @@ Inherits \fBIDragonMotorController\fP\&.
 .RI "double \fBGetRPS\fP () const override"
 .br
 .ti -1c
-.RI "\fBIDragonMotorController::MOTOR_CONTROLLER_TYPE\fP \fBGetType\fP () const override"
+.RI "\fBMOTOR_CONTROLLER_USAGE\fP \fBGetType\fP () const override"
 .br
 .ti -1c
 .RI "int \fBGetID\fP () const override"
@@ -76,7 +76,7 @@ Definition at line 17 of file DragonSparkMax\&.h\&.
 .PP 
 .SS "DragonSparkMax::DragonSparkMax ()\fC [delete]\fP"
 
-.SS "DragonSparkMax::DragonSparkMax (int id, \fBIDragonMotorController::MOTOR_CONTROLLER_TYPE\fP deviceType, CANSparkMax::MotorType motorType, double gearRatio)"
+.SS "DragonSparkMax::DragonSparkMax (int id, \fBMOTOR_CONTROLLER_USAGE\fP deviceType, CANSparkMax::MotorType motorType, double gearRatio)"
 
 .PP
 Definition at line 5 of file DragonSparkMax\&.cpp\&.
@@ -118,7 +118,7 @@ Definition at line 27 of file DragonSparkMax\&.cpp\&.
 Implements \fBIDragonMotorController\fP\&.
 .PP
 Definition at line 32 of file DragonSparkMax\&.cpp\&.
-.SS "\fBIDragonMotorController::MOTOR_CONTROLLER_TYPE\fP DragonSparkMax::GetType () const\fC [override]\fP, \fC [virtual]\fP"
+.SS "\fBMOTOR_CONTROLLER_USAGE\fP DragonSparkMax::GetType () const\fC [override]\fP, \fC [virtual]\fP"
 
 .PP
 Implements \fBIDragonMotorController\fP\&.

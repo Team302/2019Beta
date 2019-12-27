@@ -30,7 +30,7 @@
 // FRC Includes
 
 // Team 302 Includes
-#include <hw/IDragonSensor.h>
+#include <hw/interfaces/IDragonSensor.h>
 #include <utils/Logger.h>
 
 // Third Party Includes

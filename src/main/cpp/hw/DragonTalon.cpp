@@ -1,7 +1,15 @@
 #include "hw/DragonTalon.h"
+#include <frc/SpeedController.h>
+#include <memory>
 
-DragonTalon::DragonTalon(IDragonMotorController::MOTOR_CONTROLLER_TYPE deviceType, int deviceID, int countsPerRev, double gearRatio) :
-    m_talon(new TalonSRX(deviceID)),
+using namespace frc;
+using namespace std;
+using namespace ctre::phoenix::motorcontrol::can;
+using namespace ctre::phoenix::motorcontrol;
+using namespace ctre::phoenix;
+
+DragonTalon::DragonTalon(MOTOR_CONTROLLER_USAGE deviceType, int deviceID, int countsPerRev, double gearRatio) :
+    m_talon( make_shared<WPI_TalonSRX>(deviceID)),
     m_controlMode(TALON_CONTROL_MODE::PERCENT),
 	m_type(deviceType),
 	m_id(deviceID),
@@ -48,6 +56,11 @@ void DragonTalon::SetControlMode(IDragonMotorController::DRAGON_CONTROL_MODE mod
             DragonTalon::SetControlMode(DragonTalon::TALON_CONTROL_MODE::PERCENT);
         break;
     }
+}
+
+shared_ptr<SpeedController> DragonTalon::GetSpeedController() const
+{
+	return m_talon;
 }
 
 void DragonTalon::SetControlMode(DragonTalon::TALON_CONTROL_MODE mode)
@@ -144,7 +157,7 @@ void DragonTalon::SetSensorInverted(bool inverted)
     m_talon->SetSensorPhase(inverted);
 }
 
-IDragonMotorController::MOTOR_CONTROLLER_TYPE DragonTalon::GetType() const
+MOTOR_CONTROLLER_USAGE DragonTalon::GetType() const
 {
 	return m_type;
 }

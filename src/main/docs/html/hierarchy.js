@@ -6,14 +6,18 @@ var hierarchy =
     ] ],
     [ "AnalogInputDefn", "class_analog_input_defn.html", null ],
     [ "AnalogInputFactory", "class_analog_input_factory.html", null ],
+    [ "AutonSelector", "class_auton_selector.html", null ],
     [ "CameraDefn", "class_camera_defn.html", null ],
     [ "CANifierDefn", "class_c_a_nifier_defn.html", null ],
     [ "CanifierFactory", "class_canifier_factory.html", null ],
     [ "ChassisDefn", "class_chassis_defn.html", null ],
     [ "ControlDefn", "class_control_defn.html", null ],
+    [ "CyclePrimitives", "class_cycle_primitives.html", null ],
     [ "DigitalInputDefn", "class_digital_input_defn.html", null ],
     [ "DigitalInputFactory", "class_digital_input_factory.html", null ],
+    [ "DistanceSensorFactory", "class_distance_sensor_factory.html", null ],
     [ "DragonDigitalInput", "class_dragon_digital_input.html", null ],
+    [ "DragonMath", "class_dragon_math.html", null ],
     [ "DragonMotorControllerFactory", "class_dragon_motor_controller_factory.html", null ],
     [ "DragonPDP", "class_dragon_p_d_p.html", null ],
     [ "DragonPigeon", "class_dragon_pigeon.html", null ],
@@ -23,6 +27,9 @@ var hierarchy =
     [ "DragonSolenoid", "class_dragon_solenoid.html", null ],
     [ "DragonTalonTach", "class_dragon_talon_tach.html", null ],
     [ "DragonVision", "class_dragon_vision.html", null ],
+    [ "FieldDefn", "class_field_defn.html", null ],
+    [ "FieldMeasurement", "class_field_measurement.html", null ],
+    [ "FMS", "class_f_m_s.html", null ],
     [ "HardwareIDValidation", "class_hardware_i_d_validation.html", null ],
     [ "IButton", "class_i_button.html", [
       [ "AnalogButton", "class_analog_button.html", null ],
@@ -32,6 +39,7 @@ var hierarchy =
       [ "DigitalButton", "class_digital_button.html", null ],
       [ "POVButton", "class_p_o_v_button.html", null ]
     ] ],
+    [ "IChassis", "class_i_chassis.html", null ],
     [ "IDeadband", "class_i_deadband.html", [
       [ "DeadbandValue", "class_deadband_value.html", null ],
       [ "NoDeadbandValue", "class_no_deadband_value.html", null ],
@@ -59,9 +67,24 @@ var hierarchy =
       [ "DragonUltrasonicPWM", "class_dragon_ultrasonic_p_w_m.html", null ]
     ] ],
     [ "IMechanism", "class_i_mechanism.html", [
+      [ "Grabber", "class_grabber.html", null ],
       [ "Intake", "class_intake.html", null ]
     ] ],
     [ "IMechanismState", "class_i_mechanism_state.html", null ],
+    [ "IPrimitive", "class_i_primitive.html", [
+      [ "DoNothing", "class_do_nothing.html", null ],
+      [ "HoldPosition", "class_hold_position.html", null ],
+      [ "SuperDrive", "class_super_drive.html", [
+        [ "DriveDistance", "class_drive_distance.html", [
+          [ "DriveToTarget", "class_drive_to_target.html", null ]
+        ] ],
+        [ "DriveTime", "class_drive_time.html", null ],
+        [ "DriveToWall", "class_drive_to_wall.html", null ]
+      ] ],
+      [ "TurnAngle", "class_turn_angle.html", [
+        [ "TurnToCube", "class_turn_to_cube.html", null ]
+      ] ]
+    ] ],
     [ "IProfile", "class_i_profile.html", [
       [ "CubedProfile", "class_cubed_profile.html", null ],
       [ "LinearProfile", "class_linear_profile.html", null ],
@@ -72,6 +95,7 @@ var hierarchy =
     [ "LEDFactory", "class_l_e_d_factory.html", null ],
     [ "LidarDefn", "class_lidar_defn.html", null ],
     [ "LidarFactory", "class_lidar_factory.html", null ],
+    [ "LimitValue", "class_limit_value.html", null ],
     [ "Logger", "class_logger.html", null ],
     [ "MechanismControl", "class_mechanism_control.html", null ],
     [ "MechanismDataDefn", "class_mechanism_data_defn.html", null ],
@@ -86,6 +110,10 @@ var hierarchy =
     [ "PIDData", "class_p_i_d_data.html", null ],
     [ "PIDDefn", "class_p_i_d_defn.html", null ],
     [ "PigeonDefn", "class_pigeon_defn.html", null ],
+    [ "Point2D", "struct_point2_d.html", null ],
+    [ "PrimitiveFactory", "class_primitive_factory.html", null ],
+    [ "PrimitiveParams", "class_primitive_params.html", null ],
+    [ "PrimitiveParser", "class_primitive_parser.html", null ],
     [ "RobotDefn", "class_robot_defn.html", null ],
     [ "ScaledAxis", "class_scaled_axis.html", [
       [ "FlippedAxis", "class_flipped_axis.html", null ]
@@ -96,5 +124,6 @@ var hierarchy =
       [ "Robot", "class_robot.html", null ]
     ] ],
     [ "UltrasonicFactory", "class_ultrasonic_factory.html", null ],
-    [ "UsageValidation", "class_usage_validation.html", null ]
+    [ "UsageValidation", "class_usage_validation.html", null ],
+    [ "Vector2", "struct_vector2.html", null ]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team 302 Robot: IDragonMotorController Class Reference</title>
+<title>Team 302 Robot: IDragonMotorController Interface Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -91,9 +91,12 @@ $(document).ready(function(){initNavTree('class_i_dragon_motor_controller.html',
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="class_i_dragon_motor_controller-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">IDragonMotorController Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">IDragonMotorController Interface Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The general interface to motor controllers so that the specific mechanisms that use motors, don't need to special case what motor controller is being used.  
+ <a href="class_i_dragon_motor_controller.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_i_dragon_motor_controller_8h_source.html">IDragonMotorController.h</a>&gt;</code></p>
 <div class="dynheader">
@@ -114,29 +117,6 @@ Public Types</h2></td></tr>
 <a class="el" href="class_i_dragon_motor_controller.html#a3157a029941ef48728e7fef3de46b6eea23bab924616c10f5eea1b36562513bcf">RPS</a>
  }</td></tr>
 <tr class="separator:a3157a029941ef48728e7fef3de46b6ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45745c883c9d5e9576a87a419584f6da"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_dragon_motor_controller.html#a45745c883c9d5e9576a87a419584f6da">MOTOR_CONTROLLER_TYPE</a> { <br />
-&#160;&#160;<a class="el" href="class_i_dragon_motor_controller.html#a45745c883c9d5e9576a87a419584f6daad41e558ac89bfaf1150874ab53f79bb4">UNKNOWN_MOTOR_CONTROLLER_TYPE</a> = -1, 
-<a class="el" href="class_i_dragon_motor_controller.html#a45745c883c9d5e9576a87a419584f6daa21f4e0b5cd56cc73c9ef4557208cc336">FRONT_LEFT_DRIVE</a>, 
-<a class="el" href="class_i_dragon_motor_controller.html#a45745c883c9d5e9576a87a419584f6daa7ab447e2fd100ca8e6fa6bed39371c46">MIDDLE_LEFT_DRIVE</a>, 
-<a class="el" href="class_i_dragon_motor_controller.html#a45745c883c9d5e9576a87a419584f6daa0ec9bbb69396acc83b1f49ac2eb2fc55">BACK_LEFT_DRIVE</a>, 
-<br />
-&#160;&#160;<a class="el" href="class_i_dragon_motor_controller.html#a45745c883c9d5e9576a87a419584f6daabc1ca84e216e5ef8e9c995f0366fb230">FRONT_RIGHT_DRIVE</a>, 
-<a class="el" href="class_i_dragon_motor_controller.html#a45745c883c9d5e9576a87a419584f6daa0e93f601d79a22cbe6bf8a9a5e67c05b">MIDDLE_RIGHT_DRIVE</a>, 
-<a class="el" href="class_i_dragon_motor_controller.html#a45745c883c9d5e9576a87a419584f6daaa736e3546fc13c5882c862e9a0f0f0db">BACK_RIGHT_DRIVE</a>, 
-<a class="el" href="class_i_dragon_motor_controller.html#a45745c883c9d5e9576a87a419584f6daafcbb6a70f5617a9a4b1f53b2a8a6904d">ARM_MASTER</a>, 
-<br />
-&#160;&#160;<a class="el" href="class_i_dragon_motor_controller.html#a45745c883c9d5e9576a87a419584f6daade8aff15829294e3594c650c66cbc4c0">ARM_SLAVE</a>, 
-<a class="el" href="class_i_dragon_motor_controller.html#a45745c883c9d5e9576a87a419584f6daa0f5acb16fc4f58a8dd14acf4027d1770">ARM_EXTENSION</a>, 
-<a class="el" href="class_i_dragon_motor_controller.html#a45745c883c9d5e9576a87a419584f6daac8cd987c48d00ff228a969fc49122c37">WRIST</a>, 
-<a class="el" href="class_i_dragon_motor_controller.html#a45745c883c9d5e9576a87a419584f6daa7119c8384352dbfa148e8b71c1803392">INTAKE</a>, 
-<br />
-&#160;&#160;<a class="el" href="class_i_dragon_motor_controller.html#a45745c883c9d5e9576a87a419584f6daac5831dc09a4e084f7d0129634dc1f185">ELEVATOR_WINCH</a>, 
-<a class="el" href="class_i_dragon_motor_controller.html#a45745c883c9d5e9576a87a419584f6daa7d7cb59ca0db68b183aef60393cc5878">ELEVATOR_DRIVE</a>, 
-<a class="el" href="class_i_dragon_motor_controller.html#a45745c883c9d5e9576a87a419584f6daa6b8ff2a2d3ea87f31cde6d1f75576051">HATCH_MECH_MOTOR</a>, 
-<a class="el" href="class_i_dragon_motor_controller.html#a45745c883c9d5e9576a87a419584f6daa8732bc030572c10befa580a617534864">MAX_MOTOR_CONTROLLER_TYPES</a>
-<br />
- }</td></tr>
-<tr class="separator:a45745c883c9d5e9576a87a419584f6da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -144,12 +124,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aaebed7f496f5e56709a5dda5d7749782"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17ff2a8c53eb525c629ea1dbfe617e72"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_dragon_motor_controller.html#a17ff2a8c53eb525c629ea1dbfe617e72">GetRPS</a> () const =0</td></tr>
 <tr class="separator:a17ff2a8c53eb525c629ea1dbfe617e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a415dd62a73858b39684ae727260fa4b5"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_i_dragon_motor_controller.html#a45745c883c9d5e9576a87a419584f6da">MOTOR_CONTROLLER_TYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_dragon_motor_controller.html#a415dd62a73858b39684ae727260fa4b5">GetType</a> () const =0</td></tr>
-<tr class="separator:a415dd62a73858b39684ae727260fa4b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06f571d49ac87bc2ebb138f6022c6f8a"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_motor_controller_usage_8h.html#ad1166df5de4f72fbf9cfc773cdab00eb">MOTOR_CONTROLLER_USAGE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_dragon_motor_controller.html#a06f571d49ac87bc2ebb138f6022c6f8a">GetType</a> () const =0</td></tr>
+<tr class="separator:a06f571d49ac87bc2ebb138f6022c6f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a980ec4aa8ae369d1b9603654c566249d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_dragon_motor_controller.html#a980ec4aa8ae369d1b9603654c566249d">GetCurrent</a> ()</td></tr>
 <tr class="separator:a980ec4aa8ae369d1b9603654c566249d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad70e1b0a007c03cc07a6ee531d6701d6"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_dragon_motor_controller.html#ad70e1b0a007c03cc07a6ee531d6701d6">GetID</a> () const =0</td></tr>
 <tr class="separator:ad70e1b0a007c03cc07a6ee531d6701d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e513a4bd1623bedb289c203a4b0c3fb"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; frc::SpeedController &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_dragon_motor_controller.html#a1e513a4bd1623bedb289c203a4b0c3fb">GetSpeedController</a> () const =0</td></tr>
+<tr class="separator:a1e513a4bd1623bedb289c203a4b0c3fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80d2a85a9c989faade85f628f696fcab"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_dragon_motor_controller.html#a80d2a85a9c989faade85f628f696fcab">SetControlMode</a> (<a class="el" href="class_i_dragon_motor_controller.html#a3157a029941ef48728e7fef3de46b6ee">DRAGON_CONTROL_MODE</a> mode)=0</td></tr>
 <tr class="separator:a80d2a85a9c989faade85f628f696fcab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adacee402a923d6a10d50abd1c850138e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_dragon_motor_controller.html#adacee402a923d6a10d50abd1c850138e">Set</a> (double value)=0</td></tr>
@@ -175,8 +157,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a93f40b43658f5744e50292dbf6fc470b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_i_dragon_motor_controller_8h_source.html#l00012">12</a> of file <a class="el" href="_i_dragon_motor_controller_8h_source.html">IDragonMotorController.h</a>.</p>
+<div class="textblock"><p>The general interface to motor controllers so that the specific mechanisms that use motors, don't need to special case what motor controller is being used. </p>
+
+<p class="definition">Definition at line <a class="el" href="_i_dragon_motor_controller_8h_source.html#l00036">36</a> of file <a class="el" href="_i_dragon_motor_controller_8h_source.html">IDragonMotorController.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a3157a029941ef48728e7fef3de46b6ee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3157a029941ef48728e7fef3de46b6ee">&#9670;&nbsp;</a></span>DRAGON_CONTROL_MODE</h2>
@@ -195,41 +178,7 @@ Protected Member Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a3157a029941ef48728e7fef3de46b6eea23bab924616c10f5eea1b36562513bcf"></a>RPS&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_i_dragon_motor_controller_8h_source.html#l00015">15</a> of file <a class="el" href="_i_dragon_motor_controller_8h_source.html">IDragonMotorController.h</a>.</p>
-
-</div>
-</div>
-<a id="a45745c883c9d5e9576a87a419584f6da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45745c883c9d5e9576a87a419584f6da">&#9670;&nbsp;</a></span>MOTOR_CONTROLLER_TYPE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_i_dragon_motor_controller.html#a45745c883c9d5e9576a87a419584f6da">IDragonMotorController::MOTOR_CONTROLLER_TYPE</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a45745c883c9d5e9576a87a419584f6daad41e558ac89bfaf1150874ab53f79bb4"></a>UNKNOWN_MOTOR_CONTROLLER_TYPE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a45745c883c9d5e9576a87a419584f6daa21f4e0b5cd56cc73c9ef4557208cc336"></a>FRONT_LEFT_DRIVE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a45745c883c9d5e9576a87a419584f6daa7ab447e2fd100ca8e6fa6bed39371c46"></a>MIDDLE_LEFT_DRIVE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a45745c883c9d5e9576a87a419584f6daa0ec9bbb69396acc83b1f49ac2eb2fc55"></a>BACK_LEFT_DRIVE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a45745c883c9d5e9576a87a419584f6daabc1ca84e216e5ef8e9c995f0366fb230"></a>FRONT_RIGHT_DRIVE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a45745c883c9d5e9576a87a419584f6daa0e93f601d79a22cbe6bf8a9a5e67c05b"></a>MIDDLE_RIGHT_DRIVE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a45745c883c9d5e9576a87a419584f6daaa736e3546fc13c5882c862e9a0f0f0db"></a>BACK_RIGHT_DRIVE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a45745c883c9d5e9576a87a419584f6daafcbb6a70f5617a9a4b1f53b2a8a6904d"></a>ARM_MASTER&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a45745c883c9d5e9576a87a419584f6daade8aff15829294e3594c650c66cbc4c0"></a>ARM_SLAVE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a45745c883c9d5e9576a87a419584f6daa0f5acb16fc4f58a8dd14acf4027d1770"></a>ARM_EXTENSION&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a45745c883c9d5e9576a87a419584f6daac8cd987c48d00ff228a969fc49122c37"></a>WRIST&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a45745c883c9d5e9576a87a419584f6daa7119c8384352dbfa148e8b71c1803392"></a>INTAKE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a45745c883c9d5e9576a87a419584f6daac5831dc09a4e084f7d0129634dc1f185"></a>ELEVATOR_WINCH&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a45745c883c9d5e9576a87a419584f6daa7d7cb59ca0db68b183aef60393cc5878"></a>ELEVATOR_DRIVE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a45745c883c9d5e9576a87a419584f6daa6b8ff2a2d3ea87f31cde6d1f75576051"></a>HATCH_MECH_MOTOR&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a45745c883c9d5e9576a87a419584f6daa8732bc030572c10befa580a617534864"></a>MAX_MOTOR_CONTROLLER_TYPES&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="_i_dragon_motor_controller_8h_source.html#l00021">21</a> of file <a class="el" href="_i_dragon_motor_controller_8h_source.html">IDragonMotorController.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_dragon_motor_controller_8h_source.html#l00039">39</a> of file <a class="el" href="_i_dragon_motor_controller_8h_source.html">IDragonMotorController.h</a>.</p>
 
 </div>
 </div>
@@ -441,8 +390,8 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a415dd62a73858b39684ae727260fa4b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a415dd62a73858b39684ae727260fa4b5">&#9670;&nbsp;</a></span>GetType()</h2>
+<a id="a1e513a4bd1623bedb289c203a4b0c3fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e513a4bd1623bedb289c203a4b0c3fb">&#9670;&nbsp;</a></span>GetSpeedController()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -451,7 +400,7 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="class_i_dragon_motor_controller.html#a45745c883c9d5e9576a87a419584f6da">MOTOR_CONTROLLER_TYPE</a> IDragonMotorController::GetType </td>
+          <td class="memname">virtual std::shared_ptr&lt;frc::SpeedController&gt; IDragonMotorController::GetSpeedController </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -464,7 +413,34 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_dragon_talon.html#a114cca7508b754910c8ea9c1125f8ebd">DragonTalon</a>, and <a class="el" href="class_dragon_spark_max.html#adc384d44ec8807c2fc2bd1a8eab15bee">DragonSparkMax</a>.</p>
+<p>Implemented in <a class="el" href="class_dragon_talon.html#aa816f5211ea0e05b88047c131e7d8e0e">DragonTalon</a>.</p>
+
+</div>
+</div>
+<a id="a06f571d49ac87bc2ebb138f6022c6f8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06f571d49ac87bc2ebb138f6022c6f8a">&#9670;&nbsp;</a></span>GetType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="_motor_controller_usage_8h.html#ad1166df5de4f72fbf9cfc773cdab00eb">MOTOR_CONTROLLER_USAGE</a> IDragonMotorController::GetType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_dragon_talon.html#a2cd1946b8560567e0753426c02b20eb9">DragonTalon</a>, and <a class="el" href="class_dragon_spark_max.html#ac7de2bbd8b7e9458e3d814273d0108c1">DragonSparkMax</a>.</p>
 
 </div>
 </div>
@@ -674,9 +650,9 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/GitKrakenRepos/TemplateRepository/src/main/cpp/hw/<a class="el" href="_i_dragon_motor_controller_8h_source.html">IDragonMotorController.h</a></li>
-<li>C:/GitKrakenRepos/TemplateRepository/src/main/cpp/hw/<a class="el" href="_i_dragon_motor_controller_8cpp_source.html">IDragonMotorController.cpp</a></li>
+<hr/>The documentation for this interface was generated from the following files:<ul>
+<li>C:/GitKrakenRepos/TemplateRepository/src/main/cpp/hw/interfaces/<a class="el" href="_i_dragon_motor_controller_8h_source.html">IDragonMotorController.h</a></li>
+<li>C:/GitKrakenRepos/TemplateRepository/src/main/cpp/hw/interfaces/<a class="el" href="_i_dragon_motor_controller_8cpp_source.html">IDragonMotorController.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

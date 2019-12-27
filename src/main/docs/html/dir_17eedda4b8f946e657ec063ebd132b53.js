@@ -1,17 +1,8 @@
 var dir_17eedda4b8f946e657ec063ebd132b53 =
 [
-    [ "AnalogInputFactory.cpp", "_analog_input_factory_8cpp.html", null ],
-    [ "AnalogInputFactory.h", "_analog_input_factory_8h.html", [
-      [ "AnalogInputFactory", "class_analog_input_factory.html", "class_analog_input_factory" ]
-    ] ],
-    [ "CanifierFactory.cpp", "_canifier_factory_8cpp.html", null ],
-    [ "CanifierFactory.h", "_canifier_factory_8h.html", [
-      [ "CanifierFactory", "class_canifier_factory.html", "class_canifier_factory" ]
-    ] ],
-    [ "DigitalInputFactory.cpp", "_digital_input_factory_8cpp.html", null ],
-    [ "DigitalInputFactory.h", "_digital_input_factory_8h.html", [
-      [ "DigitalInputFactory", "class_digital_input_factory.html", "class_digital_input_factory" ]
-    ] ],
+    [ "factories", "dir_8dbafc07f5dc86919430ab4af89bf1b4.html", "dir_8dbafc07f5dc86919430ab4af89bf1b4" ],
+    [ "interfaces", "dir_83052fb0d1616fee10332222487eef67.html", "dir_83052fb0d1616fee10332222487eef67" ],
+    [ "usages", "dir_29f3e294892f192d0d55084fc1f46bf3.html", "dir_29f3e294892f192d0d55084fc1f46bf3" ],
     [ "DragonAnalogInput.cpp", "_dragon_analog_input_8cpp.html", null ],
     [ "DragonAnalogInput.h", "_dragon_analog_input_8h.html", "_dragon_analog_input_8h" ],
     [ "DragonDigitalInput.cpp", "_dragon_digital_input_8cpp.html", null ],
@@ -23,10 +14,6 @@ var dir_17eedda4b8f946e657ec063ebd132b53 =
     [ "DragonLimelight.cpp", "_dragon_limelight_8cpp.html", null ],
     [ "DragonLimelight.h", "_dragon_limelight_8h.html", [
       [ "DragonLimelight", "class_dragon_limelight.html", "class_dragon_limelight" ]
-    ] ],
-    [ "DragonMotorControllerFactory.cpp", "_dragon_motor_controller_factory_8cpp.html", null ],
-    [ "DragonMotorControllerFactory.h", "_dragon_motor_controller_factory_8h.html", [
-      [ "DragonMotorControllerFactory", "class_dragon_motor_controller_factory.html", "class_dragon_motor_controller_factory" ]
     ] ],
     [ "DragonPDP.cpp", "_dragon_p_d_p_8cpp.html", null ],
     [ "DragonPDP.h", "_dragon_p_d_p_8h.html", [
@@ -42,10 +29,6 @@ var dir_17eedda4b8f946e657ec063ebd132b53 =
     ] ],
     [ "DragonServo.cpp", "_dragon_servo_8cpp.html", null ],
     [ "DragonServo.h", "_dragon_servo_8h.html", "_dragon_servo_8h" ],
-    [ "DragonServoFactory.cpp", "_dragon_servo_factory_8cpp.html", null ],
-    [ "DragonServoFactory.h", "_dragon_servo_factory_8h.html", [
-      [ "DragonServoFactory", "class_dragon_servo_factory.html", "class_dragon_servo_factory" ]
-    ] ],
     [ "DragonSolenoid.cpp", "_dragon_solenoid_8cpp.html", null ],
     [ "DragonSolenoid.h", "_dragon_solenoid_8h.html", "_dragon_solenoid_8h" ],
     [ "DragonSparkMax.cpp", "_dragon_spark_max_8cpp.html", null ],
@@ -70,31 +53,8 @@ var dir_17eedda4b8f946e657ec063ebd132b53 =
     [ "DragonVision.h", "_dragon_vision_8h.html", [
       [ "DragonVision", "class_dragon_vision.html", "class_dragon_vision" ]
     ] ],
-    [ "IDragonAnglePositionSensor.h", "_i_dragon_angle_position_sensor_8h.html", [
-      [ "IDragonAnglePositionSensor", "class_i_dragon_angle_position_sensor.html", "class_i_dragon_angle_position_sensor" ]
-    ] ],
-    [ "IDragonDistanceSensor.h", "_i_dragon_distance_sensor_8h.html", [
-      [ "IDragonDistanceSensor", "class_i_dragon_distance_sensor.html", "class_i_dragon_distance_sensor" ]
-    ] ],
-    [ "IDragonMotorController.cpp", "_i_dragon_motor_controller_8cpp.html", null ],
-    [ "IDragonMotorController.h", "_i_dragon_motor_controller_8h.html", "_i_dragon_motor_controller_8h" ],
-    [ "IDragonSensor.h", "_i_dragon_sensor_8h.html", [
-      [ "IDragonSensor", "class_i_dragon_sensor.html", "class_i_dragon_sensor" ]
-    ] ],
     [ "LED.cpp", "_l_e_d_8cpp.html", null ],
     [ "LED.h", "_l_e_d_8h.html", [
       [ "LED", "class_l_e_d.html", "class_l_e_d" ]
-    ] ],
-    [ "LEDFactory.cpp", "_l_e_d_factory_8cpp.html", null ],
-    [ "LEDFactory.h", "_l_e_d_factory_8h.html", [
-      [ "LEDFactory", "class_l_e_d_factory.html", "class_l_e_d_factory" ]
-    ] ],
-    [ "LidarFactory.cpp", "_lidar_factory_8cpp.html", null ],
-    [ "LidarFactory.h", "_lidar_factory_8h.html", [
-      [ "LidarFactory", "class_lidar_factory.html", "class_lidar_factory" ]
-    ] ],
-    [ "UltrasonicFactory.cpp", "_ultrasonic_factory_8cpp.html", null ],
-    [ "UltrasonicFactory.h", "_ultrasonic_factory_8h.html", [
-      [ "UltrasonicFactory", "class_ultrasonic_factory.html", "class_ultrasonic_factory" ]
     ] ]
 ];

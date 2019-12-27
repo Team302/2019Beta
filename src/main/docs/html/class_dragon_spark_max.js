@@ -1,7 +1,7 @@
 var class_dragon_spark_max =
 [
     [ "DragonSparkMax", "class_dragon_spark_max.html#af2e693005b42054ccf1e8726575bdea5", null ],
-    [ "DragonSparkMax", "class_dragon_spark_max.html#a6c7175e3e9ef8d51ca5cfe0399287c52", null ],
+    [ "DragonSparkMax", "class_dragon_spark_max.html#a638243c983b4da86bb07b1ddf1a207a9", null ],
     [ "~DragonSparkMax", "class_dragon_spark_max.html#a3d3170a3db45ac5e2119e6d7b5d99c33", null ],
     [ "EnableBrakeMode", "class_dragon_spark_max.html#ad0f4b822780fc624487285aed3f386e4", null ],
     [ "EnableCurrentLimiting", "class_dragon_spark_max.html#af605cf5a714e65639678e41f00445f0c", null ],
@@ -9,7 +9,7 @@ var class_dragon_spark_max =
     [ "GetID", "class_dragon_spark_max.html#a3390286ef0c87a7a7e7bd62c9acfe297", null ],
     [ "GetRotations", "class_dragon_spark_max.html#a73ec6f1d7783143f62b2b1935b292051", null ],
     [ "GetRPS", "class_dragon_spark_max.html#a112b2519cf850dfbf556118dbf24d350", null ],
-    [ "GetType", "class_dragon_spark_max.html#adc384d44ec8807c2fc2bd1a8eab15bee", null ],
+    [ "GetType", "class_dragon_spark_max.html#ac7de2bbd8b7e9458e3d814273d0108c1", null ],
     [ "Invert", "class_dragon_spark_max.html#ac6b2718e28d1b81f040ee8efb9786750", null ],
     [ "InvertEncoder", "class_dragon_spark_max.html#a05f79e4d56ee0bbb79befd1ce05677b2", null ],
     [ "Set", "class_dragon_spark_max.html#a38eb54d110601f8fb7bb2e324f549016", null ],

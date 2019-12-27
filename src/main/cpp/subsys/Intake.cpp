@@ -27,8 +27,8 @@
 // FRC includes
 
 // Team 302 includes
-#include <hw/DragonMotorControllerFactory.h>        
-#include <hw/IDragonMotorController.h>
+#include <hw/factories/DragonMotorControllerFactory.h>        
+#include <hw/interfaces/IDragonMotorController.h>
 #include <subsys/IMechanism.h>
 #include <subsys/Intake.h>
 #include <subsys/MechanismControl.h>
@@ -47,7 +47,7 @@ Intake::Intake()
 {
     // Get the motor controller and set its mode to percent output and stop it
     /**
-    m_motor = DragonMotorControllerFactory::GetInstance()->GetController( IMechanism::MECHANISM_TYPE::INTAKE, IDragonMotorController::MOTOR_CONTROLLER_TYPE::INTAKE );
+    m_motor = DragonMotorControllerFactory::GetInstance()->GetController( IMechanism::MECHANISM_TYPE::INTAKE, MOTOR_CONTROLLER_USAGE::INTAKE );
     if ( m_motor != nullptr )
     {
         m_motor->SetControlMode( IDragonMotorController::DRAGON_CONTROL_MODE::PERCENT_OUTPUT );
@@ -83,9 +83,9 @@ MechanismTypes::MECHANISM_TYPE Intake::GetType() const
 //==================================================================================
 /// method: SetOutput
 /// @brief      Run intake as defined 
-/// @param      MechanismControl::MECHANISM_CONTROL_ID     controlItems: What item(s) are being controlled
-/// @param      MechanismControl::MECHANISM_CONTROL_TYPE   controlType:  How are the item(s) being controlled
-/// @param      double                                     value:        Target (units are based on the controlType)
+/// @param [in] MechanismControl::MECHANISM_CONTROL_ID     controlItems: What item(s) are being controlled
+/// @param [in] MechanismControl::MECHANISM_CONTROL_TYPE   controlType:  How are the item(s) being controlled
+/// @param [in] double                                     value:        Target (units are based on the controlType)
 /// @return     void
 //==================================================================================
 void Intake::SetOutput
@@ -125,10 +125,20 @@ void Intake::SetOutput
 /// @brief  Return the current position of the intake in degrees.  Since we don't have
 ///         a sensor this will return -90 for clockwise rotations and 90 for 
 ///         counter-clockwise rotations.
+/// @param [in] MechanismControl::MECHANISM_CONTROL_ID     controlItems: What item(s) are being requested
 /// @return double  position in degrees (rotating mechansim)
 //==================================================================================
-double Intake::GetCurrentPosition() const 
+double Intake::GetCurrentPosition
+(
+    MechanismControl::MECHANISM_CONTROL_ID   controlItems
+) const
 {
+    // validate the request
+    if ( controlItems != MechanismControl::ALL_MOTORS )
+    {
+        Logger::GetLogger()->LogError( "Intake::SetOutput", "invalid Control Items option" );
+    }
+
     // Normally would call GetSelectedSensorPosition, but there is no sensor, so we
     // would call GetMotorOutputPercent.  This isn't currently exposed in our APIs, so 
     // hard code for now 
@@ -141,12 +151,22 @@ double Intake::GetCurrentPosition() const
 /// @brief  Return the target position of the intake in degrees.  Since we don't have
 ///         a sensor this will return -90 for clockwise rotations and 90 for 
 ///         counter-clockwise rotations.
+/// @param [in] MechanismControl::MECHANISM_CONTROL_ID     controlItems: What item(s) are being requested
 /// @return double  position in degrees (rotating mechansim)
 //==================================================================================
-double Intake::GetTargetPosition() const 
+double Intake::GetTargetPosition
+(
+    MechanismControl::MECHANISM_CONTROL_ID   controlItems
+) const
 {
+    // validate the request
+    if ( controlItems != MechanismControl::ALL_MOTORS )
+    {
+        Logger::GetLogger()->LogError( "Intake::SetOutput", "invalid Control Items option" );
+    }
+
     // No sensor so it is the same as the current
-    return GetCurrentPosition();
+    return GetCurrentPosition( controlItems );
 }
 
 //==================================================================================
@@ -154,10 +174,20 @@ double Intake::GetTargetPosition() const
 /// @brief  Return the current speed of the intake in degrees per second.  Since we 
 ///         don't have a sensor this will return -360 for clockwise rotations and 360 
 ///         for counter-clockwise rotations.
+/// @param [in] MechanismControl::MECHANISM_CONTROL_ID     controlItems: What item(s) are being requested
 /// @return double  speed in degrees per second (rotating mechansim)
 //==================================================================================
-double Intake::GetCurrentSpeed() const 
+double Intake::GetCurrentSpeed
+(
+    MechanismControl::MECHANISM_CONTROL_ID   controlItems
+) const
 {
+    // validate the request
+    if ( controlItems != MechanismControl::ALL_MOTORS )
+    {
+        Logger::GetLogger()->LogError( "Intake::SetOutput", "invalid Control Items option" );
+    }
+
     // Normally would call GetSelectedSensorVelocity, but there is no sensor, so we
     // would call GetMotorOutputPercent.  This isn't currently exposed in our APIs, so 
     // hard code for now 
@@ -170,12 +200,22 @@ double Intake::GetCurrentSpeed() const
 /// @brief  Return the target speed of the intake in degrees per second.  Since we 
 ///         don't have a sensor this will return -360 for clockwise rotations and 360 
 ///         for counter-clockwise rotations.
+/// @param [in] MechanismControl::MECHANISM_CONTROL_ID     controlItems: What item(s) are being requested
 /// @return double  speed in degrees per second (rotating mechansim)
 //==================================================================================
-double Intake::GetTargetSpeed() const 
+double Intake::GetTargetSpeed
+(
+    MechanismControl::MECHANISM_CONTROL_ID   controlItems
+) const
 {
+    // validate the request
+    if ( controlItems != MechanismControl::ALL_MOTORS )
+    {
+        Logger::GetLogger()->LogError( "Intake::SetOutput", "invalid Control Items option" );
+    }
+
     // No sensor so it is the same as the current
-    return GetCurrentPosition();
+    return GetCurrentPosition( controlItems );
 }
 
 
@@ -183,14 +223,22 @@ double Intake::GetTargetSpeed() const
 //==================================================================================================
 /// method: SetControlConstants
 /// @brief  Set the control constants (e.g. PIDF values).
+/// @param [in] MechanismControl::MECHANISM_CONTROL_ID     controlItems: What item(s) are being controlled
 /// @param [in] PIDData*   pid - the control constants
 /// @return void
 //==================================================================================================
 void Intake::SetControlConstants
 (
-    PIDData*        pid                 // <I> - PID control information
+    MechanismControl::MECHANISM_CONTROL_ID   controlItems,
+    PIDData*                                 pid                 
 )
 {
+    // validate the request
+    if ( controlItems != MechanismControl::ALL_MOTORS )
+    {
+        Logger::GetLogger()->LogError( "Intake::SetControlConstants", "invalid Control Items option" );
+    }
+
     // todo:  need to account for voltage mode
     // NO-OP since we can't run closed loop since we don't have sensors
 }

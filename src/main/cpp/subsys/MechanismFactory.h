@@ -26,6 +26,7 @@
 #pragma once
 
 // C++ Includes
+#include <map>
 #include <memory>
 
 // FRC includes
@@ -58,16 +59,11 @@ class MechanismFactory
 
 
 	private:
-		MechanismFactory();
-		virtual ~MechanismFactory();
+		MechanismFactory() = default;
+		virtual ~MechanismFactory() = default;
 
 		static MechanismFactory*	m_mechanismFactory;
 
-		IMechanism* m_wrist;
-		IMechanism* m_arm;
-		IMechanism* m_extender;
-		IMechanism* m_climber;
-		IMechanism* m_beak;
-		IMechanism* m_tail;
-			
+		std::map<MechanismTypes::MECHANISM_TYPE, std::shared_ptr<IMechanism>> m_mechanisms;
+
 };

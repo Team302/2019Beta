@@ -1,10 +1,16 @@
 #include "hw/DragonSparkMax.h"
 
+#include <memory>
+#include <frc/SpeedController.h>
 #include "frc/smartdashboard/SmartDashboard.h"
 
-DragonSparkMax::DragonSparkMax(int id, IDragonMotorController::MOTOR_CONTROLLER_TYPE deviceType, CANSparkMax::MotorType motorType, double gearRatio) :
+using namespace frc;
+using namespace std;
+using namespace rev;
+
+DragonSparkMax::DragonSparkMax(int id, MOTOR_CONTROLLER_USAGE deviceType, CANSparkMax::MotorType motorType, double gearRatio) :
     m_id(id),
-    m_spark(new CANSparkMax(id, motorType)),
+    m_spark( make_shared<CANSparkMax>(id, motorType)),
     m_controlMode(DRAGON_CONTROL_MODE::PERCENT_OUTPUT),
     m_outputRotationOffset(0.0),
     m_gearRatio(gearRatio),
@@ -34,7 +40,7 @@ double DragonSparkMax::GetRPS() const
     return m_spark->GetEncoder().GetVelocity() / 60.0;
 }
 
-IDragonMotorController::MOTOR_CONTROLLER_TYPE DragonSparkMax::GetType() const
+MOTOR_CONTROLLER_USAGE DragonSparkMax::GetType() const
 {
     return m_deviceType;
 }
@@ -42,6 +48,11 @@ IDragonMotorController::MOTOR_CONTROLLER_TYPE DragonSparkMax::GetType() const
 int DragonSparkMax::GetID() const
 {
     return m_id;
+}
+
+shared_ptr<SpeedController> DragonSparkMax::GetSpeedController() const
+{
+    return m_spark;
 }
 
 void DragonSparkMax::SetControlMode(IDragonMotorController::DRAGON_CONTROL_MODE mode)
@@ -140,7 +151,7 @@ void DragonSparkMax::Invert(bool inverted)
 
 CANError DragonSparkMax::Follow(DragonSparkMax* leader, bool invert)
 {
-    return m_spark->Follow(*const_cast<CANSparkMax*>(leader->GetSparkMax()), invert);
+    return m_spark.get()->Follow(dynamic_cast<CANSparkMax*>(leader->GetSpeedController().get()), invert);
 }
 
 double DragonSparkMax::GetRotationsWithGearNoOffset() const
@@ -154,11 +165,12 @@ void DragonSparkMax::InvertEncoder(bool inverted)
     // m_spark->GetEncoder().SetInverted(inverted);
 }
 
+/*
 CANSparkMax* DragonSparkMax::GetSparkMax()
 {
     return m_spark;
 }
-
+*/
 void DragonSparkMax::SetSmartCurrentLimiting(int limit)
 {
     m_spark->SetSmartCurrentLimit(limit);

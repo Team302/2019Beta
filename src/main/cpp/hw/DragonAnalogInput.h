@@ -7,24 +7,16 @@
 
 #include <vector>
 #include <frc/AnalogInput.h>
+#include <hw/usages/AnalogInputUsage.h>
 
 using namespace frc;
 
 class DragonAnalogInput : AnalogInput
 {
 	public:
-		enum ANALOG_SENSOR_TYPE
-		{
-			UNKNOWN_ANALOG_TYPE = -1,
-			EXTENDER_POTENTIOMETER,
-			PRESSURE_GAUGE,
-			MAX_ANALOG_TYPES
-		};
-
-
 		DragonAnalogInput
 		(
-			ANALOG_SENSOR_TYPE			type,
+			ANALOG_SENSOR_USAGE			type,
 			int 						analogID,
 		    float						voltageMin,
 		    float						voltageMax,
@@ -35,7 +27,7 @@ class DragonAnalogInput : AnalogInput
 		double GetInterpolatedValue() const;
 
 	private:
-		ANALOG_SENSOR_TYPE				m_type;
+		ANALOG_SENSOR_USAGE				m_type;
 		float							m_voltMin;
 		float							m_voltMax;
 		float							m_outMin;

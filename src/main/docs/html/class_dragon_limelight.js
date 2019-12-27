@@ -20,7 +20,7 @@ var class_dragon_limelight =
       [ "STREAM_SECOND_AND_MAIN", "class_dragon_limelight.html#a7e61244761896139b6cd1c72c5363f91adb9229484e3c6f059ab6eed5fcc7e184", null ]
     ] ],
     [ "DragonLimelight", "class_dragon_limelight.html#a003d6b9c140e33c5d4291075b16c868a", null ],
-    [ "DragonLimelight", "class_dragon_limelight.html#a66837a629d679ab1c6de8f80e22abdcb", null ],
+    [ "DragonLimelight", "class_dragon_limelight.html#a2c3c58797e74f7eaad7a1d8fb8b7cebd", null ],
     [ "~DragonLimelight", "class_dragon_limelight.html#ad524ba4ce87697fa883882f5c41e9b60", null ],
     [ "Get3DSolve", "class_dragon_limelight.html#a381f0a9dc0d7318e84f29942513845cb", null ],
     [ "GetConfidence", "class_dragon_limelight.html#aac8b4e5ba88a7e0539c5b6cbc6974471", null ],
@@ -30,6 +30,7 @@ var class_dragon_limelight =
     [ "GetTargetHorizontalOffset", "class_dragon_limelight.html#a47d04ae8a2230a52887d696109f37eed", null ],
     [ "GetTargetSkew", "class_dragon_limelight.html#a9c2b9b606d2643467df517a786545e49", null ],
     [ "GetTargetVerticalOffset", "class_dragon_limelight.html#ae8f2120ffbf5207fd7053860c6a591b0", null ],
+    [ "GetUsage", "class_dragon_limelight.html#a2a2135361297f084ea5b0bcb2eaa8f92", null ],
     [ "HasTarget", "class_dragon_limelight.html#a61df6005aac9e2f90bfe5a8ed40f3456", null ],
     [ "PrintValues", "class_dragon_limelight.html#a223f0bdf47eb46ba0085cdbc17a2fbed", null ],
     [ "SetCamMode", "class_dragon_limelight.html#ac6e89317d90de2e9c7c90eaa9293cab4", null ],

@@ -14,14 +14,14 @@ Inherits AnalogInput\&.
 
 .in +1c
 .ti -1c
-.RI "enum \fBANALOG_SENSOR_TYPE\fP { \fBUNKNOWN_ANALOG_TYPE\fP = -1, \fBEXTENDER_POTENTIOMETER\fP, \fBPRESSURE_GAUGE\fP, \fBMAX_ANALOG_TYPES\fP }"
+.RI "enum \fBANALOG_SENSOR_USAGE\fP { \fBUNKNOWN_ANALOG_TYPE\fP = -1, \fBEXTENDER_POTENTIOMETER\fP, \fBPRESSURE_GAUGE\fP, \fBMAX_ANALOG_TYPES\fP }"
 .br
 .in -1c
 .SS "Public Member Functions"
 
 .in +1c
 .ti -1c
-.RI "\fBDragonAnalogInput\fP (\fBANALOG_SENSOR_TYPE\fP type, int analogID, float voltageMin, float voltageMax, float outputMin, float outputMax)"
+.RI "\fBDragonAnalogInput\fP (\fBANALOG_SENSOR_USAGE\fP type, int analogID, float voltageMin, float voltageMax, float outputMin, float outputMax)"
 .br
 .ti -1c
 .RI "virtual \fB~DragonAnalogInput\fP ()"
@@ -35,7 +35,7 @@ Inherits AnalogInput\&.
 Definition at line 13 of file DragonAnalogInput\&.h\&.
 .SH "Member Enumeration Documentation"
 .PP 
-.SS "enum \fBDragonAnalogInput::ANALOG_SENSOR_TYPE\fP"
+.SS "enum \fBDragonAnalogInput::ANALOG_SENSOR_USAGE\fP"
 
 .PP
 \fBEnumerator\fP
@@ -52,7 +52,7 @@ Definition at line 13 of file DragonAnalogInput\&.h\&.
 Definition at line 16 of file DragonAnalogInput\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "DragonAnalogInput::DragonAnalogInput (\fBANALOG_SENSOR_TYPE\fP type, int analogID, float voltageMin, float voltageMax, float outputMin, float outputMax)"
+.SS "DragonAnalogInput::DragonAnalogInput (\fBANALOG_SENSOR_USAGE\fP type, int analogID, float voltageMin, float voltageMax, float outputMin, float outputMax)"
 
 .PP
 Definition at line 8 of file DragonAnalogInput\&.cpp\&.

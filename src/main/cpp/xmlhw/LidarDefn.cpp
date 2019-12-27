@@ -24,7 +24,7 @@
 #include <frc/SmartDashboard/SmartDashboard.h>
 
 // Team 302 includes
-#include <hw/LidarFactory.h>
+#include <hw/factories/LidarFactory.h>
 #include <hw/DragonLidar.h>
 #include <xmlhw/LidarDefn.h>
 #include <utils/HardwareIDValidation.h>

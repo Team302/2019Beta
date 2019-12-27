@@ -22,7 +22,7 @@
 // FRC includes
 
 // Team 302 includes
-#include <hw/IDragonAnglePositionSensor.h>
+#include <hw/interfaces/IDragonAnglePositionSensor.h>
 
 // Third Party Includes
 

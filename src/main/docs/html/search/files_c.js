@@ -1,11 +1,7 @@
 var searchData=
 [
-  ['scaledaxis_2ecpp_908',['ScaledAxis.cpp',['../_scaled_axis_8cpp.html',1,'']]],
-  ['scaledaxis_2eh_909',['ScaledAxis.h',['../_scaled_axis_8h.html',1,'']]],
-  ['scaleddeadbandvalue_2ecpp_910',['ScaledDeadbandValue.cpp',['../_scaled_deadband_value_8cpp.html',1,'']]],
-  ['scaleddeadbandvalue_2eh_911',['ScaledDeadbandValue.h',['../_scaled_deadband_value_8h.html',1,'']]],
-  ['servodefn_2ecpp_912',['ServoDefn.cpp',['../_servo_defn_8cpp.html',1,'']]],
-  ['servodefn_2eh_913',['ServoDefn.h',['../_servo_defn_8h.html',1,'']]],
-  ['squaredprofile_2ecpp_914',['SquaredProfile.cpp',['../_squared_profile_8cpp.html',1,'']]],
-  ['squaredprofile_2eh_915',['SquaredProfile.h',['../_squared_profile_8h.html',1,'']]]
+  ['robot_2ecpp_1168',['Robot.cpp',['../_robot_8cpp.html',1,'']]],
+  ['robot_2eh_1169',['Robot.h',['../_robot_8h.html',1,'']]],
+  ['robotdefn_2ecpp_1170',['RobotDefn.cpp',['../_robot_defn_8cpp.html',1,'']]],
+  ['robotdefn_2eh_1171',['RobotDefn.h',['../_robot_defn_8h.html',1,'']]]
 ];

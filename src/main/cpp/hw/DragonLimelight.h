@@ -26,8 +26,8 @@
 #include <networktables/NetworkTable.h>
 
 // Team 302 includes
-#include <hw/IDragonSensor.h>
-#include <hw/IDragonDistanceSensor.h>
+#include <hw/interfaces/IDragonSensor.h>
+#include <hw/interfaces/IDragonDistanceSensor.h>
 
 // Third Party Includes
 
@@ -70,11 +70,12 @@ class DragonLimelight : public IDragonSensor, public IDragonDistanceSensor
         DragonLimelight() = delete;
         DragonLimelight
         (
-            std::string     tableName,                  /// <I> - network table name
-            double          mountingHeight,             /// <I> - mounting height of the limelight
-            double          mountingHorizontalOffset,   /// <I> - mounting horizontal offset from the middle of the robot 
-            double          mountingAngle,              /// <I> - mounting angle of the camera
-            double          targetHeight                /// <I> - height the target
+            IDragonSensor::SENSOR_USAGE usage,
+            std::string                 tableName,                  /// <I> - network table name
+            double                      mountingHeight,             /// <I> - mounting height of the limelight
+            double                      mountingHorizontalOffset,   /// <I> - mounting horizontal offset from the middle of the robot 
+            double                      mountingAngle,              /// <I> - mounting angle of the camera
+            double                      targetHeight                /// <I> - height the target
         );
 
         ///-----------------------------------------------------------------------------------
@@ -108,6 +109,13 @@ class DragonLimelight : public IDragonSensor, public IDragonDistanceSensor
         double GetTargetSkew() const;
         double GetPipelineLatency() const;
         std::vector<double> Get3DSolve() const;
+
+        ///-----------------------------------------------------------------------
+        /// Method:      GetUsage
+        /// Description: Indicate what the sensor is used for
+        /// Returns:     SENSOR_USAGE    sensor usage 
+        ///-----------------------------------------------------------------------
+        IDragonSensor::SENSOR_USAGE GetUsage() const override;
 
         // Setters
         void SetTargetHeight
@@ -144,6 +152,7 @@ class DragonLimelight : public IDragonSensor, public IDragonDistanceSensor
 
 
     private:
+        IDragonSensor::SENSOR_USAGE m_usage;
         std::shared_ptr<nt::NetworkTable> m_networktable;
         double m_mountHeight;
         double m_mountingHorizontalOffset;

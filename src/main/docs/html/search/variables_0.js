@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['m_5fdeadband_5fvalue_1173',['M_DEADBAND_VALUE',['../class_i_deadband.html#a45b3ece586ef6217fe85721c3265056a',1,'IDeadband']]]
+  ['direction_1535',['direction',['../struct_vector2.html#a2d403cce090895f6fd3c02489fb96903',1,'Vector2']]],
+  ['distances_1536',['distances',['../class_field_measurement.html#a36fc6125b8dce9f3062683b460b35e9f',1,'FieldMeasurement']]]
 ];

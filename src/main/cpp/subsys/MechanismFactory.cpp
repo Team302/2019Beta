@@ -24,11 +24,14 @@
 //========================================================================================================
 
 // C++ Includes
+#include <map>
 #include <memory>
 
 // FRC includes
 
 // Team 302 includes
+#include <hw/interfaces/IDragonMotorController.h>
+#include <hw/usages/MotorControllerUsage.h>
 #include <subsys/MechanismFactory.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismTypes.h>
@@ -68,31 +71,50 @@ shared_ptr<IMechanism>  MechanismFactory::GetIMechanism
 {
 	shared_ptr<IMechanism> subsys = nullptr;
 
-    switch ( type )
+    // See if the mechanism was created already, if it wasn't create it
+    auto it = m_mechanisms.find( type );  
+    if ( it != m_mechanisms.end() )      //  found
     {
-        case MechanismTypes::WRIST:
-        break;
+        subsys = it->second;
+    }
+    else
+    {
+        // Create the mechanism
+        switch ( type )
+        {
+            case MechanismTypes::MECHANISM_TYPE::CHASSIS:
+            break;
 
-        case MechanismTypes::INTAKE:
-        break;
+            case MechanismTypes::MECHANISM_TYPE::SHOOTER:
+            break;
 
-        case MechanismTypes::ARM:
-        break;
+            case MechanismTypes::MECHANISM_TYPE::ELEVATOR:
+            break;
 
-        case MechanismTypes::EXTENDER:
-        break;
+            case MechanismTypes::MECHANISM_TYPE::WRIST:
+            break;
 
-        case MechanismTypes::CLIMBER:
-        break;
+            case MechanismTypes::MECHANISM_TYPE::INTAKE:
+            break;
 
-        case MechanismTypes::BEAK:
-        break;
+            case MechanismTypes::MECHANISM_TYPE::ARM:
+            break;
 
-        case MechanismTypes::TAIL:
-        break;
+            case MechanismTypes::MECHANISM_TYPE::EXTENDER:
+            break;
 
-        default:
-        break;
+            case MechanismTypes::MECHANISM_TYPE::CLIMBER:
+            break;
+
+            case MechanismTypes::MECHANISM_TYPE::BEAK:
+            break;
+
+            case MechanismTypes::MECHANISM_TYPE::TAIL:
+            break;
+
+            default:
+            break;
+        }
     }
 
 	return subsys;
@@ -101,49 +123,73 @@ shared_ptr<IMechanism>  MechanismFactory::GetIMechanism
 
 
 //=====================================================================================
-/// Method:         MechanismFactory
-/// Description:    Constructor for this singleton factory that initialized memory usage
+/// Method:         CreateIMechanism
+/// Description:    Find or create the requested mechanism
+/// Returns:        IMechanism*     pointer to the mechanism or nullptr if mechanism 
+///                                 doesn't exist and cannot be created.
 //=====================================================================================
-MechanismFactory::MechanismFactory() 
+shared_ptr<IMechanism>  MechanismFactory::CreateIMechanism
+(
+	MechanismTypes::MECHANISM_TYPE			type,
+    const IDragonMotorControllerMap&        motorControllers,   // <I> - Motor Controllers
+    const DragonSolenoidVector&             solenoids,          // <I> - Solenoids
+    const DragonDigitalInputVector&         digitalInputs,      // <I> - Digital Inputs
+    const DragonAnalogInputVector&          analogInputs,       // <I> - Analog Inputs
+    const DragonServoVector&                servos              // <I> - servos
+
+)
 {
-    m_wrist    = nullptr;
-	m_arm      = nullptr;
-	m_extender = nullptr;
-	m_climber  = nullptr;
-	m_beak     = nullptr;
-	m_tail     = nullptr;
+	shared_ptr<IMechanism> subsys = nullptr;
+
+    // See if the mechanism was created already, if it wasn't create it
+    auto it = m_mechanisms.find( type );  
+    if ( it != m_mechanisms.end() )      //  found
+    {
+        subsys = it->second;
+    }
+    else
+    {
+        // Create the mechanism
+        switch ( type )
+        {
+            case MechanismTypes::MECHANISM_TYPE::CHASSIS:
+            break;
+
+            case MechanismTypes::MECHANISM_TYPE::SHOOTER:
+            break;
+
+            case MechanismTypes::MECHANISM_TYPE::ELEVATOR:
+            break;
+
+            case MechanismTypes::MECHANISM_TYPE::WRIST:
+            break;
+
+            case MechanismTypes::MECHANISM_TYPE::INTAKE:
+            break;
+
+            case MechanismTypes::MECHANISM_TYPE::ARM:
+            break;
+
+            case MechanismTypes::MECHANISM_TYPE::EXTENDER:
+            break;
+
+            case MechanismTypes::MECHANISM_TYPE::CLIMBER:
+            break;
+
+            case MechanismTypes::MECHANISM_TYPE::BEAK:
+            break;
+
+            case MechanismTypes::MECHANISM_TYPE::TAIL:
+            break;
+
+            default:
+            break;
+        }
+    }
+
+	return subsys;
 }
 
 
-//=====================================================================================
-/// Method:         ~MechanismFactory
-/// Description:    Destructor for this singleton factory that cleans up memory usage
-//=====================================================================================
-MechanismFactory::~MechanismFactory()
-{
-    if ( m_wrist != nullptr )
-    {
-        delete m_wrist;
-    }
-    if ( m_arm != nullptr )
-    {
-        delete m_arm;
-    }
-    if ( m_extender != nullptr )
-    {
-        delete m_extender;
-    }    
-    if ( m_climber != nullptr )
-    {
-        delete m_climber;
-    }
-    if ( m_beak != nullptr )
-    {
-        delete m_beak;
-    }
-    if ( m_tail != nullptr )
-    {
-        delete m_tail;
-    }
-}
+
 

@@ -1,8 +1,10 @@
 *************************************************************************************************************
- #  Team 302 FIRST robot Template Project
+ #  Team 302 FIRST Robot Template Project
 *************************************************************************************************************
 
-This has the base code that will allow competition specific code to be developed quickly and reliably.  The key components are:
+This has the base code that will allow competition specific code to be developed quickly and reliably.  This started as a template directory, but evolved into our beta test repository for 2019 Control System Beta, so it was renamed appropriately.   Additional code items was pulled in besides the template stuff to test with the various robots available.
+
+The key components are:
 
 ## Robot Configuration via XML file
 The config folder contains:

@@ -1,4 +1,5 @@
 #include "hw/DragonSparkMax.h"
+#include <hw/usages/MotorControllerUsage.h>
 
 #include <memory>
 #include <frc/SpeedController.h>
@@ -8,8 +9,13 @@ using namespace frc;
 using namespace std;
 using namespace rev;
 
-DragonSparkMax::DragonSparkMax(int id, MOTOR_CONTROLLER_USAGE deviceType, CANSparkMax::MotorType motorType, double gearRatio) :
-    m_id(id),
+DragonSparkMax::DragonSparkMax
+(
+    int id, 
+    MotorControllerUsage::MOTOR_CONTROLLER_USAGE deviceType, 
+    CANSparkMax::MotorType motorType, 
+    double gearRatio 
+) : m_id(id),
     m_spark( make_shared<CANSparkMax>(id, motorType)),
     m_controlMode(DRAGON_CONTROL_MODE::PERCENT_OUTPUT),
     m_outputRotationOffset(0.0),
@@ -40,7 +46,7 @@ double DragonSparkMax::GetRPS() const
     return m_spark->GetEncoder().GetVelocity() / 60.0;
 }
 
-MOTOR_CONTROLLER_USAGE DragonSparkMax::GetType() const
+MotorControllerUsage::MOTOR_CONTROLLER_USAGE DragonSparkMax::GetType() const
 {
     return m_deviceType;
 }
@@ -151,7 +157,9 @@ void DragonSparkMax::Invert(bool inverted)
 
 CANError DragonSparkMax::Follow(DragonSparkMax* leader, bool invert)
 {
-    return m_spark.get()->Follow(dynamic_cast<CANSparkMax*>(leader->GetSpeedController().get()), invert);
+    CANSparkMax* thisMax = m_spark.get();
+    CANSparkMax* master  = leader->GetSparkMax().get();
+    return thisMax->Follow( *master, invert);
 }
 
 double DragonSparkMax::GetRotationsWithGearNoOffset() const
@@ -165,12 +173,11 @@ void DragonSparkMax::InvertEncoder(bool inverted)
     // m_spark->GetEncoder().SetInverted(inverted);
 }
 
-/*
-CANSparkMax* DragonSparkMax::GetSparkMax()
+shared_ptr<CANSparkMax> DragonSparkMax::GetSparkMax() const
 {
     return m_spark;
 }
-*/
+
 void DragonSparkMax::SetSmartCurrentLimiting(int limit)
 {
     m_spark->SetSmartCurrentLimit(limit);

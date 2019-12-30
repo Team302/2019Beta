@@ -43,6 +43,7 @@
 #include <utils/Logger.h>
 
 #include <xmlhw/MechanismDefn.h>
+#include <hw/interfaces/IDragonMotorController.h>
 
 // Third Party Includes
 #include <pugixml/pugixml.hpp>
@@ -137,6 +138,7 @@ shared_ptr<IMechanism> MechanismDefn::ParseXML
     }
 
     // Parse/validate subobject xml
+    IDragonMotorControllerMap motors;
     for (xml_node child = mechanismNode.first_child(); child  && !hasError; child = child.next_sibling())
     {
         if ( strcmp( child.name(), "motor") == 0 )
@@ -149,6 +151,10 @@ shared_ptr<IMechanism> MechanismDefn::ParseXML
             if ( motorXML != nullptr )
             {
                 auto motor = motorXML->ParseXML(child);
+                if ( motor.get() != nullptr )
+                {
+                    motors[ motor.get()->GetType() ] =  motor ;
+                }
             }
             else
             {

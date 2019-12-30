@@ -1,4 +1,5 @@
-#include "hw/DragonTalon.h"
+#include <hw/DragonTalon.h>
+#include <hw/usages/MotorControllerUsage.h>
 #include <frc/SpeedController.h>
 #include <memory>
 
@@ -8,20 +9,22 @@ using namespace ctre::phoenix::motorcontrol::can;
 using namespace ctre::phoenix::motorcontrol;
 using namespace ctre::phoenix;
 
-DragonTalon::DragonTalon(MOTOR_CONTROLLER_USAGE deviceType, int deviceID, int countsPerRev, double gearRatio) :
-    m_talon( make_shared<WPI_TalonSRX>(deviceID)),
-    m_controlMode(TALON_CONTROL_MODE::PERCENT),
-	m_type(deviceType),
-	m_id(deviceID),
-	m_countsPerRev(countsPerRev),
-    m_tickOffset(0),
-	m_gearRatio(gearRatio)
+DragonTalon::DragonTalon
+(
+	MotorControllerUsage::MOTOR_CONTROLLER_USAGE deviceType, 
+	int deviceID, 
+	int countsPerRev, 
+	double gearRatio ) : m_talon( make_shared<WPI_TalonSRX>(deviceID)),
+    					 m_controlMode(TALON_CONTROL_MODE::PERCENT),
+						 m_type(deviceType),
+						 m_id(deviceID),
+						 m_countsPerRev(countsPerRev),
+    					 m_tickOffset(0),
+						 m_gearRatio(gearRatio)
 {
 	// m_tickOffset
 	// m_talon->GetSelectedSensorPo
 	m_tickOffset = m_talon->GetSelectedSensorPosition();
-	printf("Im constructing a dragon talon id: %d, type: %d \n", deviceID, deviceType);
-	printf("Gear ratio: %f \n", gearRatio);
 }
 
 double DragonTalon::GetRotations() const
@@ -157,7 +160,7 @@ void DragonTalon::SetSensorInverted(bool inverted)
     m_talon->SetSensorPhase(inverted);
 }
 
-MOTOR_CONTROLLER_USAGE DragonTalon::GetType() const
+MotorControllerUsage::MOTOR_CONTROLLER_USAGE DragonTalon::GetType() const
 {
 	return m_type;
 }

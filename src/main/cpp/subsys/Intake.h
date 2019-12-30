@@ -30,7 +30,7 @@
 // FRC includes
 
 // Team 302 includes
-#include <hw/IDragonMotorController.h>
+#include <hw/interfaces/IDragonMotorController.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismControl.h>
 #include <subsys/MechanismTypes.h>
@@ -70,14 +70,12 @@ class Intake : public IMechanism
         //==================================================================================
         /// method:     SetOutput
         /// @brief      Run intake as defined 
-        /// @param [in] MechanismControl::MECHANISM_CONTROL_ID     controlItems: What item(s) are being controlled
         /// @param [in] MechanismControl::MECHANISM_CONTROL_TYPE   controlType:  How are the item(s) being controlled
         /// @param [in] double                                     value:        Target (units are based on the controlType)
         /// @return     void
         //==================================================================================
         void SetOutput
         (
-            MechanismControl::MECHANISM_CONTROL_ID   controlItems,
             MechanismControl::MECHANISM_CONTROL_TYPE controlType,
             double                                   value       
         ) override;
@@ -88,13 +86,9 @@ class Intake : public IMechanism
         /// @brief  Return the current position of the intake in degrees.  Since we don't have
         ///         a sensor this will return -90 for clockwise rotations and 90 for 
         ///         counter-clockwise rotations.
-        /// @param [in] MechanismControl::MECHANISM_CONTROL_ID     controlItems: What item(s) are being requested
         /// @return double  position in degrees (rotating mechansim)
         //==================================================================================
-        double GetCurrentPosition
-        (
-            MechanismControl::MECHANISM_CONTROL_ID   controlItems
-        ) const override;
+        double GetCurrentPosition() const override;
 
 
         //==================================================================================
@@ -102,50 +96,39 @@ class Intake : public IMechanism
         /// @brief  Return the target position of the intake in degrees.  Since we don't have
         ///         a sensor this will return -90 for clockwise rotations and 90 for 
         ///         counter-clockwise rotations.
-        /// @param [in] MechanismControl::MECHANISM_CONTROL_ID     controlItems: What item(s) are being requested
         /// @return double  position in degrees (rotating mechansim)
         //==================================================================================
-        double GetTargetPosition
-        (
-            MechanismControl::MECHANISM_CONTROL_ID   controlItems
-        ) const override;
+        double GetTargetPosition() const override;
+
 
         //==================================================================================
         /// method: GetCurrentSpeed
         /// @brief  Return the current speed of the intake in degrees per second.  Since we 
         ///         don't have a sensor this will return -360 for clockwise rotations and 360 
         ///         for counter-clockwise rotations.
-        /// @param [in] MechanismControl::MECHANISM_CONTROL_ID     controlItems: What item(s) are being requested
         /// @return double  speed in degrees per second (rotating mechansim)
         //==================================================================================
-        double GetCurrentSpeed
-        (
-            MechanismControl::MECHANISM_CONTROL_ID   controlItems
-        ) const override;
+        double GetCurrentSpeed() const override;
+
 
         //==================================================================================
         /// method: GetTargetSpeed
         /// @brief  Return the target speed of the intake in degrees per second.  Since we 
         ///         don't have a sensor this will return -360 for clockwise rotations and 360 
         ///         for counter-clockwise rotations.
-        /// @param [in] MechanismControl::MECHANISM_CONTROL_ID     controlItems: What item(s) are being requested
         /// @return double  speed in degrees per second (rotating mechansim)
         //==================================================================================
-        double GetTargetSpeed
-        (
-            MechanismControl::MECHANISM_CONTROL_ID   controlItems
-        ) const override;
+        double GetTargetSpeed() const override;
+
 
         //==================================================================================================
         /// method: SetControlConstants
         /// @brief  Set the control constants (e.g. PIDF values).
-        /// @param [in] MechanismControl::MECHANISM_CONTROL_ID     controlItems: What item(s) are being controlled
         /// @param [in] PIDData*   pid - the control constants
         /// @return void
         //==================================================================================================
         void SetControlConstants
         (
-            MechanismControl::MECHANISM_CONTROL_ID   controlItems,
             PIDData*                                 pid               
         ) override;
         

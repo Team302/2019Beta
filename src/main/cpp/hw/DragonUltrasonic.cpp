@@ -52,6 +52,7 @@ DragonUltrasonic::DragonUltrasonic
 ///-----------------------------------------------------------------------
 double DragonUltrasonic::GetDistance() const 
 {
+    // todo:  these constants should be attributes for conversion
 	return ((m_input->GetVoltage() / 0.000977) * 0.393701) / 3.454; //Convert volts to centimeters and then to inches.
 }
 

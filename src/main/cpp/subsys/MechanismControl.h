@@ -23,15 +23,6 @@
 class MechanismControl
 {
 	public:
-
-        enum MECHANISM_CONTROL_ID
-        {
-            ALL_MOTORS,
-            LEFT_MOTORS,
-            RIGHT_MOTORS,
-            MAX_CONTROL_IDS
-        };
-
         enum MECHANISM_CONTROL_TYPE
         {
             PERCENT_OUTPUT,             /// Open Loop Control - values are between -1.0 and 1.0

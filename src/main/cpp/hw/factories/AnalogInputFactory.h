@@ -26,6 +26,7 @@
 
 // Team 302 includes
 #include <hw/DragonAnalogInput.h>
+#include <hw/usages/AnalogInputUsage.h>
 
 
 // Third Party Includes
@@ -67,6 +68,6 @@ class AnalogInputFactory
 		void CreateUsageMap();
 
 		static AnalogInputFactory*	m_factory;
-		std::map <std::string, DragonAnalogInput::ANALOG_SENSOR_USAGE> m_usageMap;
+		std::map <std::string, AnalogInputUsage::ANALOG_SENSOR_USAGE> m_usageMap;
 
 };

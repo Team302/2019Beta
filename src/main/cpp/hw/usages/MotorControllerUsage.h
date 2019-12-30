@@ -17,6 +17,9 @@
 #pragma once
 
 // C++ Includes
+#include <map>
+#include <memory>
+#include <string>
 
 // FRC includes
 
@@ -25,26 +28,50 @@
 
 // Third Party Includes
 
-/// @enum MOTOR_CONTROLLER_USAGE
-/// @brief Defines motor usages.  This should be modified for each robot.
-enum MOTOR_CONTROLLER_USAGE
+
+
+class MotorControllerUsage
 {
-    UNKNOWN_MOTOR_CONTROLLER_USAGE = -1,
-    FRONT_LEFT_DRIVE,
-    MIDDLE_LEFT_DRIVE,
-    BACK_LEFT_DRIVE,
-    FRONT_RIGHT_DRIVE,
-    MIDDLE_RIGHT_DRIVE,
-    BACK_RIGHT_DRIVE,
-    ARM_MASTER,
-    ARM_SLAVE,
-    ARM_EXTENSION,
-    WRIST,
-    INTAKE,
-    ELEVATOR_WINCH,
-    ELEVATOR_DRIVE,
-    HATCH_MECH_MOTOR,
-    MAX_MOTOR_CONTROLLER_USAGES
+
+    public:
+
+        /// @enum MOTOR_CONTROLLER_USAGE
+        /// @brief Defines motor usages.  This should be modified for each robot.
+        enum MOTOR_CONTROLLER_USAGE
+        {
+            UNKNOWN_MOTOR_CONTROLLER_USAGE = -1,
+            FRONT_LEFT_DRIVE,
+            MIDDLE_LEFT_DRIVE,
+            BACK_LEFT_DRIVE,
+            FRONT_RIGHT_DRIVE,
+            MIDDLE_RIGHT_DRIVE,
+            BACK_RIGHT_DRIVE,
+            ARM_MASTER,
+            ARM_SLAVE,
+            ARM_EXTENSION,
+            WRIST,
+            INTAKE,
+            ELEVATOR_WINCH,
+            ELEVATOR_DRIVE,
+            HATCH_MECH_MOTOR,
+            MAX_MOTOR_CONTROLLER_USAGES
+        };
+
+
+        static MotorControllerUsage* GetInstance();
+
+        MOTOR_CONTROLLER_USAGE GetUsage
+        ( 
+            std::string         usageString
+        );
+
+    private:
+        static MotorControllerUsage*    m_instance;
+        MotorControllerUsage();
+        ~MotorControllerUsage();
+        
+		std::map <std::string, MOTOR_CONTROLLER_USAGE> m_usageMap;
+
 };
 
 

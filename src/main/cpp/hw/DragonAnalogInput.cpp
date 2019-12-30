@@ -6,12 +6,12 @@
 
 DragonAnalogInput::DragonAnalogInput
 (
-	ANALOG_SENSOR_USAGE			type,
-	int 						analogID,
-	float						voltageMin,
-	float						voltageMax,
-	float 						outputMin,
-	float						outputMax
+	AnalogInputUsage::ANALOG_SENSOR_USAGE	type,
+	int 									analogID,
+	float									voltageMin,
+	float									voltageMax,
+	float 									outputMin,
+	float									outputMax
 ) : AnalogInput( analogID),
     m_type( type ),
 	m_voltMin( voltageMin ),

@@ -6,12 +6,13 @@
 */
    
 #include <iostream>
+#include <string.h>
 
 #include <hw/LED.h>
-#include <hw/LEDFactory.h>
+#include <hw/factories/LEDFactory.h>
 #include <xmlhw/LEDDefn.h>
 #include <pugixml/pugixml.hpp>
-#include <string.h>
+
 /*----------------------------------------------------------------------------------------
 Method:     ParseXML
 Description: Parse a pcm XML element and create a LED* from its definition

@@ -79,7 +79,7 @@ void SuperDrive::Init(PrimitiveParams* params)
 	m_reachedTargetSpeed = false;
 	m_accelDecelTime = 0;
 
-	m_currentSpeed = m_chassis->GetCurrentSpeed( MechanismControl::MECHANISM_CONTROL_ID::ALL_MOTORS);
+	m_currentSpeed = m_chassis->GetCurrentSpeed();
 
 	//Double check that the current speed matches the sign of the target speed (if not, thats bad. make it 0)
 	if (m_targetSpeed > 0) 
@@ -98,11 +98,9 @@ void SuperDrive::Init(PrimitiveParams* params)
 	}
 
 	//m_startHeading = m_chassis->GetHeading();
-	m_chassis->SetOutput( MechanismControl::MECHANISM_CONTROL_ID::LEFT_MOTORS,
-	                      MechanismControl::MECHANISM_CONTROL_TYPE::VELOCITY_INCH,
+	m_chassis->SetOutput( MechanismControl::MECHANISM_CONTROL_TYPE::VELOCITY_INCH,
 						  m_leftSpeed );
-	m_chassis->SetOutput( MechanismControl::MECHANISM_CONTROL_ID::RIGHT_MOTORS,
-	                      MechanismControl::MECHANISM_CONTROL_TYPE::VELOCITY_INCH,
+	m_chassis->SetOutput( MechanismControl::MECHANISM_CONTROL_TYPE::VELOCITY_INCH,
 						  m_rightSpeed );
 						  
     //m_chassis->SetVelocityParams(PROPORTIONAL_COEFF, INTREGRAL_COEFF, DERIVATIVE_COEFF, FEET_FORWARD_COEFF,

@@ -94,7 +94,7 @@ class DragonMotorControllerFactory
 			bool 											enableCurrentLimit		/// enable current limiting or not
 		);
 
-private:
+	private:
 
 		//=======================================================================================
 		/// Method:          GetController
@@ -107,8 +107,7 @@ private:
 			int													canID		/// Motor Controller CAN ID
 		) const;
 
-    void CreateUsageMap();
-    void CreateTypeMap();
+		void CreateTypeMap();
 
         DragonMotorControllerFactory();
         ~DragonMotorControllerFactory() = default;
@@ -116,7 +115,6 @@ private:
         static DragonMotorControllerFactory*                                    m_instance;
 
 		std::array<std::shared_ptr<IDragonMotorController>,63>				    m_canControllers;
-        std::map<std::string, MOTOR_CONTROLLER_USAGE>    m_usageMap;
         std::map<std::string, DragonMotorControllerFactory::MOTOR_TYPE>         m_typeMap;
 
 

@@ -17,6 +17,9 @@
 #pragma once
 
 // C++ Includes
+#include <map>
+#include <memory>
+#include <string>
 
 // FRC includes
 
@@ -25,12 +28,33 @@
 
 // Third Party Includes
 
-/// @enum ANALOG_SENSOR_USAGE
-/// @brief Defines analog input sensor usages.  This should be modified for each robot.
-enum ANALOG_SENSOR_USAGE
+class AnalogInputUsage
 {
-    UNKNOWN_ANALOG_TYPE = -1,
-    EXTENDER_POTENTIOMETER,
-    PRESSURE_GAUGE,
-    MAX_ANALOG_TYPES
+
+    public:
+
+        /// @enum ANALOG_SENSOR_USAGE
+        /// @brief Defines analog input sensor usages.  This should be modified for each robot.
+        enum ANALOG_SENSOR_USAGE
+        {
+            UNKNOWN_ANALOG_TYPE = -1,
+            EXTENDER_POTENTIOMETER,
+            PRESSURE_GAUGE,
+            MAX_ANALOG_TYPES
+        };
+
+        static AnalogInputUsage* GetInstance();
+
+        ANALOG_SENSOR_USAGE GetUsage
+        ( 
+            std::string         usageString
+        );
+
+    private:
+        static AnalogInputUsage*    m_instance;
+        AnalogInputUsage();
+        ~AnalogInputUsage();
+        
+		std::map <std::string, ANALOG_SENSOR_USAGE> m_usageMap;
+
 };

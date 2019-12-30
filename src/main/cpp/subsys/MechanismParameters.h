@@ -23,15 +23,6 @@
 class MechanismParameters
 {
 	public:
-
-        enum MECHANISM_CONTROL_ID
-        {
-            ALL_MOTORS,
-            LEFT_MOTORS,
-            RIGHT_MOTORS,
-            MAX_CONTROL_IDS
-        };
-
         //==================================================================================
         /// enum:           MECHANISM_PARAM_TYPE
         /// description:    Various parameters for mechanisms

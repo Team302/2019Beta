@@ -15,68 +15,45 @@
 //====================================================================================================================================================
 
 // C++ Includes
+#include <map>
 #include <memory>
 #include <string>
 
 // FRC includes
-#include <frc/Timer.h>
 
 // Team 302 includes
-#include <auton/DoNothing.h>
-#include <auton/PrimitiveParams.h>
-#include <auton/IPrimitive.h>
-#include <subsys/MechanismFactory.h>
-#include <subsys/MechanismControl.h>
-#include <subsys/IMechanism.h>
-#include <utils/Logger.h>
+#include <hw/usages/AnalogInputUsage.h>
 
 // Third Party Includes
 
-
 using namespace std;
-using namespace frc;
 
-//Includes
-#include <cmath>
-#include <iostream>
-
-//Team302 includes
-#include <auton/DriveToWall.h>
-#include <subsys/MechanismFactory.h>
-#include <subsys/IChassis.h>
-
-DriveToWall::DriveToWall() :
-	SuperDrive(),
-	m_minimumTime(0),
-	m_timeRemaining(0),
-	m_underSpeedCounts(0)
+AnalogInputUsage* AnalogInputUsage::m_instance = nullptr;
+AnalogInputUsage* AnalogInputUsage::GetInstance()
 {
+    if ( m_instance == nullptr )
+    {
+        m_instance = new AnalogInputUsage();
+    }
+    return m_instance;
 }
 
-void DriveToWall::Init(PrimitiveParams* params) 
+AnalogInputUsage::AnalogInputUsage()
 {
-	SuperDrive::Init(params);
-	m_timeRemaining = params->GetTime();
-	m_underSpeedCounts = 0;
-	m_minimumTime = 0.3;
+    m_usageMap["EXTENDER_POTENTIOMETER"]  = AnalogInputUsage::ANALOG_SENSOR_USAGE::EXTENDER_POTENTIOMETER;
+    m_usageMap["PRESSURE_GAUGE"] = AnalogInputUsage::ANALOG_SENSOR_USAGE::PRESSURE_GAUGE;
 }
 
-void DriveToWall::Run() 
+AnalogInputUsage::~AnalogInputUsage()
 {
-	if (m_minimumTime <= 0) 
-	{
-		if (std::abs( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::CHASSIS)->GetCurrentSpeed()) < SPEED_THRESHOLD) 
-		{
-			m_underSpeedCounts++;
-		}
-	}
-
-	m_minimumTime -= IPrimitive::LOOP_LENGTH;
-	m_timeRemaining -= IPrimitive::LOOP_LENGTH;
+    m_usageMap.clear();
 }
 
-bool DriveToWall::IsDone() 
+AnalogInputUsage::ANALOG_SENSOR_USAGE AnalogInputUsage::GetUsage
+(
+    string              usageString
+)
 {
-	return (m_underSpeedCounts >= UNDER_SPEED_COUNT_THRESHOLD) && m_timeRemaining <= 0;
+    return m_usageMap.find(usageString)->second;
 }
 

@@ -70,8 +70,8 @@ AnalogInputFactory::AnalogInputFactory( )
 //=====================================================================================
 void AnalogInputFactory::CreateUsageMap()
 {
-    m_usageMap["EXTENDER_POTENTIOMETER"]  = DragonAnalogInput::ANALOG_SENSOR_USAGE::EXTENDER_POTENTIOMETER;
-    m_usageMap["PRESSURE_GAUGE"] = DragonAnalogInput::ANALOG_SENSOR_USAGE::PRESSURE_GAUGE;
+    m_usageMap["EXTENDER_POTENTIOMETER"]  = AnalogInputUsage::ANALOG_SENSOR_USAGE::EXTENDER_POTENTIOMETER;
+    m_usageMap["PRESSURE_GAUGE"] = AnalogInputUsage::ANALOG_SENSOR_USAGE::PRESSURE_GAUGE;
 }
 //=====================================================================================
 /// @brief  Create the requested analog input
@@ -93,7 +93,7 @@ shared_ptr<DragonAnalogInput> AnalogInputFactory::CreateInput
     auto type = m_usageMap.find(usage)->second;
     switch ( type )
     {
-        case DragonAnalogInput::ANALOG_SENSOR_USAGE::EXTENDER_POTENTIOMETER:
+        case AnalogInputUsage::ANALOG_SENSOR_USAGE::EXTENDER_POTENTIOMETER:
             sensor = make_shared<DragonAnalogInput>( type,
                                                      analogID,
                                                      voltageMin,
@@ -103,7 +103,7 @@ shared_ptr<DragonAnalogInput> AnalogInputFactory::CreateInput
             // TODO: Create an angle sensor + decorate it as a position sensor
             break;
 
-        case DragonAnalogInput::ANALOG_SENSOR_USAGE::PRESSURE_GAUGE:
+        case AnalogInputUsage::ANALOG_SENSOR_USAGE::PRESSURE_GAUGE:
             sensor = make_shared<DragonAnalogInput> ( type,
                                                       analogID,
                                                       voltageMin,

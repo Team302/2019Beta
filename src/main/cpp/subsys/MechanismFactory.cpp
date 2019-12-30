@@ -32,6 +32,10 @@
 // Team 302 includes
 #include <hw/interfaces/IDragonMotorController.h>
 #include <hw/usages/MotorControllerUsage.h>
+#include <hw/DragonSolenoid.h>
+#include <hw/DragonServo.h>
+#include <hw/DragonAnalogInput.h>
+#include <hw/DragonDigitalInput.h>
 #include <subsys/MechanismFactory.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismTypes.h>

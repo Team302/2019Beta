@@ -67,9 +67,7 @@ void DoNothing::Run()
 {
 	if ( m_chassis != nullptr )
 	{
-		m_chassis->SetOutput( MechanismControl::MECHANISM_CONTROL_ID::ALL_MOTORS, 
-							MechanismControl::MECHANISM_CONTROL_TYPE::PERCENT_OUTPUT, 
-							0.0 );  
+		m_chassis->SetOutput( MechanismControl::MECHANISM_CONTROL_TYPE::PERCENT_OUTPUT, 0.0 );  
 	}
 	else
 	{

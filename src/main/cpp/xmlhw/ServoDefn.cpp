@@ -10,7 +10,7 @@
 
 // Team 302 includes
 #include <hw/DragonServo.h>
-#include <hw/DragonServoFactory.h>
+#include <hw/factories/DragonServoFactory.h>
 #include <xmlhw/ServoDefn.h>
 
 

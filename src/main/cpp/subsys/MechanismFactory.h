@@ -34,6 +34,11 @@
 // Team 302 includes
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismTypes.h>
+#include <hw/interfaces/IDragonMotorController.h>
+#include <hw/DragonSolenoid.h>
+#include <hw/DragonServo.h>
+#include <hw/DragonAnalogInput.h>
+#include <hw/DragonDigitalInput.h>
 
 
 // Third Party Includes
@@ -57,6 +62,21 @@ class MechanismFactory
 			MechanismTypes::MECHANISM_TYPE			type		// <I> - manipulator type
 		);
 
+		//=====================================================================================
+		/// Method:         CreateIMechanism
+		/// Description:    Find or create the requested mechanism
+		/// Returns:        IMechanism*     pointer to the mechanism or nullptr if mechanism 
+		///                                 doesn't exist and cannot be created.
+		//=====================================================================================
+		std::shared_ptr<IMechanism>  CreateIMechanism
+		(
+			MechanismTypes::MECHANISM_TYPE			type,
+			const IDragonMotorControllerMap&        motorControllers,   // <I> - Motor Controllers
+			const DragonSolenoidVector&             solenoids,          // <I> - Solenoids
+			const DragonDigitalInputVector&         digitalInputs,      // <I> - Digital Inputs
+			const DragonAnalogInputVector&          analogInputs,       // <I> - Analog Inputs
+			const DragonServoVector&                servos              // <I> - servos
+		);
 
 	private:
 		MechanismFactory() = default;

@@ -15,8 +15,6 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-#pragma once
-
 // C++ Includes
 #include <memory>
 
@@ -95,19 +93,30 @@ std::shared_ptr<IDragonDistanceSensor> DistanceSensorFactory::CreateSensor
     if ( inputPin > -1 && triggerPin > -1 )  // create lidar
     {
         // todo validate the pins/usage
-        sensor = static_pointer_cast<IDragonDistanceSensor>(make_shared<DragonLidar>( usage, inputPin, triggerPin ));
 
+        auto lidar = new DragonLidar( usage, inputPin, triggerPin );
+        if ( lidar != nullptr )
+        {
+            sensor = make_shared<IDragonDistanceSensor>( dynamic_cast<IDragonDistanceSensor>( lidar ));
+        }
     }
     else if ( analogInputPin > - 1 )  // create ultrasonic
     {
         // todo validate the channel
-        sensor = static_pointer_cast<IDragonDistanceSensor>(make_shared<DragonUltrasonic>( usage, analogInputPin ));
-
+        auto ultrasonic = new DragonUltrasonic( usage, analogInputPin );
+        if ( ultrasonic != nullptr )
+        {
+            sensor = make_shared<IDragonDistanceSensor>( dynamic_cast<IDragonDistanceSensor>( ultrasonic ));
+        }
     }
     else if ( inputPin > -1 )  // create ultrasonicPWM
     {
         // todo validate the pwm pin
-        sensor = static_pointer_cast<IDragonDistanceSensor>(make_shared<DragonUltrasonicPWM>( usage, inputPin ));
+        auto ultrasonic = new DragonUltrasonicPWM( usage, inputPin );
+        if ( ultrasonic != nullptr )
+        {
+            sensor = make_shared<IDragonDistanceSensor>( dynamic_cast<IDragonDistanceSensor>( ultrasonic ));
+        }
     }
     else if ( i2cID > -1 )  // create Rev 2M 
     {
@@ -124,12 +133,17 @@ std::shared_ptr<IDragonDistanceSensor> DistanceSensorFactory::CreateSensor
     else if ( !tableName.empty() )
     {
         // todo validate inputs
-        sensor = static_pointer_cast<IDragonDistanceSensor>( make_shared<DragonLimelight>( usage, tableName, mountingHeight, mountingHorizontalOffset, mountingAngle, targetHeight));
-
+        auto limelight = new DragonLimelight( usage, tableName, mountingHeight, mountingHorizontalOffset, mountingAngle, targetHeight);
+        if ( limelight != nullptr )
+        {
+            sensor = make_shared<IDragonDistanceSensor>( dynamic_cast<IDragonDistanceSensor>( limelight ));
+        }
     }
     else
     {
         Logger::GetLogger()->LogError( string( "DistanceSensorFactory::CreateSensor"), string("unknown sensor") );
     }
 
+
+    return sensor;
 }

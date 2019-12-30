@@ -14,6 +14,7 @@
 
 
 #include <hw/interfaces/IDragonMotorController.h>
+#include <hw/usages/MotorControllerUsage.h>
 
 #include <ctre/phoenix/ErrorCode.h>
 #include <ctre/phoenix/motorcontrol/can/WPI_TalonSRX.h>
@@ -53,7 +54,7 @@ class DragonTalon : public IDragonMotorController
     DragonTalon() = delete;
     DragonTalon
     (
-        MOTOR_CONTROLLER_USAGE deviceType, 
+        MotorControllerUsage::MOTOR_CONTROLLER_USAGE deviceType, 
         int deviceID, 
         int countsPerRev, 
         double gearRatio
@@ -64,7 +65,7 @@ class DragonTalon : public IDragonMotorController
     // Getters (override)
     double GetRotations() const override;
     double GetRPS() const override;
-    MOTOR_CONTROLLER_USAGE GetType() const override;
+    MotorControllerUsage::MOTOR_CONTROLLER_USAGE GetType() const override;
     int GetID() const override;
     std::shared_ptr<frc::SpeedController> GetSpeedController() const override;
 
@@ -116,7 +117,7 @@ class DragonTalon : public IDragonMotorController
   private:
     std::shared_ptr<ctre::phoenix::motorcontrol::can::WPI_TalonSRX>  m_talon;
     TALON_CONTROL_MODE m_controlMode;
-    MOTOR_CONTROLLER_USAGE m_type;
+    MotorControllerUsage::MOTOR_CONTROLLER_USAGE m_type;
 
     int m_id;
     int m_countsPerRev;

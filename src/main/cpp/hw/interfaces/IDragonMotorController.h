@@ -46,7 +46,7 @@ class IDragonMotorController
         // Getters
         virtual double GetRotations() const = 0;
         virtual double GetRPS() const = 0;
-        virtual MOTOR_CONTROLLER_USAGE GetType() const = 0;
+        virtual MotorControllerUsage::MOTOR_CONTROLLER_USAGE GetType() const = 0;
         double GetCurrent();
         virtual int GetID() const = 0;
         virtual std::shared_ptr<frc::SpeedController> GetSpeedController() const = 0;
@@ -66,4 +66,4 @@ class IDragonMotorController
         virtual ~IDragonMotorController() = default;
 };
 
-typedef std::map <MOTOR_CONTROLLER_USAGE, std::shared_ptr<IDragonMotorController>> IDragonMotorControllerMap;
+typedef std::map <MotorControllerUsage::MOTOR_CONTROLLER_USAGE, std::shared_ptr<IDragonMotorController>> IDragonMotorControllerMap;

@@ -30,7 +30,7 @@
 // Team 302 includes
 #include <hw/DragonTalon.h>
 #include <hw/DragonSparkMax.h>
-#include <hw/DragonMotorControllerFactory.h>
+#include <hw/factories/DragonMotorControllerFactory.h>
 #include <utils/HardwareIDValidation.h>
 #include <utils/Logger.h>
 
@@ -197,64 +197,58 @@ shared_ptr<IDragonMotorController> MotorDefn::ParseXML
 		//        };        
 		else if ( strcmp( attr.name(), "feedbackDevice" ) == 0 )
         {
-            int intVal = attr.as_int();
-            // Some options are duplicated enum values in the WPILib base, so
-            // comment out one so that there isn't more than one case with the same value
-            switch ( intVal )
+            auto val = string( attr.value() );
+            if ( val.compare( "NONE") == 0 )
             {
-                 //commented out in ctre code with note to add back in
-                //case None:
-                    //feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::None;
-                    //break;
-                
-              case QuadEncoder:
-                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::QuadEncoder;
-                    break;
-
-                case Analog:
-                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::Analog;
-                    break;
-
-                case Tachometer:
-                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::Tachometer;
-                    break;
-
-              case PulseWidthEncodedPosition:
-                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::PulseWidthEncodedPosition;
-                    break;
-
-                case SensorSum:
-                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::SensorSum;
-                    break;
-
-                case SensorDifference:
-                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::SensorDifference;
-                    break;
-
-                case RemoteSensor0:
-                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::RemoteSensor0;
-                    break;
-
-                case RemoteSensor1:
-                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::RemoteSensor1;
-                    break;
-
-                case SoftwareEmulatedSensor:
-                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::SoftwareEmulatedSensor;
-                    break;
-
-//                case CTRE_MagEncoder_Absolute:
-//                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::CTRE_MagEncoder_Absolute;
-//                    break;
-
-//                case CTRE_MagEncoder_Relative:
-//                    feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::CTRE_MagEncoder_Relative;
-//                    break;
-
-                default:
-                    printf( "==>>MotorDefn::ParseXML invalid feedback devide %d \n", intVal );
-                    hasError = true;
-                    break;
+                feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::None;
+            }
+            else if ( val.compare( "QUADENCODER") == 0 )
+            {
+                feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::QuadEncoder;
+            }
+            else if ( val.compare( "ANALOG") == 0 )
+            {
+                feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::Analog;
+            }
+            else if ( val.compare( "TACHOMETER") == 0 )
+            {
+                feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::Tachometer;
+            }
+            else if ( val.compare( "PULSEWIDTHENCODERPOSITION") == 0 )
+            {
+                feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::PulseWidthEncodedPosition;
+            }
+            else if ( val.compare( "SENSORSUM") == 0 )
+            {
+                feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::SensorSum;
+            }
+            else if ( val.compare( "SENSORDIFFERENCE") == 0 )
+            {
+                feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::SensorDifference;
+            }
+            else if ( val.compare( "REMOTESENSOR0") == 0 )
+            {
+                feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::RemoteSensor0;
+            }
+            else if ( val.compare( "REMOTESENSOR1") == 0 )
+            {
+                feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::RemoteSensor1;
+            }
+            else if ( val.compare( "SOFTWAREEMULATEDSENSOR") == 0 )
+            {
+                feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::SoftwareEmulatedSensor;
+            }
+            else if ( val.compare( "CTRE_MAGENCODER_ABSOLUTE") == 0 )
+            {
+                feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::CTRE_MagEncoder_Absolute;
+            }
+            else if ( val.compare( "CTRE_MAGENCODER_RELATIVE") == 0 )
+            {
+                feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::CTRE_MagEncoder_Relative;
+            }
+            else 
+            {
+                Logger::GetLogger()->LogError( string("MotorDefn::ParseXML "), string("Invalid feedback device"));
             }
         }
 		// counts per revolution

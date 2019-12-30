@@ -32,7 +32,7 @@
 // FRC includes
 
 // Team 302 includes
-#include <hw/IDragonMotorController.h>
+#include <hw/interfaces/IDragonMotorController.h>
 #include <hw/DragonSparkMax.h>
 
 // Third Party Includes

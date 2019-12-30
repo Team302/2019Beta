@@ -70,14 +70,12 @@ class Grabber : public IMechanism
         //==================================================================================
         /// method:     SetOutput
         /// @brief      Run Grabber as defined 
-        /// @param      MechanismControl::MECHANISM_CONTROL_ID     controlItems: What item(s) are being controlled
         /// @param      MechanismControl::MECHANISM_CONTROL_TYPE   controlType:  How are the item(s) being controlled
         /// @param      double                                     value:        Target (units are based on the controlType)
         /// @return     void
         //==================================================================================
         void SetOutput
         (
-            MechanismControl::MECHANISM_CONTROL_ID   controlItems,
             MechanismControl::MECHANISM_CONTROL_TYPE controlType,
             double                                   value       
         ) override;

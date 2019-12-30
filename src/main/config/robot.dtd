@@ -193,9 +193,9 @@
 <!-- ====================================================
 	 motor usage options 
 	 ====================================================
-    enum MOTOR_CONTROLLER_TYPE
+    enum MOTOR_CONTROLLER_USAGE
     {
-        UNKNOWN_MOTOR_CONTROLLER_TYPE = -1,
+        UNKNOWN_MOTOR_CONTROLLER_USAGE = -1,
         FRONT_LEFT_DRIVE,
         MIDDLE_LEFT_DRIVE,
         BACK_LEFT_DRIVE,
@@ -209,7 +209,7 @@
         INTAKE,
         ELEVATOR_WINCH,
         ELEVATOR_DRIVE,
-        MAX_MOTOR_CONTROLLER_TYPES
+        MAX_MOTOR_CONTROLLER_USAGES
     };
 
 		
@@ -262,7 +262,7 @@
 <!-- ====================================================
 	 analogInput type options 
 	 ====================================================
-	 enum ANALOG_SENSOR_TYPE
+	 enum ANALOG_SENSOR_USAGE
 	 {
 	 	UNKNOWN_ANALOG_TYPE = -1,
 	 	ANALOG_GENERAL,

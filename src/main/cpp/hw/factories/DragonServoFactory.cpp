@@ -27,7 +27,7 @@
 #include <memory>
 
 
-#include <hw/DragonServoFactory.h>
+#include <hw/factories/DragonServoFactory.h>
 #include <hw/DragonServo.h>
 
 #include <utils/Logger.h>

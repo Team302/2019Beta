@@ -4,7 +4,7 @@ Christopher Castillo
 3/16/2019
 */
 
-#include <hw/LEDFactory.h>
+#include <hw/factories/LEDFactory.h>
 #include <hw/LED.h>
 
 LEDFactory* LEDFactory::m_ledFactory = nullptr;

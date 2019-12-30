@@ -7,7 +7,8 @@
 #include <string>
 
 #include <subsys/IMechanism.h>
-#include <hw/DragonMotorControllerFactory.h>        
+#include <hw/factories/DragonMotorControllerFactory.h>        
+#include <hw/usages/MotorControllerUsage.h>
 #include <xmlhw/MotorDefn.h>
 #include <hw/DragonTalon.h>
 #include <hw/DragonSparkMax.h>
@@ -37,7 +38,7 @@ DragonMotorControllerFactory::DragonMotorControllerFactory()
 	{
 		m_canControllers[inx] = nullptr;
 	}
-    CreateUsageMap();
+    MotorControllerUsage::GetInstance();
     CreateTypeMap();
 }
 
@@ -73,7 +74,7 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::CreateMotorCont
     if ( type == MOTOR_TYPE::TALONSRX )
     {
         // TODO:: set PDP ID
-        auto talon = new DragonTalon(m_usageMap.find(usage)->second, canID, countsPerRev, gearRatio );
+        auto talon = new DragonTalon( MotorControllerUsage::GetInstance()->GetUsage(usage), canID, countsPerRev, gearRatio );
         talon->EnableBrakeMode( brakeMode );
         talon->Invert( inverted );
         talon->SetSensorInverted( sensorInverted );
@@ -93,8 +94,8 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::CreateMotorCont
     }
     else if ( type == MOTOR_TYPE::BRUSHED_SPARK_MAX || type == MOTOR_TYPE::BRUSHLESS_SPARK_MAX )
     {
-        auto brushedBrushless = (type == MOTOR_TYPE::BRUSHED_SPARK_MAX) ? CANSparkMax::MotorType::kBrushed : CANSparkMax::MotorType::kBrushless;
-        auto smax = new DragonSparkMax( canID, m_usageMap.find(usage)->second, brushedBrushless, gearRatio );
+        auto brushedBrushless = (type == MOTOR_TYPE::BRUSHED_SPARK_MAX) ? rev::CANSparkMax::MotorType::kBrushed : rev::CANSparkMax::MotorType::kBrushless;
+        auto smax = new DragonSparkMax( canID, MotorControllerUsage::GetInstance()->GetUsage(usage), brushedBrushless, gearRatio );
         smax->Invert( inverted );
         smax->EnableBrakeMode( brakeMode );
         smax->InvertEncoder( sensorInverted );
@@ -158,31 +159,6 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::GetController
 	}
 	return controller;
 }
-
-void DragonMotorControllerFactory::CreateUsageMap()
-{
-    m_usageMap["FRONT_LEFT_DRIVE"]  = MOTOR_CONTROLLER_USAGE::FRONT_LEFT_DRIVE;
-    m_usageMap["MIDDLE_LEFT_DRIVE"] = MOTOR_CONTROLLER_USAGE::MIDDLE_LEFT_DRIVE;
-    m_usageMap["BACK_LEFT_DRIVE"]   = MOTOR_CONTROLLER_USAGE::BACK_LEFT_DRIVE;
-
-    m_usageMap[ "FRONT_RIGHT_DRIVE"] = MOTOR_CONTROLLER_USAGE::FRONT_RIGHT_DRIVE;
-    m_usageMap["MIDDLE_RIGHT_DRIVE"] = MOTOR_CONTROLLER_USAGE::MIDDLE_RIGHT_DRIVE;
-    m_usageMap["BACK_RIGHT_DRIVE"]   = MOTOR_CONTROLLER_USAGE::BACK_RIGHT_DRIVE;
-
-    m_usageMap["ARM_MASTER"]    = MOTOR_CONTROLLER_USAGE::ARM_MASTER;
-    m_usageMap["ARM_SLAVE"]     = MOTOR_CONTROLLER_USAGE::ARM_SLAVE;
-    m_usageMap["ARM_EXTENSION"] = MOTOR_CONTROLLER_USAGE::ARM_EXTENSION;
-
-    m_usageMap["WRIST"] = MOTOR_CONTROLLER_USAGE::WRIST;
-
-    m_usageMap["INTAKE"] = MOTOR_CONTROLLER_USAGE::INTAKE;
-
-    m_usageMap["ELEVAtOR_WINCH"]  = MOTOR_CONTROLLER_USAGE::ELEVATOR_WINCH;
-    m_usageMap["ELEVATOR_DrIVE"]  = MOTOR_CONTROLLER_USAGE::ELEVATOR_DRIVE;
-
-    m_usageMap["HATCH_MECH_MOTOR"] = MOTOR_CONTROLLER_USAGE::HATCH_MECH_MOTOR;
-}
-
 
 void DragonMotorControllerFactory::CreateTypeMap()
 {

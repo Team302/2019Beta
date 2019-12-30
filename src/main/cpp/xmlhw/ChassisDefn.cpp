@@ -23,11 +23,18 @@
 
 // C++ includes
 #include <iostream>
+#include <map>
+#include <memory>
+#include <utility>
+
 
 // FRC includes
 #include <frc/SmartDashboard/SmartDashboard.h>
 
 // Team302 includes
+#include <hw/interfaces/IDragonMotorController.h>
+#include <subsys/ChassisFactory.h>
+
 //#include <subsys/chassis/DragonChassis.h>
 //#include <hw/DragonTalon.h>
 #include <xmlhw/ChassisDefn.h>
@@ -56,6 +63,7 @@ void ChassisDefn::ParseXML
 	xml_node      chassisNode
 )
 {
+    shared_ptr<IChassis> chassis   = nullptr;
     float wheelDiameter	= 0.0;
     float wheelBase 	= 0.0;
     float track 		= 0.0;
@@ -91,6 +99,9 @@ void ChassisDefn::ParseXML
     //--------------------------------------------------------------------------------------------
     // Process child element nodes
     //--------------------------------------------------------------------------------------------
+
+    IDragonMotorControllerMap motors;
+
     std::unique_ptr<MotorDefn> motorXML;
 
     std::vector<PIDData*> pidControlVector;
@@ -105,7 +116,11 @@ void ChassisDefn::ParseXML
 
     	    if ( motorXML != nullptr )
     	    {
-                motorXML->ParseXML(child);
+                auto motor = motorXML->ParseXML(child);
+                if ( motor.get() != nullptr )
+                {
+                    motors[ motor.get()->GetType() ] =  motor ;
+                }
             }
     	    else
             {
@@ -126,7 +141,12 @@ void ChassisDefn::ParseXML
     //--------------------------------------------------------------------------------------------
     if ( !hasError )
     {
-        /// TODO:: Call the factory
+        auto factory = ChassisFactory::GetChassisFactory();
+        if ( factory != nullptr )
+        {
+            // todo add attribute for type
+            chassis = factory->CreateChassis( ChassisFactory::CHASSIS_TYPE::TANK_CHASSIS, wheelDiameter, wheelBase, track, motors );
+        }
     }
 }
 

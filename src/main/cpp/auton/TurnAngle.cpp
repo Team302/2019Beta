@@ -26,9 +26,9 @@
 #include <auton/TurnAngle.h>
 #include <auton/PrimitiveParams.h>
 #include <auton/IPrimitive.h>
-#include <subsys/MechanismFactory.h>
+#include <subsys/ChassisFactory.h>
 #include <subsys/MechanismControl.h>
-#include <subsys/IMechanism.h>
+#include <subsys/IChassis.h>
 #include <utils/LimitValue.h>
 #include <utils/Logger.h>
 
@@ -40,7 +40,7 @@ using namespace frc;
 
 //Team302 includes
 
-TurnAngle::TurnAngle() : m_chassis( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::CHASSIS)),
+TurnAngle::TurnAngle() : m_chassis( ChassisFactory::GetChassisFactory()->GetIChassis()),
 						 m_timer( make_unique<Timer>() ),
 						 m_targetAngle(0.0),
 						 m_maxTime(0.0),

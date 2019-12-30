@@ -26,7 +26,7 @@
 #include <auton/PrimitiveParams.h>
 #include <subsys/IChassis.h>
 #include <auton/IPrimitive.h>
-#include <subsys/IMechanism.h>
+#include <subsys/IChassis.h>
 
 // Third Party Includes
 
@@ -62,7 +62,7 @@ class DoNothing : public IPrimitive
 	private:
 		float m_maxTime;		//Target time
 		float m_currentTime;	//Time since init
-		std::shared_ptr<IMechanism> m_chassis;	
+		std::shared_ptr<IChassis> m_chassis;	
 		std::unique_ptr<frc::Timer> m_timer;
 };
 

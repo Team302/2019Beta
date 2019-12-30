@@ -40,7 +40,7 @@
 ///        high pulse length is measured and converted to distance in GetDistance().  The trigger pin is
 ///        just used to initialize the lidar. It shouldn't have to be called periodically.
 //========================================================================================================
-class DragonLidar : public IDragonSensor, IDragonDistanceSensor
+class DragonLidar : public IDragonSensor,  public IDragonDistanceSensor
 {
     public:
         //-----------------------------------------------------------------------------------

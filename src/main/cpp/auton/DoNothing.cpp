@@ -26,7 +26,7 @@
 #include <auton/DoNothing.h>
 #include <auton/PrimitiveParams.h>
 #include <auton/IPrimitive.h>
-#include <subsys/MechanismFactory.h>
+#include <subsys/ChassisFactory.h>
 #include <subsys/MechanismControl.h>
 #include <subsys/IMechanism.h>
 #include <utils/Logger.h>
@@ -46,7 +46,7 @@ using namespace frc;
 /// @brief constructor that creates/initializes the object
 DoNothing::DoNothing() : m_maxTime(0.0),
 						 m_currentTime(0.0),
-						 m_chassis( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::CHASSIS)),
+						 m_chassis( ChassisFactory::GetChassisFactory()->GetIChassis()),
 						 m_timer( make_unique<Timer>() )
 {
 }
@@ -67,7 +67,7 @@ void DoNothing::Run()
 {
 	if ( m_chassis != nullptr )
 	{
-		m_chassis->SetOutput( MechanismControl::MECHANISM_CONTROL_TYPE::PERCENT_OUTPUT, 0.0 );  
+		m_chassis->SetOutput( MechanismControl::MECHANISM_CONTROL_TYPE::PERCENT_OUTPUT, 0.0, 0.0 );  
 	}
 	else
 	{

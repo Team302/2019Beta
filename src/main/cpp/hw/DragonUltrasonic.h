@@ -39,7 +39,7 @@
  * https://www.maxbotix.com/documents/HRLV-MaxSonar-EZ_Datasheet.pdf
  */
 
-class DragonUltrasonic : public IDragonSensor, IDragonDistanceSensor
+class DragonUltrasonic : public IDragonSensor, public IDragonDistanceSensor
 {
 	public:
 		DragonUltrasonic

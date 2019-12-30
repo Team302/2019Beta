@@ -37,11 +37,11 @@ using namespace std;
 using namespace frc;
 
 #include <auton/SuperDrive.h>
-#include <subsys/MechanismFactory.h>
+#include <subsys/ChassisFactory.h>
 #include <cmath>
 #include <frc/SmartDashboard/SmartDashboard.h>
 
-SuperDrive::SuperDrive() : m_chassis( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::CHASSIS)),
+SuperDrive::SuperDrive() : m_chassis( ChassisFactory::GetChassisFactory()->GetIChassis()),
 						   m_timer( make_unique<Timer>() ),
 						   m_targetSpeed(0),
 						   m_currentSpeed(0),
@@ -98,10 +98,7 @@ void SuperDrive::Init(PrimitiveParams* params)
 	}
 
 	//m_startHeading = m_chassis->GetHeading();
-	m_chassis->SetOutput( MechanismControl::MECHANISM_CONTROL_TYPE::VELOCITY_INCH,
-						  m_leftSpeed );
-	m_chassis->SetOutput( MechanismControl::MECHANISM_CONTROL_TYPE::VELOCITY_INCH,
-						  m_rightSpeed );
+	m_chassis->SetOutput( MechanismControl::MECHANISM_CONTROL_TYPE::VELOCITY_INCH, m_leftSpeed, m_rightSpeed );
 						  
     //m_chassis->SetVelocityParams(PROPORTIONAL_COEFF, INTREGRAL_COEFF, DERIVATIVE_COEFF, FEET_FORWARD_COEFF,
     //		m_leftSpeed, m_rightSpeed);

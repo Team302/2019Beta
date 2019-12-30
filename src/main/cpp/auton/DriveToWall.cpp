@@ -42,7 +42,7 @@ using namespace frc;
 
 //Team302 includes
 #include <auton/DriveToWall.h>
-#include <subsys/MechanismFactory.h>
+#include <subsys/ChassisFactory.h>
 #include <subsys/IChassis.h>
 
 DriveToWall::DriveToWall() :
@@ -65,7 +65,7 @@ void DriveToWall::Run()
 {
 	if (m_minimumTime <= 0) 
 	{
-		if (std::abs( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::CHASSIS)->GetCurrentSpeed()) < SPEED_THRESHOLD) 
+		if (std::abs( ChassisFactory::GetChassisFactory()->GetIChassis()->GetCurrentSpeed()) < SPEED_THRESHOLD) 
 		{
 			m_underSpeedCounts++;
 		}

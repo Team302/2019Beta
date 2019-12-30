@@ -55,10 +55,14 @@ DistanceSensorFactory* DistanceSensorFactory::GetFactory()
 
 }
 
-std::shared_ptr<IDragonDistanceSensor> GetSensor
+shared_ptr<IDragonDistanceSensor> GetSensor
 (
     IDragonSensor::SENSOR_USAGE    usage
-);
+)
+{
+    shared_ptr<IDragonDistanceSensor> sensor = nullptr;
+    return sensor;
+}
 
 /// @brief Create a distance sensor from the inputs
 /// @param IDragonSensor::SENSOR_USAGE  usage       
@@ -73,7 +77,7 @@ std::shared_ptr<IDragonDistanceSensor> GetSensor
 /// @param double                       mountingAngle in degrees (limelight)
 /// @param double                       targetHeight in inches (limelight)
 /// @return std::shared_ptr<IDragonDistanceSensor>    sensor
-std::shared_ptr<IDragonDistanceSensor> DistanceSensorFactory::CreateSensor
+shared_ptr<IDragonDistanceSensor> DistanceSensorFactory::CreateSensor
 (
     IDragonSensor::SENSOR_USAGE     usage,
     int                             inputPin,
@@ -93,30 +97,17 @@ std::shared_ptr<IDragonDistanceSensor> DistanceSensorFactory::CreateSensor
     if ( inputPin > -1 && triggerPin > -1 )  // create lidar
     {
         // todo validate the pins/usage
-
-        auto lidar = new DragonLidar( usage, inputPin, triggerPin );
-        if ( lidar != nullptr )
-        {
-            sensor = make_shared<IDragonDistanceSensor>( dynamic_cast<IDragonDistanceSensor>( lidar ));
-        }
+        sensor = make_shared<IDragonDistanceSensor>( new DragonLidar( usage, inputPin, triggerPin ) );
     }
     else if ( analogInputPin > - 1 )  // create ultrasonic
     {
         // todo validate the channel
-        auto ultrasonic = new DragonUltrasonic( usage, analogInputPin );
-        if ( ultrasonic != nullptr )
-        {
-            sensor = make_shared<IDragonDistanceSensor>( dynamic_cast<IDragonDistanceSensor>( ultrasonic ));
-        }
+        sensor = make_shared<IDragonDistanceSensor>( new DragonUltrasonic( usage, analogInputPin ) );
     }
     else if ( inputPin > -1 )  // create ultrasonicPWM
     {
         // todo validate the pwm pin
-        auto ultrasonic = new DragonUltrasonicPWM( usage, inputPin );
-        if ( ultrasonic != nullptr )
-        {
-            sensor = make_shared<IDragonDistanceSensor>( dynamic_cast<IDragonDistanceSensor>( ultrasonic ));
-        }
+        sensor = make_shared<IDragonDistanceSensor>( new DragonUltrasonicPWM( usage, inputPin ) );
     }
     else if ( i2cID > -1 )  // create Rev 2M 
     {
@@ -133,11 +124,7 @@ std::shared_ptr<IDragonDistanceSensor> DistanceSensorFactory::CreateSensor
     else if ( !tableName.empty() )
     {
         // todo validate inputs
-        auto limelight = new DragonLimelight( usage, tableName, mountingHeight, mountingHorizontalOffset, mountingAngle, targetHeight);
-        if ( limelight != nullptr )
-        {
-            sensor = make_shared<IDragonDistanceSensor>( dynamic_cast<IDragonDistanceSensor>( limelight ));
-        }
+        sensor = make_shared<IDragonDistanceSensor>( new DragonLimelight( usage, tableName, mountingHeight, mountingHorizontalOffset, mountingAngle, targetHeight) );
     }
     else
     {

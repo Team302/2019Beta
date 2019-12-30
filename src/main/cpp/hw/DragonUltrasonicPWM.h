@@ -33,7 +33,7 @@
 
 
 
-class DragonUltrasonicPWM : public IDragonSensor, IDragonDistanceSensor
+class DragonUltrasonicPWM : public IDragonSensor, public IDragonDistanceSensor
 {
 	public:
 		DragonUltrasonicPWM

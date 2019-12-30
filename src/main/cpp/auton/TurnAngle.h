@@ -23,7 +23,7 @@
 
 // Team 302 includes
 #include <auton/IPrimitive.h>
-#include <subsys/IMechanism.h>
+#include <subsys/IChassis.h>
 
 // Third Party Includes
 
@@ -44,7 +44,7 @@ class TurnAngle : public IPrimitive
         const float DERIVATIVE_COEFF    = 0.0;
         const float FEET_FORWARD_COEFF  = 0.0;
 
-        std::shared_ptr<IMechanism> m_chassis;
+        std::shared_ptr<IChassis> m_chassis;
    		std::unique_ptr<frc::Timer> m_timer;
 
         float m_targetAngle;

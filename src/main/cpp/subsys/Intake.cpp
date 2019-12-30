@@ -140,7 +140,7 @@ double Intake::GetCurrentPosition() const
 double Intake::GetTargetPosition() const
 {
     // No sensor so it is the same as the current
-    return GetCurrentPosition( controlItems );
+    return GetCurrentPosition();
 }
 
 //==================================================================================
@@ -169,7 +169,7 @@ double Intake::GetCurrentSpeed() const
 double Intake::GetTargetSpeed() const
 {
     // No sensor so it is the same as the current
-    return GetCurrentPosition( controlItems );
+    return GetCurrentPosition();
 }
 
 

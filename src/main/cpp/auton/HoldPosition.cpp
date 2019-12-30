@@ -25,7 +25,7 @@
 #include <auton/DoNothing.h>
 #include <auton/PrimitiveParams.h>
 #include <auton/IPrimitive.h>
-#include <subsys/MechanismFactory.h>
+#include <subsys/ChassisFactory.h>
 #include <subsys/MechanismControl.h>
 #include <subsys/IMechanism.h>
 #include <utils/Logger.h>
@@ -47,7 +47,7 @@ using namespace frc;
 #include <subsys/MechanismFactory.h>
 
 HoldPosition::HoldPosition() :
-		m_chassis( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::CHASSIS)), //Get chassis from chassis factory
+		m_chassis( ChassisFactory::GetChassisFactory()->GetIChassis()), //Get chassis from chassis factory
 		m_timeRemaining(0.0)       //Value will be changed in init
 {
 }

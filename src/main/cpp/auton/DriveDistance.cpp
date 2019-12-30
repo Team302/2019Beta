@@ -25,7 +25,7 @@
 #include <auton/DoNothing.h>
 #include <auton/PrimitiveParams.h>
 #include <auton/IPrimitive.h>
-#include <subsys/MechanismFactory.h>
+#include <subsys/ChassisFactory.h>
 #include <subsys/MechanismControl.h>
 #include <subsys/IMechanism.h>
 #include <utils/Logger.h>
@@ -65,7 +65,7 @@ void DriveDistance::Init(PrimitiveParams* params)
 	SuperDrive::Init(params);
 	
 	m_arcing = std::abs(params->GetHeading()) > 0.1;
-	m_startHeading =  MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::CHASSIS)->GetTargetHeading();
+	//m_startHeading =  ChassisFactory::GetChassisFactory()->GetIChassis()->GetTargetHeading();
 	m_endHeading = m_startHeading + params->GetHeading();
 
 	m_minSpeedCountTime = MIN_SPEED_COUNT_TIME;
@@ -73,7 +73,7 @@ void DriveDistance::Init(PrimitiveParams* params)
 	m_params = params;
 	//Get parameters from params
 	m_targetDistance = params->GetDistance();
-	m_initialDistance =  MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::CHASSIS)->GetDistance();
+	m_initialDistance =  ChassisFactory::GetChassisFactory()->GetIChassis()->GetCurrentPosition();
 }
 
 void DriveDistance::Run() 
@@ -83,14 +83,14 @@ void DriveDistance::Run()
 	if (m_arcing) 
 	{
 		//Calculate progress from 0 to 1
-		float progress = std::abs( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::CHASSIS)->GetDistance() - m_initialDistance);
+		float progress = std::abs( ChassisFactory::GetChassisFactory()->GetIChassis()->GetCurrentPosition() - m_initialDistance);
 		progress /= std::abs(m_targetDistance); //progress = progress / targetDistance
 
 		float newTargetHeading = 0;
 		//Linear interpolation between start heading and end heading based on progress
 		newTargetHeading += (1.0 - progress) * m_startHeading;// newTargetheading = newTargetHeading + (1.0 - progress) * m_startHeading
 		newTargetHeading += (progress) * m_endHeading;
-		MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::CHASSIS)->SetTargetHeading(newTargetHeading);
+		//ChassisFactory::GetChassisFactory()->GetIChassis()->SetTargetHeading(newTargetHeading);
 	}
 
 
@@ -98,7 +98,7 @@ void DriveDistance::Run()
 
 	if (m_minSpeedCountTime <= 0) 
 	{
-		if (std::abs( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::CHASSIS)->GetVelocity()) < SPEED_THRESHOLD) 
+		if (std::abs( ChassisFactory::GetChassisFactory()->GetIChassis()->GetCurrentSpeed()) < SPEED_THRESHOLD) 
 		{
 			m_underSpeedCounts++;
 		}
@@ -108,7 +108,7 @@ void DriveDistance::Run()
 
 bool DriveDistance::IsDone() 
 {
-	float progress =  MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::CHASSIS)->GetDistance() - m_initialDistance;
+	float progress =  ChassisFactory::GetChassisFactory()->GetIChassis()->GetCurrentPosition() - m_initialDistance;
 	bool reachedTarget = std::abs(progress) > std::abs(m_targetDistance);
 
 	m_timeRemaining -= IPrimitive::LOOP_LENGTH;
@@ -117,7 +117,7 @@ bool DriveDistance::IsDone()
 	bool done = reachedTarget || notMoving;
 	if (done) 
 	{
-		 MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::CHASSIS)->SetTargetHeading(m_endHeading);
+		 //ChassisFactory::GetChassisFactory()->GetIChassis()->SetTargetHeading(m_endHeading);
 	}
 	return done;
 }
@@ -125,10 +125,10 @@ bool DriveDistance::IsDone()
 void DriveDistance::CalculateSlowDownDistance() 
 {
 
-	float currentVel =  MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::CHASSIS)->GetVelocity();
+	float currentVel =  ChassisFactory::GetChassisFactory()->GetIChassis()->GetCurrentSpeed();
 	float decelTime = currentVel / SuperDrive::INCHES_PER_SECOND_SECOND;
 	float decelDist = std::abs(((currentVel - m_minSpeed)) * decelTime * DECEL_TIME_MULTIPLIER);
-	float currentDistance = std::abs( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::CHASSIS)->GetDistance() - m_initialDistance);
+	float currentDistance = std::abs( ChassisFactory::GetChassisFactory()->GetIChassis()->GetCurrentPosition() - m_initialDistance);
 	float distanceRemaining = std::abs(m_targetDistance - currentDistance);
 
 	if (distanceRemaining <= decelDist)

@@ -180,29 +180,10 @@ shared_ptr<IDragonMotorController> MotorDefn::ParseXML
         {
             sensorInverted = attr.as_bool();
         }
-		// feedback device (only used by cantalon)
-		//        enum TALON_SENSOR_TYPE
-		//        {
-		//            NO_SENSOR = -1,
-		//            QUAD_ENCODER,
-		//            UNKNOWN_SENSOR,
-		//            ANALOG_POT,
-		//            ANALOG_ENCODER,
-		//            ENCODER_RISING,
-		//            ENCODER_FALLING,
-		//            CTRE_MAG_ENCODER_RELATIVE,
-		//            CTRE_MAG_ENCODER_ABSOLUTE,
-		//            PULSE_WIDTH,
-		//            MAX_SENSOR_TYPES
-		//        };        
 		else if ( strcmp( attr.name(), "feedbackDevice" ) == 0 )
         {
             auto val = string( attr.value() );
-            if ( val.compare( "NONE") == 0 )
-            {
-                feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::None;
-            }
-            else if ( val.compare( "QUADENCODER") == 0 )
+            if ( val.compare( "QUADENCODER") == 0 )
             {
                 feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::QuadEncoder;
             }

@@ -28,7 +28,7 @@
 
 
 #include <auton/PrimitiveParams.h>
-#include <subsys/IMechanism.h>
+#include <subsys/IChassis.h>
 #include <auton/IPrimitive.h>
 
 class HoldPosition : public IPrimitive {
@@ -45,7 +45,7 @@ private:
 	const float kD = 0.0;
 	const float kF = 0.0;
 	//Objects
-	std::shared_ptr<IMechanism> m_chassis;
+	std::shared_ptr<IChassis> m_chassis;
 	double m_timeRemaining; //In seconds
 };
 

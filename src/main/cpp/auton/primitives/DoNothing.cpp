@@ -20,11 +20,12 @@
 
 // FRC includes
 #include <frc/Timer.h>
+#include <units/units.h>
 
 // Team 302 includes
-#include <auton/DoNothing.h>
+#include <auton/primitives/DoNothing.h>
 #include <auton/PrimitiveParams.h>
-#include <auton/IPrimitive.h>
+#include <auton/primitives/IPrimitive.h>
 #include <subsys/ChassisFactory.h>
 #include <subsys/MechanismControl.h>
 #include <subsys/IMechanism.h>
@@ -36,45 +37,47 @@
 using namespace std;
 using namespace frc;
 
-//includes
-#include <cmath>
-#include <frc/SmartDashboard/SmartDashboard.h>
-//team302 includes
-#include <auton/HoldPosition.h>
-#include <auton/PrimitiveParams.h>
-#include <auton/PrimitiveFactory.h>
-#include <auton/IPrimitive.h>
-#include <subsys/MechanismFactory.h>
+//========================================================================================================
+/// @class  DoNothing
+/// @brief  This is an auton primitive that causes the chassis to not drive 
+//========================================================================================================
 
-HoldPosition::HoldPosition() :
-		m_chassis( ChassisFactory::GetChassisFactory()->GetIChassis()), //Get chassis from chassis factory
-		m_timeRemaining(0.0)       //Value will be changed in init
+
+/// @brief constructor that creates/initializes the object
+DoNothing::DoNothing() : m_maxTime(0.0),
+						 m_currentTime(0.0),
+						 m_chassis( ChassisFactory::GetChassisFactory()->GetIChassis()),
+						 m_timer( make_unique<Timer>() )
 {
 }
 
-void HoldPosition::Init(PrimitiveParams* params) {
-
-	//Get timeRemaining from m_params
-	m_timeRemaining = params->GetTime();
-	/*
-	m_chassis->SetTalonMode(DragonTalon::POSITION);
-	m_chassis->EnableBrakeMode(true);
-
-	//Set params
-	m_chassis->SetVelocityParams(kP, kI, kD, kF, 0, 0);
-	m_chassis->SetLeftRightMagnitudes(m_chassis->GetLeftMasterMotorRotationCount(), m_chassis->GetRightMasterMotorRotationCount());
-	*/
+/// @brief initialize this usage of the primitive
+/// @param PrimitiveParms* params the drive parameters
+/// @return void
+void DoNothing::Init(PrimitiveParams* params) 
+{
+	m_maxTime = params->GetTime();
+	m_timer->Reset();
+	m_timer->Start();
 }
 
-void HoldPosition::Run() {
-	//Decrement time remaining
-	m_timeRemaining -= IPrimitive::LOOP_LENGTH;
-
+/// @brief run the primitive (periodic routine)
+/// @return void
+void DoNothing::Run() 
+{
+	if ( m_chassis != nullptr )
+	{
+		m_chassis->SetOutput( MechanismControl::MECHANISM_CONTROL_TYPE::PERCENT_OUTPUT, 0.0, 0.0 );  
+	}
+	else
+	{
+		Logger::GetLogger()->LogError( string( "DoNothing::Run" ), string( "chassis not found") );
+	}
 }
 
-bool HoldPosition::IsDone() {
-	//Return true when the time runs out
-	bool holdDone = ((m_timeRemaining <= (IPrimitive::LOOP_LENGTH / 2.0)));
-//	return holdDone && m_placeCube->IsDone();
-	return holdDone;
+/// @brief check if the end condition has been met
+/// @return bool true means the end condition was reached, false means it hasn't
+bool DoNothing::IsDone() 
+{
+	return m_timer->HasPeriodPassed( m_maxTime );
 }

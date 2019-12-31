@@ -22,17 +22,12 @@
 #include <frc/Timer.h>
 
 // Team 302 includes
-#include <auton/IPrimitive.h>
+#include <auton/primitives/DoNothing.h>
 #include <auton/PrimitiveParams.h>
-#include <auton/TurnAngle.h>
-#include <auton/TurnToCube.h>
-
-#include <hw/factories/LidarFactory.h>
-
-#include <subsys/IMechanism.h>
-#include <subsys/MechanismFactory.h> 
+#include <auton/primitives/IPrimitive.h>
+#include <subsys/ChassisFactory.h>
 #include <subsys/MechanismControl.h>
-
+#include <subsys/IMechanism.h>
 #include <utils/Logger.h>
 
 // Third Party Includes
@@ -41,60 +36,45 @@
 using namespace std;
 using namespace frc;
 
+//includes
+#include <cmath>
+#include <frc/SmartDashboard/SmartDashboard.h>
+//team302 includes
+#include <auton/primitives/HoldPosition.h>
+#include <auton/PrimitiveParams.h>
+#include <auton/PrimitiveFactory.h>
+#include <auton/primitives/IPrimitive.h>
+#include <subsys/MechanismFactory.h>
 
-TurnToCube::TurnToCube() : m_scanned( false ),
-                           m_minAngle( 360.0 ),     // complete revolution
-                           m_minDist( 648.0 ),      // 54 feet * 12 inches per foot
-                           m_lidar( nullptr )
+HoldPosition::HoldPosition() :
+		m_chassis( ChassisFactory::GetChassisFactory()->GetIChassis()), //Get chassis from chassis factory
+		m_timeRemaining(0.0)       //Value will be changed in init
 {
-    /*
-    LidarFactory* factory = LidarFactory::GetLidarFactory();
-    if ( factory != nullptr )
-    {
-        m_lidar = factory->GetLidar( DragonLidar::FORWARD_GRABBER );
-    }
-    */
 }
 
+void HoldPosition::Init(PrimitiveParams* params) {
 
-void TurnToCube::Init(PrimitiveParams* params)
-{
-    TurnAngle::Init( params );
-    m_scanned  = false;
-    m_minAngle = 360.0;
-    /*
-    if ( m_lidar != nullptr )
-    {
-        m_minDist = m_lidar->GetDistance();
-    }
-    */
+	//Get timeRemaining from m_params
+	m_timeRemaining = params->GetTime();
+	/*
+	m_chassis->SetTalonMode(DragonTalon::POSITION);
+	m_chassis->EnableBrakeMode(true);
+
+	//Set params
+	m_chassis->SetVelocityParams(kP, kI, kD, kF, 0, 0);
+	m_chassis->SetLeftRightMagnitudes(m_chassis->GetLeftMasterMotorRotationCount(), m_chassis->GetRightMasterMotorRotationCount());
+	*/
 }
 
-void TurnToCube::Run()
-{
-    TurnAngle::Run();
-    if ( m_lidar != nullptr )
-    {
-        /*
-        double currDist = m_lidar->GetDistance();
-        if ( currDist < m_minDist )
-        {
-            m_minDist = currDist;
-            m_minAngle = ChassisFactory::GetChassisFactory()->GetIChassis()->GetHeading();
-        }
-        */
-    }
+void HoldPosition::Run() {
+	//Decrement time remaining
+	m_timeRemaining -= IPrimitive::LOOP_LENGTH;
+
 }
 
-bool TurnToCube::IsDone()
-{
-    bool done = TurnAngle::IsDone();
-    if ( done && !m_scanned )
-    {
-        done = false;
-        m_scanned = true;
-    }
-    return done;
+bool HoldPosition::IsDone() {
+	//Return true when the time runs out
+	bool holdDone = ((m_timeRemaining <= (IPrimitive::LOOP_LENGTH / 2.0)));
+//	return holdDone && m_placeCube->IsDone();
+	return holdDone;
 }
-
-

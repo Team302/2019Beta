@@ -17,42 +17,55 @@
 #pragma once
 
 // C++ Includes
-#include <memory>
 
 // FRC includes
-#include <frc/Timer.h>
 
 // Team 302 includes
 
 // Third Party Includes
 
 
-#include <auton/PrimitiveFactory.h>
-#include <auton/AutonSelector.h>
+
+#include <auton/PrimitiveParams.h>
+#include <subsys/MechanismFactory.h>
+#include <auton/primitives/SuperDrive.h>
+#include <subsys/IChassis.h>
 #include <auton/primitives/IPrimitive.h>
-#include <string>
-#include <vector>
 
-class CyclePrimitives {
+class DriveDistance : public SuperDrive {
 public:
-	CyclePrimitives();
-	virtual ~CyclePrimitives() = default;
-
-	void Init();
-	void RunCurrentPrimitive();
+	bool IsDone() override;
+	void Init(PrimitiveParams* params) override;
+	void Run() override;
+	DriveDistance();
+	virtual ~DriveDistance() = default;
 
 protected:
-	void GetNextPrim();
-	void RunDoNothing();
-
+    void SetDistance
+    (
+        double distance
+    );
 private:
-	std::vector<PrimitiveParams*> 	m_primParams;
-	int 							m_currentPrimSlot;
-	IPrimitive*						m_currentPrim;
-	PrimitiveFactory* 				m_primFactory;
-	IPrimitive* 					m_doNothing;
-	AutonSelector* 					m_autonSelector;
-	std::unique_ptr<frc::Timer>     m_timer;
-	double                          m_maxTime;
+	void CalculateSlowDownDistance();
+	//TODO: remove timeout. it is no longer being used
+//	const float TIMEOUT_MULTIPIER = 200000; // Multiplier for the max expected time (speed * distance) * TIMEOUT_MULTIPLIER = expected time
+									//1.4
+	PrimitiveParams* m_params;
+
+	float m_targetDistance;
+	float m_initialDistance;
+	float m_timeRemaining;
+
+	float m_minSpeedCountTime;
+	int m_underSpeedCounts;
+	float m_startHeading;
+	float m_endHeading;
+	float m_minSpeed;
+	bool m_arcing;
+
+	const float SPEED_THRESHOLD = 1.5;
+	const float MIN_SPEED_COUNT_TIME = 0.5; //seconds before we start checking for wall collisions
+	const int UNDER_SPEED_COUNT_THRESHOLD = 4;
+	const float DECEL_TIME_MULTIPLIER = 0.85; //0.75
 };
 

@@ -17,52 +17,33 @@
 #pragma once
 
 // C++ Includes
-#include <memory>
 
 // FRC includes
-#include <frc/Timer.h>
 
 // Team 302 includes
-#include <auton/PrimitiveParams.h>
-#include <subsys/IChassis.h>
-#include <auton/IPrimitive.h>
-#include <subsys/IChassis.h>
 
 // Third Party Includes
 
 
 
-//========================================================================================================
-/// @class  DoNothing
-/// @brief  This is an auton primitive that causes the chassis to not drive 
-//========================================================================================================
+//Includes
+//Team302 includes
+#include <auton/primitives/SuperDrive.h>
+#include <auton/primitives/DriveTime.h>
+#include <subsys/IChassis.h>
+#include <auton/primitives/IPrimitive.h>
 
-class DoNothing : public IPrimitive 
-{
-	public:
-		/// @brief constructor that creates/initializes the object
-		DoNothing();
 
-		/// @brief destructor, clean  up the memory from this object
-		virtual ~DoNothing() = default;
+class DriveTime: public SuperDrive {
+public:
+	DriveTime();
+	virtual ~DriveTime() = default;
+	void Init(PrimitiveParams* params) override;
+	void Run() override;
+	bool IsDone() override;
 
-		/// @brief initialize this usage of the primitive
-		/// @param PrimitiveParms* params the drive parameters
-		/// @return void
-		void Init(PrimitiveParams* params) override;
-		
-		/// @brief run the primitive (periodic routine)
-		/// @return void
-		void Run() override;
+private:
+	float m_timeRemaining;          //In seconds
 
-		/// @brief check if the end condition has been met
-		/// @return bool true means the end condition was reached, false means it hasn't
-		bool IsDone() override;
-
-	private:
-		float m_maxTime;		//Target time
-		float m_currentTime;	//Time since init
-		std::shared_ptr<IChassis> m_chassis;	
-		std::unique_ptr<frc::Timer> m_timer;
 };
 

@@ -14,45 +14,40 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-#pragma once
+#pragma once 
 
-// C++ Includes
+// Standard C++ includes
 #include <memory>
 
-// FRC includes
-#include <frc/Timer.h>
+// Team 302 include
+#include <controllers/teleopdrive/TeleopDrive.h>
+#include <subsys/IChassis.h>
 
-// Team 302 includes
-
-// Third Party Includes
+// CTRE includes 
 
 
-#include <auton/PrimitiveFactory.h>
-#include <auton/AutonSelector.h>
-#include <auton/primitives/IPrimitive.h>
-#include <string>
-#include <vector>
+/*========================================================================================================
+ * TankDrive.h
+ *========================================================================================================
+ *
+ * File Description:  This class calculates the drive percents for a tank drive
+ *
+ *========================================================================================================*/
+class TankDrive : public TeleopDrive
+{
+    public:
+    
+        TankDrive
+        (
+            std::shared_ptr<IChassis>    chassis,
+            std::shared_ptr<DragonXBox>  xbox
+        );
+        TankDrive() = delete;
+        ~TankDrive() = default;
+               
+    protected:
+        void CalculateLeftRightPercents() override;
 
-class CyclePrimitives {
-public:
-	CyclePrimitives();
-	virtual ~CyclePrimitives() = default;
+    private:
 
-	void Init();
-	void RunCurrentPrimitive();
-
-protected:
-	void GetNextPrim();
-	void RunDoNothing();
-
-private:
-	std::vector<PrimitiveParams*> 	m_primParams;
-	int 							m_currentPrimSlot;
-	IPrimitive*						m_currentPrim;
-	PrimitiveFactory* 				m_primFactory;
-	IPrimitive* 					m_doNothing;
-	AutonSelector* 					m_autonSelector;
-	std::unique_ptr<frc::Timer>     m_timer;
-	double                          m_maxTime;
 };
-

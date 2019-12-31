@@ -20,15 +20,19 @@
 
 // FRC includes
 #include <frc/Timer.h>
-#include <units/units.h>
 
 // Team 302 includes
-#include <auton/DoNothing.h>
+#include <auton/primitives/IPrimitive.h>
 #include <auton/PrimitiveParams.h>
-#include <auton/IPrimitive.h>
-#include <subsys/ChassisFactory.h>
-#include <subsys/MechanismControl.h>
+#include <auton/primitives/TurnAngle.h>
+#include <auton/primitives/TurnToCube.h>
+
+#include <hw/factories/LidarFactory.h>
+
 #include <subsys/IMechanism.h>
+#include <subsys/MechanismFactory.h> 
+#include <subsys/MechanismControl.h>
+
 #include <utils/Logger.h>
 
 // Third Party Includes
@@ -37,47 +41,60 @@
 using namespace std;
 using namespace frc;
 
-//========================================================================================================
-/// @class  DoNothing
-/// @brief  This is an auton primitive that causes the chassis to not drive 
-//========================================================================================================
 
-
-/// @brief constructor that creates/initializes the object
-DoNothing::DoNothing() : m_maxTime(0.0),
-						 m_currentTime(0.0),
-						 m_chassis( ChassisFactory::GetChassisFactory()->GetIChassis()),
-						 m_timer( make_unique<Timer>() )
+TurnToCube::TurnToCube() : m_scanned( false ),
+                           m_minAngle( 360.0 ),     // complete revolution
+                           m_minDist( 648.0 ),      // 54 feet * 12 inches per foot
+                           m_lidar( nullptr )
 {
+    /*
+    LidarFactory* factory = LidarFactory::GetLidarFactory();
+    if ( factory != nullptr )
+    {
+        m_lidar = factory->GetLidar( DragonLidar::FORWARD_GRABBER );
+    }
+    */
 }
 
-/// @brief initialize this usage of the primitive
-/// @param PrimitiveParms* params the drive parameters
-/// @return void
-void DoNothing::Init(PrimitiveParams* params) 
+
+void TurnToCube::Init(PrimitiveParams* params)
 {
-	m_maxTime = params->GetTime();
-	m_timer->Reset();
-	m_timer->Start();
+    TurnAngle::Init( params );
+    m_scanned  = false;
+    m_minAngle = 360.0;
+    /*
+    if ( m_lidar != nullptr )
+    {
+        m_minDist = m_lidar->GetDistance();
+    }
+    */
 }
 
-/// @brief run the primitive (periodic routine)
-/// @return void
-void DoNothing::Run() 
+void TurnToCube::Run()
 {
-	if ( m_chassis != nullptr )
-	{
-		m_chassis->SetOutput( MechanismControl::MECHANISM_CONTROL_TYPE::PERCENT_OUTPUT, 0.0, 0.0 );  
-	}
-	else
-	{
-		Logger::GetLogger()->LogError( string( "DoNothing::Run" ), string( "chassis not found") );
-	}
+    TurnAngle::Run();
+    if ( m_lidar != nullptr )
+    {
+        /*
+        double currDist = m_lidar->GetDistance();
+        if ( currDist < m_minDist )
+        {
+            m_minDist = currDist;
+            m_minAngle = ChassisFactory::GetChassisFactory()->GetIChassis()->GetHeading();
+        }
+        */
+    }
 }
 
-/// @brief check if the end condition has been met
-/// @return bool true means the end condition was reached, false means it hasn't
-bool DoNothing::IsDone() 
+bool TurnToCube::IsDone()
 {
-	return m_timer->HasPeriodPassed( m_maxTime );
+    bool done = TurnAngle::IsDone();
+    if ( done && !m_scanned )
+    {
+        done = false;
+        m_scanned = true;
+    }
+    return done;
 }
+
+

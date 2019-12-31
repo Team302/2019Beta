@@ -14,36 +14,40 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-#pragma once
-
 // C++ Includes
+#include <memory>
 
 // FRC includes
 
-// Team 302 includes
-
-// Third Party Includes
-
-
-
-//Includes
-//Team302 includes
-#include <auton/SuperDrive.h>
-#include <auton/DriveTime.h>
+// Team 302 Includes
+#include <controllers/teleopdrive/ArcadeDrive.h>
+#include <gamepad/DragonXBox.h>
 #include <subsys/IChassis.h>
-#include <auton/IPrimitive.h>
 
+using namespace std;
 
-class DriveTime: public SuperDrive {
-public:
-	DriveTime();
-	virtual ~DriveTime() = default;
-	void Init(PrimitiveParams* params) override;
-	void Run() override;
-	bool IsDone() override;
+ArcadeDrive::ArcadeDrive
+(
+    shared_ptr<IChassis>    chassis,
+    shared_ptr<DragonXBox>  xbox
+) : ThrottleSteerDrive( chassis, xbox )
+{
+    xbox->SetAxisProfile( IDragonGamePad::AXIS_IDENTIFIER::LEFT_JOYSTICK_Y, IDragonGamePad::AXIS_PROFILE::CUBED );
+    xbox->SetAxisProfile( IDragonGamePad::AXIS_IDENTIFIER::RIGHT_JOYSTICK_X, IDragonGamePad::AXIS_PROFILE::CUBED );
+}
 
-private:
-	float m_timeRemaining;          //In seconds
+//=======================================================================
+double ArcadeDrive::GetThrottle()
+{
+    auto xbox = GetXBox();
+    return ( ( xbox != nullptr ) ? xbox->GetAxisValue( IDragonGamePad::AXIS_IDENTIFIER::LEFT_JOYSTICK_Y) : 0.0 );
+}
 
-};
+//=======================================================================
+double ArcadeDrive::GetSteer()
+{
+    auto xbox = GetXBox();
+    return ( ( xbox != nullptr ) ? xbox->GetAxisValue( IDragonGamePad::AXIS_IDENTIFIER::RIGHT_JOYSTICK_X) : 0.0 );
+}
+
 

@@ -35,15 +35,6 @@ class IChassis
 {
 	public:
 
-        /// @brief  Get the left side of the chassis
-        /// @return std::shared_ptr<IMechanism> left side, so mechanism calls can be utilized
-        virtual std::shared_ptr<IMechanism> GetLeftSide() const = 0;
-
-        /// @brief  Get the right side of the chassis
-        /// @return std::shared_ptr<IMechanism> right side, so mechanism calls can be utilized
-        virtual std::shared_ptr<IMechanism> GetRightSide() const = 0;
-
-
         /// @brief      Run chassis 
         /// @param [in] MechanismControl::MECHANISM_CONTROL_TYPE   controlType:  How are the item(s) being controlled
         /// @param [in] double                                     leftVvalue:   Left side target (units are based on the controlType)

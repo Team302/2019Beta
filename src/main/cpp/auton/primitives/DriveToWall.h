@@ -27,27 +27,26 @@
 
 
 #include <auton/PrimitiveParams.h>
-#include <auton/TurnAngle.h>
-#include <hw/DragonLidar.h>
+#include <subsys/MechanismFactory.h>
+#include <auton/primitives/SuperDrive.h>
+#include <subsys/IChassis.h>
+#include <auton/primitives/IPrimitive.h>
 
-class TurnToCube: public TurnAngle
-{
-    public:
-        TurnToCube();
-        virtual ~TurnToCube() = default;
 
-        void Init
-        (
-            PrimitiveParams* params
-        ) override;
-        void Run() override;
-        bool IsDone() override;
+class DriveToWall : public SuperDrive {
+public:
+	bool IsDone() override;
+	void Init(PrimitiveParams* params) override;
+	void Run() override;
+	DriveToWall();
+	virtual ~DriveToWall() = default;
 
-    private:
-        bool                    m_scanned;
-        double                  m_minAngle;
-        double                  m_minDist;
-        DragonLidar*            m_lidar;
+private:
+	float m_minimumTime;
+	float m_timeRemaining;
+	int m_underSpeedCounts;
+	const float SPEED_THRESHOLD = 3;
+	const int UNDER_SPEED_COUNT_THRESHOLD = 2;
 
 };
 

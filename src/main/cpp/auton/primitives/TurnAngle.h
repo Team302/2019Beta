@@ -20,39 +20,42 @@
 #include <memory>
 
 // FRC includes
-#include <frc/Timer.h>
 
 // Team 302 includes
+#include <auton/primitives/IPrimitive.h>
+#include <subsys/IChassis.h>
 
 // Third Party Includes
 
 
-#include <auton/PrimitiveFactory.h>
-#include <auton/AutonSelector.h>
-#include <auton/primitives/IPrimitive.h>
-#include <string>
-#include <vector>
+class TurnAngle : public IPrimitive 
+{
+    public:
+        TurnAngle();
+        virtual ~TurnAngle() = default;
 
-class CyclePrimitives {
-public:
-	CyclePrimitives();
-	virtual ~CyclePrimitives() = default;
+        void Init(PrimitiveParams* params) override;
+        void Run() override;
+        bool IsDone() override;
 
-	void Init();
-	void RunCurrentPrimitive();
+    private:
+        const float PROPORTIONAL_COEFF  = 3.0; //0.5
+        const float INTREGRAL_COEFF     = 0.0;
+        const float DERIVATIVE_COEFF    = 0.0;
+        const float FEET_FORWARD_COEFF  = 0.0;
 
-protected:
-	void GetNextPrim();
-	void RunDoNothing();
+        std::shared_ptr<IChassis> m_chassis;
+   		std::unique_ptr<frc::Timer> m_timer;
 
-private:
-	std::vector<PrimitiveParams*> 	m_primParams;
-	int 							m_currentPrimSlot;
-	IPrimitive*						m_currentPrim;
-	PrimitiveFactory* 				m_primFactory;
-	IPrimitive* 					m_doNothing;
-	AutonSelector* 					m_autonSelector;
-	std::unique_ptr<frc::Timer>     m_timer;
-	double                          m_maxTime;
+        float m_targetAngle;
+        float m_maxTime;
+        float m_leftPos;
+        float m_rightPos;
+        bool m_isDone;
+
+        const float ANGLE_THRESH = 2; // +/- threshold for being at angle
+        const float MAX_VELOCITY = 20; //inches per second
+        const float MIN_VELOCITY = 4;
+        const float ANGLE_DIFFERENCE_VELOCITY_MULTIPLIER = 0.7;
 };
 

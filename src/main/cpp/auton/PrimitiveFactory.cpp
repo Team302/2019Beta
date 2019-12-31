@@ -8,17 +8,17 @@
 #include <auton/PrimitiveFactory.h>
 #include <frc/SmartDashboard/SmartDashboard.h>
 //Team 302 includes
-#include <auton/DriveDistance.h>
-#include <auton/DriveToTarget.h>
-#include <auton/DriveTime.h>
+#include <auton/primitives/DriveDistance.h>
+#include <auton/primitives/DriveToTarget.h>
+#include <auton/primitives/DriveTime.h>
 #include <auton/PrimitiveEnums.h>
 #include <auton/PrimitiveParser.h>
-#include <auton/DoNothing.h>
-#include <auton/HoldPosition.h>
-#include <auton/TurnAngle.h>
-#include <auton/TurnToCube.h>
-#include <auton/DriveToWall.h>
-#include <auton/IPrimitive.h>
+#include <auton/primitives/DoNothing.h>
+#include <auton/primitives/HoldPosition.h>
+#include <auton/primitives/TurnAngle.h>
+#include <auton/primitives/TurnToCube.h>
+#include <auton/primitives/DriveToWall.h>
+#include <auton/primitives/IPrimitive.h>
 
 PrimitiveFactory* PrimitiveFactory::m_instance = nullptr;
 

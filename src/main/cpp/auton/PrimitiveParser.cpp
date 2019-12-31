@@ -17,7 +17,7 @@
 #include <auton/PrimitiveParams.h>
 #include <auton/AutonSelector.h>
 #include <auton/PrimitiveEnums.h>
-#include <auton/IPrimitive.h>
+#include <auton/primitives/IPrimitive.h>
 
 PrimitiveParamsVector PrimitiveParser::ParseXML
 (

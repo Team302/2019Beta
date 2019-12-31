@@ -14,45 +14,57 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-#pragma once
-
 // C++ Includes
 #include <memory>
+#include <string>
 
 // FRC includes
 #include <frc/Timer.h>
 
 // Team 302 includes
+#include <auton/primitives/DoNothing.h>
+#include <auton/PrimitiveParams.h>
+#include <auton/primitives/IPrimitive.h>
+#include <subsys/MechanismFactory.h>
+#include <subsys/MechanismControl.h>
+#include <subsys/IMechanism.h>
+#include <utils/Logger.h>
 
 // Third Party Includes
 
 
+using namespace std;
+using namespace frc;
+
+//Includes
+//Team302 includes
+#include <auton/primitives/DriveTime.h>
 #include <auton/PrimitiveFactory.h>
-#include <auton/AutonSelector.h>
-#include <auton/primitives/IPrimitive.h>
-#include <string>
-#include <vector>
+#include <auton/PrimitiveParams.h>
+#include <subsys/MechanismFactory.h>
 
-class CyclePrimitives {
-public:
-	CyclePrimitives();
-	virtual ~CyclePrimitives() = default;
+DriveTime::DriveTime() :
+		SuperDrive(),
+		m_timeRemaining(0.0)       //Value will changed in init
 
-	void Init();
-	void RunCurrentPrimitive();
+{
+}
 
-protected:
-	void GetNextPrim();
-	void RunDoNothing();
+void DriveTime::Init(PrimitiveParams* params) 
+{
+	SuperDrive::Init(params);
+	//Get timeRemaining from m_params
+	m_timeRemaining = params->GetTime();
+}
 
-private:
-	std::vector<PrimitiveParams*> 	m_primParams;
-	int 							m_currentPrimSlot;
-	IPrimitive*						m_currentPrim;
-	PrimitiveFactory* 				m_primFactory;
-	IPrimitive* 					m_doNothing;
-	AutonSelector* 					m_autonSelector;
-	std::unique_ptr<frc::Timer>     m_timer;
-	double                          m_maxTime;
-};
+void DriveTime::Run() 
+{
+	SuperDrive::Run();
+}
 
+
+bool DriveTime::IsDone() 
+{
+	m_timeRemaining -= LOOP_LENGTH;						// Decrement time remaining
+	return ((m_timeRemaining <= (LOOP_LENGTH / 2.0)));	// Return true when time runs out
+}

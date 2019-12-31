@@ -55,15 +55,6 @@ class DragonChassis : public IChassis
         /// @brief clean up memory when this object gets deleted
         ~DragonChassis() override;
 
-        /// @brief  Get the left side of the chassis
-        /// @return std::shared_ptr<IMechanism> left side, so mechanism calls can be utilized
-        std::shared_ptr<IMechanism> GetLeftSide() const override;
-
-        /// @brief  Get the right side of the chassis
-        /// @return std::shared_ptr<IMechanism> right side, so mechanism calls can be utilized
-        std::shared_ptr<IMechanism> GetRightSide() const override;
-
-
         /// @brief      Run chassis 
         /// @param [in] MechanismControl::MECHANISM_CONTROL_TYPE   controlType:  How are the item(s) being controlled
         /// @param [in] double                                     leftVvalue:   Left side target (units are based on the controlType)

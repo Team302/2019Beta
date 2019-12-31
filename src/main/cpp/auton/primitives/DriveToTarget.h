@@ -27,25 +27,31 @@
 
 
 
+#include <auton/primitives/DriveDistance.h>
 #include <auton/PrimitiveParams.h>
-#include <subsys/IChassis.h>
-#include <auton/IPrimitive.h>
+#include <hw/interfaces/IDragonDistanceSensor.h>
 
-class HoldPosition : public IPrimitive {
-public:
-	void Init(PrimitiveParams*	params) override;
-	void Run() override;
-	bool IsDone() override;
-	HoldPosition();
-	virtual ~HoldPosition() = default;
+class DriveToTarget: public DriveDistance
+{
+    public:
+        DriveToTarget();
+        virtual ~DriveToTarget() = default;
 
-private:
-	const float kP = 10; //50, /75
-	const float kI = 0.0;
-	const float kD = 0.0;
-	const float kF = 0.0;
-	//Objects
-	std::shared_ptr<IChassis> m_chassis;
-	double m_timeRemaining; //In seconds
+        bool IsDone() override;
+        void Run() override;
+        void Init(PrimitiveParams* params) override;
+
+    private:
+    // Objects
+    std::shared_ptr<IDragonDistanceSensor>            m_sensor;
+
+    // Vars
+    int m_underDistanceCounts;						// # of counts that the robot has a cube
+    float m_minTimeToRun;								// Forces the drive to run for at least this long
+
+    // Consts
+    const float MIN_CUBE_DISTANCE = 3.0;				// Min Distance in inches to a cube to be counted as in the robot
+    const int UNDER_DISTANCE_COUNT_THRESHOLD = 4;			// # of counts to determine we have a cube.... or a wall
+
 };
 

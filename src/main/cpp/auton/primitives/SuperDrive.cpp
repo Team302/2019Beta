@@ -22,9 +22,9 @@
 #include <frc/Timer.h>
 
 // Team 302 includes
-#include <auton/DoNothing.h>
+#include <auton/primitives/DoNothing.h>
 #include <auton/PrimitiveParams.h>
-#include <auton/IPrimitive.h>
+#include <auton/primitives/IPrimitive.h>
 #include <subsys/MechanismFactory.h>
 #include <subsys/MechanismControl.h>
 #include <subsys/IMechanism.h>
@@ -36,7 +36,7 @@
 using namespace std;
 using namespace frc;
 
-#include <auton/SuperDrive.h>
+#include <auton/primitives/SuperDrive.h>
 #include <subsys/ChassisFactory.h>
 #include <cmath>
 #include <frc/SmartDashboard/SmartDashboard.h>

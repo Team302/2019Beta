@@ -14,39 +14,44 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-#pragma once
+#pragma once 
 
-// C++ Includes
+// Standard C++ includes
+#include <memory>
 
-// FRC includes
-
-// Team 302 includes
-
-// Third Party Includes
-
-
-
-#include <auton/PrimitiveParams.h>
-#include <subsys/MechanismFactory.h>
-#include <auton/SuperDrive.h>
+// Team 302 include
 #include <subsys/IChassis.h>
-#include <auton/IPrimitive.h>
+#include <gamepad/DragonXBox.h>
+#include <controllers/teleopdrive/TeleopDrive.h>
+
+// CTRE includes 
 
 
-class DriveToWall : public SuperDrive {
-public:
-	bool IsDone() override;
-	void Init(PrimitiveParams* params) override;
-	void Run() override;
-	DriveToWall();
-	virtual ~DriveToWall() = default;
+/*========================================================================================================
+ * ThrottleSteerDrive.h
+ *========================================================================================================
+ *
+ * File Description:  This class calculates the drive percents for control strategies that have a 
+ *                    throttle and a steer component
+ *
+ *========================================================================================================*/
+class ThrottleSteerDrive : public TeleopDrive
+{
+    public:
+    
+        ThrottleSteerDrive
+        (
+            std::shared_ptr<IChassis>    chassis,
+            std::shared_ptr<DragonXBox>  xbox
+        );
+        ThrottleSteerDrive() = delete;
+        ~ThrottleSteerDrive() = default;
+               
+    protected:
+        void CalculateLeftRightPercents() override;
+        virtual double GetSteer() = 0;
+        virtual double GetThrottle() = 0;
 
-private:
-	float m_minimumTime;
-	float m_timeRemaining;
-	int m_underSpeedCounts;
-	const float SPEED_THRESHOLD = 3;
-	const int UNDER_SPEED_COUNT_THRESHOLD = 2;
+    private:
 
 };
-

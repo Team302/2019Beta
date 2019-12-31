@@ -14,57 +14,63 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
+#pragma once
+
 // C++ Includes
 #include <memory>
-#include <string>
 
 // FRC includes
 #include <frc/Timer.h>
-
 // Team 302 includes
-#include <auton/DoNothing.h>
-#include <auton/PrimitiveParams.h>
-#include <auton/IPrimitive.h>
-#include <subsys/MechanismFactory.h>
-#include <subsys/MechanismControl.h>
-#include <subsys/IMechanism.h>
-#include <utils/Logger.h>
+#include <subsys/IChassis.h>
+#include <auton/primitives/IPrimitive.h>
+#include <utils/DragonMath.h>
 
 // Third Party Includes
 
 
-using namespace std;
-using namespace frc;
 
-//Includes
-//Team302 includes
-#include <auton/DriveTime.h>
-#include <auton/PrimitiveFactory.h>
-#include <auton/PrimitiveParams.h>
-#include <subsys/MechanismFactory.h>
 
-DriveTime::DriveTime() :
-		SuperDrive(),
-		m_timeRemaining(0.0)       //Value will changed in init
-
+class SuperDrive : public IPrimitive 
 {
-}
+	public:
+		void Init(PrimitiveParams* params) override;
+		void Run() override;
+		bool IsDone() override;
+		void SlowDown();
+		bool ReachedTargetSpeed();
 
-void DriveTime::Init(PrimitiveParams* params) 
-{
-	SuperDrive::Init(params);
-	//Get timeRemaining from m_params
-	m_timeRemaining = params->GetTime();
-}
+		const float GYRO_CORRECTION_CONSTANT = 6; //2.3
+		const float INCHES_PER_SECOND_SECOND = 120; //120
+		const float MIN_SPEED_SLOWDOWN       = 13;
 
-void DriveTime::Run() 
-{
-	SuperDrive::Run();
-}
+protected: 
+		SuperDrive();
+		virtual ~SuperDrive() = default;
 
+	private:
+		const float PROPORTIONAL_COEFF  = 12.0; //16
+		const float INTREGRAL_COEFF     = 0;
+		const float DERIVATIVE_COEFF    = 0.0; //.16
+		const float FEET_FORWARD_COEFF  = 0.0;
 
-bool DriveTime::IsDone() 
-{
-	m_timeRemaining -= LOOP_LENGTH;						// Decrement time remaining
-	return ((m_timeRemaining <= (LOOP_LENGTH / 2.0)));	// Return true when time runs out
-}
+        std::shared_ptr<IChassis> m_chassis;
+   		std::unique_ptr<frc::Timer> m_timer;
+
+		float m_targetSpeed;
+		float m_currentSpeed;
+		float m_speedOffset;
+
+		float m_leftSpeed;
+		float m_rightSpeed;
+
+		float m_currentHeading;
+		float m_startHeading;
+
+		bool m_slowingDown;
+		bool m_reachedTargetSpeed;
+		float m_accelDecelTime;
+		float m_currentTime;
+		float m_minSpeedSlowdown;
+};
+

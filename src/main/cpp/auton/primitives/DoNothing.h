@@ -23,36 +23,46 @@
 #include <frc/Timer.h>
 
 // Team 302 includes
+#include <auton/PrimitiveParams.h>
+#include <subsys/IChassis.h>
+#include <auton/primitives/IPrimitive.h>
+#include <subsys/IChassis.h>
 
 // Third Party Includes
 
 
-#include <auton/PrimitiveFactory.h>
-#include <auton/AutonSelector.h>
-#include <auton/primitives/IPrimitive.h>
-#include <string>
-#include <vector>
 
-class CyclePrimitives {
-public:
-	CyclePrimitives();
-	virtual ~CyclePrimitives() = default;
+//========================================================================================================
+/// @class  DoNothing
+/// @brief  This is an auton primitive that causes the chassis to not drive 
+//========================================================================================================
 
-	void Init();
-	void RunCurrentPrimitive();
+class DoNothing : public IPrimitive 
+{
+	public:
+		/// @brief constructor that creates/initializes the object
+		DoNothing();
 
-protected:
-	void GetNextPrim();
-	void RunDoNothing();
+		/// @brief destructor, clean  up the memory from this object
+		virtual ~DoNothing() = default;
 
-private:
-	std::vector<PrimitiveParams*> 	m_primParams;
-	int 							m_currentPrimSlot;
-	IPrimitive*						m_currentPrim;
-	PrimitiveFactory* 				m_primFactory;
-	IPrimitive* 					m_doNothing;
-	AutonSelector* 					m_autonSelector;
-	std::unique_ptr<frc::Timer>     m_timer;
-	double                          m_maxTime;
+		/// @brief initialize this usage of the primitive
+		/// @param PrimitiveParms* params the drive parameters
+		/// @return void
+		void Init(PrimitiveParams* params) override;
+		
+		/// @brief run the primitive (periodic routine)
+		/// @return void
+		void Run() override;
+
+		/// @brief check if the end condition has been met
+		/// @return bool true means the end condition was reached, false means it hasn't
+		bool IsDone() override;
+
+	private:
+		float m_maxTime;		//Target time
+		float m_currentTime;	//Time since init
+		std::shared_ptr<IChassis> m_chassis;	
+		std::unique_ptr<frc::Timer> m_timer;
 };
 

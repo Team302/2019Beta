@@ -16,67 +16,49 @@
 
 // C++ Includes
 #include <memory>
-#include <string>
 
 // FRC includes
-#include <frc/Timer.h>
 
-// Team 302 includes
-#include <auton/DoNothing.h>
-#include <auton/PrimitiveParams.h>
-#include <auton/IPrimitive.h>
-#include <subsys/MechanismFactory.h>
-#include <subsys/MechanismControl.h>
-#include <subsys/IMechanism.h>
-#include <utils/Logger.h>
-
-// Third Party Includes
-
-
-using namespace std;
-using namespace frc;
-
-//Includes
-#include <cmath>
-#include <iostream>
-
-//Team302 includes
-#include <auton/DriveToWall.h>
-#include <subsys/ChassisFactory.h>
+// Team 302 Includes
+#include <controllers/teleopdrive/GTADrive.h>
+#include <gamepad/DragonXBox.h>
 #include <subsys/IChassis.h>
 
-DriveToWall::DriveToWall() :
-	SuperDrive(),
-	m_minimumTime(0),
-	m_timeRemaining(0),
-	m_underSpeedCounts(0)
+using namespace std;
+
+GTADrive::GTADrive
+(
+    shared_ptr<IChassis>    chassis,
+    shared_ptr<DragonXBox>  xbox
+) : ThrottleSteerDrive( chassis, xbox )
 {
+    if ( xbox != nullptr )
+    {
+        xbox->SetAxisProfile( IDragonGamePad::AXIS_IDENTIFIER::LEFT_TRIGGER, IDragonGamePad::AXIS_PROFILE::CUBED );
+        xbox->SetAxisProfile( IDragonGamePad::AXIS_IDENTIFIER::RIGHT_TRIGGER, IDragonGamePad::AXIS_PROFILE::CUBED );
+        xbox->SetAxisProfile( IDragonGamePad::AXIS_IDENTIFIER::LEFT_JOYSTICK_X, IDragonGamePad::AXIS_PROFILE::CUBED );
+    }
 }
 
-void DriveToWall::Init(PrimitiveParams* params) 
+//=======================================================================
+double GTADrive::GetThrottle()
 {
-	SuperDrive::Init(params);
-	m_timeRemaining = params->GetTime();
-	m_underSpeedCounts = 0;
-	m_minimumTime = 0.3;
+    auto xbox = GetXBox();
+    double leftTrigger = 0.0;
+    double rightTrigger = 0.0;
+    if ( xbox != nullptr )
+    {
+        leftTrigger = xbox->GetAxisValue( IDragonGamePad::AXIS_IDENTIFIER::LEFT_TRIGGER );
+        rightTrigger = xbox->GetAxisValue( IDragonGamePad::AXIS_IDENTIFIER::RIGHT_TRIGGER );
+    }
+    return ( rightTrigger - leftTrigger );
 }
 
-void DriveToWall::Run() 
+//=======================================================================
+double GTADrive::GetSteer()
 {
-	if (m_minimumTime <= 0) 
-	{
-		if (std::abs( ChassisFactory::GetChassisFactory()->GetIChassis()->GetCurrentSpeed()) < SPEED_THRESHOLD) 
-		{
-			m_underSpeedCounts++;
-		}
-	}
-
-	m_minimumTime -= IPrimitive::LOOP_LENGTH;
-	m_timeRemaining -= IPrimitive::LOOP_LENGTH;
+    auto xbox = GetXBox();
+    return ( ( xbox != nullptr ) ? xbox->GetAxisValue( IDragonGamePad::AXIS_IDENTIFIER::LEFT_JOYSTICK_X) : 0.0 );
 }
 
-bool DriveToWall::IsDone() 
-{
-	return (m_underSpeedCounts >= UNDER_SPEED_COUNT_THRESHOLD) && m_timeRemaining <= 0;
-}
 

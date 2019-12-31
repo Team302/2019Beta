@@ -23,9 +23,9 @@
 #include <frc/Timer.h>
 
 // Team 302 includes
-#include <auton/TurnAngle.h>
+#include <auton/primitives/TurnAngle.h>
 #include <auton/PrimitiveParams.h>
-#include <auton/IPrimitive.h>
+#include <auton/primitives/IPrimitive.h>
 #include <subsys/ChassisFactory.h>
 #include <subsys/MechanismControl.h>
 #include <subsys/IChassis.h>

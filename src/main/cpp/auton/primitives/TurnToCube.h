@@ -17,42 +17,37 @@
 #pragma once
 
 // C++ Includes
-#include <memory>
 
 // FRC includes
-#include <frc/Timer.h>
 
 // Team 302 includes
 
 // Third Party Includes
 
 
-#include <auton/PrimitiveFactory.h>
-#include <auton/AutonSelector.h>
-#include <auton/primitives/IPrimitive.h>
-#include <string>
-#include <vector>
 
-class CyclePrimitives {
-public:
-	CyclePrimitives();
-	virtual ~CyclePrimitives() = default;
+#include <auton/PrimitiveParams.h>
+#include <auton/primitives/TurnAngle.h>
+#include <hw/DragonLidar.h>
 
-	void Init();
-	void RunCurrentPrimitive();
+class TurnToCube: public TurnAngle
+{
+    public:
+        TurnToCube();
+        virtual ~TurnToCube() = default;
 
-protected:
-	void GetNextPrim();
-	void RunDoNothing();
+        void Init
+        (
+            PrimitiveParams* params
+        ) override;
+        void Run() override;
+        bool IsDone() override;
 
-private:
-	std::vector<PrimitiveParams*> 	m_primParams;
-	int 							m_currentPrimSlot;
-	IPrimitive*						m_currentPrim;
-	PrimitiveFactory* 				m_primFactory;
-	IPrimitive* 					m_doNothing;
-	AutonSelector* 					m_autonSelector;
-	std::unique_ptr<frc::Timer>     m_timer;
-	double                          m_maxTime;
+    private:
+        bool                    m_scanned;
+        double                  m_minAngle;
+        double                  m_minDist;
+        DragonLidar*            m_lidar;
+
 };
 

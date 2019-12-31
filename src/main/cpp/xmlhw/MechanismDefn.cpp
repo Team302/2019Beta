@@ -207,6 +207,10 @@ IMechanism* MechanismDefn::ParseXML
                 Logger::GetLogger()->LogError( "MechanismDefn", "unable to create ServoDefn" );
             }
         }
+        else if ( strcmp( child.name(), "solenoid" ) == 0 )
+        {
+            // todo parse solenoids
+        }
         else
         {
                 Logger::GetLogger()->LogError( "MechanismDefn", "unknown child" );

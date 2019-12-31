@@ -28,7 +28,7 @@
 
 #include <auton/PrimitiveEnums.h>
 #include <auton/PrimitiveParams.h>
-#include <auton/IPrimitive.h>
+#include <auton/primitives/IPrimitive.h>
 
 class PrimitiveFactory {
 public:

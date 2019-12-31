@@ -14,63 +14,83 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-#pragma once
-
 // C++ Includes
 #include <memory>
+#include <string>
 
 // FRC includes
 #include <frc/Timer.h>
+
 // Team 302 includes
-#include <subsys/IChassis.h>
-#include <auton/IPrimitive.h>
-#include <utils/DragonMath.h>
+#include <auton/primitives/DoNothing.h>
+#include <auton/PrimitiveParams.h>
+#include <auton/primitives/IPrimitive.h>
+#include <subsys/MechanismFactory.h>
+#include <subsys/MechanismControl.h>
+#include <subsys/IMechanism.h>
+#include <utils/Logger.h>
 
 // Third Party Includes
 
 
+using namespace std;
+using namespace frc;
 
+#include <auton/primitives/DriveDistance.h>
+#include <auton/primitives/DriveToTarget.h>
+#include <auton/PrimitiveParams.h>
+#include <hw/factories/DistanceSensorFactory.h>
+#include <hw/interfaces/IDragonDistanceSensor.h>
 
-class SuperDrive : public IPrimitive 
+DriveToTarget::DriveToTarget() :
+	m_sensor( nullptr ),
+	m_underDistanceCounts( 0 ),
+	m_minTimeToRun( 0 )
 {
-	public:
-		void Init(PrimitiveParams* params) override;
-		void Run() override;
-		bool IsDone() override;
-		void SlowDown();
-		bool ReachedTargetSpeed();
+    auto factory = DistanceSensorFactory::GetFactory();
+    if ( factory != nullptr )
+    {
+      //  m_sensor = factory->GetSensor( IDragonSensor::SENSOR_USAGE::FORWARD_SENSOR );
+    }
+}
 
-		const float GYRO_CORRECTION_CONSTANT = 6; //2.3
-		const float INCHES_PER_SECOND_SECOND = 120; //120
-		const float MIN_SPEED_SLOWDOWN       = 13;
 
-protected: 
-		SuperDrive();
-		virtual ~SuperDrive() = default;
+void DriveToTarget::Init
+(
+    PrimitiveParams* params
+)
+{
+    if ( m_sensor != nullptr )
+    {
+        params->SetDistance( m_sensor->GetDistance() );
+    }
+    else
+    {
+    	printf("heyyy that lidar is nullptr \n");
+    }
 
-	private:
-		const float PROPORTIONAL_COEFF  = 12.0; //16
-		const float INTREGRAL_COEFF     = 0;
-		const float DERIVATIVE_COEFF    = 0.0; //.16
-		const float FEET_FORWARD_COEFF  = 0.0;
+	m_minTimeToRun = 0.3;
+    m_underDistanceCounts = 0;
 
-        std::shared_ptr<IChassis> m_chassis;
-   		std::unique_ptr<frc::Timer> m_timer;
+    DriveDistance::Init( params );
+}
 
-		float m_targetSpeed;
-		float m_currentSpeed;
-		float m_speedOffset;
+void DriveToTarget::Run()
+{
+	DriveDistance::Run();
+	if (m_minTimeToRun <= 0) {
+		if ( m_sensor->GetDistance() <= MIN_CUBE_DISTANCE ) 
+        {
+			m_underDistanceCounts++;
+		}
+	}
 
-		float m_leftSpeed;
-		float m_rightSpeed;
+	m_minTimeToRun -= IPrimitive::LOOP_LENGTH;
+}
 
-		float m_currentHeading;
-		float m_startHeading;
+bool DriveToTarget::IsDone()
+{
+	bool done = m_underDistanceCounts >= UNDER_DISTANCE_COUNT_THRESHOLD;
 
-		bool m_slowingDown;
-		bool m_reachedTargetSpeed;
-		float m_accelDecelTime;
-		float m_currentTime;
-		float m_minSpeedSlowdown;
-};
-
+	return ( DriveDistance::IsDone() || done );
+}

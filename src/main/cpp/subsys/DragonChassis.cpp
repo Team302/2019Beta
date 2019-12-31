@@ -53,30 +53,13 @@ DragonChassis::DragonChassis
     m_wheelBase( wheelBase ),
     m_wheelTrack( track )
 {
-
-
 }
 
 /// @brief clean up memory when this object gets deleted
 DragonChassis::~DragonChassis()
 {
-
-}
-
-/// @brief  Get the left side of the chassis
-/// @return std::shared_ptr<IMechanism> left side, so mechanism calls can be utilized
-shared_ptr<IMechanism> DragonChassis::GetLeftSide() const
-{
-    shared_ptr<IMechanism> left = nullptr;
-    return left;
-}
-
-/// @brief  Get the right side of the chassis
-/// @return std::shared_ptr<IMechanism> right side, so mechanism calls can be utilized
-shared_ptr<IMechanism> DragonChassis::GetRightSide() const
-{
-    shared_ptr<IMechanism> right = nullptr;
-    return right;
+    delete m_leftSide;
+    delete m_rightSide;
 }
 
 
@@ -92,7 +75,8 @@ void DragonChassis::SetOutput
     double                                   rightValue     
 )
 {
-
+    m_leftSide->SetOutput( controlType, leftValue );
+    m_rightSide->SetOutput( controlType, rightValue );
 }
 
 
@@ -100,32 +84,28 @@ void DragonChassis::SetOutput
 /// @return double  position in inches of the center of the chassis
 double DragonChassis::GetCurrentPosition() const
 {
-    double pos = 0.0;
-    return pos;
+    return ( m_leftSide->GetCurrentPosition() + m_rightSide->GetCurrentPosition() ) / 2.0;
 }
 
 /// @brief  Return the current position of the left side of the DragonChassis in inches.  
 /// @return double  position in inches of the left side of the chassis
 double DragonChassis::GetCurrentLeftPosition() const
 {
-    double pos = 0.0;
-    return pos;
+    return m_leftSide->GetCurrentPosition();
 }
 
 /// @brief  Return the current position of the right side of the DragonChassis in inches.  
 /// @return double  position in inches of the right side of the chassis
 double DragonChassis::GetCurrentRightPosition() const
 {
-    double pos = 0.0;
-    return pos;
+    return m_rightSide->GetCurrentPosition();
 }
 
 /// @brief  Return the target position of the center of the DragonChassis in inches.  
 /// @return double  position in inches of the center of the DragonChassis
 double DragonChassis::GetTargetPosition() const
 {
-    double pos = 0.0;
-    return pos;
+    return ( m_leftSide->GetTargetPosition() + m_rightSide->GetTargetPosition() ) / 2.0;
 }
 
 
@@ -133,16 +113,14 @@ double DragonChassis::GetTargetPosition() const
 /// @return double  position in inches of the left side of the DragonChassis
 double DragonChassis::GetTargetLeftPosition() const
 {
-    double pos = 0.0;
-    return pos;
+    return m_leftSide->GetTargetPosition();
 }
 
 /// @brief  Return the target position of the right side of the DragonChassis in inches.  
 /// @return double  position in inches of the right side of the DragonChassis
 double DragonChassis::GetTargetRightPosition() const
 {
-    double pos = 0.0;
-    return pos;
+    return m_rightSide->GetTargetPosition();
 }
 
 
@@ -150,24 +128,21 @@ double DragonChassis::GetTargetRightPosition() const
 /// @return double  speed in inches per second of the center of the chassis
 double DragonChassis::GetCurrentSpeed() const
 {
-    double speed = 0.0;
-    return speed;
+    return ( m_leftSide->GetCurrentSpeed() + m_rightSide->GetCurrentSpeed() ) / 2.0;
 }
 
 /// @brief  Return the current speed of the left side of the DragonChassis in inches per second.  
 /// @return double  speed in inches per second of the left side of the chassis
 double DragonChassis::GetCurrentLeftSpeed() const
 {
-    double speed = 0.0;
-    return speed;
+    return m_leftSide->GetCurrentSpeed();
 }
 
 /// @brief  Return the current speed of the right side of the DragonChassis in inches per second.  
 /// @return double  speed in inches per second of the right side of the chassis
 double DragonChassis::GetCurrentRightSpeed() const
 {
-    double speed = 0.0;
-    return speed;
+    return m_rightSide->GetCurrentSpeed();
 }
 
 
@@ -175,24 +150,21 @@ double DragonChassis::GetCurrentRightSpeed() const
 /// @return double	speed in inches/second of the center of the chassis.
 double DragonChassis::GetTargetSpeed() const
 {
-    double speed = 0.0;
-    return speed;
+    return ( m_leftSide->GetTargetSpeed() + m_rightSide->GetTargetSpeed() ) / 2.0;
 }
 
 /// @brief  Get the target speed of the left side of the chassis.  The value is in inches per second.
 /// @return double	speed in inches/second of the left side of the chassis.
 double DragonChassis::GetTargetLeftSpeed() const
 {
-    double speed = 0.0;
-    return speed;
+    return m_leftSide->GetTargetSpeed();
 }
 
 /// @brief  Get the target speed of the right side of the chassis.  The value is in inches per second.
 /// @return double	speed in inches/second of the right side of the chassis.
 double DragonChassis::GetTargetRightSpeed() const
 {
-    double speed = 0.0;
-    return speed;
+    return m_rightSide->GetTargetSpeed();
 }
 
 
@@ -204,7 +176,8 @@ void DragonChassis::SetControlConstants
     PIDData*                                 pid               
 )
 {
-
+    m_leftSide->SetControlConstants( pid );
+    m_rightSide->SetControlConstants( pid );
 }
 
 

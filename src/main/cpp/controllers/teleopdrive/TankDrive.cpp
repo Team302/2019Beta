@@ -14,58 +14,34 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-#pragma once
-
 // C++ Includes
+#include <memory>
 
 // FRC includes
 
-// Team 302 includes
-
-// Third Party Includes
-
-
-
-#include <auton/PrimitiveParams.h>
-#include <subsys/MechanismFactory.h>
-#include <auton/SuperDrive.h>
+// Team 302 Includes
+#include <controllers/teleopdrive/TankDrive.h>
+#include <gamepad/DragonXBox.h>
 #include <subsys/IChassis.h>
-#include <auton/IPrimitive.h>
 
-class DriveDistance : public SuperDrive {
-public:
-	bool IsDone() override;
-	void Init(PrimitiveParams* params) override;
-	void Run() override;
-	DriveDistance();
-	virtual ~DriveDistance() = default;
+using namespace std;
 
-protected:
-    void SetDistance
-    (
-        double distance
-    );
-private:
-	void CalculateSlowDownDistance();
-	//TODO: remove timeout. it is no longer being used
-//	const float TIMEOUT_MULTIPIER = 200000; // Multiplier for the max expected time (speed * distance) * TIMEOUT_MULTIPLIER = expected time
-									//1.4
-	PrimitiveParams* m_params;
+TankDrive::TankDrive
+(
+    shared_ptr<IChassis>    chassis,
+    shared_ptr<DragonXBox>  xbox
+) : TeleopDrive( chassis, xbox )
+{
+    xbox->SetAxisProfile( IDragonGamePad::AXIS_IDENTIFIER::LEFT_JOYSTICK_Y, IDragonGamePad::AXIS_PROFILE::CUBED );
+    xbox->SetAxisProfile( IDragonGamePad::AXIS_IDENTIFIER::RIGHT_JOYSTICK_Y, IDragonGamePad::AXIS_PROFILE::CUBED );
+}
 
-	float m_targetDistance;
-	float m_initialDistance;
-	float m_timeRemaining;
-
-	float m_minSpeedCountTime;
-	int m_underSpeedCounts;
-	float m_startHeading;
-	float m_endHeading;
-	float m_minSpeed;
-	bool m_arcing;
-
-	const float SPEED_THRESHOLD = 1.5;
-	const float MIN_SPEED_COUNT_TIME = 0.5; //seconds before we start checking for wall collisions
-	const int UNDER_SPEED_COUNT_THRESHOLD = 4;
-	const float DECEL_TIME_MULTIPLIER = 0.85; //0.75
-};
-
+void TankDrive::CalculateLeftRightPercents()
+{
+    auto xbox = GetXBox();
+    if ( xbox != nullptr )
+    {
+        SetLeftPercent( xbox->GetAxisValue( IDragonGamePad::AXIS_IDENTIFIER::LEFT_JOYSTICK_Y ) );
+        SetRightPercent( xbox->GetAxisValue( IDragonGamePad::AXIS_IDENTIFIER::RIGHT_JOYSTICK_Y ) );
+    }
+}

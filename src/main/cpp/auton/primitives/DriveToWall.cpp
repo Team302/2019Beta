@@ -22,9 +22,9 @@
 #include <frc/Timer.h>
 
 // Team 302 includes
-#include <auton/DoNothing.h>
+#include <auton/primitives/DoNothing.h>
 #include <auton/PrimitiveParams.h>
-#include <auton/IPrimitive.h>
+#include <auton/primitives/IPrimitive.h>
 #include <subsys/MechanismFactory.h>
 #include <subsys/MechanismControl.h>
 #include <subsys/IMechanism.h>
@@ -36,61 +36,47 @@
 using namespace std;
 using namespace frc;
 
-#include <auton/DriveDistance.h>
-#include <auton/DriveToTarget.h>
-#include <auton/PrimitiveParams.h>
-#include <hw/factories/DistanceSensorFactory.h>
-#include <hw/interfaces/IDragonDistanceSensor.h>
+//Includes
+#include <cmath>
+#include <iostream>
 
-DriveToTarget::DriveToTarget() :
-	m_sensor( nullptr ),
-	m_underDistanceCounts( 0 ),
-	m_minTimeToRun( 0 )
+//Team302 includes
+#include <auton/primitives/DriveToWall.h>
+#include <subsys/ChassisFactory.h>
+#include <subsys/IChassis.h>
+
+DriveToWall::DriveToWall() :
+	SuperDrive(),
+	m_minimumTime(0),
+	m_timeRemaining(0),
+	m_underSpeedCounts(0)
 {
-    auto factory = DistanceSensorFactory::GetFactory();
-    if ( factory != nullptr )
-    {
-      //  m_sensor = factory->GetSensor( IDragonSensor::SENSOR_USAGE::FORWARD_SENSOR );
-    }
 }
 
-
-void DriveToTarget::Init
-(
-    PrimitiveParams* params
-)
+void DriveToWall::Init(PrimitiveParams* params) 
 {
-    if ( m_sensor != nullptr )
-    {
-        params->SetDistance( m_sensor->GetDistance() );
-    }
-    else
-    {
-    	printf("heyyy that lidar is nullptr \n");
-    }
-
-	m_minTimeToRun = 0.3;
-    m_underDistanceCounts = 0;
-
-    DriveDistance::Init( params );
+	SuperDrive::Init(params);
+	m_timeRemaining = params->GetTime();
+	m_underSpeedCounts = 0;
+	m_minimumTime = 0.3;
 }
 
-void DriveToTarget::Run()
+void DriveToWall::Run() 
 {
-	DriveDistance::Run();
-	if (m_minTimeToRun <= 0) {
-		if ( m_sensor->GetDistance() <= MIN_CUBE_DISTANCE ) 
-        {
-			m_underDistanceCounts++;
+	if (m_minimumTime <= 0) 
+	{
+		if (std::abs( ChassisFactory::GetChassisFactory()->GetIChassis()->GetCurrentSpeed()) < SPEED_THRESHOLD) 
+		{
+			m_underSpeedCounts++;
 		}
 	}
 
-	m_minTimeToRun -= IPrimitive::LOOP_LENGTH;
+	m_minimumTime -= IPrimitive::LOOP_LENGTH;
+	m_timeRemaining -= IPrimitive::LOOP_LENGTH;
 }
 
-bool DriveToTarget::IsDone()
+bool DriveToWall::IsDone() 
 {
-	bool done = m_underDistanceCounts >= UNDER_DISTANCE_COUNT_THRESHOLD;
-
-	return ( DriveDistance::IsDone() || done );
+	return (m_underSpeedCounts >= UNDER_SPEED_COUNT_THRESHOLD) && m_timeRemaining <= 0;
 }
+

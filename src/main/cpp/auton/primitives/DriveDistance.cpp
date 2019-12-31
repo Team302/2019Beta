@@ -22,9 +22,9 @@
 #include <frc/Timer.h>
 
 // Team 302 includes
-#include <auton/DoNothing.h>
+#include <auton/primitives/DoNothing.h>
 #include <auton/PrimitiveParams.h>
-#include <auton/IPrimitive.h>
+#include <auton/primitives/IPrimitive.h>
 #include <subsys/ChassisFactory.h>
 #include <subsys/MechanismControl.h>
 #include <subsys/IMechanism.h>
@@ -41,7 +41,7 @@ using namespace frc;
 #include <frc/SmartDashboard/SmartDashboard.h>
 
 //Team302 includes
-#include <auton/DriveDistance.h>
+#include <auton/primitives/DriveDistance.h>
 #include <subsys/MechanismFactory.h>
 #include <subsys/IChassis.h>
 

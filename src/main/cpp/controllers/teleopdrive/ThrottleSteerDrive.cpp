@@ -14,48 +14,54 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-#pragma once
-
 // C++ Includes
 #include <memory>
+#include <cmath>
 
 // FRC includes
 
-// Team 302 includes
-#include <auton/IPrimitive.h>
+// Team 302 Includes
+#include <controllers/teleopdrive/ThrottleSteerDrive.h>
+#include <gamepad/DragonXBox.h>
 #include <subsys/IChassis.h>
 
-// Third Party Includes
+using namespace std;
 
-
-class TurnAngle : public IPrimitive 
+ThrottleSteerDrive::ThrottleSteerDrive
+(
+    shared_ptr<IChassis>    chassis,
+    shared_ptr<DragonXBox>  xbox
+) : TeleopDrive( chassis, xbox )
 {
-    public:
-        TurnAngle();
-        virtual ~TurnAngle() = default;
+}
 
-        void Init(PrimitiveParams* params) override;
-        void Run() override;
-        bool IsDone() override;
+void ThrottleSteerDrive::CalculateLeftRightPercents( )
+{
+    // Get throttle and steer values from the subclasses
+    auto throttle = GetThrottle();
+    auto steer = GetSteer();
 
-    private:
-        const float PROPORTIONAL_COEFF  = 3.0; //0.5
-        const float INTREGRAL_COEFF     = 0.0;
-        const float DERIVATIVE_COEFF    = 0.0;
-        const float FEET_FORWARD_COEFF  = 0.0;
+    // convert throttle  / steer values to left / right values
+    auto left = throttle + steer;
+    auto right = throttle - steer;
 
-        std::shared_ptr<IChassis> m_chassis;
-   		std::unique_ptr<frc::Timer> m_timer;
+    // make sure the values are within -1.0 to 1.0
+    auto maxValue = abs( left );
+    if ( abs(right) > maxValue )
+    {
+        maxValue = abs( right );
+    }
+    if ( maxValue > 1.0 )
+    {
+        left /= maxValue;
+        right /= maxValue;
+    }
 
-        float m_targetAngle;
-        float m_maxTime;
-        float m_leftPos;
-        float m_rightPos;
-        bool m_isDone;
+    // Set the percentages
+    SetLeftPercent( left );
+    SetRightPercent( right );
 
-        const float ANGLE_THRESH = 2; // +/- threshold for being at angle
-        const float MAX_VELOCITY = 20; //inches per second
-        const float MIN_VELOCITY = 4;
-        const float ANGLE_DIFFERENCE_VELOCITY_MULTIPLIER = 0.7;
-};
+
+}
+
 

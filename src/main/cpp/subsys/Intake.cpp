@@ -78,7 +78,7 @@ void Intake::SetOutput
     // on the motor (2 calls)
     if ( m_motor != nullptr )
     {
-        auto pct = min(1.0, max(value, -1.0));  // replace std::clamp in c++17
+        auto pct = clamp( value, -1.0, 1.0 );
         m_motor->SetControlMode( IDragonMotorController::DRAGON_CONTROL_MODE::PERCENT_OUTPUT );
         m_motor->Set( pct );
     }

@@ -23,7 +23,7 @@
 
 // Team 302 includes
 #include <hw/interfaces/IDragonMotorController.h>
-#include <subsys/IDifferntialChassis.h>
+#include <subsys/IChassis.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismControl.h>
 #include <subsys/MechanismTypes.h>
@@ -34,16 +34,26 @@
 
 /// @class DragonChassis
 /// @brief This is a differential chassis.  Each side of the robot will be treated as a separate mechanism
-class DragonChassis : public IDifferentialChassis
+class DragonChassis : public IChassis
 {
     public:
 
 
         /// @brief Create the subobjects and initialize the DragonChassis subsystem
-        DragonChassis();
+        DragonChassis
+        (
+            double 						                            wheelDiameter,		
+            double 					    	                        wheelBase,			
+            double 						                            track,				
+            std::shared_ptr<IDragonMotorController>                 leftMaster,
+            std::shared_ptr<IDragonMotorController>                 rightMaster,
+            std::vector<std::shared_ptr<IDragonMotorController>>    leftFollowers,
+            std::vector<std::shared_ptr<IDragonMotorController>>    rightFollowers
+        );
+        DragonChassis() = delete;
 
         /// @brief clean up memory when this object gets deleted
-        virtual ~DragonChassis();
+        ~DragonChassis() override;
 
         /// @brief  Get the left side of the chassis
         /// @return std::shared_ptr<IMechanism> left side, so mechanism calls can be utilized
@@ -127,8 +137,11 @@ class DragonChassis : public IDifferentialChassis
         ) override;
         
     private:
-        std::shared_ptr<IMechanism>     m_leftside;
-        std::shared_ptr<IMechanism>     m_rightside;
+        IMechanism*                     m_leftSide;
+        IMechanism*                     m_rightSide;
+
+        double                          m_wheelBase;
+        double                          m_wheelTrack;
 };
 
 

@@ -19,19 +19,19 @@ class DragonPDP
 		// Description:		Create a PDP from inputs
 		// Returns:         std::shared_ptr<PowerDistributionPanel>
 		//=======================================================================================
-		std::shared_ptr<PowerDistributionPanel> CreatePDP
+		PowerDistributionPanel* CreatePDP
 		(
 			int			canID				// <I> - PDP CAN ID
 		);
 
-		inline std::shared_ptr<frc::PowerDistributionPanel> GetPDP() { return m_pdp;}
+		frc::PowerDistributionPanel* GetPDP() const;
 
 	private:
-		DragonPDP() = default;
+		DragonPDP();
 		virtual ~DragonPDP() = default;
 
-		static DragonPDP*      				            m_instance;
-		std::shared_ptr<frc::PowerDistributionPanel>    m_pdp;
+		static DragonPDP*						m_instance;
+		mutable frc::PowerDistributionPanel*	m_pdp;
 
 };
 

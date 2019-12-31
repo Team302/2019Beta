@@ -24,7 +24,14 @@ class DragonSparkMax : public IDragonMotorController
         //note: two PIDs: 0 is position, 1 is velocity
         // Constructors
         DragonSparkMax() = delete;
-        DragonSparkMax(int id, MotorControllerUsage::MOTOR_CONTROLLER_USAGE deviceType, rev::CANSparkMax::MotorType motorType, double gearRatio);
+        DragonSparkMax
+        (
+            int id, 
+            int pdpID,
+            MotorControllerUsage::MOTOR_CONTROLLER_USAGE deviceType, 
+            rev::CANSparkMax::MotorType motorType, 
+            double gearRatio
+        );
 
         virtual ~DragonSparkMax() = default;
 
@@ -33,8 +40,11 @@ class DragonSparkMax : public IDragonMotorController
         double GetRPS() const override;
         MotorControllerUsage::MOTOR_CONTROLLER_USAGE GetType() const override;
         int GetID() const override;
-        std::shared_ptr<frc::SpeedController> GetSpeedController() const;
+        std::shared_ptr<frc::SpeedController> GetSpeedController() const override;
+        double GetCurrent() const override;
+
         std::shared_ptr<rev::CANSparkMax> GetSparkMax() const;
+        
 
         // Setters
         void SetControlMode(IDragonMotorController::DRAGON_CONTROL_MODE mode) override;
@@ -53,6 +63,7 @@ class DragonSparkMax : public IDragonMotorController
     private:
         double GetRotationsWithGearNoOffset() const;
         int m_id;
+        int m_pdp;
         std::shared_ptr<rev::CANSparkMax> m_spark;
         DRAGON_CONTROL_MODE m_controlMode;
         double m_outputRotationOffset;

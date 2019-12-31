@@ -29,9 +29,9 @@ class ChassisFactory
 			std::shared_ptr<IChassis> CreateChassis
 			(
 				CHASSIS_TYPE     			        type,				// <I> - Chassis Type
-				float 						        wheelDiameter,		// <I> - Diameter of the wheel
-			    float 						        wheelBase,			// <I> - Front-Back distance between wheel centers
-				float 						        track,				// <I> - Left-Right distance between wheels (same axle)
+				double 						        wheelDiameter,		// <I> - Diameter of the wheel
+			    double 						        wheelBase,			// <I> - Front-Back distance between wheel centers
+				double 						        track,				// <I> - Left-Right distance between wheels (same axle)
 				const IDragonMotorControllerMap&    motors 		        // <I> - Motor Controllers
 			);
 

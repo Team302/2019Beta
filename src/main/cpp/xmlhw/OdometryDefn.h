@@ -16,31 +16,32 @@
 
 #pragma once
 
-//========================================================================================================
-///	 @class			MechanismTypes
-///  @brief      	This contains the enum for the mechanism types
-//========================================================================================================
-class MechanismTypes
+// C++ Includes
+
+// FRC includes
+
+// Team 302 includes
+
+// Third Party includes
+#include <pugixml/pugixml.hpp>
+
+
+/// @class OdometryDefn
+/// @brief Create a Odometry data from an XML definition 
+class OdometryDefn
 {
 	public:
+		/// @brief construct a OdometryDefn object
+		OdometryDefn() = default;
 
-        //==================================================================================
-        /// enum:           MECHANISM_TYPE
-        /// description:    Indicates the type of mechanism
-        //==================================================================================
-        enum MECHANISM_TYPE
-        {
-            UNKNOWN_MECHANISM = -1,
-            DRIVETRAIN_SIDE,
-            SHOOTER,
-            ELEVATOR,
-            WRIST,
-            INTAKE,
-            ARM,
-            EXTENDER,
-            CLIMBER,
-            BEAK,
-            TAIL,
-            MAX_MECHANISM_TYPES
-        };
+		/// @brief destroy a OdometryDefn object and free the memory
+		virtual ~OdometryDefn() = default;
+
+    	/// @brief  Parse the odometry element (and it children).  When this is done a Odometry object exists.
+		/// @param [in]  pugi::xml_node the odometry element in the XML document
+    	/// @return void
+		void ParseXML
+		(
+			pugi::xml_node      odometryNode
+		);
 };

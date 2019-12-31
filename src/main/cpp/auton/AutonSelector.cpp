@@ -971,36 +971,36 @@ void AutonSelector::FindXMLFileNames()
 void AutonSelector::PutChoicesOnDashboard()
 {
 	// Where is the robot located
-	m_chooserPosition.AddDefault( LEFT_CORNER_STR, LEFT_CORNER_STR );
-	m_chooserPosition.AddObject( CENTER_STR, CENTER_STR );
-	m_chooserPosition.AddObject( RIGHT_CORNER_STR, RIGHT_CORNER_STR );
+	m_chooserPosition.SetDefaultOption( LEFT_CORNER_STR, LEFT_CORNER_STR );
+	m_chooserPosition.AddOption( CENTER_STR, CENTER_STR );
+	m_chooserPosition.AddOption( RIGHT_CORNER_STR, RIGHT_CORNER_STR );
 	frc::SmartDashboard::PutData( "Auton: Robot Start Position", &m_chooserPosition );
 
 	// What is our desired action
 	// AUTOLINE Option
-	m_chooserOptions.AddDefault( CROSS_AUTON_LINE_STR, CROSS_AUTON_LINE_STR );
+	m_chooserOptions.SetDefaultOption( CROSS_AUTON_LINE_STR, CROSS_AUTON_LINE_STR );
 	// SWITCH Option
-	m_chooserOptions.AddObject( PLACE_IN_SWITCH_STR, PLACE_IN_SWITCH_STR );
+	m_chooserOptions.AddOption( PLACE_IN_SWITCH_STR, PLACE_IN_SWITCH_STR );
 	// CORNER SCALE Option
-	m_chooserOptions.AddObject( PLACE_ON_CORNER_SCALE_FAR_STR, PLACE_ON_CORNER_SCALE_FAR_STR );
-	m_chooserOptions.AddObject( PLACE_ON_CORNER_SCALE_HALFWAY_STR, PLACE_ON_CORNER_SCALE_HALFWAY_STR );
+	m_chooserOptions.AddOption( PLACE_ON_CORNER_SCALE_FAR_STR, PLACE_ON_CORNER_SCALE_FAR_STR );
+	m_chooserOptions.AddOption( PLACE_ON_CORNER_SCALE_HALFWAY_STR, PLACE_ON_CORNER_SCALE_HALFWAY_STR );
 	// SAFE SCALE Option
-	m_chooserOptions.AddObject( PLACE_ON_END_SCALE_FAR_STR, PLACE_ON_END_SCALE_FAR_STR );
-	m_chooserOptions.AddObject( PLACE_ON_END_SCALE_HALFWAY_STR, PLACE_ON_END_SCALE_HALFWAY_STR );
+	m_chooserOptions.AddOption( PLACE_ON_END_SCALE_FAR_STR, PLACE_ON_END_SCALE_FAR_STR );
+	m_chooserOptions.AddOption( PLACE_ON_END_SCALE_HALFWAY_STR, PLACE_ON_END_SCALE_HALFWAY_STR );
 	// BACKUP SCALE Option
-	m_chooserOptions.AddObject( PLACE_ON_CORNER_SCALE_BACKUP_FAR_STR, PLACE_ON_CORNER_SCALE_BACKUP_FAR_STR );
-	m_chooserOptions.AddObject( PLACE_ON_CORNER_SCALE_BACKUP_HALFWAY_STR, PLACE_ON_CORNER_SCALE_BACKUP_HALFWAY_STR );
+	m_chooserOptions.AddOption( PLACE_ON_CORNER_SCALE_BACKUP_FAR_STR, PLACE_ON_CORNER_SCALE_BACKUP_FAR_STR );
+	m_chooserOptions.AddOption( PLACE_ON_CORNER_SCALE_BACKUP_HALFWAY_STR, PLACE_ON_CORNER_SCALE_BACKUP_HALFWAY_STR );
 	// SWITCH SCALE Option
-//	m_chooserOptions.AddObject( PLACE_ON_SWITCH_SCALE_STR, PLACE_ON_SWITCH_SCALE_STR);
+//	m_chooserOptions.AddOption( PLACE_ON_SWITCH_SCALE_STR, PLACE_ON_SWITCH_SCALE_STR);
 	// SMART Option
 	//	Todo: Make this work
 	frc::SmartDashboard::PutData( "Auton: Robot Scoring Action", &m_chooserOptions);
 
 	// Partners
-	m_chooserPartners.AddDefault( PARTNER_IN_MIDDLE_STR, PARTNER_IN_MIDDLE_STR );
-	m_chooserPartners.AddObject( PARTNER_GET_THEIR_SIDE_SWITCH_STR, PARTNER_GET_THEIR_SIDE_SWITCH_STR );
-	m_chooserPartners.AddObject( PARTNER_GET_THEIR_SIDE_SCALE_STR, PARTNER_GET_THEIR_SIDE_SCALE_STR );
-	m_chooserPartners.AddObject( PARTNERS_ONLY_MOVE, PARTNERS_ONLY_MOVE );
-	m_chooserPartners.AddObject( PARTNERS_DO_NOT_MOVE, PARTNERS_DO_NOT_MOVE );
+	m_chooserPartners.SetDefaultOption( PARTNER_IN_MIDDLE_STR, PARTNER_IN_MIDDLE_STR );
+	m_chooserPartners.AddOption( PARTNER_GET_THEIR_SIDE_SWITCH_STR, PARTNER_GET_THEIR_SIDE_SWITCH_STR );
+	m_chooserPartners.AddOption( PARTNER_GET_THEIR_SIDE_SCALE_STR, PARTNER_GET_THEIR_SIDE_SCALE_STR );
+	m_chooserPartners.AddOption( PARTNERS_ONLY_MOVE, PARTNERS_ONLY_MOVE );
+	m_chooserPartners.AddOption( PARTNERS_DO_NOT_MOVE, PARTNERS_DO_NOT_MOVE );
 	frc::SmartDashboard::PutData( "Auton: Partner ", &m_chooserPartners );
 }

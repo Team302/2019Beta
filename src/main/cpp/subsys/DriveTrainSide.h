@@ -30,29 +30,33 @@
 
 // Third Party Includes
 
-/// @class Intake
-/// @brief This is the Intake Subsystem
-class Intake : public IMechanism
+/// @class DriveTrainSide
+/// @brief This is the DriveTrainSide sub-mechanism
+class DriveTrainSide : public IMechanism
 {
     public:
 
-        /// @brief    Create and initialize the Intake subsystem
-        /// @param    std::shared_ptr<IDragonMotorController>   motor - drive motor for the intake
-        Intake
+        /// @brief    Create and initialize the DriveTrainSide sub-mechanism
+        /// @param [in] std::shared_ptr<IDragonMotorController>   master - master motor for the DriveTrainSide
+        /// @param [in] std::vector<std::shared_ptr<IDragonMotorController>>    followers - slave motors for the DriveTrainSide
+        /// @param [in] double    wheelSize - diameter of the wheel in inches.
+        DriveTrainSide
         (
-            std::shared_ptr<IDragonMotorController>     motor
+            std::shared_ptr<IDragonMotorController>                 master,
+            std::vector<std::shared_ptr<IDragonMotorController>>    followers,
+            double                                                  wheelSize
         );
-        Intake() = delete;
+        DriveTrainSide() = delete;
 
         /// @brief    clean up memory when this object gets deleted
-        virtual ~Intake() = default;
+        virtual ~DriveTrainSide() = default;
 
-        /// @brief  Indicates this is the intake
-        /// @return IMechanism::MECHANISM_TYPE::INTAKE
+        /// @brief  Indicates this is the DriveTrainSide
+        /// @return IMechanism::MECHANISM_TYPE::DriveTrainSide
         MechanismTypes::MECHANISM_TYPE GetType() const override;
 
 
-        /// @brief      Run intake as defined 
+        /// @brief      Run DriveTrainSide as defined 
         /// @param [in] MechanismControl::MECHANISM_CONTROL_TYPE   controlType:  How are the item(s) being controlled
         /// @param [in] double                                     value:        Target (units are based on the controlType)
         /// @return     void
@@ -63,31 +67,23 @@ class Intake : public IMechanism
         ) override;
 
 
-        /// @brief  Return the current position of the intake in degrees.  Since we don't have
-        ///         a sensor this will return -90 for clockwise rotations and 90 for 
-        ///         counter-clockwise rotations.
-        /// @return double  position in degrees (rotating mechansim)
+        /// @brief  Return the current position of the DriveTrainSide in inches (positive is forward, negative is backward)
+        /// @return double  position in inches
         double GetCurrentPosition() const override;
 
 
-        /// @brief  Return the target position of the intake in degrees.  Since we don't have
-        ///         a sensor this will return -90 for clockwise rotations and 90 for 
-        ///         counter-clockwise rotations.
-        /// @return double  position in degrees (rotating mechansim)
+        /// @brief  Return the target position of the DriveTrainSide in inches (positive is forward, negative is backward)
+        /// @return double  position in inches
         double GetTargetPosition() const override;
 
 
-        /// @brief  Return the current speed of the intake in degrees per second.  Since we 
-        ///         don't have a sensor this will return -360 for clockwise rotations and 360 
-        ///         for counter-clockwise rotations.
-        /// @return double  speed in degrees per second (rotating mechansim)
+        /// @brief  Return the current speed of the DriveTrainSide in inches / second (positive is forward, negative is backward)
+        /// @return double  speed in inches / second
         double GetCurrentSpeed() const override;
 
 
-        /// @brief  Return the target speed of the intake in degrees per second.  Since we 
-        ///         don't have a sensor this will return -360 for clockwise rotations and 360 
-        ///         for counter-clockwise rotations.
-        /// @return double  speed in degrees per second (rotating mechansim)
+        /// @brief  Return the target speed of the DriveTrainSide in inches / second (positive is forward, negative is backward)
+        /// @return double  speed in inches / second
         double GetTargetSpeed() const override;
 
 
@@ -100,8 +96,12 @@ class Intake : public IMechanism
         ) override;
         
     private:
-        std::shared_ptr<IDragonMotorController>     m_motor;
-        const double                                m_deadbandTol = 0.1;
+        std::shared_ptr<IDragonMotorController>                 m_master;
+        std::vector<std::shared_ptr<IDragonMotorController>>    m_slaves;
+        double                                                  m_wheelSize;
+        double                                                  m_target;
+
+        const double                                            m_deadbandTol = 0.1;
 };
 
 

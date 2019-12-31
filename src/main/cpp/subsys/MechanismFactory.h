@@ -57,7 +57,7 @@ class MechanismFactory
 		/// Returns:        IMechanism*     pointer to the mechanism or nullptr if mechanism 
 		///                                 doesn't exist and cannot be created.
 		//=====================================================================================
-		std::shared_ptr<IMechanism> GetIMechanism
+		IMechanism* GetIMechanism
 		(
 			MechanismTypes::MECHANISM_TYPE			type		// <I> - manipulator type
 		);
@@ -68,7 +68,7 @@ class MechanismFactory
 		/// Returns:        IMechanism*     pointer to the mechanism or nullptr if mechanism 
 		///                                 doesn't exist and cannot be created.
 		//=====================================================================================
-		std::shared_ptr<IMechanism>  CreateIMechanism
+		IMechanism*  CreateIMechanism
 		(
 			MechanismTypes::MECHANISM_TYPE			type,
 			const IDragonMotorControllerMap&        motorControllers,   // <I> - Motor Controllers
@@ -84,6 +84,6 @@ class MechanismFactory
 
 		static MechanismFactory*	m_mechanismFactory;
 
-		std::map<MechanismTypes::MECHANISM_TYPE, std::shared_ptr<IMechanism>> m_mechanisms;
+		std::map<MechanismTypes::MECHANISM_TYPE, IMechanism*> m_mechanisms;
 
 };

@@ -1,5 +1,7 @@
 #include <hw/DragonTalon.h>
+#include <hw/DragonPDP.h>
 #include <hw/usages/MotorControllerUsage.h>
+#include <frc/PowerDistributionPanel.h>
 #include <frc/SpeedController.h>
 #include <memory>
 
@@ -13,14 +15,17 @@ DragonTalon::DragonTalon
 (
 	MotorControllerUsage::MOTOR_CONTROLLER_USAGE deviceType, 
 	int deviceID, 
+    int pdpID, 
 	int countsPerRev, 
-	double gearRatio ) : m_talon( make_shared<WPI_TalonSRX>(deviceID)),
-    					 m_controlMode(TALON_CONTROL_MODE::PERCENT),
-						 m_type(deviceType),
-						 m_id(deviceID),
-						 m_countsPerRev(countsPerRev),
-    					 m_tickOffset(0),
-						 m_gearRatio(gearRatio)
+	double gearRatio 
+) : m_talon( make_shared<WPI_TalonSRX>(deviceID)),
+	m_controlMode(TALON_CONTROL_MODE::PERCENT),
+	m_type(deviceType),
+	m_id(deviceID),
+	m_pdp( pdpID ),
+	m_countsPerRev(countsPerRev),
+	m_tickOffset(0),
+	m_gearRatio(gearRatio)
 {
 	// m_tickOffset
 	// m_talon->GetSelectedSensorPo
@@ -64,6 +69,12 @@ void DragonTalon::SetControlMode(IDragonMotorController::DRAGON_CONTROL_MODE mod
 shared_ptr<SpeedController> DragonTalon::GetSpeedController() const
 {
 	return m_talon;
+}
+
+double DragonTalon::GetCurrent() const
+{
+	PowerDistributionPanel* pdp = DragonPDP::GetInstance()->GetPDP();
+    return ( pdp != nullptr ) ? pdp->GetCurrent( m_pdp ) : 0.0;
 }
 
 void DragonTalon::SetControlMode(DragonTalon::TALON_CONTROL_MODE mode)

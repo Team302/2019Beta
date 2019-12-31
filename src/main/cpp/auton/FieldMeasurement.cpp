@@ -82,16 +82,16 @@ float FieldMeasurement::GetKeyPoint( Measurement keyPointLocation )
 	switch( keyPointLocation )
 	{
 		case BLUE_SCALE_LEFT:
-			keyPoint = GetYLoc( keyPointLocation ) - distances[1];
+			keyPoint = GetYLoc( keyPointLocation ) - distances[0];
 			break;
 		case BLUE_SCALE_RIGHT:
-			keyPoint = GetYLoc( keyPointLocation ) - distances[2];
-			break;
-		case RED_SCALE_LEFT:
 			keyPoint = GetYLoc( keyPointLocation ) - distances[1];
 			break;
+		case RED_SCALE_LEFT:
+			keyPoint = GetYLoc( keyPointLocation ) - distances[0];
+			break;
 		case RED_SCALE_RIGHT:
-			keyPoint = GetYLoc( keyPointLocation ) - distances[2];
+			keyPoint = GetYLoc( keyPointLocation ) - distances[1];
 			break;
 
 		default:

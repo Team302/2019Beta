@@ -39,7 +39,8 @@
 #include <subsys/MechanismFactory.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismTypes.h>
-
+#include <subsys/Intake.h>
+#include <utils/Logger.h>
 
 // Third Party Includes
 
@@ -62,18 +63,15 @@ MechanismFactory* MechanismFactory::GetMechanismFactory()
 	return MechanismFactory::m_mechanismFactory;
 }
 
-//=====================================================================================
-/// Method:         GetIMechanism
-/// Description:    Find or create the requested mechanism
-/// Returns:        IMechanism*     pointer to the mechanism or nullptr if mechanism 
-///                                 doesn't exist and cannot be created.
-//=====================================================================================
-shared_ptr<IMechanism>  MechanismFactory::GetIMechanism
+/// @brief      Find the requested mechanism
+/// @param [in] MechanismTypes::MECHANISM_TYPE  type - the type of mechanism to retrieve
+/// @return     IMechanism*  pointer to the mechanism or nullptr if mechanism doesn't exist.
+IMechanism*  MechanismFactory::GetIMechanism
 (
-	MechanismTypes::MECHANISM_TYPE			type		// <I> - manipulator type
+	MechanismTypes::MECHANISM_TYPE			type		
 )
 {
-	shared_ptr<IMechanism> subsys = nullptr;
+	IMechanism* subsys = nullptr;
 
     // See if the mechanism was created already, if it wasn't create it
     auto it = m_mechanisms.find( type );  
@@ -83,42 +81,9 @@ shared_ptr<IMechanism>  MechanismFactory::GetIMechanism
     }
     else
     {
-        // Create the mechanism
-        switch ( type )
-        {
-            case MechanismTypes::MECHANISM_TYPE::CHASSIS:
-            break;
-
-            case MechanismTypes::MECHANISM_TYPE::SHOOTER:
-            break;
-
-            case MechanismTypes::MECHANISM_TYPE::ELEVATOR:
-            break;
-
-            case MechanismTypes::MECHANISM_TYPE::WRIST:
-            break;
-
-            case MechanismTypes::MECHANISM_TYPE::INTAKE:
-            break;
-
-            case MechanismTypes::MECHANISM_TYPE::ARM:
-            break;
-
-            case MechanismTypes::MECHANISM_TYPE::EXTENDER:
-            break;
-
-            case MechanismTypes::MECHANISM_TYPE::CLIMBER:
-            break;
-
-            case MechanismTypes::MECHANISM_TYPE::BEAK:
-            break;
-
-            case MechanismTypes::MECHANISM_TYPE::TAIL:
-            break;
-
-            default:
-            break;
-        }
+        string msg = "mechanism doesn't exists";
+        msg += to_string( type );
+        Logger::GetLogger()->LogError( string("MechansimFactory::GetIMechanism" ), msg );
     }
 
 	return subsys;
@@ -126,13 +91,15 @@ shared_ptr<IMechanism>  MechanismFactory::GetIMechanism
 
 
 
-//=====================================================================================
-/// Method:         CreateIMechanism
-/// Description:    Find or create the requested mechanism
-/// Returns:        IMechanism*     pointer to the mechanism or nullptr if mechanism 
-///                                 doesn't exist and cannot be created.
-//=====================================================================================
-shared_ptr<IMechanism>  MechanismFactory::CreateIMechanism
+/// @brief      create the requested mechanism
+/// @param [in] MechanismTypes::MECHANISM_TYPE  type - the type of mechanism to create
+/// @param [in] const IDragonMotorControllerMap& map of the motor usage to the motor controller
+/// @param [in] 
+/// @param [in] 
+/// @param [in] 
+/// @param [in] 
+/// @return  IMechanism*  pointer to the mechanism or nullptr if mechanism couldn't be created.
+IMechanism*  MechanismFactory::CreateIMechanism
 (
 	MechanismTypes::MECHANISM_TYPE			type,
     const IDragonMotorControllerMap&        motorControllers,   // <I> - Motor Controllers
@@ -143,20 +110,23 @@ shared_ptr<IMechanism>  MechanismFactory::CreateIMechanism
 
 )
 {
-	shared_ptr<IMechanism> subsys = nullptr;
+	IMechanism* subsys = nullptr;
 
     // See if the mechanism was created already, if it wasn't create it
     auto it = m_mechanisms.find( type );  
     if ( it != m_mechanisms.end() )      //  found
     {
         subsys = it->second;
+        string msg = "mechanism already exists";
+        msg += to_string( type );
+        Logger::GetLogger()->LogError( string("MechansimFactory::CreateIMechanism" ), msg );
     }
     else
     {
         // Create the mechanism
         switch ( type )
         {
-            case MechanismTypes::MECHANISM_TYPE::CHASSIS:
+            case MechanismTypes::MECHANISM_TYPE::DRIVETRAIN_SIDE:
             break;
 
             case MechanismTypes::MECHANISM_TYPE::SHOOTER:
@@ -169,9 +139,25 @@ shared_ptr<IMechanism>  MechanismFactory::CreateIMechanism
             break;
 
             case MechanismTypes::MECHANISM_TYPE::INTAKE:
-            break;
-
-            case MechanismTypes::MECHANISM_TYPE::ARM:
+            {
+                auto it = motorControllers.find( MotorControllerUsage::MOTOR_CONTROLLER_USAGE::INTAKE );
+                if ( it != motorControllers.end() )  // found it
+                {
+                    auto motor = it->second;
+                    if ( motor.get() != nullptr )
+                    {
+                        subsys = new Intake( motor );
+                    }
+                    else
+                    {
+                        Logger::GetLogger()->LogError( string( "MechanismFactory::CreateIMechanism" ), string( "intake motor is nullptr" ) );
+                    }
+                }
+                else
+                {
+                    Logger::GetLogger()->LogError( string( "MechanismFactory::CreateIMechanism" ), string( "intake motor not found" ) );
+                }
+            }
             break;
 
             case MechanismTypes::MECHANISM_TYPE::EXTENDER:

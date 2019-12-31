@@ -14,10 +14,8 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-//========================================================================================================
 /// @class Intake
 /// @brief This is the Intake Subsystem
-//========================================================================================================
 
 // C++ Includes
 #include <algorithm>
@@ -39,54 +37,32 @@
 
 using namespace std;
 
-//==================================================================================
-/// method:         Intake <<constructor>>
 /// @brief    Create the subobjects and initialize the Intake subsystem
-//==================================================================================
-Intake::Intake()
+/// @param    std::shared_ptr<IDragonMotorController>  intake motor controller
+Intake::Intake
+(
+    shared_ptr<IDragonMotorController>              motor
+) : m_motor ( motor )
 {
-    // Get the motor controller and set its mode to percent output and stop it
-    /**
-    m_motor = DragonMotorControllerFactory::GetInstance()->GetController( IMechanism::MECHANISM_TYPE::INTAKE, MOTOR_CONTROLLER_USAGE::INTAKE );
-    if ( m_motor != nullptr )
+    if ( m_motor.get() == nullptr ) 
     {
-        m_motor->SetControlMode( IDragonMotorController::DRAGON_CONTROL_MODE::PERCENT_OUTPUT );
-        m_motor->Set( 0.0 );
+        Logger::GetLogger()->LogError( string( "Intake constructor" ), string( "motor is nullptr" ) );
     }
-    else
-    {
-        std::cout << "==>>Intake::Intake motor not found " << std::endl;
-    }
-    **/
 }
 
-//==================================================================================
-/// method:         ~Intake <<destructor>>
-/// @brief    clean up memory when this object gets deleted
-//==================================================================================
-Intake::~Intake()
-{
-    // delete owned objects (e.g. delete m_motor;)
-}
-
-//==================================================================================
-/// method: GetType
 /// @brief  Indicates this is the intake
 /// @return IMechanism::MECHANISM_TYPE::INTAKE
-//==================================================================================
 MechanismTypes::MECHANISM_TYPE Intake::GetType() const 
 {
     return MechanismTypes::MECHANISM_TYPE::INTAKE;
 }
 
 
-//==================================================================================
-/// method: SetOutput
+
 /// @brief      Run intake as defined 
 /// @param [in] MechanismControl::MECHANISM_CONTROL_TYPE   controlType:  How are the item(s) being controlled
 /// @param [in] double                                     value:        Target (units are based on the controlType)
 /// @return     void
-//==================================================================================
 void Intake::SetOutput
 (
     MechanismControl::MECHANISM_CONTROL_TYPE controlType,
@@ -113,14 +89,11 @@ void Intake::SetOutput
 }
 
 
-//==================================================================================
-/// method: GetCurrentPostion
 /// @brief  Return the current position of the intake in degrees.  Since we don't have
 ///         a sensor this will return -90 for clockwise rotations and 90 for 
 ///         counter-clockwise rotations.
 /// @param [in] MechanismControl::MECHANISM_CONTROL_ID     controlItems: What item(s) are being requested
 /// @return double  position in degrees (rotating mechansim)
-//==================================================================================
 double Intake::GetCurrentPosition() const
 {
     // Normally would call GetSelectedSensorPosition, but there is no sensor, so we
@@ -130,26 +103,20 @@ double Intake::GetCurrentPosition() const
 }
 
 
-//==================================================================================
-/// method: GetTargetPostion
 /// @brief  Return the target position of the intake in degrees.  Since we don't have
 ///         a sensor this will return -90 for clockwise rotations and 90 for 
 ///         counter-clockwise rotations.
 /// @return double  position in degrees (rotating mechansim)
-//==================================================================================
 double Intake::GetTargetPosition() const
 {
     // No sensor so it is the same as the current
     return GetCurrentPosition();
 }
 
-//==================================================================================
-/// method: GetCurrentSpeed
 /// @brief  Return the current speed of the intake in degrees per second.  Since we 
 ///         don't have a sensor this will return -360 for clockwise rotations and 360 
 ///         for counter-clockwise rotations.
 /// @return double  speed in degrees per second (rotating mechansim)
-//==================================================================================
 double Intake::GetCurrentSpeed() const
 {
     // Normally would call GetSelectedSensorVelocity, but there is no sensor, so we
@@ -159,13 +126,10 @@ double Intake::GetCurrentSpeed() const
 }
 
 
-//==================================================================================
-/// method: GetTargetSpeecd
 /// @brief  Return the target speed of the intake in degrees per second.  Since we 
 ///         don't have a sensor this will return -360 for clockwise rotations and 360 
 ///         for counter-clockwise rotations.
 /// @return double  speed in degrees per second (rotating mechansim)
-//==================================================================================
 double Intake::GetTargetSpeed() const
 {
     // No sensor so it is the same as the current
@@ -174,12 +138,9 @@ double Intake::GetTargetSpeed() const
 
 
 
-//==================================================================================================
-/// method: SetControlConstants
 /// @brief  Set the control constants (e.g. PIDF values).
 /// @param [in] PIDData*   pid - the control constants
 /// @return void
-//==================================================================================================
 void Intake::SetControlConstants
 (
     PIDData*                                 pid                 

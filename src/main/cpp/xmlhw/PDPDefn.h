@@ -14,17 +14,6 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-//========================================================================================================
-/// PDPDefn.h
-//========================================================================================================
-///
-/// File Description:
-///     XML parsing for the PDP node in the Robot definition xml file.  Upon successful parsing, it will
-///     create a PDP singleton object.
-///     The parsing leverages the 3rd party Open Source Pugixml library (https://pugixml.org/).
-///
-//========================================================================================================
-
 #pragma once
 
 
@@ -41,6 +30,10 @@
 
 
 
+
+/// @class PDPDefn
+/// @brief XML parsing for the PDP node in the Robot definition xml file.  Upon successful parsing, it will
+///     create a PDP singleton object. The parsing leverages the 3rd party Open Source Pugixml library (https://pugixml.org/).
 class PDPDefn
 {
     public:
@@ -48,28 +41,10 @@ class PDPDefn
         PDPDefn() = default;
         virtual ~PDPDefn() = default;
 
-        ///-----------------------------------------------------------------------
-        /// Method:      ParseXML
-        /// Description: Parse a pcm XML element and create a PowerDistributionPanel*
-        ///              from its definition.
-        ///
-        ///<!-- ====================================================
-        ///     PDP (power distribution panel)
-        ///     ==================================================== -->
-        ///<!ELEMENT pdp EMPTY>
-        ///<!ATTLIST pdp
-        ///          canId             (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 |
-        ///                              10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 |
-        ///                              20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 |
-        ///                              30 | 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 |
-        ///                              40 | 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49 |
-        ///                              50 | 51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59 |
-        ///                              60 | 61 | 62 ) "0"
-        ///>
-        ///
-        /// Returns:     std::shared_ptr<DragonPDP>     PDP object
-        ///-----------------------------------------------------------------------
-        std::shared_ptr<frc::PowerDistributionPanel> ParseXML
+        /// @brief      Parse a pcm XML element and create a PowerDistributionPanel* from its definition.
+        /// @param [in] xml_node PDPNode the <PDP element in the xml document
+        /// @return     PowerDistributionPanel*   PDP object
+        frc::PowerDistributionPanel* ParseXML
         (
             pugi::xml_node      PDPNode
         );

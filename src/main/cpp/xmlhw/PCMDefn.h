@@ -14,83 +14,41 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
+#pragma once
+
+
 // C++ Includes
 #include <memory>
-#include <string>
 
 // FRC includes
-#include <frc/Timer.h>
 
 // Team 302 includes
-#include <auton/DoNothing.h>
-#include <auton/PrimitiveParams.h>
-#include <auton/IPrimitive.h>
-#include <subsys/MechanismFactory.h>
-#include <subsys/MechanismControl.h>
-#include <subsys/IMechanism.h>
-#include <utils/Logger.h>
+#include <frc/Compressor.h>
+#include <frc/Solenoid.h>
 
 // Third Party Includes
+#include <pugixml/pugixml.hpp>
 
 
-using namespace std;
-using namespace frc;
 
-#include <auton/DriveDistance.h>
-#include <auton/DriveToTarget.h>
-#include <auton/PrimitiveParams.h>
-#include <hw/factories/DistanceSensorFactory.h>
-#include <hw/interfaces/IDragonDistanceSensor.h>
 
-DriveToTarget::DriveToTarget() :
-	m_sensor( nullptr ),
-	m_underDistanceCounts( 0 ),
-	m_minTimeToRun( 0 )
+/// @class PCMDefn
+/// @brief XML parsing for the PCM node in the Robot definition xml file.  Upon successful parsing, it will
+///        create a Compressor object and solenoid objects. The parsing leverages the 3rd party Open Source 
+///        Pugixml library (https://pugixml.org/).
+class PCMDefn
 {
-    auto factory = DistanceSensorFactory::GetFactory();
-    if ( factory != nullptr )
-    {
-      //  m_sensor = factory->GetSensor( IDragonSensor::SENSOR_USAGE::FORWARD_SENSOR );
-    }
-}
+    public:
 
+        PCMDefn() = default;
+        virtual ~PCMDefn() = default;
 
-void DriveToTarget::Init
-(
-    PrimitiveParams* params
-)
-{
-    if ( m_sensor != nullptr )
-    {
-        params->SetDistance( m_sensor->GetDistance() );
-    }
-    else
-    {
-    	printf("heyyy that lidar is nullptr \n");
-    }
+        /// @brief      Parse a pcm XML element and create a PowerDistributionPanel* from its definition.
+        /// @param [in] xml_node PDPNode the <PDP element in the xml document
+        /// @return     PowerDistributionPanel*   PDP object
+        frc::Compressor* ParseXML
+        (
+            pugi::xml_node      PDPNode
+        );
+};
 
-	m_minTimeToRun = 0.3;
-    m_underDistanceCounts = 0;
-
-    DriveDistance::Init( params );
-}
-
-void DriveToTarget::Run()
-{
-	DriveDistance::Run();
-	if (m_minTimeToRun <= 0) {
-		if ( m_sensor->GetDistance() <= MIN_CUBE_DISTANCE ) 
-        {
-			m_underDistanceCounts++;
-		}
-	}
-
-	m_minTimeToRun -= IPrimitive::LOOP_LENGTH;
-}
-
-bool DriveToTarget::IsDone()
-{
-	bool done = m_underDistanceCounts >= UNDER_DISTANCE_COUNT_THRESHOLD;
-
-	return ( DriveDistance::IsDone() || done );
-}

@@ -20,17 +20,31 @@ DragonPDP* DragonPDP::GetInstance()
 	}
 	return DragonPDP::m_instance;
 }
+
+DragonPDP::DragonPDP()
+{
+	if ( DragonPDP::m_pdp == nullptr )
+	{
+		CreatePDP( 0 );
+	}
+}
+
+PowerDistributionPanel* DragonPDP::GetPDP() const
+{
+	return DragonPDP::m_pdp;
+}
+
 //=======================================================================================
 // Method:  		CreatePDP
 // Description:		Create a PDP from the inputs
 // Returns:         std::shared_ptr<PowerDistributionPanel>
 //=======================================================================================
-shared_ptr<PowerDistributionPanel> DragonPDP::CreatePDP
+PowerDistributionPanel* DragonPDP::CreatePDP
 (
 	int			canID				// <I> - CANLight CAN ID
 )
 {
-	DragonPDP::m_pdp = make_shared<PowerDistributionPanel>( canID );
+	DragonPDP::m_pdp = new PowerDistributionPanel( canID );
 
 	return DragonPDP::m_pdp;
 }

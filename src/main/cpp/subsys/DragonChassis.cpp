@@ -23,11 +23,12 @@
 // Team 302 includes
 #include <subsys/DragonChassis.h>
 #include <hw/interfaces/IDragonMotorController.h>
-#include <subsys/IDifferntialChassis.h>
+#include <subsys/IChassis.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismControl.h>
 #include <subsys/MechanismTypes.h>
 #include <xmlcontrol/PIDData.h>
+#include <subsys/DriveTrainSide.h>
 
 // Third Party Includes
 
@@ -38,8 +39,21 @@ using namespace frc;
 /// @brief This is a differential chassis.  Each side of the robot will be treated as a separate mechanism
 
 /// @brief Create the subobjects and initialize the DragonChassis subsystem
-DragonChassis::DragonChassis()
+DragonChassis::DragonChassis
+(
+    double 						                            wheelDiameter,		
+    double 					    	                        wheelBase,			
+    double 						                            track,				
+    std::shared_ptr<IDragonMotorController>                 leftMaster,
+    std::shared_ptr<IDragonMotorController>                 rightMaster,
+    std::vector<std::shared_ptr<IDragonMotorController>>    leftFollowers,
+    std::vector<std::shared_ptr<IDragonMotorController>>    rightFollowers
+) : m_leftSide( new DriveTrainSide( leftMaster, leftFollowers, wheelDiameter ) ),
+    m_rightSide( new DriveTrainSide( rightMaster, rightFollowers, wheelDiameter ) ),
+    m_wheelBase( wheelBase ),
+    m_wheelTrack( track )
 {
+
 
 }
 

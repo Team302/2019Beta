@@ -16,31 +16,32 @@
 
 #pragma once
 
-//========================================================================================================
-///	 @class			MechanismTypes
-///  @brief      	This contains the enum for the mechanism types
-//========================================================================================================
-class MechanismTypes
+// C++ Includes
+
+// FRC includes
+
+// Team 302 includes
+
+// Third Party includes
+#include <pugixml/pugixml.hpp>
+
+
+/// @class FeedbackDefn
+/// @brief Create a Feedback data from an XML definition 
+class FeedbackDefn
 {
 	public:
+		/// @brief construct a FeedbackDefn object
+		FeedbackDefn() = default;
 
-        //==================================================================================
-        /// enum:           MECHANISM_TYPE
-        /// description:    Indicates the type of mechanism
-        //==================================================================================
-        enum MECHANISM_TYPE
-        {
-            UNKNOWN_MECHANISM = -1,
-            DRIVETRAIN_SIDE,
-            SHOOTER,
-            ELEVATOR,
-            WRIST,
-            INTAKE,
-            ARM,
-            EXTENDER,
-            CLIMBER,
-            BEAK,
-            TAIL,
-            MAX_MECHANISM_TYPES
-        };
+		/// @brief destroy a FeedbackDefn object and free the memory
+		virtual ~FeedbackDefn() = default;
+
+    	/// @brief  Parse the Feedback element (and it children).  When this is done a Feedback object exists.
+		/// @param [in]  pugi::xml_node the Feedback element in the XML document
+    	/// @return void
+		void ParseXML
+		(
+			pugi::xml_node      FeedbackNode
+		);
 };

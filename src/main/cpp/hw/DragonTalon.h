@@ -56,6 +56,7 @@ class DragonTalon : public IDragonMotorController
     (
         MotorControllerUsage::MOTOR_CONTROLLER_USAGE deviceType, 
         int deviceID, 
+        int pdpID, 
         int countsPerRev, 
         double gearRatio
     );
@@ -68,6 +69,7 @@ class DragonTalon : public IDragonMotorController
     MotorControllerUsage::MOTOR_CONTROLLER_USAGE GetType() const override;
     int GetID() const override;
     std::shared_ptr<frc::SpeedController> GetSpeedController() const override;
+    double GetCurrent() const override;
 
     // Setters (override)
     void SetControlMode(IDragonMotorController::DRAGON_CONTROL_MODE mode) override; //:D
@@ -120,6 +122,7 @@ class DragonTalon : public IDragonMotorController
     MotorControllerUsage::MOTOR_CONTROLLER_USAGE m_type;
 
     int m_id;
+    int m_pdp;
     int m_countsPerRev;
     int m_tickOffset;
     double m_gearRatio;

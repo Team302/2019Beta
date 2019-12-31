@@ -37,15 +37,11 @@
 // FRC includes
 
 // Team 302 includes
-#include <xmlhw/CameraDefn.h>
 #include <xmlhw/ChassisDefn.h>
 #include <xmlhw/RobotDefn.h>
-#include <xmlhw/LidarDefn.h>
 #include <xmlhw/MechanismDefn.h>
 //#include <xmlhw/PCMDefn.h>
-#include <xmlhw/LEDDefn.h>
 #include <xmlhw/PDPDefn.h>
-#include <xmlhw/PigeonDefn.h>
 #include <utils/Logger.h>
 
 // Third Party Includes
@@ -77,10 +73,6 @@ void RobotDefn::ParseXML()
         unique_ptr<MechanismDefn> mechanismXML = make_unique<MechanismDefn>();
      //   unique_ptr<PCMDefn> pcmXML;
         unique_ptr<PDPDefn> pdpXML = make_unique<PDPDefn>();
-        unique_ptr<PigeonDefn> pigeonXML = make_unique<PigeonDefn>();
-        unique_ptr<LidarDefn> lidarXML = make_unique<LidarDefn>();
-        unique_ptr<LEDDefn> ledXML = make_unique<LEDDefn>();
-        unique_ptr<CameraDefn> cameraXML = make_unique<CameraDefn>();
 
         // get the root node <robot>
         xml_node parent = doc.root();
@@ -125,50 +117,6 @@ void RobotDefn::ParseXML()
                     else
                     {
                         Logger::GetLogger()->LogError( "RobotDefn::ParseXML", "Unable to create PDPDefn" );
-                    }
-                }
-                else if (strcmp(child.name(), "pigeon") == 0)
-                {
-                    if ( pigeonXML != nullptr )
-                    {
-                        pigeonXML->ParseXML(child);
-                    }
-                    else
-                    {
-                        Logger::GetLogger()->LogError( "RobotDefn::ParseXML", "Unable to create PigeonDefn" );
-                    }
-                }
-                else if ( strcmp( child.name(), "lidar") == 0 )
-                {
-                    if ( lidarXML != nullptr )
-                    {
-                        lidarXML->ParseXML(child);
-                    }
-                    else
-                    {
-                        Logger::GetLogger()->LogError( "RobotDefn::ParseXML", "Unable to create LidarDefn" );
-                    }
-                }
-                else if (strcmp(child.name(), "camera") == 0)
-                {
-                    if ( cameraXML != nullptr )
-                    {
-                        cameraXML->ParseXML(child);
-                    }
-                    else
-                    {
-                        Logger::GetLogger()->LogError( "RobotDefn::ParseXML", "Unable to create CameeraDefn" );
-                    }
-                }
-                else if (strcmp(child.name(), "led") == 0)
-                {
-                    if ( ledXML != nullptr )
-                    {
-                        ledXML->ParseXML(child);
-                    }
-                    else
-                    {
-                        Logger::GetLogger()->LogError( "RobotDefn::ParseXML", "Unable to create LDEDefn" );
                     }
                 }
                 else

@@ -16,13 +16,7 @@
 
 #pragma once
 
-//========================================================================================================
-/// @class MechansimDefn
-/// @brief Create a mechaism from an XML definition
-//========================================================================================================
-
 // C++ includes
-#include <memory>
 
 // FRC includes
 
@@ -32,20 +26,19 @@
 // Third Party includes
 #include <pugixml/pugixml.hpp>
 
+
+/// @class MechansimDefn
+/// @brief Create a mechaism from an XML definition
 class MechanismDefn
 {
     public:
         MechanismDefn() = default;
         virtual ~MechanismDefn() = default;
 
-
-    	//================================================================================================
-    	/// Method: ParseXML
     	/// @brief  Parse the mechanism element (and it children).  When this is done the mechanism exists 
         ///         that can be retrieved from the factory.
-    	/// @return std::shared_ptr<IMechanism>  pointer to the mechanism or nullptr if there is an error
-    	//================================================================================================
-        std::shared_ptr<IMechanism> ParseXML
+    	/// @return IMechanism*  pointer to the mechanism or nullptr if there is an error
+        IMechanism* ParseXML
         (
             pugi::xml_node      mechanismNode
         );

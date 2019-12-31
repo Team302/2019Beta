@@ -47,7 +47,7 @@ class IDragonMotorController
         virtual double GetRotations() const = 0;
         virtual double GetRPS() const = 0;
         virtual MotorControllerUsage::MOTOR_CONTROLLER_USAGE GetType() const = 0;
-        double GetCurrent();
+        virtual double GetCurrent() const = 0;
         virtual int GetID() const = 0;
         virtual std::shared_ptr<frc::SpeedController> GetSpeedController() const = 0;
 

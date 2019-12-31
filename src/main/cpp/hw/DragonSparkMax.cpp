@@ -1,9 +1,11 @@
 #include "hw/DragonSparkMax.h"
 #include <hw/usages/MotorControllerUsage.h>
+#include <hw/DragonPDP.h>
 
 #include <memory>
 #include <frc/SpeedController.h>
 #include "frc/smartdashboard/SmartDashboard.h"
+#include <frc/PowerDistributionPanel.h>
 
 using namespace frc;
 using namespace std;
@@ -12,10 +14,12 @@ using namespace rev;
 DragonSparkMax::DragonSparkMax
 (
     int id, 
+    int pdpID,
     MotorControllerUsage::MOTOR_CONTROLLER_USAGE deviceType, 
     CANSparkMax::MotorType motorType, 
     double gearRatio 
 ) : m_id(id),
+    m_pdp( pdpID ),
     m_spark( make_shared<CANSparkMax>(id, motorType)),
     m_controlMode(DRAGON_CONTROL_MODE::PERCENT_OUTPUT),
     m_outputRotationOffset(0.0),
@@ -61,6 +65,11 @@ shared_ptr<SpeedController> DragonSparkMax::GetSpeedController() const
     return m_spark;
 }
 
+double DragonSparkMax::GetCurrent() const
+{
+	PowerDistributionPanel* pdp = DragonPDP::GetInstance()->GetPDP();
+    return ( pdp != nullptr ) ? pdp->GetCurrent( m_pdp ) : 0.0;
+}
 void DragonSparkMax::SetControlMode(IDragonMotorController::DRAGON_CONTROL_MODE mode)
 {
     if (m_controlMode != mode)

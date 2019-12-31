@@ -14,22 +14,19 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-//========================================================================================================
 /// @class ChassisDefn. 
 /// @brief Create a chassis from an XML definition.   CHASSIS_TYPE (ChassisFactory.h) determines the type of 
 ///        chassis to create.   WheelBase is the front to back distance between the wheel centers.   Track 
 ///        is the left to right distance between the wheels.
-//========================================================================================================
 
 // C++ includes
-#include <iostream>
 #include <map>
 #include <memory>
+#include <string>
 #include <utility>
 
 
 // FRC includes
-#include <frc/SmartDashboard/SmartDashboard.h>
 
 // Team302 includes
 #include <hw/interfaces/IDragonMotorController.h>
@@ -52,59 +49,69 @@ using namespace std;
 
 
 
-//================================================================================================
-/// Method:      ParseXML
-/// Description: Parse the chassie element (and it children) from the chassis.  When this is done
-//				 a dragon chassis exists that can be retrieved from the factory.
-/// Returns:     void
-//================================================================================================
+/// @brief  Parse the chassie element (and it children).  When this is done a IChassis object exists.
+///		   It can be retrieved from the factory.
+/// @param [in]  pugi::xml_node the chassis element in the XML document
+/// @return void
 void ChassisDefn::ParseXML
 (
 	xml_node      chassisNode
 )
 {
-    shared_ptr<IChassis> chassis   = nullptr;
-    float wheelDiameter	= 0.0;
-    float wheelBase 	= 0.0;
-    float track 		= 0.0;
-    bool hasError 		= false;
+    // initialize the attributes to the default values
+    ChassisFactory::CHASSIS_TYPE type = ChassisFactory::CHASSIS_TYPE::TANK_CHASSIS;
+    double wheelDiameter	= 0.0;
+    double wheelBase 	    = 0.0;
+    double track 		    = 0.0;
+    bool hasError 		    = false;
 
-    //--------------------------------------------------------------------------------------------
     // process attributes
-    //--------------------------------------------------------------------------------------------
     for (xml_attribute attr = chassisNode.first_attribute(); attr && !hasError; attr = attr.next_attribute())
     {
-        if ( strcmp( attr.name(), "wheelDiameter" ) == 0 )
+        if ( strcmp( attr.name(), "type" ) )
         {
-        	wheelDiameter = attr.as_float();
+            auto val = string( attr.value() );
+            if ( val.compare( "MECANUM") == 0 )
+            {
+                type = ChassisFactory::CHASSIS_TYPE::MECANUM_CHASSIS;
+            }
+            else if ( val.compare( "TANK" ) == 0 )
+            {
+                type = ChassisFactory::CHASSIS_TYPE::TANK_CHASSIS;
+            }
+            else
+            {
+                string msg = "Unknown Chassis Type";
+                msg += attr.value();
+                Logger::GetLogger()->LogError( string( "ChassisDefn::ParseXML" ), msg );
+            }
+        }
+        else if ( strcmp( attr.name(), "wheelDiameter" ) == 0 )
+        {
+        	wheelDiameter = attr.as_double();
         }
         else if ( strcmp( attr.name(), "wheelBase" ) == 0 )
         {
-        	wheelBase = attr.as_float();
+        	wheelBase = attr.as_double();
         }
         else if ( strcmp( attr.name(), "track" ) == 0 )
         {
-        	track = attr.as_float();
+        	track = attr.as_double();
         }
-        else
+        else   // log errors
         {
             string msg = "unknown attribute ";
             msg += attr.name();
-            Logger::GetLogger()->LogError( "ChassisDefn::ParseXML", msg );
+            Logger::GetLogger()->LogError( string("ChassisDefn::ParseXML"), msg );
             hasError = true;
         }
     }
 
 
-    //--------------------------------------------------------------------------------------------
     // Process child element nodes
-    //--------------------------------------------------------------------------------------------
-
     IDragonMotorControllerMap motors;
-
-    std::unique_ptr<MotorDefn> motorXML;
-
-    std::vector<PIDData*> pidControlVector;
+    unique_ptr<MotorDefn> motorXML;
+    vector<PIDData*> pidControlVector;
     for (xml_node child = chassisNode.first_child(); child; child = child.next_sibling())
     {
     	if ( strcmp( child.name(), "motor") == 0 )
@@ -122,30 +129,31 @@ void ChassisDefn::ParseXML
                     motors[ motor.get()->GetType() ] =  motor ;
                 }
             }
-    	    else
+    	    else  // log errors
             {
-                Logger::GetLogger()->LogError( "ChassisDefn", "unable to create MotorDefn" );
+                Logger::GetLogger()->LogError( string("ChassisDefn::ParseXML"), "unable to create MotorDefn" );
     	    }
     	}
-    	else
+    	else  // log errors
     	{
             string msg = "unknown child ";
             msg += child.name();
-            Logger::GetLogger()->LogError( "ChassisDefn", msg );
+            Logger::GetLogger()->LogError( string("ChassisDefn::ParseXML"), msg );
     	}
     }
 
 
-    //--------------------------------------------------------------------------------------------
     // create chassis instance
-    //--------------------------------------------------------------------------------------------
     if ( !hasError )
     {
         auto factory = ChassisFactory::GetChassisFactory();
         if ( factory != nullptr )
         {
-            // todo add attribute for type
-            chassis = factory->CreateChassis( ChassisFactory::CHASSIS_TYPE::TANK_CHASSIS, wheelDiameter, wheelBase, track, motors );
+            factory->CreateChassis( type, wheelDiameter, wheelBase, track, motors );
+        }
+        else  // log errors
+        {
+            Logger::GetLogger()->LogError( string("ChassisDefn::ParseXML"), string("unable to create chassis") );
         }
     }
 }

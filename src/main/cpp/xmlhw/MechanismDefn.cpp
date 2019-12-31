@@ -20,8 +20,8 @@
 //========================================================================================================
 
 // C++ Includes
-#include <iostream>
 #include <memory>
+#include <string>
 #include <utility>
 
 // FRC includes
@@ -53,18 +53,16 @@ using namespace pugi;
 using namespace std;
 
 
-//--------------------------------------------------------------------------
-/// Method: ParseXML
+
 /// @brief  Parse a Mechanism XML element and create an IMechanism from its definition.
-/// @return std::shared_ptr<IMechanism>   pointer to the mechanism
-//--------------------------------------------------------------------------
-shared_ptr<IMechanism> MechanismDefn::ParseXML
+/// @return IMechanism*   pointer to the mechanism
+IMechanism* MechanismDefn::ParseXML
 (
     xml_node      mechanismNode
 )
 {
     // initialize outputs
-    shared_ptr<IMechanism> mech = nullptr;
+    IMechanism* mech = nullptr;
 
     // initialize attributes
     MechanismTypes::MECHANISM_TYPE type = MechanismTypes::UNKNOWN_MECHANISM;

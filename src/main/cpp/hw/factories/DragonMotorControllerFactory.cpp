@@ -74,7 +74,7 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::CreateMotorCont
     if ( type == MOTOR_TYPE::TALONSRX )
     {
         // TODO:: set PDP ID
-        auto talon = new DragonTalon( MotorControllerUsage::GetInstance()->GetUsage(usage), canID, countsPerRev, gearRatio );
+        auto talon = new DragonTalon( MotorControllerUsage::GetInstance()->GetUsage(usage), canID, pdpID, countsPerRev, gearRatio );
         talon->EnableBrakeMode( brakeMode );
         talon->Invert( inverted );
         talon->SetSensorInverted( sensorInverted );
@@ -95,7 +95,7 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::CreateMotorCont
     else if ( type == MOTOR_TYPE::BRUSHED_SPARK_MAX || type == MOTOR_TYPE::BRUSHLESS_SPARK_MAX )
     {
         auto brushedBrushless = (type == MOTOR_TYPE::BRUSHED_SPARK_MAX) ? rev::CANSparkMax::MotorType::kBrushed : rev::CANSparkMax::MotorType::kBrushless;
-        auto smax = new DragonSparkMax( canID, MotorControllerUsage::GetInstance()->GetUsage(usage), brushedBrushless, gearRatio );
+        auto smax = new DragonSparkMax( canID, pdpID, MotorControllerUsage::GetInstance()->GetUsage(usage), brushedBrushless, gearRatio );
         smax->Invert( inverted );
         smax->EnableBrakeMode( brakeMode );
         smax->InvertEncoder( sensorInverted );

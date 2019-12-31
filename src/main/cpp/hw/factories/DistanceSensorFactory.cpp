@@ -55,6 +55,16 @@ DistanceSensorFactory* DistanceSensorFactory::GetFactory()
 
 }
 
+DistanceSensorFactory::DistanceSensorFactory()
+{
+
+}
+
+DistanceSensorFactory::~DistanceSensorFactory()
+{
+    
+}
+
 shared_ptr<IDragonDistanceSensor> GetSensor
 (
     IDragonSensor::SENSOR_USAGE    usage
@@ -94,6 +104,7 @@ shared_ptr<IDragonDistanceSensor> DistanceSensorFactory::CreateSensor
 {
     shared_ptr<IDragonDistanceSensor> sensor = nullptr;
 
+    /**
     if ( inputPin > -1 && triggerPin > -1 )  // create lidar
     {
         // todo validate the pins/usage
@@ -130,7 +141,7 @@ shared_ptr<IDragonDistanceSensor> DistanceSensorFactory::CreateSensor
     {
         Logger::GetLogger()->LogError( string( "DistanceSensorFactory::CreateSensor"), string("unknown sensor") );
     }
-
+    **/
 
     return sensor;
 }

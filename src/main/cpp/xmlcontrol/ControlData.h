@@ -15,59 +15,60 @@
 
 #pragma once
 
-class PIDData
+#include <subsys/MechanismControl.h>
+
+class ControlData
 {
     public:
-        enum PID_TARGET
-        {
-            ARM,
-            EXTENDER,
-            GENERAL
-        };
-
+        /**
         enum CONTROL_MODE
         {
             VELOCITY,
             POSITION,
-            MOTION_MAGIC
+            MOTION_MAGIC,
+            VOLTAGE,
+            CURRENT,
+            MOTION_PROFILE,
+            MOTION_PROFILE_ARC
         };
+        **/
 
-        PIDData
+        ControlData
         (
-            CONTROL_MODE            mode,
-            PID_TARGET              pidTarget,
-            double                  proportional,
-            double                  integral,
-            double                  derivative,
-            double                  feedforward,
-            double                  maxAcceleration,
-            double                  cruiseVelocity
+            MechanismControl::MECHANISM_CONTROL_TYPE    mode,
+            double                                      proportional,
+            double                                      integral,
+            double                                      derivative,
+            double                                      feedforward,
+            double                                      integralZone,
+            double                                      maxAcceleration,
+            double                                      cruiseVelocity
         );
 
 
-        virtual ~PIDData() = default;
+        virtual ~ControlData() = default;
 
-        inline CONTROL_MODE GetMode() { return m_mode; };
-        inline PID_TARGET GetPidTarget() { return m_pidTarget; };
+        inline MechanismControl::MECHANISM_CONTROL_TYPE GetMode() { return m_mode; };
         inline double GetP() { return m_proportional; };
         inline double GetI() { return m_integral; };
         inline double GetD() { return m_derivative; };
         inline double GetF() { return m_feedforward; };
+        inline double GetIZone() { return m_iZone; };
         inline double GetMaxAcceleration() { return m_maxAcceleration; };
         inline double GetCruiseVelocity() { return m_cruiseVelocity; };
 
  
     private:
-        PIDData() = delete;
+        ControlData() = delete;
 
-        CONTROL_MODE                    m_mode;
-        PID_TARGET                      m_pidTarget;
-        double                          m_proportional;
-        double                          m_integral;
-        double                          m_derivative;
-        double                          m_feedforward;
-        double                          m_maxAcceleration;
-        double                          m_cruiseVelocity;
+        MechanismControl::MECHANISM_CONTROL_TYPE    m_mode;
+        double                                      m_proportional;
+        double                                      m_integral;
+        double                                      m_derivative;
+        double                                      m_feedforward;
+        double                                      m_iZone;
+        double                                      m_maxAcceleration;
+        double                                      m_cruiseVelocity;
 
 };
 

@@ -40,7 +40,7 @@
 
 // Team 302 includes
 #include <xmlhw/ControlDefn.h>
-#include <xmlcontrol/PIDData.h>
+#include <xmlcontrol/ControlData.h>
 #include <xmlcontrol/PIDDefn.h>
 
 // Third Party Includes
@@ -54,7 +54,7 @@
 void ControlDefn::ParseXML
 (
     std::string&            leaf,               /// <I> - the file name (without the path) to parse
-    std::vector<PIDData*>&  pids                /// <O> - the control data 
+    std::vector<ControlData*>&  pids                /// <O> - the control data 
 )
 {
     pids.clear();

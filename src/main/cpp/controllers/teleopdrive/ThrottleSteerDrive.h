@@ -15,43 +15,39 @@
 //====================================================================================================================================================
 
 #pragma once 
-
 // Standard C++ includes
 #include <memory>
 
+// FRC includes
+
 // Team 302 include
+#include <controllers/teleopdrive/ITeleopDrive.h>
 #include <subsys/IChassis.h>
-#include <gamepad/DragonXBox.h>
-#include <controllers/teleopdrive/TeleopDrive.h>
-
-// CTRE includes 
+#include <gamepad/TeleopControl.h>
 
 
-/*========================================================================================================
- * ThrottleSteerDrive.h
- *========================================================================================================
- *
- * File Description:  This class calculates the drive percents for control strategies that have a 
- *                    throttle and a steer component
- *
- *========================================================================================================*/
-class ThrottleSteerDrive : public TeleopDrive
+// Third Party includes 
+
+/// @class ThrottleSteerDrive
+/// @brief Drive differential chassis using a throttle input and a sheer (turn) input
+
+
+class ThrottleSteerDrive : public ITeleopDrive
 {
     public:
     
-        ThrottleSteerDrive
-        (
-            std::shared_ptr<IChassis>    chassis,
-            std::shared_ptr<DragonXBox>  xbox
-        );
-        ThrottleSteerDrive() = delete;
+        ThrottleSteerDrive();
         ~ThrottleSteerDrive() = default;
+        void Drive() override;
                
     protected:
-        void CalculateLeftRightPercents() override;
         virtual double GetSteer() = 0;
         virtual double GetThrottle() = 0;
 
+        inline TeleopControl* GetController() { return m_controller; }
+
     private:
+        std::shared_ptr<IChassis> m_chassis;
+        TeleopControl* m_controller;
 
 };

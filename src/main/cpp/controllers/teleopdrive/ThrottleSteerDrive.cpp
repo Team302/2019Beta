@@ -22,20 +22,36 @@
 
 // Team 302 Includes
 #include <controllers/teleopdrive/ThrottleSteerDrive.h>
-#include <gamepad/DragonXBox.h>
+#include <controllers/teleopdrive/ITeleopDrive.h>
+#include <gamepad/TeleopControl.h>
 #include <subsys/IChassis.h>
+#include <subsys/ChassisFactory.h>
+#include <subsys/MechanismControl.h>
+#include <utils/Logger.h>
 
 using namespace std;
 
-ThrottleSteerDrive::ThrottleSteerDrive
-(
-    shared_ptr<IChassis>    chassis,
-    shared_ptr<DragonXBox>  xbox
-) : TeleopDrive( chassis, xbox )
+/// @class ThrottleSteerDrive
+/// @brief Drive differential chassis using a throttle input and a sheer (turn) input
+
+/// @brief initialize the object 
+ThrottleSteerDrive::ThrottleSteerDrive() : ITeleopDrive(),
+                                           m_chassis( ChassisFactory::GetChassisFactory()->GetIChassis() ),
+                                           m_controller( TeleopControl::GetInstance() )
 {
+    if ( m_controller == nullptr  )
+    {
+        Logger::GetLogger()->LogError( string( "ThrottleSteerDrive::ThrottleSteerDrive"), string("TelopControl is nullptr"));
+    }
+
+    if ( m_chassis.get() == nullptr )
+    {
+        Logger::GetLogger()->LogError( string( "ThrottleSteerDrive::ThrottleSteerDrive"), string("Chassis is nullptr"));
+    }
+
 }
 
-void ThrottleSteerDrive::CalculateLeftRightPercents( )
+void ThrottleSteerDrive::Drive( )
 {
     // Get throttle and steer values from the subclasses
     auto throttle = GetThrottle();
@@ -58,10 +74,7 @@ void ThrottleSteerDrive::CalculateLeftRightPercents( )
     }
 
     // Set the percentages
-    SetLeftPercent( left );
-    SetRightPercent( right );
-
-
+    m_chassis.get()->SetOutput( MechanismControl::PERCENT_OUTPUT, left, right );
 }
 
 

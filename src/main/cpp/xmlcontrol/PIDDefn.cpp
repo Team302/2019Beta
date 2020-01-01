@@ -23,8 +23,9 @@
 #include <frc/SmartDashboard/SmartDashboard.h>
 
 // Team 302 includes
-#include <xmlcontrol/PIDData.h>
+#include <xmlcontrol/ControlData.h>
 #include <xmlcontrol/PIDDefn.h>
+#include <subsys/MechanismControl.h>
 
 // Third Party Includes
 #include <pugixml/pugixml.hpp>
@@ -45,22 +46,22 @@ using namespace frc;
 //
 // Returns:     mechParamData        mechanism data
 //-----------------------------------------------------------------------
-PIDData* PIDDefn::ParseXML
+ControlData* PIDDefn::ParseXML
 (
     pugi::xml_node      PIDNode
 )
 {
     // initialize output
-    PIDData* data = nullptr;
+    ControlData* data = nullptr;
 
     // initialize attributes to default values
-    PIDData::CONTROL_MODE mode;
-    PIDData::PID_TARGET pidTarget = PIDData::PID_TARGET::GENERAL;
+    MechanismControl::MECHANISM_CONTROL_TYPE mode = MechanismControl::MECHANISM_CONTROL_TYPE::PERCENT_OUTPUT;
 
     double p = 0.0;
     double i = 0.0;
     double d = 0.0;
     double f = 0.0;
+    double izone = 0.0;
     double maxAccel = 0.0;
     double cruiseVel = 0.0;
 
@@ -71,27 +72,7 @@ PIDData* PIDDefn::ParseXML
     {
         if ( strcmp( attr.name(), "mode" ) == 0 )
         {
-            mode = (PIDData::CONTROL_MODE)attr.as_int();
-        }
-        else if ( strcmp( attr.name(), "pidtarget" ) == 0 )
-        {
-            auto target = attr.value();
-            if ( strcmp( target, "ARM") == 0 )
-            {
-                pidTarget = PIDData::PID_TARGET::ARM;
-            }
-            else if ( strcmp( target, "EXTENDER") == 0 )
-            {
-                pidTarget = PIDData::PID_TARGET::EXTENDER;
-            }
-            else if ( strcmp( target, "GENERAL") == 0 )
-            {
-                pidTarget = PIDData::PID_TARGET::GENERAL;
-            }
-            else
-            {
-                printf( "PID Target is invalid %s \n", target );
-            }
+            mode = (MechanismControl::MECHANISM_CONTROL_TYPE)attr.as_int();
         }
         else if ( strcmp( attr.name(), "proportional") == 0 )
         {
@@ -109,6 +90,10 @@ PIDData* PIDDefn::ParseXML
         {
             f = attr.as_double();
         }        
+        else if ( strcmp( attr.name(), "izone") == 0 )
+        {
+            izone = attr.as_double();
+        }
         else if ( strcmp( attr.name(), "maxacceleration") == 0 )
         {
             maxAccel = attr.as_double();
@@ -125,7 +110,7 @@ PIDData* PIDDefn::ParseXML
     }
     if ( !hasError )
     {
-        data = new PIDData( mode, pidTarget, p, i, d, f, maxAccel, cruiseVel );
+        data = new ControlData( mode, p, i, d, f, izone, maxAccel, cruiseVel );
     }
     return data;
 }

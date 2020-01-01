@@ -12,24 +12,25 @@
 // DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE 
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
-#include <xmlcontrol/PIDData.h>
+#include <xmlcontrol/ControlData.h>
+#include <subsys/MechanismControl.h>
 
-PIDData::PIDData
+ControlData::ControlData
 (
-    CONTROL_MODE            mode,
-    PID_TARGET              pidTarget,
-    double                  proportional,
-    double                  integral,
-    double                  derivative,
-    double                  feedforward,
-    double                  maxAcceleration,
-    double                  cruiseVelocity
+    MechanismControl::MECHANISM_CONTROL_TYPE    mode,
+    double                                      proportional,
+    double                                      integral,
+    double                                      derivative,
+    double                                      feedforward,
+    double                                      integralZone,
+    double                                      maxAcceleration,
+    double                                      cruiseVelocity
 ) : m_mode( mode ),
-    m_pidTarget( pidTarget ),
     m_proportional( proportional ),
     m_integral( integral ),
     m_derivative( derivative ),
     m_feedforward( feedforward ),
+    m_iZone( integralZone ),
     m_maxAcceleration( maxAcceleration ),
     m_cruiseVelocity( cruiseVelocity )
 {

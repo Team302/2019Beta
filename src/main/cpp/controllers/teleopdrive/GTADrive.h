@@ -38,12 +38,7 @@ class GTADrive : public ThrottleSteerDrive
 {
     public:
     
-        GTADrive
-        (
-            std::shared_ptr<IChassis>    chassis,
-            std::shared_ptr<DragonXBox>  xbox
-        );
-        GTADrive() = delete;
+        GTADrive();
         ~GTADrive() = default;
                
     protected:

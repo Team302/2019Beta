@@ -19,35 +19,34 @@
 // Standard C++ includes
 #include <memory>
 
+// FRC includes
+
 // Team 302 include
-#include <controllers/teleopdrive/TeleopDrive.h>
+#include <controllers/teleopdrive/ITeleopDrive.h>
 #include <subsys/IChassis.h>
+#include <gamepad/TeleopControl.h>
 
-// CTRE includes 
 
+// Third Party includes 
 
-/*========================================================================================================
- * TankDrive.h
- *========================================================================================================
- *
- * File Description:  This class calculates the drive percents for a tank drive
- *
- *========================================================================================================*/
-class TankDrive : public TeleopDrive
+/// @class TankDrive
+/// @brief Drive differential chassis with one joystick controlling each side of the robot
+class TankDrive : public ITeleopDrive
 {
     public:
     
-        TankDrive
-        (
-            std::shared_ptr<IChassis>    chassis,
-            std::shared_ptr<DragonXBox>  xbox
-        );
-        TankDrive() = delete;
+        /// @brief initialize the object
+        TankDrive();
+
+        /// @brief clean up memory
         ~TankDrive() = default;
-               
-    protected:
-        void CalculateLeftRightPercents() override;
+
+        /// @brief  Read two joysticks and drive a differential chassis (each joystick drives a separate side)
+        /// @return void
+        void Drive() override;
 
     private:
-
+        std::shared_ptr<IChassis> m_chassis;
+        TeleopControl* m_controller;
+               
 };

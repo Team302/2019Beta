@@ -14,6 +14,14 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
+
+// C++ Includes
+
+// FRC includes
+
+// Team 302 includes
+
+// Third Party Includes
 #include <string>
 #include <frc/GenericHID.h>
 #include <gamepad/IDragonGamePad.h>
@@ -79,47 +87,86 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 
     if ( m_controllers[0] != nullptr && ds->GetJoystickIsXbox(0) )
     {
-    	if ( ds->GetJoystickIsXbox(0) )
-    	{
-			m_controllerIndex[ TANK_DRIVE_LEFT_CONTROL ] 	= 0;
-			m_axisIDs[ TANK_DRIVE_LEFT_CONTROL ]    		= IDragonGamePad::LEFT_JOYSTICK_Y;
-			m_controllerIndex[ TANK_DRIVE_RIGHT_CONTROL ] 	= 0;
-			m_axisIDs[ TANK_DRIVE_RIGHT_CONTROL ]   		= IDragonGamePad::RIGHT_JOYSTICK_Y;
+		m_controllerIndex[ TANK_DRIVE_LEFT_CONTROL ] 	= 0;
+		m_axisIDs[ TANK_DRIVE_LEFT_CONTROL ]    		= IDragonGamePad::LEFT_JOYSTICK_Y;
+		m_controllerIndex[ TANK_DRIVE_RIGHT_CONTROL ] 	= 0;
+		m_axisIDs[ TANK_DRIVE_RIGHT_CONTROL ]   		= IDragonGamePad::RIGHT_JOYSTICK_Y;
 
-			m_controllerIndex[ ARCADE_DRIVE_THROTTLE ] 		= 0;
-			m_axisIDs[ ARCADE_DRIVE_THROTTLE ]      		= IDragonGamePad::LEFT_JOYSTICK_Y;
-			m_controllerIndex[ ARCADE_DRIVE_STEER ] 		= 0;
-			m_axisIDs[ ARCADE_DRIVE_STEER ]         		= IDragonGamePad::RIGHT_JOYSTICK_X;
+		m_controllerIndex[ ARCADE_DRIVE_THROTTLE ] 		= 0;
+		m_axisIDs[ ARCADE_DRIVE_THROTTLE ]      		= IDragonGamePad::LEFT_JOYSTICK_Y;
+		m_controllerIndex[ ARCADE_DRIVE_STEER ] 		= 0;
+		m_axisIDs[ ARCADE_DRIVE_STEER ]         		= IDragonGamePad::RIGHT_JOYSTICK_X;
 
-			m_controllerIndex[ GTA_DRIVE_FORWARD ] 		    = 0;
-			m_axisIDs[ GTA_DRIVE_FORWARD ]      		    = IDragonGamePad::RIGHT_TRIGGER;
-			m_controllerIndex[ GTA_DRIVE_BACKWARD ] 		= 0;
-			m_axisIDs[ GTA_DRIVE_BACKWARD ]         		= IDragonGamePad::LEFT_TRIGGER;
-			m_controllerIndex[ GTA_DRIVE_STEER ] 		    = 0;
-			m_axisIDs[ GTA_DRIVE_STEER ]         		    = IDragonGamePad::LEFT_JOYSTICK_X;
+		m_controllerIndex[ GTA_DRIVE_FORWARD ] 		    = 0;
+		m_axisIDs[ GTA_DRIVE_FORWARD ]      		    = IDragonGamePad::RIGHT_TRIGGER;
+		m_controllerIndex[ GTA_DRIVE_BACKWARD ] 		= 0;
+		m_axisIDs[ GTA_DRIVE_BACKWARD ]         		= IDragonGamePad::LEFT_TRIGGER;
+		m_controllerIndex[ GTA_DRIVE_STEER ] 		    = 0;
+		m_axisIDs[ GTA_DRIVE_STEER ]         		    = IDragonGamePad::LEFT_JOYSTICK_X;
 
-			m_controllerIndex[ SWITCH_DRIVE_MODE ]          = 0;
-			m_buttonIDs[ SWITCH_DRIVE_MODE ]                = IDragonGamePad::A_BUTTON;
+		m_controllerIndex[ SWITCH_DRIVE_MODE ]          = 0;
+		m_buttonIDs[ SWITCH_DRIVE_MODE ]                = IDragonGamePad::A_BUTTON;
 
-    	}
-		else if ( ds->GetJoystickType( 0 ) == GenericHID::kHIDJoystick )
-		{
-            Logger::GetLogger()->LogError( string("TeleopControl::TeleopControl"), string("Need to handle joysticks"));
-		}
     }
     else
     {
         Logger::GetLogger()->LogError( string("TeleopControl::TeleopControl"), string("No controller plugged into port 0"));
     }
 
-    if ( m_controllers[1] != nullptr )
+    if ( m_controllers[1] != nullptr && ds->GetJoystickIsXbox(1) )
     {
+	}
+    else if ( m_controllers[1] != nullptr )
+    {
+	}
+	else
+	{
         Logger::GetLogger()->LogError( string("TeleopControl::TeleopControl"), string("Controller 1 not handled"));
     }
 
-    if ( m_controllers[2] != nullptr )
+    if ( m_controllers[2] != nullptr && ds->GetJoystickIsXbox(2) )
     {
+	}
+    else if ( m_controllers[2] != nullptr )
+    {
+	}
+	else
+	{
         Logger::GetLogger()->LogError( string("TeleopControl::TeleopControl"), string("Controller 2 not handled"));
+    }
+
+    if ( m_controllers[3] != nullptr && ds->GetJoystickIsXbox(3) )
+    {
+	}
+    else if ( m_controllers[3] != nullptr )
+    {
+	}
+	else
+	{
+		Logger::GetLogger()->LogError( string("TeleopControl::TeleopControl"), string("Controller 3 not handled"));
+
+	}
+
+    if ( m_controllers[4] != nullptr && ds->GetJoystickIsXbox(4) )
+    {
+	}
+    else if ( m_controllers[4] != nullptr )
+    {
+	}
+	else
+	{
+        Logger::GetLogger()->LogError( string("TeleopControl::TeleopControl"), string("Controller 4 not handled"));
+    }
+
+    if ( m_controllers[5] != nullptr && ds->GetJoystickIsXbox(5) )
+    {
+	}
+    else if ( m_controllers[5] != nullptr )
+    {
+	}
+	else
+	{
+        Logger::GetLogger()->LogError( string("TeleopControl::TeleopControl"), string("Controller 5 not handled"));
     }
 }
 

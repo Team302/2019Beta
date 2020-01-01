@@ -26,7 +26,7 @@
 // FRC includes
 
 // Team 302 includes
-#include <xmlcontrol/PIDData.h>
+#include <xmlcontrol/ControlData.h>
 
 // Third Party Includes
 #include <pugixml/pugixml.hpp>
@@ -50,7 +50,7 @@ class PIDDefn
         // Returns:     PowerDistributionPanel*        PDP object (or nullptr if XML
         //                                             is ill-formed
         //-----------------------------------------------------------------------
-        static PIDData*  ParseXML
+        static ControlData*  ParseXML
         (
             pugi::xml_node      PIDNode
         );

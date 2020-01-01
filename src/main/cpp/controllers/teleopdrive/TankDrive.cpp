@@ -21,27 +21,44 @@
 
 // Team 302 Includes
 #include <controllers/teleopdrive/TankDrive.h>
-#include <gamepad/DragonXBox.h>
+#include <gamepad/TeleopControl.h>
 #include <subsys/IChassis.h>
+#include <subsys/ChassisFactory.h>
+#include <subsys/MechanismControl.h>
+#include <utils/Logger.h>
 
 using namespace std;
 
-TankDrive::TankDrive
-(
-    shared_ptr<IChassis>    chassis,
-    shared_ptr<DragonXBox>  xbox
-) : TeleopDrive( chassis, xbox )
+/// @class TankDrive
+/// @brief Drive differential chassis with one joystick controlling each side of the robot
+
+/// @brief initialize the object 
+TankDrive::TankDrive() : ITeleopDrive(),
+                         m_chassis( ChassisFactory::GetChassisFactory()->GetIChassis() ),
+                         m_controller( TeleopControl::GetInstance() )
 {
-    xbox->SetAxisProfile( IDragonGamePad::AXIS_IDENTIFIER::LEFT_JOYSTICK_Y, IDragonGamePad::AXIS_PROFILE::CUBED );
-    xbox->SetAxisProfile( IDragonGamePad::AXIS_IDENTIFIER::RIGHT_JOYSTICK_Y, IDragonGamePad::AXIS_PROFILE::CUBED );
+    if ( m_controller != nullptr  )
+    {
+        m_controller->SetAxisProfile( TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_LEFT_CONTROL, IDragonGamePad::AXIS_PROFILE::CUBED );
+        m_controller->SetAxisProfile( TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_RIGHT_CONTROL, IDragonGamePad::AXIS_PROFILE::CUBED );
+    }
+    else
+    {
+        Logger::GetLogger()->LogError( string( "TankDrive::TankDrive"), string("TelopControl is nullptr"));
+    }
+
+    if ( m_chassis.get() == nullptr )
+    {
+        Logger::GetLogger()->LogError( string( "TankDrive::TankDrive"), string("Chassis is nullptr"));
+    }
 }
 
-void TankDrive::CalculateLeftRightPercents()
+/// @brief  Read two joysticks and drive a differential chassis (each joystick drives a separate side)
+/// @return void
+void TankDrive::Drive()
 {
-    auto xbox = GetXBox();
-    if ( xbox != nullptr )
-    {
-        SetLeftPercent( xbox->GetAxisValue( IDragonGamePad::AXIS_IDENTIFIER::LEFT_JOYSTICK_Y ) );
-        SetRightPercent( xbox->GetAxisValue( IDragonGamePad::AXIS_IDENTIFIER::RIGHT_JOYSTICK_Y ) );
-    }
+    auto left = m_controller->GetAxisValue( TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_LEFT_CONTROL );
+    auto right = m_controller->GetAxisValue( TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_RIGHT_CONTROL );
+
+    m_chassis.get()->SetOutput( MechanismControl::PERCENT_OUTPUT, left, right );
 }

@@ -139,11 +139,11 @@ double Intake::GetTargetSpeed() const
 
 
 /// @brief  Set the control constants (e.g. PIDF values).
-/// @param [in] PIDData*   pid - the control constants
+/// @param [in] ControlData*   pid - the control constants
 /// @return void
 void Intake::SetControlConstants
 (
-    PIDData*                                 pid                 
+    ControlData*                                 pid                 
 )
 {
     // todo:  need to account for voltage mode

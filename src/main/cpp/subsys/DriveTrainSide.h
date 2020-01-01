@@ -26,7 +26,7 @@
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismControl.h>
 #include <subsys/MechanismTypes.h>
-#include <xmlcontrol/PIDData.h>
+#include <xmlcontrol/ControlData.h>
 
 // Third Party Includes
 
@@ -88,11 +88,11 @@ class DriveTrainSide : public IMechanism
 
 
         /// @brief  Set the control constants (e.g. PIDF values).
-        /// @param [in] PIDData*   pid - the control constants
+        /// @param [in] ControlData*   pid - the control constants
         /// @return void
         void SetControlConstants
         (
-            PIDData*                                 pid               
+            ControlData*                                 pid               
         ) override;
         
     private:

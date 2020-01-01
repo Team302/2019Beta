@@ -21,33 +21,34 @@
 
 // Team 302 Includes
 #include <controllers/teleopdrive/ArcadeDrive.h>
-#include <gamepad/DragonXBox.h>
+#include <gamepad/IDragonGamePad.h>
 #include <subsys/IChassis.h>
+#include <gamepad/TeleopControl.h>
 
 using namespace std;
 
-ArcadeDrive::ArcadeDrive
-(
-    shared_ptr<IChassis>    chassis,
-    shared_ptr<DragonXBox>  xbox
-) : ThrottleSteerDrive( chassis, xbox )
+ArcadeDrive::ArcadeDrive() : ThrottleSteerDrive()
 {
-    xbox->SetAxisProfile( IDragonGamePad::AXIS_IDENTIFIER::LEFT_JOYSTICK_Y, IDragonGamePad::AXIS_PROFILE::CUBED );
-    xbox->SetAxisProfile( IDragonGamePad::AXIS_IDENTIFIER::RIGHT_JOYSTICK_X, IDragonGamePad::AXIS_PROFILE::CUBED );
+    auto controller = GetController();
+    if ( controller != nullptr )
+    {
+        controller->SetAxisProfile( TeleopControl::FUNCTION_IDENTIFIER::ARCADE_DRIVE_THROTTLE, IDragonGamePad::AXIS_PROFILE::CUBED );
+        controller->SetAxisProfile( TeleopControl::FUNCTION_IDENTIFIER::ARCADE_DRIVE_STEER, IDragonGamePad::AXIS_PROFILE::CUBED );
+    }
 }
 
 //=======================================================================
 double ArcadeDrive::GetThrottle()
 {
-    auto xbox = GetXBox();
-    return ( ( xbox != nullptr ) ? xbox->GetAxisValue( IDragonGamePad::AXIS_IDENTIFIER::LEFT_JOYSTICK_Y) : 0.0 );
+    auto controller = GetController();
+    return ( ( controller != nullptr ) ? controller->GetAxisValue( TeleopControl::FUNCTION_IDENTIFIER::ARCADE_DRIVE_THROTTLE) : 0.0 );
 }
 
 //=======================================================================
 double ArcadeDrive::GetSteer()
 {
-    auto xbox = GetXBox();
-    return ( ( xbox != nullptr ) ? xbox->GetAxisValue( IDragonGamePad::AXIS_IDENTIFIER::RIGHT_JOYSTICK_X) : 0.0 );
+    auto controller = GetController();
+    return ( ( controller != nullptr ) ? controller->GetAxisValue( TeleopControl::FUNCTION_IDENTIFIER::ARCADE_DRIVE_STEER) : 0.0 );
 }
 
 

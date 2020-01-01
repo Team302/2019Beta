@@ -38,12 +38,7 @@ class ArcadeDrive : public ThrottleSteerDrive
 {
     public:
     
-        ArcadeDrive
-        (
-            std::shared_ptr<IChassis>    chassis,
-            std::shared_ptr<DragonXBox>  xbox
-        );
-        ArcadeDrive() = delete;
+        ArcadeDrive();
         ~ArcadeDrive() = default;
                
     protected:

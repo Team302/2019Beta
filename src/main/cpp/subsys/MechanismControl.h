@@ -31,9 +31,11 @@ class MechanismControl
             VELOCITY_INCH,              /// Closed Loop Control - values are linear velocity measured in inches per second
             VELOCITY_DEGREES,           /// Closed Loop Control - values are angular velocity measured in degrees per second
             VOLTAGE,                    /// Closed Loop Control - values are in volts
+            CURRENT,                    /// Closed Loop Control - values in amps
+            TRAPEZOID,                  /// Closed Loop Control - trapezoid profile (e.g. Motion Magic)
+            MOTION_PROFILE,             /// Closed Loop Control - motion profile
+            MOTION_PROFILE_ARC,         /// Closed Loop Control - motion profile arc
             MAX_CONTROL_TYPES
         };
-
-
 
 };

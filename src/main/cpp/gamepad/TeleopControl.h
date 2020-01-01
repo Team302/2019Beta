@@ -16,6 +16,17 @@
 
 #pragma once 
 
+
+// C++ Includes
+
+// FRC includes
+
+// Team 302 includes
+
+// Third Party Includes
+#include <memory>
+#include <map>
+
 #include <gamepad/IDragonGamePad.h>
 #include <gamepad/DragonXbox.h>
 #include <gamepad/DragonGamePad.h>
@@ -29,6 +40,7 @@ class TeleopControl
 
         enum FUNCTION_IDENTIFIER
         {
+            UNKNOW_FUNCTION,
             TANK_DRIVE_LEFT_CONTROL,
             TANK_DRIVE_RIGHT_CONTROL,
             ARCADE_DRIVE_THROTTLE,
@@ -118,6 +130,10 @@ class TeleopControl
         //----------------------------------------------------------------------------------
         static TeleopControl*               m_instance; // Singleton instance of this class
         const int                           m_maxFunctions = 35;
+
+        std::map<FUNCTION_IDENTIFIER, IDragonGamePad::AXIS_IDENTIFIER> m_axisMap;
+        std::map<FUNCTION_IDENTIFIER, IDragonGamePad::BUTTON_IDENTIFIER> m_buttonMap;
+        std::map<FUNCTION_IDENTIFIER, int> m_controllerMap;
 
         IDragonGamePad::AXIS_IDENTIFIER     m_axisIDs[35];
         IDragonGamePad::BUTTON_IDENTIFIER   m_buttonIDs[35];

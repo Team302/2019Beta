@@ -26,7 +26,7 @@
 // FRC includes
 
 // Team 302 includes
-#include <xmlcontrol/PIDData.h>
+#include <xmlcontrol/ControlData.h>
 
 // Third Party Includes
 
@@ -59,6 +59,6 @@ class ControlDefn
         static void ParseXML
         (
             std::string&            filename,           /// <I> - the file name (without the path) to parse
-            std::vector<PIDData*>&  pidControlVector    /// <O> - the control data 
+            std::vector<ControlData*>&  pidControlVector    /// <O> - the control data 
         );
 };

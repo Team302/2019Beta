@@ -29,7 +29,7 @@
 // Team 302 includes
 #include <subsys/MechanismControl.h>
 #include <subsys/MechanismTypes.h>
-#include <xmlcontrol/PIDData.h>
+#include <xmlcontrol/ControlData.h>
 // Third Party Includes
 
 
@@ -97,12 +97,12 @@ class IMechanism
         //==================================================================================================
         /// method: SetControlConstants
         /// @brief  Set the control constants (e.g. PIDF values).
-        /// @param [in] PIDData*                                   pid:  the control constants
+        /// @param [in] ControlData*                                   pid:  the control constants
         /// @return void
         //==================================================================================================
         virtual void SetControlConstants
         (
-            PIDData*                                pid                 
+            ControlData*                                pid                 
         ) = 0;
 
 

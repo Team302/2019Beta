@@ -1,4 +1,5 @@
 
+
 //====================================================================================================================================================
 // Copyright 2019 Lake Orion Robotics FIRST Team 302
 //
@@ -14,51 +15,50 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
+#pragma once
+
+
 // C++ Includes
-#include <memory>
 
 // FRC includes
 
-// Team 302 Includes
-#include <controllers/teleopdrive/GTADrive.h>
+// Team 302 includes
+
+// Third Party Includes
 #include <gamepad/IDragonGamePad.h>
-#include <subsys/IChassis.h>
 #include <gamepad/TeleopControl.h>
 
-using namespace std;
-
-using namespace std;
-
-GTADrive::GTADrive() : ThrottleSteerDrive()
+class FunctionMap
 {
-    auto controller = GetController();
-    if ( controller != nullptr )
-    {
-        controller->SetAxisProfile( TeleopControl::FUNCTION_IDENTIFIER::GTA_DRIVE_FORWARD, IDragonGamePad::AXIS_PROFILE::CUBED );
-        controller->SetAxisProfile( TeleopControl::FUNCTION_IDENTIFIER::GTA_DRIVE_BACKWARD, IDragonGamePad::AXIS_PROFILE::CUBED );
-        controller->SetAxisProfile( TeleopControl::FUNCTION_IDENTIFIER::GTA_DRIVE_STEER, IDragonGamePad::AXIS_PROFILE::CUBED );
-    }
-}
+    public:
+        FunctionMap();
+        FunctionMap
+        ( 
+            TeleopControl::FUNCTION_IDENTIFIER  function,
+            int                                 controllerIndex,
+            IDragonGamePad::AXIS_IDENTIFIER     axisID,
+            IDragonGamePad::AXIS_DEADBAND       deadBand,
+            IDragonGamePad::AXIS_PROFILE        profile,
+            IDragonGamePad::BUTTON_IDENTIFIER   buttonID,
+            IDragonGamePad::BUTTON_MODE         buttonType
+        );
+        ~FunctionMap() = default;
 
-//=======================================================================
-double GTADrive::GetThrottle()
-{
-    auto controller = GetController();
-    double throttle = 0.0;
-    if ( controller != nullptr )
-    {
-        auto forward = controller->GetAxisValue( TeleopControl::FUNCTION_IDENTIFIER::GTA_DRIVE_FORWARD);
-        auto backward = controller->GetAxisValue( TeleopControl::FUNCTION_IDENTIFIER::GTA_DRIVE_BACKWARD);
-        throttle = forward - backward;
-    }
-    return throttle;
-}
-
-//=======================================================================
-double GTADrive::GetSteer()
-{
-    auto controller = GetController();
-    return ( ( controller != nullptr ) ? controller->GetAxisValue( TeleopControl::FUNCTION_IDENTIFIER::GTA_DRIVE_STEER) : 0.0 );
-}
+        TeleopControl::FUNCTION_IDENTIFIER GetFunction() const;
+        int GetControllerIndex() const;
+        IDragonGamePad::AXIS_IDENTIFIER GetAxisID() const;
+        IDragonGamePad::AXIS_DEADBAND GetDeadband() const;
+        IDragonGamePad::AXIS_PROFILE GetProfile() const;
+        IDragonGamePad::BUTTON_IDENTIFIER GetButtonID() const;
+        IDragonGamePad::BUTTON_MODE GetMode() const;
 
 
+    private:
+        TeleopControl::FUNCTION_IDENTIFIER      m_function;
+        int                                     m_controllerIndex;
+        IDragonGamePad::AXIS_IDENTIFIER         m_axisID;
+        IDragonGamePad::AXIS_DEADBAND           m_axisDeadband;
+        IDragonGamePad::AXIS_PROFILE            m_axisProfile;
+        IDragonGamePad::BUTTON_IDENTIFIER       m_buttonID;
+        IDragonGamePad::BUTTON_MODE             m_buttonMode;
+};

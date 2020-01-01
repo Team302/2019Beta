@@ -111,7 +111,7 @@ void ChassisDefn::ParseXML
     // Process child element nodes
     IDragonMotorControllerMap motors;
     unique_ptr<MotorDefn> motorXML;
-    vector<PIDData*> pidControlVector;
+    vector<ControlData*> pidControlVector;
     for (xml_node child = chassisNode.first_child(); child; child = child.next_sibling())
     {
     	if ( strcmp( child.name(), "motor") == 0 )

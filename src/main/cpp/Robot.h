@@ -31,9 +31,14 @@
 #include <frc/TimedRobot.h>
 #include <frc/smartdashboard/SendableChooser.h>
 
+#include <auton/CyclePrimitives.h>
+
 class Robot : public frc::TimedRobot 
 {
   public:
+      Robot();
+      ~Robot() = default;
+
       void RobotInit() override;
       void RobotPeriodic() override;
       void AutonomousInit() override;
@@ -44,4 +49,6 @@ class Robot : public frc::TimedRobot
       void TestPeriodic() override;
 
   private:
+      CyclePrimitives* m_cyclePrims;
+
 };

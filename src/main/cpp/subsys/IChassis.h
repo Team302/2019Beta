@@ -25,7 +25,7 @@
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismControl.h>
 #include <subsys/MechanismTypes.h>
-#include <xmlcontrol/ControlData.h>
+#include <controllers/ControlData.h>
 // Third Party Includes
 
 

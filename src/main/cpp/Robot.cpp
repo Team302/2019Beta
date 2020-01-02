@@ -34,6 +34,12 @@
 // Team 302 Includes
 #include <Robot.h>
 #include <xmlhw/RobotDefn.h>
+#include <auton/CyclePrimitives.h>
+
+Robot::Robot() : TimedRobot( 10.0 )
+{
+
+}
 
 ///-----------------------------------------------------------------------
 /// Method:      RobotInit
@@ -47,6 +53,10 @@ void Robot::RobotInit()
     // solenoids, digital inputs, analog inputs, etc.
     std::unique_ptr<RobotDefn>  robotXml = std::make_unique<RobotDefn>();
     robotXml->ParseXML();
+
+    // Display the autonomous choices on the dashboard for selection.
+    m_cyclePrims = new CyclePrimitives();
+
 }
 
 ///-----------------------------------------------------------------------
@@ -69,6 +79,9 @@ void Robot::RobotPeriodic()
 ///-----------------------------------------------------------------------
 void Robot::AutonomousInit() 
 {
+        // run selected auton option
+    m_cyclePrims->Init();
+
     TeleopInit();
 }
 
@@ -80,6 +93,9 @@ void Robot::AutonomousInit()
 ///-----------------------------------------------------------------------
 void Robot::AutonomousPeriodic() 
 {
+        //Real auton magic right here:
+    m_cyclePrims->RunCurrentPrimitive();
+
     TeleopPeriodic();
 }
 

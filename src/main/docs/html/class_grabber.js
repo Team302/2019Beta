@@ -7,6 +7,6 @@ var class_grabber =
     [ "GetTargetPosition", "class_grabber.html#a2cf1cb680b2a5768f47ed7ca2fcb327b", null ],
     [ "GetTargetSpeed", "class_grabber.html#a9fee418a87e762aecf59d5994fdc753b", null ],
     [ "GetType", "class_grabber.html#ad592f6132c994db35e234765d982ff80", null ],
-    [ "SetControlConstants", "class_grabber.html#a6cbfdf98938e5cec3cc04e6d71e482dc", null ],
-    [ "SetOutput", "class_grabber.html#ac721f69f1a9de5536de0a3af09b4705b", null ]
+    [ "SetControlConstants", "class_grabber.html#a360a381791633d6eb0db63e3dcaa0b60", null ],
+    [ "SetOutput", "class_grabber.html#af42e02a80cfa2c6005bae96c1d893e11", null ]
 ];

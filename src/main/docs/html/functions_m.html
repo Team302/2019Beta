@@ -100,6 +100,9 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>MAX_ANALOG_BUTTONS
 : <a class="el" href="class_i_dragon_game_pad.html#a0397960782662f2d55df39297128a33ca60edde4b5b17b600a502ef9d39119f19">IDragonGamePad</a>
 </li>
+<li>MAX_ANALOG_TYPES
+: <a class="el" href="class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3eae7622fb6eb6147bbe49ab9caf7533f27">AnalogInputUsage</a>
+</li>
 <li>MAX_AXIS
 : <a class="el" href="class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972ba832596d4e94c2c06494a7f92cd489a5b">IDragonGamePad</a>
 </li>
@@ -109,9 +112,8 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>MAX_BUTTONS
 : <a class="el" href="class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29a5d9a7d02c0a8246a6ac9742803d81b32">IDragonGamePad</a>
 </li>
-<li>MAX_CONTROL_IDS
-: <a class="el" href="class_mechanism_control.html#a99c14a53b74c4b58a8b3285b6a26f668ad0a31f83382b10baeff95bf5379d1002">MechanismControl</a>
-, <a class="el" href="class_mechanism_parameters.html#a213d3185b69f166f949a66949698be06ae5d6dfea3b19591bb25d5edafd801f05">MechanismParameters</a>
+<li>MAX_CHASSIS_TYPES
+: <a class="el" href="class_chassis_factory.html#ac7a9d3e5c5b09915503114b2112702d4a3bd88897f66247b7c559c09f93edf0b3">ChassisFactory</a>
 </li>
 <li>MAX_CONTROL_TYPES
 : <a class="el" href="class_mechanism_control.html#a62b7a13a54f2bb7385096b3933837e00a3547ce2b48af9d2a5b5919ab516b113a">MechanismControl</a>
@@ -122,17 +124,20 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>MAX_DIGITAL_INPPUT_TYPES
 : <a class="el" href="class_dragon_digital_input.html#a5978e6af791b83e55b7f183ed2504b45acc0317071089b0aca14937fe29c3712d">DragonDigitalInput</a>
 </li>
+<li>MAX_FUNCTIONS
+: <a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15af0a71fc177d1cdf5d455aa154441aafb">TeleopControl</a>
+</li>
 <li>MAX_GAMEPAD_AXIS
 : <a class="el" href="class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972ba5bef3de2d4315d7d4080c6029ea88613">IDragonGamePad</a>
 </li>
 <li>MAX_MECHANISM_PARAM_TYPES
 : <a class="el" href="class_mechanism_parameters.html#a33645fbdee2537b07f48e371662ab14ea2084a06934c1683b9f0ac59d10ee9c74">MechanismParameters</a>
 </li>
-<li>MAX_MECHANISM_STATES
-: <a class="el" href="class_i_mechanism_state.html#aaf09560245ec14a78fd0cd42457b6241a88fe966f2b6599ef81083b6b3260248d">IMechanismState</a>
-</li>
 <li>MAX_MECHANISM_TYPES
 : <a class="el" href="class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba56460d0cccd455dc6a5beaef20b49a5d">MechanismTypes</a>
+</li>
+<li>MAX_MOTOR_CONTROLLER_USAGES
+: <a class="el" href="class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51aaa1e41d1d7157cac6ca75d23905704de1">MotorControllerUsage</a>
 </li>
 <li>MAX_POSITIONS
 : <a class="el" href="class_field_measurement.html#a6a6007ff2b3a4208d6db0ed75b035142abd27c48c00cab4eb8840f892a8b1c1a7">FieldMeasurement</a>
@@ -161,9 +166,8 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>Measurement
 : <a class="el" href="class_field_measurement.html#a6a6007ff2b3a4208d6db0ed75b035142">FieldMeasurement</a>
 </li>
-<li>MECHANISM_CONTROL_ID
-: <a class="el" href="class_mechanism_control.html#a99c14a53b74c4b58a8b3285b6a26f668">MechanismControl</a>
-, <a class="el" href="class_mechanism_parameters.html#a213d3185b69f166f949a66949698be06">MechanismParameters</a>
+<li>MECANUM_CHASSIS
+: <a class="el" href="class_chassis_factory.html#ac7a9d3e5c5b09915503114b2112702d4aa43dc68621d7a5d888a93e794501e204">ChassisFactory</a>
 </li>
 <li>MECHANISM_CONTROL_TYPE
 : <a class="el" href="class_mechanism_control.html#a62b7a13a54f2bb7385096b3933837e00">MechanismControl</a>
@@ -174,17 +178,23 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>MECHANISM_PARAM_UNKNOWN
 : <a class="el" href="class_mechanism_parameters.html#a33645fbdee2537b07f48e371662ab14ea308877e2743e85bce63fa0a77bd2c575">MechanismParameters</a>
 </li>
-<li>MECHANISM_STATE
-: <a class="el" href="class_i_mechanism_state.html#aaf09560245ec14a78fd0cd42457b6241">IMechanismState</a>
-</li>
 <li>MECHANISM_TYPE
 : <a class="el" href="class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284b">MechanismTypes</a>
 </li>
 <li>MechanismDefn()
 : <a class="el" href="class_mechanism_defn.html#ac9eb8b1ebb0cd097c2fd977b678254da">MechanismDefn</a>
 </li>
+<li>MechanismState()
+: <a class="el" href="class_mechanism_state.html#a3ec59bea791ad296685f18429e0c6fc3">MechanismState</a>
+</li>
 <li>MechDataDefn()
 : <a class="el" href="class_mech_data_defn.html#af87ff55e49cc1ae7864133a422970320">MechDataDefn</a>
+</li>
+<li>MIDDLE_LEFT_DRIVE
+: <a class="el" href="class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51aa5a6eee39bd87b97b388e770db2dfeb5d">MotorControllerUsage</a>
+</li>
+<li>MIDDLE_RIGHT_DRIVE
+: <a class="el" href="class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51aa506b2a8947667c02c4893cf69b85f15e">MotorControllerUsage</a>
 </li>
 <li>MIN_SPEED_SLOWDOWN
 : <a class="el" href="class_super_drive.html#ac415c90fe844cd40e438ec7f05061e32">SuperDrive</a>
@@ -197,7 +207,15 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 </li>
 <li>MOTION_MAGIC
 : <a class="el" href="class_dragon_talon.html#a8f2b4982607580f1e3802ed17adf3898a1eb45b041018ef61484fc19fa4ae78d0">DragonTalon</a>
-, <a class="el" href="class_p_i_d_data.html#ae35bdd9425718baa0d5410ce3ccf9fb4af39a2976a5c6d0673a39616edef14435">PIDData</a>
+</li>
+<li>MOTION_PROFILE
+: <a class="el" href="class_mechanism_control.html#a62b7a13a54f2bb7385096b3933837e00adc98eb5dd1af39c52bf36412287185a9">MechanismControl</a>
+</li>
+<li>MOTION_PROFILE_ARC
+: <a class="el" href="class_mechanism_control.html#a62b7a13a54f2bb7385096b3933837e00aaaa4fa22874aa1150192376e70127378">MechanismControl</a>
+</li>
+<li>MOTOR_CONTROLLER_USAGE
+: <a class="el" href="class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51a">MotorControllerUsage</a>
 </li>
 <li>MOTOR_TYPE
 : <a class="el" href="class_dragon_motor_controller_factory.html#ab2cbc7da55b546e4da9e5d16a9965195">DragonMotorControllerFactory</a>

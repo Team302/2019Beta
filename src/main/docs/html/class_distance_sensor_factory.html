@@ -103,9 +103,9 @@ $(document).ready(function(){initNavTree('class_distance_sensor_factory.html',''
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a433cac9d3711d99a953369dc15dd9dd3"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_i_dragon_distance_sensor.html">IDragonDistanceSensor</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_distance_sensor_factory.html#a433cac9d3711d99a953369dc15dd9dd3">GetSensor</a> (<a class="el" href="class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9">IDragonSensor::SENSOR_USAGE</a> usage)</td></tr>
 <tr class="separator:a433cac9d3711d99a953369dc15dd9dd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d7c6bf693005f8093e38c9835fc5d72"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_i_dragon_distance_sensor.html">IDragonDistanceSensor</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_distance_sensor_factory.html#a3d7c6bf693005f8093e38c9835fc5d72">CreateSensor</a> (<a class="el" href="class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9">IDragonSensor::SENSOR_USAGE</a> usage, int inputPin, int triggerPin, int analogInputPin, int i2cID, int canID, std::string tableName, double mountingHeight, double mountingHorizontalOffset, double mountingAngle, double targetHeight)</td></tr>
-<tr class="memdesc:a3d7c6bf693005f8093e38c9835fc5d72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a distance sensor from the inputs.  <a href="class_distance_sensor_factory.html#a3d7c6bf693005f8093e38c9835fc5d72">More...</a><br /></td></tr>
-<tr class="separator:a3d7c6bf693005f8093e38c9835fc5d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abed212830b8102a823dec5b742945556"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_i_dragon_distance_sensor.html">IDragonDistanceSensor</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_distance_sensor_factory.html#abed212830b8102a823dec5b742945556">CreateSensor</a> (<a class="el" href="class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9">IDragonSensor::SENSOR_USAGE</a> usage, int inputPin, int triggerPin, int analogInputPin, int i2cID, int canID, std::string tableName, double mountingHeight, double mountingHorizontalOffset, double mountingAngle, double targetHeight)</td></tr>
+<tr class="memdesc:abed212830b8102a823dec5b742945556"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a distance sensor from the inputs.  <a href="class_distance_sensor_factory.html#abed212830b8102a823dec5b742945556">More...</a><br /></td></tr>
+<tr class="separator:abed212830b8102a823dec5b742945556"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -117,14 +117,14 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_distance_sensor_factory_8h_source.html#l00040">40</a> of file <a class="el" href="_distance_sensor_factory_8h_source.html">DistanceSensorFactory.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a3d7c6bf693005f8093e38c9835fc5d72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d7c6bf693005f8093e38c9835fc5d72">&#9670;&nbsp;</a></span>CreateSensor()</h2>
+<a id="abed212830b8102a823dec5b742945556"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abed212830b8102a823dec5b742945556">&#9670;&nbsp;</a></span>CreateSensor()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="class_i_dragon_distance_sensor.html">IDragonDistanceSensor</a> &gt; DistanceSensorFactory::CreateSensor </td>
+          <td class="memname">shared_ptr&lt; <a class="el" href="class_i_dragon_distance_sensor.html">IDragonDistanceSensor</a> &gt; DistanceSensorFactory::CreateSensor </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9">IDragonSensor::SENSOR_USAGE</a>&#160;</td>
           <td class="paramname"><em>usage</em>, </td>
@@ -216,8 +216,17 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::shared_ptr&lt;IDragonDistanceSensor&gt; sensor </dd></dl>
+<pre class="fragment">if ( inputPin &gt; -1 &amp;&amp; triggerPin &gt; -1 )  // create lidar
+{
+</pre><p> todo validate the pins/usage sensor = make_shared&lt;IDragonDistanceSensor&gt;( new DragonLidar( usage, inputPin, triggerPin ) ); } else if ( analogInputPin &gt; - 1 ) // create ultrasonic { todo validate the channel sensor = make_shared&lt;IDragonDistanceSensor&gt;( new DragonUltrasonic( usage, analogInputPin ) ); } else if ( inputPin &gt; -1 ) // create ultrasonicPWM { todo validate the pwm pin sensor = make_shared&lt;IDragonDistanceSensor&gt;( new DragonUltrasonicPWM( usage, inputPin ) ); } else if ( i2cID &gt; -1 ) // create Rev 2M { todo validate the i2c todo create the sensor </p><pre class="fragment">}
+else if ( canID &gt; -1 )  // create playing with fusion time of flight sensor
+{
+</pre><p> todo validate the i2c todo create the sensor </p><pre class="fragment">}
+else if ( !tableName.empty() )
+{
+</pre><p> todo validate inputs sensor = make_shared&lt;IDragonDistanceSensor&gt;( new DragonLimelight( usage, tableName, mountingHeight, mountingHorizontalOffset, mountingAngle, targetHeight) ); } else { <a class="el" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger()</a>-&gt;LogError( string( "DistanceSensorFactory::CreateSensor"), string("unknown sensor") ); }</p>
 
-<p class="definition">Definition at line <a class="el" href="_distance_sensor_factory_8cpp_source.html#l00079">79</a> of file <a class="el" href="_distance_sensor_factory_8cpp_source.html">DistanceSensorFactory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_distance_sensor_factory_8cpp_source.html#l00091">91</a> of file <a class="el" href="_distance_sensor_factory_8cpp_source.html">DistanceSensorFactory.cpp</a>.</p>
 
 </div>
 </div>
@@ -244,7 +253,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_distance_sensor_factory_8cpp_source.html#l00050">50</a> of file <a class="el" href="_distance_sensor_factory_8cpp_source.html">DistanceSensorFactory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_distance_sensor_factory_8cpp_source.html#l00048">48</a> of file <a class="el" href="_distance_sensor_factory_8cpp_source.html">DistanceSensorFactory.cpp</a>.</p>
 
 </div>
 </div>

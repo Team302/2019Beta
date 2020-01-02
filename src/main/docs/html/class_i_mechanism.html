@@ -103,8 +103,9 @@ Inheritance diagram for IMechanism:</div>
  <div class="center">
   <img src="class_i_mechanism.png" usemap="#IMechanism_map" alt=""/>
   <map id="IMechanism_map" name="IMechanism_map">
-<area href="class_grabber.html" title="Grabber.h." alt="Grabber" shape="rect" coords="0,56,79,80"/>
-<area href="class_intake.html" title="Intake.h." alt="Intake" shape="rect" coords="89,56,168,80"/>
+<area href="class_drive_train_side.html" title="This is the DriveTrainSide Subsystem." alt="DriveTrainSide" shape="rect" coords="0,56,97,80"/>
+<area href="class_grabber.html" title="Grabber.h." alt="Grabber" shape="rect" coords="107,56,204,80"/>
+<area href="class_intake.html" title="This is the Intake Subsystem." alt="Intake" shape="rect" coords="214,56,311,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -113,24 +114,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a62096808201ffc31609e99dc2fa92d44"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284b">MechanismTypes::MECHANISM_TYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_mechanism.html#a62096808201ffc31609e99dc2fa92d44">GetType</a> () const =0</td></tr>
 <tr class="memdesc:a62096808201ffc31609e99dc2fa92d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the type of mechanism this is.  <a href="class_i_mechanism.html#a62096808201ffc31609e99dc2fa92d44">More...</a><br /></td></tr>
 <tr class="separator:a62096808201ffc31609e99dc2fa92d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae7e57036b104056991556556cbfaa60"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_mechanism.html#aae7e57036b104056991556556cbfaa60">SetOutput</a> (<a class="el" href="class_mechanism_control.html#a99c14a53b74c4b58a8b3285b6a26f668">MechanismControl::MECHANISM_CONTROL_ID</a> controlItems, <a class="el" href="class_mechanism_control.html#a62b7a13a54f2bb7385096b3933837e00">MechanismControl::MECHANISM_CONTROL_TYPE</a> controlType, double value)=0</td></tr>
-<tr class="memdesc:aae7e57036b104056991556556cbfaa60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run mechanism as defined.  <a href="class_i_mechanism.html#aae7e57036b104056991556556cbfaa60">More...</a><br /></td></tr>
-<tr class="separator:aae7e57036b104056991556556cbfaa60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d63b4377f5738c8386c8f366a9fdeb3"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_mechanism.html#a8d63b4377f5738c8386c8f366a9fdeb3">GetCurrentPosition</a> (<a class="el" href="class_mechanism_control.html#a99c14a53b74c4b58a8b3285b6a26f668">MechanismControl::MECHANISM_CONTROL_ID</a> controlItems) const =0</td></tr>
-<tr class="memdesc:a8d63b4377f5738c8386c8f366a9fdeb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current position of the mechanism. The value is in inches or degrees.  <a href="class_i_mechanism.html#a8d63b4377f5738c8386c8f366a9fdeb3">More...</a><br /></td></tr>
-<tr class="separator:a8d63b4377f5738c8386c8f366a9fdeb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b32ad897a4457780fd5e912c7c027d7"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_mechanism.html#a9b32ad897a4457780fd5e912c7c027d7">GetTargetPosition</a> (<a class="el" href="class_mechanism_control.html#a99c14a53b74c4b58a8b3285b6a26f668">MechanismControl::MECHANISM_CONTROL_ID</a> controlItems) const =0</td></tr>
-<tr class="memdesc:a9b32ad897a4457780fd5e912c7c027d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the targget position of the mechanism. The value is in inches or degrees.  <a href="class_i_mechanism.html#a9b32ad897a4457780fd5e912c7c027d7">More...</a><br /></td></tr>
-<tr class="separator:a9b32ad897a4457780fd5e912c7c027d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fc5f3c5368f33973b66ccef9c1d5e14"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_mechanism.html#a4fc5f3c5368f33973b66ccef9c1d5e14">GetCurrentSpeed</a> (<a class="el" href="class_mechanism_control.html#a99c14a53b74c4b58a8b3285b6a26f668">MechanismControl::MECHANISM_CONTROL_ID</a> controlItems) const =0</td></tr>
-<tr class="memdesc:a4fc5f3c5368f33973b66ccef9c1d5e14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current speed of the mechanism. The value is in inches per second or degrees per second.  <a href="class_i_mechanism.html#a4fc5f3c5368f33973b66ccef9c1d5e14">More...</a><br /></td></tr>
-<tr class="separator:a4fc5f3c5368f33973b66ccef9c1d5e14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c8205098e05a63596280d1d42959dd2"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_mechanism.html#a2c8205098e05a63596280d1d42959dd2">GetTargetSpeed</a> (<a class="el" href="class_mechanism_control.html#a99c14a53b74c4b58a8b3285b6a26f668">MechanismControl::MECHANISM_CONTROL_ID</a> controlItems) const =0</td></tr>
-<tr class="memdesc:a2c8205098e05a63596280d1d42959dd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the target speed of the mechanism. The value is in inches per second or degrees per second.  <a href="class_i_mechanism.html#a2c8205098e05a63596280d1d42959dd2">More...</a><br /></td></tr>
-<tr class="separator:a2c8205098e05a63596280d1d42959dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a8425d370dc05e5b81d6ec613dff861"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_mechanism.html#a9a8425d370dc05e5b81d6ec613dff861">SetControlConstants</a> (<a class="el" href="class_mechanism_control.html#a99c14a53b74c4b58a8b3285b6a26f668">MechanismControl::MECHANISM_CONTROL_ID</a> controlItems, <a class="el" href="class_p_i_d_data.html">PIDData</a> *pid)=0</td></tr>
-<tr class="memdesc:a9a8425d370dc05e5b81d6ec613dff861"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the control constants (e.g. PIDF values).  <a href="class_i_mechanism.html#a9a8425d370dc05e5b81d6ec613dff861">More...</a><br /></td></tr>
-<tr class="separator:a9a8425d370dc05e5b81d6ec613dff861"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14620f8341953efc632a923879f3787f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_mechanism.html#a14620f8341953efc632a923879f3787f">SetOutput</a> (<a class="el" href="class_mechanism_control.html#a62b7a13a54f2bb7385096b3933837e00">MechanismControl::MECHANISM_CONTROL_TYPE</a> controlType, double value)=0</td></tr>
+<tr class="memdesc:a14620f8341953efc632a923879f3787f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run mechanism as defined.  <a href="class_i_mechanism.html#a14620f8341953efc632a923879f3787f">More...</a><br /></td></tr>
+<tr class="separator:a14620f8341953efc632a923879f3787f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa15197ff101d65447516a8f10bb6867d"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_mechanism.html#aa15197ff101d65447516a8f10bb6867d">GetCurrentPosition</a> () const =0</td></tr>
+<tr class="memdesc:aa15197ff101d65447516a8f10bb6867d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current position of the mechanism. The value is in inches or degrees.  <a href="class_i_mechanism.html#aa15197ff101d65447516a8f10bb6867d">More...</a><br /></td></tr>
+<tr class="separator:aa15197ff101d65447516a8f10bb6867d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd97d8b3f072b45a88c83490dd18e8d2"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_mechanism.html#afd97d8b3f072b45a88c83490dd18e8d2">GetTargetPosition</a> () const =0</td></tr>
+<tr class="memdesc:afd97d8b3f072b45a88c83490dd18e8d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the targget position of the mechanism. The value is in inches or degrees.  <a href="class_i_mechanism.html#afd97d8b3f072b45a88c83490dd18e8d2">More...</a><br /></td></tr>
+<tr class="separator:afd97d8b3f072b45a88c83490dd18e8d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a63d6905de4454d78d7e0d1d1e28437"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_mechanism.html#a9a63d6905de4454d78d7e0d1d1e28437">GetCurrentSpeed</a> () const =0</td></tr>
+<tr class="memdesc:a9a63d6905de4454d78d7e0d1d1e28437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current speed of the mechanism. The value is in inches per second or degrees per second.  <a href="class_i_mechanism.html#a9a63d6905de4454d78d7e0d1d1e28437">More...</a><br /></td></tr>
+<tr class="separator:a9a63d6905de4454d78d7e0d1d1e28437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06bbdacb531f60301062930ffebc85c2"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_mechanism.html#a06bbdacb531f60301062930ffebc85c2">GetTargetSpeed</a> () const =0</td></tr>
+<tr class="memdesc:a06bbdacb531f60301062930ffebc85c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the target speed of the mechanism. The value is in inches per second or degrees per second.  <a href="class_i_mechanism.html#a06bbdacb531f60301062930ffebc85c2">More...</a><br /></td></tr>
+<tr class="separator:a06bbdacb531f60301062930ffebc85c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd973ca93855c485ed42d405f2fcba11"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_mechanism.html#acd973ca93855c485ed42d405f2fcba11">SetControlConstants</a> (<a class="el" href="class_control_data.html">ControlData</a> *pid)=0</td></tr>
+<tr class="memdesc:acd973ca93855c485ed42d405f2fcba11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the control constants (e.g. PIDF values).  <a href="class_i_mechanism.html#acd973ca93855c485ed42d405f2fcba11">More...</a><br /></td></tr>
+<tr class="separator:acd973ca93855c485ed42d405f2fcba11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22f98b8310ad97e65dd710f3ae4ebcbf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_mechanism.html#a22f98b8310ad97e65dd710f3ae4ebcbf">IMechanism</a> ()=default</td></tr>
 <tr class="separator:a22f98b8310ad97e65dd710f3ae4ebcbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c70ef3fdee0c9fa33b70c60b91ca9c0"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_mechanism.html#a1c70ef3fdee0c9fa33b70c60b91ca9c0">~IMechanism</a> ()=default</td></tr>
@@ -193,8 +194,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8d63b4377f5738c8386c8f366a9fdeb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d63b4377f5738c8386c8f366a9fdeb3">&#9670;&nbsp;</a></span>GetCurrentPosition()</h2>
+<a id="aa15197ff101d65447516a8f10bb6867d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa15197ff101d65447516a8f10bb6867d">&#9670;&nbsp;</a></span>GetCurrentPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -205,8 +206,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual double IMechanism::GetCurrentPosition </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_mechanism_control.html#a99c14a53b74c4b58a8b3285b6a26f668">MechanismControl::MECHANISM_CONTROL_ID</a>&#160;</td>
-          <td class="paramname"><em>controlItems</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -218,20 +218,14 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Return the current position of the mechanism. The value is in inches or degrees. </p>
-<p>method: GetCurrentPostion </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="class_mechanism_control.html#a99c14a53b74c4b58a8b3285b6a26f668">MechanismControl::MECHANISM_CONTROL_ID</a></td><td>controlItems: What item(s) are being requested </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>double position in inches (translating mechanisms) or degrees (rotating mechanisms) </dd></dl>
+<p>method: GetCurrentPostion </p><dl class="section return"><dt>Returns</dt><dd>double position in inches (translating mechanisms) or degrees (rotating mechanisms) </dd></dl>
 
-<p>Implemented in <a class="el" href="class_intake.html#a8686f9be3968c5c7ac4b94e7f7f0f801">Intake</a>.</p>
+<p>Implemented in <a class="el" href="class_grabber.html#a4c3c6492c89756561c2772f44f31a77b">Grabber</a>, <a class="el" href="class_drive_train_side.html#a557590423b84c081762e79c161d55ee9">DriveTrainSide</a>, and <a class="el" href="class_intake.html#a6abaaaed9c70dcefdcdb68097a5f69d6">Intake</a>.</p>
 
 </div>
 </div>
-<a id="a4fc5f3c5368f33973b66ccef9c1d5e14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4fc5f3c5368f33973b66ccef9c1d5e14">&#9670;&nbsp;</a></span>GetCurrentSpeed()</h2>
+<a id="a9a63d6905de4454d78d7e0d1d1e28437"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a63d6905de4454d78d7e0d1d1e28437">&#9670;&nbsp;</a></span>GetCurrentSpeed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -242,8 +236,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual double IMechanism::GetCurrentSpeed </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_mechanism_control.html#a99c14a53b74c4b58a8b3285b6a26f668">MechanismControl::MECHANISM_CONTROL_ID</a>&#160;</td>
-          <td class="paramname"><em>controlItems</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -255,20 +248,14 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the current speed of the mechanism. The value is in inches per second or degrees per second. </p>
-<p>method: GetCurrentSpeed </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="class_mechanism_control.html#a99c14a53b74c4b58a8b3285b6a26f668">MechanismControl::MECHANISM_CONTROL_ID</a></td><td>controlItems: What item(s) are being requested </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>double speed in inches/second (translating mechanisms) or degrees/second (rotating mechanisms) </dd></dl>
+<p>method: GetCurrentSpeed </p><dl class="section return"><dt>Returns</dt><dd>double speed in inches/second (translating mechanisms) or degrees/second (rotating mechanisms) </dd></dl>
 
-<p>Implemented in <a class="el" href="class_intake.html#a6fea8e1c6fd068898ef55f12f02a16cc">Intake</a>.</p>
+<p>Implemented in <a class="el" href="class_grabber.html#a74ab7d9bdd3e361a6d1cb5de06e12478">Grabber</a>, <a class="el" href="class_intake.html#a7e3783508ddf079750a1430d6fb2e6cf">Intake</a>, and <a class="el" href="class_drive_train_side.html#a5b2d55207f0a6244caa19cc5197bac5e">DriveTrainSide</a>.</p>
 
 </div>
 </div>
-<a id="a9b32ad897a4457780fd5e912c7c027d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b32ad897a4457780fd5e912c7c027d7">&#9670;&nbsp;</a></span>GetTargetPosition()</h2>
+<a id="afd97d8b3f072b45a88c83490dd18e8d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd97d8b3f072b45a88c83490dd18e8d2">&#9670;&nbsp;</a></span>GetTargetPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -279,8 +266,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual double IMechanism::GetTargetPosition </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_mechanism_control.html#a99c14a53b74c4b58a8b3285b6a26f668">MechanismControl::MECHANISM_CONTROL_ID</a>&#160;</td>
-          <td class="paramname"><em>controlItems</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -292,20 +278,14 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Return the targget position of the mechanism. The value is in inches or degrees. </p>
-<p>method: GetTargetPostion </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="class_mechanism_control.html#a99c14a53b74c4b58a8b3285b6a26f668">MechanismControl::MECHANISM_CONTROL_ID</a></td><td>controlItems: What item(s) are being requested </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>double position in inches (translating mechanisms) or degrees (rotating mechanisms) </dd></dl>
+<p>method: GetTargetPostion </p><dl class="section return"><dt>Returns</dt><dd>double position in inches (translating mechanisms) or degrees (rotating mechanisms) </dd></dl>
 
-<p>Implemented in <a class="el" href="class_intake.html#a76e3b24a9ed269f46bcc218b7c84c059">Intake</a>.</p>
+<p>Implemented in <a class="el" href="class_grabber.html#a2cf1cb680b2a5768f47ed7ca2fcb327b">Grabber</a>, <a class="el" href="class_drive_train_side.html#a0ccf01a971eab34f5a053e6184af1b71">DriveTrainSide</a>, and <a class="el" href="class_intake.html#a09dd45bfc0e12d514bb1e1efa675ef06">Intake</a>.</p>
 
 </div>
 </div>
-<a id="a2c8205098e05a63596280d1d42959dd2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c8205098e05a63596280d1d42959dd2">&#9670;&nbsp;</a></span>GetTargetSpeed()</h2>
+<a id="a06bbdacb531f60301062930ffebc85c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06bbdacb531f60301062930ffebc85c2">&#9670;&nbsp;</a></span>GetTargetSpeed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -316,8 +296,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual double IMechanism::GetTargetSpeed </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_mechanism_control.html#a99c14a53b74c4b58a8b3285b6a26f668">MechanismControl::MECHANISM_CONTROL_ID</a>&#160;</td>
-          <td class="paramname"><em>controlItems</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -331,13 +310,13 @@ Public Member Functions</h2></td></tr>
 <p>Get the target speed of the mechanism. The value is in inches per second or degrees per second. </p>
 <p>method: GetTargetSpeed </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="class_mechanism_control.html#a99c14a53b74c4b58a8b3285b6a26f668">MechanismControl::MECHANISM_CONTROL_ID</a></td><td>controlItems: What item(s) are being requested </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">MechanismControl::MECHANISM_CONTROL_ID</td><td>controlItems: What item(s) are being requested </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>double speed in inches/second (translating mechanisms) or degrees/second (rotating mechanisms) </dd></dl>
 
-<p>Implemented in <a class="el" href="class_intake.html#abce903ef0081302ef677887e3e7efe18">Intake</a>.</p>
+<p>Implemented in <a class="el" href="class_grabber.html#a9fee418a87e762aecf59d5994fdc753b">Grabber</a>, <a class="el" href="class_intake.html#a7d733c16727ac5509d2c42c5b3165103">Intake</a>, and <a class="el" href="class_drive_train_side.html#adf2337d61c0dd88d0a2b63032ce1075d">DriveTrainSide</a>.</p>
 
 </div>
 </div>
@@ -367,12 +346,12 @@ Public Member Functions</h2></td></tr>
 <p>Indicates the type of mechanism this is. </p>
 <p>method: GetType </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284b">MechanismTypes::MECHANISM_TYPE</a> </dd></dl>
 
-<p>Implemented in <a class="el" href="class_grabber.html#ad592f6132c994db35e234765d982ff80">Grabber</a>, and <a class="el" href="class_intake.html#a0b68bd630c53d7db98e220b94d76020a">Intake</a>.</p>
+<p>Implemented in <a class="el" href="class_grabber.html#ad592f6132c994db35e234765d982ff80">Grabber</a>, <a class="el" href="class_drive_train_side.html#afb3d28141117ebdf1e00af89e1f90007">DriveTrainSide</a>, and <a class="el" href="class_intake.html#a0b68bd630c53d7db98e220b94d76020a">Intake</a>.</p>
 
 </div>
 </div>
-<a id="a9a8425d370dc05e5b81d6ec613dff861"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a8425d370dc05e5b81d6ec613dff861">&#9670;&nbsp;</a></span>SetControlConstants()</h2>
+<a id="acd973ca93855c485ed42d405f2fcba11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd973ca93855c485ed42d405f2fcba11">&#9670;&nbsp;</a></span>SetControlConstants()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -383,19 +362,9 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual void IMechanism::SetControlConstants </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_mechanism_control.html#a99c14a53b74c4b58a8b3285b6a26f668">MechanismControl::MECHANISM_CONTROL_ID</a>&#160;</td>
-          <td class="paramname"><em>controlItems</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="class_control_data.html">ControlData</a> *&#160;</td>
+          <td class="paramname"><em>pid</em></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_p_i_d_data.html">PIDData</a> *&#160;</td>
-          <td class="paramname"><em>pid</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -408,19 +377,18 @@ Public Member Functions</h2></td></tr>
 <p>Set the control constants (e.g. PIDF values). </p>
 <p>method: SetControlConstants </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="class_mechanism_control.html#a99c14a53b74c4b58a8b3285b6a26f668">MechanismControl::MECHANISM_CONTROL_ID</a></td><td>controlItems: What item(s) are being controlled </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">PIDData*</td><td>pid: the control constants </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ControlData*</td><td>pid: the control constants </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p>Implemented in <a class="el" href="class_intake.html#ae926aad000c1c3ff2b2b6877047e942f">Intake</a>.</p>
+<p>Implemented in <a class="el" href="class_grabber.html#a360a381791633d6eb0db63e3dcaa0b60">Grabber</a>, <a class="el" href="class_intake.html#a7871bee1bb586380dc701ffef44e0c8f">Intake</a>, and <a class="el" href="class_drive_train_side.html#a5a706257d98af9460c245b7f34b61423">DriveTrainSide</a>.</p>
 
 </div>
 </div>
-<a id="aae7e57036b104056991556556cbfaa60"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae7e57036b104056991556556cbfaa60">&#9670;&nbsp;</a></span>SetOutput()</h2>
+<a id="a14620f8341953efc632a923879f3787f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14620f8341953efc632a923879f3787f">&#9670;&nbsp;</a></span>SetOutput()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -431,12 +399,6 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual void IMechanism::SetOutput </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_mechanism_control.html#a99c14a53b74c4b58a8b3285b6a26f668">MechanismControl::MECHANISM_CONTROL_ID</a>&#160;</td>
-          <td class="paramname"><em>controlItems</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype"><a class="el" href="class_mechanism_control.html#a62b7a13a54f2bb7385096b3933837e00">MechanismControl::MECHANISM_CONTROL_TYPE</a>&#160;</td>
           <td class="paramname"><em>controlType</em>, </td>
         </tr>
@@ -462,7 +424,6 @@ Public Member Functions</h2></td></tr>
 <p>Run mechanism as defined. </p>
 <p>method: SetOutput </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="class_mechanism_control.html#a99c14a53b74c4b58a8b3285b6a26f668">MechanismControl::MECHANISM_CONTROL_ID</a></td><td>controlItems: What item(s) are being controlled </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="class_mechanism_control.html#a62b7a13a54f2bb7385096b3933837e00">MechanismControl::MECHANISM_CONTROL_TYPE</a></td><td>controlType: How are the item(s) being controlled </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">double</td><td>value: Target (units are based on the controlType) </td></tr>
   </table>
@@ -470,7 +431,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p>Implemented in <a class="el" href="class_grabber.html#ac721f69f1a9de5536de0a3af09b4705b">Grabber</a>, and <a class="el" href="class_intake.html#a4ace31932217b1c1d1e73106d0d5d0cf">Intake</a>.</p>
+<p>Implemented in <a class="el" href="class_grabber.html#af42e02a80cfa2c6005bae96c1d893e11">Grabber</a>, <a class="el" href="class_drive_train_side.html#a3fdb370ec2d7fc3404161a8c12c7eaf3">DriveTrainSide</a>, and <a class="el" href="class_intake.html#abb7ea5842bdad8dbb71cc09924d0321a">Intake</a>.</p>
 
 </div>
 </div>

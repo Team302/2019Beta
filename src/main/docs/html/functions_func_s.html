@@ -123,6 +123,7 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 , <a class="el" href="class_dragon_gamepad.html#a410835ded5868960379903608212a43e">DragonGamepad</a>
 , <a class="el" href="class_dragon_x_box.html#a82af2dd78979078b136da5d07a4182c8">DragonXBox</a>
 , <a class="el" href="class_i_dragon_game_pad.html#ac0f51e1292e7a3b17962642e2a5a0445">IDragonGamePad</a>
+, <a class="el" href="class_teleop_control.html#a31176133035fb6d4acc3b10e22246077">TeleopControl</a>
 </li>
 <li>SetAxisScale()
 : <a class="el" href="class_dragon_gamepad.html#a3b16ad00840e0ad8dbc4860282047d0d">DragonGamepad</a>
@@ -131,6 +132,7 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 </li>
 <li>SetAxisScaleFactor()
 : <a class="el" href="class_analog_axis.html#ab4f474d286f5f650c617264616154cf9">AnalogAxis</a>
+, <a class="el" href="class_teleop_control.html#a3c42f54355038ff584b9991d29762f55">TeleopControl</a>
 </li>
 <li>SetButtonMode()
 : <a class="el" href="class_dragon_gamepad.html#a6650433fd83ccb7f2ac55d920929e75b">DragonGamepad</a>
@@ -144,9 +146,12 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 : <a class="el" href="class_l_e_d.html#a1da88337ece4a68e3e21cf8791c28948">LED</a>
 </li>
 <li>SetControlConstants()
-: <a class="el" href="class_grabber.html#a6cbfdf98938e5cec3cc04e6d71e482dc">Grabber</a>
-, <a class="el" href="class_i_mechanism.html#a9a8425d370dc05e5b81d6ec613dff861">IMechanism</a>
-, <a class="el" href="class_intake.html#ae926aad000c1c3ff2b2b6877047e942f">Intake</a>
+: <a class="el" href="class_dragon_chassis.html#a0db28ff16679b084010cb4cd706c598e">DragonChassis</a>
+, <a class="el" href="class_drive_train_side.html#a5a706257d98af9460c245b7f34b61423">DriveTrainSide</a>
+, <a class="el" href="class_grabber.html#a360a381791633d6eb0db63e3dcaa0b60">Grabber</a>
+, <a class="el" href="class_i_chassis.html#a64b0c5e1c4aa54ecfac53c7677b184e7">IChassis</a>
+, <a class="el" href="class_i_mechanism.html#acd973ca93855c485ed42d405f2fcba11">IMechanism</a>
+, <a class="el" href="class_intake.html#a7871bee1bb586380dc701ffef44e0c8f">Intake</a>
 </li>
 <li>SetControlMode()
 : <a class="el" href="class_dragon_spark_max.html#aebfb463d6da34671ae1ae4cf413d8676">DragonSparkMax</a>
@@ -160,14 +165,8 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 : <a class="el" href="class_drive_distance.html#a8a39fae7fc4f3991163613994447e84e">DriveDistance</a>
 , <a class="el" href="class_primitive_params.html#a9338f36c76fd412ec8d05dcfc300b18d">PrimitiveParams</a>
 </li>
-<li>SetDriveMagnitudes()
-: <a class="el" href="class_i_chassis.html#a6ee9a25d1a1757ab42a2eb005bb6ca32">IChassis</a>
-</li>
 <li>SetLEDMode()
 : <a class="el" href="class_dragon_limelight.html#a8f80d91a71106af3592ec0975f474aaf">DragonLimelight</a>
-</li>
-<li>SetLeftRightMagnitudes()
-: <a class="el" href="class_i_chassis.html#a772457f1800c82584103be36a2b930da">IChassis</a>
 </li>
 <li>SetLoggingOption()
 : <a class="el" href="class_logger.html#a81e0fa4eef4a980adb91577eac4bdebd">Logger</a>
@@ -176,17 +175,17 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 : <a class="el" href="class_dragon_servo.html#acbd6da9b714f3c5696e23822ed7c39c9">DragonServo</a>
 </li>
 <li>SetOutput()
-: <a class="el" href="class_grabber.html#ac721f69f1a9de5536de0a3af09b4705b">Grabber</a>
-, <a class="el" href="class_i_mechanism.html#aae7e57036b104056991556556cbfaa60">IMechanism</a>
-, <a class="el" href="class_intake.html#a4ace31932217b1c1d1e73106d0d5d0cf">Intake</a>
+: <a class="el" href="class_dragon_chassis.html#a09d5214d8797507160c69ea372471fae">DragonChassis</a>
+, <a class="el" href="class_drive_train_side.html#a3fdb370ec2d7fc3404161a8c12c7eaf3">DriveTrainSide</a>
+, <a class="el" href="class_grabber.html#af42e02a80cfa2c6005bae96c1d893e11">Grabber</a>
+, <a class="el" href="class_i_chassis.html#ad6108e4e8cc34d143528a6f167161cec">IChassis</a>
+, <a class="el" href="class_i_mechanism.html#a14620f8341953efc632a923879f3787f">IMechanism</a>
+, <a class="el" href="class_intake.html#abb7ea5842bdad8dbb71cc09924d0321a">Intake</a>
 </li>
 <li>SetPIDF()
 : <a class="el" href="class_dragon_spark_max.html#a692e9a190ad04d6ec8a5f4e166ecd62f">DragonSparkMax</a>
 , <a class="el" href="class_dragon_talon.html#ac212c4954f881aeda9cb5808b270f8c6">DragonTalon</a>
 , <a class="el" href="class_i_dragon_motor_controller.html#a721912ad4bfbd1141e49de6a4d7dcb4a">IDragonMotorController</a>
-</li>
-<li>SetPIDParams()
-: <a class="el" href="class_i_chassis.html#a9bda05b73e71719485cbfa9d7f710538">IChassis</a>
 </li>
 <li>SetPipeline()
 : <a class="el" href="class_dragon_limelight.html#a9008ec8358c4f2836b8aa4829e731104">DragonLimelight</a>
@@ -214,20 +213,8 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 <li>SetStreamMode()
 : <a class="el" href="class_dragon_limelight.html#aa90d53fedc3b0568a434c57b987b6d79">DragonLimelight</a>
 </li>
-<li>SetTalonMode()
-: <a class="el" href="class_i_chassis.html#a0896fe87e7564ae4546f9b83ae0ef18f">IChassis</a>
-</li>
-<li>SetTarget()
-: <a class="el" href="class_i_mechanism_state.html#a9a16e9322eed0ef13d37e716e6a1c0a5">IMechanismState</a>
-</li>
-<li>SetTargetHeading()
-: <a class="el" href="class_i_chassis.html#a49d69df9b200f465cb0f8423bef32d3c">IChassis</a>
-</li>
 <li>SetTargetHeight()
 : <a class="el" href="class_dragon_limelight.html#abd7c06707d40db5e4ce34142339ed484">DragonLimelight</a>
-</li>
-<li>SetVelocityParams()
-: <a class="el" href="class_i_chassis.html#ae73dca373ab6cd05e4a4bed2166f3a27">IChassis</a>
 </li>
 <li>SetVoltageRamping()
 : <a class="el" href="class_dragon_spark_max.html#a1105074c2d2d7a2f719c8f5e41f02394">DragonSparkMax</a>

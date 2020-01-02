@@ -1,7 +1,7 @@
 
 #include <controllers/mechanisms/IMechController.h>
 #include <controllers/mechanisms/VelocityController.h>
-#include <xmlcontrol/ControlData.h>
+#include <controllers/ControlData.h>
 #include <subsys/IMechanism.h>
 
 VelocityController::VelocityController

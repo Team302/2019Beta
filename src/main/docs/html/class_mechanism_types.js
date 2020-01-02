@@ -2,7 +2,7 @@ var class_mechanism_types =
 [
     [ "MECHANISM_TYPE", "class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284b", [
       [ "UNKNOWN_MECHANISM", "class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284baf47163443d641a45c8ec02e3af24e0de", null ],
-      [ "CHASSIS", "class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba5a5aba9c33f76946177120924312036f", null ],
+      [ "DRIVETRAIN_SIDE", "class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba71099bf20bbaf6649b120aaf51f32293", null ],
       [ "SHOOTER", "class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba5751201c8cf975192a6ad9cf90e793b7", null ],
       [ "ELEVATOR", "class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284bad02a3c7fb8baa00594750098f6cc2112", null ],
       [ "WRIST", "class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba1d1eb9b942586f5cd13b6a65a2ac534c", null ],

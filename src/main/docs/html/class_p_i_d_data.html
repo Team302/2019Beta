@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team 302 Robot: PIDData Class Reference</title>
+<title>Team 302 Robot: ControlData Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -90,11 +90,11 @@ $(document).ready(function(){initNavTree('class_p_i_d_data.html','');});
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="class_p_i_d_data-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">PIDData Class Reference</div>  </div>
+<div class="title">ControlData Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_p_i_d_data_8h_source.html">ControlData.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -111,9 +111,9 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aeec2338e55a4cfe3783ece754514dc0b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_data.html#aeec2338e55a4cfe3783ece754514dc0b">PIDData</a> (<a class="el" href="class_p_i_d_data.html#ae35bdd9425718baa0d5410ce3ccf9fb4">CONTROL_MODE</a> mode, <a class="el" href="class_p_i_d_data.html#a29db1db15f557354dde70030054babae">PID_TARGET</a> pidTarget, double proportional, double integral, double derivative, double feedforward, double maxAcceleration, double cruiseVelocity)</td></tr>
+<tr class="memitem:aeec2338e55a4cfe3783ece754514dc0b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_data.html#aeec2338e55a4cfe3783ece754514dc0b">ControlData</a> (<a class="el" href="class_p_i_d_data.html#ae35bdd9425718baa0d5410ce3ccf9fb4">CONTROL_MODE</a> mode, <a class="el" href="class_p_i_d_data.html#a29db1db15f557354dde70030054babae">PID_TARGET</a> pidTarget, double proportional, double integral, double derivative, double feedforward, double maxAcceleration, double cruiseVelocity)</td></tr>
 <tr class="separator:aeec2338e55a4cfe3783ece754514dc0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a771bfea16806a1f019983ce6c83dbcb4"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_data.html#a771bfea16806a1f019983ce6c83dbcb4">~PIDData</a> ()=default</td></tr>
+<tr class="memitem:a771bfea16806a1f019983ce6c83dbcb4"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_data.html#a771bfea16806a1f019983ce6c83dbcb4">~ControlData</a> ()=default</td></tr>
 <tr class="separator:a771bfea16806a1f019983ce6c83dbcb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef93da8d36d222686935695be69e26be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_p_i_d_data.html#ae35bdd9425718baa0d5410ce3ccf9fb4">CONTROL_MODE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_data.html#aef93da8d36d222686935695be69e26be">GetMode</a> ()</td></tr>
 <tr class="separator:aef93da8d36d222686935695be69e26be"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,7 +134,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00018">18</a> of file <a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00018">18</a> of file <a class="el" href="_p_i_d_data_8h_source.html">ControlData.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="ae35bdd9425718baa0d5410ce3ccf9fb4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae35bdd9425718baa0d5410ce3ccf9fb4">&#9670;&nbsp;</a></span>CONTROL_MODE</h2>
@@ -143,7 +143,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="class_p_i_d_data.html#ae35bdd9425718baa0d5410ce3ccf9fb4">PIDData::CONTROL_MODE</a></td>
+          <td class="memname">enum <a class="el" href="class_p_i_d_data.html#ae35bdd9425718baa0d5410ce3ccf9fb4">ControlData::CONTROL_MODE</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -153,7 +153,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="ae35bdd9425718baa0d5410ce3ccf9fb4af39a2976a5c6d0673a39616edef14435"></a>MOTION_MAGIC&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00028">28</a> of file <a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00028">28</a> of file <a class="el" href="_p_i_d_data_8h_source.html">ControlData.h</a>.</p>
 
 </div>
 </div>
@@ -164,7 +164,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="class_p_i_d_data.html#a29db1db15f557354dde70030054babae">PIDData::PID_TARGET</a></td>
+          <td class="memname">enum <a class="el" href="class_p_i_d_data.html#a29db1db15f557354dde70030054babae">ControlData::PID_TARGET</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -174,19 +174,19 @@ Public Member Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a29db1db15f557354dde70030054babaea469eef6b072de5ff6b9fcbe600669b93"></a>GENERAL&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00021">21</a> of file <a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00021">21</a> of file <a class="el" href="_p_i_d_data_8h_source.html">ControlData.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aeec2338e55a4cfe3783ece754514dc0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeec2338e55a4cfe3783ece754514dc0b">&#9670;&nbsp;</a></span>PIDData()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aeec2338e55a4cfe3783ece754514dc0b">&#9670;&nbsp;</a></span>ControlData()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">PIDData::PIDData </td>
+          <td class="memname">ControlData::ControlData </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_p_i_d_data.html#ae35bdd9425718baa0d5410ce3ccf9fb4">CONTROL_MODE</a>&#160;</td>
           <td class="paramname"><em>mode</em>, </td>
@@ -241,12 +241,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8cpp_source.html#l00018">18</a> of file <a class="el" href="_p_i_d_data_8cpp_source.html">PIDData.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8cpp_source.html#l00018">18</a> of file <a class="el" href="_p_i_d_data_8cpp_source.html">ControlData.cpp</a>.</p>
 
 </div>
 </div>
 <a id="a771bfea16806a1f019983ce6c83dbcb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a771bfea16806a1f019983ce6c83dbcb4">&#9670;&nbsp;</a></span>~PIDData()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a771bfea16806a1f019983ce6c83dbcb4">&#9670;&nbsp;</a></span>~ControlData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -255,7 +255,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual PIDData::~PIDData </td>
+          <td class="memname">virtual ControlData::~ControlData </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -281,7 +281,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double PIDData::GetCruiseVelocity </td>
+          <td class="memname">double ControlData::GetCruiseVelocity </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -294,7 +294,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00057">57</a> of file <a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00057">57</a> of file <a class="el" href="_p_i_d_data_8h_source.html">ControlData.h</a>.</p>
 
 </div>
 </div>
@@ -308,7 +308,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double PIDData::GetD </td>
+          <td class="memname">double ControlData::GetD </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -321,7 +321,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00054">54</a> of file <a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00054">54</a> of file <a class="el" href="_p_i_d_data_8h_source.html">ControlData.h</a>.</p>
 
 </div>
 </div>
@@ -335,7 +335,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double PIDData::GetF </td>
+          <td class="memname">double ControlData::GetF </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -348,7 +348,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00055">55</a> of file <a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00055">55</a> of file <a class="el" href="_p_i_d_data_8h_source.html">ControlData.h</a>.</p>
 
 </div>
 </div>
@@ -362,7 +362,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double PIDData::GetI </td>
+          <td class="memname">double ControlData::GetI </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -375,7 +375,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00053">53</a> of file <a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00053">53</a> of file <a class="el" href="_p_i_d_data_8h_source.html">ControlData.h</a>.</p>
 
 </div>
 </div>
@@ -389,7 +389,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double PIDData::GetMaxAcceleration </td>
+          <td class="memname">double ControlData::GetMaxAcceleration </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -402,7 +402,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00056">56</a> of file <a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00056">56</a> of file <a class="el" href="_p_i_d_data_8h_source.html">ControlData.h</a>.</p>
 
 </div>
 </div>
@@ -416,7 +416,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_p_i_d_data.html#ae35bdd9425718baa0d5410ce3ccf9fb4">CONTROL_MODE</a> PIDData::GetMode </td>
+          <td class="memname"><a class="el" href="class_p_i_d_data.html#ae35bdd9425718baa0d5410ce3ccf9fb4">CONTROL_MODE</a> ControlData::GetMode </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -429,7 +429,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00050">50</a> of file <a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00050">50</a> of file <a class="el" href="_p_i_d_data_8h_source.html">ControlData.h</a>.</p>
 
 </div>
 </div>
@@ -443,7 +443,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double PIDData::GetP </td>
+          <td class="memname">double ControlData::GetP </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -456,7 +456,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00052">52</a> of file <a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00052">52</a> of file <a class="el" href="_p_i_d_data_8h_source.html">ControlData.h</a>.</p>
 
 </div>
 </div>
@@ -470,7 +470,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_p_i_d_data.html#a29db1db15f557354dde70030054babae">PID_TARGET</a> PIDData::GetPidTarget </td>
+          <td class="memname"><a class="el" href="class_p_i_d_data.html#a29db1db15f557354dde70030054babae">PID_TARGET</a> ControlData::GetPidTarget </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -483,20 +483,20 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00051">51</a> of file <a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_p_i_d_data_8h_source.html#l00051">51</a> of file <a class="el" href="_p_i_d_data_8h_source.html">ControlData.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/GitKrakenRepos/TemplateRepository/src/main/cpp/xmlcontrol/<a class="el" href="_p_i_d_data_8h_source.html">PIDData.h</a></li>
-<li>C:/GitKrakenRepos/TemplateRepository/src/main/cpp/xmlcontrol/<a class="el" href="_p_i_d_data_8cpp_source.html">PIDData.cpp</a></li>
+<li>C:/GitKrakenRepos/TemplateRepository/src/main/cpp/xmlcontrol/<a class="el" href="_p_i_d_data_8h_source.html">ControlData.h</a></li>
+<li>C:/GitKrakenRepos/TemplateRepository/src/main/cpp/xmlcontrol/<a class="el" href="_p_i_d_data_8cpp_source.html">ControlData.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="class_p_i_d_data.html">PIDData</a></li>
+    <li class="navelem"><a class="el" href="class_p_i_d_data.html">ControlData</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <subsys/IMechanism.h>
-#include <xmlcontrol/ControlData.h>
+#include <controllers/ControlData.h>
 
 class IMechController
 {

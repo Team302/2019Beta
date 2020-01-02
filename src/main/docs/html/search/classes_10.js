@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['vector2_1001',['Vector2',['../struct_vector2.html',1,'']]]
+  ['ultrasonicfactory_1091',['UltrasonicFactory',['../class_ultrasonic_factory.html',1,'']]],
+  ['usagevalidation_1092',['UsageValidation',['../class_usage_validation.html',1,'']]]
 ];

@@ -1,16 +1,17 @@
 var dir_d0ad9221f7efcd0a53c7ebcd61fc4948 =
 [
-    [ "axis", "dir_5a3b74c39b780a69eb9e42c9e07834df.html", "dir_5a3b74c39b780a69eb9e42c9e07834df" ],
-    [ "button", "dir_fe0b45d8e6699d856c41c58cc5d3777c.html", "dir_fe0b45d8e6699d856c41c58cc5d3777c" ],
-    [ "DragonGamepad.cpp", "_dragon_gamepad_8cpp.html", null ],
-    [ "DragonGamepad.h", "_dragon_gamepad_8h.html", [
-      [ "DragonGamepad", "class_dragon_gamepad.html", "class_dragon_gamepad" ]
+    [ "mechanisms", "dir_9fa68d82ff1f9ebda144604874a9bab4.html", "dir_9fa68d82ff1f9ebda144604874a9bab4" ],
+    [ "teleopdrive", "dir_0ee95c58f9684c64fd553a54987cc7d1.html", "dir_0ee95c58f9684c64fd553a54987cc7d1" ],
+    [ "ControlData.cpp", "_control_data_8cpp.html", null ],
+    [ "ControlData.h", "_control_data_8h.html", [
+      [ "ControlData", "class_control_data.html", "class_control_data" ]
     ] ],
-    [ "DragonXBox.cpp", "_dragon_x_box_8cpp.html", null ],
-    [ "DragonXBox.h", "_dragon_x_box_8h.html", [
-      [ "DragonXBox", "class_dragon_x_box.html", "class_dragon_x_box" ]
+    [ "ControlDefn.cpp", "_control_defn_8cpp.html", null ],
+    [ "ControlDefn.h", "_control_defn_8h.html", [
+      [ "ControlDefn", "class_control_defn.html", "class_control_defn" ]
     ] ],
-    [ "IDragonGamePad.h", "_i_dragon_game_pad_8h.html", [
-      [ "IDragonGamePad", "class_i_dragon_game_pad.html", "class_i_dragon_game_pad" ]
+    [ "PIDDefn.cpp", "_p_i_d_defn_8cpp.html", null ],
+    [ "PIDDefn.h", "_p_i_d_defn_8h.html", [
+      [ "PIDDefn", "class_p_i_d_defn.html", null ]
     ] ]
 ];

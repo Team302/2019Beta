@@ -23,8 +23,8 @@
 #include <frc/SmartDashboard/SmartDashboard.h>
 
 // Team 302 includes
-#include <xmlcontrol/ControlData.h>
-#include <xmlcontrol/PIDDefn.h>
+#include <controllers/ControlData.h>
+#include <controllers/PIDDefn.h>
 #include <subsys/MechanismControl.h>
 
 // Third Party Includes

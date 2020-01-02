@@ -105,44 +105,41 @@ $(document).ready(function(){initNavTree('_p_d_p_defn_8h_source.html','');});
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// OR OTHER DEALINGS IN THE SOFTWARE.</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//========================================================================================================</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"></span><span class="comment">//========================================================================================================</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"></span><span class="comment">//========================================================================================================</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// C++ Includes</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// FRC includes</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// Team 302 includes</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;frc/PowerDistributionPanel.h&gt;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// Third Party Includes</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;pugixml/pugixml.hpp&gt;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// C++ Includes</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// FRC includes</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// Team 302 includes</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;frc/PowerDistributionPanel.h&gt;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// Third Party Includes</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;pugixml/pugixml.hpp&gt;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_p_d_p_defn.html">   37</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_d_p_defn.html">PDPDefn</a></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="class_p_d_p_defn.html#a23eb218fabdbb102dc8226eafe2a39f9">PDPDefn</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_p_d_p_defn.html#aac55f22d8a84898639765712e27c3065">~PDPDefn</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_p_d_p_defn.html">   44</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_p_d_p_defn.html">PDPDefn</a></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="class_p_d_p_defn.html#a23eb218fabdbb102dc8226eafe2a39f9">PDPDefn</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_p_d_p_defn.html#aac55f22d8a84898639765712e27c3065">~PDPDefn</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        std::shared_ptr&lt;frc::PowerDistributionPanel&gt; <a class="code" href="class_p_d_p_defn.html#aa51be61a3e6dde80ef6aaac91293b47a">ParseXML</a></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        (</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            pugi::xml_node      PDPNode</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        );</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        frc::PowerDistributionPanel* <a class="code" href="class_p_d_p_defn.html#a7eb3d10db6cd55a79c3dc82e85b3f6b6">ParseXML</a></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        (</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            pugi::xml_node      PDPNode</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        );</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_p_d_p_defn_html_aa51be61a3e6dde80ef6aaac91293b47a"><div class="ttname"><a href="class_p_d_p_defn.html#aa51be61a3e6dde80ef6aaac91293b47a">PDPDefn::ParseXML</a></div><div class="ttdeci">std::shared_ptr&lt; frc::PowerDistributionPanel &gt; ParseXML(pugi::xml_node PDPNode)</div><div class="ttdef"><b>Definition:</b> <a href="_p_d_p_defn_8cpp_source.html#l00072">PDPDefn.cpp:72</a></div></div>
-<div class="ttc" id="aclass_p_d_p_defn_html"><div class="ttname"><a href="class_p_d_p_defn.html">PDPDefn</a></div><div class="ttdoc">PDPDefn.h.</div><div class="ttdef"><b>Definition:</b> <a href="_p_d_p_defn_8h_source.html#l00044">PDPDefn.h:44</a></div></div>
+<div class="ttc" id="aclass_p_d_p_defn_html"><div class="ttname"><a href="class_p_d_p_defn.html">PDPDefn</a></div><div class="ttdoc">XML parsing for the PDP node in the Robot definition xml file. Upon successful parsing,...</div><div class="ttdef"><b>Definition:</b> <a href="_p_d_p_defn_8h_source.html#l00037">PDPDefn.h:37</a></div></div>
 <div class="ttc" id="aclass_p_d_p_defn_html_a23eb218fabdbb102dc8226eafe2a39f9"><div class="ttname"><a href="class_p_d_p_defn.html#a23eb218fabdbb102dc8226eafe2a39f9">PDPDefn::PDPDefn</a></div><div class="ttdeci">PDPDefn()=default</div></div>
+<div class="ttc" id="aclass_p_d_p_defn_html_a7eb3d10db6cd55a79c3dc82e85b3f6b6"><div class="ttname"><a href="class_p_d_p_defn.html#a7eb3d10db6cd55a79c3dc82e85b3f6b6">PDPDefn::ParseXML</a></div><div class="ttdeci">frc::PowerDistributionPanel * ParseXML(pugi::xml_node PDPNode)</div><div class="ttdoc">Parse a pcm XML element and create a PowerDistributionPanel* from its definition.</div><div class="ttdef"><b>Definition:</b> <a href="_p_d_p_defn_8cpp_source.html#l00047">PDPDefn.cpp:47</a></div></div>
 <div class="ttc" id="aclass_p_d_p_defn_html_aac55f22d8a84898639765712e27c3065"><div class="ttname"><a href="class_p_d_p_defn.html#aac55f22d8a84898639765712e27c3065">PDPDefn::~PDPDefn</a></div><div class="ttdeci">virtual ~PDPDefn()=default</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

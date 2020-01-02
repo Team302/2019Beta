@@ -16,13 +16,13 @@ var dir_3a569481b944d13fa799c1a7d3ec1325 =
     [ "ChassisDefn.h", "_chassis_defn_8h.html", [
       [ "ChassisDefn", "class_chassis_defn.html", "class_chassis_defn" ]
     ] ],
-    [ "ControlDefn.cpp", "_control_defn_8cpp.html", null ],
-    [ "ControlDefn.h", "_control_defn_8h.html", [
-      [ "ControlDefn", "class_control_defn.html", "class_control_defn" ]
-    ] ],
     [ "DigitalInputDefn.cpp", "_digital_input_defn_8cpp.html", null ],
     [ "DigitalInputDefn.h", "_digital_input_defn_8h.html", [
       [ "DigitalInputDefn", "class_digital_input_defn.html", "class_digital_input_defn" ]
+    ] ],
+    [ "FeedbackDefn.cpp", "_feedback_defn_8cpp.html", null ],
+    [ "FeedbackDefn.h", "_feedback_defn_8h.html", [
+      [ "FeedbackDefn", "class_feedback_defn.html", "class_feedback_defn" ]
     ] ],
     [ "LEDDefn.cpp", "_l_e_d_defn_8cpp.html", null ],
     [ "LEDDefn.h", "_l_e_d_defn_8h.html", [
@@ -39,6 +39,14 @@ var dir_3a569481b944d13fa799c1a7d3ec1325 =
     [ "MotorDefn.cpp", "_motor_defn_8cpp.html", null ],
     [ "MotorDefn.h", "_motor_defn_8h.html", [
       [ "MotorDefn", "class_motor_defn.html", "class_motor_defn" ]
+    ] ],
+    [ "OdometryDefn.cpp", "_odometry_defn_8cpp.html", null ],
+    [ "OdometryDefn.h", "_odometry_defn_8h.html", [
+      [ "OdometryDefn", "class_odometry_defn.html", "class_odometry_defn" ]
+    ] ],
+    [ "PCMDefn.cpp", "_p_c_m_defn_8cpp.html", null ],
+    [ "PCMDefn.h", "_p_c_m_defn_8h.html", [
+      [ "PCMDefn", "class_p_c_m_defn.html", "class_p_c_m_defn" ]
     ] ],
     [ "PDPDefn.cpp", "_p_d_p_defn_8cpp.html", null ],
     [ "PDPDefn.h", "_p_d_p_defn_8h.html", [

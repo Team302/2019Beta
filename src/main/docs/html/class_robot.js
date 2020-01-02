@@ -1,5 +1,7 @@
 var class_robot =
 [
+    [ "Robot", "class_robot.html#a4fc7c70ae20623f05e06f2ecb388b6c4", null ],
+    [ "~Robot", "class_robot.html#a359bc5b345fc76b9451abfeea4cad6e4", null ],
     [ "AutonomousInit", "class_robot.html#a2136cfc015936285218c8a8db984d6bc", null ],
     [ "AutonomousPeriodic", "class_robot.html#ac11143dd674e0e02fef5329e2df24830", null ],
     [ "RobotInit", "class_robot.html#a66f23dae271748d525cf3ab046375f79", null ],

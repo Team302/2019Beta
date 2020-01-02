@@ -1,13 +1,13 @@
-.TH "PIDData" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
+.TH "ControlData" 3 "Thu Oct 31 2019" "2020 Template Project" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-PIDData
+ControlData
 .SH SYNOPSIS
 .br
 .PP
 .PP
-\fC#include <PIDData\&.h>\fP
+\fC#include <ControlData\&.h>\fP
 .SS "Public Types"
 
 .in +1c
@@ -22,10 +22,10 @@ PIDData
 
 .in +1c
 .ti -1c
-.RI "\fBPIDData\fP (\fBCONTROL_MODE\fP mode, \fBPID_TARGET\fP pidTarget, double proportional, double integral, double derivative, double feedforward, double maxAcceleration, double cruiseVelocity)"
+.RI "\fBControlData\fP (\fBCONTROL_MODE\fP mode, \fBPID_TARGET\fP pidTarget, double proportional, double integral, double derivative, double feedforward, double maxAcceleration, double cruiseVelocity)"
 .br
 .ti -1c
-.RI "virtual \fB~PIDData\fP ()=default"
+.RI "virtual \fB~ControlData\fP ()=default"
 .br
 .ti -1c
 .RI "\fBCONTROL_MODE\fP \fBGetMode\fP ()"
@@ -54,10 +54,10 @@ PIDData
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 18 of file PIDData\&.h\&.
+Definition at line 18 of file ControlData\&.h\&.
 .SH "Member Enumeration Documentation"
 .PP 
-.SS "enum \fBPIDData::CONTROL_MODE\fP"
+.SS "enum \fBControlData::CONTROL_MODE\fP"
 
 .PP
 \fBEnumerator\fP
@@ -69,8 +69,8 @@ Definition at line 18 of file PIDData\&.h\&.
 .TP
 \fB\fIMOTION_MAGIC \fP\fP
 .PP
-Definition at line 28 of file PIDData\&.h\&.
-.SS "enum \fBPIDData::PID_TARGET\fP"
+Definition at line 28 of file ControlData\&.h\&.
+.SS "enum \fBControlData::PID_TARGET\fP"
 
 .PP
 \fBEnumerator\fP
@@ -82,49 +82,49 @@ Definition at line 28 of file PIDData\&.h\&.
 .TP
 \fB\fIGENERAL \fP\fP
 .PP
-Definition at line 21 of file PIDData\&.h\&.
+Definition at line 21 of file ControlData\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "PIDData::PIDData (\fBCONTROL_MODE\fP mode, \fBPID_TARGET\fP pidTarget, double proportional, double integral, double derivative, double feedforward, double maxAcceleration, double cruiseVelocity)"
+.SS "ControlData::ControlData (\fBCONTROL_MODE\fP mode, \fBPID_TARGET\fP pidTarget, double proportional, double integral, double derivative, double feedforward, double maxAcceleration, double cruiseVelocity)"
 
 .PP
-Definition at line 18 of file PIDData\&.cpp\&.
-.SS "virtual PIDData::~PIDData ()\fC [virtual]\fP, \fC [default]\fP"
+Definition at line 18 of file ControlData\&.cpp\&.
+.SS "virtual ControlData::~ControlData ()\fC [virtual]\fP, \fC [default]\fP"
 
 .SH "Member Function Documentation"
 .PP 
-.SS "double PIDData::GetCruiseVelocity ()\fC [inline]\fP"
+.SS "double ControlData::GetCruiseVelocity ()\fC [inline]\fP"
 
 .PP
-Definition at line 57 of file PIDData\&.h\&.
-.SS "double PIDData::GetD ()\fC [inline]\fP"
+Definition at line 57 of file ControlData\&.h\&.
+.SS "double ControlData::GetD ()\fC [inline]\fP"
 
 .PP
-Definition at line 54 of file PIDData\&.h\&.
-.SS "double PIDData::GetF ()\fC [inline]\fP"
+Definition at line 54 of file ControlData\&.h\&.
+.SS "double ControlData::GetF ()\fC [inline]\fP"
 
 .PP
-Definition at line 55 of file PIDData\&.h\&.
-.SS "double PIDData::GetI ()\fC [inline]\fP"
+Definition at line 55 of file ControlData\&.h\&.
+.SS "double ControlData::GetI ()\fC [inline]\fP"
 
 .PP
-Definition at line 53 of file PIDData\&.h\&.
-.SS "double PIDData::GetMaxAcceleration ()\fC [inline]\fP"
+Definition at line 53 of file ControlData\&.h\&.
+.SS "double ControlData::GetMaxAcceleration ()\fC [inline]\fP"
 
 .PP
-Definition at line 56 of file PIDData\&.h\&.
-.SS "\fBCONTROL_MODE\fP PIDData::GetMode ()\fC [inline]\fP"
+Definition at line 56 of file ControlData\&.h\&.
+.SS "\fBCONTROL_MODE\fP ControlData::GetMode ()\fC [inline]\fP"
 
 .PP
-Definition at line 50 of file PIDData\&.h\&.
-.SS "double PIDData::GetP ()\fC [inline]\fP"
+Definition at line 50 of file ControlData\&.h\&.
+.SS "double ControlData::GetP ()\fC [inline]\fP"
 
 .PP
-Definition at line 52 of file PIDData\&.h\&.
-.SS "\fBPID_TARGET\fP PIDData::GetPidTarget ()\fC [inline]\fP"
+Definition at line 52 of file ControlData\&.h\&.
+.SS "\fBPID_TARGET\fP ControlData::GetPidTarget ()\fC [inline]\fP"
 
 .PP
-Definition at line 51 of file PIDData\&.h\&.
+Definition at line 51 of file ControlData\&.h\&.
 
 .SH "Author"
 .PP 

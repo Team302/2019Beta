@@ -27,7 +27,7 @@
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismControl.h>
 #include <subsys/MechanismTypes.h>
-#include <xmlcontrol/ControlData.h>
+#include <controllers/ControlData.h>
 #include <subsys/DriveTrainSide.h>
 
 // Third Party Includes

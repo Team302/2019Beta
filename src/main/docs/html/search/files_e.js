@@ -1,11 +1,13 @@
 var searchData=
 [
-  ['talontach_2ecpp_1182',['TalonTach.cpp',['../_talon_tach_8cpp.html',1,'']]],
-  ['talontach_2eh_1183',['TalonTach.h',['../_talon_tach_8h.html',1,'']]],
-  ['togglebutton_2ecpp_1184',['ToggleButton.cpp',['../_toggle_button_8cpp.html',1,'']]],
-  ['togglebutton_2eh_1185',['ToggleButton.h',['../_toggle_button_8h.html',1,'']]],
-  ['turnangle_2ecpp_1186',['TurnAngle.cpp',['../_turn_angle_8cpp.html',1,'']]],
-  ['turnangle_2eh_1187',['TurnAngle.h',['../_turn_angle_8h.html',1,'']]],
-  ['turntocube_2ecpp_1188',['TurnToCube.cpp',['../_turn_to_cube_8cpp.html',1,'']]],
-  ['turntocube_2eh_1189',['TurnToCube.h',['../_turn_to_cube_8h.html',1,'']]]
+  ['scaledaxis_2ecpp_1287',['ScaledAxis.cpp',['../_scaled_axis_8cpp.html',1,'']]],
+  ['scaledaxis_2eh_1288',['ScaledAxis.h',['../_scaled_axis_8h.html',1,'']]],
+  ['scaleddeadbandvalue_2ecpp_1289',['ScaledDeadbandValue.cpp',['../_scaled_deadband_value_8cpp.html',1,'']]],
+  ['scaleddeadbandvalue_2eh_1290',['ScaledDeadbandValue.h',['../_scaled_deadband_value_8h.html',1,'']]],
+  ['servodefn_2ecpp_1291',['ServoDefn.cpp',['../_servo_defn_8cpp.html',1,'']]],
+  ['servodefn_2eh_1292',['ServoDefn.h',['../_servo_defn_8h.html',1,'']]],
+  ['squaredprofile_2ecpp_1293',['SquaredProfile.cpp',['../_squared_profile_8cpp.html',1,'']]],
+  ['squaredprofile_2eh_1294',['SquaredProfile.h',['../_squared_profile_8h.html',1,'']]],
+  ['superdrive_2ecpp_1295',['SuperDrive.cpp',['../_super_drive_8cpp.html',1,'']]],
+  ['superdrive_2eh_1296',['SuperDrive.h',['../_super_drive_8h.html',1,'']]]
 ];

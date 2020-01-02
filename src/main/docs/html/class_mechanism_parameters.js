@@ -1,11 +1,5 @@
 var class_mechanism_parameters =
 [
-    [ "MECHANISM_CONTROL_ID", "class_mechanism_parameters.html#a213d3185b69f166f949a66949698be06", [
-      [ "ALL_MOTORS", "class_mechanism_parameters.html#a213d3185b69f166f949a66949698be06a6e51f231f684e9653c90e5e6fcb51c82", null ],
-      [ "LEFT_MOTORS", "class_mechanism_parameters.html#a213d3185b69f166f949a66949698be06aff562451835717c5e92bd476054e13bd", null ],
-      [ "RIGHT_MOTORS", "class_mechanism_parameters.html#a213d3185b69f166f949a66949698be06a4900358ed755ee10eeb5f8731c616631", null ],
-      [ "MAX_CONTROL_IDS", "class_mechanism_parameters.html#a213d3185b69f166f949a66949698be06ae5d6dfea3b19591bb25d5edafd801f05", null ]
-    ] ],
     [ "MECHANISM_PARAM_TYPE", "class_mechanism_parameters.html#a33645fbdee2537b07f48e371662ab14e", [
       [ "MECHANISM_PARAM_UNKNOWN", "class_mechanism_parameters.html#a33645fbdee2537b07f48e371662ab14ea308877e2743e85bce63fa0a77bd2c575", null ],
       [ "LEGAL_STARTING_ANGLE", "class_mechanism_parameters.html#a33645fbdee2537b07f48e371662ab14ea4104b085e185c94e0b4ea0fef9e1e64e", null ],

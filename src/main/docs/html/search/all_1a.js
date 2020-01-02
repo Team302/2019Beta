@@ -41,7 +41,7 @@ var searchData=
   ['_7emotordefn_1442',['~MotorDefn',['../class_motor_defn.html#a74c9eb273250e0f0c766030b6fd6b5fc',1,'MotorDefn']]],
   ['_7ename_5fnull_5fsentry_1443',['~name_null_sentry',['../structname__null__sentry.html#ac94aa8a9f73b3397e2aa94b6c215ad57',1,'name_null_sentry']]],
   ['_7epdpdefn_1444',['~PDPDefn',['../class_p_d_p_defn.html#aac55f22d8a84898639765712e27c3065',1,'PDPDefn']]],
-  ['_7epiddata_1445',['~PIDData',['../class_p_i_d_data.html#a771bfea16806a1f019983ce6c83dbcb4',1,'PIDData']]],
+  ['_7eControlData_1445',['~ControlData',['../class_p_i_d_data.html#a771bfea16806a1f019983ce6c83dbcb4',1,'ControlData']]],
   ['_7epigeondefn_1446',['~PigeonDefn',['../class_pigeon_defn.html#a5944df09a0fa42bc51556b42c883fb2f',1,'PigeonDefn']]],
   ['_7epovbutton_1447',['~POVButton',['../class_p_o_v_button.html#a3abe58c3923464a631a9b0e1d5b65466',1,'POVButton']]],
   ['_7erobotdefn_1448',['~RobotDefn',['../class_robot_defn.html#a47d3a8af99de6cd7675fad0503c038f4',1,'RobotDefn']]],

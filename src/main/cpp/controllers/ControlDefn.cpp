@@ -39,9 +39,9 @@
 // FRC includes
 
 // Team 302 includes
-#include <xmlhw/ControlDefn.h>
-#include <xmlcontrol/ControlData.h>
-#include <xmlcontrol/PIDDefn.h>
+#include <controllers/ControlDefn.h>
+#include <controllers/ControlData.h>
+#include <controllers/PIDDefn.h>
 
 // Third Party Includes
 #include <pugixml/pugixml.hpp>

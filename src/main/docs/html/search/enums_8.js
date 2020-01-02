@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['talon_5fcontrol_5fmode_1589',['TALON_CONTROL_MODE',['../class_dragon_talon.html#a8f2b4982607580f1e3802ed17adf3898',1,'DragonTalon']]],
-  ['talon_5fsensor_5ftype_1590',['TALON_SENSOR_TYPE',['../class_dragon_talon.html#a66446a3989d6a8e7e163f97e9ea98e2f',1,'DragonTalon']]],
-  ['talon_5ftach_5fusage_1591',['TALON_TACH_USAGE',['../class_dragon_talon_tach.html#a7b73df3604a85825e59645be8f8e19fa',1,'DragonTalonTach']]]
+  ['sensor_5fusage_1741',['SENSOR_USAGE',['../class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9',1,'IDragonSensor']]],
+  ['servo_5fusage_1742',['SERVO_USAGE',['../class_dragon_servo.html#acde1c9ebb88a9989bbd7412bd66d7fec',1,'DragonServo']]],
+  ['snapshot_5fmode_1743',['SNAPSHOT_MODE',['../class_dragon_limelight.html#ad153a8681f6b1f71906fba0a6c4863ed',1,'DragonLimelight']]],
+  ['stream_5fmode_1744',['STREAM_MODE',['../class_dragon_limelight.html#a7e61244761896139b6cd1c72c5363f91',1,'DragonLimelight']]]
 ];

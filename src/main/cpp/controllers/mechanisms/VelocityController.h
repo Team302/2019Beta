@@ -1,6 +1,6 @@
 #pragma once
 
-#include <xmlcontrol/ControlData.h>
+#include <controllers/ControlData.h>
 #include <subsys/IMechanism.h>
 #include <controllers/mechanisms/IMechController.h>
 

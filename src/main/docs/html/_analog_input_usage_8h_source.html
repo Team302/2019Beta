@@ -108,28 +108,55 @@ $(document).ready(function(){initNavTree('_analog_input_usage_8h_source.html',''
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// C++ Includes</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// FRC includes</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// Team 302 includes</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// FRC includes</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Third Party Includes</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Team 302 includes</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="_analog_input_usage_8h.html#a53ece9479e6c392e1c1d2d9ff5a079d2">   30</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="_analog_input_usage_8h.html#a53ece9479e6c392e1c1d2d9ff5a079d2">ANALOG_SENSOR_USAGE</a></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="_analog_input_usage_8h.html#a53ece9479e6c392e1c1d2d9ff5a079d2a3ecda3793b0a696e1bbccd390fd7d9b4">   32</a></span>&#160;    <a class="code" href="_analog_input_usage_8h.html#a53ece9479e6c392e1c1d2d9ff5a079d2a3ecda3793b0a696e1bbccd390fd7d9b4">UNKNOWN_ANALOG_TYPE</a> = -1,</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="_analog_input_usage_8h.html#a53ece9479e6c392e1c1d2d9ff5a079d2a23a53a235875539abb07a4a474b1908e">   33</a></span>&#160;    <a class="code" href="_analog_input_usage_8h.html#a53ece9479e6c392e1c1d2d9ff5a079d2a23a53a235875539abb07a4a474b1908e">EXTENDER_POTENTIOMETER</a>,</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="_analog_input_usage_8h.html#a53ece9479e6c392e1c1d2d9ff5a079d2a14c6c76bc15dcac2298c5eb68979fcdc">   34</a></span>&#160;    <a class="code" href="_analog_input_usage_8h.html#a53ece9479e6c392e1c1d2d9ff5a079d2a14c6c76bc15dcac2298c5eb68979fcdc">PRESSURE_GAUGE</a>,</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="_analog_input_usage_8h.html#a53ece9479e6c392e1c1d2d9ff5a079d2a34b06c7b4f1d72500c96230f9927add6">   35</a></span>&#160;    <a class="code" href="_analog_input_usage_8h.html#a53ece9479e6c392e1c1d2d9ff5a079d2a34b06c7b4f1d72500c96230f9927add6">MAX_ANALOG_TYPES</a></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// Third Party Includes</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_analog_input_usage.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_analog_input_usage.html">AnalogInputUsage</a></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3e">   38</a></span>&#160;        <span class="keyword">enum</span> <a class="code" href="class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3e">ANALOG_SENSOR_USAGE</a></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        {</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3eadd180056c5da0e5191d4b1dc044e3e5d">   40</a></span>&#160;            <a class="code" href="class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3eadd180056c5da0e5191d4b1dc044e3e5d">UNKNOWN_ANALOG_TYPE</a> = -1,</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3ead3bfd0c51e6b538b3acc5a48ec69c326">   41</a></span>&#160;            <a class="code" href="class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3ead3bfd0c51e6b538b3acc5a48ec69c326">EXTENDER_POTENTIOMETER</a>,</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3ea9729ca78d0d8bfa204899b1496c74167">   42</a></span>&#160;            <a class="code" href="class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3ea9729ca78d0d8bfa204899b1496c74167">PRESSURE_GAUGE</a>,</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3eae7622fb6eb6147bbe49ab9caf7533f27">   43</a></span>&#160;            <a class="code" href="class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3eae7622fb6eb6147bbe49ab9caf7533f27">MAX_ANALOG_TYPES</a></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        };</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_analog_input_usage.html">AnalogInputUsage</a>* <a class="code" href="class_analog_input_usage.html#a3b147566fc1852814fa75cdff467d7c9">GetInstance</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3e">ANALOG_SENSOR_USAGE</a> <a class="code" href="class_analog_input_usage.html#a6a6c5245a0cc9e0ce8d0c3a1aa662993">GetUsage</a></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        ( </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            std::string         usageString</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_analog_input_usage.html">AnalogInputUsage</a>*    m_instance;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="class_analog_input_usage.html">AnalogInputUsage</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        ~<a class="code" href="class_analog_input_usage.html">AnalogInputUsage</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        std::map &lt;std::string, ANALOG_SENSOR_USAGE&gt; m_usageMap;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="a_analog_input_usage_8h_html_a53ece9479e6c392e1c1d2d9ff5a079d2a23a53a235875539abb07a4a474b1908e"><div class="ttname"><a href="_analog_input_usage_8h.html#a53ece9479e6c392e1c1d2d9ff5a079d2a23a53a235875539abb07a4a474b1908e">EXTENDER_POTENTIOMETER</a></div><div class="ttdef"><b>Definition:</b> <a href="_analog_input_usage_8h_source.html#l00033">AnalogInputUsage.h:33</a></div></div>
-<div class="ttc" id="a_analog_input_usage_8h_html_a53ece9479e6c392e1c1d2d9ff5a079d2a34b06c7b4f1d72500c96230f9927add6"><div class="ttname"><a href="_analog_input_usage_8h.html#a53ece9479e6c392e1c1d2d9ff5a079d2a34b06c7b4f1d72500c96230f9927add6">MAX_ANALOG_TYPES</a></div><div class="ttdef"><b>Definition:</b> <a href="_analog_input_usage_8h_source.html#l00035">AnalogInputUsage.h:35</a></div></div>
-<div class="ttc" id="a_analog_input_usage_8h_html_a53ece9479e6c392e1c1d2d9ff5a079d2a3ecda3793b0a696e1bbccd390fd7d9b4"><div class="ttname"><a href="_analog_input_usage_8h.html#a53ece9479e6c392e1c1d2d9ff5a079d2a3ecda3793b0a696e1bbccd390fd7d9b4">UNKNOWN_ANALOG_TYPE</a></div><div class="ttdef"><b>Definition:</b> <a href="_analog_input_usage_8h_source.html#l00032">AnalogInputUsage.h:32</a></div></div>
-<div class="ttc" id="a_analog_input_usage_8h_html_a53ece9479e6c392e1c1d2d9ff5a079d2"><div class="ttname"><a href="_analog_input_usage_8h.html#a53ece9479e6c392e1c1d2d9ff5a079d2">ANALOG_SENSOR_USAGE</a></div><div class="ttdeci">ANALOG_SENSOR_USAGE</div><div class="ttdoc">Defines analog input sensor usages. This should be modified for each robot.</div><div class="ttdef"><b>Definition:</b> <a href="_analog_input_usage_8h_source.html#l00030">AnalogInputUsage.h:30</a></div></div>
-<div class="ttc" id="a_analog_input_usage_8h_html_a53ece9479e6c392e1c1d2d9ff5a079d2a14c6c76bc15dcac2298c5eb68979fcdc"><div class="ttname"><a href="_analog_input_usage_8h.html#a53ece9479e6c392e1c1d2d9ff5a079d2a14c6c76bc15dcac2298c5eb68979fcdc">PRESSURE_GAUGE</a></div><div class="ttdef"><b>Definition:</b> <a href="_analog_input_usage_8h_source.html#l00034">AnalogInputUsage.h:34</a></div></div>
+<div class="ttc" id="aclass_analog_input_usage_html_a0a2b8dec47d570e3e015c1cf4b43dc3eadd180056c5da0e5191d4b1dc044e3e5d"><div class="ttname"><a href="class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3eadd180056c5da0e5191d4b1dc044e3e5d">AnalogInputUsage::UNKNOWN_ANALOG_TYPE</a></div><div class="ttdef"><b>Definition:</b> <a href="_analog_input_usage_8h_source.html#l00040">AnalogInputUsage.h:40</a></div></div>
+<div class="ttc" id="aclass_analog_input_usage_html_a0a2b8dec47d570e3e015c1cf4b43dc3ea9729ca78d0d8bfa204899b1496c74167"><div class="ttname"><a href="class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3ea9729ca78d0d8bfa204899b1496c74167">AnalogInputUsage::PRESSURE_GAUGE</a></div><div class="ttdef"><b>Definition:</b> <a href="_analog_input_usage_8h_source.html#l00042">AnalogInputUsage.h:42</a></div></div>
+<div class="ttc" id="aclass_analog_input_usage_html_a0a2b8dec47d570e3e015c1cf4b43dc3e"><div class="ttname"><a href="class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3e">AnalogInputUsage::ANALOG_SENSOR_USAGE</a></div><div class="ttdeci">ANALOG_SENSOR_USAGE</div><div class="ttdoc">Defines analog input sensor usages. This should be modified for each robot.</div><div class="ttdef"><b>Definition:</b> <a href="_analog_input_usage_8h_source.html#l00038">AnalogInputUsage.h:38</a></div></div>
+<div class="ttc" id="aclass_analog_input_usage_html_a3b147566fc1852814fa75cdff467d7c9"><div class="ttname"><a href="class_analog_input_usage.html#a3b147566fc1852814fa75cdff467d7c9">AnalogInputUsage::GetInstance</a></div><div class="ttdeci">static AnalogInputUsage * GetInstance()</div><div class="ttdef"><b>Definition:</b> <a href="_analog_input_usage_8cpp_source.html#l00032">AnalogInputUsage.cpp:32</a></div></div>
+<div class="ttc" id="aclass_analog_input_usage_html_a6a6c5245a0cc9e0ce8d0c3a1aa662993"><div class="ttname"><a href="class_analog_input_usage.html#a6a6c5245a0cc9e0ce8d0c3a1aa662993">AnalogInputUsage::GetUsage</a></div><div class="ttdeci">ANALOG_SENSOR_USAGE GetUsage(std::string usageString)</div><div class="ttdef"><b>Definition:</b> <a href="_analog_input_usage_8cpp_source.html#l00053">AnalogInputUsage.cpp:53</a></div></div>
+<div class="ttc" id="aclass_analog_input_usage_html_a0a2b8dec47d570e3e015c1cf4b43dc3eae7622fb6eb6147bbe49ab9caf7533f27"><div class="ttname"><a href="class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3eae7622fb6eb6147bbe49ab9caf7533f27">AnalogInputUsage::MAX_ANALOG_TYPES</a></div><div class="ttdef"><b>Definition:</b> <a href="_analog_input_usage_8h_source.html#l00043">AnalogInputUsage.h:43</a></div></div>
+<div class="ttc" id="aclass_analog_input_usage_html_a0a2b8dec47d570e3e015c1cf4b43dc3ead3bfd0c51e6b538b3acc5a48ec69c326"><div class="ttname"><a href="class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3ead3bfd0c51e6b538b3acc5a48ec69c326">AnalogInputUsage::EXTENDER_POTENTIOMETER</a></div><div class="ttdef"><b>Definition:</b> <a href="_analog_input_usage_8h_source.html#l00041">AnalogInputUsage.h:41</a></div></div>
+<div class="ttc" id="aclass_analog_input_usage_html"><div class="ttname"><a href="class_analog_input_usage.html">AnalogInputUsage</a></div><div class="ttdef"><b>Definition:</b> <a href="_analog_input_usage_8h_source.html#l00031">AnalogInputUsage.h:31</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

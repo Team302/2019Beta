@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team 302 Robot: IChassis Class Reference</title>
+<title>Team 302 Robot: IChassis Interface Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -89,70 +89,86 @@ $(document).ready(function(){initNavTree('class_i_chassis.html','');});
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="class_i_chassis-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">IChassis Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">IChassis Interface Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
+<p>Interface for differential drives.  
+ <a href="class_i_chassis.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_i_chassis_8h_source.html">IChassis.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for IChassis:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_i_chassis.png" usemap="#IChassis_map" alt=""/>
+  <map id="IChassis_map" name="IChassis_map">
+<area href="class_dragon_chassis.html" title="This is a differential chassis. Each side of the robot will be treated as a separate mechanism." alt="DragonChassis" shape="rect" coords="0,56,98,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aef1d1542c93a347d2a4915f50085bd8a"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#aef1d1542c93a347d2a4915f50085bd8a">GetWheelDiameter</a> () const =0</td></tr>
-<tr class="separator:aef1d1542c93a347d2a4915f50085bd8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2334340d6479f566cff163a8ae33c594"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a2334340d6479f566cff163a8ae33c594">GetLeftMasterMotorRotationCount</a> () const =0</td></tr>
-<tr class="separator:a2334340d6479f566cff163a8ae33c594"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33b98f205ee54489e49bdf6e33c554f8"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a33b98f205ee54489e49bdf6e33c554f8">GetRightMasterMotorRotationCount</a> () const =0</td></tr>
-<tr class="separator:a33b98f205ee54489e49bdf6e33c554f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa15f1e54d2d44238a894135f8a2b5d5e"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#aa15f1e54d2d44238a894135f8a2b5d5e">GetVelocity</a> () const =0</td></tr>
-<tr class="separator:aa15f1e54d2d44238a894135f8a2b5d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acac0fcede42933fb234ea34c8b6bc72f"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#acac0fcede42933fb234ea34c8b6bc72f">GetXVelocity</a> () const =0</td></tr>
-<tr class="separator:acac0fcede42933fb234ea34c8b6bc72f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c92a5a9b2121ab00a711c51b33fca80"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a9c92a5a9b2121ab00a711c51b33fca80">GetYVelocity</a> () const =0</td></tr>
-<tr class="separator:a9c92a5a9b2121ab00a711c51b33fca80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a173c94c977053f02cd96557bc9a2bb01"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a173c94c977053f02cd96557bc9a2bb01">GetDistance</a> () const =0</td></tr>
-<tr class="separator:a173c94c977053f02cd96557bc9a2bb01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad224c991870bc1a2fcc2947a746de8c8"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#ad224c991870bc1a2fcc2947a746de8c8">GetXLocation</a> () const =0</td></tr>
-<tr class="separator:ad224c991870bc1a2fcc2947a746de8c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7dc97488036e5aadc9edc9390b328ac0"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a7dc97488036e5aadc9edc9390b328ac0">GetYLocation</a> () const =0</td></tr>
-<tr class="separator:a7dc97488036e5aadc9edc9390b328ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a074829702fd4e8e58e140346d3194cca"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a074829702fd4e8e58e140346d3194cca">GetHeading</a> () const =0</td></tr>
-<tr class="separator:a074829702fd4e8e58e140346d3194cca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb8d23ba25f61367490b96ffe5bdd659"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#adb8d23ba25f61367490b96ffe5bdd659">GetTargetHeading</a> () const =0</td></tr>
-<tr class="separator:adb8d23ba25f61367490b96ffe5bdd659"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a678c0102a6cf64532784751495d895d9"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a678c0102a6cf64532784751495d895d9">CanStrafe</a> () const =0</td></tr>
-<tr class="separator:a678c0102a6cf64532784751495d895d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77895c0996b25c09bc00b2aafe4a7c87"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a77895c0996b25c09bc00b2aafe4a7c87">EnableBrakeMode</a> (bool enabled)=0</td></tr>
-<tr class="separator:a77895c0996b25c09bc00b2aafe4a7c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0896fe87e7564ae4546f9b83ae0ef18f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a0896fe87e7564ae4546f9b83ae0ef18f">SetTalonMode</a> (<a class="el" href="class_dragon_talon.html#a8f2b4982607580f1e3802ed17adf3898">DragonTalon::TALON_CONTROL_MODE</a> mode)=0</td></tr>
-<tr class="separator:a0896fe87e7564ae4546f9b83ae0ef18f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae73dca373ab6cd05e4a4bed2166f3a27"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#ae73dca373ab6cd05e4a4bed2166f3a27">SetVelocityParams</a> (float kP, float kI, float kD, float kF, float leftSpeed, float rightSpeed)=0</td></tr>
-<tr class="separator:ae73dca373ab6cd05e4a4bed2166f3a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bda05b73e71719485cbfa9d7f710538"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a9bda05b73e71719485cbfa9d7f710538">SetPIDParams</a> (float kP, float kI, float kD, float kF)=0</td></tr>
-<tr class="separator:a9bda05b73e71719485cbfa9d7f710538"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ee9a25d1a1757ab42a2eb005bb6ca32"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a6ee9a25d1a1757ab42a2eb005bb6ca32">SetDriveMagnitudes</a> (double xPower, double yPower, double rotationPower)=0</td></tr>
-<tr class="separator:a6ee9a25d1a1757ab42a2eb005bb6ca32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a772457f1800c82584103be36a2b930da"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a772457f1800c82584103be36a2b930da">SetLeftRightMagnitudes</a> (double leftPower, double rightPower)=0</td></tr>
-<tr class="separator:a772457f1800c82584103be36a2b930da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35a2df887b09b5795d7d7cf6df72fec1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a35a2df887b09b5795d7d7cf6df72fec1">EnableCurrentLimiting</a> (bool enabled)=0</td></tr>
-<tr class="separator:a35a2df887b09b5795d7d7cf6df72fec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49d69df9b200f465cb0f8423bef32d3c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a49d69df9b200f465cb0f8423bef32d3c">SetTargetHeading</a> (double heading)=0</td></tr>
-<tr class="separator:a49d69df9b200f465cb0f8423bef32d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5493e99781542f00a352669ede77596"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#ab5493e99781542f00a352669ede77596">UpdateChassis</a> ()=0</td></tr>
-<tr class="separator:ab5493e99781542f00a352669ede77596"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecd1754d77d633add91d9790339c5cc2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#aecd1754d77d633add91d9790339c5cc2">ResetChassis</a> ()=0</td></tr>
-<tr class="separator:aecd1754d77d633add91d9790339c5cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dc7f67f18ed39ebdfb9716ef4e17da4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a8dc7f67f18ed39ebdfb9716ef4e17da4">ResetGyro</a> ()=0</td></tr>
-<tr class="separator:a8dc7f67f18ed39ebdfb9716ef4e17da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fea2dc5432dec42d7103ed50158c0ba"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a2fea2dc5432dec42d7103ed50158c0ba">PrintDebug</a> ()=0</td></tr>
-<tr class="separator:a2fea2dc5432dec42d7103ed50158c0ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6108e4e8cc34d143528a6f167161cec"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#ad6108e4e8cc34d143528a6f167161cec">SetOutput</a> (<a class="el" href="class_mechanism_control.html#a62b7a13a54f2bb7385096b3933837e00">MechanismControl::MECHANISM_CONTROL_TYPE</a> controlType, double leftValue, double rightValue)=0</td></tr>
+<tr class="memdesc:ad6108e4e8cc34d143528a6f167161cec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run chassis.  <a href="class_i_chassis.html#ad6108e4e8cc34d143528a6f167161cec">More...</a><br /></td></tr>
+<tr class="separator:ad6108e4e8cc34d143528a6f167161cec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1978a942d42934c78784c7099edb538"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#ac1978a942d42934c78784c7099edb538">GetCurrentPosition</a> () const =0</td></tr>
+<tr class="memdesc:ac1978a942d42934c78784c7099edb538"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current position of the center of the <a class="el" href="class_dragon_chassis.html" title="This is a differential chassis. Each side of the robot will be treated as a separate mechanism.">DragonChassis</a> in inches. <br  />
+  <a href="class_i_chassis.html#ac1978a942d42934c78784c7099edb538">More...</a><br /></td></tr>
+<tr class="separator:ac1978a942d42934c78784c7099edb538"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42018bc4f59f4e80bcaa801a2ba296eb"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a42018bc4f59f4e80bcaa801a2ba296eb">GetCurrentLeftPosition</a> () const =0</td></tr>
+<tr class="memdesc:a42018bc4f59f4e80bcaa801a2ba296eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current position of the left side of the <a class="el" href="class_dragon_chassis.html" title="This is a differential chassis. Each side of the robot will be treated as a separate mechanism.">DragonChassis</a> in inches. <br  />
+  <a href="class_i_chassis.html#a42018bc4f59f4e80bcaa801a2ba296eb">More...</a><br /></td></tr>
+<tr class="separator:a42018bc4f59f4e80bcaa801a2ba296eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a035b8170ae23c7d6461a77479ec89d1b"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a035b8170ae23c7d6461a77479ec89d1b">GetCurrentRightPosition</a> () const =0</td></tr>
+<tr class="memdesc:a035b8170ae23c7d6461a77479ec89d1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current position of the right side of the <a class="el" href="class_dragon_chassis.html" title="This is a differential chassis. Each side of the robot will be treated as a separate mechanism.">DragonChassis</a> in inches. <br  />
+  <a href="class_i_chassis.html#a035b8170ae23c7d6461a77479ec89d1b">More...</a><br /></td></tr>
+<tr class="separator:a035b8170ae23c7d6461a77479ec89d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d7622496bd890a280bbd499ac0b9a79"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a6d7622496bd890a280bbd499ac0b9a79">GetTargetPosition</a> () const =0</td></tr>
+<tr class="memdesc:a6d7622496bd890a280bbd499ac0b9a79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the target position of the center of the <a class="el" href="class_dragon_chassis.html" title="This is a differential chassis. Each side of the robot will be treated as a separate mechanism.">DragonChassis</a> in inches. <br  />
+  <a href="class_i_chassis.html#a6d7622496bd890a280bbd499ac0b9a79">More...</a><br /></td></tr>
+<tr class="separator:a6d7622496bd890a280bbd499ac0b9a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e64d84a7e3a54e5944e5a34fdbb66c9"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a5e64d84a7e3a54e5944e5a34fdbb66c9">GetTargetLeftPosition</a> () const =0</td></tr>
+<tr class="memdesc:a5e64d84a7e3a54e5944e5a34fdbb66c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the target position of the left side of the <a class="el" href="class_dragon_chassis.html" title="This is a differential chassis. Each side of the robot will be treated as a separate mechanism.">DragonChassis</a> in inches. <br  />
+  <a href="class_i_chassis.html#a5e64d84a7e3a54e5944e5a34fdbb66c9">More...</a><br /></td></tr>
+<tr class="separator:a5e64d84a7e3a54e5944e5a34fdbb66c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0244f29342ccc91a5c10b6a1cd540c1"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#aa0244f29342ccc91a5c10b6a1cd540c1">GetTargetRightPosition</a> () const =0</td></tr>
+<tr class="memdesc:aa0244f29342ccc91a5c10b6a1cd540c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the target position of the right side of the <a class="el" href="class_dragon_chassis.html" title="This is a differential chassis. Each side of the robot will be treated as a separate mechanism.">DragonChassis</a> in inches. <br  />
+  <a href="class_i_chassis.html#aa0244f29342ccc91a5c10b6a1cd540c1">More...</a><br /></td></tr>
+<tr class="separator:aa0244f29342ccc91a5c10b6a1cd540c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a022a02c30026eb8f9d169332a448f9d1"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a022a02c30026eb8f9d169332a448f9d1">GetCurrentSpeed</a> () const =0</td></tr>
+<tr class="memdesc:a022a02c30026eb8f9d169332a448f9d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current speed of the center of the <a class="el" href="class_dragon_chassis.html" title="This is a differential chassis. Each side of the robot will be treated as a separate mechanism.">DragonChassis</a> in inches per second. <br  />
+  <a href="class_i_chassis.html#a022a02c30026eb8f9d169332a448f9d1">More...</a><br /></td></tr>
+<tr class="separator:a022a02c30026eb8f9d169332a448f9d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62a089df26ba1267f7509318fa54f21d"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a62a089df26ba1267f7509318fa54f21d">GetCurrentLeftSpeed</a> () const =0</td></tr>
+<tr class="memdesc:a62a089df26ba1267f7509318fa54f21d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current speed of the left side of the <a class="el" href="class_dragon_chassis.html" title="This is a differential chassis. Each side of the robot will be treated as a separate mechanism.">DragonChassis</a> in inches per second. <br  />
+  <a href="class_i_chassis.html#a62a089df26ba1267f7509318fa54f21d">More...</a><br /></td></tr>
+<tr class="separator:a62a089df26ba1267f7509318fa54f21d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a757ef3421a2a88c0c7d00e84d1c87313"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a757ef3421a2a88c0c7d00e84d1c87313">GetCurrentRightSpeed</a> () const =0</td></tr>
+<tr class="memdesc:a757ef3421a2a88c0c7d00e84d1c87313"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current speed of the right side of the <a class="el" href="class_dragon_chassis.html" title="This is a differential chassis. Each side of the robot will be treated as a separate mechanism.">DragonChassis</a> in inches per second. <br  />
+  <a href="class_i_chassis.html#a757ef3421a2a88c0c7d00e84d1c87313">More...</a><br /></td></tr>
+<tr class="separator:a757ef3421a2a88c0c7d00e84d1c87313"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2ca52a26ac8743473db9fd4c7412eeb"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#af2ca52a26ac8743473db9fd4c7412eeb">GetTargetSpeed</a> () const =0</td></tr>
+<tr class="memdesc:af2ca52a26ac8743473db9fd4c7412eeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the target speed of the center of the chassis. The value is in inches per second.  <a href="class_i_chassis.html#af2ca52a26ac8743473db9fd4c7412eeb">More...</a><br /></td></tr>
+<tr class="separator:af2ca52a26ac8743473db9fd4c7412eeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a454daaee3a36c4108b1c589bac12a211"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a454daaee3a36c4108b1c589bac12a211">GetTargetLeftSpeed</a> () const =0</td></tr>
+<tr class="memdesc:a454daaee3a36c4108b1c589bac12a211"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the target speed of the left side of the chassis. The value is in inches per second.  <a href="class_i_chassis.html#a454daaee3a36c4108b1c589bac12a211">More...</a><br /></td></tr>
+<tr class="separator:a454daaee3a36c4108b1c589bac12a211"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb56e2e6d0840dc438de2a9e904900c2"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#acb56e2e6d0840dc438de2a9e904900c2">GetTargetRightSpeed</a> () const =0</td></tr>
+<tr class="memdesc:acb56e2e6d0840dc438de2a9e904900c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the target speed of the right side of the chassis. The value is in inches per second.  <a href="class_i_chassis.html#acb56e2e6d0840dc438de2a9e904900c2">More...</a><br /></td></tr>
+<tr class="separator:acb56e2e6d0840dc438de2a9e904900c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64b0c5e1c4aa54ecfac53c7677b184e7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a64b0c5e1c4aa54ecfac53c7677b184e7">SetControlConstants</a> (<a class="el" href="class_control_data.html">ControlData</a> *pid)=0</td></tr>
+<tr class="memdesc:a64b0c5e1c4aa54ecfac53c7677b184e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the control constants (e.g. PIDF values).  <a href="class_i_chassis.html#a64b0c5e1c4aa54ecfac53c7677b184e7">More...</a><br /></td></tr>
+<tr class="separator:a64b0c5e1c4aa54ecfac53c7677b184e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4d7d56ee1cd2e0a249402941e3c8f48"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#af4d7d56ee1cd2e0a249402941e3c8f48">IChassis</a> ()=default</td></tr>
 <tr class="separator:af4d7d56ee1cd2e0a249402941e3c8f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a251e92765c8e297490b62875b4c2fd1f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_chassis.html#a251e92765c8e297490b62875b4c2fd1f">~IChassis</a> ()=default</td></tr>
 <tr class="separator:a251e92765c8e297490b62875b4c2fd1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_i_chassis_8h_source.html#l00014">14</a> of file <a class="el" href="_i_chassis_8h_source.html">IChassis.h</a>.</p>
+<div class="textblock"><p>Interface for differential drives. </p>
+
+<p class="definition">Definition at line <a class="el" href="_i_chassis_8h_source.html#l00034">34</a> of file <a class="el" href="_i_chassis_8h_source.html">IChassis.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af4d7d56ee1cd2e0a249402941e3c8f48"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af4d7d56ee1cd2e0a249402941e3c8f48">&#9670;&nbsp;</a></span>IChassis()</h2>
@@ -205,8 +221,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a678c0102a6cf64532784751495d895d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a678c0102a6cf64532784751495d895d9">&#9670;&nbsp;</a></span>CanStrafe()</h2>
+<a id="a42018bc4f59f4e80bcaa801a2ba296eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42018bc4f59f4e80bcaa801a2ba296eb">&#9670;&nbsp;</a></span>GetCurrentLeftPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -215,7 +231,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool IChassis::CanStrafe </td>
+          <td class="memname">virtual double IChassis::GetCurrentLeftPosition </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -228,10 +244,16 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Return the current position of the left side of the <a class="el" href="class_dragon_chassis.html" title="This is a differential chassis. Each side of the robot will be treated as a separate mechanism.">DragonChassis</a> in inches. <br  />
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>double position in inches of the left side of the chassis </dd></dl>
+
+<p>Implemented in <a class="el" href="class_dragon_chassis.html#a17a96d5df8c06046dc24e2d84940baad">DragonChassis</a>.</p>
+
 </div>
 </div>
-<a id="a77895c0996b25c09bc00b2aafe4a7c87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77895c0996b25c09bc00b2aafe4a7c87">&#9670;&nbsp;</a></span>EnableBrakeMode()</h2>
+<a id="a62a089df26ba1267f7509318fa54f21d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62a089df26ba1267f7509318fa54f21d">&#9670;&nbsp;</a></span>GetCurrentLeftSpeed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -240,10 +262,348 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void IChassis::EnableBrakeMode </td>
+          <td class="memname">virtual double IChassis::GetCurrentLeftSpeed </td>
           <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>enabled</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the current speed of the left side of the <a class="el" href="class_dragon_chassis.html" title="This is a differential chassis. Each side of the robot will be treated as a separate mechanism.">DragonChassis</a> in inches per second. <br  />
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>double speed in inches per second of the left side of the chassis </dd></dl>
+
+<p>Implemented in <a class="el" href="class_dragon_chassis.html#af7f34790a7ae5ab604214486359d4dcb">DragonChassis</a>.</p>
+
+</div>
+</div>
+<a id="ac1978a942d42934c78784c7099edb538"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1978a942d42934c78784c7099edb538">&#9670;&nbsp;</a></span>GetCurrentPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double IChassis::GetCurrentPosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the current position of the center of the <a class="el" href="class_dragon_chassis.html" title="This is a differential chassis. Each side of the robot will be treated as a separate mechanism.">DragonChassis</a> in inches. <br  />
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>double position in inches of the center of the chassis </dd></dl>
+
+<p>Implemented in <a class="el" href="class_dragon_chassis.html#acef48e705afedea9337b90272bae5a80">DragonChassis</a>.</p>
+
+</div>
+</div>
+<a id="a035b8170ae23c7d6461a77479ec89d1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a035b8170ae23c7d6461a77479ec89d1b">&#9670;&nbsp;</a></span>GetCurrentRightPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double IChassis::GetCurrentRightPosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the current position of the right side of the <a class="el" href="class_dragon_chassis.html" title="This is a differential chassis. Each side of the robot will be treated as a separate mechanism.">DragonChassis</a> in inches. <br  />
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>double position in inches of the right side of the chassis </dd></dl>
+
+<p>Implemented in <a class="el" href="class_dragon_chassis.html#aca949d9c42fdb5fa948a8fd7b5918e1d">DragonChassis</a>.</p>
+
+</div>
+</div>
+<a id="a757ef3421a2a88c0c7d00e84d1c87313"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a757ef3421a2a88c0c7d00e84d1c87313">&#9670;&nbsp;</a></span>GetCurrentRightSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double IChassis::GetCurrentRightSpeed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the current speed of the right side of the <a class="el" href="class_dragon_chassis.html" title="This is a differential chassis. Each side of the robot will be treated as a separate mechanism.">DragonChassis</a> in inches per second. <br  />
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>double speed in inches per second of the right side of the chassis </dd></dl>
+
+<p>Implemented in <a class="el" href="class_dragon_chassis.html#af8880818f285216514de50c8a400678e">DragonChassis</a>.</p>
+
+</div>
+</div>
+<a id="a022a02c30026eb8f9d169332a448f9d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a022a02c30026eb8f9d169332a448f9d1">&#9670;&nbsp;</a></span>GetCurrentSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double IChassis::GetCurrentSpeed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the current speed of the center of the <a class="el" href="class_dragon_chassis.html" title="This is a differential chassis. Each side of the robot will be treated as a separate mechanism.">DragonChassis</a> in inches per second. <br  />
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>double speed in inches per second of the center of the chassis </dd></dl>
+
+<p>Implemented in <a class="el" href="class_dragon_chassis.html#a54c251e24c4a4504f1363e17239a4fbc">DragonChassis</a>.</p>
+
+</div>
+</div>
+<a id="a5e64d84a7e3a54e5944e5a34fdbb66c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e64d84a7e3a54e5944e5a34fdbb66c9">&#9670;&nbsp;</a></span>GetTargetLeftPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double IChassis::GetTargetLeftPosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the target position of the left side of the <a class="el" href="class_dragon_chassis.html" title="This is a differential chassis. Each side of the robot will be treated as a separate mechanism.">DragonChassis</a> in inches. <br  />
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>double position in inches of the left side of the <a class="el" href="class_dragon_chassis.html" title="This is a differential chassis. Each side of the robot will be treated as a separate mechanism.">DragonChassis</a> </dd></dl>
+
+<p>Implemented in <a class="el" href="class_dragon_chassis.html#aac0e89b59f946ece24ccd5a45d085391">DragonChassis</a>.</p>
+
+</div>
+</div>
+<a id="a454daaee3a36c4108b1c589bac12a211"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a454daaee3a36c4108b1c589bac12a211">&#9670;&nbsp;</a></span>GetTargetLeftSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double IChassis::GetTargetLeftSpeed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the target speed of the left side of the chassis. The value is in inches per second. </p>
+<dl class="section return"><dt>Returns</dt><dd>double speed in inches/second of the left side of the chassis. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_dragon_chassis.html#aa3bb8d472f5de9c713f77a0ef2630e81">DragonChassis</a>.</p>
+
+</div>
+</div>
+<a id="a6d7622496bd890a280bbd499ac0b9a79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d7622496bd890a280bbd499ac0b9a79">&#9670;&nbsp;</a></span>GetTargetPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double IChassis::GetTargetPosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the target position of the center of the <a class="el" href="class_dragon_chassis.html" title="This is a differential chassis. Each side of the robot will be treated as a separate mechanism.">DragonChassis</a> in inches. <br  />
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>double position in inches of the center of the <a class="el" href="class_dragon_chassis.html" title="This is a differential chassis. Each side of the robot will be treated as a separate mechanism.">DragonChassis</a> </dd></dl>
+
+<p>Implemented in <a class="el" href="class_dragon_chassis.html#aba4aeb4f8b9c4e31e3db936a630e327b">DragonChassis</a>.</p>
+
+</div>
+</div>
+<a id="aa0244f29342ccc91a5c10b6a1cd540c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0244f29342ccc91a5c10b6a1cd540c1">&#9670;&nbsp;</a></span>GetTargetRightPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double IChassis::GetTargetRightPosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the target position of the right side of the <a class="el" href="class_dragon_chassis.html" title="This is a differential chassis. Each side of the robot will be treated as a separate mechanism.">DragonChassis</a> in inches. <br  />
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>double position in inches of the right side of the <a class="el" href="class_dragon_chassis.html" title="This is a differential chassis. Each side of the robot will be treated as a separate mechanism.">DragonChassis</a> </dd></dl>
+
+<p>Implemented in <a class="el" href="class_dragon_chassis.html#a82ea72da7e49854d8ebdb0ba256d310a">DragonChassis</a>.</p>
+
+</div>
+</div>
+<a id="acb56e2e6d0840dc438de2a9e904900c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb56e2e6d0840dc438de2a9e904900c2">&#9670;&nbsp;</a></span>GetTargetRightSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double IChassis::GetTargetRightSpeed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the target speed of the right side of the chassis. The value is in inches per second. </p>
+<dl class="section return"><dt>Returns</dt><dd>double speed in inches/second of the right side of the chassis. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_dragon_chassis.html#adf955795007132b4f3c94763a85cd757">DragonChassis</a>.</p>
+
+</div>
+</div>
+<a id="af2ca52a26ac8743473db9fd4c7412eeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2ca52a26ac8743473db9fd4c7412eeb">&#9670;&nbsp;</a></span>GetTargetSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double IChassis::GetTargetSpeed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the target speed of the center of the chassis. The value is in inches per second. </p>
+<dl class="section return"><dt>Returns</dt><dd>double speed in inches/second of the center of the chassis. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_dragon_chassis.html#ac3a8dfcb50aa3371a2e89c0ce038e3a5">DragonChassis</a>.</p>
+
+</div>
+</div>
+<a id="a64b0c5e1c4aa54ecfac53c7677b184e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64b0c5e1c4aa54ecfac53c7677b184e7">&#9670;&nbsp;</a></span>SetControlConstants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IChassis::SetControlConstants </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_control_data.html">ControlData</a> *&#160;</td>
+          <td class="paramname"><em>pid</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -254,10 +614,21 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Set the control constants (e.g. PIDF values). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ControlData*</td><td>pid: the control constants </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p>Implemented in <a class="el" href="class_dragon_chassis.html#a0db28ff16679b084010cb4cd706c598e">DragonChassis</a>.</p>
+
 </div>
 </div>
-<a id="a35a2df887b09b5795d7d7cf6df72fec1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35a2df887b09b5795d7d7cf6df72fec1">&#9670;&nbsp;</a></span>EnableCurrentLimiting()</h2>
+<a id="ad6108e4e8cc34d143528a6f167161cec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6108e4e8cc34d143528a6f167161cec">&#9670;&nbsp;</a></span>SetOutput()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -266,398 +637,22 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void IChassis::EnableCurrentLimiting </td>
+          <td class="memname">virtual void IChassis::SetOutput </td>
           <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>enabled</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a173c94c977053f02cd96557bc9a2bb01"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a173c94c977053f02cd96557bc9a2bb01">&#9670;&nbsp;</a></span>GetDistance()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual double IChassis::GetDistance </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a074829702fd4e8e58e140346d3194cca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a074829702fd4e8e58e140346d3194cca">&#9670;&nbsp;</a></span>GetHeading()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual double IChassis::GetHeading </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2334340d6479f566cff163a8ae33c594"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2334340d6479f566cff163a8ae33c594">&#9670;&nbsp;</a></span>GetLeftMasterMotorRotationCount()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual double IChassis::GetLeftMasterMotorRotationCount </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a33b98f205ee54489e49bdf6e33c554f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33b98f205ee54489e49bdf6e33c554f8">&#9670;&nbsp;</a></span>GetRightMasterMotorRotationCount()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual double IChassis::GetRightMasterMotorRotationCount </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="adb8d23ba25f61367490b96ffe5bdd659"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb8d23ba25f61367490b96ffe5bdd659">&#9670;&nbsp;</a></span>GetTargetHeading()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual double IChassis::GetTargetHeading </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa15f1e54d2d44238a894135f8a2b5d5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa15f1e54d2d44238a894135f8a2b5d5e">&#9670;&nbsp;</a></span>GetVelocity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual double IChassis::GetVelocity </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aef1d1542c93a347d2a4915f50085bd8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef1d1542c93a347d2a4915f50085bd8a">&#9670;&nbsp;</a></span>GetWheelDiameter()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual double IChassis::GetWheelDiameter </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad224c991870bc1a2fcc2947a746de8c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad224c991870bc1a2fcc2947a746de8c8">&#9670;&nbsp;</a></span>GetXLocation()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual double IChassis::GetXLocation </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="acac0fcede42933fb234ea34c8b6bc72f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acac0fcede42933fb234ea34c8b6bc72f">&#9670;&nbsp;</a></span>GetXVelocity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual double IChassis::GetXVelocity </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7dc97488036e5aadc9edc9390b328ac0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7dc97488036e5aadc9edc9390b328ac0">&#9670;&nbsp;</a></span>GetYLocation()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual double IChassis::GetYLocation </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9c92a5a9b2121ab00a711c51b33fca80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c92a5a9b2121ab00a711c51b33fca80">&#9670;&nbsp;</a></span>GetYVelocity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual double IChassis::GetYVelocity </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2fea2dc5432dec42d7103ed50158c0ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fea2dc5432dec42d7103ed50158c0ba">&#9670;&nbsp;</a></span>PrintDebug()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void IChassis::PrintDebug </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aecd1754d77d633add91d9790339c5cc2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aecd1754d77d633add91d9790339c5cc2">&#9670;&nbsp;</a></span>ResetChassis()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void IChassis::ResetChassis </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8dc7f67f18ed39ebdfb9716ef4e17da4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8dc7f67f18ed39ebdfb9716ef4e17da4">&#9670;&nbsp;</a></span>ResetGyro()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void IChassis::ResetGyro </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6ee9a25d1a1757ab42a2eb005bb6ca32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ee9a25d1a1757ab42a2eb005bb6ca32">&#9670;&nbsp;</a></span>SetDriveMagnitudes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void IChassis::SetDriveMagnitudes </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>xPower</em>, </td>
+          <td class="paramtype"><a class="el" href="class_mechanism_control.html#a62b7a13a54f2bb7385096b3933837e00">MechanismControl::MECHANISM_CONTROL_TYPE</a>&#160;</td>
+          <td class="paramname"><em>controlType</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>yPower</em>, </td>
+          <td class="paramname"><em>leftValue</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>rotationPower</em>&#160;</td>
+          <td class="paramname"><em>rightValue</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -672,230 +667,22 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a772457f1800c82584103be36a2b930da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a772457f1800c82584103be36a2b930da">&#9670;&nbsp;</a></span>SetLeftRightMagnitudes()</h2>
+<p>Run chassis. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="class_mechanism_control.html#a62b7a13a54f2bb7385096b3933837e00">MechanismControl::MECHANISM_CONTROL_TYPE</a></td><td>controlType: How are the item(s) being controlled </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">double</td><td>leftVvalue: Left side target (units are based on the controlType) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">double</td><td>rightValue: Right side target (units are based on the controlType) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void IChassis::SetLeftRightMagnitudes </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>leftPower</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>rightPower</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Implemented in <a class="el" href="class_dragon_chassis.html#a09d5214d8797507160c69ea372471fae">DragonChassis</a>.</p>
 
 </div>
 </div>
-<a id="a9bda05b73e71719485cbfa9d7f710538"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9bda05b73e71719485cbfa9d7f710538">&#9670;&nbsp;</a></span>SetPIDParams()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void IChassis::SetPIDParams </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>kP</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>kI</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>kD</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>kF</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0896fe87e7564ae4546f9b83ae0ef18f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0896fe87e7564ae4546f9b83ae0ef18f">&#9670;&nbsp;</a></span>SetTalonMode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void IChassis::SetTalonMode </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_dragon_talon.html#a8f2b4982607580f1e3802ed17adf3898">DragonTalon::TALON_CONTROL_MODE</a>&#160;</td>
-          <td class="paramname"><em>mode</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a49d69df9b200f465cb0f8423bef32d3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49d69df9b200f465cb0f8423bef32d3c">&#9670;&nbsp;</a></span>SetTargetHeading()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void IChassis::SetTargetHeading </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>heading</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae73dca373ab6cd05e4a4bed2166f3a27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae73dca373ab6cd05e4a4bed2166f3a27">&#9670;&nbsp;</a></span>SetVelocityParams()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void IChassis::SetVelocityParams </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>kP</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>kI</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>kD</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>kF</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>leftSpeed</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>rightSpeed</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab5493e99781542f00a352669ede77596"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5493e99781542f00a352669ede77596">&#9670;&nbsp;</a></span>UpdateChassis()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void IChassis::UpdateChassis </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this interface was generated from the following file:<ul>
 <li>C:/GitKrakenRepos/TemplateRepository/src/main/cpp/subsys/<a class="el" href="_i_chassis_8h_source.html">IChassis.h</a></li>
 </ul>
 </div><!-- contents -->

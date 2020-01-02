@@ -111,26 +111,41 @@ $(document).ready(function(){initNavTree('_dragon_p_d_p_8cpp_source.html','');})
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">return</span> DragonPDP::m_instance;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//=======================================================================================</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// Method:          CreatePDP</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// Description:     Create a PDP from the inputs</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Returns:         std::shared_ptr&lt;PowerDistributionPanel&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//=======================================================================================</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;shared_ptr&lt;PowerDistributionPanel&gt; <a class="code" href="class_dragon_p_d_p.html#a4fd35ceb661ff5d58cb9200299af8fc3">DragonPDP::CreatePDP</a></div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_dragon_p_d_p.html#a4fd35ceb661ff5d58cb9200299af8fc3">   29</a></span>&#160;(</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span>         canID               <span class="comment">// &lt;I&gt; - CANLight CAN ID</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    DragonPDP::m_pdp = make_shared&lt;PowerDistributionPanel&gt;( canID );</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> DragonPDP::m_pdp;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;DragonPDP::DragonPDP()</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span> ( DragonPDP::m_pdp == <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        CreatePDP( 0 );</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_dragon_p_d_p.html#a57a38ebb2857accbe125c40465359b65">   32</a></span>&#160;PowerDistributionPanel* <a class="code" href="class_dragon_p_d_p.html#a57a38ebb2857accbe125c40465359b65">DragonPDP::GetPDP</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> DragonPDP::m_pdp;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//=======================================================================================</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">// Method:          CreatePDP</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// Description:     Create a PDP from the inputs</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">// Returns:         std::shared_ptr&lt;PowerDistributionPanel&gt;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//=======================================================================================</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;PowerDistributionPanel* <a class="code" href="class_dragon_p_d_p.html#a7c0757251596c532923dc26d1d829830">DragonPDP::CreatePDP</a></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_dragon_p_d_p.html#a7c0757251596c532923dc26d1d829830">   43</a></span>&#160;(</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">int</span>         canID               <span class="comment">// &lt;I&gt; - CANLight CAN ID</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    DragonPDP::m_pdp = <span class="keyword">new</span> PowerDistributionPanel( canID );</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> DragonPDP::m_pdp;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_dragon_p_d_p_html_a4fd35ceb661ff5d58cb9200299af8fc3"><div class="ttname"><a href="class_dragon_p_d_p.html#a4fd35ceb661ff5d58cb9200299af8fc3">DragonPDP::CreatePDP</a></div><div class="ttdeci">std::shared_ptr&lt; PowerDistributionPanel &gt; CreatePDP(int canID)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_p_d_p_8cpp_source.html#l00029">DragonPDP.cpp:29</a></div></div>
+<div class="ttc" id="aclass_dragon_p_d_p_html_a7c0757251596c532923dc26d1d829830"><div class="ttname"><a href="class_dragon_p_d_p.html#a7c0757251596c532923dc26d1d829830">DragonPDP::CreatePDP</a></div><div class="ttdeci">PowerDistributionPanel * CreatePDP(int canID)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_p_d_p_8cpp_source.html#l00043">DragonPDP.cpp:43</a></div></div>
 <div class="ttc" id="aclass_dragon_p_d_p_html_a5cd0015d3ee705cb5ecc861c10b08d9e"><div class="ttname"><a href="class_dragon_p_d_p.html#a5cd0015d3ee705cb5ecc861c10b08d9e">DragonPDP::GetInstance</a></div><div class="ttdeci">static DragonPDP * GetInstance()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_p_d_p_8cpp_source.html#l00015">DragonPDP.cpp:15</a></div></div>
 <div class="ttc" id="a_dragon_p_d_p_8h_html"><div class="ttname"><a href="_dragon_p_d_p_8h.html">DragonPDP.h</a></div></div>
 <div class="ttc" id="aclass_dragon_p_d_p_html"><div class="ttname"><a href="class_dragon_p_d_p.html">DragonPDP</a></div><div class="ttdef"><b>Definition:</b> <a href="_dragon_p_d_p_8h_source.html#l00012">DragonPDP.h:12</a></div></div>
+<div class="ttc" id="aclass_dragon_p_d_p_html_a57a38ebb2857accbe125c40465359b65"><div class="ttname"><a href="class_dragon_p_d_p.html#a57a38ebb2857accbe125c40465359b65">DragonPDP::GetPDP</a></div><div class="ttdeci">frc::PowerDistributionPanel * GetPDP() const</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_p_d_p_8cpp_source.html#l00032">DragonPDP.cpp:32</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

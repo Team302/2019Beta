@@ -1,4 +1,6 @@
 //====================================================================================================================================================
+// PIDDefn.h
+//====================================================================================================================================================
 // Copyright 2019 Lake Orion Robotics FIRST Team 302
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), 
@@ -12,27 +14,45 @@
 // DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE 
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
-#include <xmlcontrol/ControlData.h>
-#include <subsys/MechanismControl.h>
 
-ControlData::ControlData
-(
-    MechanismControl::MECHANISM_CONTROL_TYPE    mode,
-    double                                      proportional,
-    double                                      integral,
-    double                                      derivative,
-    double                                      feedforward,
-    double                                      integralZone,
-    double                                      maxAcceleration,
-    double                                      cruiseVelocity
-) : m_mode( mode ),
-    m_proportional( proportional ),
-    m_integral( integral ),
-    m_derivative( derivative ),
-    m_feedforward( feedforward ),
-    m_iZone( integralZone ),
-    m_maxAcceleration( maxAcceleration ),
-    m_cruiseVelocity( cruiseVelocity )
+#pragma once
+
+
+
+// C++ Includes
+#include <iostream>
+#include <utility>
+
+// FRC includes
+
+// Team 302 includes
+#include <controllers/ControlData.h>
+
+// Third Party Includes
+#include <pugixml/pugixml.hpp>
+
+class PIDDefn
 {
+    public:
 
-}
+
+
+
+        //-----------------------------------------------------------------------
+        // Method:      ParseXML
+        // Description: Parse MechanismData XML element 
+        //  <!ELEMENT mechanismData EMPTY>
+        //  <!ATTLIST mechanismData 
+        //            dataType
+        //            value CDATA "0.0"
+        //  >
+        //
+        // Returns:     PowerDistributionPanel*        PDP object (or nullptr if XML
+        //                                             is ill-formed
+        //-----------------------------------------------------------------------
+        static ControlData*  ParseXML
+        (
+            pugi::xml_node      PIDNode
+        );
+};
+

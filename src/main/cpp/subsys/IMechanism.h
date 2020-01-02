@@ -29,7 +29,7 @@
 // Team 302 includes
 #include <subsys/MechanismControl.h>
 #include <subsys/MechanismTypes.h>
-#include <xmlcontrol/ControlData.h>
+#include <controllers/ControlData.h>
 // Third Party Includes
 
 

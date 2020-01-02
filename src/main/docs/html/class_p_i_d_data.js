@@ -10,8 +10,8 @@ var class_p_i_d_data =
       [ "EXTENDER", "class_p_i_d_data.html#a29db1db15f557354dde70030054babaea2d255701fbacb1537999483110fe0465", null ],
       [ "GENERAL", "class_p_i_d_data.html#a29db1db15f557354dde70030054babaea469eef6b072de5ff6b9fcbe600669b93", null ]
     ] ],
-    [ "PIDData", "class_p_i_d_data.html#aeec2338e55a4cfe3783ece754514dc0b", null ],
-    [ "~PIDData", "class_p_i_d_data.html#a771bfea16806a1f019983ce6c83dbcb4", null ],
+    [ "ControlData", "class_p_i_d_data.html#aeec2338e55a4cfe3783ece754514dc0b", null ],
+    [ "~ControlData", "class_p_i_d_data.html#a771bfea16806a1f019983ce6c83dbcb4", null ],
     [ "GetCruiseVelocity", "class_p_i_d_data.html#a543b16fd966779bd06e65ad58741b2e0", null ],
     [ "GetD", "class_p_i_d_data.html#a32fbc7acad89ab1066a275e273b04548", null ],
     [ "GetF", "class_p_i_d_data.html#a41021f9ceea36896e12186e0b78a1d93", null ],

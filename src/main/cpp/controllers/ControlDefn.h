@@ -26,7 +26,7 @@
 // FRC includes
 
 // Team 302 includes
-#include <xmlcontrol/ControlData.h>
+#include <controllers/ControlData.h>
 
 // Third Party Includes
 
